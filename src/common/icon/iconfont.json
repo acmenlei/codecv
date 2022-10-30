@@ -1,0 +1,93 @@
+{
+  "id": "3737803",
+  "name": "markdown-resume",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1467383",
+      "name": "phone",
+      "font_class": "phone",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "4765975",
+      "name": "project",
+      "font_class": "project",
+      "unicode": "e798",
+      "unicode_decimal": 59288
+    },
+    {
+      "icon_id": "4766293",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e7ae",
+      "unicode_decimal": 59310
+    },
+    {
+      "icon_id": "5821109",
+      "name": "technology",
+      "font_class": "technology",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "7206120",
+      "name": "profile",
+      "font_class": "profile",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "7239590",
+      "name": "yuque",
+      "font_class": "yuque",
+      "unicode": "e713",
+      "unicode_decimal": 59155
+    },
+    {
+      "icon_id": "11488305",
+      "name": "product",
+      "font_class": "product",
+      "unicode": "e788",
+      "unicode_decimal": 59272
+    },
+    {
+      "icon_id": "13743932",
+      "name": "gitee-fill-round",
+      "font_class": "gitee-fill-round",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "18986691",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e8c6",
+      "unicode_decimal": 59590
+    },
+    {
+      "icon_id": "490590",
+      "name": "school",
+      "font_class": "school",
+      "unicode": "eced",
+      "unicode_decimal": 60653
+    },
+    {
+      "icon_id": "829865",
+      "name": "csdn",
+      "font_class": "csdn",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "1444437",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    }
+  ]
+}

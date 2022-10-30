@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3737803 */
+  src: url('iconfont.woff2?t=1667098345635') format('woff2'),
+       url('iconfont.woff?t=1667098345635') format('woff'),
+       url('iconfont.ttf?t=1667098345635') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e69e";
+}
+
+.icon-project:before {
+  content: "\e798";
+}
+
+.icon-user:before {
+  content: "\e7ae";
+}
+
+.icon-technology:before {
+  content: "\e66b";
+}
+
+.icon-profile:before {
+  content: "\e643";
+}
+
+.icon-yuque:before {
+  content: "\e713";
+}
+
+.icon-product:before {
+  content: "\e788";
+}
+
+.icon-gitee-fill-round:before {
+  content: "\e686";
+}
+
+.icon-github:before {
+  content: "\e8c6";
+}
+
+.icon-school:before {
+  content: "\eced";
+}
+
+.icon-csdn:before {
+  content: "\e60a";
+}
+
+.icon-email:before {
+  content: "\e712";
+}
+
