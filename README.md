@@ -1,7 +1,7 @@
 # markdown-resume
 A resume writing tool with markdown syntax, it can convert your markdown syntax to pdf format.
 
-(To try)[https://acmenlei.github.io/markdown-resume-to-pdf/dist/]
+[To try](https://acmenlei.github.io/markdown-resume-to-pdf/dist/)
 
 # syntax
 There are a few new special syntax you may want to know about
