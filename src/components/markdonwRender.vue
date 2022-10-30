@@ -1,13 +1,10 @@
 <script setup lang='ts'>
 import { markdownToHTML } from "markdown-transform-html"
 import { onActivated, ref, watch } from "vue";
-import { useRouter } from "vue-router";
-
 import "../common/styles/index.css"
 
 const props = defineProps<{ content: string }>();
 const renderDOM = ref<HTMLElement>(document.body);
-const router = useRouter();
 
 onActivated(() => {
   renderDOM.value.innerHTML = markdownToHTML(props.content);
@@ -17,24 +14,28 @@ watch(() => props.content, (v) => {
   renderDOM.value.innerHTML = markdownToHTML(props.content);
 })
 
-const exportor = async () => {
-  localStorage.setItem('download', JSON.stringify(renderDOM.value.innerHTML))
-  router.push('/download')
-}
+
 </script>
 
 <template>
-  <div ref="renderDOM" class="markdown-transform-html"></div>
-  <button @click="exportor" class="download">导出PDF</button>
+  <div class="outer">
+    <div ref="renderDOM" class="markdown-transform-html"></div>
+  </div>
 
 </template>
 
 <style lang="scss" scoped>
+.outer {
+  width: 100%;
+  height: 100%;
+  background: #444;
+}
 .markdown-transform-html {
   height: 100vh;
   overflow: auto;
   border: 1px solid #eee;
   padding: 10px 20px;
+  background: white;
 }
 
 button.download {

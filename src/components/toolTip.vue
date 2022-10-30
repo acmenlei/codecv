@@ -13,7 +13,7 @@ const clipborad = (item: Icon) => {
 <template>
   <div id="toolTip">
     <slot></slot>
-    <div v-show="toggle" class="render">
+    <div v-show="toggle" class="render-modal">
       <i :class="['iconfont', `icon-${item.name}`]" @click="clipborad(item)" v-for="item in data.glyphs">
         <p>{{ item.name }}</p>
       </i>
@@ -30,17 +30,17 @@ const clipborad = (item: Icon) => {
     position: absolute;
     content: "";
     border: 10px solid transparent;
-    border-bottom-color: white;
+    border-bottom-color: #f8f8f8;
     top: 14px;
     left: 50%;
   }
 
-  .render {
+  .render-modal {
     position: absolute;
-    background: white;
+    background: #f8f8f8;
     padding: 10px;
     color: #333;
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
     border-radius: 5px;
     top: 30px;
     display: grid;

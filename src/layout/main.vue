@@ -5,7 +5,7 @@ import Footer from "./footer.vue"
 
 <template>
   <div id="main">
-    <Header />
+    <Header v-if="$route.path != '/editor'"/>
     <router-view v-slot="{ Component }">
       <keep-alive>
         <component :is="Component" />
