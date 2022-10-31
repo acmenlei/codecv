@@ -28,7 +28,6 @@
 }
 
 :root {
-  font-size: 15px;
   font-family: "思源黑体 ExtraLight"
 }
 
@@ -36,6 +35,8 @@
   width: 794px;
   color: #333;
   margin: 0 auto;
+  font-size: 14px;
+  padding: 20px 30px;
 }
 
 .markdown-transform-html blockquote {

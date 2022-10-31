@@ -62,7 +62,6 @@ watch(() => props.resumeType, (v, ov) => {
 
 .markdown-transform-html {
   border: 1px solid #eee;
-  padding: 10px 20px;
   background: white;
 }
 

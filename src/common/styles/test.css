@@ -28,13 +28,13 @@
 }
 
 :root {
-  font-size: 15px;
   font-family: "思源黑体 ExtraLight"
 }
 
 .markdown-transform-html {
   width: 794px;
-  color: blue;
+  font-size: 14px;
+  padding: 20px 30px;
   margin: 0 auto;
 }
 

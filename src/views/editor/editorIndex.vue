@@ -38,6 +38,7 @@ const download = () => {
   .markdown-edit {
     flex: 1;
     max-width: 800px;
+    min-width: 400px;
     height: 100vh;
     overflow: hidden;
     overflow-y: auto;
@@ -47,7 +48,7 @@ const download = () => {
     outline: none;
     resize: none;
     padding: 10px;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .markdown-render {
