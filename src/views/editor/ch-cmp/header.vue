@@ -1,10 +1,12 @@
 <script setup lang='ts'>
 import nav from "@/common/nav/nav"
 import RenderModal from "@/components/renderModal.vue"
+import RenderDrawer from "@/components/renderDrawer.vue"
 import { onActivated, ref } from "vue";
 
 const emits = defineEmits(['download']);
 const fileName = ref('我的简历');
+const flag = ref(false);
 
 onActivated(() => {
   fileName.value = document.title;
@@ -32,15 +34,20 @@ const toggleToolTip = () => {
     </div>
     <ul class="nav">
       <li v-for="navItem in nav" :class="{ 'active': $route.path === navItem.path }">
-        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
-        <RenderModal v-else :toggle='toggle'><span @click="toggleToolTip">{{ navItem.name }}</span></RenderModal>
+        
+        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''"><i :class="navItem.icon"></i>{{ navItem.name }}</router-link>
+        <RenderModal v-else :toggle='toggle'><i :class="navItem.icon"></i><span @click="toggleToolTip">{{ navItem.name }}</span></RenderModal>
       </li>
     </ul>
     <div class="operator">
+      <el-tooltip class="box-item" effect="dark" content="问题反馈" placement="bottom-end">
+        <i class="iconfont icon-problem problem" @click="() => flag = !flag"></i>
+      </el-tooltip>
       <!-- <button class='save'>保存</button> -->
       <button class="exportor" @click="exportor">导出PDF</button>
     </div>
   </div>
+  <RenderDrawer :flag="flag" />
 </template>
 
 <style lang='scss' scoped>
@@ -68,7 +75,8 @@ const toggleToolTip = () => {
       color: #555;
 
       &:focus {
-        border-bottom: 1px solid  var(--theme);;
+        border-bottom: 1px solid var(--theme);
+        ;
       }
     }
   }
@@ -92,6 +100,13 @@ const toggleToolTip = () => {
     cursor: pointer;
     background: var(--theme);
     color: white;
+  }
+
+  .problem {
+    margin-right: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 60px;
   }
 
   .operator {

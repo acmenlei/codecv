@@ -30,7 +30,7 @@ watch(() => props.content, (v) => {
   renderDOM.value.innerHTML = markdownToHTML(v);
 })
 // 刷新页面（这里是一个比较有问题的点）
-watch(() => props.resumeType, (v) => {
+watch(() => props.resumeType, (v, ov) => {
   location.reload()
 })
 </script>

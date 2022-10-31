@@ -9,11 +9,12 @@ import { getCurrentTypeContent } from '@/common/utils';
 const route = useRoute();
 const router = useRouter();
 const content = ref('');
-const resumeType = ref(String(route.query.type));
+//初始化也需要填上值 否则后续更新不一致会导致刷新死循环
+const resumeType = ref(route.query.type ? String(route.query.type) : 'front_end');
 
 onActivated(() => {
-  resumeType.value = route.query.type as string;
-  content.value = getCurrentTypeContent(String(route.query.type));
+  resumeType.value = route.query.type ? String(route.query.type) : 'front_end';
+  content.value = getCurrentTypeContent(resumeType.value);
 })
 
 const download = () => {

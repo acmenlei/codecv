@@ -52,7 +52,7 @@ icon:phone 155xxxxxx06
 **2020.12 - 2021.05**
 ::: end
 
-##### 江小鹿B端管理台
+##### xxxxB端管理台
 
 - **技术栈**：\`Vue.js\` \`ElementUI\` \`Echarts\` \`Vuex\` \`Vue-Router\`
 - **项目简介**：该项目是一个使用 Vue.js 开发的电商类小程序的商家端管理系统，是一个前后端分离的 SPA 应用

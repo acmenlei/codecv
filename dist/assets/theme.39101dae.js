@@ -52,7 +52,7 @@ icon:phone 155xxxxxx06
 **2020.12 - 2021.05**
 ::: end
 
-##### \u6C5F\u5C0F\u9E7FB\u7AEF\u7BA1\u7406\u53F0
+##### xxxxB\u7AEF\u7BA1\u7406\u53F0
 
 - **\u6280\u672F\u6808**\uFF1A\`Vue.js\` \`ElementUI\` \`Echarts\` \`Vuex\` \`Vue-Router\`
 - **\u9879\u76EE\u7B80\u4ECB**\uFF1A\u8BE5\u9879\u76EE\u662F\u4E00\u4E2A\u4F7F\u7528 Vue.js \u5F00\u53D1\u7684\u7535\u5546\u7C7B\u5C0F\u7A0B\u5E8F\u7684\u5546\u5BB6\u7AEF\u7BA1\u7406\u7CFB\u7EDF\uFF0C\u662F\u4E00\u4E2A\u524D\u540E\u7AEF\u5206\u79BB\u7684 SPA \u5E94\u7528
@@ -168,4 +168,4 @@ Github\u5730\u5740\uFF1A[https://github.com/hua1995116/webchat](https://github.c
 - MongoDB
 - Redis
 
-`,E=[{type:"operation",id:Date.now(),img:"https://s3.mdedit.online/blog/image-20210927025451038.png?imageView2/0/format/webp/q/75/w/400",content:F,name:"\u8FD0\u8425"},{type:"front_end",id:Date.now()-10,img:"https://s3.mdedit.online/blog/image-20210927025451038.png?imageView2/0/format/webp/q/75/w/400",content:u,name:"\u524D\u7AEF"},{type:"test",id:Date.now()-20,img:"https://s3.mdedit.online/blog/image-20210927025451038.png?imageView2/0/format/webp/q/75/w/400",content:u,name:"\u6D4B\u8BD5"}];export{E as t};
+`,E=[{type:"operation",id:Date.now(),img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28fda011e375476e9be99200fabf656c~tplv-k3u1fbpfcp-watermark.image?",content:F,name:"\u8FD0\u8425"},{type:"front_end",id:Date.now()-10,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:u,name:"\u4E92\u8054\u7F51IT"}];export{E as t};

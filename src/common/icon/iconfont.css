@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3737803 */
-  src: url('iconfont.woff2?t=1667098345635') format('woff2'),
-       url('iconfont.woff?t=1667098345635') format('woff'),
-       url('iconfont.ttf?t=1667098345635') format('truetype');
+  src: url('iconfont.woff2?t=1667209266498') format('woff2'),
+       url('iconfont.woff?t=1667209266498') format('woff'),
+       url('iconfont.ttf?t=1667209266498') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,58 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e600";
+}
+
+.icon-baidu:before {
+  content: "\e6b6";
+}
+
+.icon-QQ:before {
+  content: "\e882";
+}
+
+.icon-tencent:before {
+  content: "\e620";
+}
+
+.icon-wechat:before {
+  content: "\e619";
+}
+
+.icon-message:before {
+  content: "\e6df";
+}
+
+.icon-template:before {
+  content: "\e768";
+}
+
+.icon-bytedance:before {
+  content: "\e682";
+}
+
+.icon-Exit:before {
+  content: "\e60c";
+}
+
+.icon-douyin:before {
+  content: "\e673";
+}
+
+.icon-application:before {
+  content: "\e9f9";
+}
+
+.icon-alibaba:before {
+  content: "\e94e";
+}
+
+.icon-problem:before {
+  content: "\e679";
 }
 
 .icon-phone:before {

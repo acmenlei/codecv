@@ -6,6 +6,97 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "160001",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "386278",
+      "name": "baidu",
+      "font_class": "baidu",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "4936984",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e882",
+      "unicode_decimal": 59522
+    },
+    {
+      "icon_id": "9848172",
+      "name": "tencent",
+      "font_class": "tencent",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "10506955",
+      "name": "wechat",
+      "font_class": "wechat",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "10678426",
+      "name": "message",
+      "font_class": "message",
+      "unicode": "e6df",
+      "unicode_decimal": 59103
+    },
+    {
+      "icon_id": "11488144",
+      "name": "template",
+      "font_class": "template",
+      "unicode": "e768",
+      "unicode_decimal": 59240
+    },
+    {
+      "icon_id": "13743903",
+      "name": "bytedance",
+      "font_class": "bytedance",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "21928403",
+      "name": "Exit",
+      "font_class": "Exit",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "22273028",
+      "name": "douyin",
+      "font_class": "douyin",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    },
+    {
+      "icon_id": "22756072",
+      "name": "application",
+      "font_class": "application",
+      "unicode": "e9f9",
+      "unicode_decimal": 59897
+    },
+    {
+      "icon_id": "29391691",
+      "name": "alibaba",
+      "font_class": "alibaba",
+      "unicode": "e94e",
+      "unicode_decimal": 59726
+    },
+    {
+      "icon_id": "1206932",
+      "name": "problem",
+      "font_class": "problem",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
       "icon_id": "1467383",
       "name": "phone",
       "font_class": "phone",
