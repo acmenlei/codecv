@@ -8,8 +8,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElSlider: typeof import('element-plus/es')['ElSlider']
+    RenderModal: typeof import('./src/components/renderModal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ToolTip: typeof import('./src/components/toolTip.vue')['default']
   }
 }

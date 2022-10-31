@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import nav from "@/common/nav/nav"
-import ToolTip from "@/components/toolTip.vue"
+import RenderModal from "@/components/renderModal.vue"
 import { onActivated, ref } from "vue";
 
 const emits = defineEmits(['download']);
@@ -33,7 +33,7 @@ const toggleToolTip = () => {
     <ul class="nav">
       <li v-for="navItem in nav" :class="{ 'active': $route.path === navItem.path }">
         <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
-        <ToolTip v-else :toggle='toggle'><span @click="toggleToolTip">{{ navItem.name }}</span></ToolTip>
+        <RenderModal v-else :toggle='toggle'><span @click="toggleToolTip">{{ navItem.name }}</span></RenderModal>
       </li>
     </ul>
     <div class="operator">
