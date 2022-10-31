@@ -2,23 +2,23 @@
 import { onActivated, ref } from 'vue';
 import Header from "./ch-cmp/header.vue"
 import MarkdownRender from "@/views/editor/ch-cmp/markdonwRender.vue"
-import resumeContent from "../../common/examples/resume1"
 import { useRoute, useRouter } from 'vue-router';
 import { markdownToHTML } from 'markdown-transform-html';
+import { getCurrentTypeContent } from '@/common/utils';
 
 const route = useRoute();
 const router = useRouter();
-const content = ref(resumeContent);
+const content = ref('');
 const resumeType = ref(String(route.query.type));
 
 onActivated(() => {
   resumeType.value = route.query.type as string;
+  content.value = getCurrentTypeContent(String(route.query.type));
 })
 
 const download = () => {
   localStorage.setItem('download', JSON.stringify(markdownToHTML(content.value)))
-  // localStorage.setItem('markdown_content', content.value);
-  router.push('/download')
+  router.push({ path: '/download', query: { type: resumeType.value } })
 }
 </script>
 

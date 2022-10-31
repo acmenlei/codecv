@@ -38,7 +38,7 @@ const toggleToolTip = () => {
     </ul>
     <div class="operator">
       <!-- <button class='save'>保存</button> -->
-      <button class="exportor" @click="exportor">导出</button>
+      <button class="exportor" @click="exportor">导出PDF</button>
     </div>
   </div>
 </template>

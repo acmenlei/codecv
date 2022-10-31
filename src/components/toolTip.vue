@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import { successMessage } from "@/common/message";
 import data from "../common/icon/iconfont.json"
 
 defineProps<{ toggle: boolean }>()
@@ -6,6 +7,7 @@ defineProps<{ toggle: boolean }>()
 type Icon = typeof data.glyphs[0];
 
 const clipborad = (item: Icon) => {
+  successMessage('已复制到剪贴板，你可以直接粘贴')
   navigator.clipboard.writeText(`icon:${item.name} `)
 }
 </script>
@@ -25,24 +27,26 @@ const clipborad = (item: Icon) => {
 <style lang='scss' scoped>
 #toolTip {
   position: relative;
+  z-index: 999;
 
   .arrow {
     position: absolute;
     content: "";
     border: 10px solid transparent;
-    border-bottom-color: #f8f8f8;
-    top: 14px;
+    border-bottom-color: #fff;
+    top: 32px;
     left: 50%;
   }
 
   .render-modal {
+    line-height: 20px;
     position: absolute;
-    background: #f8f8f8;
+    background: #fff;
     padding: 10px;
     color: #333;
-    border: 1px solid #eee;
+    box-shadow: 0 0 10px #ccc;
     border-radius: 5px;
-    top: 30px;
+    top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;

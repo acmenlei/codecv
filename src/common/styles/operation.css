@@ -34,7 +34,6 @@
 
 .markdown-transform-html {
   width: 794px;
-  color: red;
   margin: 0 auto;
 }
 
@@ -91,6 +90,7 @@
 .markdown-transform-html h3,
 .markdown-transform-html h4 {
   font-size: 16px;
+  margin-top: 10px;
 }
 
 .markdown-transform-html h5, .markdown-transform-html h6, .markdown-transform-html strong {

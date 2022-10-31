@@ -1,11 +1,12 @@
 import resume1 from "./examples/resume1";
+import operation from "./examples/operation";
 
 export const themes = [
   {
     type: 'operation',
     id: Date.now(),
     img: 'https://s3.mdedit.online/blog/image-20210927025451038.png?imageView2/0/format/webp/q/75/w/400',
-    content: '## xxx-运营',
+    content: operation,
     name: '运营'
   },
   {
