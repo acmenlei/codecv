@@ -12,11 +12,6 @@ const nav = [
   {
     name: '内置图标',
     tooltip: true
-  },
-  {
-    name: '开始使用',
-    path: '/editor',
-    tooltip: false,
   }
 ]
 

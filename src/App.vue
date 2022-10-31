@@ -1,6 +1,6 @@
 <template>
   <router-view v-slot="{ Component }">
-    <keep-alive>
+    <keep-alive :max="10" include="editorIndex">
       <component :is="Component" />
     </keep-alive>
   </router-view>

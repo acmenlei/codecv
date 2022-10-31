@@ -4,13 +4,18 @@ import Footer from "./footer.vue"
 </script>
 
 <template>
-  <div id="main">
-    <Header v-if="$route.path != '/editor'"/>
-    <router-view v-slot="{ Component }">
-      <keep-alive>
-        <component :is="Component" />
-      </keep-alive>
-    </router-view>
-    <Footer />
-  </div>
+  <Header v-if="!['/editor', '/home'].includes($route.path)" />
+  <router-view v-slot="{ Component }">
+    <keep-alive :max="10" include="editorIndex">
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
+  <Footer />
 </template>
+
+
+<style lang="scss" scoped>
+#main {
+  padding-bottom: 100px;
+}
+</style>

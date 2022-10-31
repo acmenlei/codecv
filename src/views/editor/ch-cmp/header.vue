@@ -1,16 +1,21 @@
 <script setup lang='ts'>
-import nav from "../../../common/nav"
+import nav from "@/common/nav/nav"
 import ToolTip from "@/components/toolTip.vue"
-import { ref } from "vue";
-
-const toggle = ref(false);
+import { onActivated, ref } from "vue";
 
 const emits = defineEmits(['download']);
+const fileName = ref('我的简历');
+
+onActivated(() => {
+  fileName.value = document.title;
+})
 
 const exportor = async () => {
+  document.title = fileName.value;
   emits('download');
 }
 
+const toggle = ref(false);
 const toggleToolTip = () => {
   toggle.value = !toggle.value;
 }
@@ -22,17 +27,17 @@ const toggleToolTip = () => {
     <div class="resume-name">
       <label for="#resume-name-input">
         简历名称：
-        <input id="resume-name-input" type="text" value="熊磊鑫"/>
+        <input id="resume-name-input" type="text" v-model="fileName" />
       </label>
     </div>
     <ul class="nav">
-      <li v-for="navItem in nav">
+      <li v-for="navItem in nav" :class="{ 'active': $route.path === navItem.path }">
         <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
         <ToolTip v-else :toggle='toggle'><span @click="toggleToolTip">{{ navItem.name }}</span></ToolTip>
       </li>
     </ul>
     <div class="operator">
-      <button class='save'>保存</button>
+      <!-- <button class='save'>保存</button> -->
       <button class="exportor" @click="exportor">导出</button>
     </div>
   </div>
@@ -63,25 +68,7 @@ const toggleToolTip = () => {
       color: #555;
 
       &:focus {
-        border-bottom: 1px solid rgb(70, 147, 255);
-      }
-    }
-  }
-
-  .nav {
-    flex: 1;
-    display: flex;
-    margin-left: 50px;
-
-    li {
-      list-style: none;
-      margin: 0 20px;
-      cursor: pointer;
-      white-space: nowrap;
-
-      a {
-        color: #555;
-        text-decoration: none;
+        border-bottom: 1px solid  var(--theme);;
       }
     }
   }
@@ -103,13 +90,13 @@ const toggleToolTip = () => {
   .back {
     margin-right: 30px;
     cursor: pointer;
-    background: rgb(70, 147, 255);
+    background: var(--theme);
     color: white;
   }
 
   .operator {
     .exportor {
-      background: rgb(70, 147, 255);
+      background: var(--theme);
       color: white;
     }
   }

@@ -1,18 +1,25 @@
 <script setup lang='ts'>
-import { onActivated } from "vue";
-import { useRouter } from "vue-router";
-import "../../common/styles/index.css"
-const router = useRouter()
+import { importCSS } from "@/common/utils";
+import { onMounted, onUnmounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-onActivated(() => {
+const route = useRoute();
+const router = useRouter();
+
+onMounted(() => {
+  importCSS(String(route.query.type));
   const content = JSON.parse(localStorage.getItem('download') || '');
   (document.querySelector(".markdown-transform-html") as HTMLElement).innerHTML = content;
+
   setTimeout(() => {
     window.print();
     router.back();
   });
 })
 
+onUnmounted(() => {
+  localStorage.removeItem('download')
+})
 </script>
 
 <template>

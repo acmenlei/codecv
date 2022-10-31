@@ -1,10 +1,16 @@
 <script setup lang='ts'>
-
+import outNav from "@/common/nav/outNav"
 </script>
 
 <template>
   <div id="header">
-   <RouterLink to="/editor">我的简历</RouterLink>
+    <div class="logo"><img src="/vite.svg" alt=""></div>
+    <ul class="nav">
+      <li v-for="navItem in outNav" :class="{ 'active': $route.path === navItem.path }">
+        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
+        <span v-else>{{ navItem.name }}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -22,10 +28,5 @@
   align-items: center;
   padding: 0 70px;
   text-align: center;
-
-  a {
-        color: #555;
-        text-decoration: none;
-      }
 }
 </style>

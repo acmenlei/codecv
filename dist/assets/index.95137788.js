@@ -1,0 +1,1 @@
+import{_ as e,b as c,c as n}from"./index.3d7ee198.js";const o={},t={id:"not_found"};function _(r,s){return c(),n("div",t,"404\u6CA1\u6709\u627E\u5230")}const d=e(o,[["render",_]]);export{d as default};
