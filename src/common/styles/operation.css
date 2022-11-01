@@ -80,18 +80,23 @@
 
 .markdown-transform-html h1,
 .markdown-transform-html h2 {
-  margin: 10px 0 0 0;
-  border-bottom: 1.5px solid #999;
+  padding: 10px 0 0 0;
+  /* border-bottom: 1.5px solid #999; */
 }
 
 .markdown-transform-html h2 {
   font-size: 20px;
+  margin-top: 10px;
+}
+
+.markdown-transform-html h2 i.iconfont {
+  font-size: 1.3rem;
 }
 
 .markdown-transform-html h3,
 .markdown-transform-html h4 {
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .markdown-transform-html h5, .markdown-transform-html h6, .markdown-transform-html strong {
@@ -158,6 +163,49 @@
 .markdown-transform-html strong a {
   display: block;
   margin-top: 8px;
+}
+
+.markdown-transform-html .head-layout {
+  background: rgb(186, 193, 202);
+  position: relative;
+  padding-bottom: 20px;
+  color: white !important;
+}
+
+.markdown-transform-html .head-layout::after,
+.markdown-transform-html .head-layout::before,
+.markdown-transform-html::after {
+  content: "";
+  position: absolute;
+  background: rgb(186, 193, 202);
+
+}
+
+.markdown-transform-html .head-layout::after {
+  width: 31px;
+  height: 100%;
+  left: -31px;
+  top: 0;
+  z-index: -1;
+}
+
+.markdown-transform-html .head-layout::before {
+  width: 31px;
+  height: 100%;
+  right: -31px;
+  top: 0;
+  z-index: -1;
+}
+
+.markdown-transform-html::after {
+  width: 100%;
+  height: 20px;
+  top: 0;
+  left: 0;
+}
+
+.markdown-transform-html .head-layout a {
+  color: white !important;
 }
 
 @media print {
