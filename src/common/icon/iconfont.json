@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1176853",
+      "name": "card",
+      "font_class": "card",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "1293134",
+      "name": "head",
+      "font_class": "head",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "1410620",
+      "name": "work",
+      "font_class": "work",
+      "unicode": "e6fc",
+      "unicode_decimal": 59132
+    },
+    {
+      "icon_id": "3153821",
+      "name": "practice",
+      "font_class": "practice",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "7207749",
+      "name": "organization",
+      "font_class": "organization",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "7239576",
+      "name": "trophy",
+      "font_class": "trophy",
+      "unicode": "e70d",
+      "unicode_decimal": 59149
+    },
+    {
+      "icon_id": "18125947",
+      "name": "book",
+      "font_class": "book",
+      "unicode": "e862",
+      "unicode_decimal": 59490
+    },
+    {
+      "icon_id": "18592431",
+      "name": "city",
+      "font_class": "city",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
       "icon_id": "160001",
       "name": "home",
       "font_class": "home",

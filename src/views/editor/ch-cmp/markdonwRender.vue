@@ -1,12 +1,10 @@
 <script setup lang='ts'>
-import { markdownToHTML } from "markdown-transform-html"
-import { onActivated, ref, watch } from "vue";
-import { importCSS } from "@/common/utils"
+import { ref } from "vue";
+import { useRenderHTML, useCustomCSS } from "../hook"
+import renderDialog from "@/components/renderDialog.vue";
 
 const props = defineProps<{ content: string, resumeType: string }>();
-const renderDOM = ref<HTMLElement>(document.body);
 const step = ref(100);
-
 const marks = {
   0: '0%',
   10: '10%',
@@ -20,26 +18,29 @@ const marks = {
   90: '90%',
   100: '100%',
 }
+// hook...
+const { renderDOM } = useRenderHTML(props);
+const { cssFlag, cssText, toggleDialog, appendStyle, removeStyle } = useCustomCSS()
 
-onActivated(() => {
-  importCSS(props.resumeType)
-  renderDOM.value.innerHTML = markdownToHTML(props.content);
-})
-
-watch(() => props.content, (v) => {
-  renderDOM.value.innerHTML = markdownToHTML(v);
-})
-// 刷新页面（这里是一个比较有问题的点）
-watch(() => props.resumeType, (v, ov) => {
-  location.reload()
-})
 </script>
 
 <template>
   <div class="outer">
-    <el-slider class="slider" :marks="marks" v-model="step" :step="10" show-stops />
-    <div ref="renderDOM" :style="{ transform: `scale(${step / 100})` }" class="markdown-transform-html"></div>
+    <div class="operator">
+      <el-slider size="small" class="slider" :marks="marks" v-model="step" :step="10" show-stops />
+      <button class="btn custom_css" @click="toggleDialog">DIY简历</button>
+    </div>
+    <div ref="renderDOM" :style="{ transform: `scale(${step / 100})` }" class="markdown-transform-html jufe"></div>
+    <!-- 弹出框 -->
+    <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssFlag" @edit-css="appendStyle" @reset-css="removeStyle">
+      <el-input 
+        v-model="cssText" 
+        :rows="10" 
+        type="textarea"
+        placeholder="格式如：.jufe h2 { color: red }" />
+    </renderDialog>
   </div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -50,19 +51,31 @@ watch(() => props.resumeType, (v, ov) => {
   overflow: auto;
   background: #444;
 
-  .slider {
-    margin: 0 auto;
+  .operator {
     width: 794px;
-    transform: translateY(-20px);
+    margin: 0 auto;
     position: sticky;
     top: 0;
-    color: white;
+    transform: translateY(-20px);
+    z-index: 9;
+    background: #444;
+
+    .slider {
+      width: 100%;
+    }
+
+    .custom_css {
+      cursor: pointer;
+      margin: 20px 0 5px 0;
+      padding: 5px 10px;
+      color: white;
+      background: var(--theme);
+    }
   }
 }
 
 .markdown-transform-html {
   border: 1px solid #eee;
-  background: white;
 }
 
 button.download {

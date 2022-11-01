@@ -7,9 +7,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElDialog: typeof import('element-plus/es')['ElDialog']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElSlider: typeof import('element-plus/es')['ElSlider']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    RenderDialog: typeof import('./src/components/renderDialog.vue')['default']
     RenderDrawer: typeof import('./src/components/renderDrawer.vue')['default']
     RenderModal: typeof import('./src/components/renderModal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

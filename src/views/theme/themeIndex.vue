@@ -5,6 +5,7 @@ import resumeCard from './ch-cmp/resumeCard.vue';
 </script>
 
 <template>
+  <marquee behavior="" direction="">"目前模板较少，如果觉得简历模板不符合你的预期，可以提供你觉得好看模板给我~  联系微信：x972761675"</marquee>
   <div class="resume-card-container">
     <resume-card v-for="theme in themes" :key="theme.id" :theme="theme"/>
   </div>
@@ -13,9 +14,6 @@ import resumeCard from './ch-cmp/resumeCard.vue';
 <style lang='scss' scoped>
 .resume-card-container {
   padding: 20px;
-/* 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
   display: flex;
   flex-wrap: wrap;
 }

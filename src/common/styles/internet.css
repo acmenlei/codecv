@@ -1,34 +1,8 @@
-@import url("../icon/iconfont.css");
-
-/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
-@font-face {
-  font-family: "思源黑体 ExtraLight";
-  font-weight: 250;
-  src: url("../font/songti.ttf") format("ttf"),
-    url("../font/songti.ttf") format("ttf");
-  font-display: swap;
-}
-
-/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
-@font-face {
-  font-family: "思源宋体 ExtraLight";
-  font-weight: 250;
-  src: url("//at.alicdn.com/wf/webfont/lx6rbR5SOYM7/wrBcSmKA8x34CTSOHApKt.woff2") format("woff2"),
-    url("//at.alicdn.com/wf/webfont/lx6rbR5SOYM7/hd-6TFKTDb2Aj4l-3QMM2.woff") format("woff");
-  font-display: swap;
-}
-
-/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
-@font-face {
-  font-family: "阿里巴巴普惠体 2.0 65 Medium";
-  font-weight: 300;
-  src: url("//at.alicdn.com/wf/webfont/lx6rbR5SOYM7/VHscMj-Fr6xVEN337c9yc.woff2") format("woff2"),
-    url("//at.alicdn.com/wf/webfont/lx6rbR5SOYM7/f1-RmlZzfYp6hqBap7aIv.woff") format("woff");
-  font-display: swap;
-}
+@import url("./common.css");
 
 :root {
-  font-family: "思源黑体 ExtraLight"
+  color: #567;
+  font-family: "思源宋体 ExtraLight";
 }
 
 .markdown-transform-html {
@@ -36,6 +10,8 @@
   font-size: 14px;
   padding: 20px 30px;
   margin: 0 auto;
+  font-weight: bold;
+  background: #fff;
 }
 
 .markdown-transform-html blockquote {
@@ -76,12 +52,17 @@
   padding: 0;
   margin: 0;
   margin-top: -4px;
+  color: #234;
+}
+
+.markdown-transform-html strong {
+  color: #000;
 }
 
 .markdown-transform-html h1,
 .markdown-transform-html h2 {
-  margin: 10px 0 0 0;
-  border-bottom: 1.5px solid #999;
+  margin: 20px 0 8px 0;
+  border-bottom: 3px solid #999;
 }
 
 .markdown-transform-html h2 {
@@ -150,13 +131,33 @@
 }
 
 .markdown-transform-html li, .markdown-transform-html p {
-  /* font-size: 14px; */
-  margin-top: -2px;
+  margin-top: -1px;
 }
 
 .markdown-transform-html strong a {
   display: block;
   margin-top: 8px;
+}
+
+.markdown-transform-html .head-layout h2 {
+  font-size: 1.8rem;
+  letter-spacing: 8px;
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+.markdown-transform-html .head-layout i {
+  margin-right: 8px;
+}
+
+.markdown-transform-html h2 i.iconfont {
+  font-size: 1.3rem;
+}
+
+.markdown-transform-html .head-layout h2 strong {
+  margin-left: 20px;
+  font-size: 17px;
+  letter-spacing: 2px;
 }
 
 @media print {
