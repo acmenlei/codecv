@@ -23,7 +23,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="markdown-transform-html"></div>
+  <div class="markdown-transform-html jufe"></div>
 </template>
 
 <style lang="scss" scoped>
