@@ -5,6 +5,7 @@ A resume writing tool with markdown syntax, it can convert your markdown syntax 
 
 # syntax
 There are a few new special syntax you may want to know about
+## flex layout
 ```md
 ::: start
 content...
@@ -22,6 +23,18 @@ The above content is converted to the following html format
   <div class="flex-layout-item">content...</div>
 <div>
 ```
-
+## head layout
+Based on this you can specify the style of the elements in the head layout
+```md
+::: headStart
+content....
+::: headStart
+```
+The above content is converted to the following html format
+```html
+<div class="head-layout">
+  content....
+<div>
+```
 # over
 This is a free resume editor markdown, any suggestions are welcome to submit pr, thank you.
