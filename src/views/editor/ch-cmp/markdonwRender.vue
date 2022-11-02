@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { ref } from "vue";
-import { useRenderHTML, useCustomCSS } from "../hook"
+import { useRenderHTML, useCustomCSS, useAutoOnePage } from "../hook"
 import renderDialog from "@/components/renderDialog.vue";
 
 const props = defineProps<{ content: string, resumeType: string }>();
@@ -21,23 +21,24 @@ const marks = {
 // hook...
 const { renderDOM } = useRenderHTML(props);
 const { cssFlag, cssText, toggleDialog, appendStyle, removeStyle } = useCustomCSS()
-
+const { autoOnePage, setAutoOnePage } = useAutoOnePage()
 </script>
 
 <template>
   <div class="outer">
     <div class="operator">
       <el-slider size="small" class="slider" :marks="marks" v-model="step" :step="10" show-stops />
-      <button class="btn custom_css" @click="toggleDialog">DIY简历</button>
+      <div class="operator-level2">
+        <button class="btn custom_css" @click="toggleDialog">DIY简历</button>
+        <el-tooltip effect="dark" content="自动一页" placement="bottom">
+          <el-switch @change="setAutoOnePage" v-model="autoOnePage" />
+        </el-tooltip>
+      </div>
     </div>
     <div ref="renderDOM" :style="{ transform: `scale(${step / 100})` }" class="markdown-transform-html jufe"></div>
     <!-- 弹出框 -->
     <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssFlag" @edit-css="appendStyle" @reset-css="removeStyle">
-      <el-input 
-        v-model="cssText" 
-        :rows="10" 
-        type="textarea"
-        placeholder="格式如：.jufe h2 { color: red }" />
+      <el-input v-model="cssText" :rows="10" type="textarea" placeholder="格式如：.jufe h2 { color: red }" />
     </renderDialog>
   </div>
 
@@ -64,10 +65,16 @@ const { cssFlag, cssText, toggleDialog, appendStyle, removeStyle } = useCustomCS
       width: 100%;
     }
 
+    .operator-level2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
     .custom_css {
       cursor: pointer;
       margin: 20px 0 5px 0;
-      padding: 5px 10px;
+      padding: 3px 10px;
       color: white;
       background: var(--theme);
     }

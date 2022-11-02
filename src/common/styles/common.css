@@ -24,6 +24,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Menlo";
+  src: url("../../../fonts/Menlo-Regular.ttf") format("ttf"),
+    url("../../../fonts/monaco.ttf") format("ttf");
+}
+
 @media print {
   @page {
     size: A4 portrait;

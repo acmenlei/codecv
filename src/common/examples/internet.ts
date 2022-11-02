@@ -1,6 +1,5 @@
 export default `::: headStart
 ## 马牛逼 **社会牛逼工程师**
-
 ::: start
 icon:city xxxx大学 / 社会工程
 icon:email xxxxxxx@163.com
@@ -40,7 +39,14 @@ icon:school GPA:3.92 / Top3%
 - **项目技术栈**：Hadoop、Sqoop、Python、Scrapy、Spark、Hive、MySQL、Flask、ECharts
 - **指责描述**：进行 Hadoop 平台搭建，利用 Scrapy 爬取 QTA 酒店公开数据至 MySQL 中。将爬取的数据进行清洗和分析。将分析好的数据进行维度建模存入 MySQL 中。用 Flask 同 ECharts 将数据进行可视化展现。
 - **项目重点收获**：熟悉了 Scrapy 框架的使用，在 Linux 环境下进行作业，根据指标进行维度建模。
-&nbsp;
+
+- **项目名称**：阿里巴巴达摩院扫地项目
+- **项目时间**：2022.06 - 2022.07
+- **项目描述**：教别人如何扫地，如何扫好地
+- **项目技术栈**：Hadoop、Sqoop、Python、Scrapy、Spark、Hive、MySQL、Flask、ECharts
+- **指责描述**：进行 Hadoop 平台搭建，利用 Scrapy 爬取 QTA 酒店公开数据至 MySQL 中。将爬取的数据进行清洗和分析。将分析好的数据进行维度建模存入 MySQL 中。用 Flask 同 ECharts 将数据进行可视化展现。
+- **项目重点收获**：熟悉了 Scrapy 框架的使用，在 Linux 环境下进行作业，根据指标进行维度建模。
+
 - **项目名称**：阿里巴巴达摩院扫地项目
 - **项目时间**：2022.06 - 2022.07
 - **项目描述**：教别人如何扫地，如何扫好地

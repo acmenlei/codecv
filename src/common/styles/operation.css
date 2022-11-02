@@ -144,6 +144,7 @@
   background: rgb(186, 193, 202);
   position: relative;
   padding-bottom: 20px;
+  padding-left: 10px;
   color: white !important;
 }
 
@@ -153,23 +154,20 @@
   content: "";
   position: absolute;
   background: rgb(186, 193, 202);
-
 }
 
 .markdown-transform-html .head-layout::after {
-  width: 31px;
+  width: 41px;
   height: 100%;
-  left: -31px;
+  left: -30px;
   top: 0;
-  z-index: -1;
 }
 
 .markdown-transform-html .head-layout::before {
-  width: 31px;
+  width: 41px;
   height: 100%;
   right: -31px;
   top: 0;
-  z-index: -1;
 }
 
 .markdown-transform-html::after {

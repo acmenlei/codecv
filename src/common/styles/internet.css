@@ -2,7 +2,6 @@
 
 :root {
   color: #567;
-  font-family: "思源宋体 ExtraLight";
 }
 
 .markdown-transform-html {
@@ -12,6 +11,7 @@
   margin: 0 auto;
   font-weight: bold;
   background: #fff;
+  font-family: "Menlo";
 }
 
 .markdown-transform-html blockquote {
