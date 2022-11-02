@@ -36,5 +36,14 @@ The above content is converted to the following html format
   content....
 <div>
 ```
+## icon
+The icon must end with a space or a border character
+```md
+icon:github 
+```
+The above content is converted to the following html format
+```html
+<i class="iconfont icon-github"></i>
+```
 # over
 This is a free resume editor markdown, any suggestions are welcome to submit pr, thank you.
