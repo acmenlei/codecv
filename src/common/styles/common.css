@@ -26,8 +26,8 @@
 
 @font-face {
   font-family: "Menlo";
-  src: url("../../../fonts/Menlo-Regular.ttf") format("ttf"),
-    url("../../../fonts/monaco.ttf") format("ttf");
+  src: url("../font/Menlo-Regular.ttf") format("ttf"),
+    url("../font/monaco.ttf") format("ttf");
 }
 
 @media print {
