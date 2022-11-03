@@ -66,3 +66,23 @@
 .iconfont.nav-icon {
   margin-right: 5px;
 }
+
+
+.jufe-wrapper-page {
+  height: 1123px;
+  width: 210mm;
+  margin: 0 auto;
+  background: white;
+}
+
+.jufe-wrapper-page-item {
+  width: 210mm;
+  overflow: hidden;
+  position: relative;
+}
+
+.jufe-wrapper-page-split {
+  width: 210mm;
+  height: 18px;
+  background: #444;
+}

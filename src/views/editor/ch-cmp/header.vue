@@ -4,7 +4,7 @@ import RenderModal from "@/components/renderModal.vue"
 import RenderDrawer from "@/components/renderDrawer.vue"
 import { onActivated, ref } from "vue";
 
-const emits = defineEmits(['download']);
+const emits = defineEmits(['download', 'download-native']);
 const fileName = ref('我的简历');
 const flag = ref(false);
 
@@ -12,10 +12,16 @@ onActivated(() => {
   fileName.value = document.title;
 })
 
-const exportor = async () => {
+const exportor = () => {
   document.title = fileName.value;
   emits('download');
 }
+
+const native_exportor = () => {
+  document.title = fileName.value;
+  emits('download-native');
+}
+
 
 const toggle = ref(false);
 const toggleToolTip = () => {
@@ -34,9 +40,11 @@ const toggleToolTip = () => {
     </div>
     <ul class="nav">
       <li v-for="navItem in nav" :class="{ 'active': $route.path === navItem.path }">
-        
-        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''"><i :class="navItem.icon"></i>{{ navItem.name }}</router-link>
-        <RenderModal v-else :toggle='toggle'><i :class="navItem.icon"></i><span @click="toggleToolTip">{{ navItem.name }}</span></RenderModal>
+
+        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''"><i :class="navItem.icon"></i>{{ navItem.name }}
+        </router-link>
+        <RenderModal v-else :toggle='toggle'><i :class="navItem.icon"></i><span @click="toggleToolTip">{{ navItem.name
+        }}</span></RenderModal>
       </li>
     </ul>
     <div class="operator">
@@ -44,7 +52,8 @@ const toggleToolTip = () => {
         <i class="iconfont icon-problem problem" @click="() => flag = !flag"></i>
       </el-tooltip>
       <!-- <button class='save'>保存</button> -->
-      <button class="exportor" @click="exportor">导出PDF</button>
+      <button class="exportor" @click="exportor">动态计算导出PDF</button>
+      <button class="exportor" @click="native_exportor">原生打印机导出PDF</button>
     </div>
   </div>
   <RenderDrawer :flag="flag" />

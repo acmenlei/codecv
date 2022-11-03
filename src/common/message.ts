@@ -16,3 +16,11 @@ export function warningMessage(message: string) {
     type: 'warning',
   })
 }
+
+export function errorMessage(message: string) {
+  ElMessage({
+    showClose: true,
+    message,
+    type: 'error',
+  })
+}

@@ -1,14 +1,15 @@
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/common/hooks/useLcoaStoage";
-import { warningMessage } from "@/common/message";
-import { createStyle, getCurrentTypeContent, Heap, importCSS, optimalizing, Optimalizing, OptimalizingItem, query, removeHeadStyle } from "@/common/utils";
+import { errorMessage, warningMessage } from "@/common/message";
+import { createDIV, createStyle, getCurrentTypeContent, getPdf, Heap, importCSS, optimalizing, Optimalizing, OptimalizingItem, query, removeHeadStyle } from "@/common/utils";
 import { markdownToHTML } from "markdown-transform-html";
-import { onActivated, ref, watch } from "vue";
+import { onActivated, Ref, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const AUTO_ONE_PAGE = 'auto-one-page',
   CUSTOM_CSS_STYLE = 'custom-css-style',
   CUSTOM_MARKDOWN_PRIMARY_COLOR = 'custom-markdown-primary-color',
-  MARKDOWN_CONTENT = 'markdown-content';
+  MARKDOWN_CONTENT = 'markdown-content',
+  A4_HEIGHT = 1123;
 
 
 const set = setLocalStorage, get = getLocalStorage;
@@ -60,10 +61,13 @@ export function useRenderHTML(props: { content: string, resumeType: string }) {
   onActivated(() => {
     importCSS(props.resumeType)
     renderDOM.value.innerHTML = markdownToHTML(props.content);
+    setTimeout(() => splitPage(renderDOM.value), 100);
   })
 
   watch(() => props.content, (v) => {
+    console.log("进行重新计算")
     renderDOM.value.innerHTML = markdownToHTML(v);
+    setTimeout(() => splitPage(renderDOM.value), 100);
   })
   // 刷新页面（这里是一个比较有问题的点）
   watch(() => props.resumeType, () => {
@@ -75,13 +79,49 @@ export function useRenderHTML(props: { content: string, resumeType: string }) {
   }
 }
 
+function splitPage(renderDOM: HTMLElement) {
+  // 需要分割
+  let curHeight = 0, realHeight = 0, target = renderDOM.clientHeight, reRender = document.querySelector('.re-render');
+
+  reRender!.innerHTML = '';
+  while (realHeight < target) {
+    const wrapper = createDIV();
+    wrapper.classList.add('jufe-wrapper-page');
+    renderDOM.appendChild(wrapper);
+    // 创建里面的内容 最小化高度
+    let realRenderHeight = Math.min(target - realHeight, A4_HEIGHT);
+    const wrapperItem = createDIV();
+    wrapperItem.classList.add('jufe-wrapper-page-item');
+    wrapperItem.style.height = realRenderHeight + 'px';
+
+    const resumeNode = renderDOM.cloneNode(true) as HTMLElement;
+    resumeNode.style.position = 'absolute';
+    resumeNode.style.top = curHeight + 'px';
+    resumeNode.style.left = 0 + 'px';
+
+    wrapperItem.appendChild(resumeNode);
+    wrapper.appendChild(wrapperItem);
+
+    curHeight -= A4_HEIGHT + 18;
+    realHeight += A4_HEIGHT;
+
+
+    const splitDOM = createDIV();
+    splitDOM.classList.add('jufe-wrapper-page-split');
+    curHeight += 18;
+
+    reRender?.appendChild(wrapper);
+    reRender?.appendChild(splitDOM);
+  }
+}
+
 /* 自动一页 Start */
 export function useAutoOnePage(resumeType: string) {
   const cacheKey = AUTO_ONE_PAGE + '-' + resumeType, autoOnePage = ref(get(cacheKey))
 
   async function setAutoOnePage() {
+    const container: HTMLElement = document.querySelector('.markdown-transform-html') as HTMLElement;
     if (autoOnePage.value) {
-      const container: HTMLElement = document.querySelector('.markdown-transform-html') as HTMLElement;
       const difference = 1123 - container?.clientHeight;
       if (difference < 0 && difference < -200) {
         warningMessage('你的内容有点太多啦！压缩成一页的话不太美观哦～')
@@ -98,6 +138,7 @@ export function useAutoOnePage(resumeType: string) {
     }
     // 缓存3个小时
     set(cacheKey, autoOnePage.value)
+    setTimeout(() => splitPage(container), 100);
   }
   onActivated(() => !query(cacheKey) && setTimeout(setAutoOnePage, 50))
 
@@ -225,10 +266,17 @@ export function useResumeType() {
 export function useDownLoad(type: string, content: string) {
   const router = useRouter();
   const download = () => {
+
+    getPdf('resume', document.querySelector('.jufe') as HTMLElement)
+
+  }
+
+  const downloadNative = () => {
     localStorage.setItem('download', JSON.stringify(markdownToHTML(content)))
     router.push({ path: '/download', query: { type } })
   }
   return {
-    download
+    download,
+    downloadNative
   }
 }

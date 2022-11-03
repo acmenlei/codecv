@@ -5,12 +5,12 @@ import { useMarkdownContent, useResumeType, useDownLoad } from "./hook"
 
 const { resumeType } = useResumeType()
 const { content, setContent } = useMarkdownContent(resumeType.value)
-const { download } = useDownLoad(resumeType.value, content.value);
+const { download, downloadNative } = useDownLoad(resumeType.value, content.value);
 
 </script>
 
 <template>
-  <Header @download="download" />
+  <Header @download="download" @download-native="downloadNative"/>
   <div id="root">
     <textarea class="markdown-edit" @input="setContent" v-model="content"></textarea>
     <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" />
@@ -20,10 +20,10 @@ const { download } = useDownLoad(resumeType.value, content.value);
 <style lang="scss" scoped>
 #root {
   display: flex;
+
   .markdown-edit {
     flex: 1;
-    max-width: 800px;
-    min-width: 400px;
+    max-width: 600px;
     height: 100vh;
     overflow: hidden;
     overflow-y: auto;
@@ -35,9 +35,10 @@ const { download } = useDownLoad(resumeType.value, content.value);
     padding: 10px;
     font-size: 15px;
   }
+
   .markdown-render {
     flex: 1;
-    padding: 20px;
+    padding: 10px 20px;
   }
 }
 </style>
