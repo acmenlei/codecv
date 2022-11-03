@@ -1,16 +1,12 @@
 @import url("./common.css");
 
-:root {
-  color: #567;
-}
-
 .markdown-transform-html {
   width: 794px;
   font-size: 14px;
   padding: 20px 30px;
   margin: 0 auto;
-  font-weight: bold;
   background: #fff;
+  color:var(--markdown-primary-color);
   font-family: "Menlo";
 }
 
@@ -52,17 +48,13 @@
   padding: 0;
   margin: 0;
   margin-top: -4px;
-  color: #234;
-}
-
-.markdown-transform-html strong {
-  color: #000;
+  /* color:var(--markdown-primary-color); */
 }
 
 .markdown-transform-html h1,
 .markdown-transform-html h2 {
   margin: 20px 0 8px 0;
-  border-bottom: 3px solid #999;
+  border-bottom: 3px solid var(--markdown-primary-color);;
 }
 
 .markdown-transform-html h2 {
@@ -104,7 +96,7 @@
 }
 
 .markdown-transform-html a {
-  color: #222;
+  color:var(--markdown-primary-color);
   text-decoration: none;
 }
 
@@ -158,25 +150,4 @@
   margin-left: 20px;
   font-size: 17px;
   letter-spacing: 2px;
-}
-
-@media print {
-  @page {
-    size: A4 portrait;
-    margin: 0;
-    padding: 0;
-  }
-
-  .other-ele {
-    display: none;
-  }
-
-  .pdf-title {
-    display: block;
-  }
-
-  .panel-sm {
-    margin: 0;
-    border: 1px solid #bce8f1;
-  }
 }

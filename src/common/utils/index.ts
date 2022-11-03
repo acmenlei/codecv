@@ -4,7 +4,6 @@ export const importCSS = async (name: string) => {
   return await import(`@/common/styles/${name}.css`);
 }
 
-
 export const getCurrentTypeContent = (type: string): string => {
   for (let theme of themes) {
     if (type === theme.type) {
@@ -91,4 +90,16 @@ export class Heap {
   isEmpty() {
     return this.container.length === 0;
   }
+}
+
+export function createStyle() {
+  return document.createElement('style');
+}
+
+export function query(attr: string) {
+  return document.head.querySelector(`style[${attr}]`);
+}
+
+export function removeHeadStyle(attr: string) {
+  query(attr)?.remove();
 }

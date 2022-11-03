@@ -1,16 +1,13 @@
 @import url("./common.css");
 
-:root {
-  font-family: "思源黑体 ExtraLight"
-}
-
 .markdown-transform-html {
   width: 794px;
-  color: #333;
+  color:var(--markdown-primary-color);
   margin: 0 auto;
   font-size: 14px;
   padding: 20px 30px;
   background: white;
+  font-family: "思源黑体 ExtraLight";
 }
 
 .markdown-transform-html blockquote {
@@ -56,7 +53,7 @@
 .markdown-transform-html h1,
 .markdown-transform-html h2 {
   margin: 10px 0 0 0;
-  border-bottom: 1.5px solid #999;
+  border-bottom: 1.5px solid var(--markdown-primary-color);
 }
 
 .markdown-transform-html h2 {
@@ -98,7 +95,7 @@
 }
 
 .markdown-transform-html a {
-  color: #222;
+  color: var(--markdown-primary-color);
   text-decoration: none;
 }
 

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { ref } from "vue";
-import { useRenderHTML, useCustomCSS, useAutoOnePage } from "../hook"
+import { useRenderHTML, useCustomCSS, useAutoOnePage, useCustomColor } from "../hook"
 import renderDialog from "@/components/renderDialog.vue";
 
 const props = defineProps<{ content: string, resumeType: string }>();
@@ -20,8 +20,9 @@ const marks = {
 }
 // hook...
 const { renderDOM } = useRenderHTML(props);
-const { cssFlag, cssText, toggleDialog, appendStyle, removeStyle } = useCustomCSS()
-const { autoOnePage, setAutoOnePage } = useAutoOnePage()
+const { cssFlag, cssText, toggleDialog, setStyle, removeStyle } = useCustomCSS(props.resumeType)
+const { autoOnePage, setAutoOnePage } = useAutoOnePage(props.resumeType)
+const { color, setColor } = useCustomColor(props.resumeType);
 </script>
 
 <template>
@@ -30,6 +31,7 @@ const { autoOnePage, setAutoOnePage } = useAutoOnePage()
       <el-slider size="small" class="slider" :marks="marks" v-model="step" :step="10" show-stops />
       <div class="operator-level2">
         <button class="btn custom_css" @click="toggleDialog">DIY简历</button>
+        <el-color-picker @change="setColor" size="small" v-model="color" />
         <el-tooltip effect="dark" content="自动一页" placement="bottom">
           <el-switch @change="setAutoOnePage" v-model="autoOnePage" />
         </el-tooltip>
@@ -37,7 +39,7 @@ const { autoOnePage, setAutoOnePage } = useAutoOnePage()
     </div>
     <div ref="renderDOM" :style="{ transform: `scale(${step / 100})` }" class="markdown-transform-html jufe"></div>
     <!-- 弹出框 -->
-    <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssFlag" @edit-css="appendStyle" @reset-css="removeStyle">
+    <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssFlag" @edit-css="setStyle" @reset-css="removeStyle">
       <el-input v-model="cssText" :rows="10" type="textarea" placeholder="格式如：.jufe h2 { color: red }" />
     </renderDialog>
   </div>
@@ -69,11 +71,12 @@ const { autoOnePage, setAutoOnePage } = useAutoOnePage()
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      padding-bottom: 5px;
     }
 
     .custom_css {
       cursor: pointer;
-      margin: 20px 0 5px 0;
+      margin: 20px 0 0 0;
       padding: 3px 10px;
       color: white;
       background: var(--theme);

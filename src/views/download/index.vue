@@ -10,7 +10,6 @@ onMounted(() => {
   importCSS(String(route.query.type));
   const content = JSON.parse(localStorage.getItem('download') || '');
   (document.querySelector(".markdown-transform-html") as HTMLElement).innerHTML = content;
-
   setTimeout(() => {
     window.print();
     router.back();

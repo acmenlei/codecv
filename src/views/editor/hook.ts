@@ -1,47 +1,55 @@
+import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/common/hooks/useLcoaStoage";
 import { warningMessage } from "@/common/message";
-import { Heap, importCSS, optimalizing, Optimalizing, OptimalizingItem } from "@/common/utils";
+import { createStyle, getCurrentTypeContent, Heap, importCSS, optimalizing, Optimalizing, OptimalizingItem, query, removeHeadStyle } from "@/common/utils";
 import { markdownToHTML } from "markdown-transform-html";
 import { onActivated, ref, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
-export function useCustomCSS() {
-  let cssFlag = ref(false);
-  let cssText = ref(""), styles = new Set;
+const AUTO_ONE_PAGE = 'auto-one-page',
+  CUSTOM_CSS_STYLE = 'custom-css-style',
+  CUSTOM_MARKDOWN_PRIMARY_COLOR = 'custom-markdown-primary-color',
+  MARKDOWN_CONTENT = 'markdown-content';
 
-  function removeStyleDOM() {
-    const styleDOMs = document.querySelector("head")?.querySelectorAll("style[custom-css-style]");
-    styleDOMs?.forEach(style => style.remove())
-    styles.clear(); // set中存储的样式表也需要清空
-  }
+
+const set = setLocalStorage, get = getLocalStorage;
+
+export function useCustomCSS(resumeType: string) {
+  let cssFlag = ref(false), cacheKey = CUSTOM_CSS_STYLE + '-' + resumeType;
+  let cssText = ref(get(cacheKey) ? get(cacheKey) as string : '');
 
   function toggleDialog() {
     cssFlag.value = !cssFlag.value;
   }
 
-  function appendStyle() {
+  function setStyle() {
     cssFlag.value = false;
-    let cssValue = cssText.value.trim();
-    if (!cssText.value || styles.has(cssValue)) {
+    let cssValue = cssText.value.trim(), style = query(cacheKey), isAppend = style;
+    if (!cssText.value) {
       return;
     }
-    removeStyleDOM(); // 清空之前的样式表重新来一个新的样式表
-    styles.add(cssValue);
-    const styleDOM = document.createElement("style");
-    styleDOM.setAttribute('custom-css-style', 'true');
-    styleDOM.textContent = cssValue;
-    document.querySelector('head')?.appendChild(styleDOM);
+    if (!style) {
+      style = createStyle();
+      style.setAttribute(cacheKey, 'true');
+    }
+    style.textContent = cssValue;
+    !isAppend && document.head?.appendChild(style);
+    set(cacheKey, cssValue);
   }
 
   function removeStyle() {
     cssFlag.value = false;
-    removeStyleDOM();
+    removeHeadStyle(cacheKey);
+    removeLocalStorage(cacheKey);
     cssText.value = '';
   }
+
+  onActivated(() => !query(cacheKey) && setTimeout(setStyle, 50))
 
   return {
     cssFlag,
     cssText,
     toggleDialog,
-    appendStyle,
+    setStyle,
     removeStyle
   }
 }
@@ -68,13 +76,8 @@ export function useRenderHTML(props: { content: string, resumeType: string }) {
 }
 
 /* 自动一页 Start */
-export function useAutoOnePage() {
-  const autoOnePage = ref(false)
-
-  function removeStyle() {
-    const autoOnePageStyles = document.head.querySelectorAll('style[auto-one-page]');
-    autoOnePageStyles.forEach(style => style.remove())
-  }
+export function useAutoOnePage(resumeType: string) {
+  const cacheKey = AUTO_ONE_PAGE + '-' + resumeType, autoOnePage = ref(get(cacheKey))
 
   async function setAutoOnePage() {
     if (autoOnePage.value) {
@@ -89,13 +92,15 @@ export function useAutoOnePage() {
         return
       }
       const { differenceConfig, map } = useInitMarginTop(container);
-      useOnePageCSSContent(differenceConfig, difference, map)
+      useOnePageCSSContent(differenceConfig, difference, map, cacheKey)
     } else {
-      removeStyle()
+      removeHeadStyle(cacheKey)
     }
+    // 缓存3个小时
+    set(cacheKey, autoOnePage.value)
   }
+  onActivated(() => !query(cacheKey) && setTimeout(setAutoOnePage, 50))
 
-  onActivated(() => removeStyle())
   return {
     autoOnePage,
     setAutoOnePage
@@ -122,7 +127,7 @@ function useInitMarginTop(container: HTMLElement) {
   return { differenceConfig, map };
 }
 
-function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number, map: Map<string, number>) {
+function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number, map: Map<string, number>, cacheKey: string) {
   const heap = new Heap((x, y) => difference < 0 ? x.optimal < y.optimal : x.optimal > y.optimal);
   for (let optimal of optimaliza) {
     heap.push(optimal);
@@ -133,7 +138,6 @@ function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number
     while (difference++ < 0) {
       let topEl = heap.pop();
       topEl!.top = topEl!.top - 1 / (map.get(topEl!.tag) || 1);
-      // console.log("处理中：", topEl!.tag, 1 / (map.get(topEl!.tag) || 1))
       topEl!.optimal = (topEl!.max - topEl!.top) / topEl!.max;
       heap.push(topEl as OptimalizingItem)
     }
@@ -141,21 +145,90 @@ function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number
     // console.log("不足一页内容长度：", difference, heap.container)
     while (difference-- > 0) {
       let topEl = heap.pop();
-      // console.log("处理前：", topEl?.tag, topEl?.top)
       topEl!.top = topEl!.top + 1 / (map.get(topEl!.tag) || 1);
-      // console.log("处理后：", topEl?.tag, topEl?.top)
       topEl!.optimal = (topEl!.max - topEl!.top) / topEl!.max;
       heap.push(topEl as OptimalizingItem)
     }
   }
   // 创建样式表
-  const styleDOM = document.createElement('style'), prefix = '.jufe ';
+  const styleDOM = createStyle(), prefix = '.jufe ';
   let cssText = '';
-  styleDOM.setAttribute('auto-one-page', 'true');
+  styleDOM.setAttribute(cacheKey, 'true');
 
   for (let optimal of heap.container) {
     cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px }`;
   }
   styleDOM.textContent = cssText;
   document.head.appendChild(styleDOM);
+}
+
+// todo: 回跳后颜色显示的问题，后续考虑接入后端解决
+export function useCustomColor(resumeType: string) {
+  const cacheKey = CUSTOM_MARKDOWN_PRIMARY_COLOR + '-' + resumeType,
+    color = ref(get(cacheKey) ? get(cacheKey) as string : '#333');
+
+  function setColor(value: string) {
+    let styleDOM = query(cacheKey), isAppend = styleDOM,
+      prefix = '.markdown-transform-html ',
+      doms = ['', 'h1', 'h2', 'a'],
+      cssText = "";
+
+    if (!styleDOM) {
+      styleDOM = createStyle();
+      styleDOM.setAttribute(cacheKey, 'true');
+    }
+    for (let dom of doms) {
+      cssText += `${prefix}${dom} { color: ${value}; ${['h1', 'h2'].includes(dom) ? `border-color: ${value}` : ''} }`
+    }
+    // 排除head layout布局中的元素 让他继承父元素 (head-layout选择器中定义好了颜色 直接继承即可)
+    cssText += `${prefix}.head-layout h1,${prefix}.head-layout h2 { color: inherit; }`
+    styleDOM.textContent = cssText;
+    !isAppend && document.head.appendChild(styleDOM);
+    set(cacheKey, value);
+  }
+
+  onActivated(() => !query(cacheKey) && setTimeout(() => setColor(color.value), 50))
+
+  return {
+    color,
+    setColor
+  }
+}
+
+// 缓存用户输入的content内容
+export function useMarkdownContent(resumeType: string) {
+  const cacheKey = MARKDOWN_CONTENT + '-' + resumeType;
+  let content = ref(getLocalStorage(cacheKey) ? getLocalStorage(cacheKey) as string : getCurrentTypeContent(resumeType));
+
+  function setContent() {
+    setLocalStorage(cacheKey, content.value);
+  }
+
+  return {
+    content,
+    setContent
+  }
+}
+
+export function useResumeType() {
+  const route = useRoute();
+  //初始化也需要填上值 否则后续更新不一致会导致刷新死循环
+  const resumeType = ref(route.query.type ? String(route.query.type) : 'front_end');
+  onActivated(() => {
+    resumeType.value = route.query.type ? String(route.query.type) : 'front_end';
+  })
+  return {
+    resumeType
+  }
+}
+
+export function useDownLoad(type: string, content: string) {
+  const router = useRouter();
+  const download = () => {
+    localStorage.setItem('download', JSON.stringify(markdownToHTML(content)))
+    router.push({ path: '/download', query: { type } })
+  }
+  return {
+    download
+  }
 }

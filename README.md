@@ -1,5 +1,6 @@
 # markdown-resume
 A resume writing tool with markdown syntax, it can convert your markdown syntax to pdf format.
+(safari is not supported at this time because safari has some printing limitations)
 
 [To try](https://acmenlei.github.io/markdown-resume-to-pdf/dist/)
 
