@@ -8,7 +8,7 @@ export default {
     {
       path: "/editor",
       name: 'editor',
-      component: () => import("@/views/editor/editorIndex.vue")
+      component: () => import("@/views/editor/editor.vue")
     }
   ]
 }

@@ -44,7 +44,7 @@ const clipborad = (item: Icon) => {
     background: #fff;
     padding: 10px;
     color: #333;
-    box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 5px #ccc;
     border-radius: 5px;
     top: 50px;
     display: grid;

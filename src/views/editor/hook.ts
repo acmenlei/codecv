@@ -1,5 +1,5 @@
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/common/hooks/useLcoaStoage";
-import { errorMessage, warningMessage } from "@/common/message";
+import { warningMessage } from "@/common/message";
 import { createDIV, createStyle, getCurrentTypeContent, getPdf, Heap, importCSS, optimalizing, Optimalizing, OptimalizingItem, query, removeHeadStyle } from "@/common/utils";
 import { markdownToHTML } from "markdown-transform-html";
 import { onActivated, Ref, ref, watch } from "vue";
@@ -9,8 +9,8 @@ const AUTO_ONE_PAGE = 'auto-one-page',
   CUSTOM_CSS_STYLE = 'custom-css-style',
   CUSTOM_MARKDOWN_PRIMARY_COLOR = 'custom-markdown-primary-color',
   MARKDOWN_CONTENT = 'markdown-content',
+  // REUME_TYPE_STYLE = 'resume-type-style',
   A4_HEIGHT = 1123;
-
 
 const set = setLocalStorage, get = getLocalStorage;
 
@@ -58,16 +58,15 @@ export function useCustomCSS(resumeType: string) {
 export function useRenderHTML(props: { content: string, resumeType: string }) {
   const renderDOM = ref<HTMLElement>(document.body);
 
-  onActivated(() => {
-    importCSS(props.resumeType)
+  onActivated(async () => {
+    importCSS(props.resumeType);
     renderDOM.value.innerHTML = markdownToHTML(props.content);
-    setTimeout(() => splitPage(renderDOM.value), 100);
+    setTimeout(() => splitPage(renderDOM.value), 50);
   })
 
   watch(() => props.content, (v) => {
-    console.log("进行重新计算")
     renderDOM.value.innerHTML = markdownToHTML(v);
-    setTimeout(() => splitPage(renderDOM.value), 100);
+    setTimeout(() => splitPage(renderDOM.value), 50);
   })
   // 刷新页面（这里是一个比较有问题的点）
   watch(() => props.resumeType, () => {
@@ -122,7 +121,7 @@ export function useAutoOnePage(resumeType: string) {
   async function setAutoOnePage() {
     const container: HTMLElement = document.querySelector('.markdown-transform-html') as HTMLElement;
     if (autoOnePage.value) {
-      const difference = 1123 - container?.clientHeight;
+      const difference = A4_HEIGHT - container?.clientHeight;
       if (difference < 0 && difference < -200) {
         warningMessage('你的内容有点太多啦！压缩成一页的话不太美观哦～')
         return
@@ -237,9 +236,9 @@ export function useCustomColor(resumeType: string) {
 }
 
 // 缓存用户输入的content内容
-export function useMarkdownContent(resumeType: string) {
-  const cacheKey = MARKDOWN_CONTENT + '-' + resumeType;
-  let content = ref(getLocalStorage(cacheKey) ? getLocalStorage(cacheKey) as string : getCurrentTypeContent(resumeType));
+export function useMarkdownContent(resumeType: Ref<string>) {
+  const cacheKey = MARKDOWN_CONTENT + '-' + resumeType.value;
+  let content = ref(getLocalStorage(cacheKey) ? getLocalStorage(cacheKey) as string : getCurrentTypeContent(resumeType.value));
 
   function setContent() {
     setLocalStorage(cacheKey, content.value);
@@ -263,17 +262,15 @@ export function useResumeType() {
   }
 }
 
-export function useDownLoad(type: string, content: string) {
+export function useDownLoad(type: Ref<string>, content: Ref<string>) {
   const router = useRouter();
-  const download = () => {
-
-    getPdf('resume', document.querySelector('.jufe') as HTMLElement)
-
+  const download = (fileName: string) => {
+    getPdf(fileName, document.querySelector('.jufe') as HTMLElement)
   }
 
   const downloadNative = () => {
-    localStorage.setItem('download', JSON.stringify(markdownToHTML(content)))
-    router.push({ path: '/download', query: { type } })
+    localStorage.setItem('download', JSON.stringify(markdownToHTML(content.value)))
+    router.push({ path: '/download', query: { type: type.value } })
   }
   return {
     download,

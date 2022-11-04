@@ -4,13 +4,12 @@ import MarkdownRender from "@/views/editor/ch-cmp/markdonwRender.vue"
 import { useMarkdownContent, useResumeType, useDownLoad } from "./hook"
 
 const { resumeType } = useResumeType()
-const { content, setContent } = useMarkdownContent(resumeType.value)
-const { download, downloadNative } = useDownLoad(resumeType.value, content.value);
-
+const { content, setContent } = useMarkdownContent(resumeType)
+const { download, downloadNative } = useDownLoad(resumeType, content);
 </script>
 
 <template>
-  <Header @download="download" @download-native="downloadNative"/>
+  <Header @download="download" @download-native="downloadNative" />
   <div id="root">
     <textarea class="markdown-edit" @input="setContent" v-model="content"></textarea>
     <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" />
@@ -23,22 +22,20 @@ const { download, downloadNative } = useDownLoad(resumeType.value, content.value
 
   .markdown-edit {
     flex: 1;
-    max-width: 600px;
+    max-width: 650px;
     height: 100vh;
-    overflow: hidden;
-    overflow-y: auto;
-    overflow-x: auto;
+    overflow: auto;
     border: none;
     border-right: 1px solid #999;
     outline: none;
-    resize: none;
+    resize: horizontal;
     padding: 10px;
     font-size: 15px;
   }
 
   .markdown-render {
     flex: 1;
-    padding: 10px 20px;
+    padding: 10px 40px;
   }
 }
 </style>

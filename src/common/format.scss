@@ -86,3 +86,9 @@
   height: 18px;
   background: #444;
 }
+
+#header {
+  white-space: nowrap;
+  z-index: 9;
+  position: relative;
+}

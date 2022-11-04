@@ -18,7 +18,6 @@ import outNav from "@/common/nav/outNav"
 <style lang='scss' scoped>
 #header {
   background: #fff;
-  min-width: 1124px;
   z-index: 1;
   transition: background .5s;
   box-shadow: 0 0 10px 0 #d0d3db;

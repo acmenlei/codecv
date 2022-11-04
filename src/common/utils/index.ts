@@ -2,8 +2,9 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { themes } from "../theme";
 
-export const importCSS = async (name: string) => {
-  return await import(`@/common/styles/${name}.css`);
+export async function importCSS(name: string) {
+  const res = await import(`@/common/styles/${name}.css`);
+  return res.default;
 }
 
 export const getCurrentTypeContent = (type: string): string => {

@@ -19,7 +19,6 @@ import nav from "@/common/nav/homeNav"
 
 <style lang='scss' scoped>
 #header {
-  min-width: 1124px;
   z-index: 1;
   transition: background .5s;
   height: 60px;

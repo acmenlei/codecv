@@ -13,15 +13,13 @@ onActivated(() => {
 })
 
 const exportor = () => {
-  document.title = fileName.value;
-  emits('download');
+  emits('download', fileName.value);
 }
 
 const native_exportor = () => {
   document.title = fileName.value;
   emits('download-native');
 }
-
 
 const toggle = ref(false);
 const toggleToolTip = () => {
@@ -40,7 +38,6 @@ const toggleToolTip = () => {
     </div>
     <ul class="nav">
       <li v-for="navItem in nav" :class="{ 'active': $route.path === navItem.path }">
-
         <router-link v-if="!navItem.tooltip" :to="navItem.path || ''"><i :class="navItem.icon"></i>{{ navItem.name }}
         </router-link>
         <RenderModal v-else :toggle='toggle'><i :class="navItem.icon"></i><span @click="toggleToolTip">{{ navItem.name
@@ -62,8 +59,7 @@ const toggleToolTip = () => {
 <style lang='scss' scoped>
 #header {
   background: #fff;
-  min-width: 1124px;
-  z-index: 1;
+  z-index: 9;
   transition: background .5s;
   box-shadow: 0 0 10px 0 #d0d3db;
   height: 60px;

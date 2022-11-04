@@ -8,7 +8,7 @@ export default {
     {
       path: "/theme",
       name: 'theme',
-      component: () => import("@/views/theme/themeIndex.vue")
+      component: () => import("@/views/theme/theme.vue")
     }
   ]
 }

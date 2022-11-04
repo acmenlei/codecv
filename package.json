@@ -12,7 +12,7 @@
     "element-plus": "^2.2.19",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
-    "markdown-transform-html": "^1.4.2",
+    "markdown-transform-html": "^1.4.3",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6"
   },

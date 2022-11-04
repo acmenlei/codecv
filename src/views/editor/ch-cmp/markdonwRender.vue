@@ -37,9 +37,9 @@ const { color, setColor } = useCustomColor(props.resumeType);
         </el-tooltip>
       </div>
     </div>
-    <div ref="renderDOM"  :style="{ transform: `scale(${step / 100});`, position: 'absolute', left: '-9999px', top: '-9999px' }" class="markdown-transform-html jufe"></div>
+    <div ref="renderDOM" class="markdown-transform-html jufe"></div>
 
-    <div class="re-render"></div>
+    <div class="re-render" :style="{ transform: `scale(${step / 100})` }"></div>
     <!-- 弹出框 -->
     <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssFlag" @edit-css="setStyle" @reset-css="removeStyle">
       <el-input v-model="cssText" :rows="10" type="textarea" placeholder="格式如：.jufe h2 { color: red }" />
@@ -50,9 +50,7 @@ const { color, setColor } = useCustomColor(props.resumeType);
 
 <style lang="scss" scoped>
 .outer {
-  width: 100%;
   height: 100vh;
-  min-width: 794px;
   overflow: auto;
   background: #444;
 
@@ -62,7 +60,7 @@ const { color, setColor } = useCustomColor(props.resumeType);
     position: sticky;
     top: 0;
     transform: translateY(-20px);
-    z-index: 9;
+    z-index: 1;
     background: #444;
 
     .slider {
@@ -86,6 +84,11 @@ const { color, setColor } = useCustomColor(props.resumeType);
   }
 }
 
+.jufe {
+  position: absolute;
+  left: -9990px;
+  top: -9990px;
+}
 button.download {
   position: fixed;
   right: 50px;
