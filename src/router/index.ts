@@ -1,4 +1,9 @@
 import { RouteRecordRaw, createRouter, createWebHashHistory } from "vue-router"
+import nprogress from "nprogress";
+import "nprogress/nprogress.css"
+
+nprogress.configure({ easing: 'ease', speed: 300 });
+const whiteList = ['/download']
 
 /* 统一导入路由 */
 const routeFiles = import.meta.globEager('./modules/*')
@@ -31,5 +36,13 @@ const router = createRouter({
   history: createWebHashHistory()
 })
 
+router.beforeEach((to) => {
+  if (!whiteList.includes(to.path)) {
+    nprogress.start()
+  }
+})
+router.afterEach(() => {
+  nprogress.done()
+})
 
 export default router;
