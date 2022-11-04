@@ -1,3 +1,10 @@
+@import url("./icon/iconfont.css");
+
+:root {
+  --theme: rgb(70, 147, 255);
+  --markdown-primary-color: #333;
+}
+
 .btn {
   border: none;
   outline: none;
@@ -22,11 +29,6 @@
       text-decoration: none;
     }
   }
-}
-
-:root {
-  --theme: rgb(70, 147, 255);
-  --markdown-primary-color: #333;
 }
 
 .center {
@@ -58,6 +60,7 @@
   a {
     color: var(--theme) !important;
   }
+
   i {
     color: var(--theme);
   }
@@ -65,6 +68,7 @@
 
 .iconfont.nav-icon {
   margin-right: 5px;
+  font-size: 1.1rem;
 }
 
 

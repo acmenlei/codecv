@@ -1,4 +1,4 @@
-const outNav = [
+const homeNav = [
   {
     name: '简历模板',
     path: '/theme',
@@ -18,4 +18,4 @@ const outNav = [
   }
 ]
 
-export default outNav;
+export default homeNav;

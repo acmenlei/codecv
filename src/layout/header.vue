@@ -8,7 +8,7 @@ import outNav from "@/common/nav/outNav"
     <ul class="nav">
       <li v-for="navItem in outNav" :class="{ 'active': $route.path === navItem.path }">
         <i :class="navItem.icon"></i>
-        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
+        <router-link v-if="!navItem.tooltip" :to="navItem.path">{{ navItem.name }}</router-link>
         <span v-else>{{ navItem.name }}</span>
       </li>
     </ul>
