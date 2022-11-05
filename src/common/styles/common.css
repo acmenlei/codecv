@@ -28,6 +28,11 @@
     url("../font/monaco.ttf") format("ttf");
 }
 
+.markdown-transform-html code.single-code {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
 @media print {
   @page {
     size: A4 portrait;
