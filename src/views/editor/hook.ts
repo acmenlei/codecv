@@ -9,7 +9,7 @@ const AUTO_ONE_PAGE = 'auto-one-page',
   CUSTOM_CSS_STYLE = 'custom-css-style',
   CUSTOM_MARKDOWN_PRIMARY_COLOR = 'custom-markdown-primary-color',
   MARKDOWN_CONTENT = 'markdown-content',
-  // REUME_TYPE_STYLE = 'resume-type-style',
+  MARKDOWN_FONT = 'markdown-font',
   A4_HEIGHT = 1123;
 
 const set = setLocalStorage, get = getLocalStorage;
@@ -275,5 +275,51 @@ export function useDownLoad(type: Ref<string>, content: Ref<string>) {
   return {
     download,
     downloadNative
+  }
+}
+
+export function useCustomFont(resumeType: string) {
+  const cacheKey = MARKDOWN_FONT + '-' + resumeType;
+  const fontOptions = [
+    {
+      value: 'Helvetica Neue',
+      label: 'Helvetica Neue'
+    },
+    {
+      value: '思源宋体 ExtraLight',
+      label: '思源宋体 ExtraLight',
+    },
+    {
+      value: '阿里巴巴普惠体 2.0 65 Medium',
+      label: '阿里巴巴普惠体 2.0 65 Medium',
+    },
+    {
+      value: 'Menlo-Regular',
+      label: 'Menlo-Regular',
+    },
+    {
+      value: "仓耳渔阳体 W02",
+      label: "仓耳渔阳体 W02",
+    },
+  ]
+  const font = ref(get(cacheKey) ? get(cacheKey) as string : '思源宋体 ExtraLight')
+
+  function setFont(fontFamily: string) {
+    let style = query(cacheKey), isAppend = style;
+    if (!style) {
+      style = createStyle();
+      style.setAttribute(cacheKey, 'true');
+    }
+    style.textContent = `.jufe { font-family: ${fontFamily}; }`;
+    !isAppend && document.head.appendChild(style);
+    set(cacheKey, fontFamily);
+  }
+
+  onActivated(() => setFont(font.value))
+
+  return {
+    fontOptions,
+    font,
+    setFont
   }
 }

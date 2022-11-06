@@ -1,31 +1,29 @@
 @font-face {
-  font-family: "思源黑体 ExtraLight";
-  font-weight: 250;
-  src: url("../font/songti.ttf") format("ttf"),
-    url("../font/songti.ttf") format("ttf");
-  font-display: swap;
-}
-
-@font-face {
   font-family: "思源宋体 ExtraLight";
   font-weight: 250;
-  src: url("//at.alicdn.com/wf/webfont/lx6rbR5SOYM7/wrBcSmKA8x34CTSOHApKt.woff2") format("woff2"),
-    url("//at.alicdn.com/wf/webfont/lx6rbR5SOYM7/hd-6TFKTDb2Aj4l-3QMM2.woff") format("woff");
-  font-display: swap;
+  src: url("../font/思源宋体ExtraLight.ttf") format("ttf");
 }
 
 @font-face {
   font-family: "阿里巴巴普惠体 2.0 65 Medium";
   font-weight: 300;
-  src: url("//at.alicdn.com/wf/webfont/lx6rbR5SOYM7/VHscMj-Fr6xVEN337c9yc.woff2") format("woff2"),
-    url("//at.alicdn.com/wf/webfont/lx6rbR5SOYM7/f1-RmlZzfYp6hqBap7aIv.woff") format("woff");
+  src: url("../font/阿里巴巴普惠体Medium.woff2") format("woff2"),
+    url("../font/阿里巴巴普惠体Medium.woff") format("woff");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Menlo";
+  font-family: "Menlo-Regular";
   src: url("../font/Menlo-Regular.ttf") format("ttf"),
     url("../font/monaco.ttf") format("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "仓耳渔阳体 W02";
+  src: url("../font/仓耳渔阳体W02.woff2") format("woff2"),
+    url("../font/仓耳渔阳体W02.woff") format("woff");
+  font-display: swap;
 }
 
 .markdown-transform-html code.single-code {

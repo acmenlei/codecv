@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { ref } from "vue";
-import { useRenderHTML, useCustomCSS, useAutoOnePage, useCustomColor } from "../hook"
+import { useRenderHTML, useCustomCSS, useAutoOnePage, useCustomColor, useCustomFont } from "../hook"
 import renderDialog from "@/components/renderDialog.vue";
 
 const props = defineProps<{ content: string, resumeType: string }>();
@@ -23,6 +23,7 @@ const { renderDOM } = useRenderHTML(props);
 const { cssFlag, cssText, toggleDialog, setStyle, removeStyle } = useCustomCSS(props.resumeType)
 const { autoOnePage, setAutoOnePage } = useAutoOnePage(props.resumeType)
 const { color, setColor } = useCustomColor(props.resumeType);
+const { fontOptions, font, setFont } = useCustomFont(props.resumeType);
 </script>
 
 <template>
@@ -30,15 +31,18 @@ const { color, setColor } = useCustomColor(props.resumeType);
     <div class="operator">
       <el-slider size="small" class="slider" :marks="marks" v-model="step" :step="10" show-stops />
       <div class="operator-level2">
-        <button class="btn custom_css" @click="toggleDialog">DIY简历</button>
-        <el-color-picker @change="setColor" size="small" v-model="color" />
+        <button class="btn custom_css operator-item" @click="toggleDialog">DIY简历</button>
+        <el-color-picker class="operator-item" @change="setColor" size="small" v-model="color" />
         <el-tooltip effect="dark" content="自动一页" placement="bottom">
-          <el-switch @change="setAutoOnePage" v-model="autoOnePage" />
+          <el-switch class="operator-item" size="small" @change="setAutoOnePage" v-model="autoOnePage" />
         </el-tooltip>
+        <el-select v-model="font" class="operator-item" @change="setFont" placement="bottom" size="small">
+          <el-option v-for="item in fontOptions" :key="item.value" :label="item.label" :value="item.value" />
+        </el-select>
       </div>
     </div>
     <div ref="renderDOM" class="markdown-transform-html jufe"></div>
-
+    <!-- 分页渲染区域 -->
     <div class="re-render" :style="{ transform: `scale(${step / 100})` }"></div>
     <!-- 弹出框 -->
     <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssFlag" @edit-css="setStyle" @reset-css="removeStyle">
@@ -69,14 +73,18 @@ const { color, setColor } = useCustomColor(props.resumeType);
 
     .operator-level2 {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-end;
       padding-bottom: 5px;
+
+      .operator-item {
+        margin: 20px 10px 0 10px;
+      }
     }
 
     .custom_css {
+      font-size: .7rem;
       cursor: pointer;
-      margin: 20px 0 0 0;
       padding: 3px 10px;
       color: white;
       background: var(--theme);
@@ -89,6 +97,7 @@ const { color, setColor } = useCustomColor(props.resumeType);
   left: -9990px;
   top: -9990px;
 }
+
 button.download {
   position: fixed;
   right: 50px;

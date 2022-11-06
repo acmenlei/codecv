@@ -50,7 +50,7 @@ const toggleToolTip = () => {
       </el-tooltip>
       <!-- <button class='save'>保存</button> -->
       <button class="exportor" @click="exportor">动态计算导出PDF</button>
-      <button class="exportor" @click="native_exportor">原生打印机导出PDF</button>
+      <button class="exportor" @click="native_exportor">打印机导出PDF</button>
     </div>
   </div>
   <RenderDrawer :flag="flag" />

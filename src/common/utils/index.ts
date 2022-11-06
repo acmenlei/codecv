@@ -1,6 +1,9 @@
+import { ElLoading } from "element-plus";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { themes } from "../theme";
+import 'element-plus/es/components/loading/style/css';
+import { errorMessage, successMessage } from "../message";
 
 export async function importCSS(name: string) {
   const res = await import(`../../assets/styles/${name}.css`);
@@ -112,6 +115,8 @@ export function removeHeadStyle(attr: string) {
 }
 
 export function getPdf(title: string, html: HTMLElement) {
+  const { showLoading, closeLoading } = useLoading();
+  showLoading('正在导出PDF 请耐心等待...');
   html2canvas(html, {
     allowTaint: false,
     logging: false,
@@ -130,14 +135,7 @@ export function getPdf(title: string, html: HTMLElement) {
       page.height = Math.min(imgHeight, canvas.height - renderedHeight)
       // 用getImageData剪裁指定区域，并画到前面创建的canvas对象中
       page.getContext('2d')?.putImageData(ctx?.getImageData(0, renderedHeight, canvas.width, Math.min(imgHeight, canvas.height - renderedHeight)) as ImageData, 0, 0)
-      pdf.addImage(
-        page.toDataURL('image/jpeg', 1.0),
-        'JPEG',
-        0,
-        0,
-        a4w,
-        Math.min(a4h, (a4w * page.height) / page.width)
-      ) // 添加图像到页面，保留10mm边距
+      pdf.addImage(page.toDataURL('image/jpeg', 1.0), 'JPEG', 0, 0, a4w, Math.min(a4h, (a4w * page.height) / page.width)) // 添加图像到页面，保留0mm边距
 
       renderedHeight += imgHeight
       if (canvas.height - renderedHeight > 11) {
@@ -146,5 +144,28 @@ export function getPdf(title: string, html: HTMLElement) {
     }
     // 保存文件
     pdf.save(`${title}.pdf`)
+    successMessage('PDF导出成功');
   })
+    .catch(error => {
+      errorMessage('导出失败, ' + error)
+    })
+    .finally(closeLoading)
+}
+
+export function useLoading() {
+  let loading: any = null;
+  function showLoading(text: string) {
+    loading = ElLoading.service({
+      lock: true,
+      text,
+      background: 'rgba(0, 0, 0, 0.7)',
+    })
+  }
+  function closeLoading() {
+    loading && loading.close()
+  }
+  return {
+    showLoading,
+    closeLoading
+  }
 }

@@ -1,7 +1,7 @@
 @import url("./common.css");
 
 .markdown-transform-html {
-  font-family: "思源黑体 ExtraLight";
+  /* font-family: "思源宋体 ExtraLight"; */
   width: 210mm;
   font-size: 14px;
   padding: 20px 30px;
@@ -44,7 +44,7 @@
 .markdown-transform-html h5,
 .markdown-transform-html h6,
 .markdown-transform-html strong {
-  font-family: "阿里巴巴普惠体 2.0 65 Medium";
+  /* font-family: "阿里巴巴普惠体 2.0 65 Medium"; */
   padding: 0;
   margin: 0;
   margin-top: -4px;
