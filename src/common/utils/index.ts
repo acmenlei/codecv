@@ -3,7 +3,7 @@ import jsPDF from "jspdf";
 import { themes } from "../theme";
 
 export async function importCSS(name: string) {
-  const res = await import(`@/common/styles/${name}.css`);
+  const res = await import(`../../assets/styles/${name}.css`);
   return res.default;
 }
 

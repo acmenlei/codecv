@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { successMessage } from "@/common/message";
-import data from "../common/icon/iconfont.json"
+import data from "@/assets/icon/iconfont.json"
 
 defineProps<{ toggle: boolean }>()
 
