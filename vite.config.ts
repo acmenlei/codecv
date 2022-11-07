@@ -16,7 +16,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     viteCompression({
-      threshold: 10240 // 大于100kb压缩
+      threshold: 1024000 // 大于1m压缩
     })
   ],
   resolve: {
