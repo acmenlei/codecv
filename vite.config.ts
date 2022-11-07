@@ -4,6 +4,7 @@ import { resolve } from "path"
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import viteCompression from 'vite-plugin-compression'
 
 export default defineConfig({
   plugins: [
@@ -13,6 +14,9 @@ export default defineConfig({
     }),
     Components({
       resolvers: [ElementPlusResolver()],
+    }),
+    viteCompression({
+      threshold: 10240 // 大于100kb压缩
     })
   ],
   resolve: {

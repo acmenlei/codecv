@@ -319,10 +319,6 @@ export function useCustomFont(resumeType: string) {
       label: 'Helvetica Neue'
     },
     {
-      value: '思源宋体 ExtraLight',
-      label: '思源宋体 ExtraLight',
-    },
-    {
       value: '阿里巴巴普惠体 2.0 65 Medium',
       label: '阿里巴巴普惠体 2.0 65 Medium',
     },
@@ -335,7 +331,7 @@ export function useCustomFont(resumeType: string) {
       label: "仓耳渔阳体 W02",
     },
   ]
-  const font = ref(get(cacheKey) ? get(cacheKey) as string : '思源宋体 ExtraLight')
+  const font = ref(get(cacheKey) ? get(cacheKey) as string : 'Helvetica Neue')
 
   function setFont(fontFamily: string) {
     let style = query(cacheKey), isAppend = style;

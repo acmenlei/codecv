@@ -1,10 +1,4 @@
 @font-face {
-  font-family: "思源宋体 ExtraLight";
-  font-weight: 250;
-  src: url("../font/思源宋体ExtraLight.ttf") format("ttf");
-}
-
-@font-face {
   font-family: "阿里巴巴普惠体 2.0 65 Medium";
   font-weight: 300;
   src: url("../font/阿里巴巴普惠体Medium.woff2") format("woff2"),
