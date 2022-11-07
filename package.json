@@ -15,7 +15,7 @@
     "element-plus": "^2.2.19",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
-    "markdown-transform-html": "^1.4.5",
+    "markdown-transform-html": "^1.4.6",
     "nprogress": "^0.2.0",
     "vue": "^3.2.41",
     "vue-codemirror": "^6.1.1",
