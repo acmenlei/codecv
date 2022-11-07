@@ -23,7 +23,7 @@ const edit = (type: string) => {
 <style lang='scss' scoped>
 .resume-card {
   border: 1px solid #eee;
-  margin-right: 20px;
+  margin: 40px 20px 0 0;
   width: 150px;
   height: 200px;
   position: relative;

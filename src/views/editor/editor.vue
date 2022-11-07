@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import Header from "./ch-cmp/header.vue"
-import MarkdownRender from "@/views/editor/ch-cmp/markdonwRender.vue"
-import { useMarkdownContent, useResumeType, useDownLoad } from "./hook"
+import Header from "./ch-cmp/header/header.vue"
+import MarkdownRender from "@/views/editor/ch-cmp/render.vue"
+import { useMarkdownContent, useResumeType, useDownLoad, useImportMD } from "./hook"
 
 const { resumeType } = useResumeType()
-const { content, setContent } = useMarkdownContent(resumeType)
-const { download, downloadNative } = useDownLoad(resumeType, content);
+const { content, setContent, setContentCache } = useMarkdownContent(resumeType)
+const { downloadDynamic, downloadNative, downloadMD } = useDownLoad(resumeType, content);
+const { importMD } = useImportMD(setContent);
 </script>
 
 <template>
-  <Header @download="download" @download-native="downloadNative" />
+  <Header @download-dynamic="downloadDynamic" @download-native="downloadNative" @download-md="downloadMD" @import-md="importMD"/>
   <div id="root">
-    <textarea class="markdown-edit" @input="setContent" v-model="content"></textarea>
+    <textarea class="markdown-edit" @input="setContentCache" v-model="content"></textarea>
     <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" />
   </div>
 </template>

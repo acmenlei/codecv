@@ -13,7 +13,7 @@ import resumeCard from './ch-cmp/resumeCard.vue';
 
 <style lang='scss' scoped>
 .resume-card-container {
-  padding: 20px;
+  padding: 0 10px 20px 20px;
   display: flex;
   flex-wrap: wrap;
 }

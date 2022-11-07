@@ -1,5 +1,5 @@
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/common/hooks/useLcoaStoage";
-import { warningMessage } from "@/common/message";
+import { errorMessage, successMessage, warningMessage } from "@/common/message";
 import { createDIV, createStyle, getCurrentTypeContent, getPdf, Heap, importCSS, optimalizing, Optimalizing, OptimalizingItem, query, removeHeadStyle } from "@/common/utils";
 import { markdownToHTML } from "markdown-transform-html";
 import { onActivated, Ref, ref, watch } from "vue";
@@ -240,13 +240,22 @@ export function useMarkdownContent(resumeType: Ref<string>) {
   const cacheKey = MARKDOWN_CONTENT + '-' + resumeType.value;
   let content = ref(getLocalStorage(cacheKey) ? getLocalStorage(cacheKey) as string : getCurrentTypeContent(resumeType.value));
 
-  function setContent() {
+  function setContentCache() {
     setLocalStorage(cacheKey, content.value);
+  }
+
+  function setContent(str: string) {
+    if (!str) {
+      return;
+    }
+    content.value = str;
+    setContentCache()
   }
 
   return {
     content,
-    setContent
+    setContent,
+    setContentCache
   }
 }
 
@@ -264,7 +273,7 @@ export function useResumeType() {
 
 export function useDownLoad(type: Ref<string>, content: Ref<string>) {
   const router = useRouter();
-  const download = (fileName: string) => {
+  const downloadDynamic = (fileName: string) => {
     getPdf(fileName, document.querySelector('.jufe') as HTMLElement)
   }
 
@@ -272,9 +281,38 @@ export function useDownLoad(type: Ref<string>, content: Ref<string>) {
     localStorage.setItem('download', JSON.stringify(markdownToHTML(content.value)))
     router.push({ path: '/download', query: { type: type.value } })
   }
+
+  const downloadMD = () => {
+    const blob = new Blob([content.value]);
+    const url = URL.createObjectURL(blob);
+    const aTag = document.createElement('a')
+    aTag.download = document.title + '.md';
+    aTag.href = url;
+    aTag.click();
+    URL.revokeObjectURL(url);
+    successMessage('导出成功~')
+  }
   return {
-    download,
+    downloadMD,
+    downloadDynamic,
     downloadNative
+  }
+}
+
+export function useImportMD(setContent: (str: string) => void) {
+  function importMD(file: File) {
+    const reader = new FileReader();
+    reader.readAsText(file, 'utf-8');
+    reader.onload = function (event) {
+      successMessage('导入成功~')
+      setContent(event.target?.result as string || '')
+    }
+    reader.onerror = function () {
+      errorMessage('导入失败!')
+    }
+  }
+  return {
+    importMD
   }
 }
 
