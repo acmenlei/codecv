@@ -2,7 +2,7 @@ import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/common/h
 import { errorMessage, successMessage, warningMessage } from "@/common/message";
 import { createDIV, createStyle, getCurrentTypeContent, getPdf, Heap, importCSS, optimalizing, Optimalizing, OptimalizingItem, query, removeHeadStyle } from "@/common/utils";
 import { markdownToHTML } from "markdown-transform-html";
-import { onActivated, Ref, ref, watch } from "vue";
+import { onActivated, onDeactivated, Ref, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const AUTO_ONE_PAGE = 'auto-one-page',
@@ -240,22 +240,17 @@ export function useMarkdownContent(resumeType: Ref<string>) {
   const cacheKey = MARKDOWN_CONTENT + '-' + resumeType.value;
   let content = ref(getLocalStorage(cacheKey) ? getLocalStorage(cacheKey) as string : getCurrentTypeContent(resumeType.value));
 
-  function setContentCache() {
-    setLocalStorage(cacheKey, content.value);
-  }
-
   function setContent(str: string) {
     if (!str) {
       return;
     }
     content.value = str;
-    setContentCache()
+    setLocalStorage(cacheKey, content.value);
   }
 
   return {
     content,
-    setContent,
-    setContentCache
+    setContent
   }
 }
 
@@ -359,5 +354,39 @@ export function useCustomFont(resumeType: string) {
     fontOptions,
     font,
     setFont
+  }
+}
+// 左右移动伸缩布局
+export function useMoveLayout() {
+  let left = ref(700), flag = false;
+
+  function move(event: MouseEvent) {
+    if (!flag) {
+      return;
+    }
+    left.value = event.clientX;
+  }
+
+  function down() {
+    flag = true;
+  }
+
+  function up() {
+    flag = false
+  }
+
+  onActivated(() => {
+    window.addEventListener('mouseup', up)
+    window.addEventListener('mousemove', move)
+  })
+
+  onDeactivated(() => {
+    window.removeEventListener('mouseup', up)
+    window.removeEventListener('mousemove', move)
+  })
+  return {
+    left,
+    move,
+    down,
   }
 }

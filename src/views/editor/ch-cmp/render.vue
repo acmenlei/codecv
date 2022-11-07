@@ -2,9 +2,10 @@
 import { ref } from "vue";
 import { useRenderHTML, useCustomCSS, useAutoOnePage, useCustomColor, useCustomFont } from "../hook"
 import renderDialog from "@/components/renderDialog.vue";
-
+import { Codemirror } from "vue-codemirror"
+import { cssLanguage } from "@codemirror/lang-css"
 const props = defineProps<{ content: string, resumeType: string }>();
-const step = ref(100);
+const step = ref(80);
 const marks = {
   0: '0%',
   10: '10%',
@@ -24,6 +25,7 @@ const { cssFlag, cssText, toggleDialog, setStyle, removeStyle } = useCustomCSS(p
 const { autoOnePage, setAutoOnePage } = useAutoOnePage(props.resumeType)
 const { color, setColor } = useCustomColor(props.resumeType);
 const { fontOptions, font, setFont } = useCustomFont(props.resumeType);
+const extentions = [cssLanguage];
 </script>
 
 <template>
@@ -46,7 +48,8 @@ const { fontOptions, font, setFont } = useCustomFont(props.resumeType);
     <div class="re-render" :style="{ transform: `scale(${step / 100})` }"></div>
     <!-- 弹出框 -->
     <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssFlag" @edit-css="setStyle" @reset-css="removeStyle">
-      <el-input v-model="cssText" :rows="10" type="textarea" placeholder="格式如：.jufe h2 { color: red }" />
+      <codemirror v-model="cssText" :autofocus="true" :style="{ height: '500px' }" :indent-with-tab="true"
+        :extensions="extentions" placeholder="格式如.jufe h2 { color: red; }" />
     </renderDialog>
   </div>
 
@@ -56,8 +59,7 @@ const { fontOptions, font, setFont } = useCustomFont(props.resumeType);
 .outer {
   height: 100vh;
   overflow: auto;
-  background: #444;
-
+  background: var(--bg-theme);
   .operator {
     width: 210mm;
     margin: 0 auto;
@@ -65,7 +67,7 @@ const { fontOptions, font, setFont } = useCustomFont(props.resumeType);
     top: 0;
     transform: translateY(-20px);
     z-index: 1;
-    background: #444;
+    background: var(--bg-theme);
 
     .slider {
       width: 100%;

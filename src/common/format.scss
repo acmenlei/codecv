@@ -2,6 +2,7 @@
 
 :root {
   --theme: rgb(70, 147, 255);
+  --bg-theme: #444;
   --markdown-primary-color: #333;
 }
 
@@ -88,7 +89,7 @@
 .jufe-wrapper-page-split {
   width: 210mm;
   height: 18px;
-  background: #444;
+  background: var(--bg-theme);
 }
 
 #header {

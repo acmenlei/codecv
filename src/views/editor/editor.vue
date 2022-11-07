@@ -1,18 +1,28 @@
 <script setup lang="ts">
 import Header from "./ch-cmp/header/header.vue"
 import MarkdownRender from "@/views/editor/ch-cmp/render.vue"
-import { useMarkdownContent, useResumeType, useDownLoad, useImportMD } from "./hook"
+import { useMarkdownContent, useResumeType, useDownLoad, useImportMD, useMoveLayout } from "./hook"
+import { Codemirror } from 'vue-codemirror'
+import { markdownLanguage } from "@codemirror/lang-markdown"
 
 const { resumeType } = useResumeType()
-const { content, setContent, setContentCache } = useMarkdownContent(resumeType)
+const { content, setContent } = useMarkdownContent(resumeType)
 const { downloadDynamic, downloadNative, downloadMD } = useDownLoad(resumeType, content);
 const { importMD } = useImportMD(setContent);
+const { left, down, } = useMoveLayout();
+const extentions = [markdownLanguage];
+
 </script>
 
 <template>
-  <Header @download-dynamic="downloadDynamic" @download-native="downloadNative" @download-md="downloadMD" @import-md="importMD"/>
+  <Header @download-dynamic="downloadDynamic" @download-native="downloadNative" @download-md="downloadMD"
+    @import-md="importMD" />
   <div id="root">
-    <textarea class="markdown-edit" @input="setContentCache" v-model="content"></textarea>
+    <div class="markdown-edit">
+      <codemirror v-model="content" :style="{ height: '100vh', width: `${left}px` }" :autofocus="true"
+        :indent-with-tab="true" :extensions="extentions" @change="setContent" />
+      <div class="move" @mousedown="down"></div>
+    </div>
     <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" />
   </div>
 </template>
@@ -22,21 +32,27 @@ const { importMD } = useImportMD(setContent);
   display: flex;
 
   .markdown-edit {
-    flex: 1;
-    max-width: 650px;
+    position: relative;
     height: 100vh;
     overflow: auto;
     border: none;
-    border-right: 1px solid #999;
     outline: none;
-    resize: horizontal;
-    padding: 10px;
     font-size: 15px;
+
+    .move {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 10px;
+      height: 100%;
+      background: #ccc;
+      cursor: pointer;
+    }
   }
 
   .markdown-render {
     flex: 1;
-    padding: 10px 40px;
+    padding: 10px 20px;
   }
 }
 </style>

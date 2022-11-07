@@ -9,12 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-markdown": "^6.0.4",
+    "@codemirror/theme-one-dark": "^6.1.0",
+    "codemirror": "^6.0.1",
     "element-plus": "^2.2.19",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "markdown-transform-html": "^1.4.5",
     "nprogress": "^0.2.0",
     "vue": "^3.2.41",
+    "vue-codemirror": "^6.1.1",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
