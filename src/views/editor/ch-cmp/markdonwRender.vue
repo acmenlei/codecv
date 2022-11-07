@@ -31,14 +31,17 @@ const { fontOptions, font, setFont } = useCustomFont(props.resumeType);
     <div class="operator">
       <el-slider size="small" class="slider" :marks="marks" v-model="step" :step="10" show-stops />
       <div class="operator-level2">
-        <button class="btn custom_css operator-item" @click="toggleDialog">DIY简历</button>
-        <el-color-picker class="operator-item" @change="setColor" size="small" v-model="color" />
-        <el-tooltip effect="dark" content="自动一页" placement="bottom">
-          <el-switch class="operator-item" size="small" @change="setAutoOnePage" v-model="autoOnePage" />
-        </el-tooltip>
-        <el-select v-model="font" class="operator-item" @change="setFont" placement="bottom" size="small">
-          <el-option v-for="item in fontOptions" :key="item.value" :label="item.label" :value="item.value" />
-        </el-select>
+        <n-button color="#8a2be2" size="small" class="operator-item" @click="toggleDialog">DIY简历</n-button>
+        <n-color-picker class="operator-item" :bordered="false" size="small" v-model:value='color' @update:value="setColor"/>
+        <n-tooltip effect="dark" content="自动一页" placement="bottom">
+          <template #trigger>
+            <n-switch class="operator-item" size="small" @update:value="setAutoOnePage" v-model:value="autoOnePage" />
+          </template>
+          自动一页
+        </n-tooltip>
+        <!-- <n-select v-model="font" class="operator-item" @change="setFont" placement="bottom" size="small">
+          <n-option v-for="item in fontOptions" :key="item.value" :label="item.label" :value="item.value" />
+        </n-select> -->
       </div>
     </div>
     <div ref="renderDOM" class="markdown-transform-html jufe"></div>
@@ -46,7 +49,7 @@ const { fontOptions, font, setFont } = useCustomFont(props.resumeType);
     <div class="re-render" :style="{ transform: `scale(${step / 100})` }"></div>
     <!-- 弹出框 -->
     <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssFlag" @edit-css="setStyle" @reset-css="removeStyle">
-      <el-input v-model="cssText" :rows="10" type="textarea" placeholder="格式如：.jufe h2 { color: red }" />
+      <n-input v-model="cssText" :rows="10" type="textarea" placeholder="格式如：.jufe h2 { color: red }" />
     </renderDialog>
   </div>
 

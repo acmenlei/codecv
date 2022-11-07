@@ -29,7 +29,7 @@ const toggleToolTip = () => {
 
 <template>
   <div id="header">
-    <button class="back" @click="$router.back()">返回上一页</button>
+    <n-button class="back" color="#8a2be2" @click="$router.back()">返回上一页</n-button>
     <div class="resume-name">
       <label for="#resume-name-input">
         简历名称：
@@ -44,14 +44,20 @@ const toggleToolTip = () => {
         }}</span></RenderModal>
       </li>
     </ul>
-    <div class="operator">
-      <el-tooltip class="box-item" effect="dark" content="问题反馈" placement="bottom-end">
-        <i class="iconfont icon-problem problem" @click="() => flag = !flag"></i>
-      </el-tooltip>
-      <!-- <button class='save'>保存</button> -->
-      <button class="exportor" @click="exportor">动态计算导出PDF</button>
-      <button class="exportor" @click="native_exportor">打印机导出PDF</button>
-    </div>
+    <n-space class="operator" align="center">
+      <n-tooltip class="box-item" trigger="hover">
+        <template #trigger>
+          <i class="iconfont icon-problem problem" @click="() => flag = !flag"></i>
+        </template>
+        问题反馈
+      </n-tooltip>
+      <n-button color="#8a2be2" @click="exportor">
+        动态计算导出PDF
+      </n-button>
+      <n-button color="#8a2be2" @click="native_exportor">
+        打印机导出PDF
+      </n-button>
+    </n-space>
   </div>
   <RenderDrawer :flag="flag" />
 </template>
@@ -86,39 +92,14 @@ const toggleToolTip = () => {
     }
   }
 
-  .save,
-  .exportor,
-  .back {
-    outline: none;
-    border: none;
-    padding: 8px 15px;
-    margin-right: 5px;
-    cursor: pointer;
-
-    &:hover {
-      opacity: .8;
-    }
-  }
-
   .back {
     margin-right: 30px;
-    cursor: pointer;
-    background: var(--theme);
-    color: white;
   }
-
   .problem {
     margin-right: 30px;
     cursor: pointer;
     font-size: 20px;
     line-height: 60px;
-  }
-
-  .operator {
-    .exportor {
-      background: var(--theme);
-      color: white;
-    }
   }
 }
 </style>

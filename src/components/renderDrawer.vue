@@ -3,14 +3,15 @@ defineProps<{ flag: boolean }>()
 </script>
 
 <template>
-  <el-drawer v-model="flag" size="400" :with-header="false" close-on-press-escape>
-    <h2>有问题请加微信反馈，谢谢配合！</h2>
-    <img width="400" src="/wechat.jpg" alt="我的微信">
-  </el-drawer>
+  <n-drawer v-model:show="flag" :width="450">
+    <n-drawer-content title="联系方式">
+      <img width="400" src="/wechat.jpg" alt="我的微信">
+    </n-drawer-content>
+  </n-drawer>
 </template>
 
 <style lang="scss" scoped>
-h2, img {
+img {
   margin-top: 30px;
   text-align: center;
 }
