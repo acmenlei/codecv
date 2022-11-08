@@ -15,15 +15,16 @@ const AUTO_ONE_PAGE = 'auto-one-page',
 const set = setLocalStorage, get = getLocalStorage;
 
 export function useCustomCSS(resumeType: string) {
-  let cssFlag = ref(false), cacheKey = CUSTOM_CSS_STYLE + '-' + resumeType;
+  let cssDialog = ref(false), cacheKey = CUSTOM_CSS_STYLE + '-' + resumeType;
   let cssText = ref(get(cacheKey) ? get(cacheKey) as string : '');
 
   function toggleDialog() {
-    cssFlag.value = !cssFlag.value;
+    cssDialog.value = !cssDialog.value;
+    console.log(cssDialog.value)
   }
 
   function setStyle() {
-    cssFlag.value = false;
+    cssDialog.value = false;
     let cssValue = cssText.value.trim(), style = query(cacheKey), isAppend = style;
     if (!cssText.value) {
       return;
@@ -38,7 +39,7 @@ export function useCustomCSS(resumeType: string) {
   }
 
   function removeStyle() {
-    cssFlag.value = false;
+    cssDialog.value = false;
     removeHeadStyle(cacheKey);
     removeLocalStorage(cacheKey);
     cssText.value = '';
@@ -47,7 +48,7 @@ export function useCustomCSS(resumeType: string) {
   onActivated(() => !query(cacheKey) && setTimeout(setStyle, 50))
 
   return {
-    cssFlag,
+    cssDialog,
     cssText,
     toggleDialog,
     setStyle,
@@ -78,22 +79,20 @@ export function useRenderHTML(props: { content: string, resumeType: string }) {
   }
 }
 
-function splitPage(renderDOM: HTMLElement) {
+export function splitPage(renderDOM: HTMLElement) {
   // 需要分割
   let curHeight = 0, realHeight = 0, target = renderDOM.clientHeight, reRender = document.querySelector('.re-render');
 
   reRender!.innerHTML = '';
   while (realHeight < target) {
-    const wrapper = createDIV();
+    const wrapper = createDIV(), resumeNode = renderDOM.cloneNode(true) as HTMLElement;
     wrapper.classList.add('jufe-wrapper-page');
-    renderDOM.appendChild(wrapper);
     // 创建里面的内容 最小化高度
     let realRenderHeight = Math.min(target - realHeight, A4_HEIGHT);
     const wrapperItem = createDIV();
     wrapperItem.classList.add('jufe-wrapper-page-item');
     wrapperItem.style.height = realRenderHeight + 'px';
 
-    const resumeNode = renderDOM.cloneNode(true) as HTMLElement;
     resumeNode.style.position = 'absolute';
     resumeNode.style.top = curHeight + 'px';
     resumeNode.style.left = 0 + 'px';
@@ -103,7 +102,6 @@ function splitPage(renderDOM: HTMLElement) {
 
     curHeight -= A4_HEIGHT + 18;
     realHeight += A4_HEIGHT;
-
 
     const splitDOM = createDIV();
     splitDOM.classList.add('jufe-wrapper-page-split');

@@ -11,7 +11,7 @@ onActivated(() => fileName.value = document.title)
 
 const exportFile = (type: string) => {
   document.title = fileName.value;
-  emits(`download-${type}` as any)
+  emits(`download-${type}` as any, fileName.value)
 }
 
 const importFile = (event: any) => {

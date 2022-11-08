@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import Header from "./ch-cmp/header/header.vue"
-import MarkdownRender from "@/views/editor/ch-cmp/render.vue"
+import MarkdownRender from "@/views/editor/ch-cmp/preview/render.vue"
 import { useMarkdownContent, useResumeType, useDownLoad, useImportMD, useMoveLayout } from "./hook"
 import { Codemirror } from 'vue-codemirror'
-import { markdownLanguage } from "@codemirror/lang-markdown"
+import { markdownLanguage } from "@codemirror/lang-markdown";
 
 const { resumeType } = useResumeType()
 const { content, setContent } = useMarkdownContent(resumeType)
 const { downloadDynamic, downloadNative, downloadMD } = useDownLoad(resumeType, content);
 const { importMD } = useImportMD(setContent);
-const { left, down, } = useMoveLayout();
-const extentions = [markdownLanguage];
+const { left, down } = useMoveLayout();
 
+const extentions = [markdownLanguage];
 </script>
 
 <template>
@@ -46,7 +46,7 @@ const extentions = [markdownLanguage];
       width: 10px;
       height: 100%;
       background: #ccc;
-      cursor: pointer;
+      cursor: col-resize;
     }
   }
 
