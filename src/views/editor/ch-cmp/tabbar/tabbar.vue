@@ -2,7 +2,6 @@
 import renderDialog from "@/components/renderDialog.vue";
 import { Codemirror } from "vue-codemirror"
 import { cssLanguage } from "@codemirror/lang-css"
-
 import { useAutoOnePage, useCustomColor, useCustomCSS, useCustomFont } from "../../hook"
 import { marks } from "./constant"
 import { step, setStep } from "./hook";
@@ -33,7 +32,8 @@ const extentions = [cssLanguage];
     </div>
   </div>
   <!-- 弹出框 -->
-  <renderDialog title="请把你编写的CSS样式粘贴此处～" :flag="cssDialog" @edit-css="setStyle" @reset-css="removeStyle">
+  <renderDialog confirm-text="设置样式" reset-text="重置样式" title="请把你编写的CSS样式粘贴此处～" :flag="cssDialog" @confirm="setStyle"
+    @cancel="removeStyle">
     <codemirror v-model="cssText" :autofocus="true" :style="{ height: '500px' }" :indent-with-tab="true"
       :extensions="extentions" placeholder="格式如.jufe h2 { color: red; }" />
   </renderDialog>
@@ -51,6 +51,7 @@ const extentions = [cssLanguage];
 
   .slider {
     width: 100%;
+    user-select: none;
   }
 
   .operator-level2 {

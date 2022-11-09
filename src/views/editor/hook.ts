@@ -20,7 +20,6 @@ export function useCustomCSS(resumeType: string) {
 
   function toggleDialog() {
     cssDialog.value = !cssDialog.value;
-    console.log(cssDialog.value)
   }
 
   function setStyle() {
@@ -58,11 +57,10 @@ export function useCustomCSS(resumeType: string) {
 
 export function useRenderHTML(props: { content: string, resumeType: string }) {
   const renderDOM = ref<HTMLElement>(document.body);
-
-  onActivated(async () => {
+  onActivated(() => {
     importCSS(props.resumeType);
     renderDOM.value.innerHTML = markdownToHTML(props.content);
-    setTimeout(() => splitPage(renderDOM.value), 50);
+    setTimeout(() => splitPage(renderDOM.value), 100);
   })
 
   watch(() => props.content, (v) => {
@@ -73,14 +71,12 @@ export function useRenderHTML(props: { content: string, resumeType: string }) {
   watch(() => props.resumeType, () => {
     location.reload()
   })
-
   return {
     renderDOM
   }
 }
-
+// 分割视图
 export function splitPage(renderDOM: HTMLElement) {
-  // 需要分割
   let curHeight = 0, realHeight = 0, target = renderDOM.clientHeight, reRender = document.querySelector('.re-render');
 
   reRender!.innerHTML = '';
@@ -135,7 +131,7 @@ export function useAutoOnePage(resumeType: string) {
     }
     // 缓存3个小时
     set(cacheKey, autoOnePage.value)
-    setTimeout(() => splitPage(container), 100);
+    splitPage(container);
   }
   onActivated(() => !query(cacheKey) && setTimeout(setAutoOnePage, 50))
 
@@ -236,7 +232,7 @@ export function useCustomColor(resumeType: string) {
 // 缓存用户输入的content内容
 export function useMarkdownContent(resumeType: Ref<string>) {
   const cacheKey = MARKDOWN_CONTENT + '-' + resumeType.value;
-  let content = ref(getLocalStorage(cacheKey) ? getLocalStorage(cacheKey) as string : getCurrentTypeContent(resumeType.value));
+  let content = ref(get(cacheKey) ? get(cacheKey) as string : getCurrentTypeContent(resumeType.value));
 
   function setContent(str: string) {
     if (!str) {

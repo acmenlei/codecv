@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-withDefaults(defineProps<{ flag: boolean, title?: string }>(), {
+withDefaults(defineProps<{ flag: boolean, title?: string, confirmText: string, resetText: string }>(), {
   title: "温馨提示"
 })
-defineEmits(['edit-css', 'reset-css'])
+defineEmits(['cancel', 'confirm']);
+
 </script>
 
 <template>
@@ -10,10 +11,8 @@ defineEmits(['edit-css', 'reset-css'])
     <slot></slot>
     <template #footer>
       <span class="dialog-footer">
-        <el-button type="primary" @click="$emit('edit-css')">设置样式</el-button>
-        <el-button type="primary" @click="$emit('reset-css')">
-          重置样式
-        </el-button>
+        <el-button type="primary" @click="$emit('confirm')">{{ confirmText }}</el-button>
+        <el-button type="primary" @click="$emit('cancel')">{{ resetText }}</el-button>
       </span>
     </template>
   </el-dialog>

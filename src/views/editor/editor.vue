@@ -10,8 +10,8 @@ const { content, setContent } = useMarkdownContent(resumeType)
 const { downloadDynamic, downloadNative, downloadMD } = useDownLoad(resumeType, content);
 const { importMD } = useImportMD(setContent);
 const { left, down } = useMoveLayout();
-
 const extentions = [markdownLanguage];
+
 </script>
 
 <template>
@@ -21,7 +21,7 @@ const extentions = [markdownLanguage];
     <div class="markdown-edit">
       <codemirror v-model="content" :style="{ height: '100vh', width: `${left}px` }" :autofocus="true"
         :indent-with-tab="true" :extensions="extentions" @change="setContent" />
-      <div class="move" @mousedown="down"></div>
+      <div class="move absolute" @mousedown="down"></div>
     </div>
     <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" />
   </div>
@@ -40,9 +40,6 @@ const extentions = [markdownLanguage];
     font-size: 15px;
 
     .move {
-      position: absolute;
-      right: 0;
-      top: 0;
       width: 10px;
       height: 100%;
       background: #ccc;
