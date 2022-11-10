@@ -18,6 +18,9 @@ const importFile = (event: any) => {
   emits('import-md', event?.target?.files[0])
 }
 
+const visitRemote = function () {
+  window.open('https://github.com/acmenlei/markdown-resume-to-pdf');
+}
 </script>
 
 <template>
@@ -27,7 +30,10 @@ const importFile = (event: any) => {
     <input id="resume-name-input" type="text" v-model="fileName" />
     <nav-menu @export-md="exportFile('md')" @import-md="importFile" />
     <div class="operator">
-      <el-tooltip class="box-item" effect="dark" content="问题反馈" placement="bottom-end">
+      <el-tooltip content="给项目贡献代码" placement="bottom-end">
+        <i class="iconfont icon-github github" @click="visitRemote"></i>
+      </el-tooltip>
+      <el-tooltip content="问题反馈" placement="bottom-end">
         <i class="iconfont icon-problem problem" @click="() => flag = !flag"></i>
       </el-tooltip>
       <button class="exportor" @click="exportFile('dynamic')">动态导出PDF</button>
@@ -85,8 +91,9 @@ const importFile = (event: any) => {
     color: white;
   }
 
-  .problem {
-    margin-right: 30px;
+  .problem,
+  .github {
+    margin-right: 25px;
     cursor: pointer;
     font-size: 20px;
     line-height: 60px;
