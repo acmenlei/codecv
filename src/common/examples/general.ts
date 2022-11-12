@@ -13,7 +13,7 @@ icon:phone 155xxxxxx06
 [icon:github https://github.com/acmenlei](https://github.com/acmenlei)
 ::: end
 :::
-![个人头像](http://inews.gtimg.com/newsapp_bt/0/13092793730/641)
+![个人头像](/avatar_example.jpg)
 ::: end
 ::: headEnd
 

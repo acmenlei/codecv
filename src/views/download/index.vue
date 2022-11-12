@@ -13,7 +13,7 @@ onMounted(() => {
   setTimeout(() => {
     window.print();
     router.back();
-  });
+  }, 100);
 })
 
 onUnmounted(() => {

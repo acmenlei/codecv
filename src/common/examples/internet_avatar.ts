@@ -13,7 +13,7 @@ icon:phone 155xxxxxx06
 [icon:yuque https://www.yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 ::: end
 :::
-![个人头像](http://inews.gtimg.com/newsapp_bt/0/13092793730/641)
+![个人头像](/avatar_example.jpg)
 ::: end
 ::: headEnd
 
