@@ -201,7 +201,7 @@ icon:phone 155xxxxxx06
 [icon:yuque https://www.yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 ::: end
 :::
-![\u4E2A\u4EBA\u5934\u50CF](http://inews.gtimg.com/newsapp_bt/0/13092793730/641)
+![\u4E2A\u4EBA\u5934\u50CF](/avatar_example.jpg)
 ::: end
 ::: headEnd
 
@@ -256,7 +256,7 @@ icon:phone 155xxxxxx06
 [icon:github https://github.com/acmenlei](https://github.com/acmenlei)
 ::: end
 :::
-![\u4E2A\u4EBA\u5934\u50CF](http://inews.gtimg.com/newsapp_bt/0/13092793730/641)
+![\u4E2A\u4EBA\u5934\u50CF](/avatar_example.jpg)
 ::: end
 ::: headEnd
 
