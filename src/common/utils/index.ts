@@ -6,7 +6,7 @@ import 'element-plus/es/components/loading/style/css';
 import { errorMessage, successMessage } from "../message";
 
 export async function importCSS(name: string) {
-  const res = await import(`../../assets/styles/${name}.css`);
+  const res = await import(`../../assets/styles/${name}.scss`);
   return res.default;
 }
 

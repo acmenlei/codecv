@@ -1,0 +1,79 @@
+@import url("./common.scss");
+
+.markdown-transform-html {
+
+  h1,
+  h2 {
+    margin: 20px 0 8px 0;
+    border-bottom: 3px solid var(--markdown-primary-color);
+  }
+
+  h2 {
+    font-size: 20px;
+
+    i.iconfont {
+      font-size: 1.3rem;
+    }
+  }
+
+  h3,
+  h4 {
+    font-size: 16px;
+  }
+
+  h5,
+  h6,
+  strong {
+    font-size: 14px;
+  }
+
+  a {
+    color: var(--markdown-primary-color);
+    text-decoration: none;
+  }
+
+  .iconfont {
+    margin-right: .2em;
+    font-size: 1.1rem;
+  }
+
+  ul,
+  ol {
+    padding: 0;
+    padding-left: 20px;
+    margin-bottom: -5px;
+    margin-top: 4px;
+  }
+
+  ul {
+    li {
+      list-style: square;
+    }
+  }
+
+  strong {
+    a {
+      display: block;
+      margin-top: 8px;
+    }
+  }
+
+  .head-layout {
+    h2 {
+      font-size: 1.8rem;
+      letter-spacing: 8px;
+      border-bottom: none;
+      margin-bottom: 20px;
+
+      strong {
+        margin-left: 20px;
+        font-size: 17px;
+        letter-spacing: 2px;
+      }
+    }
+
+    i {
+      margin-right: 8px;
+    }
+  }
+}

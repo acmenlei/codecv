@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Header from "./ch-cmp/header/header.vue"
 import MarkdownRender from "@/views/editor/ch-cmp/preview/render.vue"
-import { useMarkdownContent, useResumeType, useDownLoad, useImportMD, useMoveLayout } from "./hook"
+import { useMarkdownContent, useResumeType, useDownLoad, useImportMD, useMoveLayout, useAvatar } from "./hook"
 import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from "@codemirror/lang-markdown";
 
@@ -9,6 +9,7 @@ const { resumeType } = useResumeType()
 const { content, setContent } = useMarkdownContent(resumeType)
 const { downloadDynamic, downloadNative, downloadMD } = useDownLoad(resumeType, content);
 const { importMD } = useImportMD(setContent);
+const { setAvatar } = useAvatar(content, setContent);
 const { left, down } = useMoveLayout();
 const extentions = [markdownLanguage];
 
@@ -23,7 +24,7 @@ const extentions = [markdownLanguage];
         :indent-with-tab="true" :extensions="extentions" @change="setContent" />
       <div class="move absolute" @mousedown="down"></div>
     </div>
-    <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" />
+    <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" @upload-avatar="setAvatar"/>
   </div>
 </template>
 

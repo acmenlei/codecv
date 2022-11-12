@@ -380,3 +380,20 @@ export function useMoveLayout() {
     down,
   }
 }
+
+
+export function useAvatar(content: Ref<string>, setContent: Function) {
+  const matchAvatarSlot = /!\[个人头像\]\(.*\)/;
+  function setAvatar(path: string) {
+    if (!matchAvatarSlot.test(content.value)) {
+      warningMessage('上传前请确保你想上传的位置在编辑器中存在 ![个人头像](...) 此关键字');
+      return;
+    }
+    const newContent = content.value.replace(matchAvatarSlot, `![个人头像](${path})`)
+    setContent(newContent);
+    successMessage('头像上传成功，如果你想修改为网络图片，你可直接修改对应的链接！')
+  }
+  return {
+    setAvatar
+  }
+}

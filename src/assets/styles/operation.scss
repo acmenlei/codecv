@@ -1,0 +1,102 @@
+@import url("./common.scss");
+
+.markdown-transform-html {
+
+  h1,
+  h2 {
+    padding: 10px 0 0 0;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: 10px;
+
+    i.iconfont {
+      font-size: 1.3rem;
+    }
+  }
+
+  h3,
+  h4 {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+
+  h5,
+  h6,
+  strong {
+    font-size: 14px;
+  }
+
+  a {
+    color: var(--markdown-primary-color);
+    text-decoration: none;
+  }
+
+  .iconfont {
+    margin-right: .2em;
+    font-size: 1.1rem;
+  }
+
+  ul,
+  ol {
+    padding: 0;
+    padding-left: 20px;
+    margin-bottom: -5px;
+    margin-top: 4px;
+  }
+
+  ul {
+    li {
+      list-style: square;
+    }
+  }
+
+  strong {
+    a {
+      display: block;
+      margin-top: 8px;
+    }
+  }
+
+  &::after,
+  .head-layout::after,
+  .head-layout::before {
+    content: "";
+    position: absolute;
+    background: rgb(186, 193, 202);
+  }
+
+  &::after {
+    width: 100%;
+    height: 20px;
+    top: 0;
+    left: 0;
+  }
+
+  .head-layout {
+    background: rgb(186, 193, 202);
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    color: white !important;
+
+    &::after {
+      width: 41px;
+      height: 100%;
+      left: -30px;
+      top: 0;
+    }
+
+    &::before {
+      width: 41px;
+      height: 100%;
+      right: -31px;
+      top: 0;
+    }
+
+    a {
+      color: white !important;
+    }
+  }
+}

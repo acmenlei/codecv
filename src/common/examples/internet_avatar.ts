@@ -1,13 +1,19 @@
+
 export default `::: headStart
-## 马牛逼 **社会牛逼工程师**
 ::: start
-icon:city xxxx大学 / 社会工程
-icon:email xxxxxxx@163.com
-:::
-icon:project 本科 / 2023
-icon:phone 183xxxxx987
+## 张三 **大数据开发工程师** **意向城市：杭州**
+::: start
+icon:user 男 / 2000.01.01
+icon:phone 155xxxxxx06
 ::: 
-icon:school GPA:3.92 / Top3%
+[icon:email xxxxxxxx@163.com](xxxxxxxx@163.com)
+[icon:gitee https://gitee.com/codeleilei](https://gitee.com/codeleilei)
+::: 
+[icon:github https://github.com/acmenlei](https://github.com/acmenlei)
+[icon:yuque https://www.yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
+::: end
+:::
+![个人头像](http://inews.gtimg.com/newsapp_bt/0/13092793730/641)
 ::: end
 ::: headEnd
 
@@ -48,6 +54,4 @@ icon:school GPA:3.92 / Top3%
 - **项目重点收获**：熟悉了 Scrapy 框架的使用，在 Linux 环境下进行作业，根据指标进行维度建模。
 
 ## icon:user 自我评价 About me
-本人热心诚恳、乐观向上，有良好的思想品德和职业素质，工作认真负责，善于在实践中积累学习，不断的完善自我。
-通过在学生会任职的经历，锻炼出了良好的组织协调能力和沟通协作能力，善于调动团队成员的工作热情与积极性。
-同时，丰富的在外兼职经历使自己拥有较强的亲和力与责任心，并有良好的团队协作和敬业精神。`
+本人热心诚恳、乐观向上，有良好的思想品德和职业素质，工作认真负责，善于在实践中积累学习，不断的完善自我。通过在学生会任职的经历，锻炼出了良好的组织协调能力和沟通协作能力，善于调动团队成员的工作热情与积极性。同时，丰富的在外兼职经历使自己拥有较强的亲和力与责任心，并有良好的团队协作和敬业精神。`

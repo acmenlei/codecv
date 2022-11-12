@@ -4,13 +4,17 @@ import { Codemirror } from "vue-codemirror"
 import { cssLanguage } from "@codemirror/lang-css"
 import { useAutoOnePage, useCustomColor, useCustomCSS, useCustomFont } from "../../hook"
 import { marks } from "./constant"
-import { step, setStep } from "./hook";
+import { step, setStep, useAvatar } from "./hook";
 
+const emits = defineEmits(['upload-avatar'])
 const props = defineProps<{ resumeProps: { content: string; resumeType: string } }>();
+
 const { autoOnePage, setAutoOnePage } = useAutoOnePage(props.resumeProps.resumeType);
 const { cssDialog, cssText, toggleDialog, setStyle, removeStyle } = useCustomCSS(props.resumeProps.resumeType);
 const { color, setColor } = useCustomColor(props.resumeProps.resumeType);
 const { fontOptions, font, setFont } = useCustomFont(props.resumeProps.resumeType);
+const { setAvatar } = useAvatar(emits);
+
 const extentions = [cssLanguage];
 
 </script>
@@ -19,11 +23,13 @@ const extentions = [cssLanguage];
   <div class="operator">
     <el-slider size="small" class="slider" :marks="marks" v-model="step" @change="setStep" :step="10" show-stops />
     <div class="operator-level2">
-      <!-- <label for="upload-avatar" class="btn upload_avatar operator-item">上传照片</label>
-      <input type="file" id="upload-avatar" accept=".png,.jpg,.jpeg" @change="uploadAvatar"/> -->
+      <el-tooltip content="上传前请确保你想上传的位置在编辑器中存在 ![个人头像](...) 此关键字" >
+        <label for="upload-avatar" class="btn upload_avatar operator-item">上传照片</label>
+      </el-tooltip>
+      <input type="file" id="upload-avatar" accept=".png,.jpg,.jpeg" @change="setAvatar" />
       <button class="btn custom_css operator-item" @click="toggleDialog">DIY简历</button>
       <el-color-picker class="operator-item" @change="setColor" size="small" v-model="color" />
-      <el-tooltip effect="dark" content="自动一页" placement="bottom">
+      <el-tooltip content="自动一页" placement="bottom">
         <el-switch class="operator-item" size="small" @change="setAutoOnePage" v-model="autoOnePage" />
       </el-tooltip>
       <el-select v-model="font" class="operator-item" @change="setFont" placement="bottom" size="small">
@@ -67,6 +73,7 @@ const extentions = [cssLanguage];
     #upload-avatar {
       width: 0;
       height: 0;
+      margin-right: -10px;
     }
   }
 
