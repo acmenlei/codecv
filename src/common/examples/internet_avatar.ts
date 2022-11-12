@@ -13,9 +13,17 @@ icon:phone 155xxxxxx06
 [icon:yuque https://www.yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 ::: end
 :::
-![个人头像](/avatar_example.jpg)
+![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
 ::: end
 ::: headEnd
+
+## icon:user 教育背景 Education Background
+::: start
+- **清华大学 - 信息工程学院 - 计算机科学与技术**
+:::
+**2019-09-01 至 2023-07-01**
+::: end
+- GPA：4.0 / 专业Top 1
 
 ## icon:technology 专业技能 Professional Skills
 - 熟悉 Java 编程基础，IO操作，集合等相关知识，了解常见的设计模式和计算机基础相关知识。
@@ -51,7 +59,4 @@ icon:phone 155xxxxxx06
 - **项目描述**：教别人如何扫地，如何扫好地
 - **项目技术栈**：Hadoop、Sqoop、Python、Scrapy、Spark、Hive、MySQL、Flask、ECharts
 - **指责描述**：进行 Hadoop 平台搭建，利用 Scrapy 爬取 QTA 酒店公开数据至 MySQL 中。将爬取的数据进行清洗和分析。将分析好的数据进行维度建模存入 MySQL 中。用 Flask 同 ECharts 将数据进行可视化展现。
-- **项目重点收获**：熟悉了 Scrapy 框架的使用，在 Linux 环境下进行作业，根据指标进行维度建模。
-
-## icon:user 自我评价 About me
-本人热心诚恳、乐观向上，有良好的思想品德和职业素质，工作认真负责，善于在实践中积累学习，不断的完善自我。通过在学生会任职的经历，锻炼出了良好的组织协调能力和沟通协作能力，善于调动团队成员的工作热情与积极性。同时，丰富的在外兼职经历使自己拥有较强的亲和力与责任心，并有良好的团队协作和敬业精神。`
+- **项目重点收获**：熟悉了 Scrapy 框架的使用，在 Linux 环境下进行作业，根据指标进行维度建模。`

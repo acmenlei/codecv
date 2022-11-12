@@ -13,11 +13,11 @@ icon:phone 155xxxxxx06
 [icon:github https://github.com/acmenlei](https://github.com/acmenlei)
 ::: end
 :::
-![个人头像](/avatar_example.jpg)
+![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
 ::: end
 ::: headEnd
 
-## icon:user 教育背景 Education Background
+## icon:user 教育经历 Education Experience
 ::: start
 - **清华大学 - 信息工程学院 - 计算机科学与技术**
 :::
