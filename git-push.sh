@@ -1,5 +1,5 @@
 echo -e "\033[32m <<<<<<<<<\n正在拉取远程代码...\n>>>>>>>>> \033[0m"
-git pull
+git pull origin master
 
 echo -e "\033[32m <<<<<<<<<\n正在添加文件...\n>>>>>>>>> \033[0m"
 git add .
@@ -14,6 +14,7 @@ fi
 git commit -m "$remarks"
 
 echo -e "\033[32m <<<<<<<<<\n正在提交代码...\n>>>>>>>>> \033[0m"
-git push
+git push gitee-origin master
+git push origin master
 
 exit
