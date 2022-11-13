@@ -1,7 +1,9 @@
 # markdown-resume
 一款纯前端编写的 `markdown` 简历制作工具，可以把你编写的简历转换为 `PDF`，支持多种模板，你想要的这里都有.
 
-[简历编写地址](https://acmenlei.github.io/markdown-resume-to-pdf/dist/)
+[Github Page 简历编写地址](https://acmenlei.github.io/markdown-resume-to-pdf/dist/)
+
+[Gitee Page 简历编写地址](https://codeleilei.gitee.io/markdown2pdf/)
 
 # effect
 以下是编辑界面的效果图
