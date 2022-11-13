@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "push": "sh ./push.sh"
   },
   "dependencies": {
     "@codemirror/lang-markdown": "^6.0.4",
