@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "push": "sh ./git-push.sh"
+    "push": "sh ./git-push.sh",
+    "gitee-push": "sh ./gitee-push.sh"
+    
   },
   "dependencies": {
     "@codemirror/lang-markdown": "^6.0.4",

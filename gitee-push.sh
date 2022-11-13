@@ -1,5 +1,5 @@
-echo "\033[32m <<<<<<<<<\n正在拉取Github仓库远程代码...\n>>>>>>>>> \033[0m"
-git pull origin master
+echo "\033[32m <<<<<<<<<\n正在拉取Gitee仓库远程代码...\n>>>>>>>>> \033[0m"
+git pull gitee-origin master
 
 echo "\033[32m <<<<<<<<<\n正在添加文件...\n>>>>>>>>> \033[0m"
 git add .
@@ -13,7 +13,7 @@ fi
 
 git commit -m "$remarks"
 
-echo -e "\033[32m <<<<<<<<<\n正在提交Github仓库代码...\n>>>>>>>>> \033[0m"
-git push origin master
+echo -e "\033[32m <<<<<<<<<\n正在提交Gitee仓库代码...\n>>>>>>>>> \033[0m"
+git push gitee-origin master
 
 exit
