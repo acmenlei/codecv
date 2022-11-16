@@ -2,7 +2,7 @@ import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/common/h
 import { errorMessage, successMessage, warningMessage } from "@/common/message";
 import { createDIV, createStyle, getCurrentTypeContent, getPdf, Heap, importCSS, optimalizing, Optimalizing, OptimalizingItem, query, removeHeadStyle } from "@/common/utils";
 import { markdownToHTML } from "markdown-transform-html";
-import { onActivated, onDeactivated, Ref, ref, watch } from "vue";
+import { onActivated, onDeactivated, readonly, Ref, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const AUTO_ONE_PAGE = 'auto-one-page',
@@ -80,7 +80,7 @@ export function splitPage(renderDOM: HTMLElement) {
   let curHeight = 0, realHeight = 0, target = renderDOM.clientHeight, reRender = document.querySelector('.re-render');
 
   reRender!.innerHTML = '';
-  while (realHeight < target) {
+  while (target - realHeight > 5) {
     const wrapper = createDIV(), resumeNode = renderDOM.cloneNode(true) as HTMLElement;
     wrapper.classList.add('jufe-wrapper-page');
     // 创建里面的内容 最小化高度
@@ -166,21 +166,18 @@ function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number
   for (let optimal of optimaliza) {
     heap.push(optimal);
   }
-
   if (difference < 0) {
-    // console.log("超出了一页内容长度：", difference, heap.container)
     while (difference++ < 0) {
       let topEl = heap.pop();
       topEl!.top = topEl!.top - 1 / (map.get(topEl!.tag) || 1);
-      topEl!.optimal = (topEl!.max - topEl!.top) / topEl!.max;
+      topEl!.optimal = Math.abs(topEl!.max + topEl!.top);
       heap.push(topEl as OptimalizingItem)
     }
   } else {
-    // console.log("不足一页内容长度：", difference, heap.container)
     while (difference-- > 0) {
       let topEl = heap.pop();
       topEl!.top = topEl!.top + 1 / (map.get(topEl!.tag) || 1);
-      topEl!.optimal = (topEl!.max - topEl!.top) / topEl!.max;
+      topEl!.optimal = Math.abs(topEl!.max - topEl!.top);
       heap.push(topEl as OptimalizingItem)
     }
   }
@@ -190,7 +187,7 @@ function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number
   styleDOM.setAttribute(cacheKey, 'true');
 
   for (let optimal of heap.container) {
-    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px }`;
+    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px; }`;
   }
   styleDOM.textContent = cssText;
   document.head.appendChild(styleDOM);

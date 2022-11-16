@@ -13,8 +13,7 @@
     padding: 5px 10px;
     color: white !important;
     font-size: 18px;
-    margin-top: 16px;
-    margin-bottom: 5px;
+    margin-top: 10px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 
@@ -37,6 +36,7 @@
       position: relative;
       border-top: 1px solid #719ba5;
       width: calc(100% - 50px);
+
       &::after {
         content: "";
         position: absolute;
@@ -48,25 +48,25 @@
         right: -40px;
         transform: rotate(135deg);
       }
+
       strong {
         margin-left: 20px;
       }
     }
+  }
 
-    p {
-      margin-top: 5px;
-    }
+  p {
+    margin-top: 8px;
   }
 
   ul,
   ol {
-    padding: 0;
     padding-left: 20px;
-    margin-bottom: -5px;
-    margin-top: 4px;
+    margin-top: 5px;
   }
 
   a {
+    color: #333;
     text-decoration: none;
   }
 }

@@ -6,7 +6,7 @@ export default `::: headStart
 
 :::
 
-[icon:email coderxxxxx@163.com](mailto:qiufenghyf@163.com)
+[icon:email xiaoxinxxxxx@163.com](xiaoxinxxxxx@163.com)
 icon:phone 155xxxx8888
 ::: end
 ::: headEnd

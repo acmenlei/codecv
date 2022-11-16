@@ -4,7 +4,7 @@
 
   h1,
   h2 {
-    margin: 20px 0 8px 0;
+    margin: 10px 0 8px 0;
     border-bottom: 3px solid var(--markdown-primary-color);
   }
 
@@ -39,10 +39,7 @@
 
   ul,
   ol {
-    padding: 0;
     padding-left: 20px;
-    margin-bottom: -5px;
-    margin-top: 4px;
   }
 
   ul {
@@ -82,5 +79,8 @@
         white-space: nowrap;
       }
     }
+  }
+  p {
+    margin-top: 8px;
   }
 }

@@ -3,6 +3,7 @@ import operation from "./examples/operation";
 import internet from "./examples/internet";
 import internet_avatar from "./examples/internet_avatar";
 import general from "./examples/general";
+import operation_avatar from "./examples/operation_avatar";
 
 export const themes = [
   {
@@ -40,6 +41,13 @@ export const themes = [
     content: general,
     name: '通用模板'
   },
+  {
+    type: "operation_avatar",
+    id: 6,
+    img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?',
+    content: operation_avatar,
+    name: '运营大类'
+  }
 ];
 
 export type themeType = typeof themes[0];
