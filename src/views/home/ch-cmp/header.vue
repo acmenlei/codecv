@@ -5,13 +5,13 @@ import nav from "@/common/nav/homeNav"
 
 <template>
   <div id="header">
-    <div class="logo"><img src="/vite.svg" alt=""></div>
-    <ul class="nav">
+    <div class="logo" data-aos="zoom-out-right"><img src="/vite.svg" alt=""></div>
+    <ul class="nav" data-aos="zoom-out-right">
       <li v-for="navItem in nav">
         <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
       </li>
     </ul>
-    <div class="operator">
+    <div class="operator" data-aos="zoom-out-left">
       <button class='use' @click="$router.push('/editor?type=front_end')">开始使用</button>
     </div>
   </div>
@@ -19,6 +19,8 @@ import nav from "@/common/nav/homeNav"
 
 <style lang='scss' scoped>
 #header {
+  position: sticky;
+  top: 0;
   z-index: 1;
   transition: background .5s;
   height: 60px;
@@ -58,9 +60,11 @@ import nav from "@/common/nav/homeNav"
     color: white;
     cursor: pointer;
     animation: move 6s linear infinite;
+    transition: transform .5s;
 
     &:hover {
       opacity: .8;
+      transform: scale(0.9);
     }
   }
 }
