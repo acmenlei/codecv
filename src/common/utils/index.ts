@@ -21,14 +21,14 @@ export const getCurrentTypeContent = (type: string): string => {
 
 // 计算优先级 以及 处理优先级高的数据
 export const optimalizing = {
-  'h1': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
-  'h2': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  'h1': { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
+  'h2': { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
   'h3': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
-  'h4': { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
-  'h5': { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
-  'h6': { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
-  'li': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
-  'p': { max: 20, min: -10, top: 0, tag: '', optimal: 0 },
+  'h4': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  'h5': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  'h6': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  'li': { max: 10, min: -15, top: 0, tag: '', optimal: 0 },
+  'p': { max: 10, min: -15, top: 0, tag: '', optimal: 0 },
 }
 export type OptimalizingItem = typeof optimalizing['h1'];
 export type Optimalizing = {

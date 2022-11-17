@@ -154,7 +154,7 @@ function useInitMarginTop(container: HTMLElement) {
     const top = +getComputedStyle(title, null).marginTop.slice(0, -2);
     const cur = { ...optimalizing[tag as keyof Optimalizing], top, tag }
     // 计算优先级
-    let optimal = cur.top;
+    let optimal = cur.top / cur.max;
     cur.optimal = optimal;
     differenceConfig.push(cur);
   }
@@ -162,7 +162,7 @@ function useInitMarginTop(container: HTMLElement) {
 }
 
 function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number, map: Map<string, number>, cacheKey: string) {
-  const heap = new Heap((x, y) => difference < 0 ? x.optimal < y.optimal : x.optimal > y.optimal);
+  const heap = new Heap((x, y) => difference < 0 ? x.optimal > y.optimal : x.optimal < y.optimal);
   for (let optimal of optimaliza) {
     heap.push(optimal);
   }
@@ -171,7 +171,7 @@ function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number
     while (difference++ < 20) {
       let topEl = heap.pop();
       topEl!.top = topEl!.top - 1 / (map.get(topEl!.tag) || 1);
-      topEl!.optimal = Math.abs(topEl!.max + topEl!.top);
+      topEl!.optimal = topEl!.top / topEl!.max;
       heap.push(topEl as OptimalizingItem)
     }
   } else {
@@ -179,7 +179,7 @@ function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number
     while (difference-- > 20) {
       let topEl = heap.pop();
       topEl!.top = topEl!.top + 1 / (map.get(topEl!.tag) || 1);
-      topEl!.optimal = Math.abs(topEl!.max - topEl!.top);
+      topEl!.optimal = topEl!.top / topEl!.max;
       heap.push(topEl as OptimalizingItem)
     }
   }
