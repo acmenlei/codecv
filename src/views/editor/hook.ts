@@ -80,7 +80,7 @@ export function splitPage(renderDOM: HTMLElement) {
   let curHeight = 0, realHeight = 0, target = renderDOM.clientHeight, reRender = document.querySelector('.re-render');
 
   reRender!.innerHTML = '';
-  while (target - realHeight > 5) {
+  while (target - realHeight > 1) {
     const wrapper = createDIV(), resumeNode = renderDOM.cloneNode(true) as HTMLElement;
     wrapper.classList.add('jufe-wrapper-page');
     // 创建里面的内容 最小化高度
@@ -154,9 +154,9 @@ function useInitMarginTop(container: HTMLElement) {
     const top = +getComputedStyle(title, null).marginTop.slice(0, -2);
     const cur = { ...optimalizing[tag as keyof Optimalizing], top, tag }
     // 计算优先级
-    let optimal = (cur.max - cur.top) / cur.max;
+    let optimal = cur.top;
     cur.optimal = optimal;
-    differenceConfig.push(cur)
+    differenceConfig.push(cur);
   }
   return { differenceConfig, map };
 }
@@ -167,14 +167,16 @@ function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number
     heap.push(optimal);
   }
   if (difference < 0) {
-    while (difference++ < 0) {
+    // 大顶堆 (收缩要减掉内边距 暂时这么写)
+    while (difference++ < 20) {
       let topEl = heap.pop();
       topEl!.top = topEl!.top - 1 / (map.get(topEl!.tag) || 1);
       topEl!.optimal = Math.abs(topEl!.max + topEl!.top);
       heap.push(topEl as OptimalizingItem)
     }
   } else {
-    while (difference-- > 0) {
+    // 小顶堆 (拉伸也要减掉内边距 思路同上)
+    while (difference-- > 20) {
       let topEl = heap.pop();
       topEl!.top = topEl!.top + 1 / (map.get(topEl!.tag) || 1);
       topEl!.optimal = Math.abs(topEl!.max - topEl!.top);
