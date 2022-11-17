@@ -9,11 +9,8 @@ const helper = ref();
 onMounted(() => {
   helper.value.innerHTML = markdownToHTML(resumeHelper, { highlight: true, lineNumber: true })
 })
-// onActivated(() => {
-//   console.log("我被缓存了")
-// })
 </script>
 
 <template>
-  <div class="syntax-helper" ref="helper"></div>
+  <div class="syntax-helper" ref="helper" data-aos="fade-right"></div>
 </template>ƒ

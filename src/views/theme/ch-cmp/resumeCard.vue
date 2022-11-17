@@ -11,7 +11,7 @@ const edit = (type: string) => {
 </script>
 
 <template>
-  <div class="resume-card" @click="edit(theme.type)">
+  <div class="resume-card" @click="edit(theme.type)" data-aos="zoom-in">
     <img :src="theme.img" />
     <div class="resume-card-mask">
       <button class="btn">使用模板</button>

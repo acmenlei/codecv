@@ -4,7 +4,7 @@ import { timeLine } from "./constant";
 </script>
 
 <template>
-  <div class="time-line">
+  <div class="time-line" data-aos="fade-right">
     <el-timeline>
       <el-timeline-item type="primary" v-for="(line, index) in timeLine" :key="index" :timestamp="line.timestamp">
         <p>{{ line.version }}</p>

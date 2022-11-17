@@ -16,7 +16,7 @@ function toGithub() {
       点击左侧github仓库地址，迈出你的第一步吧～
     </div>
     <div class="right flex">
-      友情链接 todo...
+      友情链接
     </div>
   </div>
 </template>
@@ -30,7 +30,9 @@ function toGithub() {
   font-size: 14px;
   justify-content: space-around;
   align-items: center;
-
+  .flex {
+    margin: 0 10px;
+  }
   .item {
     margin-top: 5px;
     cursor: pointer;

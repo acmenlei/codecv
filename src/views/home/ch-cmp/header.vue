@@ -12,15 +12,16 @@ import nav from "@/common/nav/homeNav"
       </li>
     </ul>
     <div class="operator" data-aos="zoom-out-left">
-      <button class='use' @click="$router.push('/editor?type=front_end')">开始使用</button>
+      <button class='use' @click="$router.push('/editor?type=front_end')">开始创作</button>
     </div>
   </div>
 </template>
 
 <style lang='scss' scoped>
 #header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1;
   transition: background .5s;
   height: 60px;
