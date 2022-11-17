@@ -13,6 +13,7 @@
   "dependencies": {
     "@codemirror/lang-markdown": "^6.0.4",
     "@codemirror/theme-one-dark": "^6.1.0",
+    "aos": "^2.3.4",
     "codemirror": "^6.0.1",
     "element-plus": "^2.2.19",
     "html2canvas": "^1.4.1",
@@ -24,6 +25,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/node": "^18.11.7",
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^3.2.0",
