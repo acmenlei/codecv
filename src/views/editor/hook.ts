@@ -312,8 +312,8 @@ export function useCustomFont(resumeType: string) {
       label: 'Helvetica Neue'
     },
     {
-      value: '阿里巴巴普惠体 2.0 65 Medium',
-      label: '阿里巴巴普惠体 2.0 65 Medium',
+      value: '阿里巴巴普惠体',
+      label: '阿里巴巴普惠体',
     },
     {
       value: 'Menlo-Regular',
