@@ -104,6 +104,11 @@
   right: 0;
 }
 
-// .avatar-w-80 {
-//   width: 80px;
-// }
+.logo {
+  cursor: pointer;
+  transition: transform .5s;
+  &:hover {
+    will-change: transform;
+    transform: scale(1.2)!important;
+  }
+}

@@ -4,7 +4,7 @@ import outNav from "@/common/nav/outNav"
 
 <template>
   <div id="header">
-    <div class="logo"><img src="/vite.svg" alt=""></div>
+    <div class="logo" @click="$router.replace('/home')"><img src="/vite.svg" alt=""></div>
     <ul class="nav">
       <li v-for="navItem in outNav" :class="{ 'active': $route.path === navItem.path }">
         <i :class="navItem.icon"></i>

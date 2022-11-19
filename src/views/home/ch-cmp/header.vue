@@ -1,18 +1,24 @@
 <script setup lang='ts'>
-import nav from "@/common/nav/homeNav"
-
+import { homeNav, homeOutNav } from "@/common/nav/homeNav"
+function toOutNav(path: string) {
+  window.location.href = path;
+}
 </script>
 
 <template>
   <div id="header">
     <div class="logo" data-aos="zoom-out-right"><img src="/vite.svg" alt=""></div>
     <ul class="nav" data-aos="zoom-out-right">
-      <li v-for="navItem in nav">
+      <li v-for="navItem in homeNav">
         <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
+      </li>
+      <li v-for="navItem in homeOutNav" @click="toOutNav(navItem.path)">
+        <i :class="navItem.icon" /> {{ navItem.name }}
       </li>
     </ul>
     <div class="operator" data-aos="zoom-out-left">
-      <button class='use' @click="$router.push('/editor?type=front_end')">开始创作</button>
+      <button class='use' @click="$router.push('/editor?type=front_end')">
+        <i class="iconfont icon-technology "></i> 开始创作</button>
     </div>
   </div>
 </template>
@@ -45,6 +51,17 @@ import nav from "@/common/nav/homeNav"
 
     100% {
       background-position: 0% 100%;
+    }
+  }
+
+  .nav {
+    li:hover {
+      opacity: .8;
+    }
+
+    .iconfont {
+      font-size: 1.1rem;
+      margin-right: 1px;
     }
   }
 
