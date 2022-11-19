@@ -1,0 +1,74 @@
+@import url("../common.css");
+
+.markdown-transform-html {
+  font-size: 16.5px;
+  padding: 20px 35px;
+
+  .iconfont {
+    margin-right: 5px;
+    font-size: 1.3rem;
+    color: #333;
+  }
+
+  h2 {
+    margin-top: 30px;
+    padding: 0 5px;
+    background: skyblue;
+    color: white !important;
+    display: inline-block;
+    position: relative;
+    z-index: 99;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      border: 20px solid transparent;
+      border-top-color: rgb(154, 212, 235);
+      left: -20px;
+      z-index: -1;
+    }
+
+    &::after {
+      top: 12px;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+
+    li {
+      margin-top: 6px;
+      color: #666;
+    }
+  }
+
+  ol {
+    padding-left: 30px;
+  }
+
+  p {
+    margin-top: 8px;
+    color: #666;
+  }
+
+  strong {
+    color: #333;
+  }
+
+  .head-layout {
+    h2 {
+      background: none;
+      color: #333 !important;
+      margin-top: 20px;
+      border-bottom: none;
+      font-size: 1.6rem;
+
+      &::before,
+      &::after {
+        border: none;
+      }
+    }
+  }
+}

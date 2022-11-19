@@ -1,0 +1,73 @@
+@import url("../common.css");
+
+.markdown-transform-html {
+  padding-top: 0;
+  font-size: 15px;
+
+  i.iconfont {
+    margin-right: 10px;
+  }
+
+  h2 {
+    color: #1a85f0 !important;
+    font-size: 18px;
+    margin: 5px auto;
+    border-bottom: 1px solid #1a85f0 !important;
+
+    i.iconfont {
+      font-size: 1.2rem;
+    }
+  }
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+
+  .head-layout {
+    white-space: pre;
+
+    .flex-layout-item {
+      margin-right: 10px;
+      text-align: center;
+      flex: 1;
+
+      &:first-child {
+        flex: 3;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    h2 {
+      color: #333 !important;
+      font-size: 25px;
+      border-bottom: none !important;
+
+      strong {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  ul {
+    &+ol {
+      padding-left: 30px;
+    }
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  p {
+    margin-top: 8px;
+  }
+}

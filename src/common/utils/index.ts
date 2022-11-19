@@ -1,12 +1,12 @@
 import { ElLoading } from "element-plus";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import { themes } from "../theme";
+import { themes } from "@/templates/config";
 import 'element-plus/es/components/loading/style/css';
 import { errorMessage, successMessage } from "../message";
 
 export async function importCSS(name: string) {
-  const res = await import(`../../assets/styles/${name}.scss`);
+  const res = await import(`../../templates/${name}/style.scss`);
   return res.default;
 }
 

@@ -1,17 +1,35 @@
 <script setup lang='ts'>
-import { themes } from '@/common/theme';
 import resumeCard from './ch-cmp/resumeCard.vue';
+import { templateCategory } from './constant';
+import { useCategory } from "./hook";
 
+const { queryCategory, category, data } = useCategory();
 </script>
 
 <template>
-  <marquee behavior="" direction="">"目前模板较少，如果觉得简历模板不符合你的预期，可以提供你觉得好看模板给我~  联系微信：x972761675"</marquee>
+  <div class="check-category">
+    <label>简历类型：</label>
+    <el-radio-group v-model="category" @change="queryCategory">
+      <el-radio-button v-for="cg in templateCategory" :label="cg" />
+    </el-radio-group>
+  </div>
   <div class="resume-card-container">
-    <resume-card v-for="theme in themes" :key="theme.id" :theme="theme"/>
+    <resume-card v-for="theme in data" :key="theme.id" :theme="theme" />
   </div>
 </template>
 
 <style lang='scss' scoped>
+.check-category {
+  display: flex;
+  align-items: center;
+  margin: 50px 0 0 25px;
+
+  label {
+    font-weight: bold;
+    color: #555;
+  }
+}
+
 .resume-card-container {
   padding: 0 10px 20px 20px;
   display: flex;

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import type { themeType } from "@/common/theme"
+import { themeType } from "@/templates/config";
 import { useRouter } from "vue-router";
 
 defineProps<{ theme: themeType }>();
@@ -29,6 +29,7 @@ const edit = (type: string) => {
   position: relative;
   text-align: center;
   transition: transform .4s;
+  color: #555;
   cursor: pointer;
 
   img {
