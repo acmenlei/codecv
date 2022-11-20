@@ -16,22 +16,29 @@ const extentions = [markdownLanguage];
 </script>
 
 <template>
-  <Header @download-dynamic="downloadDynamic" @download-native="downloadNative" @download-md="downloadMD"
-    @import-md="importMD" />
+  <Header 
+      @download-dynamic="downloadDynamic" 
+      @download-native="downloadNative" 
+      @download-md="downloadMD"
+      @import-md="importMD" />
   <div id="root">
     <div class="markdown-edit">
-      <codemirror v-model="content" :style="{ height: '100vh', width: `${left}px` }" :autofocus="true"
-        :indent-with-tab="true" :extensions="extentions" @change="setContent" />
+      <codemirror
+          v-model="content"
+          :style="{ height: '100vh', width: `${left}px`}" 
+          :autofocus="true"
+          :indent-with-tab="true" 
+          :extensions="extentions" 
+          @change="setContent" />
       <div class="move absolute" @mousedown="down"></div>
     </div>
-    <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" @upload-avatar="setAvatar"/>
+    <markdown-render class="markdown-render" :resumeType="resumeType" :content="content" @upload-avatar="setAvatar" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 #root {
   display: flex;
-
   .markdown-edit {
     position: relative;
     height: 100vh;

@@ -1,11 +1,12 @@
 @import url("../common.css");
 
 .markdown-transform-html {
-
+  color: var(--markdown-primary-color);
   h1,
   h2 {
     margin: 10px 0 0 0;
-    border-bottom: 1.5px solid var(--markdown-primary-color);
+    color: var(--markdown-primary-bg-color);
+    border-bottom: 1.5px solid var(--markdown-primary-bg-color);
   }
 
   h2 {

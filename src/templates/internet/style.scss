@@ -5,7 +5,8 @@
   h1,
   h2 {
     margin: 10px 0 8px 0;
-    border-bottom: 3px solid var(--markdown-primary-color);
+    color: var(--markdown-primary-bg-color);
+    border-bottom: 3px solid var(--markdown-primary-bg-color);
   }
 
   h2 {
@@ -61,7 +62,6 @@
       letter-spacing: 8px;
       border-bottom: none;
       margin-bottom: 20px;
-
       strong {
         margin-left: 20px;
         font-size: 17px;

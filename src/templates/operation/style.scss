@@ -1,6 +1,7 @@
 @import url("../common.css");
 
 .markdown-transform-html {
+  color: var(--markdown-primary-color);
 
   h1,
   h2 {
@@ -9,6 +10,7 @@
 
   h2 {
     font-size: 20px;
+
     i.iconfont {
       font-size: 1.3rem;
     }
@@ -24,11 +26,6 @@
   h6,
   strong {
     font-size: 14px;
-  }
-
-  a {
-    color: var(--markdown-primary-color);
-    text-decoration: none;
   }
 
   .iconfont {
@@ -59,7 +56,7 @@
   .head-layout::before {
     content: "";
     position: absolute;
-    background: rgb(186, 193, 202);
+    background: var(--markdown-primary-bg-color);
   }
 
   &::after {
@@ -71,7 +68,7 @@
 
   .head-layout {
     z-index: 9;
-    background: rgb(186, 193, 202);
+    background: var(--markdown-primary-bg-color);
     position: relative;
     padding-bottom: 20px;
     padding-left: 10px;
@@ -92,6 +89,7 @@
     }
 
     a {
+      text-decoration: none;
       color: white !important;
     }
   }

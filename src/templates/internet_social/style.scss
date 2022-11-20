@@ -3,17 +3,18 @@
 .markdown-transform-html {
   font-size: 16.5px;
   padding: 20px 35px;
+  color: var(--markdown-primary-color);
 
   .iconfont {
     margin-right: 5px;
     font-size: 1.3rem;
-    color: #333;
+    color: var(--markdown-primary-color);
   }
 
   h2 {
     margin-top: 30px;
     padding: 0 5px;
-    background: skyblue;
+    background: var(--markdown-primary-bg-color);
     color: white !important;
     display: inline-block;
     position: relative;
@@ -24,7 +25,7 @@
       content: "";
       position: absolute;
       border: 20px solid transparent;
-      border-top-color: rgb(154, 212, 235);
+      border-top-color: var(--markdown-primary-bg-color);
       left: -20px;
       z-index: -1;
     }
@@ -40,7 +41,8 @@
 
     li {
       margin-top: 6px;
-      color: #666;
+      color: var(--markdown-primary-color);
+      opacity: .7;
     }
   }
 
@@ -50,17 +52,16 @@
 
   p {
     margin-top: 8px;
-    color: #666;
   }
 
   strong {
-    color: #333;
+    color: var(--markdown-primary-color);
   }
 
   .head-layout {
     h2 {
       background: none;
-      color: #333 !important;
+      color: var(--markdown-primary-color) !important;
       margin-top: 20px;
       border-bottom: none;
       font-size: 1.6rem;

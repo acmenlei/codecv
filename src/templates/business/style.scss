@@ -24,12 +24,12 @@
       &:last-child {
         padding: 10px 20px 10px 10px;
         width: calc(210mm - 300px);
-        color: #555;
+        color: var(--markdown-primary-color);
         h2 {
           margin-top: 16px;
         }
         strong {
-          color: #333;
+          color: var(--markdown-primary-color);
         }
 
         .flex-layout {
@@ -45,7 +45,7 @@
   }
 
   .head-layout {
-    background: #222;
+    background: var(--markdown-primary-bg-color);
     color: white;
     padding: 10px 10px 10px 30px;
     min-height: calc(297mm - 46px);

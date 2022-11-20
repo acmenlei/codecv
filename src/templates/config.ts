@@ -11,7 +11,7 @@ export const themes = [
   {
     type: 'operation',
     id: 1,
-    img: "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/da4c963a203e4007b09408a08f80a846~tplv-k3u1fbpfcp-watermark.image?",
+    img: "https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",
     content: operation,
     name: '运营类'
   },
@@ -65,5 +65,33 @@ export const themes = [
     name: '互联网社招类(适合经验丰富)'
   },
 ];
+
+const primaryColorMap = {
+  'business': ['#555', '#222'],
+  'front_end': ['#333', '#333'],
+  'general': ['#333', '#719ba5'],
+  'internet': ['#333', '#333'],
+  'internet_avatar': ['#333', '#333'],
+  'internet_social': ['#333', '#9ad4eb'],
+  'operation': ['#333', '#333'],
+  'operation_avatar': ['#333', '#1a85f0'],
+}
+interface IPrimaryColorMap {
+  business: Array<string>;
+  front_end: Array<string>;
+  general: Array<string>;
+  internet: Array<string>;
+  internet_avatar: Array<string>;
+  internet_social: Array<string>;
+  operation: Array<string>;
+  operation_avatar: Array<string>;
+}
+
+export function getPrimaryBGColor(type: string) {
+  return primaryColorMap[type as keyof IPrimaryColorMap][1];
+}
+export function getPrimaryColor(type: string) {
+  return primaryColorMap[type as keyof IPrimaryColorMap][0];
+}
 
 export type themeType = typeof themes[0];
