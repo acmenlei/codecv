@@ -1,5 +1,24 @@
 @import url("@/assets/icon/iconfont.css");
 
+@font-face {
+  font-family: "Menlo-Regular";
+  src: url("../assets/font/Menlo-Regular.ttf") format("ttf"),
+    url("../assets/font/monaco.ttf") format("ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "方正GDC体";
+  src: url("../assets/font/方正GDC体.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "仓耳渔阳体 W02";
+  src: url("../assets/font/仓耳渔阳体W02.woff2") format("woff2"),
+    url("../assets/font/仓耳渔阳体W02.woff") format("woff");
+  font-display: swap;
+}
+
 :root {
   --theme: rgb(70, 147, 255);
   --bg-theme: #444;

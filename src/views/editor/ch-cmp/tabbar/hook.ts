@@ -130,12 +130,12 @@ export function useCustomFont(resumeType: string) {
   const cacheKey = MARKDOWN_FONT + '-' + resumeType;
   const fontOptions = [
     {
-      value: 'Helvetica Neue',
-      label: 'Helvetica Neue'
+      value: "方正GDC体",
+      label: "方正GDC体"
     },
     {
-      value: '阿里巴巴普惠体',
-      label: '阿里巴巴普惠体',
+      value: 'Helvetica Neue',
+      label: 'Helvetica Neue'
     },
     {
       value: 'Menlo-Regular',
