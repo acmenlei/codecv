@@ -24,7 +24,7 @@ export default defineConfig({
       "@": resolve(__dirname, 'src')
     }
   },
-  base: './',
+  base: "./",
   build: {
     rollupOptions: {
       output: {
