@@ -189,15 +189,10 @@ export function splitPage(renderDOM: HTMLElement) {
     wrapperItem.appendChild(resumeNode);
     wrapper.appendChild(wrapperItem);
 
-    curHeight -= A4_HEIGHT + 18;
+    curHeight -= A4_HEIGHT;
     realHeight += A4_HEIGHT;
 
-    const splitDOM = createDIV();
-    splitDOM.classList.add('jufe-wrapper-page-split');
-    curHeight += 18;
-
     reRender?.appendChild(wrapper);
-    reRender?.appendChild(splitDOM);
   }
 }
 

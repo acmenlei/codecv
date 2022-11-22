@@ -76,23 +76,34 @@
   margin-top: 5px;
 }
 
+.jufe-wrapper-page {
+  height: 1123px;
+  width: 210mm;
+  margin: 5mm auto;
+  background: white;
+  position: relative;
+}
+
+/* .jufe-wrapper-page::after {
+  content: "";
+  width: 220mm;
+  height: 307mm;
+  position: absolute;
+  background: inherit;
+  top: -5mm;
+  left: -5mm;
+  z-index: -1;
+} */
+
+.jufe-wrapper-page-item {
+  width: 210mm;
+  overflow: hidden;
+  position: relative;
+}
+
 @media print {
   @page {
     size: A4 portrait;
     margin: 0;
-    padding: 0;
-  }
-
-  .other-ele {
-    display: none;
-  }
-
-  .pdf-title {
-    display: block;
-  }
-
-  .panel-sm {
-    margin: 0;
-    border: 1px solid #bce8f1;
   }
 }
