@@ -6,6 +6,8 @@
   h1,
   h2 {
     margin-top: 10px;
+    color: var(--markdown-primary-bg-color);
+    border-bottom: 1.5px solid var(--markdown-primary-bg-color);
   }
 
   h2 {
@@ -36,6 +38,7 @@
   ul,
   ol {
     padding-left: 20px;
+    margin-top: 5px;
   }
 
   ul {
@@ -73,7 +76,10 @@
     padding-bottom: 20px;
     padding-left: 10px;
     color: white !important;
-
+    h1, h2 {
+      border-bottom: none;
+      color: white!important;
+    }
     &::after {
       width: 41px;
       height: 100%;
