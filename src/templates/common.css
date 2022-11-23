@@ -84,17 +84,6 @@
   position: relative;
 }
 
-/* .jufe-wrapper-page::after {
-  content: "";
-  width: 220mm;
-  height: 307mm;
-  position: absolute;
-  background: inherit;
-  top: -5mm;
-  left: -5mm;
-  z-index: -1;
-} */
-
 .jufe-wrapper-page-item {
   width: 210mm;
   overflow: hidden;

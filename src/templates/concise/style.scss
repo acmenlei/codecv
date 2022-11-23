@@ -1,0 +1,35 @@
+@import url("../common.css");
+
+.jufe {
+  font-size: 16px;
+  color: var(--markdown-primary-color);
+
+  h1,
+  h2 {
+    color: var(--markdown-primary-bg-color);
+    margin-top: 10px;
+    font-size: 21px;
+  }
+
+  li,
+  p {
+    margin-top: 5px;
+  }
+
+  strong {
+    font-size: 17px;
+    color: var(--markdown-primary-bg-color);
+  }
+
+  i.iconfont {
+    margin-right: 5px;
+    font-size: 1.3rem;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 3mm;
+  }
+}

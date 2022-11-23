@@ -170,8 +170,7 @@ export function useCustomFont(resumeType: string) {
 
 // 分割视图
 export function splitPage(renderDOM: HTMLElement) {
-  let curHeight = 0, realHeight = 0, target = renderDOM.clientHeight, reRender = document.querySelector('.re-render');
-
+  let page = 0, realHeight = 0, target = renderDOM.clientHeight, reRender = document.querySelector('.re-render');
   reRender!.innerHTML = '';
   while (target - realHeight > 1) {
     const wrapper = createDIV(), resumeNode = renderDOM.cloneNode(true) as HTMLElement;
@@ -183,15 +182,14 @@ export function splitPage(renderDOM: HTMLElement) {
     wrapperItem.style.height = realRenderHeight + 'px';
 
     resumeNode.style.position = 'absolute';
-    resumeNode.style.top = curHeight + 'px';
+    resumeNode.style.top = -page * A4_HEIGHT + 'px';
     resumeNode.style.left = 0 + 'px';
 
     wrapperItem.appendChild(resumeNode);
     wrapper.appendChild(wrapperItem);
 
-    curHeight -= A4_HEIGHT;
     realHeight += A4_HEIGHT;
-
+    page++;
     reRender?.appendChild(wrapper);
   }
 }

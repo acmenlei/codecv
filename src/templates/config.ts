@@ -6,6 +6,7 @@ import general from "./general/index";
 import operation_avatar from "./operation_avatar";
 import business from "./business";
 import internet_social from "./internet_social";
+import concise from "./concise";
 
 export const themes = [
   {
@@ -64,6 +65,13 @@ export const themes = [
     content: internet_social,
     name: '互联网社招类(适合经验丰富)'
   },
+  {
+    type: "concise",
+    id: 9,
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?',
+    content: concise,
+    name: '社招/校招简洁模版'
+  },
 ];
 
 const primaryColorMap = {
@@ -72,6 +80,7 @@ const primaryColorMap = {
   'general': ['#333', '#719ba5'],
   'internet': ['#333', '#333'],
   'internet_avatar': ['#333', '#333'],
+  'concise': ['#555', '#333'],
   'internet_social': ['#333', '#9ad4eb'],
   'operation': ['#333', '#333'],
   'operation_avatar': ['#333', '#1a85f0'],

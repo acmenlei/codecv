@@ -540,4 +540,48 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 \u8F6F\u4EF6\u5B66\u9662 - \u8F6F\u4EF6\u5DE5\u7A0B - \u672C\u79D1
 
 ## \u81EA\u6211\u8BC4\u4EF7
-\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....`,o=[{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u8FD0\u8425\u7C7B"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u901A\u7528\u6A21\u677F"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"business",id:7,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/22f0130e940a4a8b8c022f3bd1e43bea~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"}],F={business:["#555","#222"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"]};function a(u){return F[u][1]}function n(u){return F[u][0]}export{n as a,a as g,o as t};
+\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....`,o=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF
+::: start
+icon:user 2000/01/01
+:::
+icon:phone 1387848538
+:::
+icon:email examples.@163.com
+:::
+icon:github https://github.com/acmenlei
+::: end
+## \u6559\u80B2\u7ECF\u5386
+\u6C5F\u897F\u8D22\u7ECF\u5927\u5B66 \u4FE1\u7535\u5B66\u9662-\u8BA1\u7B97\u673A 2019-2023 \u672C\u79D1
+
+## \u4E13\u4E1A\u6280\u80FD
+\u719F\u77E5Javascript \u57FA\u672C\u8BED\u6CD5\u4E0E\u77E5\u8BC6\uFF0C\u719F\u7EC3\u638C\u63E1\u6A21\u5757\u5316\uFF0C\u9762\u5411\u5BF9\u8C61\uFF0CMVC \u7B49\u7F16\u7A0B\u601D\u60F3\uFF0C\u5177\u5907\u5404\u79CD\u6846\u67B6\u7B49\u5B66\u4E60\u80FD\u529B
+\u4E86\u89E3\u5E38\u89C1\u7684\u6570\u636E\u7ED3\u6784\u4E0E\u7B97\u6CD5\u77E5\u8BC6\uFF0C\u80FD\u591F\u4F7F\u7528JavaScript \u5B9E\u73B0\u5E38\u89C1\u7684\u6570\u636E\u7ED3\u6784
+\u638C\u63E1\u524D\u7AEF\u6D41\u884C\u6846\u67B6 React\u3001vue
+\u719F\u7EC3\u4F7F\u7528 NPM, webpack \u7B49\u5DE5\u5177
+\u4E86\u89E3\u524D\u7AEF\u517C\u5BB9\u6027\u5904\u7406\u3001\u6027\u80FD\u4F18\u5316\u77E5\u8BC6\u4E0E\u6280\u5DE7\uFF0C\u5E76\u80FD\u5728\u9879\u76EE\u4E2D\u52A0\u4EE5\u5B9E\u8DF5
+\u638C\u63E1 Node'S\uFF0C\u53EF\u4F7F\u7528 Koa/Express \u642D\u5EFA\u670D\u52A1\u7AEF\u7A0B\u5E8F
+\u4E86\u89E3 Canvas/Pixils \u7B49web2D\u76F8\u5173\u6280\u672F
+
+## \u5B9E\u4E60\u7ECF\u5386
+**\u963F\u91CC\u5DF4\u5DF4** (2022.4-2022.7)
+**\u4E3B\u8981\u6280\u672F**\uFF1A\`JavaScript\` \`A11v\`
+\u53C2\u4E0E\u4E92\u52A8\u6E38\u620F\u4E1A\u52A1\u5F00\u53D1\uFF0C\u7ED3\u5408\u524D\u7AEF\u6E38\u620F\u5F15\u64CE\uFF0C\u89E3\u51B3Canvas\u533A\u57DF\u7684\u65E0\u969C\u788D\u95EE\u9898\uFF0C\u5B9E\u73B0\u573A\u666F\u5316\u3001\u81EA\u52A8\u5316\u3001\u6807\u51C6\u5316\u7684\u79FB\u52A8\u7AEF\u6E38\u620F\u65E0\u969C\u788D\u5316\u5DE5\u5177\u3002
+\u573A\u666F\u5316\uFF1A\u9762\u5BF9\u65E0\u969C\u788D\u6A21\u5F0F \u4E0B\u53EA\u80FD\u70B9\u6309\u95EE\u9898\uFF0C\u5BF9\u62D6\u52A8\u4EA4\u4E92\u573A\u666F\u8FDB\u884C\u4F18\u5316
+\u81EA\u52A8\u5316\uFF1A\u9488\u5BF9\u6E38\u620F\u5BF9\u8C61\uFF0C\u81EA\u52A8\u6DFB\u52A0AOM\u5B9E\u73B0\u65E0\u969C\u788D\u63D0\u793A\u6807\u51C6\u5316\uFF1A\u5BF9\u9F50\u65E0\u969C\u788D\u6807\u51C6\uFF0CWAlI-ARIA\u3001WICG/AOM
+\u6210\u679C:\u8FD0\u7528\u5230\u91D1\u5E01\u5C0F\u9547\u3001\u82AD\u82AD\u519C\u573A\u3001\u53CC11\u7B49\u4E92\u52A8\u9879\u76EE\uFF0C\u89E3\u51B3\u9879\u76EE\u65E0\u969C\u788D\u95EE\u9898\uFF0C\u8BA9\u89C6\u529B\u969C\u788D\u8005\u4E5F\u80FD\u4F53\u9A8C\u4E92\u52A8\u4E50\u8DA3\u3002
+&nbsp;
+**\u5B57\u8282\u8DF3\u52A8** (2022.8-2022.10)
+\u4E3B\u8981\u6280\u672F\uFF1ATypescript/React/Mobx/Nodejs
+\u53C2\u4E0E\u4E1A\u52A1\u5F00\u53D1\u4E0E\u6280\u672F\u6539\u9020\uFF0C\u4E3B\u5BFC\u4E86\u6027\u80FD\u4F18\u5316\u3001\u6D88\u706Dcode smell\u3001Onview \u6539\u9020\u7B49\u4E00\u7CFB\u5217\u5DE5\u4F5C\u3002
+\u8D1F\u8D23\u5168\u7AD9\u5305\u5927\u5C0F\u4F18\u5316\uFF0C\u5BF9build \u4EA7\u7269\u8FDB\u884C\u5206\u6790\u5E76\u9010\u6B65\u4F18\u5316\uFF0C\u6700\u540E\u51CF\u5C1150% InitialJs Size\uFF0C\u9875\u9762\u52A0\u8F7D\u901F\u5EA6\u4ECE 4s\u964D\u81F325
+\u4E3B\u5BFC\u6D88\u706Dcode smell \u5DE5\u4F5C\uFF0C\u91CD\u67842K \u4F59\u884C\u4EE3\u7801\uFF0C\u6D88\u706Dcode smell 700 \u4F59\u4E2A\uFF0C\u5E76\u5236\u5B9A ESLint\u89C4\u8303\uFF0C\u964D\u4F4Ecodereview\u6210\u672C
+\u4E3B\u5BFCOnview \u6539\u9020\uFF0C\u5F00\u53D1\u4E00\u952EOnview \u529F\u80FD\uFF0C\u6355\u83B7\u9519\u8BEF\u65E5\u5FD7\uFF0C\u5E2E\u52A9\u7814\u53D1\u4EBA\u5458\u5FEB\u901F\u5B9A\u4F4D\u95EE\u9898\uFF0C\u89E3\u51B3\u53CD\u9988\uFF0C\u63D0\u9AD8\u4EBA\u6548
+\u53C2\u4E0E\u9879\u76EE\u7684TS\u6539\u9020\u4EE5\u53CA Monorepo \u8FC1\u79FB\uFF0C\u7F16\u5199\u6587\u6863\uFF0C\u5236\u5B9A\u76F8\u5E94\u7684\u7C7B\u578B\u89C4\u8303
+\u7F16\u5199\u63D0\u9AD8\u5DE5\u4F5C\u6548\u7387\u7684\u5C0F\u5DE5\u5177\uFF0C\u4F8B\u5982\u6279\u91CF\u63A5\u53E3\u6253\u6807\u811A\u672C\uFF0C\u63A5\u53E3mock\u811A\u672C\u7B49\u7B49\uFF0C\u4E3A\u5F00\u53D1\u63D0\u6548\uFF0C\u83B7\u5F97\u7EC4\u5185\u4E00\u81F4\u597D\u8BC4\u3002
+&nbsp;
+## \u6821\u56ED\u9879\u76EE
+**\u6210\u7EE9\u67E5\u8BE2**
+\u4E3B\u8981\u6280\u672F\uFF1ANode S/lavascript
+\u4E3A\u5B66\u751F\u63D0\u4F9B\u6210\u7EE9\u67E5\u8BE2\u7CFB\u7EDF\uFF0C\u89E3\u51B3\u5185\u5916\u7F51\u9694\u79BB\u95EE\u9898\uFF0C\u63D0\u4F9B\u6210\u7EE9\u77ED\u4FE1\u901A\u77E5\u80FD\u529B\uFF0C\u4E3A2\u4E07\u5728\u6821\u751F\u63D0\u4F9B\u5728\u5BB6\u67E5\u6210\u7EE9\u670D\u52A1\u3002\u4F7F\u7528Koa2\u63D0\u4F9BAP\u63A5\u53E3\uFF0C\u4EE5\u4F9B\u524D\u7AEF\u4F7F\u7528\u3001\u8FD0\u7528Node js\u5B9E\u73B0\u5E26\u767B\u9646;\u6001\u8BF7\u6C42\u3001\u4F7F\u7528React/ Antd\u5B9E\u73B0\u524D\u7AEFUI\u754C\u9762\u3001\u63A5\u5165\u963F\u91CC\u4E91\u77ED\u4FE1API\u3002
+## \u5176\u4ED6
+\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,a=[{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u8FD0\u8425\u7C7B"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u901A\u7528\u6A21\u677F"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"business",id:7,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/22f0130e940a4a8b8c022f3bd1e43bea~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"}],F={business:["#555","#222"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"]};function n(u){return F[u][1]}function i(u){return F[u][0]}export{i as a,n as g,a as t};

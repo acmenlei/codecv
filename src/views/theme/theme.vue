@@ -34,5 +34,6 @@ const { queryCategory, category, data } = useCategory();
   padding: 0 10px 20px 20px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 </style>
