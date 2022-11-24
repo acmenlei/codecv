@@ -4,7 +4,8 @@ import { timeLine } from "./constant";
 </script>
 
 <template>
-  <div  class="time-line" data-aos="fade-right">
+  <div class="time-line" data-aos="fade-right">
+    <h3>历史版本</h3>
     <el-timeline>
       <el-timeline-item type="primary" v-for="(line, index) in timeLine" :key="index" :timestamp="line.timestamp">
         <p>{{ line.version }}</p>
@@ -16,7 +17,13 @@ import { timeLine } from "./constant";
 
 <style lang='scss' scoped>
 .time-line {
-  width: 1123px;
+  max-width: 1123px;
   margin: 30px auto;
+  background: #fff;
+  padding: 30px;
+
+  h3 {
+    margin-bottom: 20px;
+  }
 }
 </style>

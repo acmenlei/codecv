@@ -11,9 +11,8 @@ import Header from "./ch-cmp/header.vue"
       <h2>可以将你编写的<span class="highlight">Markdown</span>转为<span class="highlight">PDF</span>格式的文件</h2>
     </div>
   </div>
-  <div class="gap"></div>
   <div class="mask"></div>
-  <div class="introduce flex flex-space-around flex-align-center">
+  <div class="introduce white-bg flex flex-space-around flex-align-center">
     <img src="/resume-bg-two.svg" data-aos="fade-right">
     <div class="introduce-r tac" data-aos="fade-left">
       <h2>多种模板适配，你想要的 <span class="highlight">这里都有</span></h2>
@@ -23,8 +22,7 @@ import Header from "./ch-cmp/header.vue"
     <div class="ball-bottom" data-aos="fade-right" data-aos-duration="1000"></div>
     <div class="ball-top" data-aos="fade-up" data-aos-duration="1000"></div>
   </div>
-  <div class="gap"></div>
-  <div class="introduce flex odd flex-space-around flex-align-center">
+  <div class="introduce white-bg flex odd flex-space-around flex-align-center">
     <div class="introduce-r tac" data-aos="fade-right">
       <h2>根据自身喜好 <span class="highlight">DIY</span>简历样式</h2>
       <h2>简历怎么配色<span class="highlight">由你决定</span>～</h2>
@@ -36,11 +34,10 @@ import Header from "./ch-cmp/header.vue"
 </template>
 
 <style lang='scss' scoped>
-.gap {
-  height: 20px;
-  background: #f9f9f9;
+.white-bg {
+  background: #fff;
+  margin-top: 20px;
 }
-
 .introduce {
   color: #333;
   height: 100vh;
@@ -62,12 +59,11 @@ import Header from "./ch-cmp/header.vue"
     height: 50%;
     border-radius: 50%;
     position: absolute;
-    z-index: -1;
-    opacity: .4;
+    opacity: .3;
   }
 
   .ball-bottom {
-    background: skyblue;
+    background: #05b2f7;
     bottom: -20%;
     left: -25%;
   }
@@ -86,6 +82,9 @@ import Header from "./ch-cmp/header.vue"
     .ball-top {
       background: #d27ef9;
     }
+  }
+  img,.introduce-r {
+    z-index: 2;
   }
 }
 

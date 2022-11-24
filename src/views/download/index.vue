@@ -27,7 +27,7 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .markdown-transform-html {
-  width: 750px;
-  padding: 10px;
+  width: 210mm;
+  min-height: 295mm;
 }
 </style>

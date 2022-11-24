@@ -28,7 +28,7 @@ function toOutNav(path: string) {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
   transition: background .5s;
   height: 60px;
   margin-bottom: 20px;

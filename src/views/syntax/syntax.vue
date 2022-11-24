@@ -15,7 +15,7 @@ onMounted(() => {
 
 <template>
   <div id="syntax" class="flex" data-aos="fade-right">
-    <el-card shadow="none">
+    <el-card shadow="none" style="border: none; overflow: auto;">
       <div class="syntax-helper" ref="helper"></div>
     </el-card>
     <VueMarkdownMenuBar class="slider" body=".syntax-helper" width="200px" />
