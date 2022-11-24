@@ -4,7 +4,7 @@ import { getCurrentTypeContent, getPdf, importCSS } from "@/common/utils";
 import { markdownToHTML } from "markdown-transform-html";
 import { onActivated, onDeactivated, Ref, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { splitPage } from "./ch-cmp/tabbar/hook";
+import { splitPage } from "./components/tabbar/hook";
 
 const  MARKDOWN_CONTENT = 'markdown-content', get = getLocalStorage;
 

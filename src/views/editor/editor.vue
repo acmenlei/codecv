@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Header from "./ch-cmp/header/header.vue"
-import MarkdownRender from "@/views/editor/ch-cmp/preview/render.vue"
+import Header from "./components/header/header.vue"
+import MarkdownRender from "@/views/editor/components/preview/render.vue"
 import { useMarkdownContent, useResumeType, useDownLoad, useImportMD, useMoveLayout, useAvatar } from "./hook"
 import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from "@codemirror/lang-markdown";

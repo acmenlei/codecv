@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import Header from "./ch-cmp/header.vue"
+import Header from "./components/header.vue"
 </script>
 
 <template>

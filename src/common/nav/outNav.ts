@@ -12,6 +12,12 @@ const outNav = [
     icon: 'iconfont icon-template nav-icon'
   },
   {
+    name: '求职社区',
+    path: '/community',
+    icon: 'iconfont icon-head nav-icon',
+    tooltip: false
+  },
+  {
     name: '语法助手',
     path: '/syntax/helper',
     icon: 'iconfont icon-problem nav-icon',

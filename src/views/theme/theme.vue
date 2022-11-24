@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import resumeCard from './ch-cmp/resumeCard.vue';
+import resumeCard from './components/resumeCard.vue';
 import { templateCategory } from './constant';
 import { useCategory } from "./hook";
 

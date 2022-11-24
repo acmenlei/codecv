@@ -6,12 +6,6 @@ const nav = [
     icon: 'iconfont icon-book nav-icon'
   },
   {
-    name: '首页',
-    path: '/home',
-    icon: 'iconfont icon-home nav-icon',
-    tooltip: false
-  },
-  {
     name: '简历模板',
     path: '/theme',
     icon: 'iconfont icon-template nav-icon',
@@ -28,12 +22,6 @@ const nav = [
     icon: 'iconfont icon-problem nav-icon',
     tooltip: false
   },
-  // {
-  //   name: '更新内容',
-  //   path: '/update/line',
-  //   icon: 'iconfont icon-book nav-icon',
-  //   tooltip: false
-  // },
 ]
 
 export default nav;

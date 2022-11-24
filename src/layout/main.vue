@@ -6,13 +6,14 @@ import Footer from "./footer.vue"
 <template>
   <Header v-if="!['/editor', '/home'].includes($route.path)" />
   <div id="main">
+    <el-backtop :bottom="100" />
     <router-view v-slot="{ Component }">
       <keep-alive :max="10" include="editor,syntax,update,theme">
         <component :is="Component" />
       </keep-alive>
     </router-view>
   </div>
-  <Footer v-if="!['/home','/editor'].includes($route.path)" />
+  <Footer v-if="!['/home', '/editor'].includes($route.path)" />
 </template>
 
 <style lang="scss" scoped>
