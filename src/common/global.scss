@@ -73,15 +73,23 @@
   align-items: center;
 }
 
-.active {
-  border-bottom: 2px solid var(--theme);
+.checked {
+  color: var(--theme);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    width: 60%;
+    left: 0;
+    background-color: var(--theme);
+    border-radius: 3px;
+  }
 
   a {
     color: var(--theme) !important;
-  }
-
-  i {
-    color: var(--theme);
   }
 }
 
@@ -105,14 +113,31 @@
 .logo {
   cursor: pointer;
   transition: transform .5s;
+
   &:hover {
     will-change: transform;
-    transform: scale(1.2)!important;
+    transform: scale(1.2) !important;
   }
 }
 
-.community-card {
+.content-card {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.none {
+  list-style: none;
 }

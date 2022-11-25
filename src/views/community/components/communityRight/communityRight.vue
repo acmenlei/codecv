@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="community-slider community-card" data-aos="fade-left">
+  <div class="community-slider content-card" data-aos="fade-left">
     侧边栏显示区域
   </div>
 </template>

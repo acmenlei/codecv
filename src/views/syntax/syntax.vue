@@ -15,22 +15,27 @@ onMounted(() => {
 
 <template>
   <div id="syntax" class="flex" data-aos="fade-right">
-    <el-card shadow="none" style="border: none; overflow: auto;">
+    <el-card shadow="never" style="border: none; overflow: auto;">
       <div class="syntax-helper" ref="helper"></div>
     </el-card>
-    <VueMarkdownMenuBar class="slider" body=".syntax-helper" width="200px" />
+    <VueMarkdownMenuBar class="slider" body=".syntax-helper" width="300px" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 #syntax {
-  margin: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
   justify-content: center;
 
   .slider {
     position: sticky;
     top: 0;
     margin-left: 20px;
+  }
+  .syntax-helper {
+    padding: 10px;
+    max-width: 800px;
   }
 }
 </style>

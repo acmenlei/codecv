@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="community-publish community-card" data-aos="fade-right">
+  <div class="community-publish content-card" data-aos="fade-right">
     <div class="community-btn-group">
       <button class="btn primary">写文章</button>
       <button class="btn plain">分享动态</button>

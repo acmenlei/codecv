@@ -6,7 +6,9 @@ import Footer from "./footer.vue"
 <template>
   <Header v-if="!['/editor', '/home'].includes($route.path)" />
   <div id="main">
-    <el-backtop :bottom="100" />
+    <el-tooltip placement="bottom" content="返回顶部">
+      <el-backtop :bottom="100" />
+    </el-tooltip>
     <router-view v-slot="{ Component }">
       <keep-alive :max="10" include="editor,syntax,update,theme">
         <component :is="Component" />

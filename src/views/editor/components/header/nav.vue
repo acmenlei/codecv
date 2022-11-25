@@ -9,7 +9,7 @@ defineEmits(['export-md', 'import-md'])
 
 <template>
   <ul class="nav">
-    <li v-for="navItem in nav" :class="{ 'active': $route.path === navItem.path }">
+    <li v-for="navItem in nav">
       <template v-if="navItem.children">
         <el-dropdown class="el-dropdown">
           <!-- 父菜单 -->
@@ -29,10 +29,9 @@ defineEmits(['export-md', 'import-md'])
       </template>
       <!-- 不是级联菜单走这里 -->
       <template v-else>
-        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''"><i :class="navItem.icon"></i>{{ navItem.name }}
-        </router-link>
+        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
         <RenderModal v-else :toggle='toggle'>
-          <i :class="navItem.icon"></i><span @click="toggle = !toggle">{{ navItem.name }}</span>
+          <span @click="toggle = !toggle">{{ navItem.name }}</span>
         </RenderModal>
       </template>
     </li>

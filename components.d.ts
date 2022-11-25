@@ -26,6 +26,7 @@ declare module '@vue/runtime-core' {
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    NavBar: typeof import('./src/components/navBar.vue')['default']
     RenderDialog: typeof import('./src/components/renderDialog.vue')['default']
     RenderDrawer: typeof import('./src/components/renderDrawer.vue')['default']
     RenderModal: typeof import('./src/components/renderModal.vue')['default']

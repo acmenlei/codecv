@@ -17,7 +17,7 @@ import { timeLine } from "./constant";
 
 <style lang='scss' scoped>
 .time-line {
-  max-width: 1123px;
+  max-width: 1200px;
   margin: 30px auto;
   background: #fff;
   padding: 30px;

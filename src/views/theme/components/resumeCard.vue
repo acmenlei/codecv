@@ -14,7 +14,7 @@ const edit = (type: string) => {
   <div class="resume-card" @click="edit(theme.type)" data-aos="zoom-in">
     <img :src="theme.img" />
     <div class="resume-card-mask">
-      <button class="btn">使用模板</button>
+      <button class="btn center pointer">使用模板</button>
     </div>
     {{ theme.name }}
   </div>
@@ -23,7 +23,7 @@ const edit = (type: string) => {
 <style lang='scss' scoped>
 .resume-card {
   border: 1px solid #eee;
-  margin: 40px 20px 15px 0;
+  margin: 0 13px 50px 0;
   width: 150px;
   height: 200px;
   position: relative;
@@ -49,11 +49,6 @@ const edit = (type: string) => {
     button {
       color: white;
       background: var(--theme);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      cursor: pointer;
     }
   }
 
