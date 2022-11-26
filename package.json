@@ -13,6 +13,7 @@
   "dependencies": {
     "@codemirror/lang-markdown": "^6.0.4",
     "@codemirror/theme-one-dark": "^6.1.0",
+    "@textbus/editor": "^3.0.0-alpha.32",
     "aos": "^2.3.4",
     "codemirror": "^6.0.1",
     "dayjs": "^1.11.6",

@@ -16,7 +16,7 @@ import outNav from "@/common/nav/outNav"
       </ul>
 
       <div class="user">
-        <div class="user-creative mr-20 pointer primary">写面经 <i class="iconfont icon-practice "></i></div>
+        <div class="user-creative mr-20 pointer primary" @click="$router.push('/articleEditor')">写面经 <i class="iconfont icon-practice "></i></div>
         <span class="user-nick  mr-10">我头发茂盛</span>
         <img class="pointer mr-10" src="https://avatars.githubusercontent.com/u/54731221?v=4" />
       </div>
