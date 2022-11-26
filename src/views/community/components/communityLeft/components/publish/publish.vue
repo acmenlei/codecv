@@ -14,7 +14,7 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
       <span class="text mr-20">分享动态</span>
     </div>
     <div class="community-content-edit">
-      <input class="content-edit title" v-model="shareTitle" maxlength="30" placeholder="标题控制在20字以内" />
+      <input class="content-edit title" v-model="shareTitle" maxlength="30" placeholder="标题" />
       <textarea class="content-edit main-content" v-model="shareMainContent" placeholder="唠点什么～" />
     </div>
     <!-- 图片插入位置 -->

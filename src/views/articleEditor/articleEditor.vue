@@ -6,12 +6,8 @@ import '@textbus/editor/bundles/textbus.min.css';
 const articleEditor = ref();
 
 onMounted(() => {
-  const editor = createEditor({ autoFocus: true, placeholder: '内容尽情发挥～' });
+  const editor = createEditor({ autoFocus: true, styleSheets: ['li { margin-left: 20px }'], placeholder: '内容尽情发挥～' });
   editor.mount(articleEditor.value)
-  editor.onChange.subscribe(() => {
-    console.log(editor.getContent());
-  });
-
   onUnmounted(() => editor.destroy())
 })
 
@@ -20,7 +16,7 @@ onMounted(() => {
 <template>
   <div class="article-editor content-card" data-aos="zoom-out">
     <span class="pointer back" @click="$router.back()">返回</span>
-    <input class="title" type="text" placeholder="请填写文章标题~" />
+    <input class="title" type="text" placeholder="请填写标题~" />
     <div class="editor" ref="articleEditor"></div>
     <el-select placeholder="岗位方向" class="item">
       <el-option value="前端" label="前端"></el-option>
