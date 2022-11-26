@@ -24,7 +24,8 @@ function queryList(index: number) {
 .nav-bar {
   padding: 10px 0;
   margin-bottom: 20px;
-
+  display: flex;
+  justify-content: space-between;
   .tabs {
     display: flex;
     align-items: center;

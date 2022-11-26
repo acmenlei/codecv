@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import NavBar from '@/components/navBar.vue';
 import resumeCard from './components/resumeCard.vue';
 import { templateCategory } from './constant';
 import { useCategory } from "./hook";

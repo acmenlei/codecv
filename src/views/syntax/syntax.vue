@@ -30,7 +30,7 @@ onMounted(() => {
 
   .slider {
     position: sticky;
-    top: 0;
+    top: 65px;
     margin-left: 20px;
   }
   .syntax-helper {

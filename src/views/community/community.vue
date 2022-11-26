@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import CommunityLeft from './components/communityLeft/communityLeft.vue';
 import CommunityRight from './components/communityRight/communityRight.vue';
-import CommunityPublish from './components/communityLeft/components/communityPublish.vue';
+import CommunityPublish from './components/communityLeft/components/publish/publish.vue';
 </script>
 
 <template>

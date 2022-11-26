@@ -10,7 +10,7 @@ import Footer from "./footer.vue"
       <el-backtop :bottom="100" />
     </el-tooltip>
     <router-view v-slot="{ Component }">
-      <keep-alive :max="10" include="editor,syntax,update,theme">
+      <keep-alive :max="10" include="editor,syntax,update,theme,community">
         <component :is="Component" />
       </keep-alive>
     </router-view>
@@ -20,6 +20,6 @@ import Footer from "./footer.vue"
 
 <style lang="scss" scoped>
 #main {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 60px);
 }
 </style>
