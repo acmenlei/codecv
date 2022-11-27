@@ -15,6 +15,7 @@
     "@codemirror/theme-one-dark": "^6.1.0",
     "@textbus/editor": "^3.0.0-alpha.32",
     "aos": "^2.3.4",
+    "axios": "^1.2.0",
     "codemirror": "^6.0.1",
     "dayjs": "^1.11.6",
     "element-plus": "^2.2.19",
