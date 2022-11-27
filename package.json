@@ -22,6 +22,8 @@
     "jspdf": "^2.5.1",
     "markdown-transform-html": "^1.5.3",
     "nprogress": "^0.2.0",
+    "picture-verification-code": "^1.1.0",
+    "pinia": "^2.0.27",
     "vue": "^3.2.41",
     "vue-codemirror": "^6.1.1",
     "vue-markdown-menu-bar": "^1.1.5",

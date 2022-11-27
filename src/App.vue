@@ -19,6 +19,6 @@ onMounted(() => AOS.init())
   margin: 0;
 }
 body {
-  background: #f8f8f8;
+  background: #f3f5f7;
 }
 </style>

@@ -25,7 +25,7 @@ const extentions = [markdownLanguage];
     <div class="markdown-edit">
       <codemirror
           v-model="content"
-          :style="{ height: '100vh', width: `${left}px`}" 
+          :style="{ height: '100vh', width: `${left}px`, background: '#fff'}" 
           :autofocus="true"
           :indent-with-tab="true" 
           :extensions="extentions" 
