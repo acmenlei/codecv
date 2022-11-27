@@ -78,7 +78,7 @@
   color: var(--theme);
   position: relative;
   font-weight: bold;
-  
+
   &::after {
     content: "";
     position: absolute;
@@ -136,6 +136,14 @@
   margin-left: 20px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
 .mr-20 {
   margin-right: 20px;
 }
@@ -169,4 +177,17 @@
 .plain {
   color: #333;
   background: #f8f8f8;
+}
+
+.list-style-init {
+  list-style: none;
+
+  li {
+    cursor: pointer;
+    margin-top: 10px;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
 }

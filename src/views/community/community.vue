@@ -1,13 +1,13 @@
 <script setup lang='ts'>
 import CommunityLeft from './components/communityLeft/communityLeft.vue';
 import CommunityRight from './components/communityRight/communityRight.vue';
-import CommunityPublish from './components/communityLeft/components/publish/publish.vue';
+// import CommunityPublish from './components/communityLeft/components/publish/publish.vue';
 </script>
 
 <template>
   <div class="community">
     <div class="community-left-list">
-      <CommunityPublish />
+      <!-- <CommunityPublish /> -->
       <CommunityLeft />
     </div>
     <div class="community-right-slider">

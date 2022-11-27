@@ -1,13 +1,14 @@
 <script setup lang='ts'>
-withDefaults(defineProps<{ flag: boolean, title?: string, confirmText: string, resetText: string }>(), {
-  title: "温馨提示"
+withDefaults(defineProps<{ flag: boolean, title?: string, confirmText: string, resetText: string, width?: string }>(), {
+  title: "温馨提示",
+  width: '30%'
 })
 defineEmits(['cancel', 'confirm']);
 
 </script>
 
 <template>
-  <el-dialog v-model="flag" :title="title" width="30%" align-center>
+  <el-dialog v-model="flag" :title="title" :style="{ width }" align-center>
     <slot></slot>
     <template #footer>
       <span class="dialog-footer">

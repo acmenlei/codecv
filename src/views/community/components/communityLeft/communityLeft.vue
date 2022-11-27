@@ -2,11 +2,12 @@
 import { professionals, tabs } from './constant';
 import ArticleCard from './components/card/card.vue';
 import NavBar from '@/components/navBar.vue';
-import { useProfessional, useTab } from "./hook"
+import { useProfessional, useTab, useData } from "./hook"
 import { watchEffect } from 'vue';
 
 const { professional } = useProfessional();
 const { tab, toggleTab } = useTab();
+const { data, queryData } = useData();
 
 watchEffect(() => {
   console.log('重新查询数据', tab.value, professional.value)
@@ -22,8 +23,8 @@ watchEffect(() => {
         <el-option v-for="prof in professionals" :label="prof" :value="prof" />
       </el-select>
     </div>
-    <div class="article-list">
-      <ArticleCard v-for="_ in 10" />
+    <div class="article-list" v-infinite-scroll="queryData">
+      <ArticleCard v-for="_ in data" />
     </div>
   </div>
 </template>

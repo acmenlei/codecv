@@ -17,3 +17,16 @@ export function useTab() {
     tab, toggleTab
   }
 }
+
+export function useData() {
+  const data = ref(10);
+  
+  function queryData() {
+    data.value += 10;
+  }
+
+  return {
+    data,
+    queryData
+  }
+}

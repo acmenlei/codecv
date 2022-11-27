@@ -1,15 +1,14 @@
 <script setup lang='ts'>
-import { markdownToHTML } from 'markdown-transform-html';
 import { VueMarkdownMenuBar } from "vue-markdown-menu-bar"
 import { onMounted, ref } from 'vue';
 import './sources/index.css';
-import "vue-markdown-menu-bar/styles/lightgreen.css";
+import '@/assets/highlight.css'
 import resumeHelper from './sources/help'
 
 const helper = ref();
 
 onMounted(() => {
-  helper.value.innerHTML = markdownToHTML(resumeHelper, { highlight: true, lineNumber: true })
+  helper.value.innerHTML = resumeHelper;
 })
 </script>
 
@@ -26,7 +25,6 @@ onMounted(() => {
 #syntax {
   max-width: 1200px;
   margin: 20px auto;
-  justify-content: center;
 
   .slider {
     position: sticky;

@@ -3,18 +3,17 @@ import EmojiPicker from 'vue3-emoji-picker'
 import { useEmoji, usePublishShare } from "./hook";
 import 'vue3-emoji-picker/css'
 
-const { shareTitle, shareMainContent, publish } = usePublishShare();
+const { shareMainContent, publish } = usePublishShare();
 const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
 
 </script>
 
 <template>
-  <div class="community-publish content-card" data-aos="fade-right">
+  <div class="community-publish content-card">
     <div class="community-operator-group">
-      <span class="text mr-20">分享动态</span>
+      <span class="text mr-20">分享我的看法</span>
     </div>
     <div class="community-content-edit">
-      <input class="content-edit title" v-model="shareTitle" maxlength="30" placeholder="标题" />
       <textarea class="content-edit main-content" v-model="shareMainContent" placeholder="唠点什么～" />
     </div>
     <!-- 图片插入位置 -->
@@ -35,9 +34,10 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
   padding: 10px;
   z-index: 2;
   position: relative;
-
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   .community-operator-group {
-    margin: 10px;
+    margin: 0 10px;
 
     .community-edit-picker {
       margin-left: 10px;
@@ -65,20 +65,15 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
       display: block;
       outline: none;
       width: 100%;
-      padding: 10px 0;
-
-      &.title {
-        border-bottom: 1px solid #eee;
-        font-size: 1.1rem;
-        font-weight: bold;
-      }
-
+      padding: 10px;
+      background: #f8f8f8;
+      color: #555;
+      border-radius: 5px;
       &.main-content {
         resize: none;
         height: calc(100% - 41px);
         overflow: auto;
         font-size: 15px;
-        letter-spacing: 1px;
       }
     }
   }

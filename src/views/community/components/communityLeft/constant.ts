@@ -1,7 +1,7 @@
 export const tabs = [
-  '动态',
-  '面经',
-  '话题'
+  '全部',
+  '最新',
+  '我的'
 ]
 
 export const professionals = ['前端', '后端', '大数据']

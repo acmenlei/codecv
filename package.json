@@ -24,7 +24,7 @@
     "nprogress": "^0.2.0",
     "vue": "^3.2.41",
     "vue-codemirror": "^6.1.1",
-    "vue-markdown-menu-bar": "^1.1.3",
+    "vue-markdown-menu-bar": "^1.1.5",
     "vue-router": "^4.1.6",
     "vue3-emoji-picker": "^1.1.7"
   },

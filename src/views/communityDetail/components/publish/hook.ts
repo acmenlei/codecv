@@ -1,4 +1,4 @@
-import { onActivated, onMounted, Ref, ref } from 'vue';
+import { Ref, ref } from 'vue';
 export function useEmoji(mainContent: Ref<string>) {
   const picker = ref(false);
 
@@ -17,13 +17,12 @@ export function useEmoji(mainContent: Ref<string>) {
 }
 
 export function usePublishShare() {
-  const shareTitle = ref('');
   const shareMainContent = ref('');
 
   function publish() {
     console.log('发布到服务端...')
   }
   return {
-    shareTitle, shareMainContent, publish
+    shareMainContent, publish
   }
 }

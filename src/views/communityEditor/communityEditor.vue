@@ -1,21 +1,26 @@
 <script setup lang='ts'>
 import { onMounted, onUnmounted, ref } from 'vue';
-import { createEditor } from '@textbus/editor';
+import { createEditor, Editor } from '@textbus/editor';
 import '@textbus/editor/bundles/textbus.min.css';
 
 const articleEditor = ref();
+let editor: Editor;
 
 onMounted(() => {
-  const editor = createEditor({ autoFocus: true, styleSheets: ['li { margin-left: 20px }'], placeholder: '内容尽情发挥～' });
+  editor = createEditor({ autoFocus: true, styleSheets: ['.tb-list-item { margin-left: 20px }'], placeholder: '内容尽情发挥～' });
   editor.mount(articleEditor.value)
-  onUnmounted(() => editor.destroy())
+  onUnmounted(() => editor?.destroy())
 })
 
+function publish() {
+  console.log(editor.getContent())
+}
 </script>
 
 <template>
   <div class="article-editor content-card" data-aos="zoom-out">
     <span class="pointer back" @click="$router.back()">返回</span>
+    <div id="toolbar"></div>
     <input class="title" type="text" placeholder="请填写标题~" />
     <div class="editor" ref="articleEditor"></div>
     <el-select placeholder="岗位方向" class="item">
@@ -23,9 +28,7 @@ onMounted(() => {
       <el-option value="前端" label="前端"></el-option>
     </el-select>
     <br />
-    <el-input class="item" style="width: 500px" placeholder="携带话题"></el-input>
-    <br />
-    <button class="item primary btn">发布</button>
+    <button class="item primary btn" @click="publish">发布</button>
     <button class="item plain btn" @click="$router.back()">返回</button>
   </div>
 </template>
