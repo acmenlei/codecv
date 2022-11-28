@@ -1,17 +1,17 @@
 <script setup lang='ts'>
-import { professionals, tabs } from './constant';
 import ArticleCard from './components/card/card.vue';
 import NavBar from '@/components/navBar.vue';
-import { useProfessional, useTab, useData } from "./hook"
-import { watchEffect } from 'vue';
+import Empty from '@/components/empty.vue';
+import { onMounted } from 'vue';
 
-const { professional } = useProfessional();
-const { tab, toggleTab } = useTab();
-const { data, queryData } = useData();
+import { tabs } from './constant';
+import { professionals } from "@/common/utils/professional"
+import { useTab, useInfinityList } from "./hook"
 
-watchEffect(() => {
-  console.log('重新查询数据', tab.value, professional.value)
-})
+const { data, loading, noMore, conditions, queryList, toggleQueryList } = useInfinityList();
+const { toggleTab } = useTab(conditions, toggleQueryList);
+
+onMounted(queryList)
 
 </script>
 
@@ -19,13 +19,16 @@ watchEffect(() => {
   <div class="community-list content-card" data-aos="fade-right">
     <div class="menubar flex">
       <NavBar :tabs="tabs" @tab-click="toggleTab" />
-      <el-select placeholder="岗位方向" v-model="professional">
+      <el-select placeholder="岗位方向" v-model="conditions.professional" @change="toggleQueryList">
         <el-option v-for="prof in professionals" :label="prof" :value="prof" />
       </el-select>
     </div>
-    <div class="article-list" v-infinite-scroll="queryData">
-      <ArticleCard v-for="_ in data" />
+    <div v-if="data.length" class="article-list" v-infinite-scroll="queryList">
+      <ArticleCard v-for="article in data" :article='article' />
+      <p v-if="loading">正在加载..</p>
+      <p v-if="noMore">暂时没有更多了～</p>
     </div>
+    <Empty v-else title="还没有人发布面经，你来做第一个吧～"/>
   </div>
 </template>
 
@@ -33,5 +36,12 @@ watchEffect(() => {
 .menubar {
   justify-content: space-between;
   align-items: center;
+}
+.article-list {
+  p {
+    color: #666;
+    font-size: .9rem;
+    text-align: center;
+  }
 }
 </style>

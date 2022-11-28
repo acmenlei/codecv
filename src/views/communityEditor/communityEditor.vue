@@ -1,34 +1,23 @@
 <script setup lang='ts'>
-import { onMounted, onUnmounted, ref } from 'vue';
-import { createEditor, Editor } from '@textbus/editor';
+import { professionals } from '@/common/utils/professional'
+import { useCommunityArticle } from './hook'
 import '@textbus/editor/bundles/textbus.min.css';
 
-const articleEditor = ref();
-let editor: Editor;
+const { article, articleEditor, publishArticle } = useCommunityArticle();
 
-onMounted(() => {
-  editor = createEditor({ autoFocus: true, styleSheets: ['.tb-list-item { margin-left: 20px }'], placeholder: '内容尽情发挥～' });
-  editor.mount(articleEditor.value)
-  onUnmounted(() => editor?.destroy())
-})
-
-function publish() {
-  console.log(editor.getContent())
-}
 </script>
 
 <template>
   <div class="article-editor content-card" data-aos="zoom-out">
     <span class="pointer back" @click="$router.back()">返回</span>
     <div id="toolbar"></div>
-    <input class="title" type="text" placeholder="请填写标题~" />
+    <input class="title" type="text" v-model="article.title" placeholder="请填写标题~" />
     <div class="editor" ref="articleEditor"></div>
-    <el-select placeholder="岗位方向" class="item">
-      <el-option value="前端" label="前端"></el-option>
-      <el-option value="前端" label="前端"></el-option>
+    <el-select placeholder="岗位方向" class="item" v-model="article.professional">
+      <el-option v-for="item in professionals" :value="item" :label="item"></el-option>
     </el-select>
     <br />
-    <button class="item primary btn" @click="publish">发布</button>
+    <button class="item primary btn" @click="publishArticle">发布</button>
     <button class="item plain btn" @click="$router.back()">返回</button>
   </div>
 </template>
