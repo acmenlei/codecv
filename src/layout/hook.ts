@@ -1,6 +1,8 @@
+import { useRouter } from 'vue-router';
 import { reactive, ref } from 'vue';
-import VerificationCode, { createCode } from 'picture-verification-code';
+
 import useUserStore from '@/store/modules/user'
+import { errorMessage } from '@/common/message';
 
 export function useUpdate() {
   const { userInfo } = useUserStore();
@@ -18,6 +20,7 @@ export function useUpdate() {
   function updateAvatar(event: Event) {
     const file: File = (event.target as any).files[0];
   }
+
   return {
     flag, toggle, update,
     updateAvatar,
@@ -28,29 +31,30 @@ export function useUpdate() {
 
 export function useUserLogin() {
   const user = reactive({ name: '', password: '', verify: '' });
-  const loginModel = ref(false);
-  const verifyImgSrc = ref(''), code = new VerificationCode();
-
-  let verifyCode: number | string;
-
-  function loginModelToogle() {
-    loginModel.value = !loginModel.value;
-    loginModel.value && switchVerifyImg();
-  }
+  const { loginState, login: loginService } = useUserStore();
 
   function login() {
-    // 发请求
-    console.log(user.verify, verifyCode)
-  }
-
-  function switchVerifyImg() {
-    // 生成随机验证码
-    verifyCode = createCode();
-    // 生成验证码图片 DataURL
-    verifyImgSrc.value = code.render(verifyCode);
+    if (!user.name || !user.password) {
+      errorMessage('请输入完整的账户信息!')
+      return;
+    }
+    if (loginState.verify.toLowerCase() != user.verify.toLowerCase()) {
+      errorMessage('验证码错误, 请重新尝试!');
+      return;
+    }
+    loginService(user);
   }
   return {
-    verifyImgSrc, switchVerifyImg, loginModel, user, loginModelToogle, login
-
+    user, login
   }
+}
+
+export function useNavigator(path: string) {
+  const router = useRouter();
+  const { loginState, loginModelToggle } = useUserStore();
+  if (!loginState.logined) {
+    loginModelToggle();
+    return;
+  }
+  router.push(path)
 }

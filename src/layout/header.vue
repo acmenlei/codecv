@@ -1,20 +1,12 @@
 <script setup lang='ts'>
 import outNav from "@/common/nav/outNav"
 import RenderDialog from "@/components/renderDialog.vue";
-import { useRouter } from "vue-router";
+import useUserStore from "@/store/modules/user"
+import { useUserLogin, useUpdate, useNavigator } from "./hook"
 
-import { useUserLogin, useUpdate } from "./hook"
-const { verifyImgSrc, switchVerifyImg, user, loginModel, login, loginModelToogle } = useUserLogin();
+const { user, login } = useUserLogin();
 const { flag, toggle, update, userInfo, initUserInfo, updateAvatar } = useUpdate();
-const router = useRouter();
-
-function toCommunityEditor() {
-  if (initUserInfo.userId) {
-    router.push('/community/editor')
-    return;
-  }
-  loginModelToogle();
-}
+const { loginModelToggle, genVerify, loginState } = useUserStore();
 
 </script>
 
@@ -32,14 +24,14 @@ function toCommunityEditor() {
       </ul>
 
       <div class="user">
-        <div class="user-creative mr-20 pointer primary" @click="toCommunityEditor">
+        <div class="user-creative mr-20 pointer primary" @click="useNavigator('/community/editor')">
           写面经 <i class="iconfont icon-practice "></i>
         </div>
-        <template v-if="initUserInfo.userId">
+        <template v-if="loginState.logined">
           <span class="user-nick  mr-10">{{ initUserInfo.nick }}</span>
           <img @click="toggle" class="pointer mr-10" :src="initUserInfo.avatar" />
         </template>
-        <span v-else class="pointer login" @click="loginModelToogle">登录</span>
+        <span v-else class="pointer login" @click="loginModelToggle">登录</span>
       </div>
 
     </div>
@@ -62,7 +54,7 @@ function toCommunityEditor() {
     </div>
   </render-dialog>
   <!-- 登录 -->
-  <render-dialog :flag="loginModel" width="400px" title="用户登录" :footer="false">
+  <render-dialog :flag="loginState.loginModel" width="400px" title="用户登录" :footer="false">
     <el-form :model="user" class="login">
       <el-form-item label="用户名" label-width="70px">
         <el-input v-model="user.name" placeholder="username" />
@@ -74,10 +66,10 @@ function toCommunityEditor() {
         <el-input v-model="user.verify" placeholder="verify code" />
       </el-form-item>
       <el-form-item align="center">
-        <img @click="switchVerifyImg" class="verify-code pointer" :src="verifyImgSrc" />
+        <img @click="genVerify" class="verify-code pointer" :src="loginState.verifyImg" />
       </el-form-item>
       <el-form-item label="" label-width="70px">
-        <button class="btn primary" @click="login">登录</button>
+        <button class="btn primary" @click.prevent="login">登录</button>
         <span class="tip">未注册的用户将默认注册登录</span>
       </el-form-item>
     </el-form>
