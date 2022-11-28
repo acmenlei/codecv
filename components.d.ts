@@ -37,6 +37,7 @@ declare module '@vue/runtime-core' {
     Empty: typeof import('./src/components/empty.vue')['default']
     History: typeof import('./src/components/history.vue')['default']
     HotList: typeof import('./src/components/hotList.vue')['default']
+    LoginModel: typeof import('./src/components/loginModel.vue')['default']
     NavBar: typeof import('./src/components/navBar.vue')['default']
     RenderDialog: typeof import('./src/components/renderDialog.vue')['default']
     RenderDrawer: typeof import('./src/components/renderDrawer.vue')['default']

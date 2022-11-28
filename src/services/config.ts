@@ -5,11 +5,15 @@ import { errorMessage } from "@/common/message"
 
 const service = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL as string,
-  timeout: 5000
+  timeout: 5000,
+  withCredentials: true
 })
 // 请求拦截 统一配置
 service.interceptors.request.use(config => {
   // showLoading()
+  if (config.url === '/fileUpload/upload') {
+    (config as any).headers['Content-Type'] = 'multipart/form-data';
+  }
   return config
 }, err => {
   // hideLoading()
@@ -49,6 +53,7 @@ export function post(url: string, data: any = {}) {
       .then(resp => {
         resolved(resp)
       }, err => {
+        console.log(err)
         errorMessage(Tip.NETWORK_ERROR)
         rejected(err)
       })

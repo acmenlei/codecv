@@ -2,11 +2,15 @@
 import outNav from "@/common/nav/outNav"
 import RenderDialog from "@/components/renderDialog.vue";
 import useUserStore from "@/store/modules/user"
-import { useUserLogin, useUpdate, useNavigator } from "./hook"
+import { useRouter } from "vue-router";
+import { useUserLogin, useUpdateModel, useNavigator, useUpdate, userForm, useRegister } from "./hook"
 
-const { user, login } = useUserLogin();
-const { flag, toggle, update, userInfo, initUserInfo, updateAvatar } = useUpdate();
-const { loginModelToggle, genVerify, loginState } = useUserStore();
+const router = useRouter();
+const { user, login, logout } = useUserLogin();
+const { flag, toggle } = useUpdateModel();
+const { update, upload, uploadInput } = useUpdate(toggle);
+const { loginModelToggle, userInfo, genVerify, loginState } = useUserStore();
+const { model, registerUser, toggleModel } = useRegister();
 
 </script>
 
@@ -24,12 +28,19 @@ const { loginModelToggle, genVerify, loginState } = useUserStore();
       </ul>
 
       <div class="user">
-        <div class="user-creative mr-20 pointer primary" @click="useNavigator('/community/editor')">
+        <div class="user-creative mr-20 pointer primary" @click="useNavigator(router, '/community/editor')">
           写面经 <i class="iconfont icon-practice "></i>
         </div>
         <template v-if="loginState.logined">
-          <span class="user-nick  mr-10">{{ initUserInfo.nick }}</span>
-          <img @click="toggle" class="pointer mr-10" :src="initUserInfo.avatar" />
+          <span class="user-nick  mr-10">{{ userInfo.nickName }}</span>
+          <el-dropdown>
+            <img @click="toggle" class="pointer mr-10" :src="userInfo.avatar" />
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
         </template>
         <span v-else class="pointer login" @click="loginModelToggle">登录</span>
       </div>
@@ -41,23 +52,23 @@ const { loginModelToggle, genVerify, loginState } = useUserStore();
     confirm-text="提交修改">
     <div class="user-preview">
       <label for="user_avatar_upload">
-        <img class="pointer" :src="userInfo.avatar" alt="头像" />
+        <img class="pointer" :src="userForm.avatar" alt="头像" />
       </label>
-      <input type="file" id="user_avatar_upload" accept=".png,.jpg,.jpeg" @change="updateAvatar">
-      <label>昵称：<input v-model='userInfo.nick'></label>
-      <label>毕业学校：<input v-model='userInfo.school'></label>
+      <input type="file" ref="uploadInput" id="user_avatar_upload" accept=".png,.jpg,.jpeg" @change="upload(0)">
+      <label>昵称：<input v-model='userForm.nickName'></label>
+      <label>毕业学校：<input v-model='userForm.school'></label>
       <label>毕业时间：<p>
-          <el-date-picker v-model="userInfo.graduation" type="year" placeholder="毕业时间" />
+          <el-date-picker v-model="userForm.graduation" type="year" placeholder="毕业时间" />
         </p></label>
-      <label>求职意向：<input v-model='userInfo.professional'></label>
-      <label>所在地区：<input v-model='userInfo.origin'></label>
+      <label>求职意向：<input v-model='userForm.professional'></label>
+      <label>所在地区：<input v-model='userForm.origin'></label>
     </div>
   </render-dialog>
   <!-- 登录 -->
-  <render-dialog :flag="loginState.loginModel" width="400px" title="用户登录" :footer="false">
-    <el-form :model="user" class="login">
+  <render-dialog :flag="loginState.loginModel" width="400px" :title="model ? '用户注册' : '用户登录'" :footer="false">
+    <el-form :model="user" class="login" v-if="!model">
       <el-form-item label="用户名" label-width="70px">
-        <el-input v-model="user.name" placeholder="username" />
+        <el-input v-model="user.username" placeholder="username" />
       </el-form-item>
       <el-form-item label="密码" label-width="70px">
         <el-input v-model="user.password" type="password" placeholder="password" />
@@ -69,8 +80,27 @@ const { loginModelToggle, genVerify, loginState } = useUserStore();
         <img @click="genVerify" class="verify-code pointer" :src="loginState.verifyImg" />
       </el-form-item>
       <el-form-item label="" label-width="70px">
-        <button class="btn primary" @click.prevent="login">登录</button>
-        <span class="tip">未注册的用户将默认注册登录</span>
+        <button class="btn primary" @click.prevent="login(user, true)">登录</button>
+        <button class="btn plain" @click.prevent="toggleModel">去注册</button>
+      </el-form-item>
+    </el-form>
+    <!-- 注册 -->
+    <el-form :model="registerUser" class="register" v-if="model">
+      <el-form-item label="用户名" label-width="70px">
+        <el-input v-model="registerUser.username" placeholder="username" />
+      </el-form-item>
+      <el-form-item label="密码" label-width="70px">
+        <el-input v-model="registerUser.password" type="password" placeholder="password" />
+      </el-form-item>
+      <el-form-item label="验证码" label-width="70px">
+        <el-input v-model="registerUser.verify" placeholder="verify code" />
+      </el-form-item>
+      <el-form-item align="center">
+        <img @click="genVerify" class="verify-code pointer" :src="loginState.verifyImg" />
+      </el-form-item>
+      <el-form-item label="" label-width="70px">
+        <button class="btn primary" @click.prevent="login(registerUser, false)">注册</button>
+        <button class="btn plain" @click.prevent="toggleModel">去登录</button>
       </el-form-item>
     </el-form>
   </render-dialog>
@@ -160,7 +190,8 @@ const { loginModelToggle, genVerify, loginState } = useUserStore();
   }
 }
 
-.login {
+.login,
+.register {
   position: relative;
 
   .verify-code {

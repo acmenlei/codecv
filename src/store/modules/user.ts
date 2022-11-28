@@ -1,14 +1,20 @@
 import { defineStore } from "pinia";
 import pinia from "@/store"
 import VerificationCode, { createCode } from 'picture-verification-code';
-import { setLocalStorage, getLocalStorage } from "@/common/hooks/useLcoaStoage"
+import { setLocalStorage, getLocalStorage, removeLocalStorage } from "@/common/hooks/useLcoaStoage"
+import { errorMessage, successMessage } from "@/common/message";
+import { Tip } from "@/common/tip";
+import { login, logout, registerUser, verify } from "@/services/modules/user";
+import { userForm } from "@/layout/hook";
 
 const codeInstance = new VerificationCode();
-export const TOKEN = 'TOKEN', USERINFO = 'USERINFO', SET_TOKEN = 'SET_TOKEN', SET_USERINFO = 'SET_USERINFO';
+export const TOKEN = 'TOKEN', USERNAME = 'USERNAME', SET_TOKEN = 'SET_TOKEN', SET_USERNAME = 'SET_USERNAME';
 
-const userInfo = {
-  userId: 0,
-  nick: '',
+export const initialInfo = {
+  uid: 0,
+  nickName: '',
+  username: '',
+  sex: '',
   professional: '',
   graduation: '',
   school: '',
@@ -16,11 +22,11 @@ const userInfo = {
   origin: ''
 };
 
-export type UserInfo = typeof userInfo;
+export type UserInfo = typeof initialInfo;
 
 const useUserStore = defineStore('userStore', {
   state: () => ({
-    userInfo: getLocalStorage(USERINFO) ? JSON.parse(getLocalStorage(USERINFO) as string) : userInfo,
+    userInfo: initialInfo,
     loginState: {
       logined: false, // 登录态
       loginModel: false,
@@ -30,25 +36,74 @@ const useUserStore = defineStore('userStore', {
     token: getLocalStorage(TOKEN) || ''
   }),
   actions: {
-    login(user: IUser) {
-      console.log('登录：', user.verify, this.loginState.verify);
+    login(user: IUser, isLogin: boolean) {
+      if (!user.username || !user.password) {
+        errorMessage(Tip.BE_INCOMPLATE)
+        return;
+      }
+      if (this.loginState.verify.toLowerCase() != user.verify.toLowerCase()) {
+        errorMessage(Tip.VERIFY_CODE_INVAILED);
+        return;
+      }
+      const cb = isLogin ? login : registerUser;
+      cb(user).then((res: any) => {
+        if (res.code === 200) {
+          this.loginState.logined = true;
+          this.loginModelToggle();
+          // 更新用户信息
+          this.setUserInfo(this.userInfo, res.data)
+          this.setUserInfo(userForm, res.data)
+          // 缓存重要信息
+          setLocalStorage(TOKEN, res.token);
+          setLocalStorage(USERNAME, res.data.username);
+          successMessage(res.msg);
+        } else {
+          errorMessage(res.msg)
+        }
+      })
+    },
+    logout() {
+      logout({ username: getLocalStorage(USERNAME) as string }).then((res: any) => {
+        if (res.code != 200) {
+          errorMessage(res.msg);
+          return;
+        }
+        this.loginState.logined = false;
+        removeLocalStorage(TOKEN);
+        removeLocalStorage(USERNAME);
+        successMessage(res.msg);
+      })
+    },
+    verifyLoginState(token: string, username: string) {
+      verify({ token, username }).then((res: any) => {
+        if (res.code === 200) {
+          this.loginState.logined = true;
+          this.setUserInfo(this.userInfo, res.data)
+          this.setUserInfo(userForm, res.data)
+          console.log(res.data)
+        } else {
+          errorMessage(res.msg);
+        }
+      })
     },
     loginModelToggle() {
       this.loginState.loginModel = !this.loginState.loginModel;
       this.genVerify();
     },
     genVerify() {
-      // 生成随机验证码
       this.loginState.verify = createCode();
-      // 生成验证码图片url
       this.loginState.verifyImg = codeInstance.render(this.loginState.verify);
     },
-    [SET_TOKEN](token: string) {
-      setLocalStorage(TOKEN, token);
-    },
-    [SET_USERINFO](userInfo: UserInfo) {
-      setLocalStorage(USERINFO, JSON.stringify(userInfo));
-      this.userInfo = { ...userInfo };
+    setUserInfo(target: UserInfo, userInfo: UserInfo) {
+      target.uid = userInfo.uid;
+      target.nickName = userInfo.nickName;
+      target.username = userInfo.username;
+      target.sex = userInfo.sex;
+      target.professional = userInfo.professional;
+      target.graduation = userInfo.graduation;
+      target.school = userInfo.school;
+      target.avatar = userInfo.avatar;
+      target.origin = userInfo.origin;
     }
   },
 })

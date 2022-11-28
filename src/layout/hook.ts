@@ -1,60 +1,121 @@
-import { useRouter } from 'vue-router';
-import { reactive, ref } from 'vue';
+import { successMessage } from '@/common/message';
+import { Router } from 'vue-router';
+import { onMounted, reactive, ref } from 'vue';
 
-import useUserStore from '@/store/modules/user'
+import useUserStore, { TOKEN, USERNAME } from '@/store/modules/user'
+import { getLocalStorage } from '@/common/hooks/useLcoaStoage';
+import { fileMerge, fileUpload } from '@/services/modules/upload';
 import { errorMessage } from '@/common/message';
+import { updateUserInfo } from '@/services/modules/user';
 
-export function useUpdate() {
-  const { userInfo } = useUserStore();
-  const _userInfo = reactive({ ...userInfo }), flag = ref(false);
-
+export function useUpdateModel() {
+  const flag = ref(false);
   function toggle() {
     flag.value = !flag.value;
   }
-
-  function update() {
-    toggle();
-    console.log('更新', _userInfo)
-  }
-
-  function updateAvatar(event: Event) {
-    const file: File = (event.target as any).files[0];
-  }
-
   return {
-    flag, toggle, update,
-    updateAvatar,
-    userInfo: _userInfo,
-    initUserInfo: userInfo
+    flag, toggle
+  }
+}
+
+export const userForm = reactive({
+  uid: 0,
+  nickName: '',
+  username: '',
+  sex: '',
+  professional: '',
+  graduation: '',
+  school: '',
+  avatar: '',
+  origin: ''
+});
+export function useUpdate(toggle: Function) {
+  const uploadInput = ref(), chunkSize = 1024 * 1024;
+
+  async function upload(index: number) {
+    const start = index * chunkSize, file = uploadInput.value.files[0];
+    const [filename, ext] = file.name.split('.');
+
+    // 进行切片
+    if (start > file.size) {
+      // 上传完毕了之后进行切片合并
+      return merge(file.name, index);
+    }
+    // 切片为blob
+    const blob = file.slice(start, start + chunkSize)
+    const blobName = `${filename}.${index}.${ext}`;
+    const blobFile = new File([blob], blobName);
+
+    const form = new FormData();
+    form.append("file", blobFile)
+
+    try {
+      await fileUpload(form);
+      upload(++index);
+    } catch (err) {
+      errorMessage('上传失败了，待会再试试吧～')
+    }
+  }
+
+  async function merge(name: string, length: number) {
+    const data: any = await fileMerge({ name, length });
+    userForm.avatar = data.url;
+  }
+
+  async function update() {
+    const { userInfo, setUserInfo } = useUserStore()
+    // 格式化时间 只需要年份
+    userForm.graduation = String(new Date(userForm.graduation).getFullYear());
+    const data = await updateUserInfo(userForm) as IResponse;
+    if (data.code == 200) {
+      toggle();
+      successMessage(data.msg);
+      setUserInfo(userInfo, userForm);
+    } else {
+      errorMessage(data.msg);
+    }
+  }
+  return {
+    uploadInput,
+    update,
+    upload
   }
 }
 
 export function useUserLogin() {
-  const user = reactive({ name: '', password: '', verify: '' });
-  const { loginState, login: loginService } = useUserStore();
+  const user = reactive({ username: '', password: '', verify: '' });
+  const { login, logout, verifyLoginState } = useUserStore();
 
-  function login() {
-    if (!user.name || !user.password) {
-      errorMessage('请输入完整的账户信息!')
-      return;
-    }
-    if (loginState.verify.toLowerCase() != user.verify.toLowerCase()) {
-      errorMessage('验证码错误, 请重新尝试!');
-      return;
-    }
-    loginService(user);
-  }
+  onMounted(() => {
+    const token = getLocalStorage(TOKEN), username = getLocalStorage(USERNAME);
+    token && username && verifyLoginState(token as string, username as string);
+  })
+
   return {
-    user, login
+    user, login, logout
   }
 }
 
-export function useNavigator(path: string) {
-  const router = useRouter();
+export function useNavigator(router: Router, path: string) {
   const { loginState, loginModelToggle } = useUserStore();
   if (!loginState.logined) {
     loginModelToggle();
     return;
   }
   router.push(path)
+}
+
+export function useRegister() {
+  const model = ref(false), registerUser = reactive({ username: '', password: '', verify: '' });
+  const { genVerify } = useUserStore();
+  
+  function toggleModel() {
+    model.value = !model.value;
+    genVerify();
+  }
+  return {
+    model,
+    registerUser,
+    toggleModel
+  }
 }
