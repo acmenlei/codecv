@@ -17,7 +17,7 @@ export function useTab(conditions: ICommunityCondition, toggleQueryList: Functio
 }
 
 export function useInfinityList() {
-  const { userInfo, loginState } = useUserStore();
+  const { userInfo, loginState, loginModelToggle } = useUserStore();
   const data = ref<IArticle[]>([]), loading = ref(false), noMore = ref(false);
   const conditions = reactive({ pageNum: 1, pageSize: 10, keyword: '', professional: '', tab: 0, uid: userInfo.uid });
 
@@ -44,16 +44,22 @@ export function useInfinityList() {
     if (conditions.tab == 2) {
       if (!loginState.logined) {
         errorMessage('请先登录再查看。');
+        loginModelToggle();
         return;
       }
       conditions.uid = userInfo.uid; // 只看我自己的
     }
+    loading.value = true;
     // 切换就要重新计算pageNum了
     conditions.pageNum = 1;
     const res: any = await queryCommunity(conditions);
     if (res.code != 200) {
       return errorMessage(res.msg);
     }
+    loading.value = false;
+    // if (res.data.length < conditions.pageSize) {
+    //   noMore.value = true;
+    // }
     data.value = res.data;
   }
   return {

@@ -148,6 +148,7 @@ const { model, registerUser, toggleModel } = useRegister();
 
       img {
         width: 35px;
+        height: 35px;
         border-radius: 50%;
       }
 
@@ -166,6 +167,7 @@ const { model, registerUser, toggleModel } = useRegister();
 
   img {
     width: 200px;
+    height: 200px;
   }
 
   label {

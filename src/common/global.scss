@@ -191,3 +191,15 @@
     }
   }
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.line-4 {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}

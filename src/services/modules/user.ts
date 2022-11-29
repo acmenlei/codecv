@@ -1,4 +1,3 @@
-import { UserInfo } from "@/store/modules/user";
 import { post } from "../config";
 
 export function login(data: IUser) {
@@ -9,7 +8,7 @@ export function registerUser(data: IUser) {
   return post('/user/register', data);
 }
 
-export function updateUserInfo(data: UserInfo) {
+export function updateUserInfo(data: IUserInfo) {
   return post('/user/update', data)
 }
 

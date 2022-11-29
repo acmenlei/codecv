@@ -8,7 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BrowseHistory: typeof import('./src/components/browseHistory.vue')['default']
-    Comments: typeof import('./src/components/comments.vue')['default']
+    Comments: typeof import('./src/components/comments/comments.vue')['default']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElOption: typeof import('element-plus/es')['ElOption']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     ElSelect: typeof import('element-plus/es')['ElSelect']
@@ -42,6 +43,7 @@ declare module '@vue/runtime-core' {
     RenderDialog: typeof import('./src/components/renderDialog.vue')['default']
     RenderDrawer: typeof import('./src/components/renderDrawer.vue')['default']
     RenderModal: typeof import('./src/components/renderModal.vue')['default']
+    Reply: typeof import('./src/components/comments/reply.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     UserInfo: typeof import('./src/components/userInfo.vue')['default']

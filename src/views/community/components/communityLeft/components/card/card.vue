@@ -1,25 +1,26 @@
 <script setup lang='ts'>
 import UserInfo from '@/components/userInfo.vue';
+
+defineProps<{ article: IArticle }>();
 </script>
 
 <template>
   <article class="pointer">
-    <user-info />
-    <h3>腾讯云计算前端面筋(一/二/三/hr面)</h3>
-    <p @click="$router.push('/community/detail')">
-      怎么理解html语义化标签
-      html5新增了哪些东西
-      localStorage 和 seesionStorage 和 cookie区别
-      html文件不写head和body等内容，只写两行文本，会发生什么
-      css选择器的优先级
+    <user-info :user-info='article.authorInfo' :publish-time="article.createTime"/>
+    <h3>{{ article.title }}</h3>
+    <p class="intro line-4" @click="$router.push(`/community/detail?articleId=${article.articleId}`)">
+      {{ article.introduce }}
     </p>
     <div class="article-bottom">
       <div class="operator-group">
-        <span>点赞</span>
-        <span>分享</span>
+        <span>点赞 {{ article.like }}</span>
         <span>评论</span>
+        <span>分享</span>
+        <span>编辑</span>
+        <span>删除</span>
+        <span>访客 {{ article.hot }}</span>
       </div>
-      <span class="tag pointer">#前端</span>
+      <span class="tag pointer">#{{ article.professional }}</span>
     </div>
   </article>
 </template>
@@ -30,7 +31,9 @@ article {
   margin-bottom: 20px;
   border-bottom: 1px solid #eee;
   color: #666;
-
+  .intro:hover {
+    opacity: .8;
+  }
   &:last-child {
     border-bottom: none;
   }

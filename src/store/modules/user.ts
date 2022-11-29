@@ -22,8 +22,6 @@ export const initialInfo = {
   origin: ''
 };
 
-export type UserInfo = typeof initialInfo;
-
 const useUserStore = defineStore('userStore', {
   state: () => ({
     userInfo: initialInfo,
@@ -80,7 +78,6 @@ const useUserStore = defineStore('userStore', {
           this.loginState.logined = true;
           this.setUserInfo(this.userInfo, res.data)
           this.setUserInfo(userForm, res.data)
-          console.log(res.data)
         } else {
           errorMessage(res.msg);
         }
@@ -94,7 +91,7 @@ const useUserStore = defineStore('userStore', {
       this.loginState.verify = createCode();
       this.loginState.verifyImg = codeInstance.render(this.loginState.verify);
     },
-    setUserInfo(target: UserInfo, userInfo: UserInfo) {
+    setUserInfo(target: IUserInfo, userInfo: IUserInfo) {
       target.uid = userInfo.uid;
       target.nickName = userInfo.nickName;
       target.username = userInfo.username;

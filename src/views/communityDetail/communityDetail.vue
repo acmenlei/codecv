@@ -1,38 +1,45 @@
 <script setup lang='ts'>
 import UserInfo from '@/components/userInfo.vue';
 import HotList from "@/components/hotList.vue"
-import CommentsPublish from "./components/publish/publish.vue"
-import CommentsList from '@/components/comments.vue';
+import Publish from "./components/publish/publish.vue"
+import Comments from '@/components/comments/comments.vue';
 import { VueMarkdownMenuBar } from 'vue-markdown-menu-bar';
-import { onMounted, ref } from 'vue';
-import content from "./constant";
+import { computed, onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import { useArticleDetail } from './hook'
 import '@/assets/highlight.css';
 
-const renderContent = ref()
+const route = useRoute(), delay = ref(false);
+const articleId = computed(() => parseInt(route.query.articleId as string));
+const { article, total, commentsTotal, queryArticle, pageNumChange, queryComments } = useArticleDetail(articleId.value);
 
 onMounted(() => {
-  renderContent.value.innerHTML = content
+  queryArticle();
+  // 暂时解决异步渲染问题
+  setTimeout(() => delay.value = true, 200);
 })
 </script>
 <template>
   <div class="community-detail flex">
     <div class="main-content mr-20">
       <div class="main content-card">
-        <user-info class="user-info" />
-        <article class="content" ref="renderContent"></article>
+        <user-info class="user-info" :user-info="article.authorInfo" :publish-time="article.createTime"/>
+        <article class="content" v-html="article.content"></article>
         <div class="supports">
-          <span>点赞</span>
-          <span>评论</span>
+          <span>支持{{ article.like }}</span>
+          <span>评论{{ article.comments.length }}</span>
           <span>分享</span>
         </div>
-        <span class="pointer tag">#前端</span>
+        <span class="pointer tag">#{{ article.professional }}</span>
       </div>
-      <comments-publish />
-      <comments-list :data="[]" />
+      <Publish :article-id="articleId" :level="1" @re-query-comments="queryComments"/>
+      <Comments :data="article.comments" :article-id="articleId" :total='total' :comments-total="commentsTotal"
+        @page-num-change="pageNumChange"
+        @re-query-comments="queryComments" />
     </div>
     <div class="slide-content">
       <hot-list class="slide-item" />
-      <vue-markdown-menu-bar class="slide-item menu-bar content-card" body='.content' width='200px' />
+      <vue-markdown-menu-bar v-if="delay" class="slide-item menu-bar content-card" body='.content' width='200px' />
     </div>
   </div>
 </template>

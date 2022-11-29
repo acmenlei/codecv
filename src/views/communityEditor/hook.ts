@@ -16,9 +16,12 @@ export function useCommunityArticle() {
       loginModelToggle();
       return;
     }
+    const text = document.createElement('div');
+    text.innerHTML = editor.getContent();
     const articleInfo = {
       ...article,
       content: editor.getContent(),
+      introduce: text.textContent?.slice(0, 255) || '简介',
       authorId: userInfo.uid
     }
     await publishCommunity(articleInfo);

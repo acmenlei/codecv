@@ -11,7 +11,7 @@ defineEmits(['cancel', 'confirm']);
 </script>
 
 <template>
-  <el-dialog v-model="flag" :title="title" :style="{ width }" align-center>
+  <el-dialog v-model="flag" :title="title" :style="{ width }" align-center destroy-on-close>
     <slot></slot>
     <template #footer v-if="footer">
       <span class="dialog-footer">

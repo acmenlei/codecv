@@ -3,18 +3,25 @@ import EmojiPicker from 'vue3-emoji-picker'
 import { useEmoji, usePublishShare } from "./hook";
 import 'vue3-emoji-picker/css'
 
-const { shareMainContent, publish } = usePublishShare();
+const props = withDefaults(defineProps<{ 
+  articleId: number, 
+  level: number, 
+  posterCommentId?: number, 
+  replyCommentId?: number, 
+  background?: string
+}>(), {
+  background: '#f8f8f8'
+});
+const emits = defineEmits(['reQueryComments'])
+const { shareMainContent, publish } = usePublishShare(props.articleId, props.level, props.posterCommentId || 0, props.replyCommentId || 0, emits);
 const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
-
 </script>
 
 <template>
   <div class="community-publish content-card">
-    <div class="community-operator-group">
-      <span class="text mr-20">分享我的看法</span>
-    </div>
     <div class="community-content-edit">
-      <textarea class="content-edit main-content" v-model="shareMainContent" placeholder="唠点什么～" />
+      <textarea :style="{ background }" class="content-edit main-content" v-model="shareMainContent"
+        placeholder="唠点什么～" />
     </div>
     <!-- 图片插入位置 -->
     <div class="community-operator-group flex community-content-edit-publish">
@@ -30,15 +37,13 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
 
 <style lang='scss' scoped>
 .community-publish {
-  margin-bottom: 20px;
   padding: 10px;
   z-index: 2;
   position: relative;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  .community-operator-group {
-    margin: 0 10px;
 
+  .community-operator-group {
     .community-edit-picker {
       margin-left: 10px;
       color: #555;
@@ -55,7 +60,7 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
   .community-content-edit {
     width: calc(100% - 20px);
     border-radius: 5px;
-    margin: 10px;
+    margin: 10px 10px 0 10px;
     font-size: .9rem;
     height: 150px;
 
@@ -69,6 +74,7 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
       background: #f8f8f8;
       color: #555;
       border-radius: 5px;
+
       &.main-content {
         resize: none;
         height: calc(100% - 41px);

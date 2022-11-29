@@ -7,3 +7,7 @@ export function publishCommunity(data: ICommunityArticle) {
 export function queryCommunity(data: ICommunityCondition) {
   return post('/community/list', data);
 }
+
+export function queryCommunityArticleById(data: { articleId: number }) {
+  return post('/community/queryArticleById', data);
+}
