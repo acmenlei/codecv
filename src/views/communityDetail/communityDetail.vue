@@ -15,6 +15,7 @@ const articleId = computed(() => parseInt(route.query.articleId as string));
 const { userInfo } = useUserStore();
 const { article, total, commentsTotal, like, queryArticle, pageNumChange, queryComments } = useArticleDetail(articleId.value);
 const clicked = computed(() => article.likes.includes(userInfo.uid));
+const isAuthor = computed(() => article.authorId == userInfo.uid);
 
 onMounted(() => {
   queryArticle();
@@ -34,6 +35,7 @@ onMounted(() => {
           </span>
           <span>评论{{ article.comments.length }}</span>
           <span>分享</span>
+          <span v-if="isAuthor" @click="$router.push(`/community/editor?articleId=${articleId}`)">编辑</span>
         </div>
         <span class="pointer tag">#{{ article.professional }}</span>
       </div>

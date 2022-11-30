@@ -75,7 +75,7 @@ function initArticleInfo(article: IArticle, info: IArticle) {
   article.content = info.content;
   article.commentTotal = info.commentTotal;
   article.professional = info.professional;
-  article.articleId = info.authorId;
+  article.authorId = info.authorId;
   article.likes = info.likes;
   article.createTime = info.createTime;
   article.updateTime = info.updateTime;
