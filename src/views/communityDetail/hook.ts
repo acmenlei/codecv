@@ -1,6 +1,8 @@
+import { warningMessage } from '@/common/message';
+import useUserStore from '@/store/modules/user';
 import { initialInfo } from './../../store/modules/user';
 import { reactive, ref, watchEffect } from "vue";
-import { queryCommunityArticleById } from '@/services/modules/community';
+import { queryCommunityArticleById, likeArticle } from '@/services/modules/community';
 import { queryCommunityArticleCommentsById } from "@/services/modules/comments";
 import { errorMessage } from '@/common/message';
 
@@ -10,7 +12,8 @@ export function useArticleDetail(articleId: number) {
     content: '',
     professional: '',
     authorId: 0,
-    like: 0,
+    likes: [] as number[],
+    commentTotal: 0,
     hot: 0,
     createTime: '',
     updateTime: '',
@@ -32,7 +35,6 @@ export function useArticleDetail(articleId: number) {
     }
   }
   async function queryComments() {
-    console.log('search...')
     const commentsData: IResponse<IComment[]> = await queryCommunityArticleCommentsById(commentsConditions) as IResponse<IComment[]>;
     if (commentsData.code == 200) {
       article.comments = commentsData.data as IComment[];
@@ -43,12 +45,24 @@ export function useArticleDetail(articleId: number) {
   function pageNumChange(pageNum: number) {
     commentsConditions.pageNum = pageNum;
   }
+  async function like(clicked: boolean) {
+    if (clicked) {
+      warningMessage('点过赞了, 不用再点了～');
+      return;
+    }
+    const { userInfo } = useUserStore();
+    const { code } = await likeArticle({ articleId, userId: userInfo.uid }) as IResponse<unknown>
+    if(code == 200) {
+      article.likes.push(userInfo.uid);
+    }
+  }
   watchEffect(queryComments)
 
   return {
     total,
     commentsTotal,
     article,
+    like,
     queryArticle,
     pageNumChange,
     queryComments
@@ -59,9 +73,10 @@ function initArticleInfo(article: IArticle, info: IArticle) {
   article.articleId = info.articleId;
   article.title = info.title;
   article.content = info.content;
+  article.commentTotal = info.commentTotal;
   article.professional = info.professional;
   article.articleId = info.authorId;
-  article.like = info.like;
+  article.likes = info.likes;
   article.createTime = info.createTime;
   article.updateTime = info.updateTime;
   article.introduce = info.introduce;

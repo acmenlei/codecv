@@ -66,10 +66,9 @@ const useUserStore = defineStore('userStore', {
           errorMessage(res.msg);
           return;
         }
-        this.loginState.logined = false;
         removeLocalStorage(TOKEN);
         removeLocalStorage(USERNAME);
-        successMessage(res.msg);
+        location.reload();
       })
     },
     verifyLoginState(token: string, username: string) {

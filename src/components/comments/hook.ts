@@ -1,3 +1,4 @@
+import { isLogin } from '@/common/hooks/global';
 import { errorMessage } from '@/common/message';
 import { successMessage } from '@/common/message';
 import { removeComment } from '@/services/modules/comments';
@@ -20,6 +21,11 @@ export function useReply(emits: Function) {
   }
 
   async function remove(commentId: number, articleId: number, level: number) {
+    if(!isLogin()) {
+      errorMessage('请先登录！');
+      window.location.reload();
+      return;
+    }
     const rest: IResponse<unknown> = await removeComment({ commentId, articleId, level }) as IResponse<unknown>;
     if (rest.code == 200) {
       successMessage(rest.msg);

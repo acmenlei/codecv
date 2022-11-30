@@ -176,7 +176,7 @@
 
 .plain {
   color: #333;
-  background: #f8f8f8;
+  background: #f3f5f7;
 }
 
 .list-style-init {
@@ -191,7 +191,9 @@
     }
   }
 }
-
+.clicked {
+  color: var(--theme)!important;
+}
 .no-wrap {
   white-space: nowrap;
 }

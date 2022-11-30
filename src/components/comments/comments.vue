@@ -26,7 +26,7 @@ const { currenId, reply, userInfo, remove } = useReply(emits);
         <!-- 内容输入框 -->
         <Publish v-if="currenId === comment.commentId" :article-id="articleId" :level='2'
           :poster-comment-id='comment.commentId' @re-query-comments="$emit('reQueryComments')"
-          :reply-comment-id="comment.commentId" />
+          :reply-author-id="comment.authorId" />
         <!-- 二级回复：内容 + 回复了谁-->
         <Reply :data='comment.children' :comment-id="comment.commentId" :article-id='articleId'
           @re-query-comments="$emit('reQueryComments')" v-if="comment.children.length" />

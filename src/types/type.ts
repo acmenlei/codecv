@@ -13,6 +13,14 @@ interface ICommunityArticle {
   authorId: number
 }
 
+interface ICommunityArticleUpdate{
+  title: string;
+  content: string;
+  professional: string;
+  introduce: string;
+  articleId: number;
+}
+
 interface ICommunityCondition {
   pageNum: number;
   pageSize: number;
@@ -20,6 +28,11 @@ interface ICommunityCondition {
   uid: number;
   professional: string;
   keyword: string;
+}
+
+interface ICommunityLike {
+  articleId: number;
+  userId: number;
 }
 
 interface IUserInfo {
@@ -41,7 +54,8 @@ interface IArticle {
   content: string;
   professional: string;
   authorId: number;
-  like: number;
+  likes: number[];
+  commentTotal: number;
   hot: number;
   createTime: string;
   updateTime: string;
@@ -86,7 +100,7 @@ interface IPublishCommentReply {
   level: number,
   authorId: number,
   posterCommentId: number;
-  replyCommentId: number;
+  replyAuthorId: number;
 }
 
 interface IArticleDetail {

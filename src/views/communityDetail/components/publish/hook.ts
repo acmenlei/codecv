@@ -1,4 +1,5 @@
-import { errorMessage, successMessage } from '@/common/message';
+import { useThrottleFn } from '@vueuse/core';
+import { errorMessage, successMessage, warningMessage } from '@/common/message';
 import { publishComment, publishCommentReply } from '@/services/modules/comments';
 import useUserStore from '@/store/modules/user';
 import { Ref, ref } from 'vue';
@@ -19,13 +20,17 @@ export function useEmoji(mainContent: Ref<string>) {
   }
 }
 // 评论和回复的逻辑都在这。
-export function usePublishShare(articleId: number, level: number, posterCommentId: number, replyCommentId: number, emits: Function) {
+export function usePublishShare(articleId: number, level: number, posterCommentId: number, replyAuthorId: number, emits: Function) {
   const shareMainContent = ref('');
   const { loginState, loginModelToggle, userInfo } = useUserStore();
 
   async function publish() {
     if (!loginState.logined) {
       loginModelToggle();
+      return;
+    }
+    if(!shareMainContent.value.trim()) {
+      warningMessage('你发个空内容是想干嘛呢？？？');
       return;
     }
     const cb = level == 1 ? publishComment : publishCommentReply;
@@ -35,7 +40,7 @@ export function usePublishShare(articleId: number, level: number, posterCommentI
       level,
       articleId,
       posterCommentId,
-      replyCommentId
+      replyAuthorId
     };
     const rest: IResponse<unknown> = await cb(params) as IResponse<unknown>;
     if (rest.code == 200) {
@@ -45,6 +50,7 @@ export function usePublishShare(articleId: number, level: number, posterCommentI
     rest.code == 200 ? successMessage(rest.msg) : errorMessage(rest.msg);
   }
   return {
-    shareMainContent, publish
+    shareMainContent,
+    publish: useThrottleFn(publish, 1000)
   }
 }

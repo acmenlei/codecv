@@ -2,16 +2,27 @@
 import ArticleCard from './components/card/card.vue';
 import NavBar from '@/components/navBar.vue';
 import Empty from '@/components/empty.vue';
-import { onMounted } from 'vue';
-
+import { onActivated } from 'vue';
 import { tabs } from './constant';
 import { professionals } from "@/common/utils/professional"
-import { useTab, useInfinityList } from "./hook"
+import { useTab, useData } from "./hook"
 
-const { data, loading, noMore, conditions, queryList, toggleQueryList } = useInfinityList();
-const { toggleTab } = useTab(conditions, toggleQueryList);
+const {
+  data,
+  loading,
+  noMore,
+  conditions,
+  resetSub,
+  searchSub,
+  queryList,
+  queryProfessional,
+  conditionQuery,
+  removeArticle } = useData();
+const { toggleTab } = useTab(conditions, conditionQuery);
 
-onMounted(queryList)
+onActivated(() => {
+  conditionQuery();
+})
 
 </script>
 
@@ -20,15 +31,18 @@ onMounted(queryList)
     <div class="menubar flex">
       <NavBar :tabs="tabs" @tab-click="toggleTab" />
       <div>
-        <el-select placeholder="岗位方向" v-model="conditions.professional" @change="toggleQueryList" class="mr-10">
+        <el-select placeholder="岗位方向" v-model="conditions.professional" @change="searchSub"
+          class="mr-10">
           <el-option v-for="prof in professionals" :label="prof" :value="prof" />
         </el-select>
         <el-input v-model="conditions.keyword" placeholder='搜索面经' class="mr-10" style="width: 190px;"></el-input>
-        <button @click="toggleQueryList" class="btn primary">搜索</button>
+        <button @click="searchSub" class="btn primary">搜索</button>
+        <button @click="resetSub" class="btn plain">重置</button>
       </div>
     </div>
     <div v-if="data.length" class="article-list" v-infinite-scroll="queryList">
-      <ArticleCard v-for="article in data" :article='article' />
+      <ArticleCard @query-professional="queryProfessional" @re-query-list="(userId) => article.likes.push(userId)"
+        @remove="removeArticle(idx)" v-for="(article, idx) in data" :article='article' />
       <p v-if="loading">正在加载..</p>
       <p v-if="noMore">暂时没有更多了～</p>
     </div>
@@ -41,6 +55,7 @@ onMounted(queryList)
   justify-content: space-between;
   align-items: center;
 }
+
 .article-list {
   p {
     color: #666;

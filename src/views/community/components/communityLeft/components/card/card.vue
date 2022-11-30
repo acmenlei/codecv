@@ -1,26 +1,36 @@
 <script setup lang='ts'>
 import UserInfo from '@/components/userInfo.vue';
+import { useOperator } from "./hook";
+import useUserStore from "@/store/modules/user"
+import { computed } from 'vue';
 
-defineProps<{ article: IArticle }>();
+const props = defineProps<{ article: IArticle }>();
+const emits = defineEmits(['reQueryList', 'queryProfessional', 'remove'])
+const clicked = computed(() => props.article.likes.includes(userInfo.uid))
+const hasAuthor = computed(() => userInfo.uid == props.article.authorId)
+
+const { userInfo } = useUserStore();
+const { useLike, useRemove, useDetail, useEditor } = useOperator(props.article.articleId, emits, clicked);
 </script>
 
 <template>
   <article class="pointer">
-    <user-info :user-info='article.authorInfo' :publish-time="article.createTime"/>
+    <user-info :user-info='article.authorInfo' :publish-time="article.createTime" />
     <h3>{{ article.title }}</h3>
-    <p class="intro line-4" @click="$router.push(`/community/detail?articleId=${article.articleId}`)">
+    <p class="intro line-4" @click="useDetail">
       {{ article.introduce }}
     </p>
     <div class="article-bottom">
       <div class="operator-group">
-        <span>点赞 {{ article.like }}</span>
-        <span>评论</span>
-        <span>分享</span>
-        <span>编辑</span>
-        <span>删除</span>
-        <span>访客 {{ article.hot }}</span>
+        <span @click="useLike" :class="{ clicked }">
+          {{ clicked ? '已赞' : '点赞' }} {{ article.likes.length }}
+        </span>
+        <span @click="useDetail">评论 {{ article.commentTotal }}</span>
+        <span @click="useEditor" v-if="hasAuthor">编辑</span>
+        <span @click="useRemove" v-if="hasAuthor">删除</span>
+        <span class="visit-people"><i class="iconfont icon-user"></i> 浏览量 {{ article.hot }}</span>
       </div>
-      <span class="tag pointer">#{{ article.professional }}</span>
+      <span class="tag pointer" @click="$emit('queryProfessional', article.professional)">#{{ article.professional }}</span>
     </div>
   </article>
 </template>
@@ -31,9 +41,17 @@ article {
   margin-bottom: 20px;
   border-bottom: 1px solid #eee;
   color: #666;
+  position: relative;
+  .visit-people {
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+
   .intro:hover {
     opacity: .8;
   }
+
   &:last-child {
     border-bottom: none;
   }

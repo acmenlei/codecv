@@ -30,43 +30,11 @@ export const userForm = reactive({
   origin: ''
 });
 export function useUpdate(toggle: Function) {
-  const uploadInput = ref(), chunkSize = 1024 * 1024;
-
-  async function upload(index: number) {
-    const start = index * chunkSize, file = uploadInput.value.files[0];
-    const [filename, ext] = file.name.split('.');
-
-    // 进行切片
-    if (start > file.size) {
-      // 上传完毕了之后进行切片合并
-      return merge(file.name, index);
-    }
-    // 切片为blob
-    const blob = file.slice(start, start + chunkSize)
-    const blobName = `${filename}.${index}.${ext}`;
-    const blobFile = new File([blob], blobName);
-
-    const form = new FormData();
-    form.append("file", blobFile)
-
-    try {
-      await fileUpload(form);
-      upload(++index);
-    } catch (err) {
-      errorMessage('上传失败了，待会再试试吧～')
-    }
-  }
-
-  async function merge(name: string, length: number) {
-    const data: any = await fileMerge({ name, length });
-    userForm.avatar = data.url;
-  }
-
   async function update() {
     const { userInfo, setUserInfo } = useUserStore()
     // 格式化时间 只需要年份
     userForm.graduation = String(new Date(userForm.graduation).getFullYear());
-    const data = await updateUserInfo(userForm) as IResponse;
+    const data = await updateUserInfo(userForm) as IResponse<unknown>;
     if (data.code == 200) {
       toggle();
       successMessage(data.msg);
@@ -76,9 +44,7 @@ export function useUpdate(toggle: Function) {
     }
   }
   return {
-    uploadInput,
-    update,
-    upload
+    update
   }
 }
 

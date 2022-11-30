@@ -2,7 +2,7 @@
 import { formatTimefromNow } from '@/common/utils/date';
 import UserTooltip from '@/components/userTooltip.vue'
 
-defineProps<{ userInfo?: IUserInfo, publishTime?: string }>();
+defineProps<{ userInfo: IUserInfo, publishTime?: string }>();
 
 </script>
 
@@ -13,7 +13,7 @@ defineProps<{ userInfo?: IUserInfo, publishTime?: string }>();
     <div class="user-info">
       <span class="user-name">{{ userInfo?.nickName }}</span>
       <div class="date-school">
-        <span v-if="publishTime" class="datetime mr-10">{{ formatTimefromNow(publishTime as string) }}</span>
+        <span v-if="publishTime" class="datetime mr-10">{{ formatTimefromNow(publishTime as string) }}发布</span>
         <span class="school"> {{ userInfo?.school }} - {{ userInfo?.graduation }}届 </span>
       </div>
     </div>

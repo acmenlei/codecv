@@ -5,12 +5,12 @@ const outNav = [
     tooltip: false,
   },
   {
-    name: '写简历',
+    name: '简历制作',
     path: '/theme',
     tooltip: false,
   },
   {
-    name: '看面经',
+    name: '求职社区',
     path: '/community',
     tooltip: false
   },

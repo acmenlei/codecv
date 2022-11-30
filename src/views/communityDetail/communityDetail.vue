@@ -6,12 +6,15 @@ import Comments from '@/components/comments/comments.vue';
 import { VueMarkdownMenuBar } from 'vue-markdown-menu-bar';
 import { computed, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import useUserStore from "@/store/modules/user"
 import { useArticleDetail } from './hook'
 import '@/assets/highlight.css';
 
 const route = useRoute(), delay = ref(false);
 const articleId = computed(() => parseInt(route.query.articleId as string));
-const { article, total, commentsTotal, queryArticle, pageNumChange, queryComments } = useArticleDetail(articleId.value);
+const { userInfo } = useUserStore();
+const { article, total, commentsTotal, like, queryArticle, pageNumChange, queryComments } = useArticleDetail(articleId.value);
+const clicked = computed(() => article.likes.includes(userInfo.uid));
 
 onMounted(() => {
   queryArticle();
@@ -23,19 +26,20 @@ onMounted(() => {
   <div class="community-detail flex">
     <div class="main-content mr-20">
       <div class="main content-card">
-        <user-info class="user-info" :user-info="article.authorInfo" :publish-time="article.createTime"/>
+        <user-info class="user-info" :user-info="article.authorInfo" :publish-time="article.createTime" />
         <article class="content" v-html="article.content"></article>
         <div class="supports">
-          <span>支持{{ article.like }}</span>
+          <span @click="like(clicked)" :class="{ clicked }">
+            {{ clicked ? '已赞' : '点赞' }}{{ article.likes.length }}
+          </span>
           <span>评论{{ article.comments.length }}</span>
           <span>分享</span>
         </div>
         <span class="pointer tag">#{{ article.professional }}</span>
       </div>
-      <Publish :article-id="articleId" :level="1" @re-query-comments="queryComments"/>
+      <Publish :article-id="articleId" :level="1" @re-query-comments="queryComments" />
       <Comments :data="article.comments" :article-id="articleId" :total='total' :comments-total="commentsTotal"
-        @page-num-change="pageNumChange"
-        @re-query-comments="queryComments" />
+        @page-num-change="pageNumChange" @re-query-comments="queryComments" />
     </div>
     <div class="slide-content">
       <hot-list class="slide-item" />

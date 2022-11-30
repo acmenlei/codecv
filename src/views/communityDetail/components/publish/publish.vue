@@ -7,13 +7,13 @@ const props = withDefaults(defineProps<{
   articleId: number, 
   level: number, 
   posterCommentId?: number, 
-  replyCommentId?: number, 
+  replyAuthorId?: number, 
   background?: string
 }>(), {
   background: '#f8f8f8'
 });
 const emits = defineEmits(['reQueryComments'])
-const { shareMainContent, publish } = usePublishShare(props.articleId, props.level, props.posterCommentId || 0, props.replyCommentId || 0, emits);
+const { shareMainContent, publish } = usePublishShare(props.articleId, props.level, props.posterCommentId || 0, props.replyAuthorId || 0, emits);
 const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
 </script>
 

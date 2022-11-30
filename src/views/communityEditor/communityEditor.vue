@@ -11,7 +11,7 @@ const { article, articleEditor, publishArticle } = useCommunityArticle();
   <div class="article-editor content-card" data-aos="zoom-out">
     <span class="pointer back" @click="$router.back()">返回</span>
     <div id="toolbar"></div>
-    <input class="title" type="text" v-model="article.title" placeholder="请填写标题~" />
+    <input class="title" type="text" v-model="article.title" placeholder="请填写二十字以内的标题~" />
     <div class="editor" ref="articleEditor"></div>
     <el-select placeholder="岗位方向" class="item" v-model="article.professional">
       <el-option v-for="item in professionals" :value="item" :label="item"></el-option>

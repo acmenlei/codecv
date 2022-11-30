@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import outNav from "@/common/nav/outNav"
+import Profile from "@/components/profile.vue";
 import RenderDialog from "@/components/renderDialog.vue";
 import useUserStore from "@/store/modules/user"
 import { useRouter } from "vue-router";
@@ -8,7 +9,7 @@ import { useUserLogin, useUpdateModel, useNavigator, useUpdate, userForm, useReg
 const router = useRouter();
 const { user, login, logout } = useUserLogin();
 const { flag, toggle } = useUpdateModel();
-const { update, upload, uploadInput } = useUpdate(toggle);
+const { update } = useUpdate(toggle);
 const { loginModelToggle, userInfo, genVerify, loginState } = useUserStore();
 const { model, registerUser, toggleModel } = useRegister();
 
@@ -48,21 +49,8 @@ const { model, registerUser, toggleModel } = useRegister();
     </div>
   </div>
   <!-- 个人信息修改 -->
-  <render-dialog width="400px" :flag="flag" @cancel="toggle" @confirm="update" title="个人信息" reset-text="取消"
-    confirm-text="提交修改">
-    <div class="user-preview">
-      <label for="user_avatar_upload">
-        <img class="pointer" :src="userForm.avatar" alt="头像" />
-      </label>
-      <input type="file" ref="uploadInput" id="user_avatar_upload" accept=".png,.jpg,.jpeg" @change="upload(0)">
-      <label>昵称：<input v-model='userForm.nickName'></label>
-      <label>毕业学校：<input v-model='userForm.school'></label>
-      <label>毕业时间：<p>
-          <el-date-picker v-model="userForm.graduation" type="year" placeholder="毕业时间" />
-        </p></label>
-      <label>求职意向：<input v-model='userForm.professional'></label>
-      <label>所在地区：<input v-model='userForm.origin'></label>
-    </div>
+  <render-dialog width="400px" :flag="flag" title="个人信息" :footer="false">
+    <Profile @cancel="toggle" @submit="update" />
   </render-dialog>
   <!-- 登录 -->
   <render-dialog :flag="loginState.loginModel" width="400px" :title="model ? '用户注册' : '用户登录'" :footer="false">
