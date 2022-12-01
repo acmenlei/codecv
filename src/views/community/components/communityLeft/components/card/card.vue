@@ -25,14 +25,27 @@ const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emit
     <div class="article-bottom">
       <div class="operator-group">
         <span @click="useLike" :class="{ clicked }">
-          {{ clicked ? '已赞' : '点赞' }} {{ article.likes.length }}
+          <i class="iconfont icon-like font-20"></i>
+          {{ article.likes.length }}
         </span>
-        <span @click="useDetail(article)">评论 {{ article.commentTotal }}</span>
-        <span @click="useEditor" v-if="hasAuthor">编辑</span>
-        <span @click="useRemove" v-if="hasAuthor">删除</span>
-        <span class="visit-people"><i class="iconfont icon-user"></i> 浏览量 {{ article.hot }}</span>
+        <span @click="useDetail(article)">
+          <i class="iconfont icon-comment font-20"></i>
+          {{ article.commentTotal }}
+        </span>
+        <span @click="useEditor" v-if="hasAuthor">
+          <el-tooltip placement="bottom" content="编辑">
+            <i class="iconfont icon-edit font-20"></i>
+          </el-tooltip>
+        </span>
+        <span @click="useRemove" v-if="hasAuthor">
+          <el-tooltip placement="bottom" content="删除">
+            <i class="iconfont icon-delete font-20"></i>
+          </el-tooltip>
+        </span>
+        <span class="visit-people"><i class="iconfont icon-browse font-20"></i> 浏览量 {{ article.hot }}</span>
       </div>
-      <span class="tag pointer" @click="$emit('queryProfessional', article.professional)">#{{ article.professional }}</span>
+      <span class="tag pointer" @click="$emit('queryProfessional', article.professional)">#{{ article.professional
+      }}</span>
     </div>
   </article>
 </template>
@@ -44,6 +57,7 @@ article {
   border-bottom: 1px solid #eee;
   color: #666;
   position: relative;
+
   .visit-people {
     position: absolute;
     right: 0;
@@ -80,7 +94,7 @@ article {
       margin: 10px 0;
 
       span {
-        margin-right: 10px;
+        margin-right: 20px;
         cursor: pointer;
 
         &:hover {

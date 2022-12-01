@@ -28,11 +28,23 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
         <article class="content" v-html="article.content"></article>
         <div class="supports mb-20">
           <span @click="like(clicked)" :class="{ clicked }">
-            {{ clicked ? '已赞' : '点赞' }}{{ article.likes.length }}
+            <i class="iconfont icon-like font-20"></i>
+            {{ article.likes.length }}
           </span>
-          <span>评论{{ article.comments.length }}</span>
-          <span>分享</span>
-          <span v-if="isAuthor" @click="$router.push(`/community/editor?articleId=${articleId}`)">编辑</span>
+          <span>
+            <i class="iconfont icon-comment font-20"></i>
+            {{ article.comments.length }}
+          </span>
+          <span>
+            <el-tooltip placement="bottom" content="分享给朋友">
+              <i class="iconfont icon-share font-20"></i>
+            </el-tooltip>
+          </span>
+          <span v-if="isAuthor" @click="$router.push(`/community/editor?articleId=${articleId}`)">
+            <el-tooltip placement="bottom" content="编辑">
+              <i class="iconfont icon-edit font-20"></i>
+            </el-tooltip>
+          </span>
         </div>
         <span class="pointer tag mr-20">#{{ article.professional }}</span>
         <span class="pointer hover" @click="$router.back()">返回上一页</span>

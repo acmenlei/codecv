@@ -10,10 +10,12 @@ const { data, useDetail } = useBrowseHistory();
     <p class="browse-history-title slide-title"> 浏览历史 </p>
     <ul class="list-style-init history-list" v-if="data.length">
       <li v-for="history in data" class="line-2" @click="useDetail(history.articleId)">
-        {{ history.title }}&nbsp;<span><i class="iconfont icon-user"></i> {{ history.hot }}</span>
+        {{ history.title }}&nbsp;<span><i class="iconfont icon-browse font-20"></i>
+          {{ history.hot }}
+        </span>
       </li>
     </ul>
-    <Empty title="你还没浏览过任何文章" v-else/>
+    <Empty title="你还没浏览过任何文章" v-else />
   </div>
 </template>
 
@@ -23,7 +25,7 @@ const { data, useDetail } = useBrowseHistory();
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
-    
+
     span {
       color: #666;
       white-space: nowrap;

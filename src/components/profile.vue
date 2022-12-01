@@ -12,7 +12,11 @@ const ruleFormRef = ref<FormInstance>(), uploadInput = ref();
 const rules = reactive<FormRules>({
   nickName: [
     { required: true, message: '请输入昵称', trigger: 'blur' },
-    { min: 1, max: 20, message: '1～20字', trigger: 'blur' },
+    { min: 1, max: 16, message: '1～16字', trigger: 'blur' },
+  ],
+  school: [
+    { required: true, message: '请输入输入你所就读的院校', trigger: 'blur' },
+    { min: 4, max: 20, message: '4～20字', trigger: 'blur' },
   ],
   sex: [
     { required: true, message: '请选择性别', trigger: 'change' },
@@ -25,7 +29,7 @@ const rules = reactive<FormRules>({
   ],
   origin: [
     { required: true, message: '请输入你所在的地区', trigger: 'blur' },
-    { max: 20, min: 2, message: '2～20字', trigger: 'blur' }
+    { max: 10, min: 2, message: '2～10字', trigger: 'blur' }
   ]
 })
 
@@ -86,6 +90,9 @@ async function merge(name: string, length: number) {
     <el-form-item label="用户昵称" prop="nickName" required>
       <el-input class="input" v-model="userForm.nickName" placeholder="网上冲浪的昵称" />
     </el-form-item>
+    <el-form-item label="毕业院校" prop="school" required>
+      <el-input class="input" v-model="userForm.school" placeholder="你所就读的院校" />
+    </el-form-item>
     <el-form-item label="意向岗位" prop="professional" required>
       <el-select v-model="userForm.professional" placeholder="选择你的意向岗位">
         <el-option v-for="prof in professionals" :label="prof" :value="prof" />
@@ -115,6 +122,7 @@ img {
   height: 200px;
   border-radius: 50%;
 }
+
 .input {
   width: 190px;
 }

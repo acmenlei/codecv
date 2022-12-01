@@ -11,6 +11,7 @@ const { hotList, useDetail } = useHotRank();
     <ul class="list-style-init" v-if="hotList.length">
       <li v-for="(article, idx) in hotList" class='line-2' @click="useDetail(article.articleId)">
         <span :class="{ topRank: idx < 3 }">{{ idx + 1 }}</span> {{ article.title }}
+        <i :class="['iconfont icon-hot font-20', { topRank: idx < 3 }]"></i>
       </li>
     </ul>
     <Empty title="还没有面经，快去抢沙发吧." v-else />
@@ -24,6 +25,8 @@ const { hotList, useDetail } = useHotRank();
   }
 
   li {
+    margin-top: 15px;
+
     span {
       color: #555;
       font-weight: bold;

@@ -1,7 +1,8 @@
+import { useThrottleFn } from '@vueuse/core';
 import { warningMessage } from '@/common/message';
 import useUserStore from '@/store/modules/user';
 import { initialInfo } from './../../store/modules/user';
-import { onActivated, onDeactivated, reactive, Ref, ref, watch, watchEffect } from "vue";
+import { onActivated, onDeactivated, reactive, Ref, ref, watch } from "vue";
 import { queryCommunityArticleById, likeArticle } from '@/services/modules/community';
 import { queryCommunityArticleCommentsById } from "@/services/modules/comments";
 import { errorMessage } from '@/common/message';
@@ -63,13 +64,17 @@ export function useArticleDetail(articleId: Ref<number>) {
     }
   }
 
-  onActivated(() => {
+  const init = useThrottleFn(function () {
     if (!isNaN(articleId.value)) {
       queryComments();
       queryArticle();
     }
   })
 
+  onActivated(init);
+  watch(() => articleId.value, () => {
+    init();
+  })
   onDeactivated(() => article.content = '');
 
   return {
@@ -100,11 +105,17 @@ function initArticleInfo(article: IArticle, info: IArticle) {
 export function useDelayMenuBar(articleId: Ref) {
   // 暂时解决异步渲染问题
   const delay = ref(false);
-  
-  setTimeout(() => delay.value = true, 200);
-  watch(() => articleId.value, () => {
+
+  function controlMenuBar() {
     delay.value = false;
     setTimeout(() => delay.value = true, 200)
+  }
+
+  onActivated(() => {
+    controlMenuBar();
+  })
+  watch(() => articleId.value, () => {
+    controlMenuBar();
   })
 
   return {

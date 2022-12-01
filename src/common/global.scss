@@ -121,11 +121,13 @@
     transform: scale(1.2) !important;
   }
 }
+
 .hover {
   &:hover {
     opacity: .5;
   }
 }
+
 .content-card {
   background: #fff;
   padding: 20px;
@@ -195,9 +197,11 @@
     }
   }
 }
+
 .clicked {
-  color: var(--theme)!important;
+  color: var(--theme) !important;
 }
+
 .no-wrap {
   white-space: nowrap;
 }
@@ -222,6 +226,7 @@
   position: relative;
   margin-bottom: 20px;
   font-weight: bold;
+
   &::before {
     content: '';
     position: absolute;
@@ -232,4 +237,12 @@
     bottom: -5px;
     border-radius: 5px;
   }
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-25 {
+  font-size: 25px;
 }

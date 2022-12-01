@@ -6,6 +6,118 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "29928",
+      "name": "edit",
+      "font_class": "edit",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "29929",
+      "name": "emoji",
+      "font_class": "emoji",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "30415",
+      "name": "comment-fill",
+      "font_class": "comment-fill",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "30416",
+      "name": "comment",
+      "font_class": "comment",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "32477",
+      "name": "delete",
+      "font_class": "delete",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "61143",
+      "name": "share",
+      "font_class": "share",
+      "unicode": "e6f3",
+      "unicode_decimal": 59123
+    },
+    {
+      "icon_id": "159929",
+      "name": "share",
+      "font_class": "fenxiang",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "4766692",
+      "name": "like",
+      "font_class": "like",
+      "unicode": "e7c8",
+      "unicode_decimal": 59336
+    },
+    {
+      "icon_id": "5428495",
+      "name": "reply",
+      "font_class": "reply",
+      "unicode": "e705",
+      "unicode_decimal": 59141
+    },
+    {
+      "icon_id": "7008955",
+      "name": "like_fill",
+      "font_class": "like_fill",
+      "unicode": "e707",
+      "unicode_decimal": 59143
+    },
+    {
+      "icon_id": "7008956",
+      "name": "like",
+      "font_class": "like1",
+      "unicode": "e708",
+      "unicode_decimal": 59144
+    },
+    {
+      "icon_id": "9785644",
+      "name": "moon",
+      "font_class": "moon",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "11487988",
+      "name": "browse",
+      "font_class": "browse",
+      "unicode": "e745",
+      "unicode_decimal": 59205
+    },
+    {
+      "icon_id": "11488058",
+      "name": "hot",
+      "font_class": "hot",
+      "unicode": "e753",
+      "unicode_decimal": 59219
+    },
+    {
+      "icon_id": "11686795",
+      "name": "message",
+      "font_class": "message1",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "21096817",
+      "name": "shine",
+      "font_class": "shine",
+      "unicode": "ecda",
+      "unicode_decimal": 60634
+    },
+    {
       "icon_id": "1176853",
       "name": "card",
       "font_class": "card",

@@ -30,7 +30,7 @@ const { model, registerUser, toggleModel } = useRegister();
 
       <div class="user">
         <div class="user-creative mr-20 pointer primary" @click="useNavigator(router, '/community/editor')">
-          写面经 <i class="iconfont icon-practice "></i>
+          写面经 <i class="iconfont icon-edit font-20"></i>
         </div>
         <template v-if="loginState.logined">
           <span class="user-nick  mr-10">{{ userInfo.nickName }}</span>

@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3737803 */
-  src: url('iconfont.woff2?t=1667308685464') format('woff2'),
-       url('iconfont.woff?t=1667308685464') format('woff'),
-       url('iconfont.ttf?t=1667308685464') format('truetype');
+  src: url('iconfont.woff2?t=1669888137957') format('woff2'),
+       url('iconfont.woff?t=1669888137957') format('woff'),
+       url('iconfont.ttf?t=1669888137957') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,70 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-edit:before {
+  content: "\e649";
+}
+
+.icon-emoji:before {
+  content: "\e64a";
+}
+
+.icon-comment-fill:before {
+  content: "\e666";
+}
+
+.icon-comment:before {
+  content: "\e667";
+}
+
+.icon-delete:before {
+  content: "\e6b5";
+}
+
+.icon-share:before {
+  content: "\e6f3";
+}
+
+.icon-fenxiang:before {
+  content: "\e601";
+}
+
+.icon-like:before {
+  content: "\e7c8";
+}
+
+.icon-reply:before {
+  content: "\e705";
+}
+
+.icon-like_fill:before {
+  content: "\e707";
+}
+
+.icon-like1:before {
+  content: "\e708";
+}
+
+.icon-moon:before {
+  content: "\e654";
+}
+
+.icon-browse:before {
+  content: "\e745";
+}
+
+.icon-hot:before {
+  content: "\e753";
+}
+
+.icon-message1:before {
+  content: "\e675";
+}
+
+.icon-shine:before {
+  content: "\ecda";
 }
 
 .icon-card:before {

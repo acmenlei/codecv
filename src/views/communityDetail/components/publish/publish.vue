@@ -26,7 +26,9 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
     <!-- 图片插入位置 -->
     <div class="community-operator-group flex community-content-edit-publish">
       <div class="community-edit-picker">
-        <span class="emoji pointer" @click="togglePicker">表情</span>
+        <span class="emoji pointer" @click="togglePicker">
+          <i class="iconfont icon-emoji font-25"></i>
+        </span>
         <EmojiPicker class="picker" v-if="picker" :native="true" :hide-search="true" :hide-group-names="true"
           @select="setEmoji" :static-texts="{ skinTone: '换肤' }" />
       </div>
