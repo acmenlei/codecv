@@ -16,6 +16,10 @@ export function queryCommunity(data: ICommunityCondition) {
   return post('/community/list', data);
 }
 
+export function queryCommunityHotRank(data: { start?: string, end?: string, requireCount: number }) {
+  return post('/community/queryCommunityHotRank', data);
+}
+
 export function likeArticle(data: ICommunityLike) {
   return post('/community/like', data);
 }

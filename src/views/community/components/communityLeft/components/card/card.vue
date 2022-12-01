@@ -6,18 +6,20 @@ import { computed } from 'vue';
 
 const props = defineProps<{ article: IArticle }>();
 const emits = defineEmits(['reQueryList', 'queryProfessional', 'remove'])
+
 const clicked = computed(() => props.article.likes.includes(userInfo.uid))
 const hasAuthor = computed(() => userInfo.uid == props.article.authorId)
+const articleId = computed(() => props.article.articleId)
 
 const { userInfo } = useUserStore();
-const { useLike, useRemove, useDetail, useEditor } = useOperator(props.article.articleId, emits, clicked);
+const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emits, clicked);
 </script>
 
 <template>
   <article class="pointer">
     <user-info :user-info='article.authorInfo' :publish-time="article.createTime" />
     <h3>{{ article.title }}</h3>
-    <p class="intro line-4" @click="useDetail">
+    <p class="intro line-4" @click="useDetail(article)">
       {{ article.introduce }}
     </p>
     <div class="article-bottom">
@@ -25,7 +27,7 @@ const { useLike, useRemove, useDetail, useEditor } = useOperator(props.article.a
         <span @click="useLike" :class="{ clicked }">
           {{ clicked ? '已赞' : '点赞' }} {{ article.likes.length }}
         </span>
-        <span @click="useDetail">评论 {{ article.commentTotal }}</span>
+        <span @click="useDetail(article)">评论 {{ article.commentTotal }}</span>
         <span @click="useEditor" v-if="hasAuthor">编辑</span>
         <span @click="useRemove" v-if="hasAuthor">删除</span>
         <span class="visit-people"><i class="iconfont icon-user"></i> 浏览量 {{ article.hot }}</span>

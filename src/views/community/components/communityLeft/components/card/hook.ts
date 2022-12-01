@@ -5,8 +5,9 @@ import useUserStore from '@/store/modules/user';
 import { useRouter } from "vue-router";
 import { likeArticle, removeCommunity } from '@/services/modules/community';
 import { Ref } from 'vue';
+import { useBrowseHistory } from '@/components/browse-history/hook';
 
-export function useOperator(articleId: number, emits: Function, hasClick: Ref<boolean>) {
+export function useOperator(articleId: Ref<number>, emits: Function, hasClick: Ref<boolean>) {
   const router = useRouter();
 
   async function useLike() {
@@ -19,15 +20,17 @@ export function useOperator(articleId: number, emits: Function, hasClick: Ref<bo
       return;
     }
     const { userInfo } = useUserStore();
-    await likeArticle({ userId: userInfo.uid, articleId });
+    await likeArticle({ userId: userInfo.uid, articleId: articleId.value });
     emits('reQueryList', userInfo.uid)
   }
 
-  function useDetail() {
-    router.push(`/community/detail?articleId=${articleId}`);
+  function useDetail(article: IArticle) {
+    const { setBrowseHistory } = useBrowseHistory();
+    setBrowseHistory(article);
+    router.push(`/community/detail?articleId=${articleId.value}`);
   }
   async function useRemove() {
-    const res: IResponse<unknown> = await removeCommunity({ articleId }) as IResponse<unknown>;
+    const res: IResponse<unknown> = await removeCommunity({ articleId: articleId.value }) as IResponse<unknown>;
     if(res.code == 200) {
       successMessage(res.msg);
       emits('remove')
@@ -35,7 +38,7 @@ export function useOperator(articleId: number, emits: Function, hasClick: Ref<bo
   }
 
   function useEditor() {
-    router.push(`/community/editor?articleId=${articleId}`)
+    router.push(`/community/editor?articleId=${articleId.value}`)
   }
 
   return {

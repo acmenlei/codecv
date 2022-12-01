@@ -10,7 +10,7 @@ import Footer from "./footer.vue"
       <el-backtop :bottom="100" />
     </el-tooltip>
     <router-view v-slot="{ Component }">
-      <keep-alive :max="10" include="editor,syntax,update,theme,community,communityEditor">
+      <keep-alive :max="10" include="editor,syntax,update,theme,community,communityEditor,communityDetail">
         <component :is="Component" />
       </keep-alive>
     </router-view>

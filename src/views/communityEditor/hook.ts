@@ -36,10 +36,10 @@ export function useCommunityArticle() {
     // 2.判断是否为编辑模式
     if (articleId.value != null) {
       const updateArticleInfo = Object.assign(articleInfo, { articleId: editorArticleInfo.articleId });
-      const { code }: IResponse<unknown> = await updateCommunity(updateArticleInfo) as IResponse<unknown>;
+      const { code } = await updateCommunity(updateArticleInfo) as IResponse<unknown>;
       commonCode = code;
     } else {
-      const { code }: IResponse<unknown> = await publishCommunity(articleInfo) as IResponse<unknown>;
+      const { code } = await publishCommunity(articleInfo) as IResponse<unknown>;
       commonCode = code;
     }
     if (commonCode == 200) {
@@ -50,7 +50,7 @@ export function useCommunityArticle() {
   // 初始化处理编辑模式 拉取文章信息
   async function isEditMode() {
     if (articleId.value != undefined) {
-      const articleData: IResponse<IArticle> = await queryCommunityArticleById({ articleId: parseInt(<string>articleId.value) }) as IResponse<IArticle>;
+      const articleData = await queryCommunityArticleById({ articleId: parseInt(<string>articleId.value) }) as IResponse<IArticle>;
       editorArticleInfo = articleData.data as IArticle;
       article.title = editorArticleInfo.title;
       article.professional = editorArticleInfo.professional;

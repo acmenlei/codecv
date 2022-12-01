@@ -35,7 +35,7 @@ export function usePublishShare(articleId: number, level: number, posterCommentI
     }
     const cb = level == 1 ? publishComment : publishCommentReply;
     const params = {
-      content: shareMainContent.value,
+      content: shareMainContent.value.replace(/</g, '&lt;').replace(/>/g, '&gt;'),
       authorId: userInfo.uid,
       level,
       articleId,

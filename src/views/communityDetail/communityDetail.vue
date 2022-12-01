@@ -1,27 +1,24 @@
 <script setup lang='ts'>
 import UserInfo from '@/components/userInfo.vue';
-import HotList from "@/components/hotList.vue"
+import HotList from "@/components/hot-rank/hotList.vue"
+import BrowseHistory from '@/components/browse-history/browseHistory.vue';
 import Publish from "./components/publish/publish.vue"
 import Comments from '@/components/comments/comments.vue';
 import { VueMarkdownMenuBar } from 'vue-markdown-menu-bar';
-import { computed, onMounted, ref } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import useUserStore from "@/store/modules/user"
-import { useArticleDetail } from './hook'
+import { useArticleDetail, useDelayMenuBar } from './hook'
 import '@/assets/highlight.css';
 
-const route = useRoute(), delay = ref(false);
+const route = useRoute();
 const articleId = computed(() => parseInt(route.query.articleId as string));
 const { userInfo } = useUserStore();
-const { article, total, commentsTotal, like, queryArticle, pageNumChange, queryComments } = useArticleDetail(articleId.value);
+const { article, total, commentsTotal, like, pageNumChange, queryComments } = useArticleDetail(articleId);
+const { delay } = useDelayMenuBar(articleId);
 const clicked = computed(() => article.likes.includes(userInfo.uid));
 const isAuthor = computed(() => article.authorId == userInfo.uid);
 
-onMounted(() => {
-  queryArticle();
-  // 暂时解决异步渲染问题
-  setTimeout(() => delay.value = true, 200);
-})
 </script>
 <template>
   <div class="community-detail flex">
@@ -29,7 +26,7 @@ onMounted(() => {
       <div class="main content-card">
         <user-info class="user-info" :user-info="article.authorInfo" :publish-time="article.createTime" />
         <article class="content" v-html="article.content"></article>
-        <div class="supports">
+        <div class="supports mb-20">
           <span @click="like(clicked)" :class="{ clicked }">
             {{ clicked ? '已赞' : '点赞' }}{{ article.likes.length }}
           </span>
@@ -37,7 +34,9 @@ onMounted(() => {
           <span>分享</span>
           <span v-if="isAuthor" @click="$router.push(`/community/editor?articleId=${articleId}`)">编辑</span>
         </div>
-        <span class="pointer tag">#{{ article.professional }}</span>
+        <span class="pointer tag mr-20">#{{ article.professional }}</span>
+        <span class="pointer hover" @click="$router.back()">返回上一页</span>
+        <span class="pointer hover back absolute" @click="$router.back()">返回上一页</span>
       </div>
       <Publish :article-id="articleId" :level="1" @re-query-comments="queryComments" />
       <Comments :data="article.comments" :article-id="articleId" :total='total' :comments-total="commentsTotal"
@@ -45,6 +44,7 @@ onMounted(() => {
     </div>
     <div class="slide-content">
       <hot-list class="slide-item" />
+      <browse-history />
       <vue-markdown-menu-bar v-if="delay" class="slide-item menu-bar content-card" body='.content' width='200px' />
     </div>
   </div>
@@ -56,6 +56,7 @@ onMounted(() => {
 
   .main-content {
     flex: 1;
+    position: relative;
 
     .main {
       border-bottom-left-radius: 0;
@@ -100,6 +101,11 @@ onMounted(() => {
         }
       }
     }
+  }
+
+  .back {
+    top: 20px;
+    right: 20px;
   }
 
   .slide-content {

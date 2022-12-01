@@ -30,7 +30,7 @@ import CommunityRight from './components/communityRight/communityRight.vue';
 
   .community-right-slider {
     padding: 10px;
-    flex-basis: 200px;
+    flex-basis: 300px;
   }
 }
 </style>

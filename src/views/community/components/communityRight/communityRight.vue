@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import HotList from '@/components/hotList.vue';
-import BrowseHistory from '@/components/browseHistory.vue';
+import HotList from '@/components/hot-rank/hotList.vue';
+import BrowseHistory from '@/components/browse-history/browseHistory.vue';
 
 </script>
 

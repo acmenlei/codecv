@@ -121,7 +121,11 @@
     transform: scale(1.2) !important;
   }
 }
-
+.hover {
+  &:hover {
+    opacity: .5;
+  }
+}
 .content-card {
   background: #fff;
   padding: 20px;
@@ -204,4 +208,28 @@
   -webkit-line-clamp: 4;
   overflow: hidden;
   -webkit-box-orient: vertical;
+}
+
+.line-2 {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.slide-title {
+  position: relative;
+  margin-bottom: 20px;
+  font-weight: bold;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 5px;
+    width: 20px;
+    background: var(--theme);
+    bottom: -5px;
+    border-radius: 5px;
+  }
 }

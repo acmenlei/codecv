@@ -7,7 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BrowseHistory: typeof import('./src/components/browseHistory.vue')['default']
+    BrowseHistory: typeof import('./src/components/browse-history/browseHistory.vue')['default']
     Comments: typeof import('./src/components/comments/comments.vue')['default']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -38,7 +38,7 @@ declare module '@vue/runtime-core' {
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Empty: typeof import('./src/components/empty.vue')['default']
     History: typeof import('./src/components/history.vue')['default']
-    HotList: typeof import('./src/components/hotList.vue')['default']
+    HotList: typeof import('./src/components/hot-rank/hotList.vue')['default']
     LoginModel: typeof import('./src/components/loginModel.vue')['default']
     NavBar: typeof import('./src/components/navBar.vue')['default']
     Profile: typeof import('./src/components/profile.vue')['default']
