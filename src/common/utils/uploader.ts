@@ -1,45 +1,45 @@
-import { fileMerge, fileUpload, getToken } from "@/services/modules/upload";
+import { fileMerge, fileUpload } from "@/services/modules/upload";
 import { UploadConfig } from "@textbus/editor";
-import OSS from "ali-oss";
+// import OSS from "ali-oss";
 import { errorMessage } from "../message";
 
-function requestCustom(file: File): Promise<string> {
-  // 拿到封面绝对路径 暂时没写
-  return new Promise<string>(async (resolve, reject) => {
-    const { data, code, msg } = await getToken() as IResponse<any>;
-    const { credentials } = data;
-    if (code == 200) {
-      const { res }: any = await aliossFileUpload(file, credentials);
-      resolve(res.requestUrls[0])
-    }
-    reject(msg);
-  })
-}
+// function requestCustom(file: File): Promise<string> {
+//   // 拿到封面绝对路径 暂时没写
+//   return new Promise<string>(async (resolve, reject) => {
+//     const { data, code, msg } = await getToken() as IResponse<any>;
+//     const { credentials } = data;
+//     if (code == 200) {
+//       const { res }: any = await aliossFileUpload(file, credentials);
+//       resolve(res.requestUrls[0])
+//     }
+//     reject(msg);
+//   })
+// }
 // 阿里云直传
-async function aliossFileUpload(file: File, config: any) {
-  let client = new OSS({
-    region: config.region,
-    accessKeyId: config.AccessKeyId,
-    accessKeySecret: config.AccessKeySecret,
-    stsToken: config.SecurityToken,
-    bucket: config.bucket,
-  })
-  return new Promise((resolve, reject) => {
-    let fileName = String(Date.now());
-    client.multipartUpload(fileName, file, {
-      progress: (p, checkpoint) => {
-        console.log(p, checkpoint);
-      },
-      mime: file.type,
-    })
-      .then((res) => {
-        resolve(res);
-      })
-      .catch((err) => {
-        reject(err)
-      });
-  })
-}
+// async function aliossFileUpload(file: File, config: any) {
+//   let client = new OSS({
+//     region: config.region,
+//     accessKeyId: config.AccessKeyId,
+//     accessKeySecret: config.AccessKeySecret,
+//     stsToken: config.SecurityToken,
+//     bucket: config.bucket,
+//   })
+//   return new Promise((resolve, reject) => {
+//     let fileName = String(Date.now());
+//     client.multipartUpload(fileName, file, {
+//       progress: (p, checkpoint) => {
+//         console.log(p, checkpoint);
+//       },
+//       mime: file.type,
+//     })
+//       .then((res) => {
+//         resolve(res);
+//       })
+//       .catch((err) => {
+//         reject(err)
+//       });
+//   })
+// }
 
 // 切片上传
 export function sliceBLobUpload(fileInput: HTMLInputElement) {

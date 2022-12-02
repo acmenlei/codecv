@@ -1,3 +1,9 @@
+interface IUser {
+  username: string;
+  password: string;
+  verify: string;
+}
+
 interface IResponse<T> {
   code: number;
   msg: string;
