@@ -5,7 +5,7 @@ import type { FormInstance, FormRules } from 'element-plus';
 import { userForm } from "@/layout/hook";
 import { professionals } from '@/common/utils/professional';
 import { errorMessage } from '@/common/message';
-import { fileMerge, fileUpload } from '@/services/modules/upload';
+import { sliceBLobUpload } from "@/common/utils/uploader"
 
 const emits = defineEmits(['cancel', 'submit'])
 const ruleFormRef = ref<FormInstance>(), uploadInput = ref();
@@ -42,34 +42,14 @@ const submitForm = async (formEl: FormInstance | undefined) => {
     }
   })
 }
-async function upload(index: number) {
-  const chunkSize = 1024 * 1024;
-  const start = index * chunkSize, file = uploadInput.value.files[0];
-  const [filename, ext] = file.name.split('.');
 
-  // 进行切片
-  if (start > file.size) {
-    // 上传完毕了之后进行切片合并
-    return merge(file.name, index);
-  }
-  // 切片为blob
-  const blob = file.slice(start, start + chunkSize)
-  const blobName = `${filename}.${index}.${ext}`;
-  const blobFile = new File([blob], blobName);
-
-  const form = new FormData();
-  form.append("file", blobFile)
-
+const uploadAvatar = async function () {
   try {
-    await fileUpload(form);
-    upload(++index);
-  } catch (err) {
-    errorMessage('上传失败了，待会再试试吧～')
+    const url = await sliceBLobUpload(uploadInput.value);
+    userForm.avatar = url;
+  } catch (e) {
+    errorMessage(<string>e);
   }
-}
-async function merge(name: string, length: number) {
-  const data: any = await fileMerge({ name, length });
-  userForm.avatar = data.url;
 }
 
 </script>
@@ -79,7 +59,7 @@ async function merge(name: string, length: number) {
       <label for="user_avatar_upload">
         <img class="pointer" :src="userForm.avatar" alt="头像" />
       </label>
-      <input type="file" ref="uploadInput" id="user_avatar_upload" accept=".png,.jpg,.jpeg" @change="upload(0)">
+      <input type="file" ref="uploadInput" id="user_avatar_upload" accept=".png,.jpg,.jpeg" @change="uploadAvatar">
     </el-form-item>
     <el-form-item label="性别" prop="sex" required>
       <el-radio-group v-model="userForm.sex">

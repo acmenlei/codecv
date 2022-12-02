@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import { numFormat } from '@/common/utils/format';
 import Empty from '../empty.vue';
 import { useBrowseHistory } from './hook';
 
@@ -11,7 +12,7 @@ const { data, useDetail } = useBrowseHistory();
     <ul class="list-style-init history-list" v-if="data.length">
       <li v-for="history in data" class="line-2" @click="useDetail(history.articleId)">
         {{ history.title }}&nbsp;<span><i class="iconfont icon-browse font-20"></i>
-          {{ history.hot }}
+          {{ numFormat(history.hot) }}
         </span>
       </li>
     </ul>

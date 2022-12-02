@@ -10,6 +10,7 @@ import { useRoute } from 'vue-router';
 import useUserStore from "@/store/modules/user"
 import { useArticleDetail, useDelayMenuBar } from './hook'
 import '@/assets/highlight.css';
+import { numFormat } from '@/common/utils/format';
 
 const route = useRoute();
 const articleId = computed(() => parseInt(route.query.articleId as string));
@@ -29,11 +30,11 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
         <div class="supports mb-20">
           <span @click="like(clicked)" :class="{ clicked }">
             <i class="iconfont icon-like font-20"></i>
-            {{ article.likes.length }}
+            {{ numFormat(article.likes.length) }}
           </span>
           <span>
             <i class="iconfont icon-comment font-20"></i>
-            {{ article.comments.length }}
+            {{ numFormat(article.comments.length) }}
           </span>
           <span>
             <el-tooltip placement="bottom" content="分享给朋友">

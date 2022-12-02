@@ -21,7 +21,7 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
   <div class="community-publish content-card">
     <div class="community-content-edit">
       <textarea :style="{ background }" class="content-edit main-content" v-model="shareMainContent"
-        placeholder="唠点什么～" />
+        placeholder="内容控制在200字以内～" />
     </div>
     <!-- 图片插入位置 -->
     <div class="community-operator-group flex community-content-edit-publish">

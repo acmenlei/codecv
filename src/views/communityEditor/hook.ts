@@ -5,7 +5,8 @@ import { publishCommunity, queryCommunityArticleById, updateCommunity } from '@/
 import useUserStore, { TOKEN } from '@/store/modules/user';
 import { createEditor, Editor } from "@textbus/editor";
 import { computed, onActivated, onDeactivated, reactive, ref } from "vue";
-import { successMessage, warningMessage } from '@/common/message';
+import { errorMessage, successMessage, warningMessage } from '@/common/message';
+import { uploader } from '@/common/utils/uploader';
 
 export function useCommunityArticle() {
   const article = reactive({ professional: '', title: '' });
@@ -21,6 +22,10 @@ export function useCommunityArticle() {
     }
     if (!article.professional || !article.title.trim() || editor.getContent() == '<br>') {
       warningMessage('内容填写完整才能让其他同学看明白～');
+      return;
+    }
+    if(article.title.length > 20) {
+      errorMessage('标题过长 请缩减到20字以内～')
       return;
     }
     const text = document.createElement('div');
@@ -58,7 +63,7 @@ export function useCommunityArticle() {
     }
   }
   onActivated(() => {
-    editor = createEditor({ autoFocus: true, styleSheets: ['.tb-list-item { margin-left: 20px }'], placeholder: '内容尽情发挥～' });
+    editor = createEditor({ autoFocus: true, autoHeight: true, minHeight: '70vh', uploader, styleSheets: ['.tb-list-item { margin-left: 20px }'], placeholder: '内容尽情发挥～' });
     editor.mount(articleEditor.value);
     isEditMode();
   })
@@ -74,3 +79,4 @@ export function useCommunityArticle() {
     articleEditor
   }
 }
+

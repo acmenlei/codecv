@@ -14,6 +14,7 @@
     "@codemirror/lang-markdown": "^6.0.4",
     "@codemirror/theme-one-dark": "^6.1.0",
     "@textbus/editor": "^3.0.0-alpha.32",
+    "ali-oss": "^6.17.1",
     "aos": "^2.3.4",
     "axios": "^1.2.0",
     "codemirror": "^6.0.1",
@@ -32,6 +33,7 @@
     "vue3-emoji-picker": "^1.1.7"
   },
   "devDependencies": {
+    "@types/ali-oss": "^6.16.6",
     "@types/aos": "^3.0.4",
     "@types/node": "^18.11.7",
     "@types/nprogress": "^0.2.0",

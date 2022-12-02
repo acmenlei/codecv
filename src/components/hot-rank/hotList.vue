@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import { numFormat } from '@/common/utils/format';
 import Empty from '../empty.vue';
 import { useHotRank } from './hook';
 
@@ -10,8 +11,10 @@ const { hotList, useDetail } = useHotRank();
     <p class="hot-title slide-title"> 热门面经 </p>
     <ul class="list-style-init" v-if="hotList.length">
       <li v-for="(article, idx) in hotList" class='line-2' @click="useDetail(article.articleId)">
-        <span :class="{ topRank: idx < 3 }">{{ idx + 1 }}</span> {{ article.title }}
+        <span :class="['rank',  { topRank: idx < 3 }]">{{ idx + 1 }}</span>
+        {{ article.title }}
         <i :class="['iconfont icon-hot font-20', { topRank: idx < 3 }]"></i>
+        <span :class="{ topRank: idx < 3 }">{{ numFormat(article.hot) }}</span>
       </li>
     </ul>
     <Empty title="还没有面经，快去抢沙发吧." v-else />
@@ -29,7 +32,9 @@ const { hotList, useDetail } = useHotRank();
 
     span {
       color: #555;
-      font-weight: bold;
+      &.rank {
+        font-weight: bold;
+      }
     }
   }
 

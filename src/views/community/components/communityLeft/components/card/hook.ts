@@ -4,14 +4,14 @@ import { isLogin } from '@/common/hooks/global';
 import useUserStore from '@/store/modules/user';
 import { useRouter } from "vue-router";
 import { likeArticle, removeCommunity } from '@/services/modules/community';
-import { Ref } from 'vue';
+import { ref, Ref, watchEffect } from 'vue';
 import { useBrowseHistory } from '@/components/browse-history/hook';
 
 export function useOperator(articleId: Ref<number>, emits: Function, hasClick: Ref<boolean>) {
   const router = useRouter();
 
   async function useLike() {
-     if (!isLogin()) {
+    if (!isLogin()) {
       errorMessage('请先登录！');
       return;
     }
@@ -31,7 +31,7 @@ export function useOperator(articleId: Ref<number>, emits: Function, hasClick: R
   }
   async function useRemove() {
     const res: IResponse<unknown> = await removeCommunity({ articleId: articleId.value }) as IResponse<unknown>;
-    if(res.code == 200) {
+    if (res.code == 200) {
       successMessage(res.msg);
       emits('remove')
     }
@@ -43,5 +43,21 @@ export function useOperator(articleId: Ref<number>, emits: Function, hasClick: R
 
   return {
     useLike, useDetail, useRemove, useEditor
+  }
+}
+
+export function useCovers(mainContent: Ref<string>) {
+  const covers = ref<string[]>([]);
+
+  watchEffect(() => {
+    let tmpCovers: string[] = [];
+    mainContent.value.replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi, ($, $1) => {
+      tmpCovers.length < 3 && tmpCovers.push($1);
+      return $1;
+    })
+    covers.value = tmpCovers;
+  })
+  return {
+    covers
   }
 }

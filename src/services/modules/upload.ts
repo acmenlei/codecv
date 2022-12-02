@@ -7,3 +7,7 @@ export function fileUpload(data: FormData) {
 export function fileMerge(data: { name: string, length: number }) {
   return post('/fileUpload/merge', data);
 } 
+
+export function getToken() {
+  return post('/fileUpload/getToken')
+}

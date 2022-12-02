@@ -29,8 +29,12 @@ export function usePublishShare(articleId: number, level: number, posterCommentI
       loginModelToggle();
       return;
     }
-    if(!shareMainContent.value.trim()) {
+    if (!shareMainContent.value.trim()) {
       warningMessage('你发个空内容是想干嘛呢？？？');
+      return;
+    }
+    if (shareMainContent.value.length > 200) {
+      warningMessage('太多了存不下, 删到200字以内吧');
       return;
     }
     const cb = level == 1 ? publishComment : publishCommentReply;

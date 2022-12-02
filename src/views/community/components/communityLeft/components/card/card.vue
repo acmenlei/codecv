@@ -1,8 +1,9 @@
 <script setup lang='ts'>
 import UserInfo from '@/components/userInfo.vue';
-import { useOperator } from "./hook";
+import { useOperator, useCovers } from "./hook";
 import useUserStore from "@/store/modules/user"
 import { computed } from 'vue';
+import { numFormat } from '@/common/utils/format';
 
 const props = defineProps<{ article: IArticle }>();
 const emits = defineEmits(['reQueryList', 'queryProfessional', 'remove'])
@@ -10,7 +11,9 @@ const emits = defineEmits(['reQueryList', 'queryProfessional', 'remove'])
 const clicked = computed(() => props.article.likes.includes(userInfo.uid))
 const hasAuthor = computed(() => userInfo.uid == props.article.authorId)
 const articleId = computed(() => props.article.articleId)
+const articleContent = computed(() => props.article.content)
 
+const { covers } = useCovers(articleContent);
 const { userInfo } = useUserStore();
 const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emits, clicked);
 </script>
@@ -22,15 +25,20 @@ const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emit
     <p class="intro line-4" @click="useDetail(article)">
       {{ article.introduce }}
     </p>
+    <!-- 图片插入 -->
+    <div class="covers" v-if="covers.length">
+      <el-image :src="cover" v-for="(cover, idx) in covers" :preview-src-list="covers" :initial-index="idx" fit="cover"
+        class="mr-10 cover-item" :preview-teleported="true" :hide-on-click-modal="true"/>
+    </div>
     <div class="article-bottom">
       <div class="operator-group">
         <span @click="useLike" :class="{ clicked }">
           <i class="iconfont icon-like font-20"></i>
-          {{ article.likes.length }}
+          {{ numFormat(article.likes.length) }}
         </span>
         <span @click="useDetail(article)">
           <i class="iconfont icon-comment font-20"></i>
-          {{ article.commentTotal }}
+          {{ numFormat(article.commentTotal) }}
         </span>
         <span @click="useEditor" v-if="hasAuthor">
           <el-tooltip placement="bottom" content="编辑">
@@ -42,7 +50,7 @@ const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emit
             <i class="iconfont icon-delete font-20"></i>
           </el-tooltip>
         </span>
-        <span class="visit-people"><i class="iconfont icon-browse font-20"></i> 浏览量 {{ article.hot }}</span>
+        <span class="visit-people"><i class="iconfont icon-browse font-20"></i> 浏览量 {{ numFormat(article.hot) }}</span>
       </div>
       <span class="tag pointer" @click="$emit('queryProfessional', article.professional)">#{{ article.professional
       }}</span>
@@ -66,6 +74,16 @@ article {
 
   .intro:hover {
     opacity: .8;
+  }
+
+  .covers {
+    margin-top: 10px;
+
+    .cover-item {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+    }
   }
 
   &:last-child {

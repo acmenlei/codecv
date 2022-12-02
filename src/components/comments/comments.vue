@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import { numFormat } from '@/common/utils/format';
 import Empty from '@/components/empty.vue';
 import UserInfo from '@/components/userInfo.vue';
 import Publish from '@/views/communityDetail/components/publish/publish.vue';
@@ -13,7 +14,7 @@ const { currenId, reply, userInfo, remove } = useReply(emits);
 
 <template>
   <div class="comments-container content-card">
-    <span class="tip">评论/回复共 {{ total }} 条</span>
+    <span class="tip">评论/回复共 {{ numFormat(total) }} 条</span>
     <div v-if="data.length" class="comments-list mt-20 content-card">
       <div class="comment-item" v-for="comment of data">
         <user-info :user-info="comment.authorInfo" :publish-time='comment.createTime' />
