@@ -12,7 +12,7 @@ Object.keys(routeFiles).forEach(routeModule => {
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/community'
+    redirect: '/home'
   },
   {
     path: '/download',
