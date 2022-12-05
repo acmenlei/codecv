@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import { homeNav, homeOutNav } from "@/common/nav/homeNav"
+import Logo from "@/components/logo.vue";
 function toOutNav(path: string) {
   window.location.href = path;
 }
@@ -7,7 +8,7 @@ function toOutNav(path: string) {
 
 <template>
   <div id="header">
-    <div class="logo" data-aos="zoom-out-right"><img src="/vite.svg" alt=""></div>
+    <Logo/>
     <ul class="nav" data-aos="zoom-out-right">
       <li v-for="navItem in homeNav">
         <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>

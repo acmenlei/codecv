@@ -35,6 +35,7 @@ declare module '@vue/runtime-core' {
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Empty: typeof import('./src/components/empty.vue')['default']
     HotList: typeof import('./src/components/hot-rank/hotList.vue')['default']
+    Logo: typeof import('./src/components/logo.vue')['default']
     NavBar: typeof import('./src/components/navBar.vue')['default']
     Profile: typeof import('./src/components/profile.vue')['default']
     RenderDialog: typeof import('./src/components/renderDialog.vue')['default']

@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import outNav from "@/common/nav/outNav"
 import Profile from "@/components/profile.vue";
+import Logo from "@/components/logo.vue";
 import RenderDialog from "@/components/renderDialog.vue";
 import useUserStore from "@/store/modules/user"
 import { useRouter } from "vue-router";
@@ -18,9 +19,7 @@ const { model, registerUser, toggleModel } = useRegister();
 <template>
   <div class="header-out">
     <div class="header">
-      <div class="logo" @click="$router.replace('/home')">
-        <img src="/vite.svg" alt="">
-      </div>
+      <Logo/>
       <ul class="nav">
         <li v-for="navItem in outNav" :class="{ 'checked': $route.path.startsWith(navItem.path) }">
           <router-link v-if="!navItem.tooltip" :to="navItem.path">{{ navItem.name }}</router-link>
