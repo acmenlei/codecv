@@ -246,3 +246,13 @@
 .font-25 {
   font-size: 25px;
 }
+
+.covers-container {
+  margin-top: 10px;
+
+  .cover-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+  }
+}

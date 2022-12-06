@@ -76,6 +76,7 @@ interface ICommentReply {
   authorId: number;
   authorInfo: IUserInfo;
   content: string;
+  images: string;
   level: number;
   createTime: string;
   posterCommentId: number;
@@ -86,6 +87,7 @@ interface IComment {
   commentId: number;
   articleId: number;
   content: string;
+  images: string;
   authorId: number;
   authorInfo: IUserInfo;
   level: number;

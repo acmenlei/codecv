@@ -42,15 +42,11 @@ import { errorMessage } from "../message";
 // }
 
 // 切片上传
-export function sliceBLobUpload(fileInput: HTMLInputElement) {
+export function ImageUpload(file: File) {
   let M = 3, maxSize = 1024 * 1024 * M;
   return new Promise<string>((resolve, reject) => {
     async function upload(index: number) {
-      const chunkSize = 1024 * 1024;
-      const start = index * chunkSize, file = (fileInput.files as FileList)[0];
-      if (!file) {
-        return errorMessage('请选择图片文件！');
-      }
+      const chunkSize = 1024 * 1024, start = index * chunkSize;
       if (file.size > maxSize) {
         return errorMessage('图片大小不能超过' + M + 'M!');
       }
@@ -99,7 +95,8 @@ export function uploader(config: UploadConfig) {
         fileInput.addEventListener('change', async function (event) {
           document.body.removeChild(fileInput);
           try {
-            const url = await sliceBLobUpload(event.target as HTMLInputElement);
+            const files = (event.target as HTMLInputElement).files as FileList;
+            const url = await ImageUpload(files[0]);
             resolve(url)
           } catch (e) {
             errorMessage(<string>e);

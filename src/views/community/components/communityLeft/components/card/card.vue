@@ -21,14 +21,22 @@ const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emit
 <template>
   <article class="pointer">
     <user-info :user-info='article.authorInfo' :publish-time="article.createTime" />
-    <h3>{{ article.title }}</h3>
+    <h3 @click="useDetail(article)">{{ article.title }}</h3>
     <p class="intro line-4" @click="useDetail(article)">
       {{ article.introduce }}
     </p>
     <!-- 图片插入 -->
-    <div class="covers" v-if="covers.length">
-      <el-image :src="cover" v-for="(cover, idx) in covers" :preview-src-list="covers" :initial-index="idx" fit="cover"
-        class="mr-10 cover-item" :preview-teleported="true" :hide-on-click-modal="true"/>
+    <div class="covers-container" v-if="covers.length">
+      <el-image 
+        :src="cover" v-for="(cover, idx) in covers" 
+        :preview-src-list="covers" 
+        :initial-index="idx" 
+        fit="cover"
+        :lazy="true"
+        loading="lazy"
+        class="mr-10 cover-item" 
+        :preview-teleported="true" 
+        :hide-on-click-modal="true"/>
     </div>
     <div class="article-bottom">
       <div class="operator-group">
@@ -74,16 +82,6 @@ article {
 
   .intro:hover {
     opacity: .8;
-  }
-
-  .covers {
-    margin-top: 10px;
-
-    .cover-item {
-      width: 100px;
-      height: 100px;
-      border-radius: 10px;
-    }
   }
 
   &:last-child {

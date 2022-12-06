@@ -103,7 +103,7 @@ const { model, registerUser, toggleModel } = useRegister();
   background: white;
   box-shadow: 0 0 10px 0 #d0d3db;
   height: 60px;
-  z-index: 3;
+  z-index: 9;
   position: sticky;
   top: 0;
 

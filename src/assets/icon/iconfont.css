@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3737803 */
-  src: url('iconfont.woff2?t=1669888137957') format('woff2'),
-       url('iconfont.woff?t=1669888137957') format('woff'),
-       url('iconfont.ttf?t=1669888137957') format('truetype');
+  src: url('iconfont.woff2?t=1670316308725') format('woff2'),
+       url('iconfont.woff?t=1670316308725') format('woff'),
+       url('iconfont.ttf?t=1670316308725') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,62 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-level-3:before {
+  content: "\e61e";
+}
+
+.icon-level-6:before {
+  content: "\e61f";
+}
+
+.icon-qrcode:before {
+  content: "\e7dd";
+}
+
+.icon-code:before {
+  content: "\e7fc";
+}
+
+.icon-collection_fill:before {
+  content: "\e6ea";
+}
+
+.icon-alipay:before {
+  content: "\e668";
+}
+
+.icon-font:before {
+  content: "\e621";
+}
+
+.icon-moneybag-fill:before {
+  content: "\e7ce";
+}
+
+.icon-level-2:before {
+  content: "\e61a";
+}
+
+.icon-level-4:before {
+  content: "\e61b";
+}
+
+.icon-level-5:before {
+  content: "\e61c";
+}
+
+.icon-level-1:before {
+  content: "\e61d";
+}
+
+.icon-link:before {
+  content: "\e7e2";
+}
+
+.icon-image:before {
+  content: "\e7de";
 }
 
 .icon-edit:before {
@@ -49,7 +105,7 @@
   content: "\e705";
 }
 
-.icon-like_fill:before {
+.icon-like-fill:before {
   content: "\e707";
 }
 

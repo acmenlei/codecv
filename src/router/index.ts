@@ -26,11 +26,16 @@ const routes: RouteRecordRaw[] = [
   }
 ]
 
+const topInitList = ['/community/detail', '/syntax/helper', '/update/line', '/home'];
+
 const router = createRouter({
   routes: routeConfiguras.concat(routes),
-  history: createWebHashHistory()
+  history: createWebHashHistory(),
+  scrollBehavior: (to, from, savePos) => {
+    if (topInitList.includes(to.path))
+      return { top: 0,/*  behavior: 'smooth' */ }
+    if (savePos) return savePos;
+  }
 })
-
-
 
 export default router;

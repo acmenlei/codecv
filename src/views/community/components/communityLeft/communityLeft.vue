@@ -27,7 +27,7 @@ onActivated(() => {
 </script>
 
 <template>
-  <div class="community-list content-card" data-aos="fade-right">
+  <div class="community-list content-card">
     <div class="menubar flex">
       <NavBar :tabs="tabs" @tab-click="toggleTab" />
       <div>

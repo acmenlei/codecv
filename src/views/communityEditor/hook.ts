@@ -24,7 +24,7 @@ export function useCommunityArticle() {
       warningMessage('内容填写完整才能让其他同学看明白～');
       return;
     }
-    if(article.title.length > 20) {
+    if (article.title.length > 20) {
       errorMessage('标题过长 请缩减到20字以内～')
       return;
     }
@@ -63,7 +63,23 @@ export function useCommunityArticle() {
     }
   }
   onActivated(() => {
-    editor = createEditor({ autoFocus: true, autoHeight: true, minHeight: '70vh', uploader, styleSheets: ['.tb-list-item { margin-left: 20px }'], placeholder: '内容尽情发挥～' });
+    editor = createEditor({
+      autoFocus: true,
+      zenCoding: true, // 语法糖实时监测
+      theme: 'dark',
+      autoHeight: true,
+      minHeight: '400px',
+      uploader,
+      styleSheets: ['.tb-list-item { margin-left: 20px } .tb-pre { margin: 10px 0;}'],
+      placeholder: '内容尽情发挥～',
+    });
+    // 异步获取
+    setTimeout(() => {
+      const toolBar = document.querySelector('.textbus-ui-top') as HTMLElement;
+      toolBar.style.position = 'sticky';
+      toolBar.style.top = '60px';
+      toolBar.style.zIndex = '99';
+    });
     editor.mount(articleEditor.value);
     isEditMode();
   })

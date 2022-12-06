@@ -5,7 +5,7 @@ import CommunityRight from './components/communityRight/communityRight.vue';
 </script>
 
 <template>
-  <div class="community">
+  <div class="community" data-aos="fade-right">
     <div class="community-left-list">
       <!-- <CommunityPublish /> -->
       <CommunityLeft />

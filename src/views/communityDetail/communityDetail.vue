@@ -2,7 +2,7 @@
 import UserInfo from '@/components/userInfo.vue';
 import HotList from "@/components/hot-rank/hotList.vue"
 import BrowseHistory from '@/components/browse-history/browseHistory.vue';
-import Publish from "./components/publish/publish.vue"
+import Publish from "@/components/publish/publish.vue"
 import Comments from '@/components/comments/comments.vue';
 import { VueMarkdownMenuBar } from 'vue-markdown-menu-bar';
 import { computed } from 'vue';
@@ -58,7 +58,7 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
     <div class="slide-content">
       <hot-list class="slide-item" />
       <browse-history />
-      <vue-markdown-menu-bar v-if="delay" class="slide-item menu-bar content-card" body='.content' width='200px' />
+      <vue-markdown-menu-bar v-if="delay" class="slide-item menu-bar content-card" body='.content' width='300px' />
     </div>
   </div>
 </template>
@@ -122,7 +122,7 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
   }
 
   .slide-content {
-    flex-basis: 200px;
+    flex-basis: 300px;
 
     .menu-bar {
       position: sticky;

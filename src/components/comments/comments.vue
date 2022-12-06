@@ -2,14 +2,14 @@
 import { numFormat } from '@/common/utils/format';
 import Empty from '@/components/empty.vue';
 import UserInfo from '@/components/userInfo.vue';
-import Publish from '@/views/communityDetail/components/publish/publish.vue';
+import Publish from '@/components/publish/publish.vue';
 import { useReply } from './hook';
 import Reply from './reply.vue';
 
 const emits = defineEmits(['pageNumChange', 'reQueryComments'])
 defineProps<{ data: Array<IComment>, articleId: number, total: number, commentsTotal: number }>();
-const { currenId, reply, userInfo, remove } = useReply(emits);
 
+const { currenId, reply, userInfo, remove } = useReply(emits);
 </script>
 
 <template>
@@ -19,14 +19,29 @@ const { currenId, reply, userInfo, remove } = useReply(emits);
       <div class="comment-item" v-for="comment of data">
         <user-info :user-info="comment.authorInfo" :publish-time='comment.createTime' />
         <p class="comment-content line-4">{{ comment.content }}</p>
+        <div class="covers-container" v-if="comment.images">
+          <el-image 
+            :src="cover" v-for="(cover, idx) in comment.images.split('~$^$~')" 
+            :preview-src-list="comment.images.split('~$^$~')" 
+            :initial-index="idx" 
+            fit="cover"
+            :lazy="true"
+            loading="lazy"
+            class="mr-10 cover-item" 
+            :preview-teleported="true" 
+            :hide-on-click-modal="true"/>
+        </div>
         <ul class="list-style-init flex operator">
           <li class="mr-10" @click="reply(comment.commentId)">回复</li>
           <!-- <li class="mr-10">点赞</li> -->
           <li v-if="userInfo.uid === comment.authorId" @click="remove(comment.commentId, articleId, 1)">删除</li>
         </ul>
         <!-- 内容输入框 -->
-        <Publish v-if="currenId === comment.commentId" :article-id="articleId" :level='2'
-          :poster-comment-id='comment.commentId' @re-query-comments="$emit('reQueryComments')"
+        <Publish 
+          v-if="currenId === comment.commentId" 
+          :article-id="articleId" :level='2'
+          :poster-comment-id='comment.commentId' 
+          @re-query-comments="$emit('reQueryComments')"
           :reply-author-id="comment.authorId" />
         <!-- 二级回复：内容 + 回复了谁-->
         <Reply :data='comment.children' :comment-id="comment.commentId" :article-id='articleId'

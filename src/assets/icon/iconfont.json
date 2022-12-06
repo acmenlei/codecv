@@ -6,6 +6,104 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2682283",
+      "name": "level-3",
+      "font_class": "level-3",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "2682284",
+      "name": "level-6",
+      "font_class": "level-6",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "4766912",
+      "name": "qrcode",
+      "font_class": "qrcode",
+      "unicode": "e7dd",
+      "unicode_decimal": 59357
+    },
+    {
+      "icon_id": "4767091",
+      "name": "code",
+      "font_class": "code",
+      "unicode": "e7fc",
+      "unicode_decimal": 59388
+    },
+    {
+      "icon_id": "7008906",
+      "name": "collection_fill",
+      "font_class": "collection_fill",
+      "unicode": "e6ea",
+      "unicode_decimal": 59114
+    },
+    {
+      "icon_id": "9096739",
+      "name": "alipay",
+      "font_class": "alipay",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "109745",
+      "name": "font",
+      "font_class": "font",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "1134189",
+      "name": "moneybag-fill",
+      "font_class": "moneybag-fill",
+      "unicode": "e7ce",
+      "unicode_decimal": 59342
+    },
+    {
+      "icon_id": "2682279",
+      "name": "level-2",
+      "font_class": "level-2",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "2682280",
+      "name": "level-4",
+      "font_class": "level-4",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "2682281",
+      "name": "level-5",
+      "font_class": "level-5",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "2682282",
+      "name": "level-1",
+      "font_class": "level-1",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "4766965",
+      "name": "link",
+      "font_class": "link",
+      "unicode": "e7e2",
+      "unicode_decimal": 59362
+    },
+    {
+      "icon_id": "4766917",
+      "name": "image",
+      "font_class": "image",
+      "unicode": "e7de",
+      "unicode_decimal": 59358
+    },
+    {
       "icon_id": "29928",
       "name": "edit",
       "font_class": "edit",
@@ -49,7 +147,7 @@
     },
     {
       "icon_id": "159929",
-      "name": "share",
+      "name": "fenxiang",
       "font_class": "fenxiang",
       "unicode": "e601",
       "unicode_decimal": 58881
@@ -70,8 +168,8 @@
     },
     {
       "icon_id": "7008955",
-      "name": "like_fill",
-      "font_class": "like_fill",
+      "name": "like-fill",
+      "font_class": "like-fill",
       "unicode": "e707",
       "unicode_decimal": 59143
     },

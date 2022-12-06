@@ -5,7 +5,7 @@ import type { FormInstance, FormRules } from 'element-plus';
 import { userForm } from "@/layout/hook";
 import { professionals } from '@/common/utils/professional';
 import { errorMessage } from '@/common/message';
-import { sliceBLobUpload } from "@/common/utils/uploader"
+import { ImageUpload } from "@/common/utils/uploader"
 
 const emits = defineEmits(['cancel', 'submit'])
 const ruleFormRef = ref<FormInstance>(), uploadInput = ref();
@@ -45,7 +45,8 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 
 const uploadAvatar = async function () {
   try {
-    const url = await sliceBLobUpload(uploadInput.value);
+    const files = uploadInput.value.files as FileList;
+    const url = await ImageUpload(files[0]);
     userForm.avatar = url;
   } catch (e) {
     errorMessage(<string>e);
@@ -59,7 +60,7 @@ const uploadAvatar = async function () {
       <label for="user_avatar_upload">
         <img class="pointer" :src="userForm.avatar" alt="头像" />
       </label>
-      <input type="file" ref="uploadInput" id="user_avatar_upload" accept=".png,.jpg,.jpeg" @change="uploadAvatar">
+      <input type="file" ref="uploadInput" id="user_avatar_upload" accept=".png,.jpg,.jpeg,.gif,.webp" @change="uploadAvatar">
     </el-form-item>
     <el-form-item label="性别" prop="sex" required>
       <el-radio-group v-model="userForm.sex">

@@ -1,19 +1,20 @@
 <script setup lang='ts'>
 import EmojiPicker from 'vue3-emoji-picker'
-import { useEmoji, usePublishShare } from "./hook";
+import { useEmoji, usePublishShare, usePickerImage } from "./hook";
 import 'vue3-emoji-picker/css'
 
-const props = withDefaults(defineProps<{ 
-  articleId: number, 
-  level: number, 
-  posterCommentId?: number, 
-  replyAuthorId?: number, 
+const props = withDefaults(defineProps<{
+  articleId: number,
+  level: number,
+  posterCommentId?: number,
+  replyAuthorId?: number,
   background?: string
 }>(), {
   background: '#f8f8f8'
 });
 const emits = defineEmits(['reQueryComments'])
-const { shareMainContent, publish } = usePublishShare(props.articleId, props.level, props.posterCommentId || 0, props.replyAuthorId || 0, emits);
+const { pickerImage, images, deleteImage, } = usePickerImage();
+const { shareMainContent, publish } = usePublishShare(props.articleId, props.level, props.posterCommentId || 0, props.replyAuthorId || 0, emits, images);
 const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
 </script>
 
@@ -24,10 +25,28 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
         placeholder="内容控制在200字以内～" />
     </div>
     <!-- 图片插入位置 -->
+    <div class="covers-container community-comment-cover" v-if="images.length">
+      <div class="mr-10 cover-item-container" v-for="(image, idx) in images">
+          <el-image
+            loading="lazy"
+            :src="image"
+            fit="cover" 
+            class="cover-item"
+            :initial-index="idx"
+            :preview-src-list="images"
+            :preview-teleported="true" 
+            :hide-on-click-modal="true">
+          </el-image>
+          <i @click="deleteImage(idx)" class="iconfont icon-delete pointer hover cover-item-close"></i>
+      </div>
+    </div>
     <div class="community-operator-group flex community-content-edit-publish">
       <div class="community-edit-picker">
-        <span class="emoji pointer" @click="togglePicker">
-          <i class="iconfont icon-emoji font-25"></i>
+        <span class="emoji pointer hover" @click="togglePicker">
+          <i class="iconfont icon-emoji font-25 mr-10"></i>
+        </span>
+        <span class="emoji pointer hover" @click="pickerImage">
+          <i class="iconfont icon-image font-25"></i>
         </span>
         <EmojiPicker class="picker" v-if="picker" :native="true" :hide-search="true" :hide-group-names="true"
           @select="setEmoji" :static-texts="{ skinTone: '换肤' }" />
@@ -40,10 +59,31 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
 <style lang='scss' scoped>
 .community-publish {
   padding: 10px;
-  z-index: 2;
+  z-index: 3;
   position: relative;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+
+  .community-comment-cover {
+    margin-left: 10px;
+    display: flex;
+    .cover-item-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      &:hover .cover-item-close{
+        visibility: visible;
+      }
+      .cover-item-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: white;
+        font-weight: bold;
+        visibility: hidden;
+      }
+    }
+  }
 
   .community-operator-group {
     .community-edit-picker {
@@ -64,7 +104,6 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
     border-radius: 5px;
     margin: 10px 10px 0 10px;
     font-size: .9rem;
-    height: 150px;
 
     /* background: #f8f8f8; */
     .content-edit {
@@ -76,6 +115,7 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
       background: #f8f8f8;
       color: #555;
       border-radius: 5px;
+      min-height: 100px;
 
       &.main-content {
         resize: none;
@@ -88,7 +128,7 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
 
   .community-content-edit-publish {
     justify-content: space-between;
-    margin: 0;
+    margin-top: 10px;
   }
 }
 </style>

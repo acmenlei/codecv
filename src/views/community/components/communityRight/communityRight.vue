@@ -5,7 +5,7 @@ import BrowseHistory from '@/components/browse-history/browseHistory.vue';
 </script>
 
 <template>
-  <div class="community-slider" data-aos="fade-left">
+  <div class="community-slider">
     <hot-list/>
     <browse-history/>
   </div>

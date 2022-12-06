@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import nav from "@/common/nav/nav"
-import RenderModal from "@/components/renderModal.vue"
+import RenderIcons from "@/components/renderIcons.vue";
 import { ref } from "vue";
 
 const toggle = ref(false);
@@ -30,9 +30,9 @@ defineEmits(['export-md', 'import-md'])
       <!-- 不是级联菜单走这里 -->
       <template v-else>
         <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
-        <RenderModal v-else :toggle='toggle'>
+        <RenderIcons v-else :toggle='toggle'>
           <span @click="toggle = !toggle">{{ navItem.name }}</span>
-        </RenderModal>
+        </RenderIcons>
       </template>
     </li>
   </ul>
