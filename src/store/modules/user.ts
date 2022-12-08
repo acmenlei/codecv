@@ -5,7 +5,7 @@ import { setLocalStorage, getLocalStorage, removeLocalStorage } from "@/common/h
 import { errorMessage, successMessage } from "@/common/message";
 import { Tip } from "@/common/tip";
 import { login, logout, registerUser, verify } from "@/services/modules/user";
-import { userForm } from "@/layout/hook";
+import { userForm } from "@/layout/header/hook";
 
 const codeInstance = new VerificationCode();
 export const TOKEN = 'TOKEN', USERNAME = 'USERNAME', SET_TOKEN = 'SET_TOKEN', SET_USERNAME = 'SET_USERNAME';

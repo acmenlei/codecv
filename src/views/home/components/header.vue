@@ -18,7 +18,7 @@ function toOutNav(path: string) {
       </li>
     </ul>
     <div class="operator" data-aos="zoom-out-left">
-      <button class='use' @click="$router.push('/editor?type=front_end')">
+      <button class='linear-color-btn' @click="$router.push('/editor?type=front_end')">
         <i class="iconfont icon-technology "></i> 开始创作</button>
     </div>
   </div>
@@ -41,20 +41,6 @@ function toOutNav(path: string) {
   color: #555;
   font-weight: bold;
 
-  @keyframes move {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 46%;
-    }
-
-    100% {
-      background-position: 0% 100%;
-    }
-  }
-
   .nav {
     li:hover {
       opacity: .8;
@@ -63,27 +49,6 @@ function toOutNav(path: string) {
     .iconfont {
       font-size: 1.1rem;
       margin-right: 1px;
-    }
-  }
-
-  .use {
-    outline: none;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 5px;
-    border-radius: 5px;
-    /* background: var(--theme); */
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #8170ff 100%);
-    background-size: 400%;
-    color: white;
-    cursor: pointer;
-    animation: move 6s linear infinite;
-    transition: transform .5s;
-
-    &:hover {
-      opacity: .8;
-      transform: scale(0.9);
     }
   }
 }

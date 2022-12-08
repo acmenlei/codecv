@@ -12,6 +12,7 @@ const clipborad = (item: Icon) => {
   navigator.clipboard.writeText(`icon:${item.name} `)
 }
 const iconData = ref<Icon[]>(data.glyphs.slice(0, 20));
+console.log(data.glyphs.length)
 const pageChange = function (page: number) {
   const start = (page - 1) * 20, end = start + 20;
   iconData.value = data.glyphs.slice(start, end);

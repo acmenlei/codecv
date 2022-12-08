@@ -2,7 +2,7 @@
 import { reactive, ref } from 'vue';
 import type { FormInstance, FormRules } from 'element-plus';
 
-import { userForm } from "@/layout/hook";
+import { userForm } from "@/layout/header/hook";
 import { professionals } from '@/common/utils/professional';
 import { errorMessage } from '@/common/message';
 import { ImageUpload } from "@/common/utils/uploader"

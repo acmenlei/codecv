@@ -8,8 +8,11 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BrowseHistory: typeof import('./src/components/browse-history/browseHistory.vue')['default']
+    Chat: typeof import('./src/components/chat-room/chat.vue')['default']
     Comments: typeof import('./src/components/comments/comments.vue')['default']
+    Crm: typeof import('./src/components/comment-reply-msg/crm.vue')['default']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
+    ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElColorPicker: typeof import('element-plus/es')['ElColorPicker']
@@ -46,6 +49,8 @@ declare module '@vue/runtime-core' {
     Reply: typeof import('./src/components/comments/reply.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ToastModal: typeof import('./src/components/toast-modal/toastModal.vue')['default']
+    ToastModel: typeof import('./src/components/toast-modal/toastModel.vue')['default']
     UserInfo: typeof import('./src/components/userInfo.vue')['default']
     UserTooltip: typeof import('./src/components/userTooltip.vue')['default']
   }

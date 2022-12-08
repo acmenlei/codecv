@@ -4,7 +4,6 @@ import { onMounted, reactive, ref } from 'vue';
 
 import useUserStore, { TOKEN, USERNAME } from '@/store/modules/user'
 import { getLocalStorage } from '@/common/hooks/useLcoaStoage';
-import { fileMerge, fileUpload } from '@/services/modules/upload';
 import { errorMessage } from '@/common/message';
 import { updateUserInfo } from '@/services/modules/user';
 
@@ -74,7 +73,7 @@ export function useNavigator(router: Router, path: string) {
 export function useRegister() {
   const model = ref(false), registerUser = reactive({ username: '', password: '', verify: '' });
   const { genVerify } = useUserStore();
-  
+
   function toggleModel() {
     model.value = !model.value;
     genVerify();
@@ -83,5 +82,24 @@ export function useRegister() {
     model,
     registerUser,
     toggleModel
+  }
+}
+
+export function useMessage() {
+  const messageModal = ref(false), tab = ref(0);
+
+  function toggleMessageModal() {
+    messageModal.value = !messageModal.value;
+  }
+
+  function msgTabChange(idx: number) {
+    tab.value = idx;
+  }
+
+  return {
+    tab,
+    messageModal,
+    msgTabChange,
+    toggleMessageModal
   }
 }
