@@ -49,6 +49,7 @@ export function useArticleDetail(articleId: Ref<number>) {
 
   function pageNumChange(pageNum: number) {
     commentsConditions.pageNum = pageNum;
+    queryComments();
   }
 
   async function like(clicked: boolean) {
