@@ -8,6 +8,7 @@ import ChatRoom from "@/components/chat-room/chat.vue";
 
 import { useRouter } from "vue-router";
 import { useUserLogin, useUpdateModel, useNavigator, useUpdate, useRegister, useMessage } from "../hook"
+import { useNotificationList } from "@/components/comment-reply-msg/hook";
 
 const router = useRouter();
 const { user, login, logout } = useUserLogin();
@@ -16,6 +17,7 @@ const { update } = useUpdate(toggle);
 const { loginModelToggle, userInfo, genVerify, loginState } = useUserStore();
 const { model, registerUser, toggleModel } = useRegister();
 const { messageModal, toggleMessageModal, tab, msgTabChange } = useMessage();
+const { data, total, commentTotal, readNotification, pageNumChange } = useNotificationList(toggleMessageModal);
 </script>
 
 <template>
@@ -24,9 +26,14 @@ const { messageModal, toggleMessageModal, tab, msgTabChange } = useMessage();
       写面经 <i class="iconfont icon-edit font-20"></i>
     </div>
     <template v-if="loginState.logined">
-      <el-badge :value="1" class="mr-20">
-        <i class="iconfont icon-message1 message hover pointer font-25" @click="toggleMessageModal"></i>
-      </el-badge>
+      <!-- 消息提示 -->
+      <template v-if="commentTotal">
+        <el-badge :value="commentTotal" class="mr-20">
+          <i class="iconfont icon-message1 message hover pointer font-25" @click="toggleMessageModal"></i>
+        </el-badge>
+      </template>
+      <i v-else class="iconfont icon-message1 message hover pointer font-25 mr-10" @click="toggleMessageModal"></i>
+      <!-- 用户信息 -->
       <span class="user-nick  mr-10">{{ userInfo.nickName }}</span>
       <el-dropdown>
         <img @click="toggle" class="pointer mr-10" :src="userInfo.avatar" />
@@ -67,8 +74,9 @@ const { messageModal, toggleMessageModal, tab, msgTabChange } = useMessage();
   </toast-modal>
   <!-- 消息内容 -->
   <toast-modal @close="toggleMessageModal" :flag="messageModal" width="800">
-    <NavBar :tabs="['评论/回复', '联系人']" @tab-click="msgTabChange" />
-    <CRM v-if="tab == 0" />
+    <NavBar :tabs="['评论/回复', '点赞']" @tab-click="msgTabChange" />
+    <CRM v-if="tab == 0" :data="data" :total="total" @read-notification="readNotification"
+      @query-data="pageNumChange" />
     <chat-room v-if="tab == 1" />
   </toast-modal>
 </template>
@@ -116,11 +124,15 @@ const { messageModal, toggleMessageModal, tab, msgTabChange } = useMessage();
   flex-direction: column;
 
   input {
-    border: none;
+    border: .5px solid transparent;
     outline: none;
     background: #eee;
     border-radius: 8px;
     padding: 10px;
+
+    &:focus {
+      border: .5px solid var(--theme);
+    }
   }
 
   input,

@@ -7,15 +7,14 @@ import Nav from "./components/nav.vue";
 <template>
   <div class="header-out">
     <div class="header">
-      <Logo />
-      <Nav/>
-      <User/>
+      <Logo/>
+      <Nav />
+      <User />
     </div>
   </div>
 </template>
 
 <style lang='scss' scoped>
-
 .header-out {
   width: 100%;
   background: white;
@@ -34,5 +33,4 @@ import Nav from "./components/nav.vue";
     text-align: center;
   }
 }
-
 </style>

@@ -33,8 +33,15 @@ const { more, setMore } = useShowMore(props.data.length);
         <li class="mr-10" @click="reply(comment.commentId)">回复</li>
         <li v-if="userInfo.uid === comment.authorId" @click="remove(comment.commentId, articleId, 2)">删除</li>
       </ul>
-      <Publish v-if="currenId === comment.commentId" :article-id="articleId" :level='2' :poster-comment-id='commentId'
-        :reply-author-id="comment.authorId" background='white'
+      <Publish 
+        v-if="currenId === comment.commentId" 
+        :article-id="articleId" 
+        :level='2' 
+        :reply-comment-level="comment.level"
+        :poster-comment-id='commentId'
+        :reply-comment-id="comment.commentId"
+        :reply-author-id="comment.authorId" 
+        background='white'
         @re-query-comments="$emit('reQueryComments')" />
     </div>
     <span v-if="more" @click="setMore" class="pointer showMore">显示全部...</span>

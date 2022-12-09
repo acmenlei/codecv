@@ -7,7 +7,13 @@ import { useReply } from './hook';
 import Reply from './reply.vue';
 
 const emits = defineEmits(['pageNumChange', 'reQueryComments'])
-defineProps<{ data: Array<IComment>, articleId: number, total: number, commentsTotal: number }>();
+defineProps<{ 
+  data: Array<IComment>, 
+  articleId: number, 
+  total: number, 
+  articleAuthorId: number, // 回复的当前文章的作者
+  commentsTotal: number 
+}>();
 
 const { currenId, reply, userInfo, remove } = useReply(emits);
 </script>
@@ -37,14 +43,19 @@ const { currenId, reply, userInfo, remove } = useReply(emits);
           <li v-if="userInfo.uid === comment.authorId" @click="remove(comment.commentId, articleId, 1)">删除</li>
         </ul>
         <!-- 内容输入框 -->
-        <Publish 
-          v-if="currenId === comment.commentId" 
+        <Publish
           :article-id="articleId" :level='2'
           :poster-comment-id='comment.commentId' 
-          @re-query-comments="$emit('reQueryComments')"
-          :reply-author-id="comment.authorId" />
+          :reply-comment-id='comment.commentId'
+          :reply-comment-level="comment.level"
+          :reply-author-id="comment.authorId"
+          :reply-article-author-id="articleAuthorId"
+          @re-query-comments="$emit('reQueryComments')" v-if="currenId === comment.commentId" />
         <!-- 二级回复：内容 + 回复了谁-->
-        <Reply :data='comment.children' :comment-id="comment.commentId" :article-id='articleId'
+        <Reply 
+          :data='comment.children' 
+          :comment-id="comment.commentId" 
+          :article-id='articleId'
           @re-query-comments="$emit('reQueryComments')" v-if="comment.children.length" />
       </div>
       <el-pagination background layout="prev, pager, next" :total="commentsTotal" class="mt-4"

@@ -26,6 +26,7 @@
     "nprogress": "^0.2.0",
     "picture-verification-code": "^1.1.0",
     "pinia": "^2.0.27",
+    "socket.io-client": "^4.5.4",
     "vue": "^3.2.41",
     "vue-codemirror": "^6.1.1",
     "vue-markdown-menu-bar": "^1.1.6",

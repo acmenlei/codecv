@@ -6,15 +6,30 @@ import 'vue3-emoji-picker/css'
 const props = withDefaults(defineProps<{
   articleId: number,
   level: number,
+  replyCommentLevel?: number,
   posterCommentId?: number,
+  replyCommentId?: number,
   replyAuthorId?: number,
+  replyArticleAuthorId?: number,
   background?: string
 }>(), {
-  background: '#f8f8f8'
+  background: '#f8f8f8',
+  replyAuthorId: 0,
+  replyCommentLevel: 0,
+  posterCommentId: 0,
+  replyCommentId: 0,
+  replyArticleAuthorId: 0
 });
 const emits = defineEmits(['reQueryComments'])
 const { pickerImage, images, deleteImage, } = usePickerImage();
-const { shareMainContent, publish } = usePublishShare(props.articleId, props.level, props.posterCommentId || 0, props.replyAuthorId || 0, emits, images);
+const { shareMainContent, publish } = usePublishShare(
+  props.articleId, 
+  props.level, 
+  props.posterCommentId, 
+  props.replyAuthorId, 
+  props.replyArticleAuthorId,
+  props.replyCommentId,
+  props.replyCommentLevel,emits, images);
 const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
 </script>
 

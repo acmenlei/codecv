@@ -17,6 +17,7 @@ service.interceptors.request.use(config => {
   return config
 }, err => {
   // hideLoading()
+  errorMessage(err)
   return Promise.reject(new Error(err))
 })
 // 统一在此处解构一层data
@@ -24,6 +25,7 @@ service.interceptors.response.use(data => {
   return data.data;
 }, err => {
   // hideLoading()
+  errorMessage(err)
   return Promise.reject(new Error(err))
 })
 
@@ -31,10 +33,8 @@ service.interceptors.response.use(data => {
 export function get(url: string, params: any = {}) {
   return new Promise((resolved, rejected) => {
     service.get(url, params)
-      .then(resp => {
-        if (resp.status == 200 || resp.status == 304) {
-          resolved(resp)
-        }
+      .then((resp) => {
+        resolved(resp)
       }, err => {
         errorMessage(Tip.NETWORK_ERROR)
         rejected(err)
@@ -53,7 +53,6 @@ export function post(url: string, data: any = {}) {
       .then(resp => {
         resolved(resp)
       }, err => {
-        console.log(err)
         errorMessage(Tip.NETWORK_ERROR)
         rejected(err)
       })

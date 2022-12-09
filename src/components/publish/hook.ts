@@ -22,7 +22,17 @@ export function useEmoji(mainContent: Ref<string>) {
   }
 }
 // 评论和回复的逻辑都在这。
-export function usePublishShare(articleId: number, level: number, posterCommentId: number, replyAuthorId: number, emits: Function, images: Ref<string[]>) {
+export function usePublishShare(
+  articleId: number,
+  level: number,
+  posterCommentId: number,
+  replyAuthorId: number,
+  replyArticleAuthorId: number,
+  replyCommentId: number,
+  replyCommentLevel: number,
+  emits: Function,
+  images: Ref<string[]>) 
+  {
   const shareMainContent = ref('');
   const { loginState, loginModelToggle, userInfo } = useUserStore();
 
@@ -42,12 +52,15 @@ export function usePublishShare(articleId: number, level: number, posterCommentI
     const cb = level == 1 ? publishComment : publishCommentReply;
     const params = {
       content: shareMainContent.value.replace(/</g, '&lt;').replace(/>/g, '&gt;'),
-      authorId: userInfo.uid,
+      authorId: userInfo.uid, // 发表这条评论的作者是谁
       images: images.value.join('~$^$~'),
-      level,
-      articleId,
-      posterCommentId,
-      replyAuthorId
+      level, // 几级评论
+      articleId, // 文章ID
+      posterCommentId, // 楼主是谁
+      replyAuthorId, // 回复的那条评论是谁发表的
+      replyArticleAuthorId, // 回复的文章是谁发表的
+      replyCommentId, // 回复谁
+      replyCommentLevel, // 回复的评论是几级评论
     };
     const rest = await cb(params) as IResponse<unknown>;
     if (rest.code == 200) {
@@ -70,9 +83,9 @@ export function usePublishShare(articleId: number, level: number, posterCommentI
 
 export function usePickerImage() {
   const images = ref<string[]>([]);
-  
+
   async function pickerImage() {
-    if(images.value.length >= 2) {
+    if (images.value.length >= 2) {
       return errorMessage('最多只能上传2张图片！');
     }
     const input = document.createElement('input');

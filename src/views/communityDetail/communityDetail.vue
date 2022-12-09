@@ -51,8 +51,13 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
         <span class="pointer hover" @click="$router.back()">返回上一页</span>
         <span class="pointer hover back absolute" @click="$router.back()">返回上一页</span>
       </div>
-      <Publish :article-id="articleId" :level="1" @re-query-comments="queryComments" />
-      <Comments :data="article.comments" :article-id="articleId" :total='total' :comments-total="commentsTotal"
+      <Publish :article-id="articleId" :level="1" :reply-article-author-id="article.authorId" @re-query-comments="queryComments" />
+      <Comments 
+        :data="article.comments" 
+        :article-id="articleId" 
+        :total='total' 
+        :comments-total="commentsTotal"
+        :article-author-id="article.authorId"
         @page-num-change="pageNumChange" @re-query-comments="queryComments" />
     </div>
     <div class="slide-content">

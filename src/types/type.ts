@@ -100,6 +100,7 @@ interface IPublishComment {
   articleId: number;
   level: number;
   authorId: number;
+  replyArticleAuthorId: number;
 }
 
 interface IPublishCommentReply {
@@ -109,6 +110,7 @@ interface IPublishCommentReply {
   authorId: number,
   posterCommentId: number;
   replyAuthorId: number;
+  replyArticleAuthorId: number;
 }
 
 interface IArticleDetail {
@@ -124,4 +126,15 @@ interface IArticleDetail {
   introduce: string;
   authorInfo: IUserInfo;
   comments: IComment[];
+}
+
+interface INotificationList {
+  read: number;
+  articleId: number;
+  commentId: number;
+  replyCommentId: number;
+  commentContent: { content: string; createTime: string; };
+  commentUserInfo: IUserInfo;
+  replyContent: { content?: string; title?: string; createTime: string; };
+  replyUserInfo: IUserInfo;
 }

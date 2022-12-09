@@ -69,6 +69,9 @@
 .flex-space-around {
   justify-content: space-around;
 }
+.flex-space-between {
+  justify-content: space-between;
+}
 
 .flex-align-center {
   align-items: center;
@@ -148,6 +151,10 @@
 
 .mb-20 {
   margin-bottom: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
 }
 
 .mr-20 {
