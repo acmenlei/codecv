@@ -1,7 +1,6 @@
 <script setup lang='ts'>
 import { VueMarkdownMenuBar } from "vue-markdown-menu-bar"
 import { onMounted, ref } from 'vue';
-import './sources/index.css';
 import '@/assets/highlight.css'
 import resumeHelper from './sources/help'
 
