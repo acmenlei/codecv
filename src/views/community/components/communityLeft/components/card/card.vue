@@ -76,8 +76,8 @@ article {
 
   .visit-people {
     position: absolute;
-    right: 0;
-    top: 15px;
+    right: -20px;
+    top: -5px;
   }
 
   .intro:hover {

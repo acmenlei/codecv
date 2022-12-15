@@ -23,13 +23,13 @@ export function useEmoji(mainContent: Ref<string>) {
 }
 // 评论和回复的逻辑都在这。
 export function usePublishShare(
-  articleId: number,
-  level: number,
-  posterCommentId: number,
-  replyAuthorId: number,
-  replyArticleAuthorId: number,
-  replyCommentId: number,
-  replyCommentLevel: number,
+  articleId: Ref<number>,
+  level: Ref<number>,
+  posterCommentId: Ref<number>,
+  replyAuthorId: Ref<number>,
+  replyArticleAuthorId: Ref<number>,
+  replyCommentId: Ref<number>,
+  replyCommentLevel: Ref<number>,
   emits: Function,
   images: Ref<string[]>) 
   {
@@ -49,19 +49,20 @@ export function usePublishShare(
       warningMessage('太多了存不下, 删到200字以内吧');
       return;
     }
-    const cb = level == 1 ? publishComment : publishCommentReply;
+    const cb = level.value == 1 ? publishComment : publishCommentReply;
     const params = {
       content: shareMainContent.value.replace(/</g, '&lt;').replace(/>/g, '&gt;'),
       authorId: userInfo.uid, // 发表这条评论的作者是谁
       images: images.value.join('~$^$~'),
-      level, // 几级评论
-      articleId, // 文章ID
-      posterCommentId, // 楼主是谁
-      replyAuthorId, // 回复的那条评论是谁发表的
-      replyArticleAuthorId, // 回复的文章是谁发表的
-      replyCommentId, // 回复谁
-      replyCommentLevel, // 回复的评论是几级评论
+      level: level.value, // 几级评论
+      articleId: articleId.value, // 文章ID
+      posterCommentId: posterCommentId.value, // 楼主是谁
+      replyAuthorId: replyAuthorId.value, // 回复的那条评论是谁发表的
+      replyArticleAuthorId: replyArticleAuthorId.value, // 回复的文章是谁发表的
+      replyCommentId: replyCommentId.value, // 回复谁
+      replyCommentLevel: replyCommentLevel.value, // 回复的评论是几级评论
     };
+    // console.log(params)
     const rest = await cb(params) as IResponse<unknown>;
     if (rest.code == 200) {
       shareMainContent.value = '';

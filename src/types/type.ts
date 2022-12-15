@@ -133,8 +133,15 @@ interface INotificationList {
   articleId: number;
   commentId: number;
   replyCommentId: number;
+  posterCommentId: number;
   commentContent: { content: string; createTime: string; };
   commentUserInfo: IUserInfo;
   replyContent: { content?: string; title?: string; createTime: string; };
   replyUserInfo: IUserInfo;
+}
+
+interface ICommentPosition {
+  pageNum: number;
+  position: number;
+  data: IComment[];
 }

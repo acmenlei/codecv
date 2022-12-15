@@ -21,11 +21,11 @@ export function useNotificationList(toggleMessageModal: Function) {
       errorMessage(res.msg);
     }
   }
-  async function readNotification(notification: INotificationList) {
-    router.push(`/community/detail?articleId=${notification.articleId}`);
+  async function readNotification({ commentId, articleId, read, posterCommentId }: INotificationList) {
+    router.replace({ path: '/community/detail', query: { articleId, posterCommentId } });
     toggleMessageModal();
-    if (notification.read != 1) {
-      const res = await updateNotificationState({ commentId: notification.commentId }) as IResponse<unknown>;
+    if (read != 1) {
+      const res = await updateNotificationState({ commentId }) as IResponse<unknown>;
       if (res.code == 200) queryData();
     }
   }

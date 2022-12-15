@@ -22,10 +22,10 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
 
 <template>
   <div class="user">
-    <div class="user-creative mr-20 pointer primary" @click="useNavigator(router, '/community/editor')">
-      写面经 <i class="iconfont icon-edit font-20"></i>
-    </div>
     <template v-if="loginState.logined">
+      <div class="user-creative mr-20 pointer primary" @click="useNavigator(router, '/community/editor')">
+        写面经 <i class="iconfont icon-edit font-20"></i>
+      </div>
       <!-- 消息提示 -->
       <template v-if="commentTotal">
         <el-badge :value="commentTotal" class="mr-20">
@@ -44,14 +44,14 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
         </template>
       </el-dropdown>
     </template>
-    <span v-else class="pointer login" @click="loginModelToggle">登录</span>
+    <span v-else class="pointer mr-10" @click="loginModelToggle">登录</span>
   </div>
   <!-- 个人信息修改 -->
-  <toast-modal width="400" :flag="flag" @close="toggle">
+  <toast-modal width="400px" :flag="flag" @close="toggle">
     <Profile @cancel="toggle" @submit="update" />
   </toast-modal>
   <!-- 登录 -->
-  <toast-modal @close="loginModelToggle" :flag="loginState.loginModel" width="300">
+  <toast-modal @close="loginModelToggle" :flag="loginState.loginModel" width="300px">
     <div class="login" v-if="!model" data-aos="zoom-in">
       <h3>用户登录</h3>
       <input v-model="user.username" placeholder="用户名" />
@@ -73,7 +73,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
     </div>
   </toast-modal>
   <!-- 消息内容 -->
-  <toast-modal @close="toggleMessageModal" :flag="messageModal" width="800">
+  <toast-modal @close="toggleMessageModal" :flag="messageModal" width="80%">
     <NavBar :tabs="['评论/回复', '点赞']" @tab-click="msgTabChange" />
     <CRM v-if="tab == 0" :data="data" :total="total" @read-notification="readNotification"
       @query-data="pageNumChange" />
@@ -86,7 +86,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
   flex-basis: 250px;
   white-space: nowrap;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 
   .message {
@@ -109,7 +109,6 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
     height: 35px;
     border-radius: 50%;
   }
-
   .login {
     &:hover {
       opacity: .6;

@@ -3,25 +3,30 @@ import { numFormat } from '@/common/utils/format';
 import Empty from '@/components/empty.vue';
 import UserInfo from '@/components/userInfo.vue';
 import Publish from '@/components/publish/publish.vue';
-import { useReply } from './hook';
+import { useReply, useCommentPosition } from './hook';
 import Reply from './reply.vue';
+import { computed } from 'vue';
 
 const emits = defineEmits(['pageNumChange', 'reQueryComments'])
-defineProps<{ 
+const props = defineProps<{ 
   data: Array<IComment>, 
   articleId: number, 
+  pageNum: number,
+  scrollTo: number,
   total: number, 
   articleAuthorId: number, // 回复的当前文章的作者
   commentsTotal: number 
 }>();
 
+const position = computed(() => props.scrollTo);
 const { currenId, reply, userInfo, remove } = useReply(emits);
+const { comments } = useCommentPosition(position)
 </script>
 
 <template>
   <div class="comments-container content-card">
-    <span class="tip">评论/回复共 {{ numFormat(total) }} 条</span>
-    <div v-if="data.length" class="comments-list mt-20 content-card">
+    <span class="tip">本页评论/回复共 {{ numFormat(total) }} 条</span>
+    <div v-if="data.length" class="comments-list mt-20 content-card" ref="comments">
       <div class="comment-item" v-for="comment of data">
         <user-info :user-info="comment.authorInfo" :publish-time='comment.createTime' />
         <p class="comment-content line-4">{{ comment.content }}</p>
@@ -58,14 +63,26 @@ const { currenId, reply, userInfo, remove } = useReply(emits);
           :article-id='articleId'
           @re-query-comments="$emit('reQueryComments')" v-if="comment.children.length" />
       </div>
-      <el-pagination background layout="prev, pager, next" :total="commentsTotal" class="mt-4"
-        @current-change="(page: number) => $emit('pageNumChange', page)" />
     </div>
-    <Empty v-else title="还没有人发表评论..." />
+    <el-pagination 
+        v-if="data.length"
+        background layout="prev, pager, next" 
+        :total="commentsTotal" class="mt-4 mt-20"
+        :current-page="pageNum"
+        @current-change="(page: number) => $emit('pageNumChange', page)" />
+    <Empty v-if="!data.length" title="还没有人发表评论..." />
   </div>
 </template>
 
 <style lang='scss' scoped>
+@keyframes notice {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+  0% { transform: translateX(0); }
+}
+.notice {
+  animation: notice 3s linear;
+}
 .tip {
   color: #666;
 }

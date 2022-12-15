@@ -19,7 +19,7 @@ import CommunityRight from './components/communityRight/communityRight.vue';
 <style lang='scss' scoped>
 .community {
   max-width: 1200px;
-  min-width: 800px;
+  /* min-width: 800px; */
   margin: 20px auto;
   display: flex;
 
@@ -31,6 +31,11 @@ import CommunityRight from './components/communityRight/communityRight.vue';
   .community-right-slider {
     padding: 10px;
     flex-basis: 300px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .community-right-slider {
+    display: none;
   }
 }
 </style>

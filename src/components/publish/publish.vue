@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import EmojiPicker from 'vue3-emoji-picker'
+import { toRefs } from 'vue';
 import { useEmoji, usePublishShare, usePickerImage } from "./hook";
 import 'vue3-emoji-picker/css'
 
@@ -15,21 +16,22 @@ const props = withDefaults(defineProps<{
 }>(), {
   background: '#f8f8f8',
   replyAuthorId: 0,
-  replyCommentLevel: 0,
+  replyCommentLevel: 1,
   posterCommentId: 0,
   replyCommentId: 0,
   replyArticleAuthorId: 0
 });
 const emits = defineEmits(['reQueryComments'])
 const { pickerImage, images, deleteImage, } = usePickerImage();
+const propRefs = toRefs(props);
 const { shareMainContent, publish } = usePublishShare(
-  props.articleId, 
-  props.level, 
-  props.posterCommentId, 
-  props.replyAuthorId, 
-  props.replyArticleAuthorId,
-  props.replyCommentId,
-  props.replyCommentLevel,emits, images);
+  propRefs.articleId,
+  propRefs.level,
+  propRefs.posterCommentId,
+  propRefs.replyAuthorId,
+  propRefs.replyArticleAuthorId,
+  propRefs.replyCommentId,
+  propRefs.replyCommentLevel, emits, images);
 const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
 </script>
 
@@ -42,17 +44,10 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
     <!-- 图片插入位置 -->
     <div class="covers-container community-comment-cover" v-if="images.length">
       <div class="mr-10 cover-item-container" v-for="(image, idx) in images">
-          <el-image
-            loading="lazy"
-            :src="image"
-            fit="cover" 
-            class="cover-item"
-            :initial-index="idx"
-            :preview-src-list="images"
-            :preview-teleported="true" 
-            :hide-on-click-modal="true">
-          </el-image>
-          <i @click="deleteImage(idx)" class="iconfont icon-delete pointer hover cover-item-close"></i>
+        <el-image loading="lazy" :src="image" fit="cover" class="cover-item" :initial-index="idx"
+          :preview-src-list="images" :preview-teleported="true" :hide-on-click-modal="true">
+        </el-image>
+        <i @click="deleteImage(idx)" class="iconfont icon-delete pointer hover cover-item-close"></i>
       </div>
     </div>
     <div class="community-operator-group flex community-content-edit-publish">
@@ -82,13 +77,16 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent);
   .community-comment-cover {
     margin-left: 10px;
     display: flex;
+
     .cover-item-container {
       position: relative;
       width: 100px;
       height: 100px;
-      &:hover .cover-item-close{
+
+      &:hover .cover-item-close {
         visibility: visible;
       }
+
       .cover-item-close {
         position: absolute;
         top: 5px;

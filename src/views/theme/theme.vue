@@ -17,6 +17,8 @@ const { queryCategory, data } = useCategory();
     </div>
     <div class="resume-right-container content-card" data-aos="fade-left">
       热门简历排行榜
+      <p>...</p>
+      <p>暂无...</p>
     </div>
   </div>
 </template>
@@ -30,9 +32,17 @@ const { queryCategory, data } = useCategory();
     margin-right: 20px;
 
     .resume-card-container {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      display: flex;
+      flex-wrap: wrap;
     }
+  }
+}
+@media screen and (max-width: 800px) {
+  .resume-right-container {
+    display: none;
+  }
+  .resume-left-container  {
+    margin-left: 20px;
   }
 }
 </style>

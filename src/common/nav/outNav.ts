@@ -1,10 +1,5 @@
 const outNav = [
   {
-    name: '首页',
-    path: '/home',
-    tooltip: false,
-  },
-  {
     name: '简历制作',
     path: '/theme',
     tooltip: false,

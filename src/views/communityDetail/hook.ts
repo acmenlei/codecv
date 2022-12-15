@@ -4,11 +4,12 @@ import useUserStore from '@/store/modules/user';
 import { initialInfo } from './../../store/modules/user';
 import { onActivated, onDeactivated, reactive, Ref, ref, watch } from "vue";
 import { queryCommunityArticleById, likeArticle } from '@/services/modules/community';
-import { queryCommunityArticleCommentsById } from "@/services/modules/comments";
+import { queryCommentPosition, queryCommunityArticleCommentsById } from "@/services/modules/comments";
 import { errorMessage } from '@/common/message';
 import { isLogin } from '@/common/hooks/global';
+import { calcOffsetTop, scrollTo } from '@/common/utils';
 
-export function useArticleDetail(articleId: Ref<number>) {
+export function useArticleDetail(articleId: Ref<number>, posterCommentId: Ref<number>) {
   const article = reactive({
     title: '',
     content: '',
@@ -25,7 +26,7 @@ export function useArticleDetail(articleId: Ref<number>) {
     comments: [] as IComment[],
   });
   const total = ref(0), commentsTotal = ref(0), commentsConditions = reactive({ pageNum: 1, pageSize: 10, articleId: articleId.value });
-
+  const position = ref(-1);
   async function queryArticle() {
     if (!articleId.value) {
       errorMessage('出错了');
@@ -46,10 +47,16 @@ export function useArticleDetail(articleId: Ref<number>) {
       commentsTotal.value = commentsData.commentsTotal as number;
     }
   }
+  
+  function toCommentFieldTop() {
+    const anchor = document.querySelector('.anchor') as HTMLElement;
+    scrollTo(calcOffsetTop(anchor) - 65);
+  }
 
   function pageNumChange(pageNum: number) {
     commentsConditions.pageNum = pageNum;
     queryComments();
+    toCommentFieldTop();
   }
 
   async function like(clicked: boolean) {
@@ -72,20 +79,39 @@ export function useArticleDetail(articleId: Ref<number>) {
     }
   })
 
-  onActivated(init);
   watch(() => articleId.value, () => {
     init();
   })
+  watch(() => posterCommentId.value, async () => {
+    if (isNaN(posterCommentId.value)) return;
+    // 查询数据 返回具体的comment位置
+    const { data, code, msg } = await queryCommentPosition({
+      commentId: posterCommentId.value,
+      pageSize: commentsConditions.pageSize,
+      articleId: articleId.value
+    }) as IResponse<ICommentPosition>;
+    if (code === 200) {
+      commentsConditions.pageNum = (data as ICommentPosition).pageNum;
+      article.comments = (data as ICommentPosition).data;
+      position.value = (data as ICommentPosition).position;
+    } else {
+      errorMessage(msg);
+    }
+  })
+  onActivated(init);
   onDeactivated(() => article.content = '');
 
   return {
+    commentsConditions,
     total,
+    position,
     commentsTotal,
     article,
     like,
     queryArticle,
     pageNumChange,
-    queryComments
+    queryComments,
+    toCommentFieldTop
   }
 }
 

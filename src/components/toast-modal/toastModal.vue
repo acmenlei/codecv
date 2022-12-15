@@ -1,10 +1,10 @@
 <script setup lang='ts'>
-withDefaults(defineProps<{ width?: string, flag: boolean }>(), { width: '500' })
+withDefaults(defineProps<{ width?: string, flag: boolean }>(), { width: '500px' })
 defineEmits(['close']);
 </script>
 
 <template>
-  <div class="toast-modal-container center" :style="{ width: width + 'px' }">
+  <div class="toast-modal-container center" :style="{ width }">
     <div class="toast-modal" v-if="flag" data-aos="zoom-in">
       <slot></slot>
     </div>

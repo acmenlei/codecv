@@ -15,3 +15,7 @@ export function removeComment(data: { commentId: number, articleId: number, leve
 export function queryCommunityArticleCommentsById(data: { articleId: number, pageSize: number, pageNum: number }) {
   return post('/communityComment/queryCommentsByArticleId', data);
 }
+
+export function queryCommentPosition(data: { commentId: number, pageSize: number, articleId: number }) {
+  return post('/communityComment/queryCommentPosition', data)
+}

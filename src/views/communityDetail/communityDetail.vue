@@ -14,8 +14,9 @@ import { numFormat } from '@/common/utils/format';
 
 const route = useRoute();
 const articleId = computed(() => parseInt(route.query.articleId as string));
+const posterCommentId = computed(() => parseInt(route.query.posterCommentId as string));
 const { userInfo } = useUserStore();
-const { article, total, commentsTotal, like, pageNumChange, queryComments } = useArticleDetail(articleId);
+const { article, total, position, commentsTotal, like, pageNumChange, toCommentFieldTop, queryComments, commentsConditions } = useArticleDetail(articleId, posterCommentId);
 const { delay } = useDelayMenuBar(articleId);
 const clicked = computed(() => article.likes.includes(userInfo.uid));
 const isAuthor = computed(() => article.authorId == userInfo.uid);
@@ -32,7 +33,7 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
             <i class="iconfont icon-like font-20"></i>
             {{ numFormat(article.likes.length) }}
           </span>
-          <span>
+          <span @click="toCommentFieldTop">
             <i class="iconfont icon-comment font-20"></i>
             {{ numFormat(article.comments.length) }}
           </span>
@@ -52,10 +53,13 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
         <span class="pointer hover back absolute" @click="$router.back()">返回上一页</span>
       </div>
       <Publish :article-id="articleId" :level="1" :reply-article-author-id="article.authorId" @re-query-comments="queryComments" />
+      <i class="anchor"> </i>
       <Comments 
         :data="article.comments" 
         :article-id="articleId" 
         :total='total' 
+        :page-num="commentsConditions.pageNum"
+        :scroll-to="position"
         :comments-total="commentsTotal"
         :article-author-id="article.authorId"
         @page-num-change="pageNumChange" @re-query-comments="queryComments" />
@@ -141,6 +145,15 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
         margin-top: 0;
       }
     }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .slide-content {
+    display: none;
+  }
+  .main-content {
+    margin-left: 20px;
   }
 }
 </style>

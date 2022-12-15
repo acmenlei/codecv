@@ -12,10 +12,9 @@ const clipborad = (item: Icon) => {
   navigator.clipboard.writeText(`icon:${item.name} `)
 }
 const iconData = ref<Icon[]>(data.glyphs.slice(0, 20));
-console.log(data.glyphs.length)
+// console.log(data.glyphs.length)
 const pageChange = function (page: number) {
-  const start = (page - 1) * 20, end = start + 20;
-  iconData.value = data.glyphs.slice(start, end);
+  iconData.value = data.glyphs.slice((page - 1) * 20, page * 20);
 } 
 </script>
 
@@ -28,8 +27,8 @@ const pageChange = function (page: number) {
           <p>{{ item.name }}</p>
         </i>
       </div>
-      <el-pagination :page-size="20" background
-        layout="prev, pager, next" :total="data.glyphs.length" class="mt-4 page" @current-change="pageChange" />
+      <el-pagination :page-size="20" background layout="prev, pager, next" :total="data.glyphs.length" class="mt-4 page"
+        @current-change="pageChange" />
     </div>
   </div>
 </template>
@@ -70,6 +69,7 @@ const pageChange = function (page: number) {
         font-size: 14px;
       }
     }
+
     .page {
       background: white;
       padding: 0 20px 20px 20px;

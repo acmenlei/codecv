@@ -2,14 +2,18 @@
 import Logo from "@/components/logo.vue";
 import User from "./components/user.vue";
 import Nav from "./components/nav.vue";
+import NavMoblie from "./components/navMoblie.vue";
 </script>
 
 <template>
   <div class="header-out">
     <div class="header">
-      <Logo/>
+      <Logo />
       <Nav />
       <User />
+    </div>
+    <div class="header-800">
+      <NavMoblie />
     </div>
   </div>
 </template>
@@ -31,6 +35,17 @@ import Nav from "./components/nav.vue";
     justify-content: space-between;
     align-items: center;
     text-align: center;
+  }
+  .header-800 {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .header-out .header {
+    display: none;
+  }
+  .header-out .header-800 {
+    display: block;
   }
 }
 </style>

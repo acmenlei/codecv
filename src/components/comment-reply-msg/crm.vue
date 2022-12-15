@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { formatTime, formatTimefromNow } from '@/common/utils/date';
+import { formatTimefromNow } from '@/common/utils/date';
 import Empty from '../empty.vue';
 
 defineProps<{ data: INotificationList[], total: number }>()
@@ -23,15 +23,15 @@ defineEmits(['readNotification', 'queryData'])
             </p>
           </div>
           <div class="reply-info">
-            <div class="gray mb-10 flex flex-space-between">
+            <div class="mb-10 flex flex-space-between">
               <span>来自：</span>
               <span>{{ formatTimefromNow(notif.replyContent.createTime) }}发布的</span>
             </div>
             <el-image :lazy="true" :src="notif.replyUserInfo.avatar" fit="cover" loading="lazy" alt="头像"
               class="mr-10 avatar" />
-            <span class="gray">{{ notif.replyUserInfo.nickName }}</span>
+            <span>{{ notif.replyUserInfo.nickName }}</span>
             <p v-if="notif.replyContent.content" class="line-2">
-              <span class="gray">评论内容：</span>
+              <span>评论内容：</span>
               {{ notif.replyContent.content }}
             </p>
             <p v-else class="line-2">
@@ -79,11 +79,9 @@ defineEmits(['readNotification', 'queryData'])
 
       .reply-info {
         padding: 10px;
+        color: #666;
         background: #f3f5f7;
         border-radius: 5px;
-        h3 {
-          opacity: .7;
-        }
       }
 
       .comment-info {
