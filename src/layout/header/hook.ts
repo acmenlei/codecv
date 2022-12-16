@@ -7,13 +7,13 @@ import { getLocalStorage } from '@/common/hooks/useLcoaStoage';
 import { errorMessage } from '@/common/message';
 import { updateUserInfo } from '@/services/modules/user';
 
-export function useUpdateModel() {
-  const flag = ref(false);
-  function toggle() {
-    flag.value = !flag.value;
+export function useUpdateInfoModel() {
+  const infoModel = ref(false);
+  function setInfoModel() {
+    infoModel.value = !infoModel.value;
   }
   return {
-    flag, toggle
+    infoModel, setInfoModel
   }
 }
 
@@ -28,8 +28,8 @@ export const userForm = reactive({
   avatar: '',
   origin: ''
 });
-export function useUpdate(toggle: Function) {
-  async function update() {
+export function useUpdateInfo(toggle: Function) {
+  async function updateInfo() {
     const { userInfo, setUserInfo } = useUserStore()
     // 格式化时间 只需要年份
     userForm.graduation = String(new Date(userForm.graduation).getFullYear());
@@ -43,7 +43,7 @@ export function useUpdate(toggle: Function) {
     }
   }
   return {
-    update
+    updateInfo
   }
 }
 
@@ -101,5 +101,16 @@ export function useMessage() {
     messageModal,
     msgTabChange,
     toggleMessageModal
+  }
+}
+// 修改密码
+export function useUpdatePWDModel() {
+  const PWDModel = ref(false);
+  function setPWDModel() {
+    PWDModel.value = !PWDModel.value;
+  }
+  return {
+    PWDModel,
+    setPWDModel
   }
 }

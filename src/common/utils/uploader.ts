@@ -30,6 +30,8 @@ import { errorMessage } from "../message";
 //       progress: (p, checkpoint) => {
 //         console.log(p, checkpoint);
 //       },
+//       parallel: 4,
+//       partSize: 1024 * 1024,
 //       mime: file.type,
 //     })
 //       .then((res) => {
@@ -43,14 +45,19 @@ import { errorMessage } from "../message";
 
 // 切片上传
 export function ImageUpload(file: File) {
-  let M = 3, maxSize = 1024 * 1024 * M;
+  const M = 5, maxSize = 1024 * 1024 * M, chunkSize = 1024 * 1024,
+    filename = file.name.slice(0, file.name.lastIndexOf('.')),
+    ext = file.name.slice(file.name.lastIndexOf('.') + 1);
+  // console.log(filename.length)
   return new Promise<string>((resolve, reject) => {
     async function upload(index: number) {
-      const chunkSize = 1024 * 1024, start = index * chunkSize;
+      const start = index * chunkSize;
       if (file.size > maxSize) {
         return errorMessage('图片大小不能超过' + M + 'M!');
       }
-      const [filename, ext] = file.name.split('.');
+      if (filename.length > 80) {
+        return errorMessage('文件名太长了, 改一下吧');
+      }
       // 进行切片
       if (start > file.size) {
         // 上传完毕了之后进行切片合并

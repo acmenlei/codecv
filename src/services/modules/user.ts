@@ -23,3 +23,7 @@ export function verify(data: { token: string, username: string }) {
 export function queryUserInfoById(data: { uid: number }) {
   return post('/user/queryUserById', data);
 }
+
+export function pwdUpdate(data: { nPassword: string, oPassword: string, username: string }) {
+  return post('/user/pwdUpdate', data)
+} 

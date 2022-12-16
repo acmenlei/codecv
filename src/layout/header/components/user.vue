@@ -2,18 +2,20 @@
 import ToastModal from "@/components/toast-modal/toastModal.vue";
 import useUserStore from "@/store/modules/user"
 import Profile from "@/components/profile.vue";
+import PWDUpdate from "@/components/pwd-update/PWDUpdate.vue";
 import NavBar from "@/components/navBar.vue";
 import CRM from "@/components/comment-reply-msg/crm.vue";
-import ChatRoom from "@/components/chat-room/chat.vue";
+// import ChatRoom from "@/components/chat-room/chat.vue";
 
 import { useRouter } from "vue-router";
-import { useUserLogin, useUpdateModel, useNavigator, useUpdate, useRegister, useMessage } from "../hook"
+import { useUserLogin, useUpdateInfoModel, useUpdatePWDModel, useNavigator, useUpdateInfo, useRegister, useMessage } from "../hook"
 import { useNotificationList } from "@/components/comment-reply-msg/hook";
 
 const router = useRouter();
 const { user, login, logout } = useUserLogin();
-const { flag, toggle } = useUpdateModel();
-const { update } = useUpdate(toggle);
+const { infoModel, setInfoModel } = useUpdateInfoModel();
+const { updateInfo } = useUpdateInfo(setInfoModel);
+const { PWDModel, setPWDModel } = useUpdatePWDModel();
 const { loginModelToggle, userInfo, genVerify, loginState } = useUserStore();
 const { model, registerUser, toggleModel } = useRegister();
 const { messageModal, toggleMessageModal, tab, msgTabChange } = useMessage();
@@ -36,9 +38,11 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
       <!-- 用户信息 -->
       <span class="user-nick  mr-10">{{ userInfo.nickName }}</span>
       <el-dropdown>
-        <img @click="toggle" class="pointer mr-10" :src="userInfo.avatar" />
+        <img @click="setInfoModel" class="pointer mr-10" :src="userInfo.avatar" />
         <template #dropdown>
           <el-dropdown-menu>
+            <el-dropdown-item @click="setInfoModel">个人信息</el-dropdown-item>
+            <el-dropdown-item @click="setPWDModel">修改密码</el-dropdown-item>
             <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </template>
@@ -47,8 +51,12 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
     <span v-else class="pointer mr-10" @click="loginModelToggle">登录</span>
   </div>
   <!-- 个人信息修改 -->
-  <toast-modal width="400px" :flag="flag" @close="toggle">
-    <Profile @cancel="toggle" @submit="update" />
+  <toast-modal width="400px" :flag="infoModel" @close="setInfoModel">
+    <Profile @cancel="setInfoModel" @submit="updateInfo" />
+  </toast-modal>
+  <!-- 密码修改 -->
+  <toast-modal width="300px" :flag="PWDModel" @close="setPWDModel">
+    <PWD-update @cancel="setPWDModel"/>
   </toast-modal>
   <!-- 登录 -->
   <toast-modal @close="loginModelToggle" :flag="loginState.loginModel" width="300px">
@@ -74,10 +82,10 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
   </toast-modal>
   <!-- 消息内容 -->
   <toast-modal @close="toggleMessageModal" :flag="messageModal" width="80%">
-    <NavBar :tabs="['评论/回复', '点赞']" @tab-click="msgTabChange" />
+    <NavBar :tabs="['评论/回复']" @tab-click="msgTabChange" />
     <CRM v-if="tab == 0" :data="data" :total="total" @read-notification="readNotification"
       @query-data="pageNumChange" />
-    <chat-room v-if="tab == 1" />
+    <!-- <chat-room v-if="tab == 1" /> -->
   </toast-modal>
 </template>
 

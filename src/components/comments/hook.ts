@@ -4,7 +4,7 @@ import { successMessage } from '@/common/message';
 import { removeComment } from '@/services/modules/comments';
 import { calcOffsetTop, scrollTo } from "@/common/utils"
 import useUserStore from '@/store/modules/user';
-import { Ref, ref, watch } from "vue";
+import { nextTick, Ref, ref, watch } from "vue";
 
 // 回复所需要的操作
 export function useReply(emits: Function) {
@@ -62,14 +62,16 @@ export function useCommentPosition(position: Ref<number>) {
   // 点击通知后进行评论定位
   watch(() => position.value, () => {
     try {
-      const targetComment = comments.value.children[position.value];
-      // console.log('具体的目标元素：', targetComment)
-      scrollTo(calcOffsetTop(targetComment) - 65);
-      targetComment.classList.add('notice')
-      setTimeout(() => {
-        targetComment.classList.remove('notice')
-      }, 1000);
-    } catch {
+      nextTick(() => {
+        const targetComment = comments.value.children[position.value];
+        scrollTo(calcOffsetTop(targetComment) - 65);
+        targetComment.classList.add('notice')
+        setTimeout(() => {
+          targetComment.classList.remove('notice')
+        }, 1000);
+      });
+    } catch (e) {
+      console.log(e)
       errorMessage('出了点错，请刷新后重新尝试～')
     }
   })

@@ -2,7 +2,7 @@ import { useThrottleFn } from '@vueuse/core';
 import { warningMessage } from '@/common/message';
 import useUserStore from '@/store/modules/user';
 import { initialInfo } from './../../store/modules/user';
-import { onActivated, onDeactivated, reactive, Ref, ref, watch } from "vue";
+import { onActivated, onDeactivated, reactive, Ref, ref, watch, watchEffect } from "vue";
 import { queryCommunityArticleById, likeArticle } from '@/services/modules/community';
 import { queryCommentPosition, queryCommunityArticleCommentsById } from "@/services/modules/comments";
 import { errorMessage } from '@/common/message';
@@ -26,7 +26,7 @@ export function useArticleDetail(articleId: Ref<number>, posterCommentId: Ref<nu
     comments: [] as IComment[],
   });
   const total = ref(0), commentsTotal = ref(0), commentsConditions = reactive({ pageNum: 1, pageSize: 10, articleId: articleId.value });
-  const position = ref(-1);
+  const position = ref();
   async function queryArticle() {
     if (!articleId.value) {
       errorMessage('出错了');
@@ -47,7 +47,7 @@ export function useArticleDetail(articleId: Ref<number>, posterCommentId: Ref<nu
       commentsTotal.value = commentsData.commentsTotal as number;
     }
   }
-  
+
   function toCommentFieldTop() {
     const anchor = document.querySelector('.anchor') as HTMLElement;
     scrollTo(calcOffsetTop(anchor) - 65);
@@ -82,7 +82,8 @@ export function useArticleDetail(articleId: Ref<number>, posterCommentId: Ref<nu
   watch(() => articleId.value, () => {
     init();
   })
-  watch(() => posterCommentId.value, async () => {
+
+  watchEffect(async () => {
     if (isNaN(posterCommentId.value)) return;
     // 查询数据 返回具体的comment位置
     const { data, code, msg } = await queryCommentPosition({
@@ -98,6 +99,7 @@ export function useArticleDetail(articleId: Ref<number>, posterCommentId: Ref<nu
       errorMessage(msg);
     }
   })
+
   onActivated(init);
   onDeactivated(() => article.content = '');
 
