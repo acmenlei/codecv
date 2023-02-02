@@ -46,12 +46,10 @@ declare module '@vue/runtime-core' {
     RenderDialog: typeof import('./src/components/renderDialog.vue')['default']
     RenderDrawer: typeof import('./src/components/renderDrawer.vue')['default']
     RenderIcons: typeof import('./src/components/renderIcons.vue')['default']
-    RenderModal: typeof import('./src/components/renderModal.vue')['default']
     Reply: typeof import('./src/components/comments/reply.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ToastModal: typeof import('./src/components/toast-modal/toastModal.vue')['default']
-    ToastModel: typeof import('./src/components/toast-modal/toastModel.vue')['default']
     UserInfo: typeof import('./src/components/userInfo.vue')['default']
     UserTooltip: typeof import('./src/components/userTooltip.vue')['default']
   }

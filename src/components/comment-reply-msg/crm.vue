@@ -44,7 +44,7 @@ defineEmits(['readNotification', 'queryData'])
       <el-pagination 
         layout="prev, pager, next" 
         style="padding-top: 15px;"
-        @current-change="(page) => $emit('queryData', page)" 
+        @current-change="(page: number) => $emit('queryData', page)" 
         :page-size="10"
         :total="total" />
     </div>
