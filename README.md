@@ -3,7 +3,7 @@
 
 [Github Page 简历编写地址](https://acmenlei.github.io/markdown-resume-to-pdf/dist/)
 
-[Gitee Page 简历编写地址](https://codeleilei.gitee.io/markdown2pdf/)
+[Gitee Page 简历编写地址](http://codeleilei.gitee.io/markdown2pdf/)
 
 # effect
 以下是编辑界面的效果图

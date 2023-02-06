@@ -29,5 +29,15 @@ onUnmounted(() => {
 .markdown-transform-html {
   width: 210mm;
   min-height: 295mm;
+  &::before {
+    content: "";
+    background: #fff;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120vw;
+    height: 120vh;
+  }
 }
 </style>
