@@ -55,7 +55,7 @@ export const themes = [
   {
     type: "business",
     id: 7,
-    img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/22f0130e940a4a8b8c022f3bd1e43bea~tplv-k3u1fbpfcp-watermark.image?',
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?',
     content: business,
     name: '商务类(一页)'
   },
@@ -76,14 +76,14 @@ export const themes = [
   {
     type: "simple_avatar",
     id: 10,
-    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/682f624bd63b4a1e852c69724ddf715e~tplv-k3u1fbpfcp-watermark.image?',
+    img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?',
     content: simple_avatar,
     name: '简约通用简历模板'
   },
 ];
 
 const primaryColorMap = {
-  'business': ['#555', '#222'],
+  'business': ['#111', '#297370'],
   'front_end': ['#333', '#333'],
   'general': ['#333', '#719ba5'],
   'internet': ['#333', '#333'],
@@ -92,7 +92,7 @@ const primaryColorMap = {
   'internet_social': ['#333', '#9ad4eb'],
   'operation': ['#333', '#333'],
   'operation_avatar': ['#333', '#1a85f0'],
-  'simple_avatar': ['#2A2D2D', '#12B1E1']
+  'simple_avatar': ['#2A2D2D', '#F98C07']
 }
 interface IPrimaryColorMap {
   business: Array<string>;

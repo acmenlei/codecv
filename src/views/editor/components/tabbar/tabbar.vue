@@ -3,7 +3,7 @@ import renderDialog from "@/components/renderDialog.vue";
 import { Codemirror } from "vue-codemirror"
 import { cssLanguage } from "@codemirror/lang-css"
 import { marks } from "./constant"
-import { step, setStep, useAvatar, usePrimaryBGColor, useCustomFont, useCustomCSS, usePrimaryColor, useAutoOnePage } from "./hook";
+import { step, setStep, useAvatar, usePrimaryBGColor, useCustomFont, useCustomCSS, usePrimaryColor, useAutoOnePage, restResumeContent } from "./hook";
 
 const emits = defineEmits(['upload-avatar'])
 const props = defineProps<{ resumeProps: { content: string; resumeType: string } }>();
@@ -34,9 +34,10 @@ const extentions = [cssLanguage];
       <label for="primary-color">主色调</label>
       <el-color-picker id="primary-bg-color" class="operator-item" @change="setPrimaryColor" size="small"
         v-model="primaryColor" />
-      <el-tooltip content="自动一页" placement="bottom">
-        <el-switch class="operator-item" size="small" @change="setAutoOnePage" v-model="autoOnePage" />
-      </el-tooltip>
+        <el-tooltip content="自动一页" placement="bottom">
+          <el-switch class="operator-item" size="small" @change="setAutoOnePage" v-model="autoOnePage" />
+        </el-tooltip>
+        <button class="btn operator-item custom_css" @click="restResumeContent(resumeProps.resumeType)">重置简历内容</button>
       <el-select v-model="font" class="operator-item" @change="setFont" placement="bottom" size="small">
         <el-option v-for="item in fontOptions" :key="item.value" :label="item.label" :value="item.value" />
       </el-select>

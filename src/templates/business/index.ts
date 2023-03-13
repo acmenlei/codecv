@@ -1,7 +1,7 @@
 export default `::: start
 ::: headStart
 ![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
-## 张三 - 商务类简历模板
+## 狂徒张三 - 法律顾问
 ### icon:user 基本信息
 **生日**：2000-08-01
 **民族**：汉
@@ -70,10 +70,7 @@ export default `::: start
 从了解当代只能充电汽车发难，发现其优缺点，在此基础上优化设计，提出新型改进，从了解当代只能充电汽车发难，发现其优缺点，在此基础上优化设计，提出新型改进
 从了解当代只能充电汽车发难，发现其优缺点，在此基础上优化设计，提出新型改进
 
-
 ## icon:technology 专业技能
 - 精通HTML/DIV+CSS/Less/Sass等前端web开发技术，兼容多种移动端、PC端浏览器的代码，CSS3新特性;
 - 熟练掌握js、ES6等新特性，以及Ajax(Fetch)、Json、Axios、以及代理跨域与后端实现数据交互;
-- 熟练rem等响应式布局，解决WebApp页面的常见问题，适配多种手机终端和系统;
-- 熟练前端主流web开发库及框架，如react、vue、jquery等，了解其运行原理MVVM，具有实际开发经验;
 ::: end`

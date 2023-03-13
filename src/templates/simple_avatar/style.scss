@@ -36,6 +36,7 @@
       margin-top: 60px;
       margin-bottom: 10px;
     }
+
     &::before {
       content: "";
       z-index: -1;
@@ -46,15 +47,21 @@
       top: -58mm;
       background: var(--markdown-primary-bg-color);
     }
+
     &::after {
-      content: "";
+      content: "OOOOOOO                                       OOOOOOO";
+      white-space: pre;
+      letter-spacing: 5px;
       z-index: -1;
       position: absolute;
       width: 50mm;
-      height: 1mm;
+      left: 20mm;
       top: 30px;
-      border-bottom:10px dotted var(--markdown-primary-color);
-      opacity: .2;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1rem;
+      // border-bottom:10px dotted var(--markdown-primary-color);
+      opacity: .7;
     }
   }
 
@@ -72,6 +79,7 @@
   a {
     text-decoration: none;
   }
+
   p {
     margin-top: 8px;
   }

@@ -1,5 +1,5 @@
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/common/hooks/useLcoaStoage";
-import { warningMessage } from "@/common/message";
+import { successMessage, warningMessage } from "@/common/message";
 import { createDIV, createStyle, query, removeHeadStyle, Heap, optimalizing, Optimalizing, OptimalizingItem } from "@/common/utils";
 import { getPrimaryBGColor, getPrimaryColor } from "@/templates/config";
 import { onActivated, ref } from "vue";
@@ -279,4 +279,15 @@ function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number
   }
   styleDOM.textContent = cssText;
   document.head.appendChild(styleDOM);
+}
+/* 一键重置 */
+export function restResumeContent(resumeType: string) {
+  localStorage.removeItem(`${CUSTOM_CSS_STYLE}-${resumeType}`);
+  localStorage.removeItem(`${CUSTOM_MARKDOWN_PRIMARY_COLOR}-${resumeType}`);
+  localStorage.removeItem(`${CUSTOM_MARKDOWN_PRIMARY_BG_COLOR}-${resumeType}`);
+  localStorage.removeItem(`${MARKDOWN_FONT}-${resumeType}`);
+  localStorage.removeItem(`${AUTO_ONE_PAGE}-${resumeType}`);
+  localStorage.removeItem(`markdown-content-${resumeType}`);
+  successMessage('重置成功 2秒后将刷新')
+  setTimeout(() => location.reload(), 2000);
 }
