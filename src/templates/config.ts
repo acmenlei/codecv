@@ -7,6 +7,7 @@ import operation_avatar from "./operation_avatar";
 import business from "./business";
 import internet_social from "./internet_social";
 import concise from "./concise";
+import simple_avatar from "./simple_avatar";
 
 export const themes = [
   {
@@ -72,6 +73,13 @@ export const themes = [
     content: concise,
     name: '社招/校招简洁模版'
   },
+  {
+    type: "simple_avatar",
+    id: 10,
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/682f624bd63b4a1e852c69724ddf715e~tplv-k3u1fbpfcp-watermark.image?',
+    content: simple_avatar,
+    name: '简约通用简历模板'
+  },
 ];
 
 const primaryColorMap = {
@@ -84,6 +92,7 @@ const primaryColorMap = {
   'internet_social': ['#333', '#9ad4eb'],
   'operation': ['#333', '#333'],
   'operation_avatar': ['#333', '#1a85f0'],
+  'simple_avatar': ['#2A2D2D', '#12B1E1']
 }
 interface IPrimaryColorMap {
   business: Array<string>;
@@ -94,6 +103,7 @@ interface IPrimaryColorMap {
   internet_social: Array<string>;
   operation: Array<string>;
   operation_avatar: Array<string>;
+  simple_avatar: Array<string>;
 }
 
 export function getPrimaryBGColor(type: string) {

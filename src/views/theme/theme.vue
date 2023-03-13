@@ -30,7 +30,6 @@ const { queryCategory, data } = useCategory();
 
   .resume-left-container {
     margin-right: 20px;
-
     .resume-card-container {
       display: flex;
       flex-wrap: wrap;

@@ -26,13 +26,15 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.markdown-transform-html {
+.jufe {
   width: 210mm;
+  position: relative;
   min-height: 295mm;
-  &::before {
+  z-index: 1;
+  &::after {
     content: "";
     background: #fff;
-    z-index: -1;
+    z-index: -2;
     position: fixed;
     top: 0;
     left: 0;

@@ -4,6 +4,7 @@
   padding: 20px 30px;
   margin: 0 auto;
   background: #fff;
+  z-index: 1;
   color: var(--markdown-primary-color);
 }
 
