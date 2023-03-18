@@ -2,6 +2,7 @@
 import ArticleCard from './components/card/card.vue';
 import NavBar from '@/components/navBar.vue';
 import Empty from '@/components/empty.vue';
+import Notice from './components/notice/notice.vue';
 import { onActivated } from 'vue';
 import { tabs } from './constant';
 import { professionals } from "@/common/utils/professional"
@@ -46,7 +47,11 @@ onActivated(() => {
       <p v-if="loading">正在加载..</p>
       <p v-if="noMore">暂时没有更多了～</p>
     </div>
-    <Empty v-else title="还没有人发布面经，你来做第一个吧～" />
+    <!-- 社区公告 -->
+    <div v-else>
+      <Notice/>
+      <Empty title="还没有人发布面经，你来做第一个吧～" />
+    </div>
   </div>
 </template>
 
