@@ -541,7 +541,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 \u8F6F\u4EF6\u5B66\u9662 - \u8F6F\u4EF6\u5DE5\u7A0B - \u672C\u79D1
 
 ## \u81EA\u6211\u8BC4\u4EF7
-\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....`,o=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF
+\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....`,a=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF
 ::: start
 icon:user 2000/01/01
 :::
@@ -585,7 +585,7 @@ icon:github https://github.com/acmenlei
 \u4E3B\u8981\u6280\u672F\uFF1ANode S/lavascript
 \u4E3A\u5B66\u751F\u63D0\u4F9B\u6210\u7EE9\u67E5\u8BE2\u7CFB\u7EDF\uFF0C\u89E3\u51B3\u5185\u5916\u7F51\u9694\u79BB\u95EE\u9898\uFF0C\u63D0\u4F9B\u6210\u7EE9\u77ED\u4FE1\u901A\u77E5\u80FD\u529B\uFF0C\u4E3A2\u4E07\u5728\u6821\u751F\u63D0\u4F9B\u5728\u5BB6\u67E5\u6210\u7EE9\u670D\u52A1\u3002\u4F7F\u7528Koa2\u63D0\u4F9BAP\u63A5\u53E3\uFF0C\u4EE5\u4F9B\u524D\u7AEF\u4F7F\u7528\u3001\u8FD0\u7528Node js\u5B9E\u73B0\u5E26\u767B\u9646;\u6001\u8BF7\u6C42\u3001\u4F7F\u7528React/ Antd\u5B9E\u73B0\u524D\u7AEFUI\u754C\u9762\u3001\u63A5\u5165\u963F\u91CC\u4E91\u77ED\u4FE1API\u3002
 ## \u5176\u4ED6
-\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,a=`::: headStart
+\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,o=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
 # \u5C0F\u65B0 **UI\u8BBE\u8BA1\u5E08**
@@ -662,4 +662,68 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:user \u81EA\u6211\u8BC4\u4EF7
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,n=[{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u8FD0\u8425\u7C7B"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u901A\u7528\u6A21\u677F"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"business",id:7,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"},{type:"simple_avatar",id:10,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:a,name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F"}],F={business:["#111","#297370"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"],simple_avatar:["#2A2D2D","#F98C07"]};function i(u){return F[u][1]}function c(u){return F[u][0]}export{c as a,i as g,n as t};
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,n=`::: headStart
+::: start
+# \u756A\u8304\u7092\u9E21\u86CB
+**\u6027\u522B**\uFF1A\u7537 \uFF5C **\u5E74\u9F84**\uFF1A23 \uFF5C **\u7535\u8BDD**\uFF1A11011011011 \uFF5C **\u90AE\u7BB1**\uFF1Aresume@163.com
+:::
+![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+::: end
+::: headEnd
+## icon:practice \u62A5\u8003\u4FE1\u606F
+::: start
+**\u62A5\u8003\u9662\u6821\uFF1A**xxx\u5927\u5B66
+::: 
+**\u62A5\u8003\u4E13\u4E1A\uFF1A**\u91D1\u878D\u5B66\uFF08020204\uFF09
+:::
+**\u62A5\u8003\u5C5E\u6027\uFF1A**\u4E13\u7855\u5B66\u4F4D\u7814\u7A76\u751F
+::: end
+| \u521D\u8BD5\u79D1\u76EE | \u82F1\u8BED\uFF08\u4E00\uFF09 | \u653F\u6CBB | \u4E13\u4E1A\u8BFE1 | \u4E13\u4E1A\u8BFE2 | \u603B\u5206 |
+| \u521D\u8BD5\u6210\u7EE9 | 90 | 80 | 130 | 130 | 430 |
+
+## icon:school \u6559\u80B2\u7ECF\u5386
+::: start
+### xxx\u5927\u5B66
+:::
+2019\u5E749\u6708 - 2023\u5E747\u6708
+::: end
+- GPA: 3.9 / 4.0
+- \u56FD\u5BB6\u52B1\u5FD7\u5956\u5B66\u91D1\uFF082019 - 2020\u30012020 - 2021\u30012021 - 2022\u30012022 - 2023\uFF09
+- xxxx\u5B66\u9662\u4F18\u79C0\u5B66\u751F\u5E72\u90E8\uFF082019 - 2023\uFF09
+## icon:head \u79D1\u7814\u7ECF\u5386
+::: start
+### \u57FA\u4E8Exxx\u7684\u7814\u7A76
+:::
+xxxx\u5E74xx\u6708 - xxxx\u5E74xx\u6708
+::: end
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+
+::: start
+### \u57FA\u4E8Exxx\u7684\u7814\u7A76
+:::
+xxxx\u5E74xx\u6708 - xxxx\u5E74xx\u6708
+::: end
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+
+## icon:application \u9879\u76EE\u7ECF\u5386
+::: start
+### xxxx\u5E73\u53F0
+:::
+xxxx\u5E74xx\u6708 - xxxx\u5E74xx\u6708
+::: end
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+## icon:technology \u4E2A\u4EBA\u6280\u80FD
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+- xxxxxxxxxxxxxxxxxxxx
+`,i=[{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u8FD0\u8425\u7C7B"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u901A\u7528\u6A21\u677F"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"business",id:7,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:a,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"},{type:"simple_avatar",id:10,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F"},{type:"graduation_reexam",id:11,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:n,name:"\u7814\u7A76\u751F\u590D\u8BD5\u7B80\u5386\u6A21\u677F"}],F={business:["#111","#297370"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"],simple_avatar:["#2A2D2D","#F98C07"],graduation_reexam:["#3A3939","#2186D2"]};function c(u){return F[u][1]}function r(u){return F[u][0]}export{r as a,c as g,i as t};

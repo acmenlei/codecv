@@ -80,6 +80,7 @@
 .jufe-wrapper-page {
   height: 1123px;
   width: 210mm;
+  box-sizing: content-box;
   margin: 5mm auto;
   background: white;
   position: relative;

@@ -8,6 +8,7 @@ import business from "./business";
 import internet_social from "./internet_social";
 import concise from "./concise";
 import simple_avatar from "./simple_avatar";
+import graduation_reexam from "./graduation_reexam";
 
 export const themes = [
   {
@@ -80,6 +81,13 @@ export const themes = [
     content: simple_avatar,
     name: '简约通用简历模板'
   },
+  {
+    type: "graduation_reexam",
+    id: 11,
+    img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?',
+    content: graduation_reexam,
+    name: '研究生复试简历模板'
+  },
 ];
 
 const primaryColorMap = {
@@ -92,7 +100,8 @@ const primaryColorMap = {
   'internet_social': ['#333', '#9ad4eb'],
   'operation': ['#333', '#333'],
   'operation_avatar': ['#333', '#1a85f0'],
-  'simple_avatar': ['#2A2D2D', '#F98C07']
+  'simple_avatar': ['#2A2D2D', '#F98C07'],
+  'graduation_reexam': ['#3A3939', '#2186D2'],
 }
 interface IPrimaryColorMap {
   business: Array<string>;
@@ -104,6 +113,7 @@ interface IPrimaryColorMap {
   operation: Array<string>;
   operation_avatar: Array<string>;
   simple_avatar: Array<string>;
+  graduation_reexam: Array<string>;
 }
 
 export function getPrimaryBGColor(type: string) {
