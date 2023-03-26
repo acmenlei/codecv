@@ -23,7 +23,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
 </script>
 
 <template>
-  <div class="user">
+  <div class="user" data-aos="slide-left">
     <template v-if="loginState.logined">
       <div class="user-creative mr-20 pointer primary" @click="useNavigator(router, '/community/editor')">
         写面经 <i class="iconfont icon-edit font-20"></i>

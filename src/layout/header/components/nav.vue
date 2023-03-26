@@ -5,7 +5,7 @@ import outNav from "@/common/nav/outNav"
 
 <template>
   <ul class="nav">
-    <li v-for="navItem in outNav" :class="{ 'checked': $route.path.startsWith(navItem.path) }">
+    <li data-aos="slide-left" v-for="navItem in outNav" :class="{ 'checked': $route.path.startsWith(navItem.path) }">
       <router-link v-if="!navItem.tooltip" :to="navItem.path">{{ navItem.name }}</router-link>
       <span v-else>{{ navItem.name }}</span>
     </li>
