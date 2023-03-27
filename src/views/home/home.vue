@@ -1,14 +1,15 @@
 <script setup lang='ts'>
+import { useTypeIt } from "./hook"
 import Header from "./components/header.vue"
+
+useTypeIt();
 </script>
 
 <template>
   <Header />
   <div class="introduce flex flex-space-around flex-align-center">
-    <img src="/resume-bg-one.svg" alt="" data-aos="fade-right">
-    <div class="introduce-r tac" data-aos="fade-left">
-      <h2>一款免费的 <span class="highlight">Markdown</span> 简历编写工具</h2>
-      <h2>可以将你编写的<span class="highlight">Markdown</span>转为<span class="highlight">PDF</span>格式的文件</h2>
+    <img src="/resume-bg-one.svg" data-aos="fade-right">
+    <div class="introduce-r typeit-text" data-aos="fade-left">
     </div>
   </div>
   <div class="mask"></div>
@@ -38,6 +39,7 @@ import Header from "./components/header.vue"
   background: #fff;
   margin-top: 20px;
 }
+
 .introduce {
   color: #333;
   height: 100vh;
@@ -83,7 +85,9 @@ import Header from "./components/header.vue"
       background: #d27ef9;
     }
   }
-  img,.introduce-r {
+
+  img,
+  .introduce-r {
     z-index: 2;
   }
 }
@@ -95,8 +99,7 @@ import Header from "./components/header.vue"
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-color: #FFDEE9;
-  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+  background: white;
 }
 
 .highlight {
@@ -108,5 +111,14 @@ import Header from "./components/header.vue"
 .introduce-r {
   min-width: 500px;
   padding: 0 40px;
+}
+
+.typeit-text {
+  font-weight: bold;
+  font-size: 22px;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 10px;
+  line-height: 40px;
 }
 </style>

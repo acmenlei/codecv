@@ -11,9 +11,11 @@
     "gitee-push": "sh ./gitee-push.sh"
   },
   "dependencies": {
+    "@codemirror/lang-css": "^6.1.1",
     "@codemirror/lang-markdown": "^6.0.4",
     "@codemirror/theme-one-dark": "^6.1.0",
     "@textbus/editor": "^3.0.0-alpha.32",
+    "@vueuse/core": "^9.13.0",
     "ali-oss": "^6.17.1",
     "aos": "^2.3.4",
     "axios": "^1.2.0",
@@ -27,6 +29,7 @@
     "picture-verification-code": "^1.1.0",
     "pinia": "^2.0.27",
     "socket.io-client": "^4.5.4",
+    "typeit": "^8.7.1",
     "vue": "^3.2.41",
     "vue-codemirror": "^6.1.1",
     "vue-markdown-menu-bar": "^1.1.6",
