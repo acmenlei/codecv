@@ -1,15 +1,15 @@
 <script setup lang='ts'>
-import { useTypeIt } from "./hook"
+import { useTypeNet } from "./hook"
 import Header from "./components/header.vue"
 
-useTypeIt();
+useTypeNet();
 </script>
 
 <template>
   <Header />
   <div class="introduce flex flex-space-around flex-align-center">
     <img src="/resume-bg-one.svg" data-aos="fade-right">
-    <div class="introduce-r typeit-text" data-aos="fade-left">
+    <div class="introduce-r typenet-text" data-aos="fade-left">
     </div>
   </div>
   <div class="mask"></div>
@@ -113,7 +113,7 @@ useTypeIt();
   padding: 0 40px;
 }
 
-.typeit-text {
+.typenet-text {
   font-weight: bold;
   font-size: 22px;
   border-radius: 5px;

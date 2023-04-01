@@ -1,29 +1,36 @@
-import TypeIt from "typeit";
+import TypeNet from "typenet";
 import { onMounted } from "vue";
 
-export function useTypeIt() {
+export function useTypeNet() {
   onMounted(() => {
-    new (TypeIt as any)(".typeit-text", {
-      speed: 80,
-      startDelay: 900
-    })
-      .type('<strong style="color: #fd79a8">Resume Board</strong> 是', { speed: 100 })
-      .pause(1000)
-      .type('一款完全免费的 <strong style="color: #fd79a8">Markdown</strong> 简历编写工具.<br/>', { speed: 100 })
-      .pause(900)
-      .type('可以将你编写的 <strong style="color: #fd79a8">Markdnow</strong>', { speed: 50 })
-      .pause(500)
-      .delete(3)
-      .pause(500)
-      .type('<strong style="color: #fd79a8">own</strong> 内容', { speed: 80 })
-      .pause(900)
-      .type('转为 <strong style="color: #fd79a8">PDF</strong> 格式的文件.<br/>', { speed: 100 })
-      .pause(1000)
-      // .type('<br/>', { speed: 100 })
-      .type('如果你有不错的想法，<strong style="color: var(--theme)">欢迎为项目贡献出你的daima</strong>', { speed: 80 })
-      .delete(5)
-      .pause(500)
-      .type('<strong style="color: var(--theme)">代码.</strong>', { speed: 80 })
-      .go();
+    new TypeNet(".typenet-text", { speed: 80 })
+      .type('Resume Board ', { style: 'color: #fd79a8' })
+      .type('是')
+      .sleep(300)
+      .type('一款完全免费的 ')
+      .type('Markdown', { style: 'color: #fd79a8' })
+      .type(' 简历编写工具')
+      .line()
+      .sleep(300)
+      .type('可以将你编写的 ', { speed: 50 })
+      .type('Markdnow', { speed: 50, style: 'color: #fd79a8' })
+      .sleep(300)
+      .remove(3)
+      .sleep(300)
+      .type('own', { speed: 80, style: 'color: #fd79a8' })
+      .type(' 内容')
+      .sleep(300)
+      .type('转为 ')
+      .type('PDF', { style: 'color: var(--theme)' })
+      .type(' 格式的文件.')
+      .line()
+      .sleep(300)
+      .type('如果你有不错的想法，')
+      .type('欢迎为项目贡献出你的daima', { style: 'color: var(--theme)' })
+      .sleep(300)
+      .remove(5)
+      .sleep(300)
+      .type('代码.', { speed: 80, style: "color: var(--theme)" })
+      .start();
   })
 }

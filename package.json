@@ -29,7 +29,7 @@
     "picture-verification-code": "^1.1.0",
     "pinia": "^2.0.27",
     "socket.io-client": "^4.5.4",
-    "typeit": "^8.7.1",
+    "typenet": "^1.0.3",
     "vue": "^3.2.41",
     "vue-codemirror": "^6.1.1",
     "vue-markdown-menu-bar": "^1.1.6",
