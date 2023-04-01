@@ -7,10 +7,12 @@ useTypeNet();
 
 <template>
   <Header />
-  <div class="introduce flex flex-space-around flex-align-center">
+  <div class="introduce odd flex flex-space-around flex-align-center">
     <img src="/resume-bg-one.svg" data-aos="fade-right">
     <div class="introduce-r typenet-text" data-aos="fade-left">
     </div>
+    <div class="ball-bottom" data-aos="fade-right" data-aos-duration="1000"></div>
+    <div class="ball-top" data-aos="fade-up" data-aos-duration="1000"></div>
   </div>
   <div class="mask"></div>
   <div class="introduce white-bg flex flex-space-around flex-align-center">
