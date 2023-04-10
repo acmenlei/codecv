@@ -129,10 +129,10 @@ export function usePrimaryColor(resumeType: string) {
 export function useCustomFont(resumeType: string) {
   const cacheKey = MARKDOWN_FONT + '-' + resumeType;
   const fontOptions = [
-    {
-      value: "方正GDC体",
-      label: "方正GDC体"
-    },
+    // {
+    //   value: "方正GDC体",
+    //   label: "方正GDC体"
+    // },
     {
       value: 'Helvetica Neue',
       label: 'Helvetica Neue'

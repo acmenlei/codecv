@@ -102,6 +102,7 @@ const primaryColorMap = {
   'operation_avatar': ['#333', '#1a85f0'],
   'simple_avatar': ['#2A2D2D', '#F98C07'],
   'graduation_reexam': ['#3A3939', '#2186D2'],
+  'create': ['#000', '#000'], // 新建模版的默认配色
 }
 interface IPrimaryColorMap {
   business: Array<string>;

@@ -7,10 +7,10 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "方正GDC体";
-  src: url("../assets/font/方正GDC体.ttf") format("ttf");
-}
+// @font-face {
+//   font-family: "方正GDC体";
+//   src: url("../assets/font/方正GDC体.ttf") format("ttf");
+// }
 
 @font-face {
   font-family: "仓耳渔阳体 W02";
@@ -31,6 +31,40 @@
   padding: 5px 5px;
 }
 
+a.ripple-effect {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #151515;
+    transform: translate(-50%, -50%);
+    content: "";
+    border-radius: 50%;
+  }
+
+  @keyframes ripple {
+    from {
+      height: 0;
+      width: 0;
+      opacity: .6;
+    }
+
+    to {
+      height: 500%;
+      width: 300%;
+      opacity: 0;
+    }
+  }
+  
+  &:active {
+    &::after {
+      animation: ripple 1s;
+    }
+  }
+}
 .nav {
   flex: 1;
   display: flex;

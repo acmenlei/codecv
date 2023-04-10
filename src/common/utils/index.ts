@@ -2,7 +2,7 @@ import { ElLoading } from "element-plus";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { themes } from "@/templates/config";
-import 'element-plus/es/components/loading/style/css';
+import "element-plus/es/components/loading/style/css";
 import { errorMessage, successMessage } from "../message";
 
 export async function importCSS(name: string) {
@@ -16,33 +16,35 @@ export const getCurrentTypeContent = (type: string): string => {
       return theme.content;
     }
   }
-  return '';
-}
+  return "";
+};
 
 // 计算优先级 以及 处理优先级高的数据
 export const optimalizing = {
-  'h1': { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
-  'h2': { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
-  'h3': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
-  'h4': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
-  'h5': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
-  'h6': { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
-  'li': { max: 10, min: -15, top: 0, tag: '', optimal: 0 },
-  'p': { max: 10, min: -15, top: 0, tag: '', optimal: 0 },
-}
-export type OptimalizingItem = typeof optimalizing['h1'];
+  h1: { max: 30, min: -15, top: 0, tag: "", optimal: 0 },
+  h2: { max: 30, min: -15, top: 0, tag: "", optimal: 0 },
+  h3: { max: 20, min: -15, top: 0, tag: "", optimal: 0 },
+  h4: { max: 20, min: -15, top: 0, tag: "", optimal: 0 },
+  h5: { max: 20, min: -15, top: 0, tag: "", optimal: 0 },
+  h6: { max: 20, min: -15, top: 0, tag: "", optimal: 0 },
+  li: { max: 10, min: -15, top: 0, tag: "", optimal: 0 },
+  p: { max: 10, min: -15, top: 0, tag: "", optimal: 0 },
+};
+export type OptimalizingItem = (typeof optimalizing)["h1"];
 export type Optimalizing = {
-  'h1': OptimalizingItem;
-  'h2': OptimalizingItem;
-  'h3': OptimalizingItem;
-  'h4': OptimalizingItem;
-  'h5': OptimalizingItem;
-  'h6': OptimalizingItem;
-  'li': OptimalizingItem;
-  'p': OptimalizingItem;
-}
-const defaultCmp = (x: OptimalizingItem, y: OptimalizingItem) => x.optimal > y.optimal; // 默认是最大堆
-const swap = (arr: OptimalizingItem[], i: number, j: number) => ([arr[i], arr[j]] = [arr[j], arr[i]]);
+  h1: OptimalizingItem;
+  h2: OptimalizingItem;
+  h3: OptimalizingItem;
+  h4: OptimalizingItem;
+  h5: OptimalizingItem;
+  h6: OptimalizingItem;
+  li: OptimalizingItem;
+  p: OptimalizingItem;
+};
+const defaultCmp = (x: OptimalizingItem, y: OptimalizingItem) =>
+  x.optimal > y.optimal; // 默认是最大堆
+const swap = (arr: OptimalizingItem[], i: number, j: number) =>
+  ([arr[i], arr[j]] = [arr[j], arr[i]]);
 export class Heap {
   // 默认是最大堆
   container: OptimalizingItem[] = [];
@@ -71,7 +73,8 @@ export class Heap {
     swap(container, 0, container.length - 1);
     const res = container.pop();
     const length = container.length;
-    let index = 0, exchange = index * 2 + 1;
+    let index = 0,
+      exchange = index * 2 + 1;
     while (exchange < length) {
       // 以最大堆的情况来说：如果有右节点，并且右节点的值大于左节点的值
       let right = index * 2 + 2;
@@ -99,11 +102,11 @@ export class Heap {
 }
 
 export function createStyle() {
-  return document.createElement('style');
+  return document.createElement("style");
 }
 
 export function createDIV() {
-  return document.createElement('div');
+  return document.createElement("div");
 }
 
 export function query(attr: string) {
@@ -116,40 +119,59 @@ export function removeHeadStyle(attr: string) {
 
 export function getPdf(title: string, html: HTMLElement) {
   const { showLoading, closeLoading } = useLoading();
-  showLoading('正在导出PDF 请耐心等待...');
+  showLoading("正在导出PDF 请耐心等待...");
   html2canvas(html, {
     allowTaint: false,
     logging: false,
     useCORS: true,
-    scale: 4
-  }).then((canvas) => {
-    const pdf = new jsPDF('p', 'mm', 'a4') // A4纸，纵向
-    const ctx = canvas.getContext('2d')
-    const a4w = 210
-    const a4h = 297 // A4大小，210mm x 297mm，四边各保留10mm的边距，显示区域190x277
-    const imgHeight = Math.floor((a4h * canvas.width) / a4w) // 按A4显示比例换算一页图像的像素高度（必须向下取整，否则高度溢出）
-    let renderedHeight = 0
-    while (renderedHeight < canvas.height) {
-      const page = document.createElement('canvas')
-      page.width = canvas.width
-      page.height = Math.min(imgHeight, canvas.height - renderedHeight)
-      // 用getImageData剪裁指定区域，并画到前面创建的canvas对象中
-      page.getContext('2d')?.putImageData(ctx?.getImageData(0, renderedHeight, canvas.width, Math.min(imgHeight, canvas.height - renderedHeight)) as ImageData, 0, 0)
-      pdf.addImage(page.toDataURL('image/jpeg', 1.0), 'JPEG', 0, 0, a4w, Math.min(a4h, (a4w * page.height) / page.width)) // 添加图像到页面，保留0mm边距
-
-      renderedHeight += imgHeight
-      if (canvas.height - renderedHeight > 1) {
-        pdf.addPage() // 如果后面还有内容，添加一个空页
-      }
-    }
-    // 保存文件
-    pdf.save(`${title}.pdf`)
-    successMessage('PDF导出成功');
+    scale: 4,
   })
-    .catch(error => {
-      errorMessage('导出失败, ' + error)
+    .then((canvas) => {
+      const pdf = new jsPDF("p", "mm", "a4"); // A4纸，纵向
+      const ctx = canvas.getContext("2d");
+      const a4w = 210;
+      const a4h = 297; // A4大小，210mm x 297mm，四边各保留10mm的边距，显示区域190x277
+      const imgHeight = Math.floor((a4h * canvas.width) / a4w); // 按A4显示比例换算一页图像的像素高度（必须向下取整，否则高度溢出）
+      let renderedHeight = 0;
+      while (renderedHeight < canvas.height) {
+        const page = document.createElement("canvas");
+        page.width = canvas.width;
+        page.height = Math.min(imgHeight, canvas.height - renderedHeight);
+        // 用getImageData剪裁指定区域，并画到前面创建的canvas对象中
+        page
+          .getContext("2d")
+          ?.putImageData(
+            ctx?.getImageData(
+              0,
+              renderedHeight,
+              canvas.width,
+              Math.min(imgHeight, canvas.height - renderedHeight)
+            ) as ImageData,
+            0,
+            0
+          );
+        pdf.addImage(
+          page.toDataURL("image/jpeg", 1.0),
+          "JPEG",
+          0,
+          0,
+          a4w,
+          Math.min(a4h, (a4w * page.height) / page.width)
+        ); // 添加图像到页面，保留0mm边距
+
+        renderedHeight += imgHeight;
+        if (canvas.height - renderedHeight > 1) {
+          pdf.addPage(); // 如果后面还有内容，添加一个空页
+        }
+      }
+      // 保存文件
+      pdf.save(`${title}.pdf`);
+      successMessage("PDF导出成功");
     })
-    .finally(closeLoading)
+    .catch((error) => {
+      errorMessage("导出失败, " + error);
+    })
+    .finally(closeLoading);
 }
 
 export function useLoading() {
@@ -158,18 +180,17 @@ export function useLoading() {
     loading = ElLoading.service({
       lock: true,
       text,
-      background: 'rgba(0, 0, 0, 0.7)',
-    })
+      background: "rgba(0, 0, 0, 0.7)",
+    });
   }
   function closeLoading() {
-    loading && loading.close()
+    loading && loading.close();
   }
   return {
     showLoading,
-    closeLoading
-  }
+    closeLoading,
+  };
 }
-
 
 export function scrollTo(targetTop: number = 0) {
   const documentBody: HTMLElement = document.documentElement || document.body;
@@ -206,7 +227,8 @@ export function scrollTo(targetTop: number = 0) {
 }
 
 export function calcOffsetTop(dom: HTMLElement) {
-  let height = dom?.offsetTop, parent = dom?.offsetParent as HTMLElement;
+  let height = dom?.offsetTop,
+    parent = dom?.offsetParent as HTMLElement;
   while (parent !== null) {
     height += parent.offsetTop;
     parent = parent.offsetParent as HTMLElement;
