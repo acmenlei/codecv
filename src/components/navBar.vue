@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-defineProps<{ tabs: Array<string> }>();
+defineProps<{ tabs: Array<string>; button?: string }>();
 const emits = defineEmits(['tab-click']),
   tabIndex = ref(0),
   router = useRouter()
@@ -19,8 +19,8 @@ function queryList(index: number) {
       <li :class='["mr-20", "pointer", "none", { checked: tab == tabs[tabIndex] }]' v-for="(tab, idx) in tabs"
         @click="queryList(idx)">{{ tab }}</li>
     </ul>
-    <a class="ripple-effect newtemplate-container" @click="router.push('/editor?type=create')"><button
-        class="primary cursor btn pointer newtemplate">创作模板</button></a>
+    <a v-if="button" class="ripple-effect newtemplate-container" @click="router.push('/editor?type=create')"><button
+        class="primary cursor btn pointer newtemplate">{{ button }}</button></a>
   </div>
 </template>
 

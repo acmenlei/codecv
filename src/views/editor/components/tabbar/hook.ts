@@ -13,7 +13,7 @@ const CUSTOM_CSS_STYLE = 'custom-css-style',
   A4_HEIGHT = 1123;
 
 export const step = ref(80);
-export function setStep(val: number) {
+export function setStep(val: number | any) {
   step.value = val;
 }
 
@@ -74,7 +74,7 @@ export function usePrimaryBGColor(resumeType: string) {
   const cacheKey = CUSTOM_MARKDOWN_PRIMARY_BG_COLOR + '-' + resumeType, initialColor = getPrimaryBGColor(resumeType);
   const primaryColor = ref(get(cacheKey) ? get(cacheKey) as string : initialColor);
 
-  function setPrimaryColor(color: string) {
+  function setPrimaryColor(color: string | null) {
     if (!color) {
       primaryColor.value = initialColor;
       color = initialColor;
@@ -101,7 +101,7 @@ export function usePrimaryColor(resumeType: string) {
     initialColor = getPrimaryColor(resumeType),
     color = ref(get(cacheKey) ? get(cacheKey) as string : initialColor);
 
-  function setColor(value: string) {
+  function setColor(value: string | null) {
     if (!value) {
       color.value = initialColor;
       value = initialColor;
@@ -148,7 +148,7 @@ export function useCustomFont(resumeType: string) {
   ]
   const font = ref(get(cacheKey) ? get(cacheKey) as string : 'Helvetica Neue')
 
-  function setFont(fontFamily: string) {
+  function setFont(fontFamily: string | null) {
     let style = query(cacheKey), isAppend = style;
     if (!style) {
       style = createStyle();
@@ -196,7 +196,7 @@ export function splitPage(renderDOM: HTMLElement) {
 
 /* 自动一页 Start */
 export function useAutoOnePage(resumeType: string) {
-  const cacheKey = AUTO_ONE_PAGE + '-' + resumeType, autoOnePage = ref(get(cacheKey))
+  const cacheKey = AUTO_ONE_PAGE + '-' + resumeType, autoOnePage = ref<any>(get(cacheKey))
 
   async function setAutoOnePage() {
     const container: HTMLElement = document.querySelector('.markdown-transform-html') as HTMLElement;
