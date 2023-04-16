@@ -11,6 +11,7 @@ import { createEditor, Editor } from '@textbus/editor'
 import { computed, onActivated, onDeactivated, reactive, ref } from 'vue'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
 import { uploader } from '@/common/utils/uploader'
+import { IArticle, IResponse } from '@/types/type'
 
 export function useCommunityArticle() {
   const article = reactive({ professional: '', title: '' })
@@ -26,7 +27,7 @@ export function useCommunityArticle() {
       loginModelToggle()
       return
     }
-    if (!article.professional || !article.title.trim() || editor.getContent() == '<br>') {
+    if (!article.professional || !article.title.trim() || editor.getHTML() == '<br>') {
       warningMessage('内容填写完整才能让其他同学看明白～')
       return
     }
@@ -35,14 +36,15 @@ export function useCommunityArticle() {
       return
     }
     const text = document.createElement('div')
-    text.innerHTML = editor.getContent()
+    text.innerHTML = editor.getHTML()
     // 1.处理参数
     const articleInfo = {
       ...article,
-      content: editor.getContent(),
+      content: editor.getHTML(),
       introduce: text.textContent?.slice(0, 255) || '简介',
       authorId: userInfo.uid
     }
+    text.remove() // 删除该临时节点
     let commonCode = 0
     // 2.判断是否为编辑模式
     if (articleId.value != null) {

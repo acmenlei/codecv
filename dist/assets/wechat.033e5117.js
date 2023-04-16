@@ -1,2 +1,1 @@
-const e = '' + new URL('../wechat.jpeg', import.meta.url).href
-export { e as _ }
+const e=""+new URL("../wechat.jpeg",import.meta.url).href;export{e as _};
