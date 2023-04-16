@@ -1,19 +1,21 @@
-import { successMessage } from '@/common/message';
-import { Router } from 'vue-router';
-import { onMounted, reactive, ref } from 'vue';
+import { successMessage } from '@/common/message'
+import { Router } from 'vue-router'
+import { onMounted, reactive, ref } from 'vue'
 
 import useUserStore, { TOKEN, USERNAME } from '@/store/modules/user'
-import { getLocalStorage } from '@/common/hooks/useLcoaStoage';
-import { errorMessage } from '@/common/message';
-import { updateUserInfo } from '@/services/modules/user';
+import { getLocalStorage } from '@/common/hooks/useLcoaStoage'
+import { errorMessage } from '@/common/message'
+import { updateUserInfo } from '@/services/modules/user'
+import { IResponse } from '@/types/type'
 
 export function useUpdateInfoModel() {
-  const infoModel = ref(false);
+  const infoModel = ref(false)
   function setInfoModel() {
-    infoModel.value = !infoModel.value;
+    infoModel.value = !infoModel.value
   }
   return {
-    infoModel, setInfoModel
+    infoModel,
+    setInfoModel
   }
 }
 
@@ -27,19 +29,19 @@ export const userForm = reactive({
   school: '',
   avatar: '',
   origin: ''
-});
-export function useUpdateInfo(toggle: Function) {
+})
+export function useUpdateInfo(toggle: () => void) {
   async function updateInfo() {
     const { userInfo, setUserInfo } = useUserStore()
     // 格式化时间 只需要年份
-    userForm.graduation = String(new Date(userForm.graduation).getFullYear());
-    const data = await updateUserInfo(userForm) as IResponse<unknown>;
+    userForm.graduation = String(new Date(userForm.graduation).getFullYear())
+    const data = (await updateUserInfo(userForm)) as IResponse<unknown>
     if (data.code == 200) {
-      toggle();
-      successMessage(data.msg);
-      setUserInfo(userInfo, userForm);
+      toggle()
+      successMessage(data.msg)
+      setUserInfo(userInfo, userForm)
     } else {
-      errorMessage(data.msg);
+      errorMessage(data.msg)
     }
   }
   return {
@@ -48,35 +50,39 @@ export function useUpdateInfo(toggle: Function) {
 }
 
 export function useUserLogin() {
-  const user = reactive({ username: '', password: '', verify: '' });
-  const { login, logout, verifyLoginState } = useUserStore();
+  const user = reactive({ username: '', password: '', verify: '' })
+  const { login, logout, verifyLoginState } = useUserStore()
 
   onMounted(() => {
-    const token = getLocalStorage(TOKEN), username = getLocalStorage(USERNAME);
-    token && username && verifyLoginState(token as string, username as string);
+    const token = getLocalStorage(TOKEN),
+      username = getLocalStorage(USERNAME)
+    token && username && verifyLoginState(token as string, username as string)
   })
 
   return {
-    user, login, logout
+    user,
+    login,
+    logout
   }
 }
 
 export function useNavigator(router: Router, path: string) {
-  const { loginState, loginModelToggle } = useUserStore();
+  const { loginState, loginModelToggle } = useUserStore()
   if (!loginState.logined) {
-    loginModelToggle();
-    return;
+    loginModelToggle()
+    return
   }
   router.push(path)
 }
 
 export function useRegister() {
-  const model = ref(false), registerUser = reactive({ username: '', password: '', verify: '' });
-  const { genVerify } = useUserStore();
+  const model = ref(false),
+    registerUser = reactive({ username: '', password: '', verify: '' })
+  const { genVerify } = useUserStore()
 
   function toggleModel() {
-    model.value = !model.value;
-    genVerify();
+    model.value = !model.value
+    genVerify()
   }
   return {
     model,
@@ -86,14 +92,15 @@ export function useRegister() {
 }
 
 export function useMessage() {
-  const messageModal = ref(false), tab = ref(0);
+  const messageModal = ref(false),
+    tab = ref(0)
 
   function toggleMessageModal() {
-    messageModal.value = !messageModal.value;
+    messageModal.value = !messageModal.value
   }
 
   function msgTabChange(idx: number) {
-    tab.value = idx;
+    tab.value = idx
   }
 
   return {
@@ -105,9 +112,9 @@ export function useMessage() {
 }
 // 修改密码
 export function useUpdatePWDModel() {
-  const PWDModel = ref(false);
+  const PWDModel = ref(false)
   function setPWDModel() {
-    PWDModel.value = !PWDModel.value;
+    PWDModel.value = !PWDModel.value
   }
   return {
     PWDModel,

@@ -1,65 +1,75 @@
-import { useThrottleFn } from '@vueuse/core';
-import { useRoute, useRouter } from 'vue-router';
-import { getLocalStorage } from '@/common/hooks/useLcoaStoage';
-import { publishCommunity, queryCommunityArticleById, updateCommunity } from '@/services/modules/community';
-import useUserStore, { TOKEN } from '@/store/modules/user';
-import { createEditor, Editor } from "@textbus/editor";
-import { computed, onActivated, onDeactivated, reactive, ref } from "vue";
-import { errorMessage, successMessage, warningMessage } from '@/common/message';
-import { uploader } from '@/common/utils/uploader';
+import { useThrottleFn } from '@vueuse/core'
+import { useRoute, useRouter } from 'vue-router'
+import { getLocalStorage } from '@/common/hooks/useLcoaStoage'
+import {
+  publishCommunity,
+  queryCommunityArticleById,
+  updateCommunity
+} from '@/services/modules/community'
+import useUserStore, { TOKEN } from '@/store/modules/user'
+import { createEditor, Editor } from '@textbus/editor'
+import { computed, onActivated, onDeactivated, reactive, ref } from 'vue'
+import { errorMessage, successMessage, warningMessage } from '@/common/message'
+import { uploader } from '@/common/utils/uploader'
 
 export function useCommunityArticle() {
-  const article = reactive({ professional: '', title: '' });
-  const articleEditor = ref(), router = useRouter(), route = useRoute();
-  const articleId = computed(() => route.query.articleId);
-  let editor: Editor, editorArticleInfo: IArticle;
+  const article = reactive({ professional: '', title: '' })
+  const articleEditor = ref(),
+    router = useRouter(),
+    route = useRoute()
+  const articleId = computed(() => route.query.articleId)
+  let editor: Editor, editorArticleInfo: IArticle
 
   async function publishArticle() {
-    const { loginState, loginModelToggle, userInfo } = useUserStore();
+    const { loginState, loginModelToggle, userInfo } = useUserStore()
     if (!loginState.logined || !getLocalStorage(TOKEN)) {
-      loginModelToggle();
-      return;
+      loginModelToggle()
+      return
     }
     if (!article.professional || !article.title.trim() || editor.getContent() == '<br>') {
-      warningMessage('内容填写完整才能让其他同学看明白～');
-      return;
+      warningMessage('内容填写完整才能让其他同学看明白～')
+      return
     }
     if (article.title.length > 20) {
       errorMessage('标题过长 请缩减到20字以内～')
-      return;
+      return
     }
-    const text = document.createElement('div');
-    text.innerHTML = editor.getContent();
+    const text = document.createElement('div')
+    text.innerHTML = editor.getContent()
     // 1.处理参数
-    let articleInfo = {
+    const articleInfo = {
       ...article,
       content: editor.getContent(),
       introduce: text.textContent?.slice(0, 255) || '简介',
       authorId: userInfo.uid
     }
-    let commonCode = 0;
+    let commonCode = 0
     // 2.判断是否为编辑模式
     if (articleId.value != null) {
-      const updateArticleInfo = Object.assign(articleInfo, { articleId: editorArticleInfo.articleId });
-      const { code } = await updateCommunity(updateArticleInfo) as IResponse<unknown>;
-      commonCode = code;
+      const updateArticleInfo = Object.assign(articleInfo, {
+        articleId: editorArticleInfo.articleId
+      })
+      const { code } = (await updateCommunity(updateArticleInfo)) as IResponse<unknown>
+      commonCode = code
     } else {
-      const { code } = await publishCommunity(articleInfo) as IResponse<unknown>;
-      commonCode = code;
+      const { code } = (await publishCommunity(articleInfo)) as IResponse<unknown>
+      commonCode = code
     }
     if (commonCode == 200) {
-      router.back();
-      successMessage('发布成功！');
+      router.back()
+      successMessage('发布成功！')
     }
   }
   // 初始化处理编辑模式 拉取文章信息
   async function isEditMode() {
     if (articleId.value != undefined) {
-      const articleData = await queryCommunityArticleById({ articleId: parseInt(<string>articleId.value) }) as IResponse<IArticle>;
-      editorArticleInfo = articleData.data as IArticle;
-      article.title = editorArticleInfo.title;
-      article.professional = editorArticleInfo.professional;
-      editor.replaceContent(editorArticleInfo.content);
+      const articleData = (await queryCommunityArticleById({
+        articleId: parseInt(<string>articleId.value)
+      })) as IResponse<IArticle>
+      editorArticleInfo = articleData.data as IArticle
+      article.title = editorArticleInfo.title
+      article.professional = editorArticleInfo.professional
+      editor.replaceContent(editorArticleInfo.content)
     }
   }
   onActivated(() => {
@@ -71,22 +81,22 @@ export function useCommunityArticle() {
       minHeight: '400px',
       uploader,
       styleSheets: ['.tb-list-item { margin-left: 20px } .tb-pre { margin: 10px 0;}'],
-      placeholder: '内容尽情发挥～',
-    });
+      placeholder: '内容尽情发挥～'
+    })
     // 异步获取
     setTimeout(() => {
-      const toolBar = document.querySelector('.textbus-ui-top') as HTMLElement;
-      toolBar.style.position = 'sticky';
-      toolBar.style.top = '60px';
-      toolBar.style.zIndex = '99';
-    });
-    editor.mount(articleEditor.value);
-    isEditMode();
+      const toolBar = document.querySelector('.textbus-ui-top') as HTMLElement
+      toolBar.style.position = 'sticky'
+      toolBar.style.top = '60px'
+      toolBar.style.zIndex = '99'
+    })
+    editor.mount(articleEditor.value)
+    isEditMode()
   })
   onDeactivated(() => {
-    article.professional = '';
-    article.title = '';
-    editor?.destroy();
+    article.professional = ''
+    article.title = ''
+    editor?.destroy()
   })
 
   return {
@@ -95,4 +105,3 @@ export function useCommunityArticle() {
     articleEditor
   }
 }
-

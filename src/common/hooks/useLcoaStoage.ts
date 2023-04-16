@@ -1,33 +1,35 @@
 type LocalStorageValue<T> = { value: T; expires: number }
 
 export function setLocalStorage(key: string, value: unknown, expires: number = 1000 * 60 * 60 * 3) {
-  const result: LocalStorageValue<typeof value> = { value, expires: Date.now() + expires };
-  localStorage.setItem(key, JSON.stringify(result));
-  return true;
+  const result: LocalStorageValue<typeof value> = {
+    value,
+    expires: Date.now() + expires
+  }
+  localStorage.setItem(key, JSON.stringify(result))
+  return true
 }
 
 export function getLocalStorage(key: string) {
-  let currentTime = Date.now();
+  const currentTime = Date.now()
 
-  let value = localStorage.getItem(key);
+  const value = localStorage.getItem(key)
   if (!value) {
-    return false;
+    return false
   }
-  let result: LocalStorageValue<unknown> = JSON.parse(value);
+  const result: LocalStorageValue<unknown> = JSON.parse(value)
 
   // 如果过期了就删掉
   if (result.expires < currentTime) {
-    localStorage.removeItem(key);
-    return false;
+    localStorage.removeItem(key)
+    return false
   }
-  return result.value;
+  return result.value
 }
-
 
 export function removeLocalStorage(key: string) {
   if (!getLocalStorage(key)) {
-    return false;
+    return false
   }
-  localStorage.removeItem(key);
-  return true;
+  localStorage.removeItem(key)
+  return true
 }

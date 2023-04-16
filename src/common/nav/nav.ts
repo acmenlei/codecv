@@ -2,7 +2,7 @@ const nav = [
   {
     name: '导入/导出',
     multiple: true,
-    children: ['导入MD', '导出MD'],
+    children: ['导入MD', '导出MD']
   },
   {
     name: '简历模板',
@@ -17,7 +17,7 @@ const nav = [
     name: '语法助手',
     path: '/syntax/helper',
     tooltip: false
-  },
+  }
 ]
 
-export default nav;
+export default nav

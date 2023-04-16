@@ -1,4 +1,4 @@
-import Layout from "@/layout/main.vue"
+import Layout from '@/layout/main.vue'
 
 export default {
   name: 'update',
@@ -6,9 +6,9 @@ export default {
   component: Layout,
   children: [
     {
-      path: "/update/line",
+      path: '/update/line',
       name: 'updateLine',
-      component: () => import("@/views/update/update.vue")
+      component: () => import('@/views/update/update.vue')
     }
   ]
 }

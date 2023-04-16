@@ -1,26 +1,29 @@
-import { getLocalStorage, setLocalStorage } from "@/common/hooks/useLcoaStoage";
-import { onActivated, ref } from "vue";
-import { useRouter } from "vue-router";
+import { getLocalStorage, setLocalStorage } from '@/common/hooks/useLcoaStoage'
+import { IArticle } from '@/types/type'
+import { onActivated, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 export function useBrowseHistory() {
-  const BROWSE_HISTORY = '__BROWSE_HISTORY__', max = 10, data = ref<IArticle[]>([]);
-  const router = useRouter();
+  const BROWSE_HISTORY = '__BROWSE_HISTORY__',
+    max = 10,
+    data = ref<IArticle[]>([])
+  const router = useRouter()
 
   function setBrowseHistory(article: IArticle) {
-    let history = getBrowseHistory();
+    const history = getBrowseHistory()
     if (history.length >= max) {
-      history.pop();
+      history.pop()
     }
-    history.unshift(article);
-    setLocalStorage(BROWSE_HISTORY, history, 60 * 60 * 1000 * 24 * 365);
+    history.unshift(article)
+    setLocalStorage(BROWSE_HISTORY, history, 60 * 60 * 1000 * 24 * 365)
   }
 
   function getBrowseHistory() {
-    return (getLocalStorage(BROWSE_HISTORY) || <IArticle[]>[]) as IArticle[];
+    return (getLocalStorage(BROWSE_HISTORY) || <IArticle[]>[]) as IArticle[]
   }
 
   function setData(historys: IArticle[]) {
-    data.value = historys;
+    data.value = historys
   }
 
   function useDetail(articleId: number) {
@@ -28,7 +31,7 @@ export function useBrowseHistory() {
   }
 
   onActivated(() => {
-    setData(getBrowseHistory() || []);
+    setData(getBrowseHistory() || [])
   })
   return {
     data,

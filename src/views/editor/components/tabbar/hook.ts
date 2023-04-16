@@ -1,26 +1,36 @@
-import { getLocalStorage, removeLocalStorage, setLocalStorage } from "@/common/hooks/useLcoaStoage";
-import { successMessage, warningMessage } from "@/common/message";
-import { createDIV, createStyle, query, removeHeadStyle, Heap, optimalizing, Optimalizing, OptimalizingItem } from "@/common/utils";
-import { getPrimaryBGColor, getPrimaryColor } from "@/templates/config";
-import { onActivated, ref } from "vue";
+import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/hooks/useLcoaStoage'
+import { successMessage, warningMessage } from '@/common/message'
+import {
+  createDIV,
+  createStyle,
+  query,
+  removeHeadStyle,
+  Heap,
+  optimalizing,
+  Optimalizing,
+  OptimalizingItem
+} from '@/common/utils'
+import { getPrimaryBGColor, getPrimaryColor } from '@/templates/config'
+import { onActivated, ref } from 'vue'
 
-const get = getLocalStorage, set = setLocalStorage;
+const get = getLocalStorage,
+  set = setLocalStorage
 const CUSTOM_CSS_STYLE = 'custom-css-style',
   CUSTOM_MARKDOWN_PRIMARY_COLOR = 'custom-markdown-primary-color',
   CUSTOM_MARKDOWN_PRIMARY_BG_COLOR = 'custom_markdown_primary_bg_color',
   MARKDOWN_FONT = 'markdown-font',
   AUTO_ONE_PAGE = 'auto-one-page',
-  A4_HEIGHT = 1123;
+  A4_HEIGHT = 1123
 
-export const step = ref(80);
+export const step = ref(80)
 export function setStep(val: number | any) {
-  step.value = val;
+  step.value = val
 }
 
-export function useAvatar(emits: Function) {
+export function useAvatar(emits: any) {
   function setAvatar(event: any) {
-    let file = event.target.files[0];
-    let path = URL.createObjectURL(file);
+    const file = event.target.files[0]
+    const path = URL.createObjectURL(file)
     emits('upload-avatar', path)
   }
 
@@ -30,33 +40,37 @@ export function useAvatar(emits: Function) {
 }
 
 export function useCustomCSS(resumeType: string) {
-  let cssDialog = ref(false), cacheKey = CUSTOM_CSS_STYLE + '-' + resumeType;
-  let cssText = ref(get(cacheKey) ? get(cacheKey) as string : '');
+  const cssDialog = ref(false),
+    cacheKey = CUSTOM_CSS_STYLE + '-' + resumeType
+  const cssText = ref(get(cacheKey) ? (get(cacheKey) as string) : '')
 
   function toggleDialog() {
-    cssDialog.value = !cssDialog.value;
+    cssDialog.value = !cssDialog.value
   }
 
   function setStyle() {
-    cssDialog.value = false;
-    let cssValue = cssText.value.trim(), style = query(cacheKey), isAppend = style;
+    cssDialog.value = false
+    let style = query(cacheKey)
+
+    const cssValue = cssText.value.trim(),
+      isAppend = style
     if (!cssText.value) {
-      return;
+      return
     }
     if (!style) {
-      style = createStyle();
-      style.setAttribute(cacheKey, 'true');
+      style = createStyle()
+      style.setAttribute(cacheKey, 'true')
     }
-    style.textContent = cssValue;
-    !isAppend && document.head?.appendChild(style);
-    set(cacheKey, cssValue);
+    style.textContent = cssValue
+    !isAppend && document.head?.appendChild(style)
+    set(cacheKey, cssValue)
   }
 
   function removeStyle() {
-    cssDialog.value = false;
-    removeHeadStyle(cacheKey);
-    removeLocalStorage(cacheKey);
-    cssText.value = '';
+    cssDialog.value = false
+    removeHeadStyle(cacheKey)
+    removeLocalStorage(cacheKey)
+    cssText.value = ''
   }
 
   onActivated(() => !query(cacheKey) && setTimeout(setStyle, 50))
@@ -71,50 +85,54 @@ export function useCustomCSS(resumeType: string) {
 }
 
 export function usePrimaryBGColor(resumeType: string) {
-  const cacheKey = CUSTOM_MARKDOWN_PRIMARY_BG_COLOR + '-' + resumeType, initialColor = getPrimaryBGColor(resumeType);
-  const primaryColor = ref(get(cacheKey) ? get(cacheKey) as string : initialColor);
+  const cacheKey = CUSTOM_MARKDOWN_PRIMARY_BG_COLOR + '-' + resumeType,
+    initialColor = getPrimaryBGColor(resumeType)
+  const primaryColor = ref(get(cacheKey) ? (get(cacheKey) as string) : initialColor)
 
   function setPrimaryColor(color: string | null) {
     if (!color) {
-      primaryColor.value = initialColor;
-      color = initialColor;
+      primaryColor.value = initialColor
+      color = initialColor
     }
-    let style = query(cacheKey), append = style;
+    let style = query(cacheKey)
+    const append = style
     if (!style) {
-      style = createStyle();
-      style.setAttribute(cacheKey, 'true');
+      style = createStyle()
+      style.setAttribute(cacheKey, 'true')
     }
     style.textContent = `:root { --markdown-primary-bg-color: ${color}; }`
-    !append && document.head.appendChild(style);
-    set(cacheKey, color);
+    !append && document.head.appendChild(style)
+    set(cacheKey, color)
   }
 
-  onActivated(() => !query(cacheKey) && setPrimaryColor(primaryColor.value));
+  onActivated(() => !query(cacheKey) && setPrimaryColor(primaryColor.value))
 
   return {
-    primaryColor, setPrimaryColor
+    primaryColor,
+    setPrimaryColor
   }
 }
 // todo: 回跳后颜色显示的问题，后续考虑接入后端解决
 export function usePrimaryColor(resumeType: string) {
   const cacheKey = CUSTOM_MARKDOWN_PRIMARY_COLOR + '-' + resumeType,
     initialColor = getPrimaryColor(resumeType),
-    color = ref(get(cacheKey) ? get(cacheKey) as string : initialColor);
+    color = ref(get(cacheKey) ? (get(cacheKey) as string) : initialColor)
 
   function setColor(value: string | null) {
     if (!value) {
-      color.value = initialColor;
-      value = initialColor;
+      color.value = initialColor
+      value = initialColor
     }
-    let styleDOM = query(cacheKey), isAppend = styleDOM;
+    let styleDOM = query(cacheKey)
+    const isAppend = styleDOM
 
     if (!styleDOM) {
-      styleDOM = createStyle();
-      styleDOM.setAttribute(cacheKey, 'true');
+      styleDOM = createStyle()
+      styleDOM.setAttribute(cacheKey, 'true')
     }
-    styleDOM.textContent = `:root { --markdown-primary-color: ${value} }`;
-    !isAppend && document.head.appendChild(styleDOM);
-    set(cacheKey, value);
+    styleDOM.textContent = `:root { --markdown-primary-color: ${value} }`
+    !isAppend && document.head.appendChild(styleDOM)
+    set(cacheKey, value)
   }
 
   onActivated(() => !query(cacheKey) && setColor(color.value))
@@ -127,7 +145,7 @@ export function usePrimaryColor(resumeType: string) {
 
 // 自定义字体
 export function useCustomFont(resumeType: string) {
-  const cacheKey = MARKDOWN_FONT + '-' + resumeType;
+  const cacheKey = MARKDOWN_FONT + '-' + resumeType
   const fontOptions = [
     // {
     //   value: "方正GDC体",
@@ -139,24 +157,25 @@ export function useCustomFont(resumeType: string) {
     },
     {
       value: 'Menlo-Regular',
-      label: 'Menlo-Regular',
+      label: 'Menlo-Regular'
     },
     {
-      value: "仓耳渔阳体 W02",
-      label: "仓耳渔阳体 W02",
-    },
+      value: '仓耳渔阳体 W02',
+      label: '仓耳渔阳体 W02'
+    }
   ]
-  const font = ref(get(cacheKey) ? get(cacheKey) as string : 'Helvetica Neue')
+  const font = ref(get(cacheKey) ? (get(cacheKey) as string) : 'Helvetica Neue')
 
   function setFont(fontFamily: string | null) {
-    let style = query(cacheKey), isAppend = style;
+    let style = query(cacheKey)
+    const isAppend = style
     if (!style) {
-      style = createStyle();
-      style.setAttribute(cacheKey, 'true');
+      style = createStyle()
+      style.setAttribute(cacheKey, 'true')
     }
-    style.textContent = `.jufe { font-family: ${fontFamily}; }`;
-    !isAppend && document.head.appendChild(style);
-    set(cacheKey, fontFamily);
+    style.textContent = `.jufe { font-family: ${fontFamily}; }`
+    !isAppend && document.head.appendChild(style)
+    set(cacheKey, fontFamily)
   }
 
   onActivated(() => setFont(font.value))
@@ -170,38 +189,43 @@ export function useCustomFont(resumeType: string) {
 
 // 分割视图
 export function splitPage(renderDOM: HTMLElement) {
-  let page = 0, realHeight = 0, target = renderDOM.clientHeight, reRender = document.querySelector('.re-render');
-  reRender!.innerHTML = '';
+  let page = 0,
+    realHeight = 0
+  const target = renderDOM.clientHeight,
+    reRender = document.querySelector('.re-render') as HTMLElement
+  reRender.innerHTML = ''
   while (target - realHeight > 1) {
-    const wrapper = createDIV(), resumeNode = renderDOM.cloneNode(true) as HTMLElement;
-    wrapper.classList.add('jufe-wrapper-page');
+    const wrapper = createDIV(),
+      resumeNode = renderDOM.cloneNode(true) as HTMLElement
+    wrapper.classList.add('jufe-wrapper-page')
     // 创建里面的内容 最小化高度
-    let realRenderHeight = Math.min(target - realHeight, A4_HEIGHT);
-    const wrapperItem = createDIV();
-    wrapperItem.classList.add('jufe-wrapper-page-item');
-    wrapperItem.style.height = realRenderHeight + 'px';
+    const realRenderHeight = Math.min(target - realHeight, A4_HEIGHT)
+    const wrapperItem = createDIV()
+    wrapperItem.classList.add('jufe-wrapper-page-item')
+    wrapperItem.style.height = realRenderHeight + 'px'
 
-    resumeNode.style.position = 'absolute';
-    resumeNode.style.top = -page * A4_HEIGHT + 'px';
-    resumeNode.style.left = 0 + 'px';
+    resumeNode.style.position = 'absolute'
+    resumeNode.style.top = -page * A4_HEIGHT + 'px'
+    resumeNode.style.left = 0 + 'px'
 
-    wrapperItem.appendChild(resumeNode);
-    wrapper.appendChild(wrapperItem);
+    wrapperItem.appendChild(resumeNode)
+    wrapper.appendChild(wrapperItem)
 
-    realHeight += A4_HEIGHT;
-    page++;
-    reRender?.appendChild(wrapper);
+    realHeight += A4_HEIGHT
+    page++
+    reRender?.appendChild(wrapper)
   }
 }
 
 /* 自动一页 Start */
 export function useAutoOnePage(resumeType: string) {
-  const cacheKey = AUTO_ONE_PAGE + '-' + resumeType, autoOnePage = ref<any>(get(cacheKey))
+  const cacheKey = AUTO_ONE_PAGE + '-' + resumeType,
+    autoOnePage = ref<any>(get(cacheKey))
 
   async function setAutoOnePage() {
-    const container: HTMLElement = document.querySelector('.markdown-transform-html') as HTMLElement;
+    const container: HTMLElement = document.querySelector('.markdown-transform-html') as HTMLElement
     if (autoOnePage.value) {
-      const difference = A4_HEIGHT - container?.clientHeight;
+      const difference = A4_HEIGHT - container?.clientHeight
       if (difference < 0 && difference < -200) {
         warningMessage('你的内容有点太多啦！压缩成一页的话不太美观哦～')
         return
@@ -210,14 +234,14 @@ export function useAutoOnePage(resumeType: string) {
         warningMessage('你的内容有点太少了！压缩成一页的话不太美观哦，再填写一点内容吧～')
         return
       }
-      const { differenceConfig, map } = useInitMarginTop(container);
+      const { differenceConfig, map } = useInitMarginTop(container)
       useOnePageCSSContent(differenceConfig, difference, map, cacheKey)
     } else {
       removeHeadStyle(cacheKey)
     }
     // 缓存3个小时
     set(cacheKey, autoOnePage.value)
-    splitPage(container);
+    splitPage(container)
   }
   onActivated(() => !query(cacheKey) && setTimeout(setAutoOnePage, 50))
 
@@ -228,66 +252,74 @@ export function useAutoOnePage(resumeType: string) {
 }
 
 function useInitMarginTop(container: HTMLElement) {
-  const titles = Array.from(container.querySelectorAll('h1,h2,h3,h4,h5,h6,li,p')), differenceConfig: OptimalizingItem[] = [];
-  const visited = new Set, map = new Map
-  for (let title of titles) {
-    const tag = title.tagName.toLowerCase();
+  const titles = Array.from(container.querySelectorAll('h1,h2,h3,h4,h5,h6,li,p')),
+    differenceConfig: OptimalizingItem[] = []
+  const visited = new Set(),
+    map = new Map()
+  for (const title of titles) {
+    const tag = title.tagName.toLowerCase()
     map.set(tag, (map.get(tag) || 0) + 1)
     if (visited.has(tag)) {
-      continue;
+      continue
     }
-    visited.add(tag);
-    const top = +getComputedStyle(title, null).marginTop.slice(0, -2);
+    visited.add(tag)
+    const top = +getComputedStyle(title, null).marginTop.slice(0, -2)
     const cur = { ...optimalizing[tag as keyof Optimalizing], top, tag }
     // 计算优先级
-    let optimal = cur.top / cur.max;
-    cur.optimal = optimal;
-    differenceConfig.push(cur);
+    const optimal = cur.top / cur.max
+    cur.optimal = optimal
+    differenceConfig.push(cur)
   }
-  return { differenceConfig, map };
+  return { differenceConfig, map }
 }
 
-function useOnePageCSSContent(optimaliza: OptimalizingItem[], difference: number, map: Map<string, number>, cacheKey: string) {
-  const heap = new Heap((x, y) => difference < 0 ? x.optimal > y.optimal : x.optimal < y.optimal);
-  for (let optimal of optimaliza) {
-    heap.push(optimal);
+function useOnePageCSSContent(
+  optimaliza: OptimalizingItem[],
+  difference: number,
+  map: Map<string, number>,
+  cacheKey: string
+) {
+  const heap = new Heap((x, y) => (difference < 0 ? x.optimal > y.optimal : x.optimal < y.optimal))
+  for (const optimal of optimaliza) {
+    heap.push(optimal)
   }
   if (difference < 0) {
     // 大顶堆 (收缩要减掉内边距 暂时这么写)
     while (difference++ < 20) {
-      let topEl = heap.pop();
-      topEl!.top = topEl!.top - 1 / (map.get(topEl!.tag) || 1);
-      topEl!.optimal = topEl!.top / topEl!.max;
+      const topEl = heap.pop() as OptimalizingItem
+      topEl.top = topEl.top - 1 / (map.get(topEl.tag) || 1)
+      topEl.optimal = topEl.top / topEl.max
       heap.push(topEl as OptimalizingItem)
     }
   } else {
     // 小顶堆 (拉伸也要减掉内边距 思路同上)
     while (difference-- > 20) {
-      let topEl = heap.pop();
-      topEl!.top = topEl!.top + 1 / (map.get(topEl!.tag) || 1);
-      topEl!.optimal = topEl!.top / topEl!.max;
+      const topEl = heap.pop() as OptimalizingItem
+      topEl.top = topEl.top + 1 / (map.get(topEl.tag) || 1)
+      topEl.optimal = topEl.top / topEl.max
       heap.push(topEl as OptimalizingItem)
     }
   }
   // 创建样式表
-  const styleDOM = createStyle(), prefix = '.jufe ';
-  let cssText = '';
-  styleDOM.setAttribute(cacheKey, 'true');
+  const styleDOM = createStyle(),
+    prefix = '.jufe '
+  let cssText = ''
+  styleDOM.setAttribute(cacheKey, 'true')
 
-  for (let optimal of heap.container) {
-    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px; }`;
+  for (const optimal of heap.container) {
+    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px; }`
   }
-  styleDOM.textContent = cssText;
-  document.head.appendChild(styleDOM);
+  styleDOM.textContent = cssText
+  document.head.appendChild(styleDOM)
 }
 /* 一键重置 */
 export function restResumeContent(resumeType: string) {
-  localStorage.removeItem(`${CUSTOM_CSS_STYLE}-${resumeType}`);
-  localStorage.removeItem(`${CUSTOM_MARKDOWN_PRIMARY_COLOR}-${resumeType}`);
-  localStorage.removeItem(`${CUSTOM_MARKDOWN_PRIMARY_BG_COLOR}-${resumeType}`);
-  localStorage.removeItem(`${MARKDOWN_FONT}-${resumeType}`);
-  localStorage.removeItem(`${AUTO_ONE_PAGE}-${resumeType}`);
-  localStorage.removeItem(`markdown-content-${resumeType}`);
+  localStorage.removeItem(`${CUSTOM_CSS_STYLE}-${resumeType}`)
+  localStorage.removeItem(`${CUSTOM_MARKDOWN_PRIMARY_COLOR}-${resumeType}`)
+  localStorage.removeItem(`${CUSTOM_MARKDOWN_PRIMARY_BG_COLOR}-${resumeType}`)
+  localStorage.removeItem(`${MARKDOWN_FONT}-${resumeType}`)
+  localStorage.removeItem(`${AUTO_ONE_PAGE}-${resumeType}`)
+  localStorage.removeItem(`markdown-content-${resumeType}`)
   successMessage('重置成功 2秒后将刷新')
-  setTimeout(() => location.reload(), 2000);
+  setTimeout(() => location.reload(), 2000)
 }

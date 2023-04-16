@@ -1,25 +1,31 @@
-<script setup lang='ts'>
-import nav from "@/common/nav/nav"
-import RenderIcons from "@/components/renderIcons.vue";
-import { ref } from "vue";
+<script setup lang="ts">
+import nav from '@/common/nav/nav'
+import RenderIcons from '@/components/renderIcons.vue'
+import { ref } from 'vue'
 
-const toggle = ref(false);
+const toggle = ref(false)
 defineEmits(['export-md', 'import-md'])
 </script>
 
 <template>
   <ul class="nav">
-    <li v-for="navItem in nav">
+    <li v-for="(navItem, idx) in nav" :key="idx">
       <template v-if="navItem.children">
         <el-dropdown class="el-dropdown">
           <!-- 父菜单 -->
           <div class="el-dropdown-link">{{ navItem.name }}</div>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item v-for="subNavItem in navItem.children">
+              <el-dropdown-item v-for="(subNavItem, sidx) in navItem.children" :key="sidx">
                 <!-- 子菜单 -->
-                <label for="import_md" v-if="subNavItem.startsWith('导入')">导入MD
-                  <input accept=".md" id="import_md" type="file" @change="$emit('import-md', $event)" />
+                <label for="import_md" v-if="subNavItem.startsWith('导入')">
+                  导入MD
+                  <input
+                    accept=".md"
+                    id="import_md"
+                    type="file"
+                    @change="$emit('import-md', $event)"
+                  />
                 </label>
                 <span v-else @click="$emit('export-md')">{{ subNavItem }}</span>
               </el-dropdown-item>
@@ -29,8 +35,10 @@ defineEmits(['export-md', 'import-md'])
       </template>
       <!-- 不是级联菜单走这里 -->
       <template v-else>
-        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
-        <RenderIcons v-else :toggle='toggle'>
+        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{
+          navItem.name
+        }}</router-link>
+        <RenderIcons v-else :toggle="toggle">
           <span @click="toggle = !toggle">{{ navItem.name }}</span>
         </RenderIcons>
       </template>
@@ -38,7 +46,7 @@ defineEmits(['export-md', 'import-md'])
   </ul>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .el-dropdown {
   line-height: inherit;
 

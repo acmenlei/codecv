@@ -1,7 +1,7 @@
-import axios from "axios"
+import axios from 'axios'
 
-import { Tip } from "@/common/tip"
-import { errorMessage } from "@/common/message"
+import { Tip } from '@/common/tip'
+import { errorMessage } from '@/common/message'
 
 const service = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL as string,
@@ -9,36 +9,46 @@ const service = axios.create({
   withCredentials: true
 })
 // 请求拦截 统一配置
-service.interceptors.request.use(config => {
-  // showLoading()
-  if (config.url === '/fileUpload/upload') {
-    (config as any).headers['Content-Type'] = 'multipart/form-data';
+service.interceptors.request.use(
+  config => {
+    // showLoading()
+    if (config.url === '/fileUpload/upload') {
+      ;(config as any).headers['Content-Type'] = 'multipart/form-data'
+    }
+    return config
+  },
+  err => {
+    // hideLoading()
+    errorMessage(err)
+    return Promise.reject(new Error(err))
   }
-  return config
-}, err => {
-  // hideLoading()
-  errorMessage(err)
-  return Promise.reject(new Error(err))
-})
+)
 // 统一在此处解构一层data
-service.interceptors.response.use(data => {
-  return data.data;
-}, err => {
-  // hideLoading()
-  errorMessage(err)
-  return Promise.reject(new Error(err))
-})
+service.interceptors.response.use(
+  data => {
+    return data.data
+  },
+  err => {
+    // hideLoading()
+    errorMessage(err)
+    return Promise.reject(new Error(err))
+  }
+)
 
 // get method
 export function get(url: string, params: any = {}) {
   return new Promise((resolved, rejected) => {
-    service.get(url, params)
-      .then((resp) => {
-        resolved(resp)
-      }, err => {
-        errorMessage(Tip.NETWORK_ERROR)
-        rejected(err)
-      })
+    service
+      .get(url, params)
+      .then(
+        resp => {
+          resolved(resp)
+        },
+        err => {
+          errorMessage(Tip.NETWORK_ERROR)
+          rejected(err)
+        }
+      )
       .catch(err => {
         // 弹出错误提示
         rejected(err)
@@ -49,13 +59,17 @@ export function get(url: string, params: any = {}) {
 // post method
 export function post(url: string, data: any = {}) {
   return new Promise((resolved, rejected) => {
-    service.post(url, data)
-      .then(resp => {
-        resolved(resp)
-      }, err => {
-        errorMessage(Tip.NETWORK_ERROR)
-        rejected(err)
-      })
+    service
+      .post(url, data)
+      .then(
+        resp => {
+          resolved(resp)
+        },
+        err => {
+          errorMessage(Tip.NETWORK_ERROR)
+          rejected(err)
+        }
+      )
       .catch(err => {
         // 弹出错误提示
         errorMessage(Tip.NETWORK_ERROR)

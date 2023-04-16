@@ -1,6 +1,6 @@
-<script setup lang='ts'>
-import CommunityLeft from './components/communityLeft/communityLeft.vue';
-import CommunityRight from './components/communityRight/communityRight.vue';
+<script setup lang="ts">
+import CommunityLeft from './components/communityLeft/communityLeft.vue'
+import CommunityRight from './components/communityRight/communityRight.vue'
 // import CommunityPublish from './components/communityLeft/components/publish/publish.vue';
 </script>
 
@@ -16,7 +16,7 @@ import CommunityRight from './components/communityRight/communityRight.vue';
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .community {
   max-width: 1200px;
   /* min-width: 800px; */

@@ -1,16 +1,16 @@
-<script setup lang='ts'>
-import navMenu from "./nav.vue";
-import RenderDrawer from "@/components/renderDrawer.vue"
-import { onActivated, ref } from "vue";
+<script setup lang="ts">
+import navMenu from './nav.vue'
+import RenderDrawer from '@/components/renderDrawer.vue'
+import { onActivated, ref } from 'vue'
 
-const emits = defineEmits(['download-dynamic', 'download-native', 'download-md', 'import-md']);
-const fileName = ref('');
-const flag = ref(false);
+const emits = defineEmits(['download-dynamic', 'download-native', 'download-md', 'import-md'])
+const fileName = ref('')
+const flag = ref(false)
 
-onActivated(() => fileName.value = document.title)
+onActivated(() => (fileName.value = document.title))
 
 const exportFile = (type: string) => {
-  document.title = fileName.value;
+  document.title = fileName.value
   emits(`download-${type}` as any, fileName.value)
 }
 
@@ -19,7 +19,7 @@ const importFile = (event: any) => {
 }
 
 const visitRemote = function () {
-  window.open('https://github.com/acmenlei/markdown-resume-to-pdf');
+  window.open('https://github.com/acmenlei/markdown-resume-to-pdf')
 }
 </script>
 
@@ -34,7 +34,7 @@ const visitRemote = function () {
         <i class="iconfont icon-github github" @click="visitRemote"></i>
       </el-tooltip>
       <el-tooltip content="问题反馈" placement="bottom-end">
-        <i class="iconfont icon-problem problem" @click="() => flag = !flag"></i>
+        <i class="iconfont icon-problem problem" @click="() => (flag = !flag)"></i>
       </el-tooltip>
       <button class="exportor" @click="exportFile('dynamic')">动态导出PDF</button>
       <button class="exportor" @click="exportFile('native')">打印机导出PDF</button>
@@ -43,11 +43,11 @@ const visitRemote = function () {
   <RenderDrawer :flag="flag" />
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 #header {
   background: #fff;
   z-index: 9;
-  transition: background .5s;
+  transition: background 0.5s;
   box-shadow: 0 0 10px 0 #d0d3db;
   height: 60px;
   margin-bottom: 20px;
@@ -67,7 +67,6 @@ const visitRemote = function () {
 
     &:focus {
       border-bottom: 1px solid var(--theme);
-      ;
     }
   }
 
@@ -80,7 +79,7 @@ const visitRemote = function () {
     cursor: pointer;
 
     &:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 

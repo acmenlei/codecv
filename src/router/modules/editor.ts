@@ -1,4 +1,4 @@
-import Layout from "@/layout/main.vue"
+import Layout from '@/layout/main.vue'
 
 export default {
   name: 'editor',
@@ -6,9 +6,9 @@ export default {
   component: Layout,
   children: [
     {
-      path: "/editor",
+      path: '/editor',
       name: 'editor',
-      component: () => import("@/views/editor/editor.vue")
+      component: () => import('@/views/editor/editor.vue')
     }
   ]
 }

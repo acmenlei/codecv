@@ -1,6 +1,6 @@
-<script setup lang='ts'>
-withDefaults(defineProps<{ width?: string, flag: boolean }>(), { width: '500px' })
-defineEmits(['close']);
+<script setup lang="ts">
+withDefaults(defineProps<{ width?: string; flag: boolean }>(), { width: '500px' })
+defineEmits(['close'])
 </script>
 
 <template>
@@ -12,7 +12,7 @@ defineEmits(['close']);
   <div class="mask" v-if="flag" @click="$emit('close')"></div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .toast-modal-container {
   z-index: 999;
   position: fixed;
@@ -31,7 +31,7 @@ defineEmits(['close']);
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 100;
 }
 </style>

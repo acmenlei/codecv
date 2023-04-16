@@ -1,6 +1,6 @@
-<script setup lang='ts'>
-import { numFormat } from "@/common/utils/format";
-import wechat from "/wechat.jpeg";
+<script setup lang="ts">
+import { numFormat } from '@/common/utils/format'
+import wechat from '/wechat.jpeg'
 
 const defaultUserInfo = {
   uid: 0,
@@ -17,14 +17,23 @@ const defaultUserInfo = {
 
 <template>
   <article class="pointer">
-    <user-info :user-info='defaultUserInfo' />
+    <user-info :user-info="defaultUserInfo" />
     <h3>《关于社区暂时停止服务的公告》</h3>
     <p class="intro line-4">
       各位兄弟姐妹，之前的服务器已经到期了，所以社区暂时就不提供了，但是数据都是在的，以后恢复正常之后账号都是可以正常使用的！简历服务也是可以正常使用的，别说我跑路了😅！有问题或者有更好的建议可以联系我的微信，也欢迎更多志同道合的朋友一起来维护这个项目！
     </p>
     <div class="covers-container">
-      <el-image :src="wechat" :preview-src-list="[wechat]" :initial-index="0" fit="cover" :lazy="true" loading="lazy"
-        class="mr-10 cover-item" :preview-teleported="true" :hide-on-click-modal="true" />
+      <el-image
+        :src="wechat"
+        :preview-src-list="[wechat]"
+        :initial-index="0"
+        fit="cover"
+        :lazy="true"
+        loading="lazy"
+        class="mr-10 cover-item"
+        :preview-teleported="true"
+        :hide-on-click-modal="true"
+      />
     </div>
     <div class="article-bottom">
       <div class="operator-group">
@@ -36,14 +45,17 @@ const defaultUserInfo = {
           <i class="iconfont icon-comment font-20"></i>
           {{ numFormat(99999) }}
         </span>
-        <span class="visit-people"><i class="iconfont icon-browse font-20"></i> 浏览量 {{ numFormat(99999) }}</span>
+        <span class="visit-people">
+          <i class="iconfont icon-browse font-20"></i>
+          浏览量 {{ numFormat(99999) }}
+        </span>
       </div>
       <span class="tag pointer">#社区公告</span>
     </div>
   </article>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 article {
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -58,7 +70,7 @@ article {
   }
 
   .intro:hover {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   &:last-child {
@@ -79,7 +91,7 @@ article {
       color: var(--theme);
 
       &:hover {
-        opacity: .7;
+        opacity: 0.7;
       }
     }
 
@@ -96,6 +108,5 @@ article {
       }
     }
   }
-
 }
 </style>

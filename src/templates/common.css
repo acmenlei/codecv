@@ -52,7 +52,7 @@
 
 .markdown-transform-html blockquote::before {
   position: absolute;
-  content: "";
+  content: '';
   display: block;
   width: 6px;
   background: #ccc;
@@ -65,7 +65,7 @@
 .markdown-transform-html code.single-code {
   color: #567;
   padding: 3px 7px;
-  font-size: .85rem;
+  font-size: 0.85rem;
   background: #eee;
   margin-right: 2px;
 }

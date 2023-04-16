@@ -1,0 +1,6 @@
+public
+node_modules
+dist
+src/assets/*
+build/*
+service

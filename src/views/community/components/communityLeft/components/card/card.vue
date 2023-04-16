@@ -1,11 +1,12 @@
-<script setup lang='ts'>
-import UserInfo from '@/components/userInfo.vue';
-import { useOperator, useCovers } from "./hook";
-import useUserStore from "@/store/modules/user"
-import { computed } from 'vue';
-import { numFormat } from '@/common/utils/format';
+<script setup lang="ts">
+import UserInfoComp from '@/components/userInfo.vue'
+import { useOperator, useCovers } from './hook'
+import useUserStore from '@/store/modules/user'
+import { computed } from 'vue'
+import { numFormat } from '@/common/utils/format'
+import { IArticle } from '@/types/type'
 
-const props = defineProps<{ article: IArticle }>();
+const props = defineProps<{ article: IArticle }>()
 const emits = defineEmits(['reQueryList', 'queryProfessional', 'remove'])
 
 const clicked = computed(() => props.article.likes.includes(userInfo.uid))
@@ -13,30 +14,33 @@ const hasAuthor = computed(() => userInfo.uid == props.article.authorId)
 const articleId = computed(() => props.article.articleId)
 const articleContent = computed(() => props.article.content)
 
-const { covers } = useCovers(articleContent);
-const { userInfo } = useUserStore();
-const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emits, clicked);
+const { covers } = useCovers(articleContent)
+const { userInfo } = useUserStore()
+const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emits, clicked)
 </script>
 
 <template>
   <article class="pointer">
-    <user-info :user-info='article.authorInfo' :publish-time="article.createTime" />
+    <user-info-comp :user-info="article.authorInfo" :publish-time="article.createTime" />
     <h3 @click="useDetail(article)">{{ article.title }}</h3>
     <p class="intro line-4" @click="useDetail(article)">
       {{ article.introduce }}
     </p>
     <!-- 图片插入 -->
     <div class="covers-container" v-if="covers.length">
-      <el-image 
-        :src="cover" v-for="(cover, idx) in covers" 
-        :preview-src-list="covers" 
-        :initial-index="idx" 
+      <el-image
+        :key="idx"
+        :src="cover"
+        v-for="(cover, idx) in covers"
+        :preview-src-list="covers"
+        :initial-index="idx"
         fit="cover"
         :lazy="true"
         loading="lazy"
-        class="mr-10 cover-item" 
-        :preview-teleported="true" 
-        :hide-on-click-modal="true"/>
+        class="mr-10 cover-item"
+        :preview-teleported="true"
+        :hide-on-click-modal="true"
+      />
     </div>
     <div class="article-bottom">
       <div class="operator-group">
@@ -58,15 +62,19 @@ const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emit
             <i class="iconfont icon-delete font-20"></i>
           </el-tooltip>
         </span>
-        <span class="visit-people"><i class="iconfont icon-browse font-20"></i> 浏览量 {{ numFormat(article.hot) }}</span>
+        <span class="visit-people">
+          <i class="iconfont icon-browse font-20"></i>
+          浏览量 {{ numFormat(article.hot) }}
+        </span>
       </div>
-      <span class="tag pointer" @click="$emit('queryProfessional', article.professional)">#{{ article.professional
-      }}</span>
+      <span class="tag pointer" @click="$emit('queryProfessional', article.professional)"
+        >#{{ article.professional }}</span
+      >
     </div>
   </article>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 article {
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -81,7 +89,7 @@ article {
   }
 
   .intro:hover {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   &:last-child {
@@ -102,7 +110,7 @@ article {
       color: var(--theme);
 
       &:hover {
-        opacity: .7;
+        opacity: 0.7;
       }
     }
 
@@ -119,6 +127,5 @@ article {
       }
     }
   }
-
 }
 </style>

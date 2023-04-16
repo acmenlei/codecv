@@ -1,9 +1,8 @@
-@import url("@/assets/icon/iconfont.css");
+@import url('@/assets/icon/iconfont.css');
 
 @font-face {
-  font-family: "Menlo-Regular";
-  src: url("../assets/font/Menlo-Regular.ttf") format("ttf"),
-    url("../assets/font/monaco.ttf") format("ttf");
+  font-family: 'Menlo-Regular';
+  src: url('../assets/font/Menlo-Regular.ttf') format('ttf'), url('../assets/font/monaco.ttf') format('ttf');
   font-display: swap;
 }
 
@@ -13,9 +12,8 @@
 // }
 
 @font-face {
-  font-family: "仓耳渔阳体 W02";
-  src: url("../assets/font/仓耳渔阳体W02.woff2") format("woff2"),
-    url("../assets/font/仓耳渔阳体W02.woff") format("woff");
+  font-family: '仓耳渔阳体 W02';
+  src: url('../assets/font/仓耳渔阳体W02.woff2') format('woff2'), url('../assets/font/仓耳渔阳体W02.woff') format('woff');
   font-display: swap;
 }
 
@@ -41,7 +39,7 @@ a.ripple-effect {
     left: 50%;
     background: #151515;
     transform: translate(-50%, -50%);
-    content: "";
+    content: '';
     border-radius: 50%;
   }
 
@@ -49,7 +47,7 @@ a.ripple-effect {
     from {
       height: 0;
       width: 0;
-      opacity: .6;
+      opacity: 0.6;
     }
 
     to {
@@ -58,7 +56,7 @@ a.ripple-effect {
       opacity: 0;
     }
   }
-  
+
   &:active {
     &::after {
       animation: ripple 1s;
@@ -70,7 +68,7 @@ a.ripple-effect {
   display: flex;
   margin-left: 50px;
 
-  &>li {
+  & > li {
     list-style: none;
     margin: 0 20px;
     height: 60px;
@@ -117,7 +115,7 @@ a.ripple-effect {
   font-weight: bold;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     height: 4px;
@@ -151,17 +149,17 @@ a.ripple-effect {
 
 .logo {
   cursor: pointer;
-  transition: transform .5s;
+  transition: transform 0.5s;
 
   &:hover {
     will-change: transform;
-    transform: scale(.9) !important;
+    transform: scale(0.9) !important;
   }
 }
 
 .hover {
   &:hover {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 
@@ -216,7 +214,7 @@ a.ripple-effect {
   cursor: pointer;
 
   &:hover {
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 
@@ -237,7 +235,7 @@ a.ripple-effect {
     cursor: pointer;
     margin-top: 10px;
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }
@@ -321,16 +319,16 @@ a.ripple-effect {
   margin-right: 5px;
   border-radius: 5px;
   /* background: var(--theme); */
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #8170ff 100%);
+  background-color: #4158d0;
+  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #8170ff 100%);
   background-size: 400%;
   color: white;
   cursor: pointer;
   animation: move 6s linear infinite;
-  transition: transform .5s;
+  transition: transform 0.5s;
 
   &:hover {
-    opacity: .8;
+    opacity: 0.8;
     transform: scale(0.9);
   }
 }

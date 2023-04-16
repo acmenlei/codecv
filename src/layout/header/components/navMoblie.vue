@@ -1,8 +1,7 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 // import Logo from "@/components/logo.vue";
-import outNav from "@/common/nav/outNav"
-import User from "./user.vue";
-
+import outNav from '@/common/nav/outNav'
+import User from './user.vue'
 </script>
 
 <template>
@@ -11,16 +10,20 @@ import User from "./user.vue";
       <i class="iconfont icon-home ml-10 bold"></i>
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item v-for="navItem in outNav" @click="$router.push(navItem.path)">{{ navItem.name
-          }}</el-dropdown-item>
+          <el-dropdown-item
+            :key="idx"
+            v-for="(navItem, idx) in outNav"
+            @click="$router.push(navItem.path)"
+            >{{ navItem.name }}</el-dropdown-item
+          >
         </el-dropdown-menu>
       </template>
     </el-dropdown>
-    <User/>
+    <User />
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .header-moblie {
   height: 60px;
   display: flex;

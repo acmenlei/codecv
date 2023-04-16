@@ -1,10 +1,10 @@
-<script setup lang='ts'>
-import NavBar from '@/components/navBar.vue';
-import resumeCard from './components/resumeCard.vue';
-import { templateCategory } from './constant';
-import { useCategory } from "./hook";
+<script setup lang="ts">
+import NavBar from '@/components/navBar.vue'
+import resumeCard from './components/resumeCard.vue'
+import { templateCategory } from './constant'
+import { useCategory } from './hook'
 
-const { queryCategory, data } = useCategory();
+const { queryCategory, data } = useCategory()
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const { queryCategory, data } = useCategory();
     <div class="resume-left-container content-card" data-aos="fade-right">
       <NavBar button="创作模板" :tabs="templateCategory" @tab-click="queryCategory" />
       <div class="resume-card-container">
-        <resume-card v-for="theme in   data" :key="theme.id" :theme="theme" />
+        <resume-card v-for="theme in data" :key="theme.id" :theme="theme" />
       </div>
     </div>
     <div class="resume-right-container content-card" data-aos="fade-left">
@@ -23,7 +23,7 @@ const { queryCategory, data } = useCategory();
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .resume-container {
   max-width: 1200px;
   margin: 20px auto;
@@ -40,7 +40,7 @@ const { queryCategory, data } = useCategory();
   .resume-right-container {
     display: none;
   }
-  .resume-left-container  {
+  .resume-left-container {
     margin-left: 20px;
   }
 }

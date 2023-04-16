@@ -1,21 +1,21 @@
-<script setup lang='ts'>
-import { successMessage } from "@/common/message";
-import data from "@/assets/icon/iconfont.json"
-import { ref } from "vue";
+<script setup lang="ts">
+import { successMessage } from '@/common/message'
+import data from '@/assets/icon/iconfont.json'
+import { ref } from 'vue'
 
 defineProps<{ toggle: boolean }>()
 
-type Icon = typeof data.glyphs[0];
+type Icon = (typeof data.glyphs)[0]
 
 const clipborad = (item: Icon) => {
   successMessage('已复制到剪贴板，你可以直接粘贴')
   navigator.clipboard.writeText(`icon:${item.name} `)
 }
-const iconData = ref<Icon[]>(data.glyphs.slice(0, 20));
+const iconData = ref<Icon[]>(data.glyphs.slice(0, 20))
 // console.log(data.glyphs.length)
 const pageChange = function (page: number) {
-  iconData.value = data.glyphs.slice((page - 1) * 20, page * 20);
-} 
+  iconData.value = data.glyphs.slice((page - 1) * 20, page * 20)
+}
 </script>
 
 <template>
@@ -23,17 +23,28 @@ const pageChange = function (page: number) {
     <slot></slot>
     <div class="render-modal" v-if="toggle">
       <div class="render-modal-icons">
-        <i :class="['iconfont', `icon-${item.name}`]" @click="clipborad(item)" v-for="item in iconData">
+        <i
+          v-for="(item, idx) in iconData"
+          :key="idx"
+          :class="['iconfont', `icon-${item.name}`]"
+          @click="clipborad(item)"
+        >
           <p>{{ item.name }}</p>
         </i>
       </div>
-      <el-pagination :page-size="20" background layout="prev, pager, next" :total="data.glyphs.length" class="mt-4 page"
-        @current-change="pageChange" />
+      <el-pagination
+        :page-size="20"
+        background
+        layout="prev, pager, next"
+        :total="data.glyphs.length"
+        class="mt-4 page"
+        @current-change="pageChange"
+      />
     </div>
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 #toolTip {
   position: relative;
   z-index: 999;
@@ -61,7 +72,7 @@ const pageChange = function (page: number) {
       height: 60px;
 
       &:hover {
-        opacity: .8;
+        opacity: 0.8;
       }
 
       p {
@@ -75,6 +86,5 @@ const pageChange = function (page: number) {
       padding: 0 20px 20px 20px;
     }
   }
-
 }
 </style>

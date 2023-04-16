@@ -1,4 +1,4 @@
-import Layout from "@/layout/main.vue"
+import Layout from '@/layout/main.vue'
 
 export default {
   name: 'home',
@@ -6,9 +6,9 @@ export default {
   component: Layout,
   children: [
     {
-      path: "/home",
+      path: '/home',
       name: 'home',
-      component: () => import("@/views/home/home.vue")
+      component: () => import('@/views/home/home.vue')
     }
   ]
 }

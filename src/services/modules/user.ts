@@ -1,11 +1,12 @@
-import { post } from "../config";
+import { IUser, IUserInfo } from '@/types/type'
+import { post } from '../config'
 
 export function login(data: IUser) {
-  return post('/user/login', data);
+  return post('/user/login', data)
 }
 
 export function registerUser(data: IUser) {
-  return post('/user/register', data);
+  return post('/user/register', data)
 }
 
 export function updateUserInfo(data: IUserInfo) {
@@ -13,17 +14,17 @@ export function updateUserInfo(data: IUserInfo) {
 }
 
 export function logout(data: { username: string }) {
-  return post('/user/logout', data);
+  return post('/user/logout', data)
 }
 
-export function verify(data: { token: string, username: string }) {
-  return post('/user/verify', data);
+export function verify(data: { token: string; username: string }) {
+  return post('/user/verify', data)
 }
 
 export function queryUserInfoById(data: { uid: number }) {
-  return post('/user/queryUserById', data);
+  return post('/user/queryUserById', data)
 }
 
-export function pwdUpdate(data: { nPassword: string, oPassword: string, username: string }) {
+export function pwdUpdate(data: { nPassword: string; oPassword: string; username: string }) {
   return post('/user/pwdUpdate', data)
-} 
+}

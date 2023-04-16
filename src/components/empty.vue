@@ -1,15 +1,15 @@
-<script setup lang='ts'>
-defineProps<{ title: string }>();
+<script setup lang="ts">
+defineProps<{ title: string }>()
 </script>
 
 <template>
   <div class="empty content-card">
-    <img width="150" src="/empty-placeholder.svg" alt="空占位符">
+    <img width="150" src="/empty-placeholder.svg" alt="空占位符" />
     <p>{{ title }}</p>
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .empty {
   text-align: center;
   color: #666;

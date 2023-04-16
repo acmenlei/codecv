@@ -20,5 +20,5 @@ export const professionals = [
   '土木工程师',
   '芯片研发',
   '软件研发',
-  '公务员',
+  '公务员'
 ]

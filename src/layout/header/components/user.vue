@@ -1,42 +1,62 @@
-<script setup lang='ts'>
-import ToastModal from "@/components/toast-modal/toastModal.vue";
-import useUserStore from "@/store/modules/user"
-import Profile from "@/components/profile.vue";
-import PWDUpdate from "@/components/pwd-update/PWDUpdate.vue";
-import NavBar from "@/components/navBar.vue";
-import CRM from "@/components/comment-reply-msg/crm.vue";
+<script setup lang="ts">
+import ToastModal from '@/components/toast-modal/toastModal.vue'
+import useUserStore from '@/store/modules/user'
+import Profile from '@/components/profile.vue'
+import PWDUpdate from '@/components/pwd-update/PWDUpdate.vue'
+import NavBar from '@/components/navBar.vue'
+import CRM from '@/components/comment-reply-msg/crm.vue'
 // import ChatRoom from "@/components/chat-room/chat.vue";
 
-import { useRouter } from "vue-router";
-import { useUserLogin, useUpdateInfoModel, useUpdatePWDModel, useNavigator, useUpdateInfo, useRegister, useMessage } from "../hook"
-import { useNotificationList } from "@/components/comment-reply-msg/hook";
+import { useRouter } from 'vue-router'
+import {
+  useUserLogin,
+  useUpdateInfoModel,
+  useUpdatePWDModel,
+  useNavigator,
+  useUpdateInfo,
+  useRegister,
+  useMessage
+} from '../hook'
+import { useNotificationList } from '@/components/comment-reply-msg/hook'
 
-const router = useRouter();
-const { user, login, logout } = useUserLogin();
-const { infoModel, setInfoModel } = useUpdateInfoModel();
-const { updateInfo } = useUpdateInfo(setInfoModel);
-const { PWDModel, setPWDModel } = useUpdatePWDModel();
-const { loginModelToggle, userInfo, genVerify, loginState } = useUserStore();
-const { model, registerUser, toggleModel } = useRegister();
-const { messageModal, toggleMessageModal, tab, msgTabChange } = useMessage();
-const { data, total, commentTotal, readNotification, pageNumChange } = useNotificationList(toggleMessageModal);
+const router = useRouter()
+const { user, login, logout } = useUserLogin()
+const { infoModel, setInfoModel } = useUpdateInfoModel()
+const { updateInfo } = useUpdateInfo(setInfoModel)
+const { PWDModel, setPWDModel } = useUpdatePWDModel()
+const { loginModelToggle, userInfo, genVerify, loginState } = useUserStore()
+const { model, registerUser, toggleModel } = useRegister()
+const { messageModal, toggleMessageModal, tab, msgTabChange } = useMessage()
+const { data, total, commentTotal, readNotification, pageNumChange } =
+  useNotificationList(toggleMessageModal)
 </script>
 
 <template>
   <div class="user" data-aos="slide-left">
     <template v-if="loginState.logined">
-      <div class="user-creative mr-20 pointer primary" @click="useNavigator(router, '/community/editor')">
-        写面经 <i class="iconfont icon-edit font-20"></i>
+      <div
+        class="user-creative mr-20 pointer primary"
+        @click="useNavigator(router, '/community/editor')"
+      >
+        写面经
+        <i class="iconfont icon-edit font-20"></i>
       </div>
       <!-- 消息提示 -->
       <template v-if="commentTotal">
         <el-badge :value="commentTotal" class="mr-20">
-          <i class="iconfont icon-message1 message hover pointer font-25" @click="toggleMessageModal"></i>
+          <i
+            class="iconfont icon-message1 message hover pointer font-25"
+            @click="toggleMessageModal"
+          ></i>
         </el-badge>
       </template>
-      <i v-else class="iconfont icon-message1 message hover pointer font-25 mr-10" @click="toggleMessageModal"></i>
+      <i
+        v-else
+        class="iconfont icon-message1 message hover pointer font-25 mr-10"
+        @click="toggleMessageModal"
+      ></i>
       <!-- 用户信息 -->
-      <span class="user-nick  mr-10">{{ userInfo.nickName }}</span>
+      <span class="user-nick mr-10">{{ userInfo.nickName }}</span>
       <el-dropdown>
         <img @click="setInfoModel" class="pointer mr-10" :src="userInfo.avatar" />
         <template #dropdown>
@@ -56,7 +76,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
   </toast-modal>
   <!-- 密码修改 -->
   <toast-modal width="300px" :flag="PWDModel" @close="setPWDModel">
-    <PWD-update @cancel="setPWDModel"/>
+    <PWD-update @cancel="setPWDModel" />
   </toast-modal>
   <!-- 登录 -->
   <toast-modal @close="loginModelToggle" :flag="loginState.loginModel" width="300px">
@@ -83,13 +103,18 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
   <!-- 消息内容 -->
   <toast-modal @close="toggleMessageModal" :flag="messageModal" width="80%">
     <NavBar :tabs="['评论/回复']" @tab-click="msgTabChange" />
-    <CRM v-if="tab == 0" :data="data" :total="total" @read-notification="readNotification"
-      @query-data="pageNumChange" />
+    <CRM
+      v-if="tab == 0"
+      :data="data"
+      :total="total"
+      @read-notification="readNotification"
+      @query-data="pageNumChange"
+    />
     <!-- <chat-room v-if="tab == 1" /> -->
   </toast-modal>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .user {
   flex-basis: 250px;
   white-space: nowrap;
@@ -107,7 +132,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
 
   .user-nick {
     display: inline-block;
-    font-size: .9rem;
+    font-size: 0.9rem;
     margin-top: 10px;
     color: orange;
   }
@@ -119,7 +144,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
   }
   .login {
     &:hover {
-      opacity: .6;
+      opacity: 0.6;
     }
   }
 }
@@ -131,14 +156,14 @@ const { data, total, commentTotal, readNotification, pageNumChange } = useNotifi
   flex-direction: column;
 
   input {
-    border: .5px solid transparent;
+    border: 0.5px solid transparent;
     outline: none;
     background: #eee;
     border-radius: 8px;
     padding: 10px;
 
     &:focus {
-      border: .5px solid var(--theme);
+      border: 0.5px solid var(--theme);
     }
   }
 

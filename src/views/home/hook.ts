@@ -1,9 +1,9 @@
-import TypeNet from "typenet";
-import { onMounted } from "vue";
+import TypeNet from 'typenet'
+import { onMounted } from 'vue'
 
 export function useTypeNet() {
   onMounted(() => {
-    new TypeNet(".typenet-text", { speed: 80 })
+    new TypeNet('.typenet-text', { speed: 80 })
       .type('Resume Board ', { style: 'color: #fd79a8' })
       .type('是')
       .sleep(300)
@@ -30,7 +30,7 @@ export function useTypeNet() {
       .sleep(300)
       .remove(5)
       .sleep(300)
-      .type('代码.', { speed: 80, style: "color: var(--theme)" })
-      .start();
+      .type('代码.', { speed: 80, style: 'color: var(--theme)' })
+      .start()
   })
 }

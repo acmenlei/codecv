@@ -32,8 +32,5 @@ const homeOutNav = [
     path: 'https://gitee.com/codeleilei/markdown2pdf',
     icon: 'iconfont icon-gitee'
   }
-];
-export {
-  homeNav,
-  homeOutNav
-};
+]
+export { homeNav, homeOutNav }

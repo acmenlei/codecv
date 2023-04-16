@@ -1,13 +1,17 @@
-<script setup lang='ts'>
-import { timeLine } from "./constant";
-
+<script setup lang="ts">
+import { timeLine } from './constant'
 </script>
 
 <template>
   <div class="time-line" data-aos="fade-right">
     <h3>历史版本</h3>
     <el-timeline>
-      <el-timeline-item type="primary" v-for="(line, index) in timeLine" :key="index" :timestamp="line.timestamp">
+      <el-timeline-item
+        type="primary"
+        v-for="(line, index) in timeLine"
+        :key="index"
+        :timestamp="line.timestamp"
+      >
         <p>{{ line.version }}</p>
         <p>{{ line.content }}</p>
       </el-timeline-item>
@@ -15,7 +19,7 @@ import { timeLine } from "./constant";
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .time-line {
   max-width: 1200px;
   margin: 30px auto;

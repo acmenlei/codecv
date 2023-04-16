@@ -1,4 +1,4 @@
-import Layout from "@/layout/main.vue"
+import Layout from '@/layout/main.vue'
 
 export default {
   name: 'syntax',
@@ -6,9 +6,9 @@ export default {
   component: Layout,
   children: [
     {
-      path: "/syntax/helper",
+      path: '/syntax/helper',
       name: 'syntaxHelper',
-      component: () => import("@/views/syntax/syntax.vue")
+      component: () => import('@/views/syntax/syntax.vue')
     }
   ]
 }

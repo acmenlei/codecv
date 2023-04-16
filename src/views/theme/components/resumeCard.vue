@@ -1,9 +1,9 @@
-<script setup lang='ts'>
-import { themeType } from "@/templates/config";
-import { useRouter } from "vue-router";
+<script setup lang="ts">
+import { themeType } from '@/templates/config'
+import { useRouter } from 'vue-router'
 
-defineProps<{ theme: themeType }>();
-const router = useRouter();
+defineProps<{ theme: themeType }>()
+const router = useRouter()
 
 const edit = (type: string) => {
   router.push({ path: '/editor', query: { type } })
@@ -20,7 +20,7 @@ const edit = (type: string) => {
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .resume-card {
   box-shadow: 0 0 10px 3px #ddd;
   margin: 0 20px 50px 0;
@@ -28,7 +28,7 @@ const edit = (type: string) => {
   height: 240px;
   position: relative;
   text-align: center;
-  transition: transform .4s;
+  transition: transform 0.4s;
   color: #555;
   cursor: pointer;
 
@@ -44,7 +44,7 @@ const edit = (type: string) => {
     top: 0;
     left: 0;
     display: none;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.5);
 
     button {
       color: white;

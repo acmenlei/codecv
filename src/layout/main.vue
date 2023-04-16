@@ -1,6 +1,6 @@
-<script setup lang='ts'>
-import Header from "./header/header.vue"
-import Footer from "./footer.vue"
+<script setup lang="ts">
+import Header from './header/header.vue'
+import Footer from './footer.vue'
 </script>
 
 <template>
@@ -10,7 +10,10 @@ import Footer from "./footer.vue"
       <el-backtop :bottom="100" />
     </el-tooltip>
     <router-view v-slot="{ Component }">
-      <keep-alive :max="10" include="editor,syntax,update,theme,community,communityEditor,communityDetail">
+      <keep-alive
+        :max="10"
+        include="editor,syntax,update,theme,community,communityEditor,communityDetail"
+      >
         <component :is="Component" />
       </keep-alive>
     </router-view>

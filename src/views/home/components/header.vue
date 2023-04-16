@@ -1,36 +1,41 @@
-<script setup lang='ts'>
-import { homeNav, homeOutNav } from "@/common/nav/homeNav"
-import Logo from "@/components/logo.vue";
+<script setup lang="ts">
+import { homeNav, homeOutNav } from '@/common/nav/homeNav'
+import Logo from '@/components/logo.vue'
 function toOutNav(path: string) {
-  window.location.href = path;
+  window.location.href = path
 }
 </script>
 
 <template>
   <div id="header">
-    <Logo/>
+    <Logo />
     <ul class="nav" data-aos="zoom-out-right">
-      <li v-for="navItem in homeNav">
-        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{ navItem.name }}</router-link>
+      <li v-for="(navItem, idx) in homeNav" :key="idx">
+        <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{
+          navItem.name
+        }}</router-link>
       </li>
-      <li v-for="navItem in homeOutNav" @click="toOutNav(navItem.path)">
-        <i :class="navItem.icon" /> {{ navItem.name }}
+      <li v-for="(navItem, idx) in homeOutNav" @click="toOutNav(navItem.path)" :key="idx">
+        <i :class="navItem.icon" />
+        {{ navItem.name }}
       </li>
     </ul>
     <div class="operator" data-aos="zoom-out-left">
-      <button class='linear-color-btn' @click="$router.push('/editor?type=front_end')">
-        <i class="iconfont icon-technology "></i> 开始创作</button>
+      <button class="linear-color-btn" @click="$router.push('/editor?type=front_end')">
+        <i class="iconfont icon-technology"></i>
+        开始创作
+      </button>
     </div>
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 #header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 3;
-  transition: background .5s;
+  transition: background 0.5s;
   height: 60px;
   margin-bottom: 20px;
   display: flex;
@@ -43,7 +48,7 @@ function toOutNav(path: string) {
 
   .nav {
     li:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
 
     .iconfont {

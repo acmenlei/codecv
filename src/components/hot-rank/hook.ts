@@ -1,20 +1,22 @@
-import { useRouter } from 'vue-router';
-import { errorMessage } from "@/common/message";
-import { queryCommunityHotRank } from "@/services/modules/community";
-import { onMounted, ref } from "vue";
+import { useRouter } from 'vue-router'
+import { errorMessage } from '@/common/message'
+import { queryCommunityHotRank } from '@/services/modules/community'
+import { onMounted, ref } from 'vue'
+import { IArticle, IResponse } from '@/types/type'
 
 export function useHotRank() {
-  const hotList = ref<IArticle[]>([]), router = useRouter();
+  const hotList = ref<IArticle[]>([]),
+    router = useRouter()
 
   async function queryHotRankList() {
-    const hotRankList = await queryCommunityHotRank({ requireCount: 10 }) as IResponse<IArticle[]>
+    const hotRankList = (await queryCommunityHotRank({ requireCount: 10 })) as IResponse<IArticle[]>
     if (hotRankList.code === 200) {
-      hotList.value = hotRankList.data as IArticle[];
-      return;
+      hotList.value = hotRankList.data as IArticle[]
+      return
     }
-    errorMessage(hotRankList.msg);
+    errorMessage(hotRankList.msg)
   }
-  
+
   function useDetail(articleId: number) {
     router.push(`/community/detail?articleId=${articleId}`)
   }

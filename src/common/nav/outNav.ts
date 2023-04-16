@@ -2,7 +2,7 @@ const outNav = [
   {
     name: '简历制作',
     path: '/theme',
-    tooltip: false,
+    tooltip: false
   },
   {
     name: '求职社区',
@@ -21,4 +21,4 @@ const outNav = [
   }
 ]
 
-export default outNav;
+export default outNav

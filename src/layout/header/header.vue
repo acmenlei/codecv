@@ -1,8 +1,8 @@
-<script setup lang='ts'>
-import Logo from "@/components/logo.vue";
-import User from "./components/user.vue";
-import Nav from "./components/nav.vue";
-import NavMoblie from "./components/navMoblie.vue";
+<script setup lang="ts">
+import Logo from '@/components/logo.vue'
+import User from './components/user.vue'
+import Nav from './components/nav.vue'
+import NavMoblie from './components/navMoblie.vue'
 </script>
 
 <template>
@@ -18,7 +18,7 @@ import NavMoblie from "./components/navMoblie.vue";
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .header-out {
   width: 100%;
   background: white;
@@ -36,14 +36,17 @@ import NavMoblie from "./components/navMoblie.vue";
     align-items: center;
     text-align: center;
   }
+
   .header-800 {
     display: none;
   }
 }
+
 @media screen and (max-width: 800px) {
   .header-out .header {
     display: none;
   }
+
   .header-out .header-800 {
     display: block;
   }

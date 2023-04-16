@@ -1,145 +1,144 @@
-import { ElLoading } from "element-plus";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
-import { themes } from "@/templates/config";
-import "element-plus/es/components/loading/style/css";
-import { errorMessage, successMessage } from "../message";
+import { themes } from '@/templates/config'
+import { ElLoading } from 'element-plus'
+import 'element-plus/es/components/loading/style/css'
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
+import { errorMessage, successMessage } from '../message'
 
 export async function importCSS(name: string) {
-  const res = await import(`../../templates/${name}/style.scss`);
-  return res.default;
+  const res = await import(`../../templates/${name}/style.scss`)
+  return res.default
 }
 
 export const getCurrentTypeContent = (type: string): string => {
-  for (let theme of themes) {
+  for (const theme of themes) {
     if (type === theme.type) {
-      return theme.content;
+      return theme.content
     }
   }
-  return "";
-};
+  return ''
+}
 
 // 计算优先级 以及 处理优先级高的数据
 export const optimalizing = {
-  h1: { max: 30, min: -15, top: 0, tag: "", optimal: 0 },
-  h2: { max: 30, min: -15, top: 0, tag: "", optimal: 0 },
-  h3: { max: 20, min: -15, top: 0, tag: "", optimal: 0 },
-  h4: { max: 20, min: -15, top: 0, tag: "", optimal: 0 },
-  h5: { max: 20, min: -15, top: 0, tag: "", optimal: 0 },
-  h6: { max: 20, min: -15, top: 0, tag: "", optimal: 0 },
-  li: { max: 10, min: -15, top: 0, tag: "", optimal: 0 },
-  p: { max: 10, min: -15, top: 0, tag: "", optimal: 0 },
-};
-export type OptimalizingItem = (typeof optimalizing)["h1"];
+  h1: { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
+  h2: { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
+  h3: { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  h4: { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  h5: { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  h6: { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  li: { max: 10, min: -15, top: 0, tag: '', optimal: 0 },
+  p: { max: 10, min: -15, top: 0, tag: '', optimal: 0 }
+}
+export type OptimalizingItem = (typeof optimalizing)['h1']
 export type Optimalizing = {
-  h1: OptimalizingItem;
-  h2: OptimalizingItem;
-  h3: OptimalizingItem;
-  h4: OptimalizingItem;
-  h5: OptimalizingItem;
-  h6: OptimalizingItem;
-  li: OptimalizingItem;
-  p: OptimalizingItem;
-};
-const defaultCmp = (x: OptimalizingItem, y: OptimalizingItem) =>
-  x.optimal > y.optimal; // 默认是最大堆
+  h1: OptimalizingItem
+  h2: OptimalizingItem
+  h3: OptimalizingItem
+  h4: OptimalizingItem
+  h5: OptimalizingItem
+  h6: OptimalizingItem
+  li: OptimalizingItem
+  p: OptimalizingItem
+}
+const defaultCmp = (x: OptimalizingItem, y: OptimalizingItem) => x.optimal > y.optimal // 默认是最大堆
 const swap = (arr: OptimalizingItem[], i: number, j: number) =>
-  ([arr[i], arr[j]] = [arr[j], arr[i]]);
+  ([arr[i], arr[j]] = [arr[j], arr[i]])
 export class Heap {
   // 默认是最大堆
-  container: OptimalizingItem[] = [];
-  cmp = defaultCmp;
+  container: OptimalizingItem[] = []
+  cmp = defaultCmp
   constructor(cmp: (x: OptimalizingItem, y: OptimalizingItem) => boolean) {
-    this.cmp = cmp;
+    this.cmp = cmp
   }
   push(data: OptimalizingItem) {
-    const { container, cmp } = this;
-    container.push(data);
-    let index = container.length - 1;
+    const { container, cmp } = this
+    container.push(data)
+    let index = container.length - 1
     while (index) {
-      let parent = Math.floor((index - 1) / 2);
+      const parent = Math.floor((index - 1) / 2)
       if (!cmp(container[index], container[parent])) {
-        return;
+        return
       }
-      swap(container, index, parent);
-      index = parent;
+      swap(container, index, parent)
+      index = parent
     }
   }
   pop() {
-    const { container, cmp } = this;
+    const { container, cmp } = this
     if (!container.length) {
-      return null;
+      return null
     }
-    swap(container, 0, container.length - 1);
-    const res = container.pop();
-    const length = container.length;
+    swap(container, 0, container.length - 1)
+    const res = container.pop()
+    const length = container.length
     let index = 0,
-      exchange = index * 2 + 1;
+      exchange = index * 2 + 1
     while (exchange < length) {
       // 以最大堆的情况来说：如果有右节点，并且右节点的值大于左节点的值
-      let right = index * 2 + 2;
+      const right = index * 2 + 2
       if (right < length && cmp(container[right], container[exchange])) {
-        exchange = right;
+        exchange = right
       }
       if (!cmp(container[exchange], container[index])) {
-        break;
+        break
       }
-      swap(container, exchange, index);
-      index = exchange;
-      exchange = index * 2 + 1;
+      swap(container, exchange, index)
+      index = exchange
+      exchange = index * 2 + 1
     }
-    return res;
+    return res
   }
 
   top() {
-    if (this.container.length) return this.container[0];
-    return null;
+    if (this.container.length) return this.container[0]
+    return null
   }
 
   isEmpty() {
-    return this.container.length === 0;
+    return this.container.length === 0
   }
 }
 
 export function createStyle() {
-  return document.createElement("style");
+  return document.createElement('style')
 }
 
 export function createDIV() {
-  return document.createElement("div");
+  return document.createElement('div')
 }
 
 export function query(attr: string) {
-  return document.head.querySelector(`style[${attr}]`);
+  return document.head.querySelector(`style[${attr}]`)
 }
 
 export function removeHeadStyle(attr: string) {
-  query(attr)?.remove();
+  query(attr)?.remove()
 }
 
 export function getPdf(title: string, html: HTMLElement) {
-  const { showLoading, closeLoading } = useLoading();
-  showLoading("正在导出PDF 请耐心等待...");
+  const { showLoading, closeLoading } = useLoading()
+  showLoading('正在导出PDF 请耐心等待...')
   html2canvas(html, {
     allowTaint: false,
     logging: false,
     useCORS: true,
-    scale: 4,
+    scale: 4
   })
-    .then((canvas) => {
-      const pdf = new jsPDF("p", "mm", "a4"); // A4纸，纵向
-      const ctx = canvas.getContext("2d");
-      const a4w = 210;
-      const a4h = 297; // A4大小，210mm x 297mm，四边各保留10mm的边距，显示区域190x277
-      const imgHeight = Math.floor((a4h * canvas.width) / a4w); // 按A4显示比例换算一页图像的像素高度（必须向下取整，否则高度溢出）
-      let renderedHeight = 0;
+    .then(canvas => {
+      const pdf = new jsPDF('p', 'mm', 'a4') // A4纸，纵向
+      const ctx = canvas.getContext('2d')
+      const a4w = 210
+      const a4h = 297 // A4大小，210mm x 297mm，四边各保留10mm的边距，显示区域190x277
+      const imgHeight = Math.floor((a4h * canvas.width) / a4w) // 按A4显示比例换算一页图像的像素高度（必须向下取整，否则高度溢出）
+      let renderedHeight = 0
       while (renderedHeight < canvas.height) {
-        const page = document.createElement("canvas");
-        page.width = canvas.width;
-        page.height = Math.min(imgHeight, canvas.height - renderedHeight);
+        const page = document.createElement('canvas')
+        page.width = canvas.width
+        page.height = Math.min(imgHeight, canvas.height - renderedHeight)
         // 用getImageData剪裁指定区域，并画到前面创建的canvas对象中
         page
-          .getContext("2d")
+          .getContext('2d')
           ?.putImageData(
             ctx?.getImageData(
               0,
@@ -149,89 +148,90 @@ export function getPdf(title: string, html: HTMLElement) {
             ) as ImageData,
             0,
             0
-          );
+          )
         pdf.addImage(
-          page.toDataURL("image/jpeg", 1.0),
-          "JPEG",
+          page.toDataURL('image/jpeg', 1.0),
+          'JPEG',
           0,
           0,
           a4w,
           Math.min(a4h, (a4w * page.height) / page.width)
-        ); // 添加图像到页面，保留0mm边距
+        ) // 添加图像到页面，保留0mm边距
 
-        renderedHeight += imgHeight;
+        renderedHeight += imgHeight
         if (canvas.height - renderedHeight > 1) {
-          pdf.addPage(); // 如果后面还有内容，添加一个空页
+          pdf.addPage() // 如果后面还有内容，添加一个空页
         }
       }
       // 保存文件
-      pdf.save(`${title}.pdf`);
-      successMessage("PDF导出成功");
+      pdf.save(`${title}.pdf`)
+      successMessage('PDF导出成功')
     })
-    .catch((error) => {
-      errorMessage("导出失败, " + error);
+    .catch(error => {
+      errorMessage('导出失败, ' + error)
     })
-    .finally(closeLoading);
+    .finally(closeLoading)
 }
 
 export function useLoading() {
-  let loading: any = null;
+  let loading: any = null
   function showLoading(text: string) {
     loading = ElLoading.service({
       lock: true,
       text,
-      background: "rgba(0, 0, 0, 0.7)",
-    });
+      background: 'rgba(0, 0, 0, 0.7)'
+    })
   }
   function closeLoading() {
-    loading && loading.close();
+    loading && loading.close()
   }
   return {
     showLoading,
-    closeLoading,
-  };
+    closeLoading
+  }
 }
 
-export function scrollTo(targetTop: number = 0) {
-  const documentBody: HTMLElement = document.documentElement || document.body;
+export function scrollTo(targetTop = 0) {
+  const documentBody: HTMLElement = document.documentElement || document.body
   // 计算gap
   let GAP = Math.abs(documentBody.scrollTop - targetTop) / 20,
     currentScrollTop = 0,
-    _GAP = GAP,
-    preScrollTop = -1;
+    preScrollTop = -1
+
+  const _GAP = GAP
 
   function scrollHelper() {
-    currentScrollTop = documentBody.scrollTop;
+    currentScrollTop = documentBody.scrollTop
     // 距离目标还有多远
-    let currentDistance = currentScrollTop - targetTop;
+    const currentDistance = currentScrollTop - targetTop
     // 1. 超过了最大最小值
     // 2. 刚好走完了
     if (preScrollTop == currentScrollTop || currentDistance == 0) {
-      return;
+      return
     }
-    preScrollTop = currentScrollTop;
+    preScrollTop = currentScrollTop
 
     window.requestAnimationFrame(function () {
-      GAP = currentDistance > 0 ? _GAP : -_GAP;
-      currentScrollTop -= GAP;
+      GAP = currentDistance > 0 ? _GAP : -_GAP
+      currentScrollTop -= GAP
       // 如果距离比较小那么直接定位即可
       if (Math.abs(currentDistance) < _GAP) {
-        documentBody.scrollTop = targetTop;
-        return;
+        documentBody.scrollTop = targetTop
+        return
       }
-      documentBody.scrollTop = currentScrollTop;
-      Math.abs(currentDistance) > 0 && scrollHelper();
-    });
+      documentBody.scrollTop = currentScrollTop
+      Math.abs(currentDistance) > 0 && scrollHelper()
+    })
   }
-  scrollHelper();
+  scrollHelper()
 }
 
 export function calcOffsetTop(dom: HTMLElement) {
   let height = dom?.offsetTop,
-    parent = dom?.offsetParent as HTMLElement;
+    parent = dom?.offsetParent as HTMLElement
   while (parent !== null) {
-    height += parent.offsetTop;
-    parent = parent.offsetParent as HTMLElement;
+    height += parent.offsetTop
+    parent = parent.offsetParent as HTMLElement
   }
-  return height;
+  return height
 }

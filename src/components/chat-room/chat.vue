@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 // import { io } from "socket.io-client";
 
 // const socket = io("ws://localhost:3001");
@@ -13,9 +13,7 @@
 </script>
 
 <template>
-聊天室
+  <span>聊天室</span>
 </template>
 
-<style lang='scss' scoped>
-
-</style>
+<style lang="scss" scoped></style>

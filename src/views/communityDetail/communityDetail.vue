@@ -1,32 +1,45 @@
-<script setup lang='ts'>
-import UserInfo from '@/components/userInfo.vue';
-import HotList from "@/components/hot-rank/hotList.vue"
-import BrowseHistory from '@/components/browse-history/browseHistory.vue';
-import Publish from "@/components/publish/publish.vue"
-import Comments from '@/components/comments/comments.vue';
-import { VueMarkdownMenuBar } from 'vue-markdown-menu-bar';
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
-import useUserStore from "@/store/modules/user"
+<script setup lang="ts">
+import UserInfoComp from '@/components/userInfo.vue'
+import HotList from '@/components/hot-rank/hotList.vue'
+import BrowseHistory from '@/components/browse-history/browseHistory.vue'
+import Publish from '@/components/publish/publish.vue'
+import Comments from '@/components/comments/comments.vue'
+import { VueMarkdownMenuBar } from 'vue-markdown-menu-bar'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import useUserStore from '@/store/modules/user'
 import { useArticleDetail, useDelayMenuBar } from './hook'
-import '@/assets/highlight.css';
-import { numFormat } from '@/common/utils/format';
+import '@/assets/highlight.css'
+import { numFormat } from '@/common/utils/format'
 
-const route = useRoute();
-const articleId = computed(() => parseInt(route.query.articleId as string));
-const posterCommentId = computed(() => parseInt(route.query.posterCommentId as string));
-const { userInfo } = useUserStore();
-const { article, total, position, commentsTotal, like, pageNumChange, toCommentFieldTop, queryComments, commentsConditions } = useArticleDetail(articleId, posterCommentId);
-const { delay } = useDelayMenuBar(articleId);
-const clicked = computed(() => article.likes.includes(userInfo.uid));
-const isAuthor = computed(() => article.authorId == userInfo.uid);
-
+const route = useRoute()
+const articleId = computed(() => parseInt(route.query.articleId as string))
+const posterCommentId = computed(() => parseInt(route.query.posterCommentId as string))
+const { userInfo } = useUserStore()
+const {
+  article,
+  total,
+  position,
+  commentsTotal,
+  like,
+  pageNumChange,
+  toCommentFieldTop,
+  queryComments,
+  commentsConditions
+} = useArticleDetail(articleId, posterCommentId)
+const { delay } = useDelayMenuBar(articleId)
+const clicked = computed(() => article.likes.includes(userInfo.uid))
+const isAuthor = computed(() => article.authorId == userInfo.uid)
 </script>
 <template>
   <div class="community-detail flex">
     <div class="main-content mr-20">
       <div class="main content-card">
-        <user-info class="user-info" :user-info="article.authorInfo" :publish-time="article.createTime" />
+        <user-info-comp
+          class="user-info"
+          :user-info="article.authorInfo"
+          :publish-time="article.createTime"
+        />
         <article class="content" v-html="article.content"></article>
         <div class="supports mb-20">
           <span @click="like(clicked)" :class="{ clicked }">
@@ -52,26 +65,38 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
         <span class="pointer hover" @click="$router.back()">返回上一页</span>
         <span class="pointer hover back absolute" @click="$router.back()">返回上一页</span>
       </div>
-      <Publish :article-id="articleId" :level="1" :reply-article-author-id="article.authorId" @re-query-comments="queryComments" />
-      <i class="anchor"> </i>
-      <Comments 
-        :data="article.comments" 
-        :article-id="articleId" 
-        :total='total' 
+      <Publish
+        :article-id="articleId"
+        :level="1"
+        :reply-article-author-id="article.authorId"
+        @re-query-comments="queryComments"
+      />
+      <i class="anchor"></i>
+      <Comments
+        :data="article.comments"
+        :article-id="articleId"
+        :total="total"
         :page-num="commentsConditions.pageNum"
         :scroll-to="position"
         :comments-total="commentsTotal"
         :article-author-id="article.authorId"
-        @page-num-change="pageNumChange" @re-query-comments="queryComments" />
+        @page-num-change="pageNumChange"
+        @re-query-comments="queryComments"
+      />
     </div>
     <div class="slide-content">
       <hot-list class="slide-item" />
       <browse-history />
-      <vue-markdown-menu-bar v-if="delay" class="slide-item menu-bar content-card" body='.content' width='300px' />
+      <vue-markdown-menu-bar
+        v-if="delay"
+        class="slide-item menu-bar content-card"
+        body=".content"
+        width="300px"
+      />
     </div>
   </div>
 </template>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .community-detail {
   max-width: 1200px;
   margin: 20px auto;
@@ -88,7 +113,7 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
         color: var(--theme);
 
         &:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
       }
     }
@@ -115,11 +140,11 @@ const isAuthor = computed(() => article.authorId == userInfo.uid);
         height: 50px;
         line-height: 50px;
         background: #eee;
-        font-size: .9em;
+        font-size: 0.9em;
         color: #666;
 
         &:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
       }
     }

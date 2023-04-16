@@ -1,5 +1,1 @@
-export const tabs = [
-  '推荐',
-  '最新',
-  '我的'
-]
+export const tabs = ['推荐', '最新', '我的']

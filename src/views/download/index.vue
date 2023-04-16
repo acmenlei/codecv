@@ -1,19 +1,19 @@
-<script setup lang='ts'>
-import { importCSS } from "@/common/utils";
-import { onMounted, onUnmounted } from "vue";
-import { useRoute, useRouter } from "vue-router";
+<script setup lang="ts">
+import { importCSS } from '@/common/utils'
+import { onMounted, onUnmounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
-const route = useRoute();
-const router = useRouter();
+const route = useRoute()
+const router = useRouter()
 
 onMounted(() => {
-  importCSS(String(route.query.type));
-  const content = JSON.parse(localStorage.getItem('download') || '');
-  (document.querySelector(".markdown-transform-html") as HTMLElement).innerHTML = content;
+  importCSS(String(route.query.type))
+  const content = JSON.parse(localStorage.getItem('download') || '')
+  ;(document.querySelector('.markdown-transform-html') as HTMLElement).innerHTML = content
   setTimeout(() => {
-    window.print();
-    router.back();
-  }, 100);
+    window.print()
+    router.back()
+  }, 100)
 })
 
 onUnmounted(() => {
@@ -32,7 +32,7 @@ onUnmounted(() => {
   min-height: 295mm;
   z-index: 1;
   &::after {
-    content: "";
+    content: '';
     background: #fff;
     z-index: -2;
     position: fixed;

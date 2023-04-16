@@ -1,32 +1,26 @@
 <script lang="ts" setup>
-import { reactive, ref } from 'vue';
-import type { FormInstance, FormRules } from 'element-plus';
+import { reactive, ref } from 'vue'
+import type { FormInstance, FormRules } from 'element-plus'
 
-import { userForm } from "@/layout/header/hook";
-import { professionals } from '@/common/utils/professional';
-import { errorMessage } from '@/common/message';
-import { ImageUpload } from "@/common/utils/uploader"
+import { userForm } from '@/layout/header/hook'
+import { professionals } from '@/common/utils/professional'
+import { ImageUpload } from '@/common/utils/uploader'
 
 const emits = defineEmits(['cancel', 'submit'])
-const ruleFormRef = ref<FormInstance>(), uploadInput = ref();
+const ruleFormRef = ref<FormInstance>(),
+  uploadInput = ref()
 const rules = reactive<FormRules>({
   nickName: [
     { required: true, message: '请输入昵称', trigger: 'blur' },
-    { min: 1, max: 16, message: '1～16字', trigger: 'blur' },
+    { min: 1, max: 16, message: '1～16字', trigger: 'blur' }
   ],
   school: [
     { required: true, message: '请输入输入你所就读的院校', trigger: 'blur' },
-    { min: 4, max: 20, message: '4～20字', trigger: 'blur' },
+    { min: 4, max: 20, message: '4～20字', trigger: 'blur' }
   ],
-  sex: [
-    { required: true, message: '请选择性别', trigger: 'change' },
-  ],
-  professional: [
-    { required: true, message: '请选择意向岗位', trigger: 'blur' },
-  ],
-  graduation: [
-    { required: true, message: '请选择毕业时间', trigger: 'blur' },
-  ],
+  sex: [{ required: true, message: '请选择性别', trigger: 'change' }],
+  professional: [{ required: true, message: '请选择意向岗位', trigger: 'blur' }],
+  graduation: [{ required: true, message: '请选择毕业时间', trigger: 'blur' }],
   origin: [
     { required: true, message: '请输入你所在的地区', trigger: 'blur' },
     { max: 10, min: 2, message: '2～10字', trigger: 'blur' }
@@ -35,24 +29,19 @@ const rules = reactive<FormRules>({
 
 const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
-  await formEl.validate((valid) => {
+  await formEl.validate(valid => {
     if (valid) {
-      emits('submit');
+      emits('submit')
       console.log('submit!')
     }
   })
 }
 
 const uploadAvatar = async function () {
-  try {
-    const files = uploadInput.value.files as FileList;
-    const url = await ImageUpload(files[0]);
-    userForm.avatar = url;
-  } catch (e) {
-    errorMessage(<string>e);
-  }
+  const files = uploadInput.value.files as FileList
+  const url = await ImageUpload(files[0])
+  userForm.avatar = url
 }
-
 </script>
 <template>
   <el-form ref="ruleFormRef" :model="userForm" :rules="rules" label-width="100px" status-icon>
@@ -60,7 +49,13 @@ const uploadAvatar = async function () {
       <label for="user_avatar_upload">
         <img class="pointer" :src="userForm.avatar" alt="头像" />
       </label>
-      <input type="file" ref="uploadInput" id="user_avatar_upload" accept=".png,.jpg,.jpeg,.gif,.webp" @change="uploadAvatar">
+      <input
+        type="file"
+        ref="uploadInput"
+        id="user_avatar_upload"
+        accept=".png,.jpg,.jpeg,.gif,.webp"
+        @change="uploadAvatar"
+      />
     </el-form-item>
     <el-form-item label="性别" prop="sex" required>
       <el-radio-group v-model="userForm.sex">
@@ -76,7 +71,7 @@ const uploadAvatar = async function () {
     </el-form-item>
     <el-form-item label="意向岗位" prop="professional" required>
       <el-select v-model="userForm.professional" placeholder="选择你的意向岗位">
-        <el-option v-for="prof in professionals" :label="prof" :value="prof" />
+        <el-option v-for="(prof, idx) in professionals" :key="idx" :label="prof" :value="prof" />
       </el-select>
     </el-form-item>
     <el-form-item label="毕业时间" required prop="graduation">
@@ -92,8 +87,7 @@ const uploadAvatar = async function () {
   </el-form>
 </template>
 
-
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 #user_avatar_upload {
   display: none;
 }

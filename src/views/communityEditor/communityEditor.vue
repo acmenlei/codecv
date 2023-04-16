@@ -1,19 +1,29 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import { professionals } from '@/common/utils/professional'
 import { useCommunityArticle } from './hook'
-import '@textbus/editor/bundles/textbus.min.css';
+import '@textbus/editor/bundles/textbus.min.css'
 
-const { article, articleEditor, publishArticle } = useCommunityArticle();
-
+const { article, articleEditor, publishArticle } = useCommunityArticle()
 </script>
 
 <template>
   <div class="article-editor content-card" data-aos="zoom-out">
     <span class="pointer back" @click="$router.back()">返回</span>
-    <input class="title" type="text" v-model="article.title" placeholder="请填写二十字以内的标题~" maxlength="20"/>
+    <input
+      class="title"
+      type="text"
+      v-model="article.title"
+      placeholder="请填写二十字以内的标题~"
+      maxlength="20"
+    />
     <div class="editor" ref="articleEditor"></div>
     <el-select placeholder="岗位方向" class="item" v-model="article.professional">
-      <el-option v-for="item in professionals" :value="item" :label="item"></el-option>
+      <el-option
+        :key="idx"
+        v-for="(item, idx) in professionals"
+        :value="item"
+        :label="item"
+      ></el-option>
     </el-select>
     <br />
     <button class="item primary btn" @click="publishArticle">发布</button>
@@ -21,7 +31,7 @@ const { article, articleEditor, publishArticle } = useCommunityArticle();
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .article-editor {
   max-width: 1200px;
   margin: 20px auto;
@@ -31,7 +41,7 @@ const { article, articleEditor, publishArticle } = useCommunityArticle();
     margin-bottom: 20px;
 
     &:hover {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 

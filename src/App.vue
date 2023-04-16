@@ -6,9 +6,9 @@
   </router-view>
 </template>
 <script setup lang="ts">
-import AOS from "aos";
-import "aos/dist/aos.css"
-import { onMounted } from "vue";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { onMounted } from 'vue'
 
 onMounted(() => AOS.init())
 </script>
@@ -18,6 +18,7 @@ onMounted(() => AOS.init())
   padding: 0;
   margin: 0;
 }
+
 body {
   background: #f3f5f7;
 }
