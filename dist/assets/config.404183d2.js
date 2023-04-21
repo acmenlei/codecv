@@ -370,7 +370,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,e=`::: start
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,t=`::: start
 ::: headStart
 ![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
 ## \u72C2\u5F92\u5F20\u4E09 - \u6CD5\u5F8B\u987E\u95EE
@@ -445,7 +445,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:technology \u4E13\u4E1A\u6280\u80FD
 - \u7CBE\u901AHTML/DIV+CSS/Less/Sass\u7B49\u524D\u7AEFweb\u5F00\u53D1\u6280\u672F\uFF0C\u517C\u5BB9\u591A\u79CD\u79FB\u52A8\u7AEF\u3001PC\u7AEF\u6D4F\u89C8\u5668\u7684\u4EE3\u7801\uFF0CCSS3\u65B0\u7279\u6027;
 - \u719F\u7EC3\u638C\u63E1js\u3001ES6\u7B49\u65B0\u7279\u6027\uFF0C\u4EE5\u53CAAjax(Fetch)\u3001Json\u3001Axios\u3001\u4EE5\u53CA\u4EE3\u7406\u8DE8\u57DF\u4E0E\u540E\u7AEF\u5B9E\u73B0\u6570\u636E\u4EA4\u4E92;
-::: end`,t=`::: headStart
+::: end`,e=`::: headStart
 ## \u5C0F\u9ED1\u5B50 - \u524D\u7AEF\u67B6\u6784\u5E08
 ::: start
 **\u5DE5\u4F5C\u7ECF\u9A8C**\uFF1A8\u5E74
@@ -541,7 +541,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 \u8F6F\u4EF6\u5B66\u9662 - \u8F6F\u4EF6\u5DE5\u7A0B - \u672C\u79D1
 
 ## \u81EA\u6211\u8BC4\u4EF7
-\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....`,a=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF
+\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....`,n=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF
 ::: start
 icon:user 2000/01/01
 :::
@@ -585,7 +585,7 @@ icon:github https://github.com/acmenlei
 \u4E3B\u8981\u6280\u672F\uFF1ANode S/lavascript
 \u4E3A\u5B66\u751F\u63D0\u4F9B\u6210\u7EE9\u67E5\u8BE2\u7CFB\u7EDF\uFF0C\u89E3\u51B3\u5185\u5916\u7F51\u9694\u79BB\u95EE\u9898\uFF0C\u63D0\u4F9B\u6210\u7EE9\u77ED\u4FE1\u901A\u77E5\u80FD\u529B\uFF0C\u4E3A2\u4E07\u5728\u6821\u751F\u63D0\u4F9B\u5728\u5BB6\u67E5\u6210\u7EE9\u670D\u52A1\u3002\u4F7F\u7528Koa2\u63D0\u4F9BAP\u63A5\u53E3\uFF0C\u4EE5\u4F9B\u524D\u7AEF\u4F7F\u7528\u3001\u8FD0\u7528Node js\u5B9E\u73B0\u5E26\u767B\u9646;\u6001\u8BF7\u6C42\u3001\u4F7F\u7528React/ Antd\u5B9E\u73B0\u524D\u7AEFUI\u754C\u9762\u3001\u63A5\u5165\u963F\u91CC\u4E91\u77ED\u4FE1API\u3002
 ## \u5176\u4ED6
-\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,o=`::: headStart
+\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,i=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
 # \u5C0F\u65B0 **UI\u8BBE\u8BA1\u5E08**
@@ -662,7 +662,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:user \u81EA\u6211\u8BC4\u4EF7
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,n=`::: headStart
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,o=`::: headStart
 ::: start
 # \u756A\u8304\u7092\u9E21\u86CB
 **\u6027\u522B**\uFF1A\u7537 \uFF5C **\u5E74\u9F84**\uFF1A23 \uFF5C **\u7535\u8BDD**\uFF1A11011011011 \uFF5C **\u90AE\u7BB1**\uFF1Aresume@163.com
@@ -726,4 +726,120 @@ xxxx\u5E74xx\u6708 - xxxx\u5E74xx\u6708
 - xxxxxxxxxxxxxxxxxxxx
 - xxxxxxxxxxxxxxxxxxxx
 - xxxxxxxxxxxxxxxxxxxx
-`,i=[{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u8FD0\u8425\u7C7B"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u901A\u7528\u6A21\u677F"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"business",id:7,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:a,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"},{type:"simple_avatar",id:10,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F"},{type:"graduation_reexam",id:11,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:n,name:"\u7814\u7A76\u751F\u590D\u8BD5\u7B80\u5386\u6A21\u677F"}],F={business:["#111","#297370"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"],simple_avatar:["#2A2D2D","#F98C07"],graduation_reexam:["#3A3939","#2186D2"],create:["#000","#000"]};function c(u){return F[u][1]}function r(u){return F[u][0]}export{r as a,c as g,i as t};
+`,a=`::: headStart
+::: start
+# Baby Shark
+
+::: start
+icon:phone 185xxxx5387
+icon:github [github.com/Jack](github.com/Jack)
+:::
+icon:email coderleilei@163.com
+icon:link [https://www.blog.com](blog.com)
+:::
+icon:wechat wechatnumberxxx
+icon:yuque [yueque.com/xiongleixin](yueque.com/xiongleixin)
+::: end
+
+:::
+![\u4E2A\u4EBA\u5934\u50CF](data:image/jpeg;base64,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3NF2T7ps6/JrfdkLvyB+xvfkyW8cwH5Ex0NubYscr0j5n2g/QTl6s/03xfDT4iJkuREQEREBERA4ImE7zbOfZuOzU1ypmz0TyZT7yeAuVtxtbtE3eQO9W71PG0DSayuutN7XyN/pPAj+wky8IqJ2JtVKipiEN1PEcx9JT3iXBHDAEagzMdzt1doYepU9ooVCLWDqwdgRZlAOgtfU2Oo0mjbPolEAPG5Ph3TTdmpL8q5ll4eyIiZLkREBERAREQEREDiV/a6WqE9oB/T9JYJHbVwpYBgLleXaJfp640pucxBRO1MO5Ngrek7hs6r9D5j+86rrM+WPF+nkie5dl1TyA8T/AGnemx25uPIXkXqZnynt19M+6QcYFopR+J3zHuVP9yPQyb6I9nMmGqV2/wCa4C/Zp5lv+It6T53q3BqYqslSnWVRlCsHBJWxJuoXjx4G3DjLts3BpRpU6Ke7TUKO2wHE954+c5t67ry1zniPZERKLkREBERAREQEREBERAREQEREBERAREQEREBERAREQEROCIHMREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERED/2Q==)
+::: end
+::: headEnd
+
+
+## \u4E2A\u4EBA\u6280\u80FD
+::: start
+PHP/Java/Node
+:::
+icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+::: end
+::: start
+ThinkPHP/Yaf/Yii/Lavaral/LazyPHP
+:::
+icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+::: end
+::: start
+Bootstrap/AngularJS/EmberJS/HTML5/Cocos2dJS/ionic
+:::
+icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+::: end
+::: start
+Bower/Gulp/SaSS/LeSS/PhoneGap
+:::
+icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+::: end
+::: start
+PHPUnit/SimpleTest/Qunit
+:::
+icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+::: end
+::: start
+SAE/BAE/AWS/\u5FAE\u535A\u5F00\u653E\u5E73\u53F0/\u5FAE\u4FE1\u5E94\u7528\u5F00\u53D1
+:::
+icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+::: end
+
+## \u5F00\u6E90\u9879\u76EE
+::: start
+### typenet
+:::
+web typewriter effect with support for chain calls. ( \u7F51\u9875\u6253\u5B57\u673A\u6548\u679C, \u652F\u6301\u94FE\u5F0F\u8C03\u7528 )
+::: end
+::: start
+### markdown-resume-to-pdf
+:::
+resume writing tool with markdown syntax.( \u5728\u7EBF\u7B80\u5386\u5236\u4F5C\u5DE5\u5177, markdown \u8F6C PDF )
+::: end
+
+
+## \u5DE5\u4F5C\u7ECF\u5386
+::: start
+#### xxx\u516C\u53F8
+:::
+2021-21 ~ 2022-01
+::: end
+- \u8D1F\u8D23\u524D\u7AEF\u6280\u672F\u67B6\u6784\u8BBE\u8BA1\uFF0C\u63A2\u7D22Web\u524D\u7AEF\u4E0E\u6E38\u620F\u524D\u7AEF\u6280\u672F\u7ED3\u5408\u9886\u57DF\uFF0C\u63A8\u8FDB\u65B0\u6280\u672F\u5728\u4E1A\u52A1\u4E2D\u843D\u5730
+- \u4E3B\u5BFC\u5E76\u53C2\u4E0E\u7F8E\u56E2\u6E38\u620F\u9879\u76EE\u7684\u8BBE\u8BA1\u8FC7\u7A0B\u548C\u65B9\u6848\u8C03\u7814\uFF0C\u5BF9\u6280\u672F\u65B9\u6848\u3001\u98CE\u9669\u8FDB\u884C\u8BC4\u5BA1\u548C\u5206\u6790
+- \u6DF1\u5165\u7406\u89E3\u4E1A\u52A1\uFF0C\u6CE8\u91CD\u4EA7\u54C1\u548C\u7528\u6237\u4F53\u9A8C\uFF0C\u652F\u6301\u548C\u63A8\u52A8\u4E1A\u52A1\u7684\u5FEB\u901F\u8FED\u4EE3\u53D1\u5C55
+- \u5177\u5907\u826F\u597D\u5B66\u4E60\u80FD\u529B\u3001\u6C9F\u901A\u80FD\u529B\u3001\u9700\u6C42\u843D\u5730\u80FD\u529B\u3001\u6570\u5B66\u53CA\u62BD\u8C61\u601D\u7EF4\u80FD\u529B\u3001\u627F\u538B\u80FD\u529B
+
+::: start
+#### xxx\u516C\u53F8
+:::
+2021-21 ~ 2022-01
+::: end
+- \u6211\u5728\u6B64\u9879\u76EE\u8D1F\u8D23\u4E86\u54EA\u4E9B\u5DE5\u4F5C\uFF0C\u5206\u522B\u5728\u54EA\u4E9B\u5730\u65B9\u505A\u5F97\u51FA\u8272/\u548C\u522B\u4EBA\u4E0D\u4E00\u6837/\u6210\u957F\u5FEB
+- \u8FD9\u4E2A\u9879\u76EE\u4E2D\uFF0C\u6211\u6700\u56F0\u96BE\u7684\u95EE\u9898\u662F\u4EC0\u4E48\uFF0C\u6211\u91C7\u53D6\u4E86\u4EC0\u4E48\u63AA\u65BD\uFF0C\u6700\u540E\u7ED3\u679C\u5982\u4F55\u3002
+- \u8FD9\u4E2A\u9879\u76EE\u4E2D\uFF0C\u6211\u6700\u81EA\u8C6A\u7684\u6280\u672F\u7EC6\u8282\u662F\u4EC0\u4E48\uFF0C\u4E3A\u4EC0\u4E48\uFF0C\u5B9E\u65BD\u524D\u548C\u5B9E\u65BD\u540E\u7684\u6570\u636E\u5BF9\u6BD4\u5982\u4F55\uFF0C\u540C\u4E8B\u548C\u9886\u5BFC\u5BF9\u6B64\u7684\u53CD\u5E94\u5982\u4F55\u3002
+
+
+## \u9879\u76EE\u7ECF\u5386
+::: start
+#### MNO\u9879\u76EE
+:::
+**\u6280\u672F\u603B\u76D1\uFF082022.08 ~ 2023.02\uFF09**
+::: end
+- \u6211\u5728\u6B64\u9879\u76EE\u8D1F\u8D23\u4E86\u54EA\u4E9B\u5DE5\u4F5C\uFF0C\u5206\u522B\u5728\u54EA\u4E9B\u5730\u65B9\u505A\u5F97\u51FA\u8272/\u548C\u522B\u4EBA\u4E0D\u4E00\u6837/\u6210\u957F\u5FEB
+- \u8FD9\u4E2A\u9879\u76EE\u4E2D\uFF0C\u6211\u6700\u56F0\u96BE\u7684\u95EE\u9898\u662F\u4EC0\u4E48\uFF0C\u6211\u91C7\u53D6\u4E86\u4EC0\u4E48\u63AA\u65BD\uFF0C\u6700\u540E\u7ED3\u679C\u5982\u4F55\u3002
+- \u8FD9\u4E2A\u9879\u76EE\u4E2D\uFF0C\u6211\u6700\u81EA\u8C6A\u7684\u6280\u672F\u7EC6\u8282\u662F\u4EC0\u4E48\uFF0C\u4E3A\u4EC0\u4E48\uFF0C\u5B9E\u65BD\u524D\u548C\u5B9E\u65BD\u540E\u7684\u6570\u636E\u5BF9\u6BD4\u5982\u4F55\uFF0C\u540C\u4E8B\u548C\u9886\u5BFC\u5BF9\u6B64\u7684\u53CD\u5E94\u5982\u4F55\u3002
+
+::: start
+#### xxx\u9879\u76EE
+:::
+**\u524D\u7AEF\u67B6\u6784\u5E08\uFF082022.08 ~ 2023.02\uFF09**
+::: end
+- \u6211\u5728\u6B64\u9879\u76EE\u8D1F\u8D23\u4E86\u54EA\u4E9B\u5DE5\u4F5C\uFF0C\u5206\u522B\u5728\u54EA\u4E9B\u5730\u65B9\u505A\u5F97\u51FA\u8272/\u548C\u522B\u4EBA\u4E0D\u4E00\u6837/\u6210\u957F\u5FEB
+- \u8FD9\u4E2A\u9879\u76EE\u4E2D\uFF0C\u6211\u6700\u56F0\u96BE\u7684\u95EE\u9898\u662F\u4EC0\u4E48\uFF0C\u6211\u91C7\u53D6\u4E86\u4EC0\u4E48\u63AA\u65BD\uFF0C\u6700\u540E\u7ED3\u679C\u5982\u4F55\u3002
+- \u8FD9\u4E2A\u9879\u76EE\u4E2D\uFF0C\u6211\u6700\u81EA\u8C6A\u7684\u6280\u672F\u7EC6\u8282\u662F\u4EC0\u4E48\uFF0C\u4E3A\u4EC0\u4E48\uFF0C\u5B9E\u65BD\u524D\u548C\u5B9E\u65BD\u540E\u7684\u6570\u636E\u5BF9\u6BD4\u5982\u4F55\uFF0C\u540C\u4E8B\u548C\u9886\u5BFC\u5BF9\u6B64\u7684\u53CD\u5E94\u5982\u4F55\u3002
+
+
+## \u6559\u80B2\u80CC\u666F
+::: start
+xxx\u5B66\u6821 (\u8F6F\u4EF6\u5DE5\u7A0B)
+:::
+2016-07 ~ 2016-07
+::: end
+
+## \u81F4\u8C22
+\u611F\u8C22\u60A8\u82B1\u65F6\u95F4\u9605\u8BFB\u6211\u7684\u7B80\u5386\uFF0C\u671F\u5F85\u80FD\u6709\u673A\u4F1A\u548C\u60A8\u5171\u4E8B\u3002
+`,c=[{type:"fresh",id:12,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/274659ec6a294c2cb4f0d289bee3ba4f~tplv-k3u1fbpfcp-watermark.image?",content:a,name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)"},{type:"graduation_reexam",id:11,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u7814\u7A76\u751F\u590D\u8BD5\u7B80\u5386\u6A21\u677F"},{type:"simple_avatar",id:10,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:i,name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:n,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"business",id:7,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u901A\u7528\u6A21\u677F"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u8FD0\u8425\u7C7B"}],F={business:["#111","#297370"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"],simple_avatar:["#2A2D2D","#F98C07"],graduation_reexam:["#3A3939","#2186D2"],create:["#000","#000"],fresh:["#555","#790FAE"]};function r(u){return F[u][1]}function s(u){return F[u][0]}export{s as a,r as g,c as t};

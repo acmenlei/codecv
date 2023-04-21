@@ -9,70 +9,22 @@ import internet_social from './internet_social'
 import concise from './concise'
 import simple_avatar from './simple_avatar'
 import graduation_reexam from './graduation_reexam'
+import fresh from './fresh'
 
 export const themes = [
   {
-    type: 'operation',
-    id: 1,
-    img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?',
-    content: operation,
-    name: '运营类'
+    type: 'fresh',
+    id: 12,
+    img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/274659ec6a294c2cb4f0d289bee3ba4f~tplv-k3u1fbpfcp-watermark.image?',
+    content: fresh,
+    name: '简约风(小鲨鱼)'
   },
   {
-    type: 'front_end',
-    id: 2,
-    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?',
-    content: front_end,
-    name: '互联网IT通用'
-  },
-  {
-    type: 'internet',
-    id: 3,
-    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?',
-    content: internet,
-    name: '互联网IT通用'
-  },
-  {
-    type: 'internet_avatar',
-    id: 4,
-    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?',
-    content: internet_avatar,
-    name: '互联网IT模板-带头像'
-  },
-  {
-    type: 'general',
-    id: 5,
-    img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?',
-    content: general,
-    name: '通用模板'
-  },
-  {
-    type: 'operation_avatar',
-    id: 6,
-    img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?',
-    content: operation_avatar,
-    name: '运营大类'
-  },
-  {
-    type: 'business',
-    id: 7,
-    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?',
-    content: business,
-    name: '商务类(一页)'
-  },
-  {
-    type: 'internet_social',
-    id: 8,
-    img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?',
-    content: internet_social,
-    name: '互联网社招类(适合经验丰富)'
-  },
-  {
-    type: 'concise',
-    id: 9,
-    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?',
-    content: concise,
-    name: '社招/校招简洁模版'
+    type: 'graduation_reexam',
+    id: 11,
+    img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?',
+    content: graduation_reexam,
+    name: '研究生复试简历模板'
   },
   {
     type: 'simple_avatar',
@@ -82,11 +34,67 @@ export const themes = [
     name: '简约通用简历模板'
   },
   {
-    type: 'graduation_reexam',
-    id: 11,
-    img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?',
-    content: graduation_reexam,
-    name: '研究生复试简历模板'
+    type: 'concise',
+    id: 9,
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?',
+    content: concise,
+    name: '社招/校招简洁模版'
+  },
+  {
+    type: 'internet_social',
+    id: 8,
+    img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?',
+    content: internet_social,
+    name: '互联网社招类(适合经验丰富)'
+  },
+  {
+    type: 'business',
+    id: 7,
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?',
+    content: business,
+    name: '商务类(一页)'
+  },
+  {
+    type: 'operation_avatar',
+    id: 6,
+    img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?',
+    content: operation_avatar,
+    name: '运营大类'
+  },
+  {
+    type: 'general',
+    id: 5,
+    img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?',
+    content: general,
+    name: '通用模板'
+  },
+  {
+    type: 'internet_avatar',
+    id: 4,
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?',
+    content: internet_avatar,
+    name: '互联网IT模板-带头像'
+  },
+  {
+    type: 'internet',
+    id: 3,
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?',
+    content: internet,
+    name: '互联网IT通用'
+  },
+  {
+    type: 'front_end',
+    id: 2,
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?',
+    content: front_end,
+    name: '互联网IT通用'
+  },
+  {
+    type: 'operation',
+    id: 1,
+    img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?',
+    content: operation,
+    name: '运营类'
   }
 ]
 
@@ -102,7 +110,8 @@ const primaryColorMap = {
   operation_avatar: ['#333', '#1a85f0'],
   simple_avatar: ['#2A2D2D', '#F98C07'],
   graduation_reexam: ['#3A3939', '#2186D2'],
-  create: ['#000', '#000'] // 新建模版的默认配色
+  create: ['#000', '#000'], // 新建模版的默认配色
+  fresh: ['#555', '#790FAE'] // 新建模版的默认配色
 }
 interface IPrimaryColorMap {
   business: Array<string>
