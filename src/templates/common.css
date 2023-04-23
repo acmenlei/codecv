@@ -4,7 +4,8 @@
   padding: 20px 30px;
   margin: 0 auto;
   background: #fff;
-  z-index: 1;
+  z-index: 2;
+  position: relative;
   color: var(--markdown-primary-color);
 }
 
@@ -15,9 +16,8 @@
 
 /* 头像大小 */
 .markdown-transform-html img {
-  width: 100px;
-  height: 120px;
-  z-index: 9;
+  width: 26mm;
+  height: 32mm;
   position: relative;
 }
 

@@ -30,7 +30,9 @@ function queryList(index: number) {
       class="ripple-effect newtemplate-container"
       @click="router.push('/editor?type=create')"
     >
-      <button class="primary cursor btn pointer newtemplate">{{ button }}</button>
+      <button class="primary cursor btn pointer newtemplate">
+        <i class="iconfont icon-diy"></i> {{ button }}
+      </button>
     </a>
   </div>
 </template>

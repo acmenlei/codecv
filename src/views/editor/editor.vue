@@ -7,7 +7,8 @@ import {
   useDownLoad,
   useImportMD,
   useMoveLayout,
-  useAvatar
+  useAvatar,
+  useWrite
 } from './hook'
 import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from '@codemirror/lang-markdown'
@@ -18,6 +19,8 @@ const { downloadDynamic, downloadNative, downloadMD } = useDownLoad(resumeType, 
 const { importMD } = useImportMD(setContent)
 const { setAvatar } = useAvatar(content, setContent)
 const { left, down } = useMoveLayout()
+const { startWrite, writable, DOMTree, ObserverContent } = useWrite(setContent)
+
 const extentions = [markdownLanguage]
 </script>
 
@@ -31,6 +34,7 @@ const extentions = [markdownLanguage]
   <div id="root">
     <div class="markdown-edit">
       <codemirror
+        v-if="!writable"
         v-model="content"
         :style="{ height: '100vh', width: `${left}px`, background: '#fff' }"
         :autofocus="true"
@@ -38,13 +42,23 @@ const extentions = [markdownLanguage]
         :extensions="extentions"
         @change="setContent"
       />
+      <div
+        ref="DOMTree"
+        @input="ObserverContent"
+        class="markdown-transform-html writable-edit-mode"
+        :contenteditable="writable"
+        :style="{ height: '100vh', width: `${left}px`, background: '#fff', overflowY: 'scroll' }"
+        v-if="writable"
+      ></div>
       <div class="move absolute" @mousedown="down"></div>
     </div>
     <markdown-render
       class="markdown-render"
       :resumeType="resumeType"
       :content="content"
+      @open-write="startWrite"
       @upload-avatar="setAvatar"
+      @html-convert="setContent"
     />
   </div>
 </template>
@@ -65,12 +79,11 @@ const extentions = [markdownLanguage]
       height: 100%;
       background: #ccc;
       cursor: col-resize;
+      z-index: 2;
     }
   }
-
   .markdown-render {
     flex: 1;
-    padding: 10px 20px;
   }
 }
 </style>

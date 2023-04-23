@@ -1,4 +1,4 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
   padding: 0;
@@ -6,7 +6,7 @@
   min-height: 297mm;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;

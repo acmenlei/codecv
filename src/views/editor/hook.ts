@@ -1,8 +1,8 @@
 import { getLocalStorage, setLocalStorage } from '@/common/hooks/useLcoaStoage'
-import { errorMessage, successMessage, warningMessage } from '@/common/message'
-import { getCurrentTypeContent, getPdf, importCSS } from '@/common/utils'
+import { errorMessage, showMessageVN, successMessage, warningMessage } from '@/common/message'
+import { getCurrentTypeContent, getPdf, importCSS, resumeDOMStruct2Markdown } from '@/common/utils'
 import { markdownToHTML } from 'markdown-transform-html'
-import { onActivated, onDeactivated, Ref, ref, watch } from 'vue'
+import { nextTick, onActivated, onDeactivated, Ref, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { splitPage } from './components/tabbar/hook'
 
@@ -49,8 +49,6 @@ export function useRenderHTML(props: { content: string; resumeType: string }) {
   watch(
     () => props.content,
     v => {
-      // const HTMLContent = markdownToHTML(v);
-      // const DOM = handlerHTMLToolTip(HTMLContent);
       renderDOM.value.innerHTML = markdownToHTML(v)
       setTimeout(() => splitPage(renderDOM.value), 50)
     }
@@ -147,7 +145,7 @@ export function useImportMD(setContent: (str: string) => void) {
 
 // 左右移动伸缩布局
 export function useMoveLayout() {
-  const left = ref(700)
+  const left = ref(500)
   let flag = false
 
   function move(event: MouseEvent) {
@@ -190,5 +188,32 @@ export function useAvatar(content: Ref<string>, setContent: (c: string) => void)
   }
   return {
     setAvatar
+  }
+}
+
+// 使用编辑模式
+export function useWrite(setContent: (cnt: string) => void) {
+  const writable = ref(false),
+    DOMTree = ref<HTMLElement>()
+
+  function startWrite(html: HTMLElement) {
+    writable.value = !writable.value
+    showMessageVN('您已切换至', writable.value ? '内容模式' : 'Markdown模式')
+    if (writable.value) {
+      nextTick(() => {
+        ;(DOMTree.value as HTMLElement).innerHTML = html.innerHTML
+      })
+    }
+  }
+
+  function ObserverContent() {
+    const content = resumeDOMStruct2Markdown({ node: DOMTree.value as Node, latest: true, uid: 0 })
+    setContent(content)
+  }
+  return {
+    writable,
+    DOMTree,
+    startWrite,
+    ObserverContent
   }
 }

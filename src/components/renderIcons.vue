@@ -3,13 +3,11 @@ import { successMessage } from '@/common/message'
 import data from '@/assets/icon/iconfont.json'
 import { ref } from 'vue'
 
-defineProps<{ toggle: boolean }>()
-
 type Icon = (typeof data.glyphs)[0]
 
 const clipborad = (item: Icon) => {
   successMessage('已复制到剪贴板，你可以直接粘贴')
-  navigator.clipboard.writeText(`icon:${item.name} `)
+  navigator.clipboard.writeText(`icon:${item.font_class} `)
 }
 const iconData = ref<Icon[]>(data.glyphs.slice(0, 20))
 // console.log(data.glyphs.length)
@@ -19,72 +17,56 @@ const pageChange = function (page: number) {
 </script>
 
 <template>
-  <div id="toolTip">
-    <slot></slot>
-    <div class="render-modal" v-if="toggle">
-      <div class="render-modal-icons">
-        <i
-          v-for="(item, idx) in iconData"
-          :key="idx"
-          :class="['iconfont', `icon-${item.name}`]"
-          @click="clipborad(item)"
-        >
-          <p>{{ item.name }}</p>
-        </i>
-      </div>
-      <el-pagination
-        :page-size="20"
-        background
-        layout="prev, pager, next"
-        :total="data.glyphs.length"
-        class="mt-4 page"
-        @current-change="pageChange"
-      />
+  <div class="render-modal">
+    <div class="render-modal-icons">
+      <i
+        v-for="(item, idx) in iconData"
+        :key="idx"
+        :class="['iconfont', `icon-${item.font_class}`]"
+        @click="clipborad(item)"
+      >
+        <p>{{ item.font_class }}</p>
+      </i>
     </div>
+    <el-pagination
+      :page-size="20"
+      background
+      layout="prev, pager, next"
+      :total="data.glyphs.length"
+      class="mt-4 page"
+      @current-change="pageChange"
+    />
   </div>
 </template>
 
 <style lang="scss" scoped>
-#toolTip {
-  position: relative;
-  z-index: 999;
+.render-modal {
+  .render-modal-icons {
+    line-height: 20px;
+    padding: 10px;
+    background: #fff;
+    color: #333;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 
-  .render-modal {
-    position: absolute;
-    top: 70px;
-    /* box-shadow: 0 0 5px #ccc; */
-    border-radius: 5px;
-
-    .render-modal-icons {
-      line-height: 20px;
-      padding: 10px;
-      background: #fff;
-      color: #333;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+  i {
+    font-size: 20px;
+    height: 60px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
     }
 
-    i {
-      font-size: 20px;
-      padding: 10px;
-      width: 100px;
-      height: 60px;
-
-      &:hover {
-        opacity: 0.8;
-      }
-
-      p {
-        text-align: center;
-        font-size: 14px;
-      }
+    p {
+      text-align: center;
+      font-size: 14px;
     }
+  }
 
-    .page {
-      background: white;
-      padding: 0 20px 20px 20px;
-    }
+  .page {
+    background: white;
   }
 }
 </style>

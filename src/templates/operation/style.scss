@@ -1,4 +1,4 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
   color: var(--markdown-primary-color);
@@ -31,7 +31,7 @@
   }
 
   .iconfont {
-    margin-right: .2em;
+    margin-right: 0.2em;
     font-size: 1.1rem;
   }
 
@@ -74,7 +74,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       background: var(--markdown-primary-bg-color);
       width: 210mm;

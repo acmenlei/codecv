@@ -1,4 +1,4 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
   padding-top: 0;
@@ -30,15 +30,14 @@
     justify-content: center;
 
     img {
-      width: 120px;
-      height: 120px;
+      width: 32mm;
       border-radius: 50%;
       margin-top: 60px;
       margin-bottom: 10px;
     }
 
     &::before {
-      content: "";
+      content: '';
       z-index: -1;
       position: absolute;
       width: 220mm;
@@ -49,7 +48,7 @@
     }
 
     &::after {
-      content: "OOOOOOO                                       OOOOOOO";
+      content: 'OOOOOOO                                       OOOOOOO';
       white-space: pre;
       letter-spacing: 5px;
       z-index: -1;
@@ -61,7 +60,7 @@
       font-weight: bold;
       font-size: 1.1rem;
       // border-bottom:10px dotted var(--markdown-primary-color);
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 
@@ -71,7 +70,7 @@
   }
 
   ul {
-    &+ol {
+    & + ol {
       padding-left: 30px;
     }
   }
