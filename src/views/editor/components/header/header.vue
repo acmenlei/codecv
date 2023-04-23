@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import navMenu from './nav.vue'
 import RenderDrawer from '@/components/renderDrawer.vue'
+import Reward from '@/components/reward.vue'
+
 import { onActivated, ref } from 'vue'
 
-const emits = defineEmits(['download-dynamic', 'download-native', 'download-md', 'import-md'])
-const fileName = ref('')
-const flag = ref(false)
-
-onActivated(() => (fileName.value = document.title))
-
+const emits = defineEmits(['download-dynamic', 'download-native', 'download-md', 'import-md']),
+  fileName = ref(''),
+  flag = ref(false)
+// 逻辑处理
 const exportFile = (type: string) => {
   document.title = fileName.value
   emits(`download-${type}` as any, fileName.value)
@@ -21,6 +21,8 @@ const importFile = (event: any) => {
 const visitRemote = function () {
   window.open('https://github.com/acmenlei/markdown-resume-to-pdf')
 }
+
+onActivated(() => (fileName.value = document.title))
 </script>
 
 <template>
@@ -36,11 +38,12 @@ const visitRemote = function () {
       <el-tooltip content="问题反馈" placement="bottom-end">
         <i class="iconfont icon-problem problem" @click="() => (flag = !flag)"></i>
       </el-tooltip>
+      <Reward />
       <button class="exportor" @click="exportFile('dynamic')">动态导出PDF</button>
       <button class="exportor" @click="exportFile('native')">打印机导出PDF</button>
     </div>
   </div>
-  <RenderDrawer :flag="flag" />
+  <RenderDrawer v-if="flag" :flag="flag" />
 </template>
 
 <style lang="scss" scoped>

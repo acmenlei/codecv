@@ -1,5 +1,5 @@
 import { getLocalStorage, setLocalStorage } from '@/common/hooks/useLcoaStoage'
-import { errorMessage, successMessage, warningMessage } from '@/common/message'
+import { errorMessage, showMessageVN, successMessage, warningMessage } from '@/common/message'
 import { getCurrentTypeContent, getPdf, importCSS, resumeDOMStruct2Markdown } from '@/common/utils'
 import { markdownToHTML } from 'markdown-transform-html'
 import { nextTick, onActivated, onDeactivated, Ref, ref, watch } from 'vue'
@@ -198,9 +198,12 @@ export function useWrite(setContent: (cnt: string) => void) {
 
   function startWrite(html: HTMLElement) {
     writable.value = !writable.value
-    nextTick(() => {
-      ;(DOMTree.value as HTMLElement).innerHTML = html.innerHTML
-    })
+    showMessageVN('您已切换至', writable.value ? '内容模式' : 'Markdown模式')
+    if (writable.value) {
+      nextTick(() => {
+        ;(DOMTree.value as HTMLElement).innerHTML = html.innerHTML
+      })
+    }
   }
 
   function ObserverContent() {

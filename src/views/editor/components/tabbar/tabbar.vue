@@ -14,7 +14,6 @@ import {
   usePrimaryColor,
   useAutoOnePage,
   useAdjust,
-  // useResumeContentGenerator,
   restResumeContent
 } from './hook'
 
@@ -32,7 +31,6 @@ const { primaryColor, setPrimaryColor } = usePrimaryBGColor(props.resumeProps.re
 const { adjustMargin, visiable, confirmAdjustment, marginData } = useAdjust(
   props.resumeProps.resumeType
 )
-// useResumeContentGenerator(emits)
 
 const extentions = [cssLanguage]
 </script>
@@ -72,14 +70,18 @@ const extentions = [cssLanguage]
         size="small"
         v-model="primaryColor"
       />
-      <el-tooltip content="重置简历内容" effect="light"
-        ><i
-          class="operator-item iconfont icon-refresh ml-20"
-          @click="restResumeContent(resumeProps.resumeType)"
-        >
-        </i
-      ></el-tooltip>
-      <el-tooltip content="开启编辑模式" effect="light">
+      <el-popconfirm
+        width="240"
+        confirm-button-text="是的"
+        cancel-button-text="点错了"
+        title="你想重置简历的所有内容吗？"
+        @confirm="restResumeContent(resumeProps.resumeType)"
+      >
+        <template #reference>
+          <i class="operator-item iconfont icon-refresh ml-20"></i>
+        </template>
+      </el-popconfirm>
+      <el-tooltip content="切换编辑模式" effect="light">
         <i class="iconfont icon-write operator-item" @click="$emit('open-write')"></i>
       </el-tooltip>
       <el-tooltip content="自动一页" effect="light">
@@ -181,9 +183,12 @@ const extentions = [cssLanguage]
     }
 
     i.iconfont {
-      color: #e8e8e8;
+      color: #f8f8f8;
       font-size: 24px;
       cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }

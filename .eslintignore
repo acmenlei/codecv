@@ -5,3 +5,4 @@ src/assets/*
 build/*
 service
 **/*.scss
+**/*.css

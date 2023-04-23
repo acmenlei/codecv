@@ -263,7 +263,7 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
     } else if (tagName[0] === 'h') {
       result += '#'.repeat(+tagName[1]) + ' '
     } else if (tagName === 'li') {
-      result += `${node.parentElement?.tagName.toLowerCase() == 'ul' ? '-' : uid + '.'}`
+      result += `${node.parentElement?.tagName.toLowerCase() == 'ul' ? '- ' : uid + '. '}`
     } else if (['td', 'th'].includes(tagName)) {
       result += '| '
     } else if (tagName === 'code') {

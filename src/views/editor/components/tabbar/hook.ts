@@ -1,5 +1,5 @@
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/hooks/useLcoaStoage'
-import { successMessage, warningMessage } from '@/common/message'
+import { warningMessage } from '@/common/message'
 import {
   createDIV,
   createStyle,
@@ -323,8 +323,7 @@ export function restResumeContent(resumeType: string) {
   localStorage.removeItem(`${AUTO_ONE_PAGE}-${resumeType}`)
   localStorage.removeItem(`${ADJUST_RESUME_MARGIN_TOP}-${resumeType}`)
   localStorage.removeItem(`markdown-content-${resumeType}`)
-  successMessage('重置成功 2秒后将刷新')
-  setTimeout(() => location.reload(), 2000)
+  location.reload()
 }
 
 // 调节元素边距
@@ -478,26 +477,3 @@ export function useAdjust(resumeType: string) {
   onActivated(() => !query(cacheKey) && initAdjustCSS())
   return { adjustMargin, visiable, confirmAdjustment, marginData }
 }
-
-// 修改html结构转markdown内容
-// export function useResumeContentGenerator(emits: any) {
-//   function init() {
-//     const observer = new MutationObserver(
-//       useDebounceFn(() => {
-//         const render = document.querySelector('.re-render')
-//         const node = render?.querySelector('.jufe') as HTMLElement
-//         const markdownContent = resumeDOMStruct2Markdown({ node, latest: true, uid: 0 })
-//         emits('html-convert', markdownContent)
-//       }, 1000)
-//     )
-//     const render = document.querySelector('.re-render') as HTMLElement
-//     observer.observe(render, {
-//       childList: true,
-//       subtree: true,
-//       characterData: true
-//     })
-//   }
-//   onActivated(init)
-// }
-
-// 支持两种模式（编辑和修改模式）渲染jufe元素内容 监听修改 动态生成markdowncontent即可
