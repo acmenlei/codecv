@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import nav from '@/common/nav/nav'
+import ToastModal from '@/components/toast-modal/toastModal.vue'
 import RenderIcons from '@/components/renderIcons.vue'
+
 import { ref } from 'vue'
 
-const toggle = ref(false)
 defineEmits(['export-md', 'import-md'])
+const toggle = ref(false)
 </script>
 
 <template>
@@ -38,12 +40,13 @@ defineEmits(['export-md', 'import-md'])
         <router-link v-if="!navItem.tooltip" :to="navItem.path || ''">{{
           navItem.name
         }}</router-link>
-        <RenderIcons v-else :toggle="toggle">
-          <span @click="toggle = !toggle">{{ navItem.name }}</span>
-        </RenderIcons>
+        <span v-else @click="toggle = !toggle">{{ navItem.name }}</span>
       </template>
     </li>
   </ul>
+  <ToastModal v-if="toggle" :flag="toggle" @close="toggle = !toggle" width="450px">
+    <RenderIcons />
+  </ToastModal>
 </template>
 
 <style lang="scss" scoped>

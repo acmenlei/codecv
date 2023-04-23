@@ -4,7 +4,7 @@ import { useRenderHTML } from '../../hook'
 import { step } from '../tabbar/hook'
 
 const props = defineProps<{ content: string; resumeType: string }>()
-defineEmits(['upload-avatar'])
+defineEmits(['upload-avatar', 'html-convert', 'open-write'])
 // hook...
 const { renderDOM } = useRenderHTML(props)
 // constants
@@ -12,8 +12,13 @@ const { renderDOM } = useRenderHTML(props)
 
 <template>
   <div class="outer">
-    <Tabbar :resumeProps="props" @upload-avatar="path => $emit('upload-avatar', path)" />
-    <div ref="renderDOM" class="markdown-transform-html jufe"></div>
+    <Tabbar
+      @open-write="$emit('open-write', renderDOM)"
+      @html-convert="cnt => $emit('html-convert', cnt)"
+      @upload-avatar="path => $emit('upload-avatar', path)"
+      :resumeProps="props"
+    />
+    <div ref="renderDOM" class="markdown-transform-html jufe reference-dom"></div>
     <!-- 分页渲染区域 -->
     <div class="re-render" :style="{ transform: `scale(${step / 100})` }"></div>
   </div>

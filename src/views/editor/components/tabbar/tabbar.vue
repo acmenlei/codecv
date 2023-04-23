@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import renderDialog from '@/components/renderDialog.vue'
+import ToastModal from '@/components/toast-modal/toastModal.vue'
 import { Codemirror } from 'vue-codemirror'
 import { cssLanguage } from '@codemirror/lang-css'
 import { marks } from './constant'
@@ -12,10 +13,12 @@ import {
   useCustomCSS,
   usePrimaryColor,
   useAutoOnePage,
+  useAdjust,
+  // useResumeContentGenerator,
   restResumeContent
 } from './hook'
 
-const emits = defineEmits(['upload-avatar'])
+const emits = defineEmits(['upload-avatar', 'open-write', 'html-convert'])
 const props = defineProps<{ resumeProps: { content: string; resumeType: string } }>()
 
 const { autoOnePage, setAutoOnePage } = useAutoOnePage(props.resumeProps.resumeType)
@@ -26,6 +29,10 @@ const { color, setColor } = usePrimaryColor(props.resumeProps.resumeType)
 const { fontOptions, font, setFont } = useCustomFont(props.resumeProps.resumeType)
 const { setAvatar } = useAvatar(emits)
 const { primaryColor, setPrimaryColor } = usePrimaryBGColor(props.resumeProps.resumeType)
+const { adjustMargin, visiable, confirmAdjustment, marginData } = useAdjust(
+  props.resumeProps.resumeType
+)
+// useResumeContentGenerator(emits)
 
 const extentions = [cssLanguage]
 </script>
@@ -42,29 +49,40 @@ const extentions = [cssLanguage]
       show-stops
     />
     <div class="operator-level2">
-      <el-tooltip content="上传前请确保你想上传的位置在编辑器中存在 ![个人头像](...) 此关键字">
-        <label for="upload-avatar" class="btn upload_avatar operator-item">上传证件照</label>
+      <el-tooltip content="调整元素边距" effect="light">
+        <i class="iconfont icon-adjust operator-item" @click="adjustMargin"></i>
+      </el-tooltip>
+      <el-tooltip
+        content="上传前请确保你想上传的位置在编辑器中存在 ![个人头像](...) 此占位符"
+        effect="light"
+      >
+        <label for="upload-avatar" class="operator-item card">
+          <i class="iconfont icon-zhengjian"></i>
+        </label>
       </el-tooltip>
       <input type="file" id="upload-avatar" accept=".png,.jpg,.jpeg" @change="setAvatar" />
-      <button class="btn custom_css operator-item" @click="toggleDialog">DIY简历</button>
-      <label for="primary-color">字体颜色</label>
+      <el-tooltip content="编写CSS" effect="light">
+        <i class="operator-item iconfont icon-diy" @click="toggleDialog"></i
+      ></el-tooltip>
+      <el-color-picker class="operator-item" @change="setColor" size="small" v-model="color" />
+      &nbsp;&nbsp; &nbsp;
       <el-color-picker
-        id="primary-color"
-        class="operator-item"
-        @change="setColor"
-        size="small"
-        v-model="color"
-      />
-      &nbsp;&nbsp;
-      <label for="primary-color">主色调</label>
-      <el-color-picker
-        id="primary-bg-color"
         class="operator-item"
         @change="setPrimaryColor"
         size="small"
         v-model="primaryColor"
       />
-      <el-tooltip content="自动一页" placement="bottom">
+      <el-tooltip content="重置简历内容" effect="light"
+        ><i
+          class="operator-item iconfont icon-refresh ml-20"
+          @click="restResumeContent(resumeProps.resumeType)"
+        >
+        </i
+      ></el-tooltip>
+      <el-tooltip content="开启编辑模式" effect="light">
+        <i class="iconfont icon-write operator-item" @click="$emit('open-write')"></i>
+      </el-tooltip>
+      <el-tooltip content="自动一页" effect="light">
         <el-switch
           class="operator-item"
           size="small"
@@ -72,12 +90,6 @@ const extentions = [cssLanguage]
           v-model="autoOnePage"
         />
       </el-tooltip>
-      <button
-        class="btn operator-item custom_css"
-        @click="restResumeContent(resumeProps.resumeType)"
-      >
-        重置简历内容
-      </button>
       <el-select
         v-model="font"
         class="operator-item"
@@ -93,9 +105,11 @@ const extentions = [cssLanguage]
         />
       </el-select>
     </div>
+    <br />
   </div>
   <!-- 弹出框 -->
   <renderDialog
+    v-if="cssDialog"
     confirm-text="设置样式"
     reset-text="重置样式"
     title="你可以在这里编写CSS样式，让它作用在简历上！"
@@ -112,58 +126,78 @@ const extentions = [cssLanguage]
       placeholder="格式如.jufe h2 { color: red; }"
     />
   </renderDialog>
+  <!-- 调整边距 -->
+  <ToastModal v-if="visiable" :flag="visiable" @close="confirmAdjustment" width="400px">
+    <h4>调节简历内容的上边距（单位px）</h4>
+    <div class="margin-container flex">
+      <div class="margin-item" v-for="(marginItem, idx) in marginData" :key="idx">
+        <el-space>
+          <span>{{ marginItem.name }} ({{ marginItem.className || marginItem.tagName }})</span>
+          <el-input-number size="small" v-model="marginItem.marginTop" />
+        </el-space>
+      </div>
+    </div>
+    <br />
+    <h5 style="color: var(--theme)">PS: 只显示简历模板中已经使用的</h5>
+  </ToastModal>
 </template>
 
 <style lang="scss" scoped>
 .operator {
-  width: 210mm;
+  /* width: 210mm; */
+  width: 100%;
   margin: 0 auto;
   position: sticky;
   top: 0;
   transform: translateY(-20px);
   z-index: 1;
-  background: var(--bg-theme);
+  /* background: var(--bg-theme); */
+  background: #222;
+  padding-top: 20px;
 
+  /* 解决label默认边距的问题 */
+  .card {
+    height: 25px;
+  }
   .slider {
-    width: 100%;
+    width: 190mm;
     user-select: none;
+    margin: 0 auto;
   }
 
   .operator-level2 {
     display: flex;
+    margin-top: 25px;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 5px;
-    label {
-      &[for='primary-color'],
-      &[for='primary-bg-color'] {
-        color: #eee;
-        font-size: 12px;
-        margin-right: 5px;
-      }
-    }
-    .operator-item {
-      margin: 20px 10px 0 10px;
-    }
 
-    .primary-bg-color {
-      margin-right: 10px;
+    :deep(.operator-item) {
+      margin-right: 14px;
     }
 
     #upload-avatar {
       width: 0;
       height: 0;
-      margin-right: -10px;
+    }
+
+    i.iconfont {
+      color: #e8e8e8;
+      font-size: 24px;
+      cursor: pointer;
     }
   }
+}
 
-  .custom_css,
-  .upload_avatar {
-    font-size: 0.7rem;
-    cursor: pointer;
-    padding: 3px 10px;
-    color: white;
-    background: var(--theme);
+.margin-container {
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: scroll;
+  .margin-item {
+    margin-top: 10px;
+    span {
+      width: 200px;
+      font-size: 14px;
+    }
   }
 }
 </style>

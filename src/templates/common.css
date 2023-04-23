@@ -15,9 +15,8 @@
 
 /* 头像大小 */
 .markdown-transform-html img {
-  width: 100px;
-  height: 120px;
-  z-index: 9;
+  width: 26mm;
+  height: 32mm;
   position: relative;
 }
 

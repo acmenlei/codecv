@@ -4,4 +4,4 @@ dist
 src/assets/*
 build/*
 service
-src/templates/*/*.scss
+**/*.scss
