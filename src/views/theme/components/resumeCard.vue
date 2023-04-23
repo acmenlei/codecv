@@ -12,7 +12,7 @@ const edit = (type: string) => {
 
 <template>
   <div class="resume-card" @click="edit(theme.type)" data-aos="zoom-in">
-    <img :src="theme.img" />
+    <img :src="theme.img" loading="lazy" />
     <div class="resume-card-mask">
       <button class="btn center pointer">使用模板</button>
     </div>
