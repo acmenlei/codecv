@@ -2,16 +2,18 @@
 import Tabbar from '../tabbar/tabbar.vue'
 import { useRenderHTML } from '../../hook'
 import { step } from '../tabbar/hook'
+import { useDark } from '@vueuse/core'
 
 const props = defineProps<{ content: string; resumeType: string }>()
 defineEmits(['upload-avatar', 'html-convert', 'open-write'])
 // hook...
 const { renderDOM } = useRenderHTML(props)
+const isDark = useDark()
 // constants
 </script>
 
 <template>
-  <div class="outer">
+  <div class="outer" :style="{ background: isDark ? '#282c34' : 'var(--bg-theme)' }">
     <Tabbar
       @open-write="$emit('open-write', renderDOM)"
       @html-convert="cnt => $emit('html-convert', cnt)"

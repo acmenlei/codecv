@@ -31,6 +31,7 @@ import User from './user.vue'
   align-items: center;
   .icon-home {
     font-size: 1.8rem;
+    outline: none;
   }
 }
 </style>

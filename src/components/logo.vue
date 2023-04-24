@@ -5,3 +5,9 @@
     <img src="/logo.jpg" style="transform: scale(0.8)" width="90" height="60" alt="" />
   </div>
 </template>
+
+<style lang="scss" socped>
+.logo {
+  line-height: 0;
+}
+</style>

@@ -5,8 +5,7 @@ import Profile from '@/components/profile.vue'
 import PWDUpdate from '@/components/pwd-update/PWDUpdate.vue'
 import NavBar from '@/components/navBar.vue'
 import CRM from '@/components/comment-reply-msg/crm.vue'
-// import ChatRoom from "@/components/chat-room/chat.vue";
-
+import ThemeToggle from '@/components/themeToggle.vue'
 import { useRouter } from 'vue-router'
 import {
   useUserLogin,
@@ -33,6 +32,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } =
 
 <template>
   <div class="user" data-aos="slide-left">
+    <theme-toggle />
     <template v-if="loginState.logined">
       <div
         class="user-creative mr-20 pointer primary"
@@ -121,9 +121,8 @@ const { data, total, commentTotal, readNotification, pageNumChange } =
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
   .message {
-    color: #555;
+    color: var(--font-color);
   }
 
   .user-creative {
@@ -141,6 +140,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } =
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    outline: none;
   }
   .login {
     &:hover {
@@ -158,7 +158,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } =
   input {
     border: 0.5px solid transparent;
     outline: none;
-    background: #eee;
+    background: var(--body-background);
     border-radius: 8px;
     padding: 10px;
 

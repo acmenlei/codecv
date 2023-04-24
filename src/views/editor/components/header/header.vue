@@ -2,7 +2,7 @@
 import navMenu from './nav.vue'
 import RenderDrawer from '@/components/renderDrawer.vue'
 import Reward from '@/components/reward.vue'
-
+import ThemeToggle from '@/components/themeToggle.vue'
 import { onActivated, ref } from 'vue'
 
 const emits = defineEmits(['download-dynamic', 'download-native', 'download-md', 'import-md']),
@@ -27,20 +27,23 @@ onActivated(() => (fileName.value = document.title))
 
 <template>
   <div id="header">
-    <button class="back" @click="$router.back()">返回上一页</button>
+    <el-tooltip content="返回上一页">
+      <i class="iconfont icon-back mr-20 font-20 pointer hover" @click="$router.back()"></i>
+    </el-tooltip>
     <label for="resume-name-input">简历名称：</label>
     <input id="resume-name-input" type="text" v-model="fileName" />
     <nav-menu @export-md="exportFile('md')" @import-md="importFile" />
+    <Reward />
+    <button class="exportor" @click="exportFile('dynamic')">动态导出PDF</button>
+    <button class="exportor" @click="exportFile('native')">打印机导出PDF</button>
     <div class="operator">
       <el-tooltip content="给项目贡献代码" placement="bottom-end">
-        <i class="iconfont icon-github github" @click="visitRemote"></i>
+        <i class="iconfont icon-github github font-25" @click="visitRemote"></i>
       </el-tooltip>
       <el-tooltip content="问题反馈" placement="bottom-end">
-        <i class="iconfont icon-problem problem" @click="() => (flag = !flag)"></i>
+        <i class="iconfont icon-problem problem font-25" @click="() => (flag = !flag)"></i>
       </el-tooltip>
-      <Reward />
-      <button class="exportor" @click="exportFile('dynamic')">动态导出PDF</button>
-      <button class="exportor" @click="exportFile('native')">打印机导出PDF</button>
+      <theme-toggle />
     </div>
   </div>
   <RenderDrawer v-if="flag" :flag="flag" />
@@ -48,10 +51,7 @@ onActivated(() => (fileName.value = document.title))
 
 <style lang="scss" scoped>
 #header {
-  background: #fff;
   z-index: 9;
-  transition: background 0.5s;
-  box-shadow: 0 0 10px 0 #d0d3db;
   height: 60px;
   margin-bottom: 20px;
   display: flex;
@@ -59,53 +59,41 @@ onActivated(() => (fileName.value = document.title))
   align-items: center;
   padding: 0 70px;
   text-align: center;
-  color: #555;
+  color: var(--font-color);
+  background: var(--background);
 
   #resume-name-input {
     border: none;
     outline: none;
     padding: 5px 10px;
     font-size: 16px;
-    color: #555;
 
     &:focus {
       border-bottom: 1px solid var(--theme);
     }
   }
 
-  .exportor,
-  .back {
+  .exportor {
     outline: none;
     border: none;
     padding: 8px 15px;
+    border-radius: 10px;
     margin-right: 5px;
     cursor: pointer;
+    background: var(--theme);
+    color: white;
 
+    &:last-of-type {
+      margin-right: 25px;
+    }
     &:hover {
       opacity: 0.8;
     }
   }
-
-  .back {
-    margin-right: 30px;
-    cursor: pointer;
-    background: var(--theme);
-    color: white;
-  }
-
   .problem,
   .github {
-    margin-right: 25px;
     cursor: pointer;
-    font-size: 20px;
-    line-height: 60px;
-  }
-
-  .operator {
-    .exportor {
-      background: var(--theme);
-      color: white;
-    }
+    margin-right: 18px;
   }
 }
 </style>

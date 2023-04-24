@@ -21,8 +21,8 @@ import NavMoblie from './components/navMoblie.vue'
 <style lang="scss" scoped>
 .header-out {
   width: 100%;
-  background: white;
-  box-shadow: 0 0 10px 0 #d0d3db;
+  background: var(--background);
+  color: var(--font-color);
   height: 60px;
   z-index: 9;
   position: sticky;

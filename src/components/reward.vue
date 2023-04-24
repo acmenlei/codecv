@@ -9,9 +9,7 @@ function toggle() {
 </script>
 
 <template>
-  <button class="reward btn mr-20" @click="toggle">
-    <i class="iconfont icon-moneybagfill"></i>打赏作者
-  </button>
+  <button class="reward btn" @click="toggle"><i class="iconfont icon-moneybagfill"></i>打赏</button>
   <ToastModal v-if="reward" :flag="reward" @close="toggle">
     <h5>PS：该项目作为免费的开源项目使用，如果你有好的想法欢迎加入到项目中</h5>
     <h5>
@@ -33,15 +31,16 @@ function toggle() {
 .reward {
   display: inline-flex;
   align-items: center;
-  padding: 10px;
+  padding: 8px 10px;
   justify-content: center;
-  background-color: #eb500d;
-  color: #fff;
-  border-radius: 20px;
+  background: var(--strong-color);
+  color: #fffff8;
+  border-radius: 10px;
   cursor: pointer;
   position: relative;
-  animation: bounce 2s infinite;
-  transition: transform 0.3s;
+  margin-right: 5px;
+  /* animation: bounce 2s infinite; */
+  /* transition: transform 0.3s; */
   i {
     margin-right: 5px;
   }
@@ -49,7 +48,7 @@ function toggle() {
     opacity: 0.8;
   }
 }
-@keyframes bounce {
+/* @keyframes bounce {
   0%,
   20%,
   50%,
@@ -63,7 +62,7 @@ function toggle() {
   60% {
     transform: translateY(-5px) scale(1.1);
   }
-}
+} */
 h5 {
   color: orangered;
 }

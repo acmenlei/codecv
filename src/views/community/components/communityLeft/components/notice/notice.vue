@@ -59,8 +59,8 @@ const defaultUserInfo = {
 article {
   padding-bottom: 10px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
-  color: #666;
+  border-bottom: 0.5px solid #999;
+  color: var(--font-color);
   position: relative;
 
   .visit-people {
@@ -69,8 +69,11 @@ article {
     top: -5px;
   }
 
-  .intro:hover {
-    opacity: 0.8;
+  .intro {
+    opacity: 0.9;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &:last-child {
@@ -79,7 +82,7 @@ article {
 
   h3 {
     margin-bottom: 5px;
-    color: #444;
+    color: var(--font-color);
   }
 
   .article-bottom {

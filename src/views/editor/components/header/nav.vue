@@ -50,12 +50,20 @@ const toggle = ref(false)
 </template>
 
 <style lang="scss" scoped>
+.nav {
+  li {
+    a {
+      color: inherit;
+    }
+  }
+}
 .el-dropdown {
   line-height: inherit;
 
   .el-dropdown-link {
     color: orange;
     font-weight: bold;
+    outline: none;
   }
 }
 

@@ -4,7 +4,7 @@ import HotList from '@/components/hot-rank/hotList.vue'
 import BrowseHistory from '@/components/browse-history/browseHistory.vue'
 import Publish from '@/components/publish/publish.vue'
 import Comments from '@/components/comments/comments.vue'
-import { VueMarkdownMenuBar } from 'vue-markdown-menu-bar'
+import MenuBar from '@/components/menu-bar/menu-bar/MenuBar.vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import useUserStore from '@/store/modules/user'
@@ -87,11 +87,11 @@ const isAuthor = computed(() => article.authorId == userInfo.uid)
     <div class="slide-content">
       <hot-list class="slide-item" />
       <browse-history />
-      <vue-markdown-menu-bar
+      <menu-bar
         v-if="delay"
         class="slide-item menu-bar content-card"
         body=".content"
-        width="300px"
+        :style="{ width: '300px' }"
       />
     </div>
   </div>
@@ -139,9 +139,9 @@ const isAuthor = computed(() => article.authorId == userInfo.uid)
         width: 50px;
         height: 50px;
         line-height: 50px;
-        background: #eee;
+        background: var(--body-background);
         font-size: 0.9em;
-        color: #666;
+        color: var(--font-color);
 
         &:hover {
           opacity: 0.7;

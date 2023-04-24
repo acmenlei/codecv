@@ -35,7 +35,7 @@ const { data, useDetail } = useBrowseHistory()
     justify-content: space-between;
 
     span {
-      color: #666;
+      color: var(--font-color);
       white-space: nowrap;
     }
   }

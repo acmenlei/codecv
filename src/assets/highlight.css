@@ -95,7 +95,7 @@ tb-word-explain {
   margin-top: 1em;
   margin-bottom: 1em;
   padding: 10px 20px;
-  background-color: #f8f8f9;
+  background-color: var(--background);
   border-radius: 10px;
 }
 
@@ -186,7 +186,7 @@ tb-timeline {
   border-radius: 50%;
   left: -4px;
   top: 0.5em;
-  background-color: #fff;
+  background-color: var(--background);
   border: 1px solid #bbbec4;
 }
 
@@ -371,7 +371,7 @@ tb-step {
   padding: 10px 15px;
   border-radius: 6px;
   border: 1px solid #e9eaec;
-  background-color: #f8f8f9;
+  background-color: var(--background);
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -455,7 +455,7 @@ tb-jumbotron {
   display: block;
   min-height: 200px;
   margin-bottom: 1em;
-  background-color: #eee;
+  background-color: var(--background);
   padding: 20px;
   position: relative;
   border-radius: 4px;
@@ -465,7 +465,7 @@ tb-jumbotron {
 .tb-blockquote {
   padding: 10px 15px;
   border-left: 10px solid #dddee1;
-  background-color: #f8f8f9;
+  background-color: var(--background);
   margin: 1em 0;
   border-radius: 4px;
 }
@@ -489,7 +489,7 @@ blockquote > *:last-child {
 
 code,
 .tb-pre {
-  background-color: #fefefe;
+  background-color: var(--background);
 }
 
 .tb-pre code {
@@ -527,7 +527,7 @@ samp {
 }
 
 .tb-code-line-number-bg {
-  background-color: #f9f9f9;
+  background-color: var(--background);
   border-right: 1px solid #eee;
   width: 3em;
 }
@@ -539,7 +539,7 @@ samp {
 }
 
 .tb-color-content-highlight {
-  background-color: #eee;
+  background-color: var(--background);
 }
 
 .tb-color-content-highlight .tb-code-line {
@@ -568,7 +568,7 @@ samp {
 
 .tb-color-content-highlight .tb-code-line-emphasize {
   opacity: 1;
-  background-color: #fefefe;
+  background-color: var(--background);
 }
 
 .tb-pre-lang {
@@ -729,4 +729,15 @@ th {
 
 .content h6 {
   margin-top: 5px;
+}
+
+article.content p span,
+article.content li span,
+article.content h1 strong,
+article.content h2 strong,
+article.content h3 strong,
+article.content h4 strong,
+article.content h5 strong,
+article.content h6 strong {
+  color: var(--font-color) !important;
 }

@@ -44,8 +44,8 @@ const pageChange = function (page: number) {
   .render-modal-icons {
     line-height: 20px;
     padding: 10px;
-    background: #fff;
-    color: #333;
+    background: var(--background);
+    color: var(--font-color);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -66,7 +66,7 @@ const pageChange = function (page: number) {
   }
 
   .page {
-    background: white;
+    background: var(--background);
   }
 }
 </style>

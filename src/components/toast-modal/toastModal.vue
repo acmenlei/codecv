@@ -21,7 +21,8 @@ defineEmits(['close'])
     width: 100%;
     padding: 20px 30px;
     border-radius: 10px;
-    background: white;
+    background: var(--background);
+    color: var(--font-color);
   }
 }
 

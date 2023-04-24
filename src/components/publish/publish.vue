@@ -16,7 +16,7 @@ const props = withDefaults(
     background?: string
   }>(),
   {
-    background: '#f8f8f8',
+    background: 'var(--body-background)',
     replyAuthorId: 0,
     replyCommentLevel: 1,
     posterCommentId: 0,
@@ -128,7 +128,7 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent)
   .community-operator-group {
     .community-edit-picker {
       margin-left: 10px;
-      color: #555;
+      color: var(--font-color);
       position: relative;
 
       .picker {
@@ -145,15 +145,14 @@ const { picker, setEmoji, togglePicker } = useEmoji(shareMainContent)
     margin: 10px 10px 0 10px;
     font-size: 0.9rem;
 
-    /* background: #f8f8f8; */
     .content-edit {
       border: none;
       display: block;
       outline: none;
       width: 100%;
       padding: 10px;
-      background: #f8f8f8;
-      color: #555;
+      background: var(--background);
+      color: var(--font-color);
       border-radius: 5px;
       min-height: 100px;
 
