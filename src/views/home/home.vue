@@ -55,12 +55,12 @@ useTypeNet()
 
 <style lang="scss" scoped>
 .white-bg {
-  background: #fff;
+  background: var(--background);
   margin-top: 20px;
 }
 
 .introduce {
-  color: #333;
+  color: var(--font-color);
   height: 100vh;
   padding: 20px;
   position: relative;
@@ -69,6 +69,7 @@ useTypeNet()
   img {
     width: 500px;
     user-select: none;
+
     -webkit-user-drag: none;
   }
 
@@ -118,7 +119,7 @@ useTypeNet()
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: white;
+  background: var(--background);
 }
 
 .highlight {

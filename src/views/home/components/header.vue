@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { homeNav, homeOutNav } from '@/common/nav/homeNav'
 import Logo from '@/components/logo.vue'
+import ThemeToggle from '@/components/themeToggle.vue'
 function toOutNav(path: string) {
   window.location.href = path
 }
@@ -20,6 +21,7 @@ function toOutNav(path: string) {
         {{ navItem.name }}
       </li>
     </ul>
+    <theme-toggle />
     <div class="operator" data-aos="zoom-out-left">
       <button class="linear-color-btn" @click="$router.push('/editor?type=front_end')">
         <i class="iconfont icon-technology"></i>
@@ -37,24 +39,14 @@ function toOutNav(path: string) {
   z-index: 3;
   transition: background 0.5s;
   height: 60px;
+  line-height: 60px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 70px;
   text-align: center;
-  color: #555;
+  color: var(--font-color);
   font-weight: bold;
-
-  .nav {
-    li:hover {
-      opacity: 0.8;
-    }
-
-    .iconfont {
-      font-size: 1.1rem;
-      margin-right: 1px;
-    }
-  }
 }
 </style>
