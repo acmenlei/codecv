@@ -90,7 +90,7 @@ class="tb-pre"
 lang=""
 theme="dark"
 class="tb-pre"
-><div style="width:2.5em" class="tb-code-line-number-bg"></div><div class="tb-code-content"><div class="tb-code-line">::: headStart</div><div class="tb-code-line">content....</div><div class="tb-code-line">::: headStart</div></div><span class="tb-pre-lang"></span></pre>
+><div style="width:2.5em" class="tb-code-line-number-bg"></div><div class="tb-code-content"><div class="tb-code-line">::: headStart</div><div class="tb-code-line">content....</div><div class="tb-code-line">::: headEnd</div></div><span class="tb-pre-lang"></span></pre>
 <p style="background:var(--background); color: var(--font-color)">
 <span style="line-height: 28px"
   ><span style="color: var(--font-color); background:(--background)">上面的&nbsp;</span

@@ -38,7 +38,7 @@ function toggle() {
   border-radius: 10px;
   cursor: pointer;
   position: relative;
-  margin-right: 5px;
+  margin-right: 10px;
   /* animation: bounce 2s infinite; */
   /* transition: transform 0.3s; */
   i {

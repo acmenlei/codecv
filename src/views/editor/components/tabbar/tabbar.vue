@@ -14,25 +14,25 @@ import {
   usePrimaryColor,
   useAutoOnePage,
   useAdjust,
+  useFollowRoll,
   restResumeContent
 } from './hook'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { useThemeConfig } from '@/common/hooks/global'
+import { computed } from 'vue'
 
 const emits = defineEmits(['upload-avatar', 'open-write', 'html-convert'])
 const props = defineProps<{ resumeProps: { content: string; resumeType: string } }>()
+const resumeType = computed(() => props.resumeProps.resumeType)
 
-const { autoOnePage, setAutoOnePage } = useAutoOnePage(props.resumeProps.resumeType)
-const { cssDialog, cssText, toggleDialog, setStyle, removeStyle } = useCustomCSS(
-  props.resumeProps.resumeType
-)
-const { color, setColor } = usePrimaryColor(props.resumeProps.resumeType)
-const { fontOptions, font, setFont } = useCustomFont(props.resumeProps.resumeType)
+const { autoOnePage, setAutoOnePage } = useAutoOnePage(resumeType.value)
+const { cssDialog, cssText, toggleDialog, setStyle, removeStyle } = useCustomCSS(resumeType.value)
+const { color, setColor } = usePrimaryColor(resumeType.value)
+const { fontOptions, font, setFont } = useCustomFont(resumeType.value)
 const { setAvatar } = useAvatar(emits)
-const { primaryColor, setPrimaryColor } = usePrimaryBGColor(props.resumeProps.resumeType)
-const { adjustMargin, visiable, confirmAdjustment, marginData } = useAdjust(
-  props.resumeProps.resumeType
-)
+const { primaryColor, setPrimaryColor } = usePrimaryBGColor(resumeType.value)
+const { adjustMargin, visiable, confirmAdjustment, marginData } = useAdjust(resumeType.value)
+const { followRoll, setFollowRoll } = useFollowRoll()
 const { isDark } = useThemeConfig()
 </script>
 
@@ -91,6 +91,14 @@ const { isDark } = useThemeConfig()
           size="small"
           @change="setAutoOnePage"
           v-model="autoOnePage"
+        />
+      </el-tooltip>
+      <el-tooltip content="跟随滚动" effect="light">
+        <el-switch
+          class="operator-item"
+          size="small"
+          v-model="followRoll"
+          @change="setFollowRoll"
         />
       </el-tooltip>
       <el-select

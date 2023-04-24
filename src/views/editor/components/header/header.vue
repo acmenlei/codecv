@@ -78,7 +78,7 @@ onActivated(() => (fileName.value = document.title))
     border: none;
     padding: 8px 15px;
     border-radius: 10px;
-    margin-right: 5px;
+    margin-right: 10px;
     cursor: pointer;
     background: var(--theme);
     color: white;

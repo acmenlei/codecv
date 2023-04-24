@@ -297,12 +297,14 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
       const alt = (node as HTMLImageElement).alt
       const isAvatar = alt?.includes('个人头像')
       result += `![${isAvatar ? '个人头像' : alt}](${(node as HTMLImageElement).src})`
-    } else if (['tr'].includes(tagName)) {
+    } else if (tagName === 'tr') {
       result += '| '
+    } else if (['th', 'td'].includes(tagName)) {
+      result += ' '
     } else if (tagName === 'code') {
       result += '`'
     }
-    if (!['strong', 'a', 'i', 'td', 'th', 'code', 'ul', 'ol'].includes(tagName)) {
+    if (!['strong', 'a', 'i', 'td', 'th', 'thead', 'code', 'ul', 'ol'].includes(tagName)) {
       result += '\n'
     }
   } else {
