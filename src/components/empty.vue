@@ -12,7 +12,7 @@ defineProps<{ title: string }>()
 <style lang="scss" scoped>
 .empty {
   text-align: center;
-  color: #666;
+  color: var(--font-color);
   padding: 40px 0;
   img {
     user-select: none;

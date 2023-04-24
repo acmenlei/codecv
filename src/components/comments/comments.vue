@@ -111,7 +111,7 @@ const { comments } = useCommentPosition(position)
 }
 
 .tip {
-  color: #666;
+  color: var(--font-color);
 }
 
 .comments-container {
@@ -148,7 +148,7 @@ const { comments } = useCommentPosition(position)
 
   .comment-content {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--font-color);
   }
 
   margin-bottom: 25px;
@@ -156,7 +156,10 @@ const { comments } = useCommentPosition(position)
   .operator {
     justify-content: flex-end;
     font-size: 0.8rem;
-    color: #555;
+    color: var(--font-color);
+    li {
+      color: inherit;
+    }
   }
 }
 </style>

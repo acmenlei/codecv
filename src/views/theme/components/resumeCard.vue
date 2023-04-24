@@ -22,14 +22,13 @@ const edit = (type: string) => {
 
 <style lang="scss" scoped>
 .resume-card {
-  box-shadow: 0 0 10px 3px #ddd;
   margin: 0 20px 50px 0;
   width: 185px;
   height: 240px;
   position: relative;
   text-align: center;
   transition: transform 0.4s;
-  color: #555;
+  color: var(--font-color);
   cursor: pointer;
 
   img {

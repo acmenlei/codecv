@@ -36,7 +36,7 @@ const { hotList, useDetail } = useHotRank()
     margin-top: 15px;
 
     span {
-      color: #555;
+      color: var(--font-color);
       &.rank {
         font-weight: bold;
       }

@@ -12,6 +12,8 @@ import {
 } from './hook'
 import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from '@codemirror/lang-markdown'
+import { oneDark } from '@codemirror/theme-one-dark'
+import { useThemeConfig } from '@/common/hooks/global'
 
 const { resumeType } = useResumeType()
 const { content, setContent } = useMarkdownContent(resumeType)
@@ -20,8 +22,7 @@ const { importMD } = useImportMD(setContent)
 const { setAvatar } = useAvatar(content, setContent)
 const { left, down } = useMoveLayout()
 const { startWrite, writable, DOMTree, ObserverContent } = useWrite(setContent)
-
-const extentions = [markdownLanguage]
+const { isDark } = useThemeConfig()
 </script>
 
 <template>
@@ -39,7 +40,7 @@ const extentions = [markdownLanguage]
         :style="{ height: '100vh', width: `${left}px`, background: '#fff' }"
         :autofocus="true"
         :indent-with-tab="true"
-        :extensions="extentions"
+        :extensions="isDark ? [markdownLanguage, oneDark] : [markdownLanguage]"
         @change="setContent"
       />
       <div

@@ -16,6 +16,8 @@ import {
   useAdjust,
   restResumeContent
 } from './hook'
+import { oneDark } from '@codemirror/theme-one-dark'
+import { useThemeConfig } from '@/common/hooks/global'
 
 const emits = defineEmits(['upload-avatar', 'open-write', 'html-convert'])
 const props = defineProps<{ resumeProps: { content: string; resumeType: string } }>()
@@ -31,8 +33,7 @@ const { primaryColor, setPrimaryColor } = usePrimaryBGColor(props.resumeProps.re
 const { adjustMargin, visiable, confirmAdjustment, marginData } = useAdjust(
   props.resumeProps.resumeType
 )
-
-const extentions = [cssLanguage]
+const { isDark } = useThemeConfig()
 </script>
 
 <template>
@@ -114,7 +115,7 @@ const extentions = [cssLanguage]
     v-if="cssDialog"
     confirm-text="设置样式"
     reset-text="重置样式"
-    title="你可以在这里编写CSS样式，让它作用在简历上！"
+    title="在这里编写CSS样式，让它作用在简历上！"
     :flag="cssDialog"
     @confirm="setStyle"
     @cancel="removeStyle"
@@ -124,7 +125,7 @@ const extentions = [cssLanguage]
       :autofocus="true"
       :style="{ height: '500px' }"
       :indent-with-tab="true"
-      :extensions="extentions"
+      :extensions="isDark ? [cssLanguage, oneDark] : [cssLanguage]"
       placeholder="格式如.jufe h2 { color: red; }"
     />
   </renderDialog>
@@ -153,8 +154,7 @@ const extentions = [cssLanguage]
   top: 0;
   transform: translateY(-20px);
   z-index: 1;
-  /* background: var(--bg-theme); */
-  background: #222;
+  background: var(--toolbar-bg);
   padding-top: 20px;
 
   /* 解决label默认边距的问题 */

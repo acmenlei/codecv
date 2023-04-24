@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Publish from '@/components/publish/publish.vue'
-import UserInfoComp from '@/components/UserInfo.vue'
+import UserInfoComp from '@/components/userInfo.vue'
 import { useReply, useShowMore } from './hook'
 import { ICommentReply } from '@/types/type'
 
@@ -60,7 +60,7 @@ const { more, setMore } = useShowMore(props.data.length)
 
 <style lang="scss" scoped>
 .content-card {
-  background: #f8f8f8;
+  background: var(--background);
 
   .showMore {
     color: var(--theme);
@@ -71,7 +71,7 @@ const { more, setMore } = useShowMore(props.data.length)
 .comment-item {
   .comment-content {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--font-color);
 
     .reply-text {
       color: var(--theme);
@@ -81,7 +81,10 @@ const { more, setMore } = useShowMore(props.data.length)
   .operator {
     justify-content: flex-end;
     font-size: 0.8rem;
-    color: #555;
+    color: var(--font-color);
+    li {
+      color: inherit;
+    }
   }
 }
 </style>

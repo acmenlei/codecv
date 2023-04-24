@@ -35,7 +35,6 @@ const { article, articleEditor, publishArticle } = useCommunityArticle()
 .article-editor {
   max-width: 1200px;
   margin: 20px auto;
-
   .back {
     display: inline-block;
     margin-bottom: 20px;
@@ -51,10 +50,11 @@ const { article, articleEditor, publishArticle } = useCommunityArticle()
     padding: 15px 0;
     border: none;
     outline: none;
-    border-bottom: 2px solid #eee;
+    background: var(--body-bakcground);
+    border-bottom: 0.5px solid #eee;
     margin-bottom: 10px;
     &:focus {
-      border-bottom: 2px solid #000;
+      border-bottom: 0.5px solid #999;
     }
   }
 

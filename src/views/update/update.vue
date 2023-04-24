@@ -23,7 +23,8 @@ import { timeLine } from './constant'
 .time-line {
   max-width: 1200px;
   margin: 30px auto;
-  background: #fff;
+  background: var(--background);
+  color: var(--font-color);
   padding: 30px;
 
   h3 {

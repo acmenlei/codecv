@@ -7,12 +7,12 @@
 </template>
 <script setup lang="ts">
 import AOS from 'aos'
-import 'aos/dist/aos.css'
 import { onMounted } from 'vue'
+import 'aos/dist/aos.css'
 
 onMounted(() => AOS.init())
 </script>
-<style>
+<style lang="scss">
 * {
   box-sizing: border-box;
   padding: 0;
@@ -20,6 +20,6 @@ onMounted(() => AOS.init())
 }
 
 body {
-  background: #f3f5f7;
+  background: var(--body-background);
 }
 </style>

@@ -21,8 +21,12 @@
 
 :root {
   --theme: #4693ff;
-  // --theme: #996be4;
-  --bg-theme: #444;
+  --bg-theme: #444444;
+  --font-color: #555555;
+  --background: #ffffff;
+  --strong-color: #eb500d;
+  --toolbar-bg: #222222;
+  --body-background: '#f3f5f7';
 }
 
 .btn {
@@ -79,7 +83,7 @@ a.ripple-effect {
     white-space: nowrap;
 
     a {
-      color: #555;
+      color: inherit;
       text-decoration: none;
     }
   }
@@ -166,11 +170,11 @@ a.ripple-effect {
 }
 
 .content-card {
-  background: #fff;
+  color: var(--font-color);
+  background: var(--background);
   padding: 20px;
   border-radius: 10px;
 }
-
 .pointer {
   cursor: pointer;
 }

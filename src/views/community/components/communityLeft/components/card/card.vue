@@ -78,8 +78,7 @@ const { useLike, useRemove, useDetail, useEditor } = useOperator(articleId, emit
 article {
   padding-bottom: 10px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
-  color: #666;
+  color: var(--font-color);
   position: relative;
 
   .visit-people {
@@ -98,7 +97,7 @@ article {
 
   h3 {
     margin-bottom: 5px;
-    color: #444;
+    color: var(--font-color);
   }
 
   .article-bottom {

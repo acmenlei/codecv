@@ -41,8 +41,8 @@ const dialogVisible = computed({
     <slot></slot>
     <template #footer v-if="footer">
       <span class="dialog-footer">
-        <el-button type="primary" @click="$emit('confirm')">{{ confirmText }}</el-button>
-        <el-button type="primary" @click="$emit('cancel')">{{ resetText }}</el-button>
+        <button class="primary mr-20 btn" @click="$emit('confirm')">{{ confirmText }}</button>
+        <button class="primary btn" @click="$emit('cancel')">{{ resetText }}</button>
       </span>
     </template>
   </el-dialog>

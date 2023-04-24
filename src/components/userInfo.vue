@@ -28,7 +28,7 @@ defineProps<{ userInfo: IUserInfo; publishTime?: string }>()
 <style lang="scss" scoped>
 .user-head {
   margin-bottom: 10px;
-  color: #333;
+  color: var(--font-color);
   position: relative;
 
   img {
