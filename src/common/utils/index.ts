@@ -270,6 +270,8 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
       result += '`'
     } else if (tagName === 'i' && classList[0] != 'iconfont') {
       result += '*'
+    } else if (tagName === 'br') {
+      result += '&nbsp;'
     }
 
     const children = node.childNodes
