@@ -1,4 +1,4 @@
-import{M as a}from"./highlight.def5985c.js";import{E as n,r as s,b as u,o as t,c as l,a as r,P as c}from"./@vue.2fd64882.js";import{_ as e}from"./index.f566ca83.js";import"./index.83bdad31.js";import"./jspdf.0b42b4d1.js";import"./@babel.e46629ed.js";import"./fflate.fca59393.js";import"./config.404183d2.js";import"./element-plus.ee89351e.js";import"./@vueuse.c6387afd.js";import"./lodash-es.32a32d0b.js";import"./async-validator.fb49d0f5.js";import"./@element-plus.f8f1d436.js";import"./dayjs.f53c2448.js";import"./aos.e37f4dc9.js";import"./@popperjs.36402333.js";import"./@ctrl.b082b0c1.js";import"./html2canvas.4d0ab5af.js";import"./pinia.ea4e5e56.js";import"./picture-verification-code.e81ffd11.js";import"./axios.05d3747b.js";import"./vue-router.ab991b3b.js";import"./nprogress.8e3ae131.js";const p=`<h2 style="background:var(--background); color: var(--font-color)">
+import{M as a}from"./highlight.380b6ab5.js";import{E as n,r as s,b as u,o as t,c as l,a as r,P as c}from"./@vue.c38ebe97.js";import{_ as e}from"./index.c05953cf.js";import"./index.4f25d41f.js";import"./jspdf.0b42b4d1.js";import"./@babel.e46629ed.js";import"./fflate.fca59393.js";import"./config.404183d2.js";import"./element-plus.c24761e2.js";import"./@vueuse.248ba93f.js";import"./lodash-es.32a32d0b.js";import"./async-validator.fb49d0f5.js";import"./@element-plus.5cda0851.js";import"./dayjs.f53c2448.js";import"./aos.e37f4dc9.js";import"./@popperjs.36402333.js";import"./@ctrl.b082b0c1.js";import"./html2canvas.4d0ab5af.js";import"./pinia.afe1a532.js";import"./picture-verification-code.e81ffd11.js";import"./axios.05d3747b.js";import"./vue-router.49a2110c.js";import"./nprogress.8e3ae131.js";const p=`<h2 style="background:var(--background); color: var(--font-color)">
 <span style="color: var(--font-color); background:(--background)">\u524D\u8A00</span>
 </h2>
 <p style="background:var(--background); color: var(--font-color)">
@@ -89,7 +89,7 @@ class="tb-pre"
 lang=""
 theme="dark"
 class="tb-pre"
-><div style="width:2.5em" class="tb-code-line-number-bg"></div><div class="tb-code-content"><div class="tb-code-line">::: headStart</div><div class="tb-code-line">content....</div><div class="tb-code-line">::: headStart</div></div><span class="tb-pre-lang"></span></pre>
+><div style="width:2.5em" class="tb-code-line-number-bg"></div><div class="tb-code-content"><div class="tb-code-line">::: headStart</div><div class="tb-code-line">content....</div><div class="tb-code-line">::: headEnd</div></div><span class="tb-pre-lang"></span></pre>
 <p style="background:var(--background); color: var(--font-color)">
 <span style="line-height: 28px"
   ><span style="color: var(--font-color); background:(--background)">\u4E0A\u9762\u7684&nbsp;</span
@@ -178,4 +178,4 @@ class="tb-pre"
     ></span
   ></span
 >
-</p>`,d={id:"syntax",class:"flex","data-aos":"fade-right"},i=n({__name:"syntax",setup(b){const o=s();return u(()=>{o.value.innerHTML=p}),(g,v)=>(t(),l("div",d,[r("div",{class:"syntax-helper",ref_key:"helper",ref:o},null,512),c(a,{class:"slider",body:".syntax-helper",style:{width:"300px"}})]))}});const P=e(i,[["__scopeId","data-v-834c2277"]]);export{P as default};
+</p>`,d={id:"syntax",class:"flex","data-aos":"fade-right"},i=n({__name:"syntax",setup(b){const o=s();return u(()=>{o.value.innerHTML=p}),(g,v)=>(t(),l("div",d,[r("div",{class:"syntax-helper",ref_key:"helper",ref:o},null,512),c(a,{class:"slider",body:".syntax-helper",style:{width:"300px"}})]))}});const S=e(i,[["__scopeId","data-v-834c2277"]]);export{S as default};
