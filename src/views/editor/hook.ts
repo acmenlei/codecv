@@ -185,6 +185,13 @@ export function useAvatar(content: Ref<string>, setContent: (c: string) => void)
     const newContent = content.value.replace(matchAvatarSlot, `![个人头像](${path})`)
     setContent(newContent)
     successMessage('头像上传成功，如果你想修改为网络图片，你可直接修改对应的链接！')
+    // 可能还需要处理可编辑模式中的头像
+    const writableDOM = document.querySelector('.writable-edit-mode')
+    if (writableDOM) {
+      const avatar: HTMLImageElement | null = writableDOM.querySelector('img[alt*=个人头像]')
+      console.log(avatar, '头像')
+      avatar && (avatar.src = path)
+    }
   }
   return {
     setAvatar
@@ -207,7 +214,11 @@ export function useWrite(setContent: (cnt: string) => void) {
   }
 
   function ObserverContent() {
-    const content = resumeDOMStruct2Markdown({ node: DOMTree.value as Node, latest: true, uid: 0 })
+    const content = resumeDOMStruct2Markdown({
+      node: DOMTree.value as Node,
+      latest: true,
+      uid: 0
+    })
     setContent(content)
   }
   return {

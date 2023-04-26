@@ -23,7 +23,7 @@ const CUSTOM_CSS_STYLE = 'custom-css-style',
   ADJUST_RESUME_MARGIN_TOP = 'ADJUST_RESUME_MARGIN_TOP',
   A4_HEIGHT = 1123
 
-export const step = ref(80)
+export const step = ref(90)
 export function setStep(val: number | any) {
   step.value = val
 }
@@ -487,15 +487,16 @@ export function useFollowRoll() {
     const wem = document.querySelector('.writable-edit-mode') as HTMLElement
     const cs = document.querySelector('.cm-scroller') as HTMLElement
     const render = document.querySelector('.markdown-render') as HTMLElement
+    const reallRenderHeight = document.querySelector('.jufe') as HTMLElement
     function wemcb() {
       if (followRoll.value) {
-        render.scrollTop = render.scrollHeight * (wem.scrollTop / wem.scrollHeight)
+        render.scrollTop = reallRenderHeight.scrollHeight * (wem.scrollTop / wem.scrollHeight)
       }
     }
 
     function cscb() {
       if (followRoll.value) {
-        render.scrollTop = render.scrollHeight * (cs.scrollTop / cs.scrollHeight)
+        render.scrollTop = reallRenderHeight.scrollHeight * (cs.scrollTop / cs.scrollHeight)
       }
     }
 

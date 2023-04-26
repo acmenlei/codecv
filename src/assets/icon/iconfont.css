@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'iconfont'; /* Project id 3737803 */
-  src: url('iconfont.woff2?t=1682140473823') format('woff2'),
-    url('iconfont.woff?t=1682140473823') format('woff'),
-    url('iconfont.ttf?t=1682140473823') format('truetype');
+  src: url('iconfont.woff2?t=1682428787481') format('woff2'),
+    url('iconfont.woff?t=1682428787481') format('woff'),
+    url('iconfont.ttf?t=1682428787481') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,50 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star:before {
+  content: '\e7df';
+}
+
+.icon-goto:before {
+  content: '\e634';
+}
+
+.icon-table:before {
+  content: '\e823';
+}
+
+.icon-code1:before {
+  content: '\e69f';
+}
+
+.icon-columns:before {
+  content: '\e602';
+}
+
+.icon-unorderedlist:before {
+  content: '\e7f4';
+}
+
+.icon-orderedlist:before {
+  content: '\e7f5';
+}
+
+.icon-italic:before {
+  content: '\e7fb';
+}
+
+.icon-info-circle-fill:before {
+  content: '\e7dc';
+}
+
+.icon-bold:before {
+  content: '\e71b';
+}
+
+.icon-space:before {
+  content: '\e739';
 }
 
 .icon-diy:before {
@@ -41,7 +85,7 @@
   content: '\e695';
 }
 
-.icon-module:before {
+.icon-mokuai:before {
   content: '\e63b';
 }
 

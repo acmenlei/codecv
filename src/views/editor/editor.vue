@@ -14,6 +14,7 @@ import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from '@codemirror/lang-markdown'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { useThemeConfig } from '@/common/hooks/global'
+import Toolbar from './components/toolbar/toolbar.vue'
 
 const { resumeType } = useResumeType()
 const { content, setContent } = useMarkdownContent(resumeType)
@@ -23,6 +24,10 @@ const { setAvatar } = useAvatar(content, setContent)
 const { left, down } = useMoveLayout()
 const { startWrite, writable, DOMTree, ObserverContent } = useWrite(setContent)
 const { isDark } = useThemeConfig()
+
+function changeeditor() {
+  console.log('发生了变更')
+}
 </script>
 
 <template>
@@ -34,6 +39,7 @@ const { isDark } = useThemeConfig()
   />
   <div id="root">
     <div class="markdown-edit">
+      <Toolbar v-if="writable" />
       <codemirror
         v-if="!writable"
         v-model="content"
@@ -45,6 +51,7 @@ const { isDark } = useThemeConfig()
       />
       <div
         ref="DOMTree"
+        @change="changeeditor"
         @input="ObserverContent"
         class="markdown-transform-html writable-edit-mode"
         :contenteditable="writable"
@@ -75,12 +82,21 @@ const { isDark } = useThemeConfig()
     outline: none;
     font-size: 15px;
 
+    .writable-edit-mode {
+      padding: 50px;
+      margin: 0 auto;
+      min-width: 550px;
+      transform: scale(0.9);
+      &:focus {
+        outline-color: var(--body-background);
+      }
+    }
     .move {
       width: 10px;
       height: 100%;
+      top: 0;
       background: #ccc;
       cursor: col-resize;
-      z-index: 2;
     }
   }
   .markdown-render {

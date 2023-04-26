@@ -3,14 +3,15 @@ import { successMessage } from '@/common/message'
 import data from '@/assets/icon/iconfont.json'
 import { ref } from 'vue'
 
-type Icon = (typeof data.glyphs)[0]
+const emit = defineEmits(['select-icon'])
 
+type Icon = (typeof data.glyphs)[0]
 const clipborad = (item: Icon) => {
   successMessage('已复制到剪贴板，你可以直接粘贴')
   navigator.clipboard.writeText(`icon:${item.font_class} `)
+  emit('select-icon', item.font_class)
 }
 const iconData = ref<Icon[]>(data.glyphs.slice(0, 20))
-// console.log(data.glyphs.length)
 const pageChange = function (page: number) {
   iconData.value = data.glyphs.slice((page - 1) * 20, page * 20)
 }
@@ -19,14 +20,11 @@ const pageChange = function (page: number) {
 <template>
   <div class="render-modal">
     <div class="render-modal-icons">
-      <i
-        v-for="(item, idx) in iconData"
-        :key="idx"
-        :class="['iconfont', `icon-${item.font_class}`]"
-        @click="clipborad(item)"
-      >
-        <p>{{ item.font_class }}</p>
-      </i>
+      <button v-for="(item, idx) in iconData" :key="idx" @click="clipborad(item)">
+        <i :class="['iconfont', `icon-${item.font_class}`]">
+          <p>{{ item.font_class }}</p>
+        </i>
+      </button>
     </div>
     <el-pagination
       :page-size="20"
@@ -50,18 +48,23 @@ const pageChange = function (page: number) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
-
-  i {
-    font-size: 20px;
+  button {
+    outline: none;
+    background: transparent;
+    border: none;
     height: 60px;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
-    }
 
-    p {
-      text-align: center;
-      font-size: 14px;
+    i {
+      font-size: 20px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+
+      p {
+        text-align: center;
+        font-size: 14px;
+      }
     }
   }
 
