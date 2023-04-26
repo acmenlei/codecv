@@ -36,6 +36,7 @@
     color: white;
     position: relative;
     padding: 5px 8px;
+    margin: 0 3px;
     &::before {
       content: '';
       z-index: -1;

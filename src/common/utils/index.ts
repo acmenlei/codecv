@@ -251,11 +251,11 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
     const tagName = (node as HTMLElement).tagName.toLowerCase() // 获取标签名
 
     if (classList.contains('flex-layout')) {
-      result += '::: start\n' // 如果是指定的类名，则添加起始语法到结果字符串中
+      result += '\n::: start\n' // 如果是指定的类名，则添加起始语法到结果字符串中
     } else if (classList.contains('iconfont')) {
       result += `icon:${classList[1].slice(5)} ` // 如果是指定的类名，则添加 icon 语法到结果字符串中
     } else if (classList.contains('head-layout')) {
-      result += '::: headStart\n' // 如果是指定的类名，则添加头部起始语法到结果字符串中
+      result += '\n::: headStart\n' // 如果是指定的类名，则添加头部起始语法到结果字符串中
     } else if (tagName === 'a') {
       result += '['
     } else if (['b', 'strong'].includes(tagName)) {

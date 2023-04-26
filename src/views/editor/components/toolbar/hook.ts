@@ -99,12 +99,12 @@ export function InsertTable() {
 }
 
 export function useToolBarConfig(emit: any) {
-  function handleCommand(event: any) {
+  function handleCommand(event: MouseEvent) {
     const editor = document.querySelector('.writable-edit-mode') as HTMLElement
-    const buttons = event.target.closest('button[data-command]')
+    const buttons = (event.target as Element).closest('button[data-command]')
     if (!buttons) return
     event.preventDefault()
-    const command = buttons.getAttribute('data-command')
+    const command = buttons.getAttribute('data-command') as string
     switch (command) {
       case 'insertIcon':
         selectIcon.value = !selectIcon.value

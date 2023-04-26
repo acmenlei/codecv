@@ -23,33 +23,35 @@ icon:yuque [yueque.com/xiongleixin](yueque.com/xiongleixin)
 ::: start
 PHP/Java/Node
 :::
-icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+熟练程度
+
 ::: end
 ::: start
 ThinkPHP/Yaf/Yii/Lavaral/LazyPHP
 :::
-icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+熟练程度
 ::: end
 ::: start
 Bootstrap/AngularJS/EmberJS/HTML5/Cocos2dJS/ionic
 :::
-icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+熟练程度
 ::: end
 ::: start
 Bower/Gulp/SaSS/LeSS/PhoneGap
 :::
-icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+熟练程度
 ::: end
 ::: start
 PHPUnit/SimpleTest/Qunit
 :::
-icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+熟练程度
 ::: end
 ::: start
 SAE/BAE/AWS/微博开放平台/微信应用开发
 :::
-icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill icon:collection_fill
+熟练程度
 ::: end
+...
 
 ## 开源项目
 ::: start
@@ -62,7 +64,6 @@ web typewriter effect with support for chain calls. ( 网页打字机效果, 支
 :::
 resume writing tool with markdown syntax.( 在线简历制作工具, markdown 转 PDF )
 ::: end
-
 
 ## 工作经历
 ::: start
@@ -111,7 +112,8 @@ xxx学校 (软件工程)
 :::
 2016-07 ~ 2016-07
 ::: end
-
+...
 ## 致谢
+...
 感谢您花时间阅读我的简历，期待能有机会和您共事。
 `
