@@ -4,9 +4,10 @@ import { toolbarConfig, headings } from './constants'
 import RenderIcons from '@/components/renderIcons.vue'
 import ToastModal from '@/components/toast-modal/toastModal.vue'
 
-const { setHeading, level } = useHeading()
+const emit = defineEmits(['content-change'])
 
-useToolBarConfig()
+const { setHeading, level } = useHeading()
+useToolBarConfig(emit)
 </script>
 
 <template>
@@ -27,7 +28,7 @@ useToolBarConfig()
     </select>
   </div>
   <toast-modal v-if="selectIcon" :flag="selectIcon" @close="selectIcon = !selectIcon">
-    <render-icons @select-icon="insertIcon" />
+    <render-icons @select-icon="(icon: string) => insertIcon(icon, emit)" />
   </toast-modal>
 </template>
 

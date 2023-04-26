@@ -45,14 +45,9 @@ export const toolbarConfig = [
     tip: '插入技能点'
   },
   {
-    icon: 'space',
-    command: 'insertSpace',
-    tip: '插入空格(可使用该功能换行)'
-  },
-  {
     icon: 'goto',
-    command: 'insertBr',
-    tip: '从内容末尾开始编写'
+    command: 'insertToTail',
+    tip: '跳出当前所在布局容器'
   }
 ]
 

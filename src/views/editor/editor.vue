@@ -24,10 +24,6 @@ const { setAvatar } = useAvatar(content, setContent)
 const { left, down } = useMoveLayout()
 const { startWrite, writable, DOMTree, ObserverContent } = useWrite(setContent)
 const { isDark } = useThemeConfig()
-
-function changeeditor() {
-  console.log('发生了变更')
-}
 </script>
 
 <template>
@@ -39,7 +35,7 @@ function changeeditor() {
   />
   <div id="root">
     <div class="markdown-edit">
-      <Toolbar v-if="writable" />
+      <Toolbar v-if="writable" @content-change="ObserverContent" />
       <codemirror
         v-if="!writable"
         v-model="content"
@@ -51,7 +47,6 @@ function changeeditor() {
       />
       <div
         ref="DOMTree"
-        @change="changeeditor"
         @input="ObserverContent"
         class="markdown-transform-html writable-edit-mode"
         :contenteditable="writable"
