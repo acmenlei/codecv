@@ -4,7 +4,8 @@
   h1,
   h2,
   h3,
-  strong {
+  strong,
+  b {
     font-weight: 400;
   }
   h3 {
@@ -29,7 +30,8 @@
     }
   }
 
-  strong {
+  strong,
+  b {
     display: inline-block;
     color: white;
     position: relative;

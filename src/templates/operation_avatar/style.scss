@@ -1,4 +1,4 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
   padding-top: 0;
@@ -47,7 +47,8 @@
       font-size: 25px;
       border-bottom: none !important;
 
-      strong {
+      strong,
+      b {
         margin-left: 10px;
       }
     }
@@ -59,7 +60,7 @@
   }
 
   ul {
-    &+ol {
+    & + ol {
       padding-left: 30px;
     }
   }

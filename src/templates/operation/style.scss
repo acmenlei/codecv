@@ -26,7 +26,8 @@
 
   h5,
   h6,
-  strong {
+  strong,
+  b {
     font-size: 14px;
   }
 
@@ -47,7 +48,8 @@
     }
   }
 
-  strong {
+  strong,
+  b {
     a {
       display: block;
       margin-top: 8px;

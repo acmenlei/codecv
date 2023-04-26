@@ -43,7 +43,8 @@
           margin-top: 16px;
         }
 
-        strong {
+        strong,
+        b {
           color: var(--markdown-primary-color);
         }
 
@@ -99,7 +100,8 @@
     }
   }
 
-  strong {
+  strong,
+  b {
     font-size: 1rem;
   }
 }

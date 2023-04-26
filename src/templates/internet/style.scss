@@ -1,7 +1,6 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
-
   h1,
   h2 {
     margin: 10px 0 8px 0;
@@ -24,7 +23,8 @@
 
   h5,
   h6,
-  strong {
+  strong,
+  b {
     font-size: 14px;
   }
 
@@ -34,7 +34,7 @@
   }
 
   .iconfont {
-    margin-right: .2em;
+    margin-right: 0.2em;
     font-size: 1.1rem;
   }
 
@@ -49,7 +49,8 @@
     }
   }
 
-  strong {
+  strong,
+  b {
     a {
       display: block;
       margin-top: 8px;
@@ -62,7 +63,8 @@
       letter-spacing: 8px;
       border-bottom: none;
       margin-bottom: 20px;
-      strong {
+      strong,
+      b {
         margin-left: 20px;
         font-size: 17px;
         letter-spacing: 2px;

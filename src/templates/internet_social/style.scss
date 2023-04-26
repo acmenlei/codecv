@@ -1,4 +1,4 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
   font-size: 16.5px;
@@ -22,7 +22,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       border: 20px solid transparent;
       border-top-color: var(--markdown-primary-bg-color);
@@ -42,7 +42,7 @@
     li {
       margin-top: 6px;
       color: var(--markdown-primary-color);
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 
@@ -54,7 +54,8 @@
     margin-top: 8px;
   }
 
-  strong {
+  strong,
+  b {
     color: var(--markdown-primary-color);
   }
 

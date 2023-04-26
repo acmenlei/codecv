@@ -1,4 +1,4 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
   padding-top: 0;
@@ -38,7 +38,7 @@
       width: calc(100% - 50px);
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 14.5px;
         width: 0;
@@ -49,7 +49,8 @@
         transform: rotate(135deg);
       }
 
-      strong {
+      strong,
+      b {
         margin-left: 20px;
       }
     }

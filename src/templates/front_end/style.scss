@@ -1,4 +1,4 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
   color: var(--markdown-primary-color);
@@ -20,7 +20,8 @@
 
   h5,
   h6,
-  strong {
+  strong,
+  b {
     font-size: 14px;
   }
 
@@ -30,7 +31,7 @@
   }
 
   .iconfont {
-    margin-right: .2em;
+    margin-right: 0.2em;
     font-size: 1.1rem;
   }
 
@@ -46,13 +47,14 @@
     li {
       list-style: square;
     }
-    &+ol {
+    & + ol {
       margin-top: 5px;
       padding-left: 35px;
     }
   }
 
-  strong {
+  strong,
+  b {
     a {
       display: block;
       margin-top: 8px;
