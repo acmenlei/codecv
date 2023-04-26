@@ -258,7 +258,7 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
       result += '::: headStart\n' // 如果是指定的类名，则添加头部起始语法到结果字符串中
     } else if (tagName === 'a') {
       result += '['
-    } else if (tagName === 'strong') {
+    } else if (['b', 'strong'].includes(tagName)) {
       result += '**'
     } else if (tagName[0] === 'h') {
       result += '#'.repeat(+tagName[1]) + ' '
@@ -268,6 +268,8 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
       result += '| '
     } else if (tagName === 'code') {
       result += '`'
+    } else if (tagName === 'i' && classList[0] != 'iconfont') {
+      result += '*'
     }
 
     const children = node.childNodes
@@ -282,27 +284,32 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
         uid: _isOrderItem ? ++uid : 0
       })
     }
-
     if (classList.contains('flex-layout')) {
       result += '::: end' // 如果是指定的类名，则添加结束语法到结果字符串中
     } else if (classList.contains('head-layout')) {
       result += '::: headEnd' // 如果是指定的类名，则添加头部结束语法到结果字符串中
     } else if (classList.contains('flex-layout-item') && !latest) {
-      result += ':::' // 如果是指定的类名，则添加内容语法到结果字符串中
+      result += '\n:::' // 如果是指定的类名，则添加内容语法到结果字符串中
     } else if (tagName == 'a') {
       result += `](${node.textContent})`
-    } else if (tagName == 'strong') {
+    } else if (['b', 'strong'].includes(tagName)) {
       result += '**'
     } else if (tagName == 'img') {
       const alt = (node as HTMLImageElement).alt
       const isAvatar = alt?.includes('个人头像')
       result += `![${isAvatar ? '个人头像' : alt}](${(node as HTMLImageElement).src})`
-    } else if (['tr'].includes(tagName)) {
-      result += '| '
+    } else if (tagName === 'tr') {
+      result += '|'
+    } else if (['th', 'td'].includes(tagName)) {
+      result += ' '
     } else if (tagName === 'code') {
       result += '`'
+    } else if (tagName === 'i' && classList[0] != 'iconfont') {
+      result += '*'
     }
-    if (!['strong', 'a', 'i', 'td', 'th', 'code', 'ul', 'ol'].includes(tagName)) {
+    if (
+      !['b', 'span', 'strong', 'a', 'i', 'td', 'th', 'thead', 'code', 'ul', 'ol'].includes(tagName)
+    ) {
       result += '\n'
     }
   } else {

@@ -6,6 +6,83 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4766954",
+      "name": "star",
+      "font_class": "star",
+      "unicode": "e7df",
+      "unicode_decimal": 59359
+    },
+    {
+      "icon_id": "617173",
+      "name": "goto",
+      "font_class": "goto",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "837249",
+      "name": "table",
+      "font_class": "table",
+      "unicode": "e823",
+      "unicode_decimal": 59427
+    },
+    {
+      "icon_id": "929180",
+      "name": "code",
+      "font_class": "code1",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
+      "icon_id": "1842080",
+      "name": "columns",
+      "font_class": "columns",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "4767060",
+      "name": "unordered list",
+      "font_class": "unorderedlist",
+      "unicode": "e7f4",
+      "unicode_decimal": 59380
+    },
+    {
+      "icon_id": "4767061",
+      "name": "ordered list",
+      "font_class": "orderedlist",
+      "unicode": "e7f5",
+      "unicode_decimal": 59381
+    },
+    {
+      "icon_id": "4767087",
+      "name": "italic",
+      "font_class": "italic",
+      "unicode": "e7fb",
+      "unicode_decimal": 59387
+    },
+    {
+      "icon_id": "6151161",
+      "name": "info-circle-fill",
+      "font_class": "info-circle-fill",
+      "unicode": "e7dc",
+      "unicode_decimal": 59356
+    },
+    {
+      "icon_id": "7239637",
+      "name": "bold",
+      "font_class": "bold",
+      "unicode": "e71b",
+      "unicode_decimal": 59163
+    },
+    {
+      "icon_id": "9053410",
+      "name": "space",
+      "font_class": "space",
+      "unicode": "e739",
+      "unicode_decimal": 59193
+    },
+    {
       "icon_id": "579832",
       "name": "DIY",
       "font_class": "diy",
@@ -57,7 +134,7 @@
     {
       "icon_id": "11121489",
       "name": "模块",
-      "font_class": "module",
+      "font_class": "mokuai",
       "unicode": "e63b",
       "unicode_decimal": 58939
     },
