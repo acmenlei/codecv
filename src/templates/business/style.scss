@@ -3,7 +3,7 @@
 .markdown-transform-html {
   padding: 0;
   position: relative;
-  min-height: 297mm;
+  min-height: 297mm !important;
 
   &::before {
     content: '';

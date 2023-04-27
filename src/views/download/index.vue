@@ -29,7 +29,7 @@ onUnmounted(() => {
 .jufe {
   width: 210mm;
   position: relative;
-  min-height: 297mm;
+  min-height: 295mm;
   z-index: 1;
   &::after {
     content: '';
