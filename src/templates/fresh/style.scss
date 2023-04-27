@@ -100,10 +100,3 @@
     margin-top: 2.5px;
   }
 }
-
-@media print {
-  @page {
-    size: A4 portrait;
-    margin: 3mm;
-  }
-}

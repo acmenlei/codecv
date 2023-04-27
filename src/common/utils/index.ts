@@ -157,7 +157,15 @@ export function getPdf(title: string, html: HTMLElement) {
           a4w,
           Math.min(a4h, (a4w * page.height) / page.width)
         ) // 添加图像到页面，保留0mm边距
-
+        // pdf.addImage(
+        //   page.toDataURL('image/jpeg', 1.0),
+        //   'JPEG',
+        //   7.9375, // 左边距
+        //   5.2917, // 上边距
+        //   a4w - 7.9375 * 2, // 图片宽度
+        //   // 图片高度
+        //   Math.min(a4h - 5.2917 * 2, (a4w * page.height) / page.width)
+        // )
         renderedHeight += imgHeight
         if (canvas.height - renderedHeight > 1) {
           pdf.addPage() // 如果后面还有内容，添加一个空页
