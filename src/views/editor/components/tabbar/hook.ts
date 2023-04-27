@@ -148,38 +148,51 @@ export function usePrimaryColor(resumeType: string) {
 export function useCustomFont(resumeType: string) {
   const cacheKey = MARKDOWN_FONT + '-' + resumeType
   const fontOptions = [
-    // {
-    //   value: "方正GDC体",
-    //   label: "方正GDC体"
-    // },
+    {
+      value: 'Rubik',
+      label: 'Rubik'
+    },
+    {
+      value: 'Mukta',
+      label: 'Mukta'
+    },
+    {
+      value: 'Noto Sans SC',
+      label: 'Noto Sans SC'
+    },
+    {
+      value: 'Open Sans',
+      label: 'Open Sans'
+    },
     {
       value: 'Helvetica Neue',
       label: 'Helvetica Neue'
     },
     {
-      value: 'Menlo-Regular',
-      label: 'Menlo-Regular'
+      value: 'Exo',
+      label: 'Exo'
     },
     {
-      value: '仓耳渔阳体 W02',
-      label: '仓耳渔阳体 W02'
+      value: 'Roboto Mono',
+      label: 'Roboto Mono'
     }
   ]
   const font = ref(get(cacheKey) ? (get(cacheKey) as string) : 'Helvetica Neue')
 
-  function setFont(fontFamily: string | null) {
+  function setFont(fontFamily: string | null, frist?: boolean) {
     let style = query(cacheKey)
     const isAppend = style
     if (!style) {
       style = createStyle()
       style.setAttribute(cacheKey, 'true')
     }
-    style.textContent = `.jufe { font-family: ${fontFamily}; }`
+    style.textContent = `.jufe { font-family: ${fontFamily}, 'Noto Sans SC', 'Helvetica Neue'; }`
     !isAppend && document.head.appendChild(style)
     set(cacheKey, fontFamily)
+    !frist && splitPage(<HTMLElement>document.querySelector('.reference-dom'))
   }
 
-  onActivated(() => setFont(font.value))
+  onActivated(() => setFont(font.value, true))
 
   return {
     fontOptions,
@@ -224,7 +237,7 @@ export function useAutoOnePage(resumeType: string) {
   const cacheKey = AUTO_ONE_PAGE + '-' + resumeType,
     autoOnePage = ref<any>(get(cacheKey))
 
-  async function setAutoOnePage() {
+  async function setAutoOnePage(frist?: boolean) {
     const container: HTMLElement = document.querySelector('.reference-dom') as HTMLElement
     if (autoOnePage.value) {
       const difference = A4_HEIGHT - container?.clientHeight
@@ -243,9 +256,9 @@ export function useAutoOnePage(resumeType: string) {
     }
     // 缓存3个小时
     set(cacheKey, autoOnePage.value)
-    splitPage(container)
+    !frist && splitPage(container)
   }
-  onActivated(() => !query(cacheKey) && setTimeout(setAutoOnePage, 50))
+  onActivated(() => !query(cacheKey) && setTimeout(() => setAutoOnePage(true), 50))
 
   return {
     autoOnePage,

@@ -89,7 +89,7 @@ const { isDark } = useThemeConfig()
         <el-switch
           class="operator-item"
           size="small"
-          @change="setAutoOnePage"
+          @change="() => setAutoOnePage()"
           v-model="autoOnePage"
         />
       </el-tooltip>

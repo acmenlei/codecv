@@ -1,5 +1,6 @@
 .markdown-transform-html {
   width: 210mm;
+  word-break: break-all;
   font-size: 14px;
   padding: 20px 30px;
   margin: 0 auto;
@@ -82,6 +83,7 @@
   width: 210mm;
   box-sizing: content-box;
   margin: 5mm auto;
+  /* padding: 20px 30px; */
   background: white;
   position: relative;
 }
@@ -95,6 +97,6 @@
 @media print {
   @page {
     size: A4 portrait;
-    margin: 0;
+    padding: 0 30px;
   }
 }
