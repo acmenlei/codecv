@@ -1,8 +1,9 @@
-@import url("../common.css");
+@import url('../common.css');
 
 .markdown-transform-html {
   padding-top: 0;
   font-size: 17px;
+  min-height: 295mm !important;
   color: var(--markdown-primary-color);
 
   i.iconfont {
@@ -36,10 +37,9 @@
       width: 15px;
       height: 15px;
       border-radius: 35%;
-      content: "";
+      content: '';
       top: -5px;
       background: var(--markdown-primary-bg-color);
-      ;
       position: absolute;
       display: inline-block;
     }
