@@ -33,7 +33,7 @@ onUnmounted(() => {
   z-index: 1;
   &::after {
     content: '';
-    background: #fff;
+    background: inherit;
     z-index: -2;
     position: fixed;
     top: 0;

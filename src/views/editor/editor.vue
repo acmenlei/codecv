@@ -50,7 +50,7 @@ const { isDark } = useThemeConfig()
         @input="ObserverContent"
         class="markdown-transform-html writable-edit-mode"
         :contenteditable="writable"
-        :style="{ height: '100vh', width: `${left}px`, background: '#fff', overflowY: 'scroll' }"
+        :style="{ height: '100vh', width: `${left}px`, overflowY: 'scroll' }"
         v-if="writable"
       ></div>
       <div class="move absolute" @mousedown="down"></div>

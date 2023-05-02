@@ -10,8 +10,16 @@ import concise from './concise'
 import simple_avatar from './simple_avatar'
 import graduation_reexam from './graduation_reexam'
 import fresh from './fresh'
+import geek from './geek'
 
 export const themes = [
+  {
+    type: 'geek',
+    id: 13,
+    img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b816951383e4809b09eeef985afe87b~tplv-k3u1fbpfcp-watermark.image?',
+    content: geek,
+    name: '暗黑极客风'
+  },
   {
     type: 'fresh',
     id: 12,
@@ -111,7 +119,8 @@ const primaryColorMap = {
   simple_avatar: ['#2A2D2D', '#F98C07'],
   graduation_reexam: ['#3A3939', '#2186D2'],
   create: ['#000', '#000'], // 新建模版的默认配色
-  fresh: ['#555', '#790FAE'] // 新建模版的默认配色
+  fresh: ['#555', '#790FAE'],
+  geek: ['#d1d1d1', '#5eedad']
 }
 interface IPrimaryColorMap {
   business: Array<string>

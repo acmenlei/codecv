@@ -115,15 +115,24 @@ export function query(attr: string) {
 export function removeHeadStyle(attr: string) {
   query(attr)?.remove()
 }
+function extractRgb(rgbString: string) {
+  // 使用正则表达式提取括号中的数字
+  const matches = rgbString.match(/\d+/g) as string[]
+  // 将字符串转换为数字并返回一个包含RGB值的数组
+  return matches.map((match: string) => parseInt(match))
+}
 
 export function getPdf(title: string, html: HTMLElement) {
   const { showLoading, closeLoading } = useLoading()
   showLoading('正在导出PDF 请耐心等待...')
+  const backgroundColor = getComputedStyle(html).getPropertyValue('background-color')
+  const [r, g, b] = extractRgb(backgroundColor)
   html2canvas(html, {
     allowTaint: false,
     logging: false,
     useCORS: true,
-    scale: 4
+    scale: 4,
+    backgroundColor
   })
     .then(canvas => {
       const pdf = new jsPDF('p', 'mm', 'a4') // A4纸，纵向
@@ -157,18 +166,13 @@ export function getPdf(title: string, html: HTMLElement) {
           a4w,
           Math.min(a4h, (a4w * page.height) / page.width)
         ) // 添加图像到页面，保留0mm边距
-        // pdf.addImage(
-        //   page.toDataURL('image/jpeg', 1.0),
-        //   'JPEG',
-        //   7.9375, // 左边距
-        //   5.2917, // 上边距
-        //   a4w - 7.9375 * 2, // 图片宽度
-        //   // 图片高度
-        //   Math.min(a4h - 5.2917 * 2, (a4w * page.height) / page.width)
-        // )
         renderedHeight += imgHeight
         if (canvas.height - renderedHeight > 1) {
           pdf.addPage() // 如果后面还有内容，添加一个空页
+          // 设置背景颜色和处理多余部分
+          pdf.setFillColor(r, g, b)
+          pdf.rect(0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height, 'F')
+          // 将图像添加到页面中
         }
       }
       // 保存文件

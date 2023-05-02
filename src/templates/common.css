@@ -10,11 +10,6 @@
   color: var(--markdown-primary-color);
 }
 
-.markdown-transform-html code.single-code {
-  display: inline-block;
-  margin-bottom: 5px;
-}
-
 /* 头像大小 */
 .markdown-transform-html img {
   width: 26mm;
@@ -31,7 +26,7 @@
 }
 
 .markdown-transform-html table thead {
-  background-color: rgb(217, 223, 231);
+  background-color: #d9dfe7;
 }
 
 .markdown-transform-html table thead th,
@@ -64,6 +59,8 @@
 
 /* 单个代码块`code` */
 .markdown-transform-html code.single-code {
+  display: inline-block;
+  margin-bottom: 5px;
   color: #567;
   padding: 3px 7px;
   font-size: 0.85rem;
