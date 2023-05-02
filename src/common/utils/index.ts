@@ -308,7 +308,7 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
     } else if (classList.contains('flex-layout-item') && !latest) {
       result += '\n:::' // 如果是指定的类名，则添加内容语法到结果字符串中
     } else if (tagName == 'a') {
-      result += `](${node.textContent})`
+      result += `](${(node as HTMLElement).getAttribute('href')})`
     } else if (['b', 'strong'].includes(tagName)) {
       result += '**'
     } else if (tagName == 'img') {
