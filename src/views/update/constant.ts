@@ -1,6 +1,14 @@
 export const timeLine = [
   {
     content: `
+      1. 内容模式工具栏新增链接按钮.
+      2. 新增暗黑模板
+      `,
+    timestamp: '2023-05-02',
+    version: '1.4.2'
+  },
+  {
+    content: `
       1. 内容模式添加工具栏，支持使用UI交互来编写简历内容格式.
       `,
     timestamp: '2023-04-26',
