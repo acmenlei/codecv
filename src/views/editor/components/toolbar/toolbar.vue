@@ -1,8 +1,22 @@
 <script setup lang="ts">
-import { useToolBarConfig, useHeading, insertIcon, selectIcon } from './hook'
+import {
+  useToolBarConfig,
+  useHeading,
+  insertIcon,
+  selectIcon,
+  linkFlag,
+  insertLink,
+  MulFlag,
+  tableFlag,
+  InsertTable,
+  insertMulticolumn
+} from './hook'
 import { toolbarConfig, headings } from './constants'
 import RenderIcons from '@/components/renderIcons.vue'
 import ToastModal from '@/components/toast-modal/toastModal.vue'
+import LinkInput from './components/linkInput.vue'
+import ColumnInput from './components/columnInput.vue'
+import TableInput from './components/tableInput.vue'
 
 const emit = defineEmits(['content-change'])
 
@@ -29,6 +43,15 @@ useToolBarConfig(emit)
   </div>
   <toast-modal v-if="selectIcon" :flag="selectIcon" @close="selectIcon = !selectIcon">
     <render-icons @select-icon="(icon: string) => insertIcon(icon, emit)" />
+  </toast-modal>
+  <toast-modal v-if="linkFlag" :flag="linkFlag" @close="linkFlag = !linkFlag">
+    <link-input @confirm="(l: string, t: string) => insertLink(l,t, emit)" />
+  </toast-modal>
+  <toast-modal v-if="MulFlag" :flag="MulFlag" @close="MulFlag = !MulFlag">
+    <column-input @confirm="(c: string) => insertMulticolumn(c, emit)" />
+  </toast-modal>
+  <toast-modal v-if="tableFlag" :flag="tableFlag" @close="tableFlag = !tableFlag">
+    <table-input @confirm="(c: string, r: string) => InsertTable(c, r, emit)" />
   </toast-modal>
 </template>
 

@@ -2,6 +2,7 @@
 
 $bg: #232323;
 .jufe-wrapper-page {
+  box-shadow: 0px 0px 10px #000;
   background: $bg;
   .jufe-wrapper-page-item {
     background: $bg;
@@ -66,7 +67,8 @@ $bg: #232323;
 
   h3,
   h4,
-  strong {
+  strong,
+  b {
     color: var(--markdown-primary-bg-color);
   }
 
@@ -130,5 +132,9 @@ $bg: #232323;
   p,
   li {
     margin-top: 10px;
+  }
+
+  thead {
+    color: #000;
   }
 }

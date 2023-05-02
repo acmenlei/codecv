@@ -18,6 +18,17 @@ export function insertIcon(iconName: string, emit: any) {
   emit('content-change')
 }
 
+export const linkFlag = ref(false)
+export function insertLink(url: string, text: string, emit: any) {
+  linkFlag.value = !linkFlag.value
+  restoreCursorPosition()
+  const link = document.createElement('a')
+  link.href = url
+  link.appendChild(document.createTextNode(text))
+  reductionSelection(link)
+  emit('content-change')
+}
+
 export function InsertUserInfo() {
   const info = document.createElement('div')
   info.innerHTML =
@@ -25,12 +36,12 @@ export function InsertUserInfo() {
   reductionSelection(info)
 }
 
-export function insertMulticolumn() {
-  const columnCountStr = prompt('请输入列数')
-  if (!columnCountStr || isNaN(+columnCountStr)) {
-    return
-  }
-  const columnCount = parseInt(columnCountStr)
+// 多列布局
+export const MulFlag = ref(false)
+export function insertMulticolumn(column: string, emit: any) {
+  MulFlag.value = !MulFlag.value
+  restoreCursorPosition()
+  const columnCount = parseInt(column)
   const columnWidth = 100 / columnCount
   const placeholders = Array(columnCount)
     .fill('')
@@ -45,6 +56,7 @@ export function insertMulticolumn() {
   temp.innerHTML = multiColumnsHTML
   const multiColumnsContainer = <Node>temp.firstChild
   reductionSelection(multiColumnsContainer)
+  emit('content-change')
 }
 
 export function insertCode() {
@@ -67,35 +79,30 @@ export function insertToTail() {
   range.collapse(true)
   selection.addRange(range)
 }
-
-export function InsertTable() {
-  const columnCountStr = prompt('请输入表格列数')
-  if (!columnCountStr || isNaN(+columnCountStr)) {
-    return
-  }
-  const rowCountStr = prompt('请输入表格行数')
-  if (!rowCountStr || isNaN(+rowCountStr)) {
-    return
-  }
-  const columnCount = +columnCountStr,
-    rowCount = +rowCountStr
+export const tableFlag = ref(false)
+export function InsertTable(col: string, row: string, emit: any) {
+  tableFlag.value = !tableFlag.value
+  restoreCursorPosition()
+  const columnCount = +col,
+    rowCount = +row
   const thead = Array(columnCount)
     .fill('')
     .map((_, index) => `<th>content${index + 1}</th>`)
     .join('')
-  let row = ''
+  let rowStr = ''
   for (let i = 0; i < rowCount; i++) {
     const body = Array(columnCount)
       .fill('')
       .map((_, index) => `<td>content${index + 1}</td>`)
       .join('')
-    row += `<tr>${body}</tr>`
+    rowStr += `<tr>${body}</tr>`
   }
-  const tableHTML = `<thead><tr>${thead}</tr></thead><tbody>${row}</tbody>`
+  const tableHTML = `<thead><tr>${thead}</tr></thead><tbody>${rowStr}</tbody>`
   // 创建一个表格
   const table = document.createElement('table')
   table.innerHTML = tableHTML
   reductionSelection(table)
+  emit('content-change')
 }
 
 export function useToolBarConfig(emit: any) {
@@ -110,7 +117,8 @@ export function useToolBarConfig(emit: any) {
         selectIcon.value = !selectIcon.value
         break
       case 'multiColumns':
-        insertMulticolumn()
+        MulFlag.value = !MulFlag.value
+        cursorPosition = saveCursorPosition()
         break
       case 'insertUserInfo':
         InsertUserInfo()
@@ -119,18 +127,21 @@ export function useToolBarConfig(emit: any) {
         insertCode()
         break
       case 'insertTable':
-        InsertTable()
+        tableFlag.value = !tableFlag.value
+        cursorPosition = saveCursorPosition()
         break
       case 'insertToTail':
         insertToTail()
+        break
+      case 'insertLink':
+        linkFlag.value = !linkFlag.value
+        cursorPosition = saveCursorPosition()
         break
       default:
         document.execCommand(command, false, undefined)
         break
     }
-    ;['multiColumns', 'insertUserInfo', 'insertCode', 'insertTable', 'insertToTail'].includes(
-      command
-    ) && emit('content-change')
+    ;['insertUserInfo', 'insertCode', 'insertToTail'].includes(command) && emit('content-change')
     editor.focus()
   }
   document.addEventListener('click', handleCommand)
@@ -147,4 +158,36 @@ function reductionSelection(target: Node) {
   range.setStartAfter(target)
   range.collapse(true)
   selection.addRange(range)
+}
+
+let cursorPosition: {
+  startContainer: Node
+  startOffset: number
+  endContainer: Node
+  endOffset: number
+} | null
+function saveCursorPosition() {
+  const selection = window.getSelection() as Selection
+  const range = selection.getRangeAt(0)
+  const startContainer = range.startContainer
+  const startOffset = range.startOffset
+  const endContainer = range.endContainer
+  const endOffset = range.endOffset
+  return {
+    startContainer,
+    startOffset,
+    endContainer,
+    endOffset
+  }
+}
+
+function restoreCursorPosition() {
+  if (!cursorPosition) return
+  const selection = window.getSelection() as Selection
+  const newRange = new Range()
+  newRange.setStart(cursorPosition.startContainer, cursorPosition.startOffset)
+  newRange.setEnd(cursorPosition.endContainer, cursorPosition.endOffset)
+  selection.removeAllRanges()
+  selection.addRange(newRange)
+  cursorPosition = null
 }

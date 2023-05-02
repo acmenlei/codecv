@@ -120,7 +120,7 @@ const primaryColorMap = {
   graduation_reexam: ['#3A3939', '#2186D2'],
   create: ['#000', '#000'], // 新建模版的默认配色
   fresh: ['#555', '#790FAE'],
-  geek: ['#d1d1d1', '#5eedad']
+  geek: ['#d1d1d1', '#17A00B']
 }
 interface IPrimaryColorMap {
   business: Array<string>

@@ -136,6 +136,9 @@ export function getPdf(title: string, html: HTMLElement) {
   })
     .then(canvas => {
       const pdf = new jsPDF('p', 'mm', 'a4') // A4纸，纵向
+      // 设置背景颜色和处理多余部分
+      pdf.setFillColor(r, g, b)
+      pdf.rect(0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height, 'F')
       const ctx = canvas.getContext('2d')
       const a4w = 210
       const a4h = 297 // A4大小，210mm x 297mm，四边各保留10mm的边距，显示区域190x277

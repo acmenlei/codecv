@@ -10,6 +10,11 @@ export const toolbarConfig = [
     tip: '斜体文本'
   },
   {
+    icon: 'link',
+    command: 'insertLink',
+    tip: '添加链接/替换选中文本'
+  },
+  {
     icon: 'unorderedlist',
     command: 'insertUnorderedList',
     tip: '无序列表'
