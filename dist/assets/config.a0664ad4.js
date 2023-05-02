@@ -370,7 +370,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,t=`::: start
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,e=`::: start
 ::: headStart
 ![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
 ## \u72C2\u5F92\u5F20\u4E09 - \u6CD5\u5F8B\u987E\u95EE
@@ -445,7 +445,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:technology \u4E13\u4E1A\u6280\u80FD
 - \u7CBE\u901AHTML/DIV+CSS/Less/Sass\u7B49\u524D\u7AEFweb\u5F00\u53D1\u6280\u672F\uFF0C\u517C\u5BB9\u591A\u79CD\u79FB\u52A8\u7AEF\u3001PC\u7AEF\u6D4F\u89C8\u5668\u7684\u4EE3\u7801\uFF0CCSS3\u65B0\u7279\u6027;
 - \u719F\u7EC3\u638C\u63E1js\u3001ES6\u7B49\u65B0\u7279\u6027\uFF0C\u4EE5\u53CAAjax(Fetch)\u3001Json\u3001Axios\u3001\u4EE5\u53CA\u4EE3\u7406\u8DE8\u57DF\u4E0E\u540E\u7AEF\u5B9E\u73B0\u6570\u636E\u4EA4\u4E92;
-::: end`,e=`::: headStart
+::: end`,t=`::: headStart
 ## \u5C0F\u9ED1\u5B50 - \u524D\u7AEF\u67B6\u6784\u5E08
 ::: start
 **\u5DE5\u4F5C\u7ECF\u9A8C**\uFF1A8\u5E74
@@ -844,4 +844,78 @@ xxx\u5B66\u6821 (\u8F6F\u4EF6\u5DE5\u7A0B)
 ## \u81F4\u8C22
 ...
 \u611F\u8C22\u60A8\u82B1\u65F6\u95F4\u9605\u8BFB\u6211\u7684\u7B80\u5386\uFF0C\u671F\u5F85\u80FD\u6709\u673A\u4F1A\u548C\u60A8\u5171\u4E8B\u3002
-`,c=[{type:"fresh",id:12,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/274659ec6a294c2cb4f0d289bee3ba4f~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)"},{type:"graduation_reexam",id:11,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:i,name:"\u7814\u7A76\u751F\u590D\u8BD5\u7B80\u5386\u6A21\u677F"},{type:"simple_avatar",id:10,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:n,name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:a,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"business",id:7,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u901A\u7528\u6A21\u677F"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u8FD0\u8425\u7C7B"}],F={business:["#111","#297370"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"],simple_avatar:["#2A2D2D","#F98C07"],graduation_reexam:["#3A3939","#2186D2"],create:["#000","#000"],fresh:["#555","#790FAE"]};function r(u){return F[u][1]}function s(u){return F[u][0]}export{s as a,r as g,c as t};
+`,c=`
+::: headStart
+
+::: start
+
+![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+
+
+### \u5E26\u4F6C
+
+:::
+icon:link [coderlei.netlify.app](https://coderlei.netlify.app)
+icon:github [github.com/acmenlei](https://github.com/acmenlei)
+icon:yuque [yuque.com/xxxxx](https://yuque.com/xxxxx)
+
+:::
+icon:phone 155xxxx9999
+icon:wechat x972761675
+icon:email example@163.com
+
+:::
+## xxx\u67B6\u6784\u5E08
+
+::: end
+::: headEnd
+## \u5DE5\u4F5C\u7ECF\u5386
+
+::: start
+#### \u817E\u8BAF\uFF08\u56E2\u961F\u8D1F\u8D23\u4EBA\uFF09
+
+:::
+**2019\u5E7406\u6708 \uFF5E \u81F3\u4ECA**
+
+::: end
+-  \u57FA\u4E8E Web \u7684 SPA \u9879\u76EE\uFF0C\u4F7F\u7528 Vue3 + Typescript \u76F8\u5173\u751F\u6001\u73AF\u5883\u642D\u5EFA\u5B9E\u73B0\u5728\u7EBF\u7B80\u5386\u5236\u4F5C\u5E73\u53F0
+-  \u4F7F\u7528 \`Vue3\` + \`Typescript\` \u7F16\u5199\uFF0C\u4F7F\u7528 \`Vite\` \u6253\u5305, xxxxxxxxxxxxxxxxxxxxxxxx
+
+::: start
+#### \u963F\u91CC\u5DF4\u5DF4 \uFF08\u524D\u7AEF\u5DE5\u7A0B\u5E08\uFF09
+
+:::
+**2017\u5E7406\u6708 \uFF5E 2019\u5E7406\u6708**
+
+::: end
+\u8D1F\u8D23\u56E2\u961F\u524D\u7AEF\u516C\u5171\u57FA\u7840\u7684\u5EFA\u8BBE\u4E0E\u89C4\u5212\uFF0Cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+-  \u5DE5\u4F5C\u4E2D\u6211\u505A\u4E86\u4EC0\u4E48\uFF0C\u4EA7\u51FA\u4E86\u4EC0\u4E48\u6837\u7684\u7ED3\u679C\uFF0C\u5F97\u5230\u4E86\u540C\u4E8B\u4EEC\u7684\u4E00\u81F4\u8BA4\u53EF\u7B49...
+-  \u5DE5\u4F5C\u4E2D\u6211\u505A\u4E86\u4EC0\u4E48\uFF0C\u4EA7\u51FA\u4E86\u4EC0\u4E48\u6837\u7684\u7ED3\u679C\uFF0C\u5F97\u5230\u4E86\u540C\u4E8B\u4EEC\u7684\u4E00\u81F4\u8BA4\u53EF\u7B49...
+-  \u5DE5\u4F5C\u4E2D\u6211\u505A\u4E86\u4EC0\u4E48\uFF0C\u4EA7\u51FA\u4E86\u4EC0\u4E48\u6837\u7684\u7ED3\u679C\uFF0C\u5F97\u5230\u4E86\u540C\u4E8B\u4EEC\u7684\u4E00\u81F4\u8BA4\u53EF\u7B49...
+-  \u5DE5\u4F5C\u4E2D\u6211\u505A\u4E86\u4EC0\u4E48\uFF0C\u4EA7\u51FA\u4E86\u4EC0\u4E48\u6837\u7684\u7ED3\u679C\uFF0C\u5F97\u5230\u4E86\u540C\u4E8B\u4EEC\u7684\u4E00\u81F4\u8BA4\u53EF\u7B49...
+
+## \u9879\u76EE\u7ECF\u5386
+::: start
+**Resume Board**
+:::
+**2011\u5E7409\u6708 \uFF5E 2015\u5E7407\u6708**
+::: end
+**\u6280\u672F\u6808**\uFF1A\`TypeScript\` \`Vue3\` \`Vite\` \`pinia\` \`vue-router\`
+**\u9879\u76EE\u7B80\u4ECB**\uFF1A\u4E00\u6B3E markdown \u7B80\u5386\u5236\u4F5C\u5DE5\u5177\uFF0C\u53EF\u4EE5\u628A\u4F60\u7F16\u5199\u7684\u7B80\u5386\u8F6C\u6362\u4E3A PDF\uFF0C\u652F\u6301\u591A\u79CD\u6A21\u677F\uFF0C\u7F16\u5199\u4E00\u5957\u7B80\u5386\u5185\u5BB9\u53EF\u9002\u914D\u591A\u79CD\u7B80\u5386\u6A21\u677F
+**\u5DE5\u4F5C\u5185\u5BB9**\uFF1A
+1. \u57FA\u4E8E Markdown \u7684\u4E66\u5199\u65B9\u5F0F\uFF0C\u7B80\u5355\u6613\u4E0A\u624B\uFF0C\u4E14\u652F\u6301\u591A\u5217\u5E03\u5C40\uFF0C\u7F16\u5199\u4E00\u5957 Markdown \u53EF\u9002\u914D\u6240\u6709\u6A21\u7248
+2. \u6839\u636E\u81EA\u8EAB\u559C\u597D DIY \u7B80\u5386\u6837\u5F0F\u3001\u5B57\u4F53\uFF0C\u4E14\u63D0\u4F9B\u5B9E\u65F6\u5206\u9875\u9884\u89C8\uFF0C\u53EF\u6839\u636E\u6BD4\u4F8B\u8C03\u6574 PDF \u9884\u89C8\u5927\u5C0F
+3. \u667A\u80FD\u81EA\u52A8\u4E00\u9875\uFF0C\u7B80\u5386\u5185\u5BB9\u4E0D\u8DB3\u6216\u8FC7\u591A\u65F6\uFF0C\u53EF\u901A\u8FC7\u52A8\u6001\u8BA1\u7B97\u540E\u81EA\u52A8\u8FDB\u884C\u5747\u5300\u62C9\u4F38\u6216\u6536\u7F29
+**\u9879\u76EE\u96BE\u70B9**\uFF1A
+1. \u57FA\u4E8E\u539F\u751F Markdown \u8BED\u6CD5\u7F16\u5199\u7684\u7B80\u5386\u6392\u7248\u8FC7\u4E8E\u5355\u4E00\uFF0C\u4E0D\u80FD\u5B9E\u73B0\u591A\u5217\u5E03\u5C40
+
+## \u6559\u80B2\u7ECF\u5386
+::: start
+\u5317\u4EAC\u5927\u5B66 - \u8F6F\u4EF6\u5DE5\u7A0B - \u5B66\u58EB\u5B66\u4F4D
+:::
+**2011\u5E7409\u6708 \uFF5E 2015\u5E7407\u6708**
+::: end
+
+## \u81EA\u6211\u8BC4\u4EF7
+\u5728\u524D\u7AEF\u9886\u57DF\u6709\u8FC7\u6DF1\u8015\uFF0C\u6709\u7BA1\u7406\u3001\u7EC4\u7EC7\u80FD\u529B....... ok\u7ED3\u675F\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199\u5427
+`,r=[{type:"geek",id:13,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b816951383e4809b09eeef985afe87b~tplv-k3u1fbpfcp-watermark.image?",content:c,name:"\u6697\u9ED1\u6781\u5BA2\u98CE"},{type:"fresh",id:12,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/274659ec6a294c2cb4f0d289bee3ba4f~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)"},{type:"graduation_reexam",id:11,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:i,name:"\u7814\u7A76\u751F\u590D\u8BD5\u7B80\u5386\u6A21\u677F"},{type:"simple_avatar",id:10,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:n,name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:a,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"business",id:7,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u901A\u7528\u6A21\u677F"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u8FD0\u8425\u7C7B"}],F={business:["#111","#297370"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"],simple_avatar:["#2A2D2D","#F98C07"],graduation_reexam:["#3A3939","#2186D2"],create:["#000","#000"],fresh:["#555","#790FAE"],geek:["#d1d1d1","#17A00B"]};function s(u){return F[u][1]}function p(u){return F[u][0]}export{p as a,s as g,r as t};

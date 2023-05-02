@@ -40,7 +40,6 @@ declare module '@vue/runtime-core' {
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Empty: typeof import('./src/components/empty.vue')['default']
     HotList: typeof import('./src/components/hot-rank/hotList.vue')['default']
-    LinkInput: typeof import('./src/components/linkInput.vue')['default']
     Logo: typeof import('./src/components/logo.vue')['default']
     MenuBar: typeof import('./src/components/menu-bar/menu-bar/MenuBar.vue')['default']
     MenuBarItem: typeof import('./src/components/menu-bar/menu-bar-item/menuBarItem.vue')['default']
