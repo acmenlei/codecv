@@ -6,7 +6,7 @@ import jsPDF from 'jspdf'
 import { errorMessage, successMessage } from '../message'
 
 export async function importCSS(name: string) {
-  const res = await import(`../../templates/${name}/style.scss`)
+  const res = await import(`../../templates/modules/${name}/style.scss`)
   return res.default
 }
 
