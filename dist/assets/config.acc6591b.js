@@ -918,4 +918,135 @@ icon:email example@163.com
 
 ## \u81EA\u6211\u8BC4\u4EF7
 \u5728\u524D\u7AEF\u9886\u57DF\u6709\u8FC7\u6DF1\u8015\uFF0C\u6709\u7BA1\u7406\u3001\u7EC4\u7EC7\u80FD\u529B....... ok\u7ED3\u675F\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199\u5427
-`,r=[{type:"geek",id:13,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b816951383e4809b09eeef985afe87b~tplv-k3u1fbpfcp-watermark.image?",content:c,name:"\u6697\u9ED1\u6781\u5BA2\u98CE"},{type:"fresh",id:12,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/274659ec6a294c2cb4f0d289bee3ba4f~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)"},{type:"graduation_reexam",id:11,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:i,name:"\u7814\u7A76\u751F\u590D\u8BD5\u7B80\u5386\u6A21\u677F"},{type:"simple_avatar",id:10,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:n,name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:a,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"business",id:7,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u901A\u7528\u6A21\u677F"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u8FD0\u8425\u7C7B"}],F={business:["#111","#297370"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"],simple_avatar:["#2A2D2D","#F98C07"],graduation_reexam:["#3A3939","#2186D2"],create:["#000","#000"],fresh:["#555","#790FAE"],geek:["#d1d1d1","#17A00B"]};function s(u){return F[u][1]}function p(u){return F[u][0]}export{p as a,s as g,r as t};
+`,r=`
+::: headStart
+
+::: start
+
+![\u4E2A\u4EBA\u5934\u50CF](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0a90751599f54e749923964af2fe398b~tplv-k3u1fbpfcp-watermark.image?)
+
+:::
+## Jack MA - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+### icon:user \u7537 / icon:city \u6D59\u6C5F\u676D\u5DDE / 22\u5C81 / icon:phone 1334xxxx123
+
+::: end
+::: headEnd
+## \u4E2A\u4EBA\u4FE1\u606F
+
+::: start
+icon:email coderlei@test.cn
+
+:::
+icon:wechat x972761675
+
+:::
+icon:github [github.com/acmenlei](https://github.com/acmenlei)
+
+:::
+icon:yuque [yueque.com/xxxxx](https://yuque.com/xiongleixin)
+
+:::
+icon:link [coderlei.netlify.app](https://coderlei.netlify.app)
+
+::: end
+## \u5DE5\u4F5C\u7ECF\u5386
+### \u817E\u8BAF - \u5929\u7F8E\u5DE5\u4F5C\u5BA4 - \u524D\u7AEF\uFF082019/09 \uFF5E 2023/05\uFF09
+xxxx**\u7814\u53D1\u8D1F\u8D23\u4EBA**\uFF0C\u8D1F\u8D23\u524D\u7AEF\u6280\u672F\u67B6\u6784\u8BBE\u8BA1\uFF0C\u63A2\u7D22Web\u524D\u7AEF\u4E0E\u6E38\u620F\u524D\u7AEF\u6280\u672F\u7ED3\u5408\u9886\u57DF\uFF0C\u63A8\u8FDB\u65B0\u6280\u672F\u5728\u4E1A\u52A1\u4E2D\u843D\u5730...
+- \u4E3B\u5BFC\u5E76\u53C2\u4E0E\u5FAE\u4FE1\u6E38\u620F\u9879\u76EE\u7684\u8BBE\u8BA1\u8FC7\u7A0B\u548C\u65B9\u6848\u8C03\u7814\uFF0C\u5BF9\u6280\u672F\u65B9\u6848\u3001\u98CE\u9669\u8FDB\u884C\u8BC4\u5BA1\u548C\u5206\u6790
+- \u6DF1\u5165\u7406\u89E3\u4E1A\u52A1\uFF0C\u6CE8\u91CD\u4EA7\u54C1\u548C\u7528\u6237\u4F53\u9A8C\uFF0C\u652F\u6301\u548C\u63A8\u52A8\u4E1A\u52A1\u7684\u5FEB\u901F\u8FED\u4EE3\u53D1\u5C55
+- \u5177\u5907\u826F\u597D\u5B66\u4E60\u80FD\u529B\u3001\u6C9F\u901A\u80FD\u529B\u3001\u9700\u6C42\u843D\u5730\u80FD\u529B\u3001\u6570\u5B66\u53CA\u62BD\u8C61\u601D\u7EF4\u80FD\u529B\u3001\u627F\u538B\u80FD\u529B
+
+## \u9879\u76EE\u7ECF\u5386
+### xxxxxx\u7EC4\u4EF6\u5E93\uFF082018/07 - 2019/09\uFF09
+**\u9879\u76EE\u4ECB\u7ECD**\uFF1A\u7EC4\u4EF6\u5E93\u7684\u80CC\u666F\uFF0C\u4E3A\u4F55\u9700\u8981\u8FD9\u4E2A\u7EC4\u4EF6\u5E93\uFF0C\u4E3B\u5BFC\u4E86xxxx\u7684xxxxx\uFF0C\u83B7\u5F97\u4E86\u4EC0\u4E48\u6837\u7684\u7ED3\u679C\uFF0C\u5F97\u5230\u4E86\u540C\u4E8B\u4EEC\u7684\u4E00\u81F4\u597D\u8BC4...
+**\u5DE5\u4F5C\u5185\u5BB9**\uFF1A
+- \u7531\u4E8Exxxxxxxx\uFF0C\u4F7F\u7528xxx\u65B9\u5F0F\u6784\u5EFA\u4E86xxx\u7EC4\u4EF6\u5E93\uFF0C\u5176\u4E2Dxxxx\u662F\u6700xxxx\u7684\u70B9\uFF0Cxxxxxxxxxxxxxxxxxx
+- \u89E3\u51B3\u4E86xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- \u7F16\u4E0D\u6765\u4E86\u81EA\u5DF1\u5199\u5427xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+**\u9879\u76EE\u96BE\u70B9**\uFF1A
+- \u6587\u4EF6\u5185\u5BB9\u8FC7\u591A\uFF0C\u4E0A\u4F20\u6587\u4EF6\u8F83\u6162\uFF0C\u7528\u6237\u4F53\u9A8C\u5DEExxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- \u590D\u6742\u4E1A\u52A1\u7EC4\u4EF6\u7684\u591A\u72B6\u6001\u8054\u52A8xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+## \u4E13\u4E1A\u6280\u80FD
+1.\u7CBE\u901A Vue.js\u3001React.js \u6846\u67B6\u6E90\u7801\uFF0C\u5BF9\u6B64\u7C7B\u6846\u67B6\u6709\u81EA\u5DF1\u7684\u7406\u89E3\uFF0C\u80FD\u6839\u636E\u5B9E\u9645\u4E1A\u52A1\u573A\u666F\u8FDB\u884C\u6280\u672F\u9009\u578B
+2.\u7CBE\u901A Nuxt.js\u3001Next.js \u4EE5\u53CA\u793E\u533A\u76F8\u5173\u7684 SSR \u6E32\u67D3\u6846\u67B6\u539F\u7406\u4EE5\u53CA\u4F7F\u7528\uFF0C\u5BF9\u5176\u5B9E\u73B0\u4E5F\u6709\u81EA\u5DF1\u7684\u7406\u89E3
+3.\u7CBE\u901A\u8BA1\u7B97\u673A\u7F51\u7EDC\u3001\u8BA1\u7B97\u673A\u7EC4\u6210\u539F\u7406\u3001\u64CD\u4F5C\u7CFB\u7EDF\uFF0C\u5BF9 HTTPS\u3001HTTP\u3001TCP\u3001UDP \u6709\u8FC7\u6DF1\u5165\u7814\u7A76
+4.\u7CBE\u901A\u5FAE\u524D\u7AEF\u6846\u67B6\uFF0C\u5982 qiankun\u3001EMP\u3001Single-spa\uFF0C\u5E76\u80FD\u591F\u6839\u636E\u5B9E\u9645\u4E1A\u52A1\u573A\u666F\u8FDB\u884C\u9879\u76EE\u67B6\u6784\u8BBE\u8BA1
+5.\u7CBE\u901A\u524D\u7AEF\u6027\u80FD\u4F18\u5316\u3001\u6D4F\u89C8\u5668\u5E95\u5C42\u539F\u7406\u3001ChromeV8\u5F15\u64CE\uFF0C\u5BF9\u524D\u7AEF\u6027\u80FD\u8C03\u4F18\u6709\u81EA\u5DF1\u7684\u7406\u89E3
+
+## \u6559\u80B2\u7ECF\u5386
+::: start
+### \u6E05\u534E\u5927\u5B66 - \u7535\u5B50\u4FE1\u606F - \u672C\u7855
+:::
+**2015/09/01 - 2022/07/01**
+::: end
+## \u81EA\u6211\u8BC4\u4EF7
+\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....\u672C\u4EBA\u4E00\u8D2F\u7231\u5C97\u656C\u4E1A\uFF0C\u63D0\u5021\u56E2\u961F\u534F\u4F5C\u7CBE\u795E\u3002\u5BF9\u5F85\u5DE5\u4F5C\u9996\u5148\u5C31\u8981\u770B\u600E\u6837\u53BB\u770B\u5F85\u8FD9\u4EFD\u5DE5\u4F5C\uFF0C\u662F\u7D2F\u7684\u3001\u82E6\u7684\uFF0C\u80FD\u8E0F\u8E0F\u5B9E\u5B9E\u53BB\u505A\u5C06\u5FC3\u653E\u5165\u8FD9\u4E2A\u7EC4\u7EC7\u5F53\u4E2D\u53BB\u3002
+`,p=`::: headStart
+::: start
+![\u4E2A\u4EBA\u5934\u50CF](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b73989663a6a4ce6bed7f0e469c3ab5d~tplv-k3u1fbpfcp-watermark.image?)
+:::
+## xxxx **Java\u5F00\u53D1\u5DE5\u7A0B\u5E08**
+icon:city \u6D59\u6C5F\u676D\u5DDE / icon:user \u7537 / 22\u5C81 / icon:school \u5E94\u5C4A\u751F
+icon:email coderlei@test.cn / icon:wechat x972761675 / icon:phone 123xxxxx223
+:::
+icon:github [github.com/acmenlei](https://github.com/acmenlei)
+icon:yuque [yueque.com/xxxxx](https://yuque.com/xiongleixin)
+icon:link [\u4E2A\u4EBA\u7F51\u7AD9 coderlei.netlify.app](https://coderlei.netlify.app)
+::: end
+::: headEnd
+
+## \u6559\u80B2\u7ECF\u5386
+::: start
+- **\u5317\u4EAC\u5927\u5B66**
+- \u5149\u534E\u7BA1\u7406\u5B66\u9662 - \u5DE5\u5546\u7BA1\u7406 GPA 3.9 / 4.0
+:::
+
+**2021.09 - 2024.07**
+::: end
+
+::: start
+- **\u6E05\u534E\u5927\u5B66**
+- \u5DE5\u5546\u7BA1\u7406\u5B66\u9662 - \u5DE5\u5546\u7BA1\u7406 GPA 3.9 / 4.0
+
+:::
+
+**2017.09 - 2021.07**
+
+::: end
+
+## \u5DE5\u4F5C\u7ECF\u5386
+
+### \u676D\u5DDExx\u7F51\u7EDC\u6709\u9650\u516C\u53F8 - xxxxx\u5DE5\u7A0B\u5E08 \uFF082018.3-2018.7\uFF09
+1. \u5BF9\u7535\u5546\u5E73\u53F0\u6574\u4F53\u89C4\u5212\u8BBE\u8BA1\u3001\u524D\u53F0\u9875\u8FDB\u884C\u66F4\u65B0\u8FED\u4EE3\u8BBE\u8BA1\u3001\u4E3B\u9898\u6D3B\u52A8\u8BBE\u8BA1\u3001\u4E13\u9898\u9875\u8BBE\u8BA1\uFF1B
+2. \u5BF9\u7535\u5546\u7F51\u7AD9\u9875\u9762\u8BBE\u8BA1\u3001\u5E97\u94FA\u4EA7\u54C1\u88C5\u4FEE\u3001\u8BE6\u60C5\u9875\u9762\u8BBE\u8BA1\u3001\u63A8\u5E7F\u56FE\u7B49\u56FE\u7247\u8BBE\u8BA1\u5236\u4F5C\u3002
+3. \u5BF9\u7167\u7247\u8FDB\u884C\u7CBE\u4FEE\uFF0C\u719F\u6089\u62A0\u56FE\u3001\u8C03\u8272\u53CA\u5404\u79CD\u5E38\u89C4\u53CA\u7279\u6B8A\u8C03\u8272\u624B\u6CD5\uFF1B
+4. \u8D1F\u8D23\u56FE\u7247\u3001\u6587\u5B57\u8BBE\u8BA1\u6392\u7248\uFF0C\u8981\u6C42\u5356\u70B9\u7A81\u51FA\u3001\u65B9\u4FBF\u9605\u8BFB\u3001\u5438\u5F15\u8D2D\u4E70\uFF1B
+5. \u6839\u636E\u8BBE\u8BA1\u903B\u8F91\u53CA\u6D3B\u52A8/\u5B9D\u8D1D\u7279\u6027\uFF0C\u8FDB\u884C\u6587\u6848\u63CF\u5199\uFF1B
+6. \u914D\u5408\u8FD0\u8425\u3001\u4E1A\u52A1\u90E8\u95E8\u53CA\u5BA2\u6237\u53CD\u9988\uFF0C\u4F18\u5316\u3001\u4FEE\u6B63\u5546\u54C1\u56FE\u7247\u4FE1\u606F\uFF1B
+
+## \u9879\u76EE\u7ECF\u5386
+::: start
+### xxxxB\u7AEF\u7BA1\u7406\u53F0
+:::
+### 2020.12 - 2021.05
+::: end
+- **\u6280\u672F\u6808**\uFF1A\`ts\` \`vue3\` \`vite\` \`vue-router\` \`vuex\` \`nodejs\` \`redis\` \`MySQL\` \`eCharts\`
+- **\u9879\u76EE\u7B80\u4ECB**\uFF1A\u8BE5\u9879\u76EE\u662F\u4E00\u4E2A\u4F7F\u7528 Vue.js \u5F00\u53D1\u7684\u7535\u5546\u7C7B\u5C0F\u7A0B\u5E8F\u7684\u5546\u5BB6\u7AEF\u7BA1\u7406\u7CFB\u7EDF\uFF0C\u662F\u4E00\u4E2A\u524D\u540E\u7AEF\u5206\u79BB\u7684 SPA \u5E94
+- **\u5DE5\u4F5C\u5185\u5BB9**\uFF1A
+1. \u767B\u5F55\u91C7\u7528 Cookie + Token \u7684\u65B9\u5F0F\uFF0C\u7528\u6237\u5206\u4E3A\u5E97\u957F\u4EE5\u53CA\u5458\u5DE5\uFF0C\u5E76\u9488\u5BF9\u8FD9\u51E0\u79CD\u89D2\u8272\u5BF9\u5176\u8FDB\u884C\u6743\u9650\u63A7\u5236
+2. \u6743\u9650\u505A\u5230\u6309\u94AE\u7EA7\u522B\uFF0C\u9875\u9762\u7EA7\u6743\u9650\u901A\u8FC7 Vue-Router \u5B88\u536B\u8FDB\u884C\u63A7\u5236\u3001\u6309\u94AE\u7EA7\u6743\u9650\u901A\u8FC7 directive \u5B9E\u73B0\uFF0C\u5E76\u4F7F\u7528\u5355\u4F8B\u6A21\u5F0F\u89E3\u51B3\u4E86\u6309\u94AE\u8FC7\u591A\u5F15\u53D1\u7684\u9891\u7E41\u62C9\u53D6\u6743\u9650\u7684 HTTP \u8BF7\u6C42\u7684\u95EE\u9898
+3. \u6839\u636E\u6743\u9650\u83DC\u5355\u7684\u7EA7\u8054\u5173\u7CFB\u5BF9\u6743\u9650\u7801\u7ED3\u6784\u8FDB\u884C\u6539\u9020\uFF0C\u5E76\u4F7F\u7528 Tree \u7EC4\u4EF6\u6E32\u67D3\u6811\u5F62\u7ED3\u6784\u6743\u9650\u5217\u8868\uFF0C\u63D0\u5347\u53EF\u8BFB\u6027
+4. \u4F7F\u7528 ECharts \u53EF\u89C6\u5316\u6E32\u67D3\u5E97\u94FA\u5546\u54C1\u9500\u552E\u5360\u6BD4\u3001\u8FD1\u51E0\u4E2A\u6708\u6536\u652F\u3001\u4F1A\u5458\u8D2D\u4E70\u5546\u54C1\u6240\u5360\u4EFD\u989D\u56FE\u8868
+5. \u5BF9\u4E8E\u8868\u683C\u4E2D\u6240\u6709\u7684\u6A21\u7CCA\u67E5\u8BE2\uFF0C\u90FD\u4F7F\u7528\u4E86\u8282\u6D41\u8FDB\u884C\u4F18\u5316\uFF0C\u5C3D\u91CF\u51CF\u8F7B\u670D\u52A1\u5668\u7684\u538B\u529B
+
+## \u4E2A\u4EBA\u8363\u8A89
+1. \u56DB\u5E74\u73ED\u957F + \u56E2\u652F\u4E66xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2. \u5927\u5B66\u751F\u521B\u65B0\u521B\u4E1A\u5927\u8D5B\u56FD\u5BB6\u7EA7\u7ACB\u9879xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+3. \u4E92\u8054\u7F51+\u91D1\u878D\u8D5B\u9053\u4E00\u7B49\u5956xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+4. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx......
+
+## \u81EA\u6211\u8BC4\u4EF7
+1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
+2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,s=[{type:"simple_versatile",id:15,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c6a6b934f9947a1a9c942558b80fd88~tplv-k3u1fbpfcp-watermark.image?",content:p,name:"\u7B80\u7EA6\u4E07\u80FD\u6A21\u677F"},{type:"heading",id:14,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3d4a135f118420c93c62ac503d44fe8~tplv-k3u1fbpfcp-watermark.image?",content:r,name:"\u7B80\u7EA6\u98CE\u5934\u90E8\u7528\u8272"},{type:"geek",id:13,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b816951383e4809b09eeef985afe87b~tplv-k3u1fbpfcp-watermark.image?",content:c,name:"\u6697\u9ED1\u6781\u5BA2\u98CE"},{type:"fresh",id:12,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/274659ec6a294c2cb4f0d289bee3ba4f~tplv-k3u1fbpfcp-watermark.image?",content:o,name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)"},{type:"graduation_reexam",id:11,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:i,name:"\u7814\u7A76\u751F\u590D\u8BD5\u7B80\u5386\u6A21\u677F"},{type:"simple_avatar",id:10,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:n,name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F"},{type:"concise",id:9,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:a,name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248"},{type:"internet_social",id:8,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?",content:t,name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)"},{type:"business",id:7,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:e,name:"\u5546\u52A1\u7C7B(\u4E00\u9875)"},{type:"operation_avatar",id:6,img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:D,name:"\u8FD0\u8425\u5927\u7C7B"},{type:"general",id:5,img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:A,name:"\u901A\u7528\u6A21\u677F"},{type:"internet_avatar",id:4,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:C,name:"\u4E92\u8054\u7F51IT\u6A21\u677F-\u5E26\u5934\u50CF"},{type:"internet",id:3,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:B,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"front_end",id:2,img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e7cbae36d47d4ed7ab9c79dca959f3fa~tplv-k3u1fbpfcp-watermark.image?",content:x,name:"\u4E92\u8054\u7F51IT\u901A\u7528"},{type:"operation",id:1,img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:E,name:"\u8FD0\u8425\u7C7B"}],F={business:["#111","#297370"],front_end:["#333","#333"],general:["#333","#719ba5"],internet:["#333","#333"],internet_avatar:["#333","#333"],concise:["#555","#333"],internet_social:["#333","#9ad4eb"],operation:["#333","#333"],operation_avatar:["#333","#1a85f0"],simple_avatar:["#2A2D2D","#F98C07"],graduation_reexam:["#3A3939","#2186D2"],create:["#000","#000"],fresh:["#555","#790FAE"],geek:["#d1d1d1","#17A00B"],heading:["#363434","#ffdc63"],simple_versatile:["#333","#C42F76"]};function d(u){return F[u][1]}function m(u){return F[u][0]}export{m as a,d as g,s as t};
