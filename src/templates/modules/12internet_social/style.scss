@@ -1,0 +1,76 @@
+@import url('../../common.css');
+
+.markdown-transform-html {
+  font-size: 16.5px;
+  padding: 20px 35px;
+  color: var(--markdown-primary-color);
+
+  .iconfont {
+    margin-right: 5px;
+    font-size: 1.3rem;
+    color: var(--markdown-primary-color);
+  }
+
+  h2 {
+    margin-top: 30px;
+    padding: 0 5px;
+    background: var(--markdown-primary-bg-color);
+    color: white !important;
+    display: inline-block;
+    position: relative;
+    z-index: 99;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border: 20px solid transparent;
+      border-top-color: var(--markdown-primary-bg-color);
+      left: -20px;
+      z-index: -1;
+    }
+
+    &::after {
+      top: 12px;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+
+    li {
+      margin-top: 6px;
+      color: var(--markdown-primary-color);
+      opacity: 0.7;
+    }
+  }
+
+  ol {
+    padding-left: 30px;
+  }
+
+  p {
+    margin-top: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--markdown-primary-color);
+  }
+
+  .head-layout {
+    h2 {
+      background: none;
+      color: var(--markdown-primary-color) !important;
+      margin-top: 20px;
+      border-bottom: none;
+      font-size: 1.6rem;
+
+      &::before,
+      &::after {
+        border: none;
+      }
+    }
+  }
+}
