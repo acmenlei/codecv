@@ -1,0 +1,114 @@
+@import url('../common.css');
+
+.markdown-transform-html {
+  padding-top: 0;
+  color: var(--markdown-primary-color);
+
+  i.iconfont {
+    margin-right: 5px;
+  }
+
+  & > h2 {
+    color: var(--markdown-primary-bg-color);
+    border-left: 3px solid var(--markdown-primary-bg-color) !important;
+    padding: 3px 10px;
+    position: relative;
+    font-size: 1rem;
+    i.iconfont {
+      font-size: 1.2rem;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: var(--markdown-primary-bg-color);
+      opacity: 0.1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+  }
+  h2 {
+    margin: 10px 0 5px 0;
+  }
+  h2,
+  h3 {
+    color: var(--markdown-primary-bg-color);
+  }
+
+  h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .head-layout {
+    white-space: pre;
+
+    img[alt*='个人头像'] {
+      width: 25mm;
+      height: 25mm;
+      border-radius: 50%;
+    }
+    .flex-layout-item {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    h2 {
+      color: var(--markdown-primary-bg-color);
+    }
+    strong,
+    b {
+      margin-left: 10px;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  ul {
+    & + ol {
+      padding-left: 30px;
+    }
+  }
+
+  a {
+    color: var(--markdown-primary-bg-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--markdown-primary-bg-color);
+  }
+
+  p,
+  li {
+    margin-top: 7px;
+  }
+
+  code.single-code {
+    color: var(--markdown-primary-bg-color);
+    padding: 5px 10px;
+    background: transparent;
+    position: relative;
+    border: 0.5px solid var(--markdown-primary-bg-color);
+    border-radius: 5px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border-radius: 5px;
+      border: 1px solid var(--markdown-primary-bg-color);
+      background: var(--markdown-primary-bg-color);
+      z-index: -1;
+      opacity: 0.1;
+    }
+  }
+}
