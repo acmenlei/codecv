@@ -23,7 +23,7 @@ function toOutNav(path: string) {
     </ul>
     <theme-toggle />
     <div class="operator" data-aos="zoom-out-left">
-      <button class="linear-color-btn" @click="$router.push('/editor?type=front_end')">
+      <button class="linear-color-btn" @click="$router.push('/editor?type=10front_end')">
         <i class="iconfont icon-technology"></i>
         开始创作
       </button>
@@ -37,7 +37,6 @@ function toOutNav(path: string) {
   top: 0;
   width: 100%;
   z-index: 3;
-  transition: background 0.5s;
   height: 60px;
   line-height: 60px;
   margin-bottom: 20px;
