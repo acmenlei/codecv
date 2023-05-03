@@ -1,0 +1,70 @@
+@import url('../common.css');
+
+.markdown-transform-html {
+  .head-layout {
+    .flex-layout {
+      .flex-layout-item {
+        &:first-child {
+          padding-right: 8px;
+          background: white;
+          img[alt*='个人头像'] {
+            height: 25mm;
+            width: 25mm;
+            transform: translateY(2.5px);
+          }
+        }
+        &:last-child {
+          flex: 1;
+        }
+      }
+      &:last-child {
+        height: 25mm;
+        background: var(--markdown-primary-bg-color);
+        h1,
+        h2,
+        h3 {
+          font-weight: 400;
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+
+  h2 {
+    margin-top: 10px;
+    border-radius: 2px;
+  }
+  & > h2 {
+    background: var(--markdown-primary-color);
+    color: white;
+    padding: 5px 8px;
+    display: inline-block;
+    font-size: 1rem;
+  }
+  i.iconfont {
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  a {
+    color: inherit;
+    border-bottom: 1px solid var(--markdown-primary-color);
+    text-decoration: none;
+  }
+  h3 {
+    margin: 10px 0;
+  }
+  ul,
+  ol {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  p,
+  li {
+    margin-top: 8px;
+  }
+
+  strong,
+  b {
+    font-weight: 600;
+  }
+}

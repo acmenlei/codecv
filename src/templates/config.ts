@@ -11,8 +11,24 @@ import simple_avatar from './simple_avatar'
 import graduation_reexam from './graduation_reexam'
 import fresh from './fresh'
 import geek from './geek'
+import heading from './heading'
+import simple_versatile from './simple_versatile'
 
 export const themes = [
+  {
+    type: 'simple_versatile',
+    id: 15,
+    img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c6a6b934f9947a1a9c942558b80fd88~tplv-k3u1fbpfcp-watermark.image?',
+    content: simple_versatile,
+    name: '简约万能模板'
+  },
+  {
+    type: 'heading',
+    id: 14,
+    img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3d4a135f118420c93c62ac503d44fe8~tplv-k3u1fbpfcp-watermark.image?',
+    content: heading,
+    name: '简约风头部用色'
+  },
   {
     type: 'geek',
     id: 13,
@@ -120,7 +136,9 @@ const primaryColorMap = {
   graduation_reexam: ['#3A3939', '#2186D2'],
   create: ['#000', '#000'], // 新建模版的默认配色
   fresh: ['#555', '#790FAE'],
-  geek: ['#d1d1d1', '#17A00B']
+  geek: ['#d1d1d1', '#17A00B'],
+  heading: ['#363434', '#ffdc63'],
+  simple_versatile: ['#333', '#C42F76']
 }
 interface IPrimaryColorMap {
   business: Array<string>
