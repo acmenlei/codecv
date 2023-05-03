@@ -65,11 +65,13 @@ onActivated(() => (fileName.value = document.title))
   #resume-name-input {
     border: none;
     outline: none;
-    padding: 5px 10px;
+    padding: 8px 10px;
+    border-radius: 5px;
     font-size: 16px;
+    background: var(--body-background);
 
     &:focus {
-      border-bottom: 1px solid var(--theme);
+      border-bottom: 1.5px solid var(--theme);
     }
   }
 
