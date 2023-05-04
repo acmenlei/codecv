@@ -27,6 +27,7 @@ import NavMoblie from './components/navMoblie.vue'
   z-index: 9;
   position: sticky;
   top: 0;
+  overflow: hidden;
 
   .header {
     max-width: 1200px;

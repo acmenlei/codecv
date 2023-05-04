@@ -155,7 +155,6 @@ const { isDark } = useThemeConfig()
 
 <style lang="scss" scoped>
 .operator {
-  /* width: 210mm; */
   width: 100%;
   margin: 0 auto;
   position: sticky;
@@ -174,7 +173,9 @@ const { isDark } = useThemeConfig()
     user-select: none;
     margin: 0 auto;
   }
-
+  :deep(.el-slider__bar) {
+    background: var(--theme);
+  }
   .operator-level2 {
     display: flex;
     margin-top: 25px;
