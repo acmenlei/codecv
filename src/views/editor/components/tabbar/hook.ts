@@ -441,7 +441,6 @@ export function useAdjust(resumeType: string) {
     setVisiable()
     // 获取dom元素
     const targetElement = document.querySelector('.jufe') as HTMLElement
-    console.log(targetElement)
     const marginTopValues = getAllMarginTopValues(targetElement)
     marginData.length = 0
     console.log(marginData)

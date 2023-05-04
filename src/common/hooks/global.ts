@@ -10,9 +10,9 @@ export function isLogin() {
 export function useThemeConfig() {
   const isDark = useDark()
   const toggleTheme = useToggle(isDark)
-
+  // #ff7449
   watchEffect(() => {
-    const theme = isDark.value ? '#5745c8' : '#ff7449',
+    const theme = isDark.value ? '#5745c8' : '#3f9eff',
       background = isDark.value ? '#282c34' : '#ffffff',
       fontColor = isDark.value ? '#fffff8' : '#555555',
       strongColor = isDark.value ? '#ab3fb2' : '#f24672',

@@ -89,6 +89,7 @@ const { isDark } = useThemeConfig()
         <el-switch
           class="operator-item"
           size="small"
+          active-color="var(--theme)"
           @change="() => setAutoOnePage()"
           v-model="autoOnePage"
         />
@@ -97,6 +98,7 @@ const { isDark } = useThemeConfig()
         <el-switch
           class="operator-item"
           size="small"
+          active-color="var(--theme)"
           v-model="followRoll"
           @change="setFollowRoll"
         />
