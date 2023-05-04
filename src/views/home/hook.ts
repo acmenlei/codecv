@@ -3,34 +3,23 @@ import { onMounted } from 'vue'
 
 export function useTypeNet() {
   onMounted(() => {
-    new TypeNet('.typenet-text', { speed: 80 })
-      .type('Resume Board ', { style: 'color: #fd79a8' })
-      .type('是')
-      .sleep(300)
-      .type('一款完全免费的 ')
-      .type('Markdown', { style: 'color: #fd79a8' })
-      .type(' 简历编写工具')
+    const content = document.querySelector('.typenet-text')
+    if (content?.querySelector('.type-container') != null) return
+    new TypeNet('.typenet-text', { speed: 10, style: 'font-weight: bold; line-height: 28px' })
+      .type('使用', { style: 'font-weight: bold; font-size: 40px;line-height: 60px' })
+      .type(' CodeCV Resume ', {
+        style: 'color: #ff7449;font-weight: bold; font-size: 40px;line-height: 60px'
+      })
+      .type('免费生成你的简历', {
+        style: 'font-weight: bold; font-size: 40px;line-height: 60px'
+      })
       .line()
-      .sleep(300)
-      .type('可以将你编写的 ', { speed: 50 })
-      .type('Markdnow', { speed: 50, style: 'color: #fd79a8' })
-      .sleep(300)
-      .remove(3)
-      .sleep(300)
-      .type('own', { speed: 80, style: 'color: #fd79a8' })
-      .type(' 内容')
-      .sleep(300)
-      .type('转为 ')
-      .type('PDF', { style: 'color: var(--theme)' })
-      .type(' 格式的文件.')
       .line()
-      .sleep(300)
-      .type('如果你有不错的想法，')
-      .type('欢迎为项目贡献出你的daima', { style: 'color: var(--theme)' })
-      .sleep(300)
-      .remove(5)
-      .sleep(300)
-      .type('代码.', { speed: 80, style: 'color: var(--theme)' })
+      .type('CodeCV 支持你使用 Markdown 语法来编写你的简历，可扩展性极高。且支持双编辑模式，')
+      .type('Markdown模式 ', { style: 'color: #ff7449' })
+      .type('以及')
+      .type(' 内容模式 ', { style: 'color: #ff7449' })
+      .type('无缝切换，多种模板适配，编写一套简历内容可适配多个简历模板，你想要的这里都有～')
       .start()
   })
 }

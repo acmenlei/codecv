@@ -21,12 +21,12 @@ function toOutNav(path: string) {
         {{ navItem.name }}
       </li>
     </ul>
-    <theme-toggle />
     <div class="operator" data-aos="zoom-out-left">
-      <button class="linear-color-btn" @click="$router.push('/editor?type=10front_end')">
+      <theme-toggle />
+      <!-- <button class="linear-color-btn" @click="$router.push('/editor?type=10front_end')">
         <i class="iconfont icon-technology"></i>
         开始创作
-      </button>
+      </button> -->
     </div>
   </div>
 </template>

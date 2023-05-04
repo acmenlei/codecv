@@ -1,144 +1,147 @@
 <script setup lang="ts">
 import { useTypeNet } from './hook'
 import Header from './components/header.vue'
+import { useDark } from '@vueuse/core'
+import { themes } from '@/templates/config'
 
 useTypeNet()
+const isDark = useDark()
 </script>
 
 <template>
   <Header />
-  <div class="introduce odd flex flex-space-around flex-align-center">
-    <img src="/resume-bg-one.svg" data-aos="fade-right" />
-    <div class="introduce-r typenet-text" data-aos="fade-left"></div>
-    <div class="ball-bottom" data-aos="fade-right" data-aos-duration="1000"></div>
-    <div class="ball-top" data-aos="fade-up" data-aos-duration="1000"></div>
-  </div>
-  <div class="mask"></div>
-  <div class="introduce white-bg flex flex-space-around flex-align-center">
-    <img src="/resume-bg-two.svg" data-aos="fade-right" />
-    <div class="introduce-r tac" data-aos="fade-left">
-      <h2>
-        多种模板适配，你想要的
-        <span class="highlight">这里都有</span>
-      </h2>
-      <h2>
-        智能
-        <span class="highlight">自动一页</span>
-      </h2>
-      <h2>
-        解决简历内容
-        <span class="highlight">太多/太少</span>
-        引发的尴尬境地
-      </h2>
+  <div class="introduce flex flex-space-around flex-align-around flex-align-center">
+    <div class="introduce-l" data-aos="slide-right">
+      <div class="typenet-text"></div>
+      <button
+        @click="$router.push('/theme')"
+        :class="['start btn pointer', { 'dark-start': isDark }]"
+      >
+        马上开始 <i class="iconfont icon-goto"></i>
+      </button>
     </div>
-    <div class="ball-bottom" data-aos="fade-right" data-aos-duration="1000"></div>
-    <div class="ball-top" data-aos="fade-up" data-aos-duration="1000"></div>
-  </div>
-  <div class="introduce white-bg flex odd flex-space-around flex-align-center">
-    <div class="introduce-r tac" data-aos="fade-right">
-      <h2>
-        根据自身喜好
-        <span class="highlight">DIY</span>
-        简历样式
-      </h2>
-      <h2>
-        简历怎么配色
-        <span class="highlight">由你决定</span>
-        ～
-      </h2>
+    <div class="introduce-r" data-aos="slide-left">
+      <img
+        :class="{ 'img-light': !isDark }"
+        :style="{ transform: `rotate(${40 - idx * 20}deg)`, zIndex: 999 - idx }"
+        v-for="(theme, idx) in themes.slice(2, 7)"
+        :src="theme.img"
+        :alt="theme.name"
+        :key="theme.id"
+      />
     </div>
-    <img src="/resume-bg-three.svg" data-aos="fade-left" />
-    <div class="ball-bottom" data-aos="fade-right" data-aos-duration="1000"></div>
-    <div class="ball-top" data-aos="fade-up" data-aos-duration="1000"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.white-bg {
-  background: var(--background);
-  margin-top: 20px;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
-
 .introduce {
   color: var(--font-color);
   height: 100vh;
   padding: 20px;
   position: relative;
-  overflow: hidden;
+  background: var(--background);
 
+  .introduce-l,
   img {
-    width: 500px;
     user-select: none;
-
     -webkit-user-drag: none;
   }
-
-  .ball-bottom,
-  .ball-top {
-    min-width: 500px;
-    min-height: 500px;
-    width: 50%;
-    height: 50%;
-    border-radius: 50%;
-    position: absolute;
-    opacity: 0.3;
-  }
-
-  .ball-bottom {
-    background: #05b2f7;
-    bottom: -20%;
-    left: -25%;
-  }
-
-  .ball-top {
-    background: pink;
-    top: 10%;
-    right: -25%;
-  }
-
-  &.odd {
-    .ball-bottom {
-      background: #69f735;
-    }
-
-    .ball-top {
-      background: #d27ef9;
-    }
-  }
-
-  img,
   .introduce-r {
+    width: 250px;
+    height: 350px;
+    img {
+      width: 250px;
+      height: 350px;
+      transform-origin: left bottom;
+      position: absolute;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      &:nth-child(1) {
+        animation: rotate1 0.7s;
+      }
+      &:nth-child(2) {
+        animation: rotate2 0.7s;
+      }
+      &:nth-child(4) {
+        animation: rotate4 0.7s;
+      }
+      &:nth-child(5) {
+        animation: rotate5 0.7s;
+      }
+    }
+    .img-light {
+      box-shadow: 5px 5px 8px #ddd;
+    }
+  }
+
+  .introduce-l {
     z-index: 2;
+    .typenet-text {
+      width: 500px;
+      height: 300px;
+    }
+    .start {
+      font-size: 1.1rem;
+      padding: 10px 20px 10px 25px;
+      border-radius: 40px;
+      background: #000;
+      margin-top: 10px;
+      color: white;
+      &:hover {
+        transition: transform 0.4s;
+        transform: translateY(5px);
+        opacity: 0.8;
+      }
+    }
+    .dark-start {
+      background: #ff7449;
+    }
+  }
+
+  @keyframes rotate1 {
+    from {
+      transform: rotate(20deg);
+    }
+    to {
+      transform: rotate(40deg);
+    }
+  }
+  @keyframes rotate2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(20deg);
+    }
+  }
+  @keyframes rotate4 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-20deg);
+    }
+  }
+  @keyframes rotate5 {
+    from {
+      transform: rotate(-20deg);
+    }
+    to {
+      transform: rotate(-40deg);
+    }
   }
 }
 
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: var(--background);
-}
-
-.highlight {
-  color: #fd79a8;
-  /* color: var(--theme); */
-  margin: 0 5px;
-}
-
-.introduce-r {
-  min-width: 500px;
-  padding: 0 40px;
-}
-
-.typenet-text {
-  font-weight: bold;
-  font-size: 22px;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 0 10px;
-  line-height: 40px;
+@media screen and (max-width: 800px) {
+  .introduce {
+    .introduce-r {
+      display: none;
+    }
+  }
 }
 </style>
