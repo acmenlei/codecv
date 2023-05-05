@@ -4,6 +4,7 @@ import 'element-plus/es/components/loading/style/css'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 import { errorMessage, successMessage } from '../message'
+import { markdownToHTML } from 'markdown-transform-html'
 
 export async function importCSS(name: string) {
   const res = await import(`../../templates/modules/${name}/style.scss`)
@@ -335,4 +336,45 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
     result += content // 将文本内容添加到结果字符串中
   }
   return result
+}
+// 简历模块拆分
+function contentPackage(DOMStr: string) {
+  DOMStr = DOMStr.replaceAll('::: mainStart', '<div class=main-layout>').replaceAll(
+    '::: mainEnd',
+    '</div>'
+  )
+  const fragment = document.createElement('div')
+  fragment.innerHTML = DOMStr
+  const hasMainLayout = fragment.querySelector('.main-layout')
+  const searchStart = hasMainLayout || fragment
+  const nodes = Array.from(searchStart.childNodes) as HTMLElement[]
+
+  let container = null,
+    result = document.createElement('div')
+
+  for (const node of nodes) {
+    if (node.nodeType === Node.TEXT_NODE) continue
+    if (node.tagName.toLocaleLowerCase() === 'h2') {
+      if (container) {
+        result.appendChild(container)
+      }
+      container = document.createElement('div')
+      container.className = 'resume-module'
+      container.appendChild(node)
+    } else {
+      container ? container.appendChild(node) : result.appendChild(node)
+    }
+  }
+  // 最后的也添加
+  container && result.appendChild(container)
+  if (hasMainLayout) {
+    fragment.replaceChild(result, searchStart)
+    result.className = 'main-layout'
+    result = fragment
+  }
+  return result
+}
+
+export function convertDOM(DOMStr: string) {
+  return contentPackage(markdownToHTML(DOMStr))
 }

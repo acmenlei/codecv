@@ -1,7 +1,12 @@
 import { getLocalStorage, setLocalStorage } from '@/common/hooks/useLcoaStoage'
 import { errorMessage, showMessageVN, successMessage, warningMessage } from '@/common/message'
-import { getCurrentTypeContent, getPdf, importCSS, resumeDOMStruct2Markdown } from '@/common/utils'
-import { markdownToHTML } from 'markdown-transform-html'
+import {
+  convertDOM,
+  getCurrentTypeContent,
+  getPdf,
+  importCSS,
+  resumeDOMStruct2Markdown
+} from '@/common/utils'
 import { nextTick, onActivated, onDeactivated, Ref, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { splitPage } from './components/tabbar/hook'
@@ -42,14 +47,14 @@ export function useRenderHTML(props: { content: string; resumeType: string }) {
 
   onActivated(() => {
     importCSS(props.resumeType)
-    renderDOM.value.innerHTML = markdownToHTML(props.content)
+    renderDOM.value.innerHTML = convertDOM(props.content).innerHTML
     setTimeout(() => splitPage(renderDOM.value), 100)
   })
 
   watch(
     () => props.content,
     v => {
-      renderDOM.value.innerHTML = markdownToHTML(v)
+      renderDOM.value.innerHTML = convertDOM(v).innerHTML
       setTimeout(() => splitPage(renderDOM.value), 50)
     }
   )
@@ -105,7 +110,7 @@ export function useDownLoad(type: Ref<string>, content: Ref<string>) {
   }
 
   const downloadNative = () => {
-    localStorage.setItem('download', JSON.stringify(markdownToHTML(content.value)))
+    localStorage.setItem('download', JSON.stringify(convertDOM(content.value).innerHTML))
     router.push({ path: '/download', query: { type: type.value } })
   }
 
