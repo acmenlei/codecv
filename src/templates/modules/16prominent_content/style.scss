@@ -1,0 +1,116 @@
+@import url('../../common.css');
+
+.markdown-transform-html {
+  font-size: 13.5px;
+
+  .head-layout {
+    position: relative;
+    color: white;
+    img[alt*='个人头像'] {
+      width: 32mm;
+      border-radius: 10px;
+    }
+    .flex-layout {
+      justify-content: flex-start;
+      .flex-layout-item {
+        margin-right: 40px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -25px;
+      left: -30px;
+      z-index: -1;
+      width: calc(100% + 60px);
+      height: calc(100% + 300px);
+      background: linear-gradient(to bottom, var(--markdown-primary-bg-color), white);
+    }
+  }
+  .main-layout {
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    background: white;
+    color: var(--markdown-primary-color);
+  }
+
+  .resume-module {
+    width: 100%;
+    .flex-layout {
+      .flex-layout-item {
+        margin-right: 20px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    h2 {
+      position: relative;
+      display: inline-block;
+      font-size: 0.9rem;
+      margin: 10px 0 5px 0;
+      padding: 5px 10px;
+      border-bottom-left-radius: 30px;
+      border-top-left-radius: 30px;
+      color: white;
+      background-image: linear-gradient(
+        to right,
+        var(--markdown-primary-bg-color) 60%,
+        var(--markdown-primary-bg-color),
+        white
+      );
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: calc(210mm - 180px);
+        background: var(--markdown-primary-bg-color);
+        opacity: 0.3;
+      }
+    }
+
+    h3 {
+      color: var(--markdown-primary-bg-color);
+    }
+  }
+  code.single-code {
+    color: var(--markdown-primary-bg-color);
+    padding: 3px 10px;
+    background: transparent;
+    position: relative;
+    border: 0.5px solid var(--markdown-primary-bg-color);
+    border-radius: 5px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border-radius: 5px;
+      border: 1px solid var(--markdown-primary-bg-color);
+      background: var(--markdown-primary-bg-color);
+      z-index: -1;
+      opacity: 0.1;
+    }
+  }
+  ul,
+  ol {
+    margin-top: 5px;
+    padding-left: 20px;
+  }
+  i.iconfont {
+    margin: 0 5px;
+  }
+
+  p {
+    margin-top: 4px;
+    padding-left: 5px;
+  }
+}

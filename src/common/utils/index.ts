@@ -272,6 +272,8 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
       result += `icon:${classList[1].slice(5)} ` // 如果是指定的类名，则添加 icon 语法到结果字符串中
     } else if (classList.contains('head-layout')) {
       result += '\n::: headStart\n' // 如果是指定的类名，则添加头部起始语法到结果字符串中
+    } else if (classList.contains('main-layout')) {
+      result += '\n::: mainStart\n' // 同上
     } else if (tagName === 'a') {
       result += '['
     } else if (['b', 'strong'].includes(tagName)) {
@@ -306,6 +308,8 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
       result += '::: end' // 如果是指定的类名，则添加结束语法到结果字符串中
     } else if (classList.contains('head-layout')) {
       result += '::: headEnd' // 如果是指定的类名，则添加头部结束语法到结果字符串中
+    } else if (classList.contains('main-layout')) {
+      result += '::: mainEnd' // 同上
     } else if (classList.contains('flex-layout-item') && !latest) {
       result += '\n:::' // 如果是指定的类名，则添加内容语法到结果字符串中
     } else if (tagName == 'a') {
