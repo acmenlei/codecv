@@ -8,7 +8,7 @@ icon:phone 185xxxx5387
 icon:github [github.com/Jack](github.com/Jack)
 :::
 icon:email coderleilei@163.com
-icon:link [https://www.blog.com](blog.com)
+icon:link [blog.com](https://blog.com)
 :::
 icon:wechat wechatnumberxxx
 icon:yuque [yueque.com/xiongleixin](yueque.com/xiongleixin)

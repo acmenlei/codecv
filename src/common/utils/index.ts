@@ -343,17 +343,13 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
 }
 // 简历模块拆分
 function contentPackage(DOMStr: string) {
-  DOMStr = DOMStr.replaceAll('::: mainStart', '<div class=main-layout>').replaceAll(
-    '::: mainEnd',
-    '</div>'
-  )
   const fragment = document.createElement('div')
   fragment.innerHTML = DOMStr
   const hasMainLayout = fragment.querySelector('.main-layout')
   const searchStart = hasMainLayout || fragment
   const nodes = Array.from(searchStart.childNodes) as HTMLElement[]
-
   let container = null,
+    // eslint-disable-next-line prefer-const
     result = document.createElement('div')
 
   for (const node of nodes) {
@@ -372,12 +368,16 @@ function contentPackage(DOMStr: string) {
   // 最后的也添加
   container && result.appendChild(container)
   if (hasMainLayout) {
-    fragment.replaceChild(result, searchStart)
+    searchStart.parentNode?.replaceChild(result, searchStart)
     result.className = 'main-layout'
     result = fragment
   }
   return result
 }
+
+// function contentPackageDFS(DOMStr: string) {
+// 递归处理
+// }
 
 export function convertDOM(DOMStr: string) {
   return contentPackage(markdownToHTML(DOMStr))
