@@ -63,7 +63,7 @@ useToolBarConfig(emit)
   background: var(--background);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 3;
   text-align: center;
   button {
     background: transparent;
