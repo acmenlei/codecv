@@ -8,13 +8,15 @@ import {
   useImportMD,
   useMoveLayout,
   useAvatar,
-  useWrite
+  useWrite,
+  injectWriableModeAvatarEvent
 } from './hook'
 import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from '@codemirror/lang-markdown'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { useThemeConfig } from '@/common/hooks/global'
 import Toolbar from './components/toolbar/toolbar.vue'
+import './style/writable.scss'
 
 const { resumeType } = useResumeType()
 const { content, setContent } = useMarkdownContent(resumeType)
@@ -24,6 +26,7 @@ const { setAvatar } = useAvatar(content, setContent)
 const { left, down } = useMoveLayout()
 const { startWrite, writable, DOMTree, ObserverContent } = useWrite(setContent)
 const { isDark } = useThemeConfig()
+injectWriableModeAvatarEvent(writable, setAvatar)
 </script>
 
 <template>
@@ -48,7 +51,7 @@ const { isDark } = useThemeConfig()
       <div
         ref="DOMTree"
         @input="ObserverContent"
-        class="markdown-transform-html writable-edit-mode"
+        class="writable-edit-mode"
         :contenteditable="writable"
         :style="{ height: '100vh', width: `${left}px`, overflowY: 'scroll' }"
         v-if="writable"
@@ -76,20 +79,26 @@ const { isDark } = useThemeConfig()
     border: none;
     outline: none;
     font-size: 15px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .writable-edit-mode {
-      padding: 50px;
+      padding: 20px;
       margin: 0 auto;
       min-width: 550px;
-      transform: scale(0.9);
       &:focus {
         outline-color: var(--body-background);
       }
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
     .move {
-      width: 10px;
+      width: 12px;
       height: 100%;
       top: 0;
+      z-index: 2;
       background: #ccc;
       cursor: col-resize;
     }

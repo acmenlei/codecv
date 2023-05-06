@@ -93,32 +93,36 @@ export function ImageUpload(file: File) {
 
 export function uploader(config: UploadConfig) {
   switch (config.uploadType) {
-    case 'image': {
-      const fileInput = document.createElement('input')
-      fileInput.setAttribute('type', 'file')
-      fileInput.setAttribute(
-        'accept',
-        'image/png, image/gif, image/jpeg,image/jpg, image/bmp, image/x-icon'
-      )
-      fileInput.multiple = config.multiple
-      fileInput.style.cssText = 'position: absolute; left: -9999px; top: -9999px; opacity: 0'
-
-      const promise = new Promise<string>(function (resolve) {
-        fileInput.addEventListener('change', async function (event) {
-          document.body.removeChild(fileInput)
-          try {
-            const files = (event.target as HTMLInputElement).files as FileList
-            const url = await ImageUpload(files[0])
-            resolve(url)
-          } catch (e) {
-            errorMessage(<string>e)
-          }
-        })
+    case 'image':
+      return getPickerFile({
+        multiple: config.multiple,
+        accept: 'image/png, image/gif, image/jpeg,image/jpg, image/bmp, image/x-icon'
       })
-      document.body.appendChild(fileInput)
-      fileInput.click()
-      return promise
-    }
   }
   return String('null')
+}
+interface IUploadOptions {
+  multiple: boolean
+  accept: string
+}
+export function getPickerFile(options: IUploadOptions) {
+  const fileInput = document.createElement('input')
+  fileInput.setAttribute('type', 'file')
+  fileInput.setAttribute('accept', options.accept)
+  fileInput.style.cssText = 'position: absolute; left: -9999px; top: -9999px; opacity: 0'
+  fileInput.multiple = options.multiple
+  const promise = new Promise<File>(function (resolve) {
+    fileInput.addEventListener('change', async function (event) {
+      document.body.removeChild(fileInput)
+      try {
+        const files = (event.target as HTMLInputElement).files as FileList
+        resolve(files[0])
+      } catch (e) {
+        errorMessage(<string>e)
+      }
+    })
+  })
+  document.body.appendChild(fileInput)
+  fileInput.click()
+  return promise
 }

@@ -44,7 +44,7 @@ icon:phone 155xxxxxx06
 
 ##### xxxxxxxxx
 
-- **技术栈**：\`Vue.js\` \`ElementUI\` \`Echarts\` \`Vuex\` \`Vue-Router\`
+- **技术栈**：\`Vue.js\` \`ElementUI\` \`Echarts\` \`Vuex\` \`Vue-Router\`&nbsp;
 - **项目简介**：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - **工作内容**：
 
@@ -63,7 +63,7 @@ icon:phone 155xxxxxx06
 :::
 ** 2021.12 - 至今 **
 ::: end
-- **技术栈**：\`Vue.js\` \`ElementUI\` \`Echarts\` \`Vuex\` \`Vue-Router\`
+- **技术栈**：\`Vue.js\` \`ElementUI\` \`Echarts\` \`Vuex\` \`Vue-Router\`&nbsp;
 - **项目简介**：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - **工作内容**：
 

@@ -7,9 +7,10 @@ import {
   importCSS,
   resumeDOMStruct2Markdown
 } from '@/common/utils'
-import { nextTick, onActivated, onDeactivated, Ref, ref, watch } from 'vue'
+import { nextTick, onActivated, onDeactivated, Ref, ref, watch, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { splitPage } from './components/tabbar/hook'
+import { getPickerFile } from '@/common/utils/uploader'
 
 const MARKDOWN_CONTENT = 'markdown-content',
   get = getLocalStorage
@@ -194,7 +195,6 @@ export function useAvatar(content: Ref<string>, setContent: (c: string) => void)
     const writableDOM = document.querySelector('.writable-edit-mode')
     if (writableDOM) {
       const avatar: HTMLImageElement | null = writableDOM.querySelector('img[alt*=个人头像]')
-      console.log(avatar, '头像')
       avatar && (avatar.src = path)
     }
   }
@@ -226,10 +226,44 @@ export function useWrite(setContent: (cnt: string) => void) {
     })
     setContent(content)
   }
+
+  onActivated(() => {
+    if (writable.value) {
+      nextTick(() => {
+        ;(DOMTree.value as HTMLElement).innerHTML = (<HTMLElement>(
+          document.querySelector('.reference-dom')
+        )).innerHTML
+      })
+    }
+  })
   return {
     writable,
     DOMTree,
     startWrite,
     ObserverContent
   }
+}
+
+export function injectWriableModeAvatarEvent(
+  writable: Ref<boolean>,
+  setAvatar: (path: string) => void
+) {
+  watchEffect(() => {
+    if (!writable.value) return
+    nextTick(() => {
+      const node = document.querySelector('.writable-edit-mode') as HTMLElement
+      setTimeout(() => {
+        const avatar = node.querySelector('img[alt*="个人头像"]')
+        if (!avatar) return
+        avatar.addEventListener('click', async function () {
+          const file = await getPickerFile({
+            multiple: false,
+            accept: 'image/png, image/jpeg,image/jpg, '
+          })
+          const path = URL.createObjectURL(file)
+          setAvatar(path)
+        })
+      })
+    })
+  })
 }

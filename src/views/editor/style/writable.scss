@@ -1,0 +1,116 @@
+.writable-edit-mode {
+  background: var(--background);
+  .flex-layout {
+    display: flex;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    margin: 6px 0;
+    border: 2px dashed var(--markdown-primary-bg-color);
+    &::after {
+      position: absolute;
+      top: -5px;
+      right: 0;
+      content: '多列布局';
+      white-space: nowrap;
+      font-size: 10px;
+      transform: scale(0.7) translate(50%, -50%);
+      background: var(--markdown-primary-bg-color);
+      border-radius: 10px;
+      color: white;
+      padding: 2px 3px;
+    }
+    img[alt*='个人头像'] {
+      width: 30mm;
+      height: 30mm;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .flex-layout-item {
+      margin-right: 20px;
+    }
+  }
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+  li,
+  p {
+    margin-top: 8px;
+  }
+  h2,
+  h3,
+  h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  i {
+    font-size: 1.3rem;
+    margin-right: 8px;
+  }
+  .head-layout {
+    border: 3px solid var(--markdown-primary-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -8px;
+      right: 50%;
+      content: '个人信息区域';
+      white-space: nowrap;
+      font-size: 15px;
+      transform: scale(0.7) translate(50%, -50%);
+      background: var(--markdown-primary-bg-color);
+      border-radius: 10px;
+      color: white;
+      padding: 5px 10px;
+    }
+  }
+
+  table {
+    width: 100%;
+    text-align: center;
+    tbody td:nth-child(1) {
+      border-left: 1px solid #eee;
+    }
+    thead {
+      background-color: var(--markdown-primary-bg-color);
+    }
+    thead th,
+    tbody td {
+      padding: 10px;
+    }
+    tbody td {
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+  }
+
+  code.single-code {
+    color: var(--markdown-primary-bg-color);
+    padding: 3px 10px;
+    background: transparent;
+    position: relative;
+    border: 0.5px solid var(--markdown-primary-bg-color);
+    border-radius: 5px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      border-radius: 5px;
+      border: 1px solid var(--markdown-primary-bg-color);
+      background: var(--markdown-primary-bg-color);
+      z-index: -1;
+      opacity: 0.1;
+    }
+  }
+}

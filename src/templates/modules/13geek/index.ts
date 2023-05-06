@@ -54,7 +54,7 @@ icon:email example@163.com
 :::
 **2011年09月 ～ 2015年07月**
 ::: end
-**技术栈**：\`TypeScript\` \`Vue3\` \`Vite\` \`pinia\` \`vue-router\`
+**技术栈**：\`TypeScript\` \`Vue3\` \`Vite\` \`pinia\` \`vue-router\`&nbsp;
 **项目简介**：一款 markdown 简历制作工具，可以把你编写的简历转换为 PDF，支持多种模板，编写一套简历内容可适配多种简历模板
 **工作内容**：
 1. 基于 Markdown 的书写方式，简单易上手，且支持多列布局，编写一套 Markdown 可适配所有模版

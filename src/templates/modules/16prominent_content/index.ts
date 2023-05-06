@@ -63,7 +63,7 @@ web前端
 2022.09 - 至今
 
 ::: end
-**技术栈**： \`TypeScript\` \`Vue3.x\` \`Vite\`
+**技术栈**： \`TypeScript\` \`Vue3.x\` \`Vite\`&nbsp;
 **项目简介**：该项目是一款基于 Vue3.x + 自己编写的 Markdown 词法分析器开发的简历制作工具，它支持将我们编写的Markdown 语法转换为 PDF 文件格式，目前已经开源到 GitHub 社区.
 **主要功能**：
 - 基于 Markdown 的书写方式，简单易上手，且支持多列布局，编写一套 Markdown 可适配所有模版
@@ -83,7 +83,7 @@ web前端
 2022.09 - 至今
 
 ::: end
-**技术栈**： \`Vue.js\` \`ElementUI\` \`Echarts\`
+**技术栈**： \`Vue.js\` \`ElementUI\` \`Echarts\`&nbsp;
 **项目简介**：该项目是一个使用 Vue.js 开发的对接电商小程序的商家端管理系统，是一个前后端分离的 SPA 应用
 **工作内容**：
 - 登录采用 Cookie + Token 的方式，用户分为店长以及员工，并针对这几种角色对其进行权限控制

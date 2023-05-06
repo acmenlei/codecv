@@ -47,7 +47,7 @@ icon:link [个人网站 coderlei.netlify.app](https://coderlei.netlify.app)
 :::
 ### 2020.12 - 2021.05
 ::: end
-- **技术栈**：\`ts\` \`vue3\` \`vite\` \`vue-router\` \`vuex\` \`nodejs\` \`redis\` \`MySQL\` \`eCharts\`
+- **技术栈**：\`ts\` \`vue3\` \`vite\` \`vue-router\` \`vuex\` \`nodejs\` \`redis\` \`MySQL\` \`eCharts\`&nbsp;
 - **项目简介**：该项目是一个使用 Vue.js 开发的电商类小程序的商家端管理系统，是一个前后端分离的 SPA 应
 - **工作内容**：
 1. 登录采用 Cookie + Token 的方式，用户分为店长以及员工，并针对这几种角色对其进行权限控制

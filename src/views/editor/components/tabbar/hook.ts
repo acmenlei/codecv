@@ -499,16 +499,16 @@ export function useFollowRoll() {
     const wem = document.querySelector('.writable-edit-mode') as HTMLElement
     const cs = document.querySelector('.cm-scroller') as HTMLElement
     const render = document.querySelector('.markdown-render') as HTMLElement
-    const reallRenderHeight = document.querySelector('.jufe') as HTMLElement
+    // const reallRenderHeight = document.querySelector('.jufe') as HTMLElement
     function wemcb() {
       if (followRoll.value) {
-        render.scrollTop = reallRenderHeight.scrollHeight * (wem.scrollTop / wem.scrollHeight)
+        render.scrollTop = wem.scrollHeight * (wem.scrollTop / wem.scrollHeight)
       }
     }
 
     function cscb() {
       if (followRoll.value) {
-        render.scrollTop = reallRenderHeight.scrollHeight * (cs.scrollTop / cs.scrollHeight)
+        render.scrollTop = cs.scrollHeight * (cs.scrollTop / cs.scrollHeight)
       }
     }
 
