@@ -91,13 +91,19 @@ export function ImageUpload(file: File) {
   })
 }
 
-export function uploader(config: UploadConfig) {
+export async function uploader(config: UploadConfig) {
   switch (config.uploadType) {
-    case 'image':
-      return getPickerFile({
-        multiple: config.multiple,
-        accept: 'image/png, image/gif, image/jpeg,image/jpg, image/bmp, image/x-icon'
-      })
+    case 'image': {
+      try {
+        const file = await getPickerFile({
+          multiple: config.multiple,
+          accept: 'image/png, image/gif, image/jpeg,image/jpg, image/bmp, image/x-icon'
+        })
+        return await ImageUpload(file)
+      } catch (err) {
+        return String('null')
+      }
+    }
   }
   return String('null')
 }
