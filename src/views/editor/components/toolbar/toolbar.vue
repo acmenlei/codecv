@@ -59,6 +59,8 @@ useToolBarConfig(emit)
 .toolbar {
   width: 100%;
   height: 40px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   padding-top: 10px;
   background: var(--background);
   position: sticky;

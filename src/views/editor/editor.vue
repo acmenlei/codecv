@@ -42,7 +42,12 @@ injectWriableModeAvatarEvent(writable, setAvatar)
       <codemirror
         v-if="!writable"
         v-model="content"
-        :style="{ height: '100vh', width: `${left}px`, background: '#fff' }"
+        :style="{
+          height: '100vh',
+          borderRadius: '10px',
+          width: `${left}px`,
+          background: '#fff'
+        }"
         :autofocus="true"
         :indent-with-tab="true"
         :extensions="isDark ? [markdownLanguage, oneDark] : [markdownLanguage]"
@@ -53,10 +58,17 @@ injectWriableModeAvatarEvent(writable, setAvatar)
         @input="ObserverContent"
         class="writable-edit-mode"
         :contenteditable="writable"
-        :style="{ height: '100vh', width: `${left}px`, overflowY: 'scroll' }"
+        :style="{ height: 'calc(100vh - 40px)', width: `${left}px`, overflowY: 'scroll' }"
         v-if="writable"
       ></div>
-      <div class="move absolute" @mousedown="down"></div>
+      <div class="move absolute" @mousedown="down">
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </div>
     </div>
     <markdown-render
       class="markdown-render"
@@ -75,36 +87,55 @@ injectWriableModeAvatarEvent(writable, setAvatar)
   .markdown-edit {
     position: relative;
     height: 100vh;
-    overflow: auto;
     border: none;
     outline: none;
     font-size: 15px;
+    margin: 0 0 10px 10px;
+    border-radius: 10px;
     &::-webkit-scrollbar {
       display: none;
     }
 
     .writable-edit-mode {
       padding: 20px;
-      margin: 0 auto;
       min-width: 550px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin: 0 auto;
       &:focus {
-        outline-color: var(--body-background);
+        outline: none;
       }
       &::-webkit-scrollbar {
         display: none;
       }
     }
     .move {
-      width: 12px;
+      width: 10px;
       height: 100%;
       top: 0;
+      right: -10px;
       z-index: 2;
-      background: #ccc;
+      border-radius: 10px;
+      background: var(--body-background);
       cursor: col-resize;
+      &:hover {
+        background: var(--theme);
+      }
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      span {
+        font-weight: bold;
+        opacity: 0.7;
+        margin-top: -5px;
+      }
     }
   }
   .markdown-render {
     flex: 1;
+    margin: 0 10px;
+    border-radius: 10px;
   }
 }
 </style>
