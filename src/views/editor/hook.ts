@@ -155,10 +155,8 @@ export function useMoveLayout() {
   let flag = false
 
   function move(event: MouseEvent) {
-    if (!flag) {
-      return
-    }
-    left.value = event.clientX
+    if (!flag) return
+    left.value = event.clientX - 10
   }
 
   function down() {

@@ -65,9 +65,6 @@ injectWriableModeAvatarEvent(writable, setAvatar)
         <span>.</span>
         <span>.</span>
         <span>.</span>
-        <span>.</span>
-        <span>.</span>
-        <span>.</span>
       </div>
     </div>
     <markdown-render
@@ -128,7 +125,7 @@ injectWriableModeAvatarEvent(writable, setAvatar)
       span {
         font-weight: bold;
         opacity: 0.7;
-        margin-top: -5px;
+        margin-top: -10px;
       }
     }
   }
