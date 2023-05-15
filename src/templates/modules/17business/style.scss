@@ -1,0 +1,107 @@
+@import url('../../common.css');
+
+.markdown-transform-html {
+  font-size: 13.5px;
+  --name-color: #cecb21;
+  .head-layout {
+    padding: 20px 30px 10px 20px;
+    position: relative;
+    font-size: 14.5px;
+    color: #eee;
+    img[alt*='个人头像'] {
+      width: 32mm;
+      border-radius: 10px;
+      border: 1.5px solid var(--name-color);
+    }
+    .flex-layout {
+      justify-content: flex-start;
+      .flex-layout-item {
+        margin-right: 40px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    h1,
+    h2 {
+      color: var(--name-color);
+      margin-bottom: 10px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: -25px;
+      left: -30px;
+      z-index: -1;
+      width: calc(100% + 60px);
+      height: calc(100% + 30px);
+      background: var(--markdown-primary-bg-color);
+    }
+  }
+
+  .main-layout {
+    padding: 0 5px 0 50px;
+    margin-top: 20px;
+
+    .resume-module {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 100%;
+        top: 20px;
+        left: -25px;
+        z-index: -1;
+        opacity: 0.5;
+        background: var(--markdown-primary-bg-color);
+      }
+    }
+
+    h2 {
+      color: var(--markdown-primary-bg-color);
+      position: relative;
+      margin-left: -40px;
+      i.iconfont {
+        margin-right: 10px;
+        margin-top: 20px;
+        display: inline-block;
+        color: white;
+        background: var(--markdown-primary-bg-color);
+        padding: 8px;
+        border-radius: 50%;
+      }
+
+      &::before {
+        width: 100%;
+        height: 1px;
+        right: 0;
+        content: '';
+        position: absolute;
+        opacity: 0.1;
+        text-shadow: 0 0 1px var(--markdown-primary-bg-color);
+      }
+    }
+  }
+  a {
+    color: var(--markdown-primary-bg-color);
+  }
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+  p,
+  li {
+    margin-top: 6px;
+  }
+
+  i.iconfont {
+    margin-right: 5px;
+  }
+  strong,
+  b,
+  h3,
+  h4 {
+    color: #222;
+  }
+}

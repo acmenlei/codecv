@@ -44,6 +44,7 @@ body {
   height: 100vh;
   padding: 20px;
   position: relative;
+  overflow: hidden;
   background: var(--background);
 
   .introduce-l,

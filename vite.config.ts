@@ -19,7 +19,7 @@ export default ({ mode }) => {
         resolvers: [ElementPlusResolver()]
       }),
       viteCompression({
-        threshold: 1024000 // 大于1m压缩
+        threshold: 10240
       }),
       eslint({ lintOnStart: true, cache: false }) // 打包开启检查
     ],
@@ -35,6 +35,9 @@ export default ({ mode }) => {
     build: {
       rollupOptions: {
         output: {
+          chunkFileNames: 'js/[name]-[hash].js',
+          entryFileNames: 'js/[name]-[hash].js',
+          assetFileNames: '[ext]/[name]-[hash].[ext]',
           manualChunks(id) {
             if (id.includes('node_modules')) {
               return id.toString().split('node_modules/')[1].split('/')[0].toString()
