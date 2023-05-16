@@ -138,7 +138,7 @@ Q: 如何编写个人信息栏？
 A:
 
 ```html
-::: headStart content ::: headStart
+::: headStart content ::: headEnd
 <!-- 上面的语法将会被转化为下面的`HTML`结构 -->
 <div class="head-layout">
   content

@@ -139,7 +139,7 @@ Q: How to write a personal information bar?
 A:
 
 ```html
-::: headStart content ::: headStart
+::: headStart content ::: headEnd
 <!-- The above syntax will be converted to the following HTML structure -->
 <div class="head-layout">
   content
