@@ -14,17 +14,13 @@ icon:link [个人网站 coderlei.netlify.app](https://coderlei.netlify.app)
 
 ## 教育经历
 ::: start
-- **北京大学**
-- 光华管理学院 - 工商管理 GPA 3.9 / 4.0
+- **北京大学** - 光华管理学院 - 工商管理 - 硕士
 :::
-
 **2021.09 - 2024.07**
 ::: end
 
 ::: start
-- **清华大学**
-- 工商管理学院 - 工商管理 GPA 3.9 / 4.0
-
+- **清华大学** - 工商管理学院 - 工商管理 - 学士
 :::
 
 **2017.09 - 2021.07**
@@ -32,8 +28,11 @@ icon:link [个人网站 coderlei.netlify.app](https://coderlei.netlify.app)
 ::: end
 
 ## 工作经历
-
-### 杭州xx网络有限公司 - xxxxx工程师 （2018.3-2018.7）
+::: start
+### 杭州xx网络有限公司 - xxxxx工程师
+:::
+**2018.03 - 2018.07**
+::: end
 1. 对电商平台整体规划设计、前台页进行更新迭代设计、主题活动设计、专题页设计；
 2. 对电商网站页面设计、店铺产品装修、详情页面设计、推广图等图片设计制作。
 3. 对照片进行精修，熟悉抠图、调色及各种常规及特殊调色手法；
@@ -47,7 +46,7 @@ icon:link [个人网站 coderlei.netlify.app](https://coderlei.netlify.app)
 :::
 ### 2020.12 - 2021.05
 ::: end
-- **技术栈**：\`ts\` \`vue3\` \`vite\` \`vue-router\` \`vuex\` \`nodejs\` \`redis\` \`MySQL\` \`eCharts\`&nbsp;
+- **技术栈**：\`ts\` \`vue3\` \`vite\` \`vue-router\` \`vuex\` \`nodejs\` \`MySQL\`&nbsp;
 - **项目简介**：该项目是一个使用 Vue.js 开发的电商类小程序的商家端管理系统，是一个前后端分离的 SPA 应
 - **工作内容**：
 1. 登录采用 Cookie + Token 的方式，用户分为店长以及员工，并针对这几种角色对其进行权限控制

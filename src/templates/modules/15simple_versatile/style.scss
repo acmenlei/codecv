@@ -1,7 +1,7 @@
 @import url('../../common.css');
 
 .markdown-transform-html {
-  padding-top: 0;
+  padding: 20px 40px;
   color: var(--markdown-primary-color);
 
   i.iconfont {
@@ -10,7 +10,7 @@
 
   .resume-module > h2 {
     color: var(--markdown-primary-bg-color);
-    border-left: 3px solid var(--markdown-primary-bg-color) !important;
+    border-left: 4px solid var(--markdown-primary-bg-color) !important;
     padding: 3px 10px;
     position: relative;
     font-size: 1rem;
@@ -31,11 +31,8 @@
     }
   }
   h2 {
-    margin: 10px 0 5px 0;
-  }
-  h2,
-  h3 {
     color: var(--markdown-primary-bg-color);
+    margin: 10px 0 5px 0;
   }
 
   h3 {
@@ -59,7 +56,7 @@
       }
     }
     h2 {
-      color: var(--markdown-primary-bg-color);
+      color: var(--markdown-primary-color);
     }
     strong,
     b {
@@ -75,6 +72,11 @@
   ul {
     & + ol {
       padding-left: 30px;
+    }
+    li {
+      &::marker {
+        font-size: 1.2rem;
+      }
     }
   }
 
