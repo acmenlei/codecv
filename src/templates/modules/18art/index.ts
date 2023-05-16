@@ -6,7 +6,7 @@ const content = `
 
 :::
 女 ｜ 生日：2000/08/01 ｜ 北京
-icon:phone 13425182004 icon:email qiumengyi@kuaishou.com icon:wechat qiumengyi
+icon:phone 13425182004 ｜ icon:email qiumengyi@kuaishou.com ｜ icon:wechat qiumengyi
 离职-随时到岗 ｜ 工作经验：3年 ｜ 产品经理 ｜ 期望薪资：20-30k
 
 :::
