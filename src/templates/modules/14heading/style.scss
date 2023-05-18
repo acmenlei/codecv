@@ -2,11 +2,13 @@
 
 .markdown-transform-html {
   .head-layout {
+    margin-bottom: -10px;
     .flex-layout {
+      position: relative;
+      top: -10px;
       .flex-layout-item {
         &:first-child {
           padding-right: 8px;
-          background: white;
           img[alt*='个人头像'] {
             height: 25mm;
             width: 25mm;
@@ -14,12 +16,13 @@
           }
         }
         &:last-child {
+          padding: 5px;
           flex: 1;
+          background: var(--markdown-primary-bg-color);
+          position: relative;
         }
       }
       &:last-child {
-        height: 25mm;
-        background: var(--markdown-primary-bg-color);
         h1,
         h2,
         h3 {

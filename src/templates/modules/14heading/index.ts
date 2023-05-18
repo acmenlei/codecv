@@ -3,7 +3,7 @@ const content = `
 
 ::: start
 
-![个人头像](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0a90751599f54e749923964af2fe398b~tplv-k3u1fbpfcp-watermark.image?)
+![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
 
 :::
 ## Jack MA - Web前端开发工程师
@@ -69,6 +69,6 @@ export default {
   name: '简约风头部用色',
   primaryColor: '#363434',
   primaryBackground: '#ffdc63',
-  img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3d4a135f118420c93c62ac503d44fe8~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/771883a4312c4d8da4eb919e237757c6~tplv-k3u1fbpfcp-watermark.image?',
   content
 }

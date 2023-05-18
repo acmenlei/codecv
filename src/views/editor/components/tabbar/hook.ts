@@ -502,13 +502,13 @@ export function useFollowRoll() {
     // const reallRenderHeight = document.querySelector('.jufe') as HTMLElement
     function wemcb() {
       if (followRoll.value) {
-        render.scrollTop = wem.scrollHeight * (wem.scrollTop / wem.scrollHeight)
+        render.scrollTop = render.scrollHeight * (wem.scrollTop / wem.scrollHeight)
       }
     }
 
     function cscb() {
       if (followRoll.value) {
-        render.scrollTop = cs.scrollHeight * (cs.scrollTop / cs.scrollHeight)
+        render.scrollTop = render.scrollHeight * (cs.scrollTop / cs.scrollHeight)
       }
     }
 
