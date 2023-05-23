@@ -30,7 +30,7 @@ export const toolbarConfig = [
     tip: '插入图标'
   },
   {
-    icon: 'info-circle-fill',
+    icon: 'info',
     command: 'insertUserInfo',
     tip: '插入个人信息布局'
   },
