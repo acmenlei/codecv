@@ -40,6 +40,7 @@ const pageChange = function (page: number) {
 <style lang="scss" scoped>
 .render-modal {
   .render-modal-icons {
+    min-height: 350px;
     line-height: 20px;
     padding: 10px;
     background: var(--background);
