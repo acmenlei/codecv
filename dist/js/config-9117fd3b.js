@@ -368,7 +368,7 @@ icon:email example@163.com
 
 ::: start
 
-![\u4E2A\u4EBA\u5934\u50CF](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0a90751599f54e749923964af2fe398b~tplv-k3u1fbpfcp-watermark.image?)
+![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
 
 :::
 ## Jack MA - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
@@ -427,7 +427,7 @@ xxxx**\u7814\u53D1\u8D1F\u8D23\u4EBA**\uFF0C\u8D1F\u8D23\u524D\u7AEF\u6280\u672F
 ::: end
 ## \u81EA\u6211\u8BC4\u4EF7
 \u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....\u672C\u4EBA\u4E00\u8D2F\u7231\u5C97\u656C\u4E1A\uFF0C\u63D0\u5021\u56E2\u961F\u534F\u4F5C\u7CBE\u795E\u3002\u5BF9\u5F85\u5DE5\u4F5C\u9996\u5148\u5C31\u8981\u770B\u600E\u6837\u53BB\u770B\u5F85\u8FD9\u4EFD\u5DE5\u4F5C\uFF0C\u662F\u7D2F\u7684\u3001\u82E6\u7684\uFF0C\u80FD\u8E0F\u8E0F\u5B9E\u5B9E\u53BB\u505A\u5C06\u5FC3\u653E\u5165\u8FD9\u4E2A\u7EC4\u7EC7\u5F53\u4E2D\u53BB\u3002
-`,m={type:"heading",name:"\u7B80\u7EA6\u98CE\u5934\u90E8\u7528\u8272",primaryColor:"#363434",primaryBackground:"#ffdc63",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3d4a135f118420c93c62ac503d44fe8~tplv-k3u1fbpfcp-watermark.image?",content:d},l=Object.freeze(Object.defineProperty({__proto__:null,default:m},Symbol.toStringTag,{value:"Module"})),b=`::: headStart
+`,m={type:"heading",name:"\u7B80\u7EA6\u98CE\u5934\u90E8\u7528\u8272",primaryColor:"#363434",primaryBackground:"#ffdc63",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/771883a4312c4d8da4eb919e237757c6~tplv-k3u1fbpfcp-watermark.image?",content:d},l=Object.freeze(Object.defineProperty({__proto__:null,default:m},Symbol.toStringTag,{value:"Module"})),b=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b73989663a6a4ce6bed7f0e469c3ab5d~tplv-k3u1fbpfcp-watermark.image?)
 :::
@@ -443,17 +443,13 @@ icon:link [\u4E2A\u4EBA\u7F51\u7AD9 coderlei.netlify.app](https://coderlei.netli
 
 ## \u6559\u80B2\u7ECF\u5386
 ::: start
-- **\u5317\u4EAC\u5927\u5B66**
-- \u5149\u534E\u7BA1\u7406\u5B66\u9662 - \u5DE5\u5546\u7BA1\u7406 GPA 3.9 / 4.0
+- **\u5317\u4EAC\u5927\u5B66** - \u5149\u534E\u7BA1\u7406\u5B66\u9662 - \u5DE5\u5546\u7BA1\u7406 - \u7855\u58EB
 :::
-
 **2021.09 - 2024.07**
 ::: end
 
 ::: start
-- **\u6E05\u534E\u5927\u5B66**
-- \u5DE5\u5546\u7BA1\u7406\u5B66\u9662 - \u5DE5\u5546\u7BA1\u7406 GPA 3.9 / 4.0
-
+- **\u6E05\u534E\u5927\u5B66** - \u5DE5\u5546\u7BA1\u7406\u5B66\u9662 - \u5DE5\u5546\u7BA1\u7406 - \u5B66\u58EB
 :::
 
 **2017.09 - 2021.07**
@@ -461,8 +457,11 @@ icon:link [\u4E2A\u4EBA\u7F51\u7AD9 coderlei.netlify.app](https://coderlei.netli
 ::: end
 
 ## \u5DE5\u4F5C\u7ECF\u5386
-
-### \u676D\u5DDExx\u7F51\u7EDC\u6709\u9650\u516C\u53F8 - xxxxx\u5DE5\u7A0B\u5E08 \uFF082018.3-2018.7\uFF09
+::: start
+### \u676D\u5DDExx\u7F51\u7EDC\u6709\u9650\u516C\u53F8 - xxxxx\u5DE5\u7A0B\u5E08
+:::
+**2018.03 - 2018.07**
+::: end
 1. \u5BF9\u7535\u5546\u5E73\u53F0\u6574\u4F53\u89C4\u5212\u8BBE\u8BA1\u3001\u524D\u53F0\u9875\u8FDB\u884C\u66F4\u65B0\u8FED\u4EE3\u8BBE\u8BA1\u3001\u4E3B\u9898\u6D3B\u52A8\u8BBE\u8BA1\u3001\u4E13\u9898\u9875\u8BBE\u8BA1\uFF1B
 2. \u5BF9\u7535\u5546\u7F51\u7AD9\u9875\u9762\u8BBE\u8BA1\u3001\u5E97\u94FA\u4EA7\u54C1\u88C5\u4FEE\u3001\u8BE6\u60C5\u9875\u9762\u8BBE\u8BA1\u3001\u63A8\u5E7F\u56FE\u7B49\u56FE\u7247\u8BBE\u8BA1\u5236\u4F5C\u3002
 3. \u5BF9\u7167\u7247\u8FDB\u884C\u7CBE\u4FEE\uFF0C\u719F\u6089\u62A0\u56FE\u3001\u8C03\u8272\u53CA\u5404\u79CD\u5E38\u89C4\u53CA\u7279\u6B8A\u8C03\u8272\u624B\u6CD5\uFF1B
@@ -476,7 +475,7 @@ icon:link [\u4E2A\u4EBA\u7F51\u7AD9 coderlei.netlify.app](https://coderlei.netli
 :::
 ### 2020.12 - 2021.05
 ::: end
-- **\u6280\u672F\u6808**\uFF1A\`ts\` \`vue3\` \`vite\` \`vue-router\` \`vuex\` \`nodejs\` \`redis\` \`MySQL\` \`eCharts\`&nbsp;
+- **\u6280\u672F\u6808**\uFF1A\`ts\` \`vue3\` \`vite\` \`vue-router\` \`vuex\` \`nodejs\` \`MySQL\`&nbsp;
 - **\u9879\u76EE\u7B80\u4ECB**\uFF1A\u8BE5\u9879\u76EE\u662F\u4E00\u4E2A\u4F7F\u7528 Vue.js \u5F00\u53D1\u7684\u7535\u5546\u7C7B\u5C0F\u7A0B\u5E8F\u7684\u5546\u5BB6\u7AEF\u7BA1\u7406\u7CFB\u7EDF\uFF0C\u662F\u4E00\u4E2A\u524D\u540E\u7AEF\u5206\u79BB\u7684 SPA \u5E94
 - **\u5DE5\u4F5C\u5185\u5BB9**\uFF1A
 1. \u767B\u5F55\u91C7\u7528 Cookie + Token \u7684\u65B9\u5F0F\uFF0C\u7528\u6237\u5206\u4E3A\u5E97\u957F\u4EE5\u53CA\u5458\u5DE5\uFF0C\u5E76\u9488\u5BF9\u8FD9\u51E0\u79CD\u89D2\u8272\u5BF9\u5176\u8FDB\u884C\u6743\u9650\u63A7\u5236
@@ -587,7 +586,7 @@ web\u524D\u7AEF
 ::: mainEnd
 
 
-`,f={name:"\u7B80\u7EA6\u901A\u7528 \u7A81\u51FA\u5185\u5BB9",primaryColor:"#333",primaryBackground:"#14A25D",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b314bd3e1fb4ea79ba6f5166321001c~tplv-k3u1fbpfcp-watermark.image?",content:g},S=Object.freeze(Object.defineProperty({__proto__:null,default:f},Symbol.toStringTag,{value:"Module"})),k=`::: headStart
+`,S={name:"\u7B80\u7EA6\u901A\u7528 \u7A81\u51FA\u5185\u5BB9",primaryColor:"#333",primaryBackground:"#14A25D",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b314bd3e1fb4ea79ba6f5166321001c~tplv-k3u1fbpfcp-watermark.image?",content:g},f=Object.freeze(Object.defineProperty({__proto__:null,default:S},Symbol.toStringTag,{value:"Module"})),k=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
 :::
@@ -652,7 +651,7 @@ icon:phone 15507942222 \uFF5C icon:email coderleilei@qq.com \uFF5C icon:wechat z
 
 :::
 \u5973 \uFF5C \u751F\u65E5\uFF1A2000/08/01 \uFF5C \u5317\u4EAC
-icon:phone 13425182004 icon:email qiumengyi@kuaishou.com icon:wechat qiumengyi
+icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wechat qiumengyi
 \u79BB\u804C-\u968F\u65F6\u5230\u5C97 \uFF5C \u5DE5\u4F5C\u7ECF\u9A8C\uFF1A3\u5E74 \uFF5C \u4EA7\u54C1\u7ECF\u7406 \uFF5C \u671F\u671B\u85AA\u8D44\uFF1A20-30k
 
 :::
@@ -1335,4 +1334,4 @@ icon:phone 155xxxxxx06
 ## icon:technology \u4E13\u4E1A\u6280\u80FD
 - \u7CBE\u901AHTML/DIV+CSS/Less/Sass\u7B49\u524D\u7AEFweb\u5F00\u53D1\u6280\u672F\uFF0C\u517C\u5BB9\u591A\u79CD\u79FB\u52A8\u7AEF\u3001PC\u7AEF\u6D4F\u89C8\u5668\u7684\u4EE3\u7801\uFF0CCSS3\u65B0\u7279\u6027;
 - \u719F\u7EC3\u638C\u63E1js\u3001ES6\u7B49\u65B0\u7279\u6027\uFF0C\u4EE5\u53CAAjax(Fetch)\u3001Json\u3001Axios\u3001\u4EE5\u53CA\u4EE3\u7406\u8DE8\u57DF\u4E0E\u540E\u7AEF\u5B9E\u73B0\u6570\u636E\u4EA4\u4E92;
-::: end`,Bu={name:"\u5546\u52A1\u7C7B(\u4E00\u9875)",primaryColor:"#111",primaryBackground:"#297370",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:xu},Cu=Object.freeze(Object.defineProperty({__proto__:null,default:Bu},Symbol.toStringTag,{value:"Module"})),E=new Map;E.set("create",["#333","#333"]);const C=[],Au=Object.entries(Object.assign({"./modules/10front_end/index.ts":e,"./modules/11fresh/index.ts":o,"./modules/12internet_social/index.ts":c,"./modules/13geek/index.ts":p,"./modules/14heading/index.ts":l,"./modules/15simple_versatile/index.ts":y,"./modules/16prominent_content/index.ts":S,"./modules/17business/index.ts":v,"./modules/18art/index.ts":R,"./modules/1internet_avatar/index.ts":q,"./modules/2concise/index.ts":I,"./modules/3operation/index.ts":L,"./modules/4internet/index.ts":J,"./modules/5graduation_reexam/index.ts":W,"./modules/6operation_avatar/index.ts":G,"./modules/7simple_avatar/index.ts":$,"./modules/8general/index.ts":Eu,"./modules/9business/index.ts":Cu}));for(const[u,x]of Au){const F=x.default;F.id=Math.ceil(Math.random()*1e9),F.type=u.split("/")[2],C.push(F),E.set(F.type,[F.primaryColor,F.primaryBackground])}const B=u=>+u.type.match(/^\d+/)[0];C.sort((u,x)=>B(x)-B(u));function Du(u){return E.get(u)[1]}function eu(u){return E.get(u)[0]}export{eu as a,Du as g,C as t};
+::: end`,Bu={name:"\u5546\u52A1\u7C7B(\u4E00\u9875)",primaryColor:"#111",primaryBackground:"#297370",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:xu},Cu=Object.freeze(Object.defineProperty({__proto__:null,default:Bu},Symbol.toStringTag,{value:"Module"})),E=new Map;E.set("create",["#333","#333"]);const C=[],Au=Object.entries(Object.assign({"./modules/10front_end/index.ts":e,"./modules/11fresh/index.ts":o,"./modules/12internet_social/index.ts":c,"./modules/13geek/index.ts":p,"./modules/14heading/index.ts":l,"./modules/15simple_versatile/index.ts":y,"./modules/16prominent_content/index.ts":f,"./modules/17business/index.ts":v,"./modules/18art/index.ts":R,"./modules/1internet_avatar/index.ts":q,"./modules/2concise/index.ts":I,"./modules/3operation/index.ts":L,"./modules/4internet/index.ts":J,"./modules/5graduation_reexam/index.ts":W,"./modules/6operation_avatar/index.ts":G,"./modules/7simple_avatar/index.ts":$,"./modules/8general/index.ts":Eu,"./modules/9business/index.ts":Cu}));for(const[u,x]of Au){const F=x.default;F.id=Math.ceil(Math.random()*1e9),F.type=u.split("/")[2],C.push(F),E.set(F.type,[F.primaryColor,F.primaryBackground])}const B=u=>+u.type.match(/^\d+/)[0];C.sort((u,x)=>B(x)-B(u));function Du(u){return E.get(u)[1]}function eu(u){return E.get(u)[0]}export{eu as a,Du as g,C as t};
