@@ -45,7 +45,7 @@
   content: '\e7fb';
 }
 
-.icon-info-circle-fill:before {
+.icon-info:before {
   content: '\e7dc';
 }
 
@@ -89,11 +89,11 @@
   content: '\e63b';
 }
 
-.icon-level-3:before {
+.icon-level3:before {
   content: '\e61e';
 }
 
-.icon-level-6:before {
+.icon-level6:before {
   content: '\e61f';
 }
 
@@ -121,19 +121,19 @@
   content: '\e7ce';
 }
 
-.icon-level-2:before {
+.icon-level2:before {
   content: '\e61a';
 }
 
-.icon-level-4:before {
+.icon-level4:before {
   content: '\e61b';
 }
 
-.icon-level-5:before {
+.icon-level5:before {
   content: '\e61c';
 }
 
-.icon-level-1:before {
+.icon-level1:before {
   content: '\e61d';
 }
 

@@ -63,8 +63,8 @@
     },
     {
       "icon_id": "6151161",
-      "name": "info-circle-fill",
-      "font_class": "info-circle-fill",
+      "name": "info",
+      "font_class": "info",
       "unicode": "e7dc",
       "unicode_decimal": 59356
     },
@@ -140,15 +140,15 @@
     },
     {
       "icon_id": "2682283",
-      "name": "level-3",
-      "font_class": "level-3",
+      "name": "level3",
+      "font_class": "level3",
       "unicode": "e61e",
       "unicode_decimal": 58910
     },
     {
       "icon_id": "2682284",
       "name": "level-6",
-      "font_class": "level-6",
+      "font_class": "level6",
       "unicode": "e61f",
       "unicode_decimal": 58911
     },
@@ -197,28 +197,28 @@
     {
       "icon_id": "2682279",
       "name": "level-2",
-      "font_class": "level-2",
+      "font_class": "level2",
       "unicode": "e61a",
       "unicode_decimal": 58906
     },
     {
       "icon_id": "2682280",
       "name": "level-4",
-      "font_class": "level-4",
+      "font_class": "level4",
       "unicode": "e61b",
       "unicode_decimal": 58907
     },
     {
       "icon_id": "2682281",
       "name": "level-5",
-      "font_class": "level-5",
+      "font_class": "level5",
       "unicode": "e61c",
       "unicode_decimal": 58908
     },
     {
       "icon_id": "2682282",
       "name": "level-1",
-      "font_class": "level-1",
+      "font_class": "level1",
       "unicode": "e61d",
       "unicode_decimal": 58909
     },
