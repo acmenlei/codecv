@@ -1,4 +1,5 @@
 import { warningMessage } from '@/common/message'
+// import { clickedTarget } from '@/views/editor/hook'
 import { ref } from 'vue'
 
 export const link = ref('')
@@ -7,6 +8,7 @@ export const linkText = ref('')
 export function reset() {
   link.value = ''
   linkText.value = ''
+  // clickedTarget.value = null
 }
 
 // 内容模式：点击超链接的时候设置弹出框的链接信息

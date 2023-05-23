@@ -1,5 +1,5 @@
 import { ref, onUnmounted } from 'vue'
-import { clickedTarget } from '../../hook'
+import { clickedTarget, ensureResetClickedTarget } from '../../hook'
 import { reset } from './components/linkInput/hook'
 
 export function useHeading() {
@@ -129,6 +129,7 @@ export function useToolBarConfig(emit: any) {
     const buttons = (event.target as Element).closest('button[data-command]')
     if (!buttons) return
     event.preventDefault()
+    ensureResetClickedTarget() // 确保点击替换的对象已经重置
     const command = buttons.getAttribute('data-command') as string
     switch (command) {
       case 'insertIcon':

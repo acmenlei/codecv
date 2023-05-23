@@ -249,6 +249,10 @@ export function useWrite(setContent: (cnt: string) => void) {
 
 export const clickedTarget = ref<HTMLElement | null>()
 
+export function ensureResetClickedTarget() {
+  clickedTarget.value = null
+}
+
 export function injectWriableModeAvatarEvent(
   writable: Ref<boolean>,
   setAvatar: (path: string) => void
