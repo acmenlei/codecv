@@ -12,6 +12,10 @@ import { useRoute, useRouter } from 'vue-router'
 import { splitPage } from './components/tabbar/hook'
 import { getPickerFile } from '@/common/utils/uploader'
 import { linkFlag, selectIcon } from './components/toolbar/hook'
+import {
+  setClickedLinkText,
+  setClickedLinkURL
+} from './components/toolbar/components/linkInput/hook'
 
 const MARKDOWN_CONTENT = 'markdown-content',
   get = getLocalStorage
@@ -243,6 +247,8 @@ export function useWrite(setContent: (cnt: string) => void) {
   }
 }
 
+export const clickedTarget = ref<HTMLElement | null>()
+
 export function injectWriableModeAvatarEvent(
   writable: Ref<boolean>,
   setAvatar: (path: string) => void
@@ -270,16 +276,6 @@ export function injectWriableModeAvatarEvent(
   })
 }
 
-export const clickedTarget = ref<HTMLElement | null>()
-
-export function getClickedLinkURL() {
-  return clickedTarget.value?.getAttribute('href')
-}
-
-export function getClickedLinkText() {
-  return clickedTarget.value?.textContent
-}
-
 export function injectWritableModeClickedReplace(parentNode: HTMLElement) {
   parentNode.addEventListener('click', (event: Event) => {
     const target = event.target as HTMLElement,
@@ -290,6 +286,8 @@ export function injectWritableModeClickedReplace(parentNode: HTMLElement) {
       clickedTarget.value = target
     } else if (tagName === 'a') {
       linkFlag.value = !linkFlag.value
+      setClickedLinkText(target)
+      setClickedLinkURL(target)
       clickedTarget.value = target
     }
   })

@@ -14,7 +14,7 @@ import {
 import { toolbarConfig, headings } from './constants'
 import RenderIcons from '@/components/renderIcons.vue'
 import ToastModal from '@/components/toast-modal/toastModal.vue'
-import LinkInput from './components/linkInput.vue'
+import LinkInput from './components/linkInput/linkInput.vue'
 import ColumnInput from './components/columnInput.vue'
 import TableInput from './components/tableInput.vue'
 

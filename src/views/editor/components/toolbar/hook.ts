@@ -1,5 +1,6 @@
 import { ref, onUnmounted } from 'vue'
 import { clickedTarget } from '../../hook'
+import { reset } from './components/linkInput/hook'
 
 export function useHeading() {
   const level = ref('正文')
@@ -152,6 +153,8 @@ export function useToolBarConfig(emit: any) {
         break
       case 'insertLink':
         linkFlag.value = !linkFlag.value
+        // 修改
+        reset()
         cursorPosition = saveCursorPosition()
         break
       default:
