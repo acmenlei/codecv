@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { warningMessage } from '@/common/message'
 import { ref } from 'vue'
+
+import { warningMessage } from '@/common/message'
+import { getClickedLinkURL, getClickedLinkText } from '@/views/editor/hook'
 
 const emit = defineEmits(['confirm'])
 
-const link = ref('')
-const linkText = ref('')
+const link = ref(getClickedLinkURL() || '')
+const linkText = ref(getClickedLinkText() || '')
 
 function confirm() {
   if (!link.value || !linkText.value) {

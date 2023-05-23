@@ -50,6 +50,18 @@
   i {
     font-size: 1.3rem;
     margin-right: 8px;
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    color: var(--markdown-primary-bg-color);
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
   }
   .head-layout {
     border: 3px solid var(--markdown-primary-bg-color);

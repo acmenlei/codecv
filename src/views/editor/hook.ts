@@ -11,6 +11,7 @@ import { nextTick, onActivated, onDeactivated, Ref, ref, watch, watchEffect } fr
 import { useRoute, useRouter } from 'vue-router'
 import { splitPage } from './components/tabbar/hook'
 import { getPickerFile } from '@/common/utils/uploader'
+import { linkFlag, selectIcon } from './components/toolbar/hook'
 
 const MARKDOWN_CONTENT = 'markdown-content',
   get = getLocalStorage
@@ -252,16 +253,44 @@ export function injectWriableModeAvatarEvent(
       const node = document.querySelector('.writable-edit-mode') as HTMLElement
       setTimeout(() => {
         const avatar = node.querySelector('img[alt*="个人头像"]')
-        if (!avatar) return
-        avatar.addEventListener('click', async function () {
-          const file = await getPickerFile({
-            multiple: false,
-            accept: 'image/png, image/jpeg,image/jpg, '
+        if (avatar) {
+          avatar.addEventListener('click', async function () {
+            const file = await getPickerFile({
+              multiple: false,
+              accept: 'image/png, image/jpeg,image/jpg, '
+            })
+            const path = URL.createObjectURL(file)
+            setAvatar(path)
           })
-          const path = URL.createObjectURL(file)
-          setAvatar(path)
-        })
+        }
+
+        injectWritableModeClickedReplace(node)
       })
     })
+  })
+}
+
+export const clickedTarget = ref<HTMLElement | null>()
+
+export function getClickedLinkURL() {
+  return clickedTarget.value?.getAttribute('href')
+}
+
+export function getClickedLinkText() {
+  return clickedTarget.value?.textContent
+}
+
+export function injectWritableModeClickedReplace(parentNode: HTMLElement) {
+  parentNode.addEventListener('click', (event: Event) => {
+    const target = event.target as HTMLElement,
+      className = target.className,
+      tagName = target.tagName.toLocaleLowerCase()
+    if (className.includes('iconfont')) {
+      selectIcon.value = !selectIcon.value
+      clickedTarget.value = target
+    } else if (tagName === 'a') {
+      linkFlag.value = !linkFlag.value
+      clickedTarget.value = target
+    }
   })
 }

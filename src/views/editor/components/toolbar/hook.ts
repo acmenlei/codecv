@@ -1,4 +1,5 @@
 import { ref, onUnmounted } from 'vue'
+import { clickedTarget } from '../../hook'
 
 export function useHeading() {
   const level = ref('正文')
@@ -12,6 +13,13 @@ export function useHeading() {
 export const selectIcon = ref(false)
 export function insertIcon(iconName: string, emit: any) {
   selectIcon.value = !selectIcon.value
+  // 内容模式：直接点击Icon进行替换的情况
+  if (clickedTarget.value) {
+    clickedTarget.value.className = `iconfont icon-${iconName}`
+    emit('content-change')
+    clickedTarget.value = null
+    return
+  }
   const icon = document.createElement('span')
   icon.innerHTML = `<i class='iconfont icon-${iconName}'></i>&nbsp;`
   reductionSelection(icon)
@@ -21,19 +29,20 @@ export function insertIcon(iconName: string, emit: any) {
 export const linkFlag = ref(false)
 export function insertLink(url: string, text: string, emit: any) {
   linkFlag.value = !linkFlag.value
+  // 内容模式：直接点击编辑超链接的情况
+  if (clickedTarget.value) {
+    clickedTarget.value.setAttribute('href', url)
+    clickedTarget.value.textContent = text
+    emit('content-change')
+    clickedTarget.value = null
+    return
+  }
   restoreCursorPosition()
   const link = document.createElement('a')
   link.href = url
   link.appendChild(document.createTextNode(text))
   reductionSelection(link)
   emit('content-change')
-}
-
-export function InsertUserInfo() {
-  const info = document.createElement('div')
-  info.innerHTML =
-    "<div class='head-layout'><h1>在此处可以编辑个人信息...</h1></div><br /><p>这是容器外部,要写在外面的内容从这里开始写...</p>"
-  reductionSelection(info)
 }
 
 // 多列布局
@@ -59,26 +68,6 @@ export function insertMulticolumn(column: string, emit: any) {
   emit('content-change')
 }
 
-export function insertCode() {
-  // 创建一个包含多列布局的临时div元素
-  const code = document.createElement('span')
-  code.innerHTML = `<code class='single-code'>xxx</code>&nbsp;`
-  reductionSelection(code)
-}
-
-export function insertToTail() {
-  const editor = document.querySelector('.writable-edit-mode')
-  const p = document.createElement('p')
-  p.textContent = '已为您跳出了当前布局容器'
-  editor?.appendChild(p)
-  const selection = window.getSelection() as Selection
-  const range = selection.getRangeAt(0).cloneRange()
-  // 还原Selection对象
-  selection.removeAllRanges()
-  range.setStartAfter(p)
-  range.collapse(true)
-  selection.addRange(range)
-}
 export const tableFlag = ref(false)
 export function InsertTable(col: string, row: string, emit: any) {
   tableFlag.value = !tableFlag.value
@@ -103,6 +92,34 @@ export function InsertTable(col: string, row: string, emit: any) {
   table.innerHTML = tableHTML
   reductionSelection(table)
   emit('content-change')
+}
+
+export function InsertUserInfo() {
+  const info = document.createElement('div')
+  info.innerHTML =
+    "<div class='head-layout'><h1>在此处可以编辑个人信息...</h1></div><br /><p>这是容器外部,要写在外面的内容从这里开始写...</p>"
+  reductionSelection(info)
+}
+
+export function insertCode() {
+  // 创建一个包含多列布局的临时div元素
+  const code = document.createElement('span')
+  code.innerHTML = `<code class='single-code'>xxx</code>&nbsp;`
+  reductionSelection(code)
+}
+
+export function insertToTail() {
+  const editor = document.querySelector('.writable-edit-mode')
+  const p = document.createElement('p')
+  p.textContent = '已为您跳出了当前布局容器'
+  editor?.appendChild(p)
+  const selection = window.getSelection() as Selection
+  const range = selection.getRangeAt(0).cloneRange()
+  // 还原Selection对象
+  selection.removeAllRanges()
+  range.setStartAfter(p)
+  range.collapse(true)
+  selection.addRange(range)
 }
 
 export function useToolBarConfig(emit: any) {
