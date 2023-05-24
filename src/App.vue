@@ -10,7 +10,7 @@ import AOS from 'aos'
 import { onMounted } from 'vue'
 import 'aos/dist/aos.css'
 
-onMounted(() => AOS.init())
+onMounted(() => AOS.init({ once: true }))
 </script>
 <style lang="scss">
 * {
