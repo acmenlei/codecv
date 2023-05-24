@@ -786,11 +786,11 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 icon:user \u7537 / 2000.01.01
 icon:phone 155xxxxxx06
 :::
-[icon:email xxxxxxxx@163.com](xxxxxxxx@163.com)
-[icon:gitee https://gitee.com/codeleilei](https://gitee.com/codeleilei)
+icon:email [xxxxxxxx@163.com](xxxxxxxx@163.com)
+icon:gitee [gitee.com/codeleilei](https://gitee.com/codeleilei)
 :::
-[icon:github https://github.com/acmenlei](https://github.com/acmenlei)
-[icon:yuque https://www.yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
+icon:github [github.com/acmenlei](https://github.com/acmenlei)
+icon:yuque [yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 ::: end
 :::
 ![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
