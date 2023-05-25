@@ -16,6 +16,7 @@ import {
   setClickedLinkText,
   setClickedLinkURL
 } from './components/toolbar/components/linkInput/hook'
+// import { post } from '@/services/config'
 
 const MARKDOWN_CONTENT = 'markdown-content',
   get = getLocalStorage
@@ -109,9 +110,15 @@ export function useResumeType() {
   }
 }
 
+// async function serverExport(fileName: string, content: string) {
+//   const res = await post('/fileUpload/export', { fileName, content })
+//   console.log(res)
+// }
+// 导出简历
 export function useDownLoad(type: Ref<string>, content: Ref<string>) {
   const router = useRouter()
   const downloadDynamic = (fileName: string) => {
+    // serverExport(fileName, (document.querySelector('.jufe') as HTMLElement).outerHTML)
     getPdf(fileName, document.querySelector('.jufe') as HTMLElement)
   }
 
