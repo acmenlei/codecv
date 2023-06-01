@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import renderDialog from '@/components/renderDialog.vue'
 import ToastModal from '@/components/toast-modal/toastModal.vue'
 import { Codemirror } from 'vue-codemirror'
 import { cssLanguage } from '@codemirror/lang-css'
@@ -121,24 +120,20 @@ const { isDark } = useThemeConfig()
     <br />
   </div>
   <!-- 弹出框 -->
-  <renderDialog
-    v-if="cssDialog"
-    confirm-text="设置样式"
-    reset-text="重置样式"
-    title="在这里编写CSS样式，让它作用在简历上！"
-    :flag="cssDialog"
-    @confirm="setStyle"
-    @cancel="removeStyle"
-  >
+  <ToastModal v-if="cssDialog" :flag="cssDialog" @close="cssDialog = false" width="400px">
+    <h4 class="mb-10">编写CSS样式让它作用在模板上</h4>
     <codemirror
       v-model="cssText"
-      :autofocus="true"
-      :style="{ height: '500px' }"
+      autofocus
+      :style="{ minHeight: '300px', maxHeight: '500px' }"
       :indent-with-tab="true"
       :extensions="isDark ? [cssLanguage, oneDark] : [cssLanguage]"
-      placeholder="格式如.jufe h2 { color: red; }"
+      placeholder="格式如 .jufe h2 { color: red; }"
     />
-  </renderDialog>
+    <br />
+    <button class="btn primary cursor hover" @click="setStyle">确认</button>
+    <button class="btn primary cursor hover" @click="removeStyle">重置</button>
+  </ToastModal>
   <!-- 调整边距 -->
   <ToastModal v-if="visiable" :flag="visiable" @close="confirmAdjustment" width="400px">
     <h4>调节简历内容的上边距（单位px）</h4>

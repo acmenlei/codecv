@@ -410,6 +410,8 @@ export function useAdjust(resumeType: string) {
         return '无序列表'
       case 'ol':
         return '有序列表'
+      case 'resume-module':
+        return '整个子模块'
       case 'single-code':
         return '代码框'
       case 'head-layout':
