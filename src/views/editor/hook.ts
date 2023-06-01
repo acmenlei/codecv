@@ -16,38 +16,9 @@ import {
   setClickedLinkText,
   setClickedLinkURL
 } from './components/toolbar/components/linkInput/hook'
-// import { post } from '@/services/config'
 
 const MARKDOWN_CONTENT = 'markdown-content',
   get = getLocalStorage
-// 给每个元素套上tooltip组件
-// function handlerHTMLToolTip(HTMLContent: string) {
-//   const vitrualDOM = document.createElement('div');  // 内部虚拟节点
-//   vitrualDOM.innerHTML = HTMLContent;
-//   vitrualDOM.innerHTML = dfsPriorityTraversal(vitrualDOM, '', 'div') as string;
-//   return vitrualDOM;
-// }
-// // 深度优先处理
-// function dfsPriorityTraversal(DOM: HTMLElement, parentClass: string, parentTag: string) {
-//   let HTMLSubContent = '';
-//   if (DOM.nodeType == 1) {
-//     const className = DOM.className ? `class='${DOM.className}'` : '';
-//     HTMLSubContent += `<el-tooltip placement=bottom content=${parentClass || parentTag}><${DOM.tagName.toLowerCase()} ${className}>`
-//     const childrens = Array.from(DOM.childNodes);
-//     if (!childrens) return;
-//     for (const children of childrens) {
-//       if (DOM.className) {
-//         HTMLSubContent += dfsPriorityTraversal(children as HTMLElement, DOM.className, '');
-//       } else {
-//         HTMLSubContent += dfsPriorityTraversal(children as HTMLElement, '', DOM.tagName.toLowerCase());
-//       }
-//     }
-//   } else {
-//     return `<el-tooltip placement=bottom content=${parentClass || parentTag}>${DOM.textContent}</el-tooltip>`
-//   }
-//   HTMLSubContent += `</${DOM.tagName.toLowerCase()}></el-tooltip>`;
-//   return HTMLSubContent;
-// }
 
 export function useRenderHTML(props: { content: string; resumeType: string }) {
   const renderDOM = ref<HTMLElement>(document.body)
@@ -110,10 +81,6 @@ export function useResumeType() {
   }
 }
 
-// async function serverExport(fileName: string, content: string) {
-//   const res = await post('/fileUpload/export', { fileName, content })
-//   console.log(res)
-// }
 // 导出简历
 export function useDownLoad(type: Ref<string>, content: Ref<string>) {
   const router = useRouter()
@@ -168,7 +135,7 @@ export function useMoveLayout() {
 
   function move(event: MouseEvent) {
     if (!flag) return
-    left.value = event.clientX - 10
+    left.value = event.clientX - 15
   }
 
   function down() {

@@ -53,7 +53,7 @@ onActivated(() => (fileName.value = document.title))
 #header {
   z-index: 9;
   height: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;

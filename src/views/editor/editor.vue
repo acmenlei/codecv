@@ -45,6 +45,7 @@ injectWriableModeAvatarEvent(writable, setAvatar)
         :style="{
           height: '100vh',
           borderRadius: '10px',
+          minWidth: '400px',
           width: `${left}px`,
           background: '#fff'
         }"
