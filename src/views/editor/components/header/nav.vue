@@ -52,6 +52,7 @@ const toggle = ref(false)
 <style lang="scss" scoped>
 .nav {
   li {
+    font-family: 'Exo', monospace;
     a {
       color: inherit;
     }
