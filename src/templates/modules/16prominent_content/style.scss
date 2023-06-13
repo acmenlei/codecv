@@ -2,6 +2,7 @@
 
 .markdown-transform-html {
   font-size: 13.5px;
+  min-height: 297mm;
 
   .head-layout {
     position: relative;
@@ -27,7 +28,7 @@
       left: -30px;
       z-index: -1;
       width: calc(100% + 60px);
-      height: calc(100% + 300px);
+      height: 295mm;
       background: linear-gradient(to bottom, var(--markdown-primary-bg-color), white);
     }
   }
@@ -69,7 +70,7 @@
         position: absolute;
         bottom: 0;
         height: 1px;
-        width: calc(210mm - 180px);
+        width: calc(210mm - 165px);
         background: var(--markdown-primary-bg-color);
         opacity: 0.3;
       }

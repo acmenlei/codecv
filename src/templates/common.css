@@ -61,6 +61,8 @@
 .markdown-transform-html code.single-code {
   color: var(--markdown-primary-bg-color);
   padding: 3px 10px;
+  margin-bottom: 5px;
+  display: inline-block;
   background: transparent;
   position: relative;
   border: 0.5px solid var(--markdown-primary-bg-color);

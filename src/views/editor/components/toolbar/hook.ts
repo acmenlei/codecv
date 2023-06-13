@@ -212,3 +212,91 @@ function restoreCursorPosition() {
   selection.addRange(newRange)
   cursorPosition = null
 }
+
+// markdown mode tool bar handler
+export function markdownModeToolbarCommandHandler(command: string) {
+  switch (command) {
+    case 'insertIcon':
+      selectIcon.value = !selectIcon.value
+      break
+    case 'insertHeadLayout':
+      markdownModeInsertHeadLayout()
+      break
+    case 'insertMainLayout':
+      markdownModeInsertMainLayout()
+      break
+    case 'insertMultiColumns':
+      cursorPosition = saveCursorPosition()
+      MulFlag.value = !MulFlag.value
+      break
+    case 'insertTable':
+      cursorPosition = saveCursorPosition()
+      tableFlag.value = !tableFlag.value
+      break
+  }
+}
+
+function getCurrentRanger() {
+  const selection = window.getSelection() as Selection
+  return selection.getRangeAt(0).cloneRange()
+}
+
+export function markdownModeInsertIcon(iconName: string) {
+  selectIcon.value = false
+  const range = getCurrentRanger()
+  range.insertNode(document.createTextNode(`icon:${iconName} `))
+}
+
+export function markdownModeInsertHeadLayout() {
+  const range = getCurrentRanger()
+  range.insertNode(
+    document.createTextNode(`::: headStart\n在这块区域你可以填写你的个人信息\n::: headEnd`)
+  )
+}
+
+export function markdownModeInsertMainLayout() {
+  const range = getCurrentRanger()
+  range.insertNode(
+    document.createTextNode(
+      `::: mainStart\n如果你需要对你的主体内容做调整，你可以把你的主体内容写在这块区域内\n**PS：此布局在一个模板中只允许出现一次**\n::: mainEnd`
+    )
+  )
+}
+
+export function markdownModeInsertMultiColumnsLayout(column: string) {
+  MulFlag.value = false
+  restoreCursorPosition()
+  const range = getCurrentRanger()
+  let content = '::: start\n',
+    i
+  for (i = 0; i < +column; i++) {
+    content += `第${i + 1}列`
+    if (i < +column - 1) {
+      content += '\n:::\n'
+    }
+  }
+  content += '\n::: end'
+  range.insertNode(document.createTextNode(content))
+}
+
+export function markdownModeInsertTable(column: string, row: string) {
+  tableFlag.value = false
+  restoreCursorPosition()
+  let thead = '| ',
+    tbody = ''
+  const range = getCurrentRanger()
+  for (let i = 0; i < +column; i++) {
+    thead += '列名 | '
+  }
+  thead = thead.trim()
+  thead += '\n'
+
+  for (let i = 0; i < +row; i++) {
+    for (let j = 0; j < +column; j++) {
+      tbody += '| 内容 '
+    }
+    tbody = (tbody + '|').trim()
+    tbody += '\n'
+  }
+  range.insertNode(document.createTextNode(thead + tbody))
+}

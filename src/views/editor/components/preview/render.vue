@@ -31,6 +31,10 @@ const isDark = useDark()
   height: 100vh;
   overflow: auto;
   background: var(--bg-theme);
+
+  .re-render {
+    transition: transform 0.3s;
+  }
 }
 
 .jufe {

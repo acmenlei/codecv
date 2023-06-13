@@ -25,7 +25,7 @@ useToolBarConfig(emit)
 </script>
 
 <template>
-  <div class="toolbar">
+  <div class="editor-toolbar">
     <button
       :key="idx"
       :data-command="toolBarItem.command"
@@ -55,13 +55,13 @@ useToolBarConfig(emit)
   </toast-modal>
 </template>
 
-<style lang="scss" scoped>
-.toolbar {
+<style lang="scss">
+.editor-toolbar {
   width: 100%;
   height: 40px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding-top: 10px;
+  padding: 10px 0;
   background: var(--background);
   position: sticky;
   top: 0;

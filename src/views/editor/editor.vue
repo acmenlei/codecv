@@ -15,7 +15,9 @@ import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from '@codemirror/lang-markdown'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { useThemeConfig } from '@/common/hooks/global'
-import Toolbar from './components/toolbar/toolbar.vue'
+import ContentModeToolbar from './components/toolbar/contentModeToolbar.vue'
+import MarkdownModeToolbar from './components/toolbar/markdownModeToobar.vue'
+
 import './style/writable.scss'
 
 const { resumeType } = useResumeType()
@@ -38,13 +40,16 @@ injectWriableModeAvatarEvent(writable, setAvatar)
   />
   <div id="root">
     <div class="markdown-edit">
-      <Toolbar v-if="writable" @content-change="ObserverContent" />
+      <content-mode-toolbar v-if="writable" @content-change="ObserverContent" />
+      <markdown-mode-toolbar v-if="!writable" />
       <codemirror
         v-if="!writable"
         v-model="content"
         :style="{
-          height: '100vh',
-          borderRadius: '10px',
+          height: 'calc(100vh - 40px)',
+          borderLeft: isDark ? 'none' : '1px solid #ddd',
+          borderBottomLeftRadius: '10px',
+          borderBottomRightRadius: '10px',
           minWidth: '400px',
           width: `${left}px`,
           background: '#fff'
