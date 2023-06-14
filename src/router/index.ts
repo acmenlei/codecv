@@ -1,7 +1,7 @@
 import { RouteRecordRaw, createRouter, createWebHashHistory } from 'vue-router'
 
 /* 统一导入路由 */
-const routeFiles = import.meta.glob('./modules/*', { eager: true })
+const routeFiles = import.meta.glob('./modules/*.ts', { eager: true })
 export const routeConfiguras: RouteRecordRaw[] = []
 
 Object.keys(routeFiles).forEach(routeModule => {

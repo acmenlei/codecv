@@ -57,7 +57,4 @@ declare module '@vue/runtime-core' {
     UserInfo: typeof import('./src/components/userInfo.vue')['default']
     UserTooltip: typeof import('./src/components/userTooltip.vue')['default']
   }
-  export interface ComponentCustomProperties {
-    vInfiniteScroll: typeof import('element-plus/es')['ElInfiniteScroll']
-  }
 }

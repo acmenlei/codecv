@@ -4,11 +4,11 @@ const homeNav = [
     path: '/theme',
     tooltip: false
   },
-  {
-    name: '求职社区',
-    path: '/community',
-    tooltip: false
-  },
+  // {
+  //   name: '求职社区',
+  //   path: '/community',
+  //   tooltip: false
+  // },
   {
     name: '语法助手',
     path: '/syntax/helper',

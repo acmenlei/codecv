@@ -11,7 +11,7 @@ import externalGlobals from 'rollup-plugin-external-globals'
 
 const globals = externalGlobals({
   jspdf: 'jspdf',
-  '@textbus/editor': 'textbus.editor',
+  // '@textbus/editor': 'textbus.editor',
   axios: 'axios',
   html2canvas: 'html2canvas'
 })
@@ -44,7 +44,7 @@ export default ({ mode }) => {
     base: './',
     build: {
       rollupOptions: {
-        external: ['jspdf', '@textbus/editor', 'axios', 'html2canvas'],
+        external: ['jspdf', /*'@textbus/editor',*/ 'axios', 'html2canvas'],
         plugins: [globals],
         output: {
           chunkFileNames: 'js/[name]-[hash].js',
