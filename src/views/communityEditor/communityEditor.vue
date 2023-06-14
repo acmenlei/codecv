@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { professionals } from '@/common/utils/professional'
 import { useCommunityArticle } from './hook'
-import '@textbus/editor/bundles/textbus.min.css'
+// import '@textbus/editor/bundles/textbus.min.css'
 
 const { article, articleEditor, publishArticle } = useCommunityArticle()
 </script>
