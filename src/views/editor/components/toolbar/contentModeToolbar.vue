@@ -18,14 +18,14 @@ import LinkInput from './components/linkInput/linkInput.vue'
 import ColumnInput from './components/columnInput.vue'
 import TableInput from './components/tableInput.vue'
 
-const emit = defineEmits(['content-change'])
+const emit = defineEmits(['content-change', 'toggle-editor-mode'])
 
 const { setHeading, level } = useHeading()
 useToolBarConfig(emit)
 </script>
 
 <template>
-  <div class="editor-toolbar">
+  <div class="editor-toolbar content-mode-tool-bar">
     <button
       :key="idx"
       :data-command="toolBarItem.command"

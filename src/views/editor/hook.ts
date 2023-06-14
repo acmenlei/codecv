@@ -7,7 +7,7 @@ import {
   importCSS,
   resumeDOMStruct2Markdown
 } from '@/common/utils'
-import { nextTick, onActivated, onDeactivated, Ref, ref, watch, watchEffect } from 'vue'
+import { nextTick, onActivated, onDeactivated, onMounted, Ref, ref, watch, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { splitPage } from './components/tabbar/hook'
 import { getPickerFile } from '@/common/utils/uploader'
@@ -181,15 +181,16 @@ export function useAvatar(content: Ref<string>, setContent: (c: string) => void)
 }
 
 // 使用编辑模式
-export function useWrite(setContent: (cnt: string) => void) {
+export function useToggleEditorMode(setContent: (cnt: string) => void) {
   const writable = ref(false),
     DOMTree = ref<HTMLElement>()
 
-  function startWrite(html: HTMLElement) {
+  function toggleEditorMode(html: HTMLElement) {
     writable.value = !writable.value
     showMessageVN('您已切换至', writable.value ? '内容模式' : 'Markdown模式')
     if (writable.value) {
       nextTick(() => {
+        html = html || (document.querySelector('.reference-dom') as HTMLElement)
         ;(DOMTree.value as HTMLElement).innerHTML = html.innerHTML
       })
     }
@@ -216,7 +217,7 @@ export function useWrite(setContent: (cnt: string) => void) {
   return {
     writable,
     DOMTree,
-    startWrite,
+    toggleEditorMode,
     ObserverContent
   }
 }
@@ -269,4 +270,16 @@ export function injectWritableModeClickedReplace(parentNode: HTMLElement) {
       clickedTarget.value = target
     }
   })
+}
+
+export function resetCodeMirrorDefaultStyle(writable: Ref<boolean>) {
+  function reset() {
+    const editor = document.querySelector('.cm-editor') as HTMLElement
+    editor.style.outline = 'none'
+  }
+  watch(
+    () => writable.value,
+    n => !n && nextTick(reset)
+  )
+  onMounted(reset)
 }

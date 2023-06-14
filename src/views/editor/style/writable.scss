@@ -4,22 +4,21 @@
     display: flex;
     padding: 5px 10px;
     border-radius: 5px;
-    position: relative;
     margin: 6px 0;
-    border: 2px dashed var(--markdown-primary-bg-color);
-    &::after {
-      position: absolute;
-      top: -5px;
-      right: 0;
-      content: '多列布局';
-      white-space: nowrap;
-      font-size: 10px;
-      transform: scale(0.7) translate(50%, -50%);
-      background: var(--markdown-primary-bg-color);
-      border-radius: 10px;
-      color: white;
-      padding: 2px 3px;
-    }
+    // border: 2px dashed var(--markdown-primary-bg-color);
+    // &::after {
+    //   position: absolute;
+    //   top: -5px;
+    //   right: 0;
+    //   content: '多列布局';
+    //   white-space: nowrap;
+    //   font-size: 10px;
+    //   transform: scale(0.7) translate(50%, -50%);
+    //   background: var(--markdown-primary-bg-color);
+    //   border-radius: 10px;
+    //   color: white;
+    //   padding: 2px 3px;
+    // }
     img[alt*='个人头像'] {
       width: 30mm;
       height: 30mm;
@@ -30,6 +29,7 @@
     }
     .flex-layout-item {
       margin-right: 20px;
+      flex: 1;
     }
   }
   ul,
@@ -57,7 +57,7 @@
   }
 
   a {
-    color: var(--markdown-primary-bg-color);
+    // color: var(--markdown-primary-bg-color);
     &:hover {
       opacity: 0.5;
       cursor: pointer;

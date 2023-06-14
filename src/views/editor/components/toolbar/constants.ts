@@ -53,6 +53,11 @@ export const toolbarConfig = [
     icon: 'goto',
     command: 'insertToTail',
     tip: '跳出当前所在布局容器'
+  },
+  {
+    icon: 'write',
+    command: 'toMarkdownMode',
+    tip: '切换至Markdown模式'
   }
 ]
 
@@ -91,5 +96,10 @@ export const markdownModeToolbarConfig = [
     icon: 'table',
     command: 'insertTable',
     tip: '插入表格'
+  },
+  {
+    icon: 'write',
+    command: 'toContentMode',
+    tip: '切换至内容模式'
   }
 ]

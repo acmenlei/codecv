@@ -20,7 +20,7 @@ import { oneDark } from '@codemirror/theme-one-dark'
 import { useThemeConfig } from '@/common/hooks/global'
 import { computed } from 'vue'
 
-const emits = defineEmits(['upload-avatar', 'open-write', 'html-convert'])
+const emits = defineEmits(['upload-avatar', 'toggle-editor-mode', 'html-convert'])
 const props = defineProps<{ resumeProps: { content: string; resumeType: string } }>()
 const resumeType = computed(() => props.resumeProps.resumeType)
 
@@ -82,7 +82,7 @@ const { isDark } = useThemeConfig()
         </template>
       </el-popconfirm>
       <el-tooltip content="切换编辑模式" effect="light">
-        <i class="iconfont icon-write operator-item" @click="$emit('open-write')"></i>
+        <i class="iconfont icon-write operator-item" @click="$emit('toggle-editor-mode')"></i>
       </el-tooltip>
       <el-tooltip content="自动一页" effect="light">
         <el-switch

@@ -13,12 +13,17 @@ import {
   markdownModeInsertTable
 } from './hook'
 import { tableFlag } from './hook'
+import { useThemeConfig } from '@/common/hooks/global'
+
+const emit = defineEmits(['toggle-editor-mode'])
+
+const { isDark } = useThemeConfig()
 </script>
 
 <template>
-  <div class="editor-toolbar markdown-mode-toolbar">
+  <div :class="['editor-toolbar', 'markdown-mode', isDark ? 'dark-mode' : 'light-mode']">
     <button
-      @click="markdownModeToolbarCommandHandler(toolBarItem.command)"
+      @click="markdownModeToolbarCommandHandler(toolBarItem.command, emit)"
       :key="idx"
       :data-command="toolBarItem.command"
       v-for="(toolBarItem, idx) in markdownModeToolbarConfig"
@@ -41,7 +46,35 @@ import { tableFlag } from './hook'
 </template>
 
 <style lang="scss" scoped>
-.markdown-mode-toolbar {
+.markdown-mode {
   position: relative;
+  padding-left: 37px;
+  &::before {
+    position: absolute;
+    content: 'TOOL';
+    font-size: 10px;
+    line-height: 40px;
+    width: 37px;
+    height: 40px;
+    left: 0;
+    top: 0;
+    border-top-left-radius: 10px;
+  }
+}
+
+.dark-mode {
+  &::before {
+    background: #282c34;
+    color: #798294;
+  }
+}
+
+.light-mode {
+  &::before {
+    border: 1px solid #ddd;
+    border-bottom: none;
+    background: #f5f5f5;
+    color: #6c6c6c;
+  }
 }
 </style>

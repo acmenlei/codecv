@@ -158,6 +158,9 @@ export function useToolBarConfig(emit: any) {
         reset()
         cursorPosition = saveCursorPosition()
         break
+      case 'toMarkdownMode':
+        emit('toggle-editor-mode')
+        break
       default:
         document.execCommand(command, false, undefined)
         break
@@ -214,7 +217,7 @@ function restoreCursorPosition() {
 }
 
 // markdown mode tool bar handler
-export function markdownModeToolbarCommandHandler(command: string) {
+export function markdownModeToolbarCommandHandler(command: string, emit: any) {
   switch (command) {
     case 'insertIcon':
       selectIcon.value = !selectIcon.value
@@ -232,6 +235,9 @@ export function markdownModeToolbarCommandHandler(command: string) {
     case 'insertTable':
       cursorPosition = saveCursorPosition()
       tableFlag.value = !tableFlag.value
+      break
+    case 'toContentMode':
+      emit('toggle-editor-mode')
       break
   }
 }

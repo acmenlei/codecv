@@ -8,8 +8,9 @@ import {
   useImportMD,
   useMoveLayout,
   useAvatar,
-  useWrite,
-  injectWriableModeAvatarEvent
+  useToggleEditorMode,
+  injectWriableModeAvatarEvent,
+  resetCodeMirrorDefaultStyle
 } from './hook'
 import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from '@codemirror/lang-markdown'
@@ -26,9 +27,11 @@ const { downloadDynamic, downloadNative, downloadMD } = useDownLoad(resumeType, 
 const { importMD } = useImportMD(setContent)
 const { setAvatar } = useAvatar(content, setContent)
 const { left, down } = useMoveLayout()
-const { startWrite, writable, DOMTree, ObserverContent } = useWrite(setContent)
+const { toggleEditorMode, writable, DOMTree, ObserverContent } = useToggleEditorMode(setContent)
 const { isDark } = useThemeConfig()
+
 injectWriableModeAvatarEvent(writable, setAvatar)
+resetCodeMirrorDefaultStyle(writable)
 </script>
 
 <template>
@@ -40,8 +43,12 @@ injectWriableModeAvatarEvent(writable, setAvatar)
   />
   <div id="root">
     <div class="markdown-edit">
-      <content-mode-toolbar v-if="writable" @content-change="ObserverContent" />
-      <markdown-mode-toolbar v-if="!writable" />
+      <content-mode-toolbar
+        v-if="writable"
+        @toggle-editor-mode="toggleEditorMode"
+        @content-change="ObserverContent"
+      />
+      <markdown-mode-toolbar v-if="!writable" @toggle-editor-mode="toggleEditorMode" />
       <codemirror
         v-if="!writable"
         v-model="content"
@@ -77,7 +84,7 @@ injectWriableModeAvatarEvent(writable, setAvatar)
       class="markdown-render"
       :resumeType="resumeType"
       :content="content"
-      @open-write="startWrite"
+      @toggle-editor-mode="toggleEditorMode"
       @upload-avatar="setAvatar"
       @html-convert="setContent"
     />
@@ -101,7 +108,7 @@ injectWriableModeAvatarEvent(writable, setAvatar)
 
     .writable-edit-mode {
       padding: 20px;
-      min-width: 550px;
+      min-width: 600px;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
       margin: 0 auto;

@@ -5,7 +5,7 @@ import { step } from '../tabbar/hook'
 import { useDark } from '@vueuse/core'
 
 const props = defineProps<{ content: string; resumeType: string }>()
-defineEmits(['upload-avatar', 'html-convert', 'open-write'])
+defineEmits(['upload-avatar', 'html-convert', 'toggle-editor-mode'])
 // hook...
 const { renderDOM } = useRenderHTML(props)
 const isDark = useDark()
@@ -15,7 +15,7 @@ const isDark = useDark()
 <template>
   <div class="outer" :style="{ background: isDark ? '#282c34' : 'var(--bg-theme)' }">
     <Tabbar
-      @open-write="$emit('open-write', renderDOM)"
+      @toggle-editor-mode="$emit('toggle-editor-mode', renderDOM)"
       @html-convert="cnt => $emit('html-convert', cnt)"
       @upload-avatar="path => $emit('upload-avatar', path)"
       :resumeProps="props"
