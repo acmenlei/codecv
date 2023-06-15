@@ -8,6 +8,7 @@ import viteCompression from 'vite-plugin-compression'
 import eslint from 'vite-plugin-eslint'
 import { visualizer } from 'rollup-plugin-visualizer'
 import externalGlobals from 'rollup-plugin-external-globals'
+import viteImagemin from 'vite-plugin-imagemin'
 
 const globals = externalGlobals({
   jspdf: 'jspdf',
@@ -27,9 +28,6 @@ export default ({ mode }) => {
       Components({
         resolvers: [ElementPlusResolver()]
       }),
-      viteCompression({
-        threshold: 10240
-      }),
       eslint({ lintOnStart: true, cache: false }), // 打包开启检查
       visualizer({ open: true })
     ],
@@ -45,7 +43,40 @@ export default ({ mode }) => {
     build: {
       rollupOptions: {
         external: ['jspdf', /*'@textbus/editor',*/ 'axios', 'html2canvas'],
-        plugins: [globals],
+        plugins: [
+          globals,
+          viteCompression({
+            disable: false,
+            threshold: 10240 // 如果体积大于阈值，将被压缩，单位为b，体积过小时请不要压缩，以免适得其反
+          }),
+          viteImagemin({
+            gifsicle: {
+              optimizationLevel: 7,
+              interlaced: false
+            },
+            optipng: {
+              optimizationLevel: 7
+            },
+            mozjpeg: {
+              quality: 20
+            },
+            pngquant: {
+              quality: [0.8, 0.9],
+              speed: 4
+            },
+            svgo: {
+              plugins: [
+                {
+                  name: 'removeViewBox'
+                },
+                {
+                  name: 'removeEmptyAttrs',
+                  active: false
+                }
+              ]
+            }
+          })
+        ],
         output: {
           chunkFileNames: 'js/[name]-[hash].js',
           entryFileNames: 'js/[name]-[hash].js',
