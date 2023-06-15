@@ -324,3 +324,15 @@ a.ripple-effect {
 .bold {
   font-weight: bold;
 }
+
+#nprogress {
+  .bar {
+    // custom bar color
+    background: var(--theme);
+  }
+  .spinner-icon {
+    // custom spinner color
+    border-top-color: var(--theme);
+    border-left-color: var(--theme);
+  }
+}
