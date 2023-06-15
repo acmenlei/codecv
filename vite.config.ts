@@ -12,9 +12,41 @@ import viteImagemin from 'vite-plugin-imagemin'
 
 const globals = externalGlobals({
   jspdf: 'jspdf',
-  // '@textbus/editor': 'textbus.editor',
   axios: 'axios',
   html2canvas: 'html2canvas'
+})
+
+const viteCompressionPlugin = viteCompression({
+  disable: false,
+  threshold: 10240 // 如果体积大于阈值，将被压缩，单位为b，体积过小时请不要压缩，以免适得其反
+})
+
+const viteImageminPlugin = viteImagemin({
+  gifsicle: {
+    optimizationLevel: 7,
+    interlaced: false
+  },
+  optipng: {
+    optimizationLevel: 7
+  },
+  mozjpeg: {
+    quality: 20
+  },
+  pngquant: {
+    quality: [0.8, 0.9],
+    speed: 4
+  },
+  svgo: {
+    plugins: [
+      {
+        name: 'removeViewBox'
+      },
+      {
+        name: 'removeEmptyAttrs',
+        active: false
+      }
+    ]
+  }
 })
 
 export default ({ mode }) => {
@@ -28,8 +60,7 @@ export default ({ mode }) => {
       Components({
         resolvers: [ElementPlusResolver()]
       }),
-      eslint({ lintOnStart: true, cache: false }), // 打包开启检查
-      visualizer({ open: true })
+      eslint({ lintOnStart: true, cache: false }) // 打包以及启动项目开启eslint检查
     ],
     resolve: {
       alias: {
@@ -42,41 +73,8 @@ export default ({ mode }) => {
     base: './',
     build: {
       rollupOptions: {
-        external: ['jspdf', /*'@textbus/editor',*/ 'axios', 'html2canvas'],
-        plugins: [
-          globals,
-          viteCompression({
-            disable: false,
-            threshold: 10240 // 如果体积大于阈值，将被压缩，单位为b，体积过小时请不要压缩，以免适得其反
-          }),
-          viteImagemin({
-            gifsicle: {
-              optimizationLevel: 7,
-              interlaced: false
-            },
-            optipng: {
-              optimizationLevel: 7
-            },
-            mozjpeg: {
-              quality: 20
-            },
-            pngquant: {
-              quality: [0.8, 0.9],
-              speed: 4
-            },
-            svgo: {
-              plugins: [
-                {
-                  name: 'removeViewBox'
-                },
-                {
-                  name: 'removeEmptyAttrs',
-                  active: false
-                }
-              ]
-            }
-          })
-        ],
+        external: ['jspdf', 'axios', 'html2canvas'],
+        plugins: [globals, viteCompressionPlugin, viteImageminPlugin, visualizer({ open: true })],
         output: {
           chunkFileNames: 'js/[name]-[hash].js',
           entryFileNames: 'js/[name]-[hash].js',
