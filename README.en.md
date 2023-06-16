@@ -11,9 +11,9 @@
 > Declaration: This project is released on Github/Gitee, based on the MIT license, free and for open source learning use. And there will be no behavior of selling accounts, paid services, discussion groups, discussion groups, etc. Be careful not to be deceived.
 
 <p>Resume template & Light Mode<p>
-<img style="max-width: 1000px" src="./docs/templates.png" alt="Template" />
+<img style="max-width: 1000px" src="./docs/templates.webp" alt="Template" />
 <p>Resume editor page & & Dark Mode<p>
-<img style="max-width: 1000px" src="./docs/editor.png" alt="Editor" />
+<img style="max-width: 1000px" src="./docs/editor.webp" alt="Editor" />
 
 - [Introduction](#introduction)
 

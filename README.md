@@ -11,9 +11,9 @@
 > 声明：此项目发布于 Github/Gitee，基于 MIT 协议，免费且作为开源学习使用。并且不会有任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
 
 <p>简历模板 & 默认主题<p>
-<img style="max-width: 1000px" src="./docs/templates.png" alt="模板" />
+<img style="max-width: 1000px" src="./docs/templates.webp" alt="模板" />
 <p>简历编辑器 & 暗黑主题<p>
-<img style="max-width: 1000px" src="./docs/editor.png" alt="编辑页" />
+<img style="max-width: 1000px" src="./docs/editor.webp" alt="编辑页" />
 
 - [介绍](#介绍)
 
