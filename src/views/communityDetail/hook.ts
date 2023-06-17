@@ -9,8 +9,8 @@ import {
   queryCommunityArticleCommentsById
 } from '@/services/modules/comments'
 import { errorMessage } from '@/common/message'
-import { isLogin } from '@/common/hooks/global'
-import { calcOffsetTop, scrollTo } from '@/common/utils'
+import { isLogin } from '@/common/global'
+import { calcOffsetTop, scrollTo } from '@/utils'
 import { IArticle, IComment, ICommentPosition, IResponse } from '@/types/type'
 
 export function useArticleDetail(articleId: Ref<number>, posterCommentId: Ref<number>) {

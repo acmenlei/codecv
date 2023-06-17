@@ -4,7 +4,7 @@ defineProps<{ title: string }>()
 
 <template>
   <div class="empty content-card">
-    <img width="150" src="/empty-placeholder.svg" alt="空占位符" />
+    <img width="150" src="@/assets/svg/empty.svg" alt="空占位符" />
     <p>{{ title }}</p>
   </div>
 </template>

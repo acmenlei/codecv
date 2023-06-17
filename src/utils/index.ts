@@ -3,7 +3,7 @@ import { ElLoading } from 'element-plus'
 import 'element-plus/es/components/loading/style/css'
 import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
-import { errorMessage, successMessage } from '../message'
+import { errorMessage, successMessage } from '../common/message'
 import { markdownToHTML } from 'markdown-transform-html'
 
 export async function importCSS(name: string) {

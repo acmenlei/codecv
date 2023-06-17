@@ -13,7 +13,7 @@ import {
   markdownModeInsertTable
 } from './hook'
 import { tableFlag } from './hook'
-import { useThemeConfig } from '@/common/hooks/global'
+import { useThemeConfig } from '@/common/global'
 
 const emit = defineEmits(['toggle-editor-mode'])
 

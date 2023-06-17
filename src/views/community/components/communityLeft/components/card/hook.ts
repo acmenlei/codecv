@@ -1,6 +1,6 @@
 import { warningMessage } from '@/common/message'
 import { errorMessage, successMessage } from '@/common/message'
-import { isLogin } from '@/common/hooks/global'
+import { isLogin } from '@/common/global'
 import useUserStore from '@/store/modules/user'
 import { useRouter } from 'vue-router'
 import { likeArticle, removeCommunity } from '@/services/modules/community'

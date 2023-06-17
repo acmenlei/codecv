@@ -3,8 +3,8 @@ import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 
 import { userForm } from '@/layout/header/hook'
-import { professionals } from '@/common/utils/professional'
-import { ImageUpload } from '@/common/utils/uploader'
+import { professionals } from '@/utils/professional'
+import { ImageUpload } from '@/utils/uploader'
 
 const emits = defineEmits(['cancel', 'submit'])
 const ruleFormRef = ref<FormInstance>(),

@@ -5,7 +5,7 @@ import Empty from '@/components/empty.vue'
 import Notice from './components/notice/notice.vue'
 import { onActivated } from 'vue'
 import { tabs } from './constant'
-import { professionals } from '@/common/utils/professional'
+import { professionals } from '@/utils/professional'
 import { useTab, useData } from './hook'
 
 const {

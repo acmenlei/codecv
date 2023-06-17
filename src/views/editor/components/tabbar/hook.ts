@@ -1,4 +1,4 @@
-import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/hooks/useLcoaStoage'
+import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/locastorage'
 import { warningMessage } from '@/common/message'
 import {
   createDIV,
@@ -9,7 +9,7 @@ import {
   optimalizing,
   Optimalizing,
   OptimalizingItem
-} from '@/common/utils'
+} from '@/utils'
 import { getPrimaryBGColor, getPrimaryColor } from '@/templates/config'
 import { onActivated, onMounted, reactive, ref } from 'vue'
 

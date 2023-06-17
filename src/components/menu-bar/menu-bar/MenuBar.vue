@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { IMenuBarItem } from '../type'
-import { scrollTo } from '../../../common/utils'
+import { scrollTo } from '../../../utils'
 import MenuBarItem from '../menu-bar-item/menuBarItem.vue'
 import useMenuBarTitleConfigura from './hooks/useMenuBarTitle'
 import { StyleValue } from 'vue'

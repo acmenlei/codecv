@@ -1,4 +1,4 @@
-import { isLogin } from '@/common/hooks/global'
+import { isLogin } from '@/common/global'
 import useUserStore from '@/store/modules/user'
 import { errorMessage } from '@/common/message'
 import { queryCommunity } from '@/services/modules/community'

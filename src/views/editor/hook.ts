@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from '@/common/hooks/useLcoaStoage'
+import { getLocalStorage, setLocalStorage } from '@/common/locastorage'
 import { errorMessage, showMessageVN, successMessage, warningMessage } from '@/common/message'
 import {
   convertDOM,
@@ -6,11 +6,11 @@ import {
   getPdf,
   importCSS,
   resumeDOMStruct2Markdown
-} from '@/common/utils'
+} from '@/utils'
 import { nextTick, onActivated, onDeactivated, onMounted, Ref, ref, watch, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { splitPage } from './components/tabbar/hook'
-import { getPickerFile } from '@/common/utils/uploader'
+import { getPickerFile } from '@/utils/uploader'
 import { linkFlag, selectIcon } from './components/toolbar/hook'
 import {
   setClickedLinkText,

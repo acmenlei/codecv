@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatTimefromNow } from '@/common/utils/date'
+import { formatTimefromNow } from '@/utils/date'
 import { type INotificationList } from '../../types/type'
 import Empty from '../empty.vue'
 

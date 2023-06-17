@@ -15,7 +15,7 @@ import {
 import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from '@codemirror/lang-markdown'
 import { oneDark } from '@codemirror/theme-one-dark'
-import { useThemeConfig } from '@/common/hooks/global'
+import { useThemeConfig } from '@/common/global'
 import ContentModeToolbar from './components/toolbar/contentModeToolbar.vue'
 import MarkdownModeToolbar from './components/toolbar/markdownModeToobar.vue'
 

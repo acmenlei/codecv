@@ -17,7 +17,7 @@ import {
   restResumeContent
 } from './hook'
 import { oneDark } from '@codemirror/theme-one-dark'
-import { useThemeConfig } from '@/common/hooks/global'
+import { useThemeConfig } from '@/common/global'
 import { computed } from 'vue'
 
 const emits = defineEmits(['upload-avatar', 'toggle-editor-mode', 'html-convert'])

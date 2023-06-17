@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { numFormat } from '@/common/utils/format'
+import { numFormat } from '@/utils/format'
 import Empty from '../empty.vue'
 import { useHotRank } from './hook'
 

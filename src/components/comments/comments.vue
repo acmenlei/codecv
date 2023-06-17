@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { numFormat } from '@/common/utils/format'
+import { numFormat } from '@/utils/format'
 import Empty from '@/components/empty.vue'
 import UserInfo from '@/components/userInfo.vue'
 import Publish from '@/components/publish/publish.vue'

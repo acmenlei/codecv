@@ -10,7 +10,7 @@ import { useRoute } from 'vue-router'
 import useUserStore from '@/store/modules/user'
 import { useArticleDetail, useDelayMenuBar } from './hook'
 import '@/assets/highlight.css'
-import { numFormat } from '@/common/utils/format'
+import { numFormat } from '@/utils/format'
 
 const route = useRoute()
 const articleId = computed(() => parseInt(route.query.articleId as string))

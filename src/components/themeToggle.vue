@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useThemeConfig } from '@/common/hooks/global'
+import { useThemeConfig } from '@/common/global'
 const { isDark, toggleTheme } = useThemeConfig()
 </script>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatTimefromNow } from '@/common/utils/date'
+import { formatTimefromNow } from '@/utils/date'
 import UserTooltip from '@/components/userTooltip.vue'
 import { IUserInfo } from '@/types/type'
 

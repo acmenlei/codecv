@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { professionals } from '@/common/utils/professional'
+import { professionals } from '@/utils/professional'
 import { useCommunityArticle } from './hook'
 // import '@textbus/editor/bundles/textbus.min.css'
 

@@ -4,7 +4,7 @@ import { errorMessage, successMessage, warningMessage } from '@/common/message'
 import { publishComment, publishCommentReply } from '@/services/modules/comments'
 import useUserStore from '@/store/modules/user'
 import { Ref, ref } from 'vue'
-import { ImageUpload } from '@/common/utils/uploader'
+import { ImageUpload } from '@/utils/uploader'
 import { IResponse } from '@/types/type'
 export function useEmoji(mainContent: Ref<string>) {
   const picker = ref(false)

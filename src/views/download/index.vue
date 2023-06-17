@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { importCSS } from '@/common/utils'
+import { importCSS } from '@/utils'
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 

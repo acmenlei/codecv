@@ -1,7 +1,7 @@
 import { fileMerge, fileUpload } from '@/services/modules/upload'
 import { UploadConfig } from '@textbus/editor'
 // import OSS from "ali-oss";
-import { errorMessage } from '../message'
+import { errorMessage } from '../common/message'
 
 // function requestCustom(file: File): Promise<string> {
 //   // 拿到封面绝对路径 暂时没写

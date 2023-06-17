@@ -1,6 +1,6 @@
 import { useThrottleFn } from '@vueuse/core'
 import { useRoute, useRouter } from 'vue-router'
-import { getLocalStorage } from '@/common/hooks/useLcoaStoage'
+import { getLocalStorage } from '@/common/locastorage'
 import {
   publishCommunity,
   queryCommunityArticleById,
@@ -10,7 +10,7 @@ import useUserStore, { TOKEN } from '@/store/modules/user'
 import { createEditor, Editor } from '@textbus/editor'
 import { computed, onActivated, onDeactivated, reactive, ref } from 'vue'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
-import { uploader } from '@/common/utils/uploader'
+import { uploader } from '@/utils/uploader'
 import { IArticle, IResponse } from '@/types/type'
 
 export function useCommunityArticle() {
