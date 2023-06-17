@@ -7,7 +7,7 @@ import { errorMessage, successMessage } from '../common/message'
 import { markdownToHTML } from 'markdown-transform-html'
 
 export async function importCSS(name: string) {
-  const res = await import(`../../templates/modules/${name}/style.scss`)
+  const res = await import(`../templates/modules/${name}/style.scss`)
   return res.default
 }
 
