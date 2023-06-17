@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { numFormat } from '@/utils/format'
-import wechat from '/wechat.jpeg'
+import wechat from '@/assets/img/wechat.jpg'
 
 const defaultUserInfo = {
   uid: 0,
