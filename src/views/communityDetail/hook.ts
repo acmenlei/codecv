@@ -1,7 +1,7 @@
 import { useThrottleFn } from '@vueuse/core'
 import { warningMessage } from '@/common/message'
 import useUserStore from '@/store/modules/user'
-import { initialInfo } from './../../store/modules/user'
+import { initialInfo } from '../../store/modules/user'
 import { onActivated, onDeactivated, reactive, Ref, ref, watch, watchEffect } from 'vue'
 import { queryCommunityArticleById, likeArticle } from '@/services/modules/community'
 import {

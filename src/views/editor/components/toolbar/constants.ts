@@ -45,7 +45,7 @@ export const toolbarConfig = [
     tip: '插入表格'
   },
   {
-    icon: 'code1',
+    icon: 'code',
     command: 'insertCode',
     tip: '插入技能点'
   },

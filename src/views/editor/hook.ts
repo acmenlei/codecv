@@ -1,36 +1,25 @@
-import { getLocalStorage, setLocalStorage } from '@/common/locastorage'
-import { errorMessage, showMessageVN, successMessage, warningMessage } from '@/common/message'
-import {
-  convertDOM,
-  getCurrentTypeContent,
-  getPdf,
-  importCSS,
-  resumeDOMStruct2Markdown
-} from '@/utils'
-import { nextTick, onActivated, onDeactivated, onMounted, Ref, ref, watch, watchEffect } from 'vue'
+import { getLocalStorage } from '@/common/locastorage'
+import { errorMessage, successMessage, warningMessage } from '@/common/message'
+import { convertDOM, getPdf, importCSS } from '@/utils'
+import { onActivated, Ref, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { splitPage } from './components/tabbar/hook'
-import { getPickerFile } from '@/utils/uploader'
-import { linkFlag, selectIcon } from './components/toolbar/hook'
-import {
-  setClickedLinkText,
-  setClickedLinkURL
-} from './components/toolbar/components/linkInput/hook'
+import useEditorStore from '@/store/modules/editor'
 
-const MARKDOWN_CONTENT = 'markdown-content',
-  get = getLocalStorage
+export const get = getLocalStorage
 
-export function useRenderHTML(props: { content: string; resumeType: string }) {
+export function useRenderHTML(resumeType: Ref<string>) {
   const renderDOM = ref<HTMLElement>(document.body)
+  const editorStore = useEditorStore()
 
   onActivated(() => {
-    importCSS(props.resumeType)
-    renderDOM.value.innerHTML = convertDOM(props.content).innerHTML
+    importCSS(resumeType.value)
+    renderDOM.value.innerHTML = convertDOM(editorStore.MDContent).innerHTML
     setTimeout(() => splitPage(renderDOM.value), 100)
   })
 
   watch(
-    () => props.content,
+    () => editorStore.MDContent,
     v => {
       renderDOM.value.innerHTML = convertDOM(v).innerHTML
       setTimeout(() => splitPage(renderDOM.value), 50)
@@ -38,34 +27,14 @@ export function useRenderHTML(props: { content: string; resumeType: string }) {
   )
   // 刷新页面（这里是一个比较有问题的点）
   watch(
-    () => props.resumeType,
+    () => resumeType.value,
     () => {
       location.reload()
     }
   )
   return {
-    renderDOM
-  }
-}
-
-// 缓存用户输入的content内容
-export function useMarkdownContent(resumeType: Ref<string>) {
-  const cacheKey = MARKDOWN_CONTENT + '-' + resumeType.value
-  const content = ref(
-    get(cacheKey) ? (get(cacheKey) as string) : getCurrentTypeContent(resumeType.value)
-  )
-
-  function setContent(str: string) {
-    if (!str) {
-      return
-    }
-    content.value = str
-    setLocalStorage(cacheKey, content.value)
-  }
-
-  return {
-    content,
-    setContent
+    renderDOM,
+    editorStore
   }
 }
 
@@ -82,20 +51,20 @@ export function useResumeType() {
 }
 
 // 导出简历
-export function useDownLoad(type: Ref<string>, content: Ref<string>) {
-  const router = useRouter()
+export function useDownLoad(type: Ref<string>) {
+  const router = useRouter(),
+    editorStore = useEditorStore()
   const downloadDynamic = (fileName: string) => {
-    // serverExport(fileName, (document.querySelector('.jufe') as HTMLElement).outerHTML)
     getPdf(fileName, document.querySelector('.jufe') as HTMLElement)
   }
 
   const downloadNative = () => {
-    localStorage.setItem('download', JSON.stringify(convertDOM(content.value).innerHTML))
+    localStorage.setItem('download', JSON.stringify(convertDOM(editorStore.MDContent).innerHTML))
     router.push({ path: '/download', query: { type: type.value } })
   }
 
   const downloadMD = () => {
-    const blob = new Blob([content.value])
+    const blob = new Blob([editorStore.MDContent])
     const url = URL.createObjectURL(blob)
     const aTag = document.createElement('a')
     aTag.download = document.title + '.md'
@@ -111,13 +80,15 @@ export function useDownLoad(type: Ref<string>, content: Ref<string>) {
   }
 }
 
-export function useImportMD(setContent: (str: string) => void) {
+export function useImportMD(resumeType: string) {
   function importMD(file: File) {
-    const reader = new FileReader()
+    const reader = new FileReader(),
+      { setMDContent } = useEditorStore()
     reader.readAsText(file, 'utf-8')
     reader.onload = function (event) {
       successMessage('导入成功~')
-      setContent((event.target?.result as string) || '')
+
+      setMDContent((event.target?.result as string) || '', resumeType)
     }
     reader.onerror = function () {
       errorMessage('导入失败!')
@@ -128,45 +99,16 @@ export function useImportMD(setContent: (str: string) => void) {
   }
 }
 
-// 左右移动伸缩布局
-export function useMoveLayout() {
-  const left = ref(500)
-  let flag = false
-
-  function move(event: MouseEvent) {
-    if (!flag) return
-    left.value = event.clientX - 15
-  }
-
-  function down() {
-    flag = true
-  }
-
-  function up() {
-    flag = false
-  }
-
-  onActivated(() => {
-    window.addEventListener('mouseup', up)
-    window.addEventListener('mousemove', move)
-  })
-
-  onDeactivated(() => {
-    window.removeEventListener('mouseup', up)
-    window.removeEventListener('mousemove', move)
-  })
-  return { left, move, down }
-}
-
-export function useAvatar(content: Ref<string>, setContent: (c: string) => void) {
+export function useAvatar(resumeType: string) {
   const matchAvatarSlot = /!\[个人头像\]\(.*\)/
   function setAvatar(path: string) {
-    if (!matchAvatarSlot.test(content.value)) {
+    const { MDContent, setMDContent } = useEditorStore()
+    if (!matchAvatarSlot.test(MDContent)) {
       warningMessage('上传前请确保你想上传的位置在编辑器中存在 ![个人头像](...) 此关键字')
       return
     }
-    const newContent = content.value.replace(matchAvatarSlot, `![个人头像](${path})`)
-    setContent(newContent)
+    const newContent = MDContent.replace(matchAvatarSlot, `![个人头像](${path})`)
+    setMDContent(newContent, resumeType)
     successMessage('头像上传成功，如果你想修改为网络图片，你可直接修改对应的链接！')
     // 可能还需要处理可编辑模式中的头像
     const writableDOM = document.querySelector('.writable-edit-mode')
@@ -180,106 +122,8 @@ export function useAvatar(content: Ref<string>, setContent: (c: string) => void)
   }
 }
 
-// 使用编辑模式
-export function useToggleEditorMode(setContent: (cnt: string) => void) {
-  const writable = ref(false),
-    DOMTree = ref<HTMLElement>()
-
-  function toggleEditorMode(html: HTMLElement) {
-    writable.value = !writable.value
-    showMessageVN('您已切换至', writable.value ? '内容模式' : 'Markdown模式')
-    if (writable.value) {
-      nextTick(() => {
-        html = html || (document.querySelector('.reference-dom') as HTMLElement)
-        ;(DOMTree.value as HTMLElement).innerHTML = html.innerHTML
-      })
-    }
-  }
-
-  function ObserverContent() {
-    const content = resumeDOMStruct2Markdown({
-      node: DOMTree.value as Node,
-      latest: true,
-      uid: 0
-    })
-    setContent(content)
-  }
-
-  onActivated(() => {
-    if (writable.value) {
-      nextTick(() => {
-        ;(DOMTree.value as HTMLElement).innerHTML = (<HTMLElement>(
-          document.querySelector('.reference-dom')
-        )).innerHTML
-      })
-    }
-  })
-  return {
-    writable,
-    DOMTree,
-    toggleEditorMode,
-    ObserverContent
-  }
-}
-
 export const clickedTarget = ref<HTMLElement | null>()
 
 export function ensureResetClickedTarget() {
   clickedTarget.value = null
-}
-
-export function injectWriableModeAvatarEvent(
-  writable: Ref<boolean>,
-  setAvatar: (path: string) => void
-) {
-  watchEffect(() => {
-    if (!writable.value) return
-    nextTick(() => {
-      const node = document.querySelector('.writable-edit-mode') as HTMLElement
-      setTimeout(() => {
-        const avatar = node.querySelector('img[alt*="个人头像"]')
-        if (avatar) {
-          avatar.addEventListener('click', async function () {
-            const file = await getPickerFile({
-              multiple: false,
-              accept: 'image/png, image/jpeg,image/jpg, '
-            })
-            const path = URL.createObjectURL(file)
-            setAvatar(path)
-          })
-        }
-
-        injectWritableModeClickedReplace(node)
-      })
-    })
-  })
-}
-
-export function injectWritableModeClickedReplace(parentNode: HTMLElement) {
-  parentNode.addEventListener('click', (event: Event) => {
-    const target = event.target as HTMLElement,
-      className = target.className,
-      tagName = target.tagName.toLocaleLowerCase()
-    if (className.includes('iconfont')) {
-      selectIcon.value = !selectIcon.value
-      clickedTarget.value = target
-    } else if (tagName === 'a') {
-      linkFlag.value = !linkFlag.value
-      setClickedLinkText(target)
-      setClickedLinkURL(target)
-      clickedTarget.value = target
-    }
-  })
-}
-
-export function resetCodeMirrorDefaultStyle(writable: Ref<boolean>) {
-  function reset() {
-    const editor = document.querySelector('.cm-editor') as HTMLElement
-    editor.style.outline = 'none'
-  }
-  watch(
-    () => writable.value,
-    n => !n && nextTick(reset)
-  )
-  onMounted(reset)
 }

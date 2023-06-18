@@ -1,24 +1,22 @@
 <script setup lang="ts">
 import Tabbar from '../tabbar/tabbar.vue'
-import { useRenderHTML } from '../../hook'
+import { useRenderHTML, useResumeType } from '../../hook'
 import { step } from '../tabbar/hook'
-import { useDark } from '@vueuse/core'
+import { useThemeConfig } from '@/common/global'
 
-const props = defineProps<{ content: string; resumeType: string }>()
-defineEmits(['upload-avatar', 'html-convert', 'toggle-editor-mode'])
-// hook...
-const { renderDOM } = useRenderHTML(props)
-const isDark = useDark()
-// constants
+defineEmits(['upload-avatar', 'html-convert'])
+
+const { resumeType } = useResumeType()
+const { renderDOM, editorStore } = useRenderHTML(resumeType)
+const { isDark } = useThemeConfig()
 </script>
 
 <template>
   <div class="outer" :style="{ background: isDark ? '#282c34' : 'var(--bg-theme)' }">
     <Tabbar
-      @toggle-editor-mode="$emit('toggle-editor-mode', renderDOM)"
+      @toggle-editor-mode="editorStore.setWritableMode(renderDOM)"
       @html-convert="cnt => $emit('html-convert', cnt)"
       @upload-avatar="path => $emit('upload-avatar', path)"
-      :resumeProps="props"
     />
     <div ref="renderDOM" class="markdown-transform-html jufe reference-dom"></div>
     <!-- 分页渲染区域 -->

@@ -60,7 +60,7 @@ icon:phone 15507942222 ｜ icon:email coderleilei@qq.com ｜ icon:wechat zhangsa
 export default {
   name: '简约通用模板',
   primaryColor: '#7E817D',
-  primaryBackground: '#924B60',
-  img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/73fcefbc634c4283a2e948edba9b31d1~tplv-k3u1fbpfcp-watermark.image?',
+  primaryBackground: '#112236',
+  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2268dbf51af544b9b8202ada31526ca4~tplv-k3u1fbpfcp-watermark.image?',
   content
 }

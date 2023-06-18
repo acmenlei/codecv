@@ -18,12 +18,11 @@ import {
 } from './hook'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { useThemeConfig } from '@/common/global'
-import { computed } from 'vue'
+import { useResumeType } from '../../hook'
 
 const emits = defineEmits(['upload-avatar', 'toggle-editor-mode', 'html-convert'])
-const props = defineProps<{ resumeProps: { content: string; resumeType: string } }>()
-const resumeType = computed(() => props.resumeProps.resumeType)
 
+const { resumeType } = useResumeType()
 const { autoOnePage, setAutoOnePage } = useAutoOnePage(resumeType.value)
 const { cssDialog, cssText, toggleDialog, setStyle, removeStyle } = useCustomCSS(resumeType.value)
 const { color, setColor } = usePrimaryColor(resumeType.value)
@@ -75,7 +74,7 @@ const { isDark } = useThemeConfig()
         confirm-button-text="是的"
         cancel-button-text="点错了"
         title="你想重置简历的所有内容吗？"
-        @confirm="restResumeContent(resumeProps.resumeType)"
+        @confirm="restResumeContent(resumeType)"
       >
         <template #reference>
           <i class="operator-item iconfont icon-refresh ml-20"></i>
