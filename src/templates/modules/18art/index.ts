@@ -2,7 +2,7 @@ const content = `
 ::: headStart
 
 ::: start
-# 秋梦一
+# CodeCV
 
 :::
 女 ｜ 生日：2000/08/01 ｜ 北京
@@ -11,7 +11,7 @@ icon:phone 13425182004 ｜ icon:email qiumengyi@kuaishou.com ｜ icon:wechat qiu
 
 :::
 
-![个人头像](https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800)
+![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
 
 
 
@@ -139,6 +139,6 @@ export default {
   name: '极简/简约/通用模板',
   primaryColor: '#7D7979',
   primaryBackground: '#024B4B',
-  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/17f411415ed742fe8e309a055230eaa1~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3937f62d7509441dad5389a9ef619cfd~tplv-k3u1fbpfcp-watermark.image?',
   content
 }

@@ -4,7 +4,6 @@ import { markdownLanguage } from '@codemirror/lang-markdown'
 import { oneDark } from '@codemirror/theme-one-dark'
 import ContentModeToolbar from '@/views/editor/components/toolbar/contentModeToolbar.vue'
 import MarkdownModeToolbar from '@/views/editor/components/toolbar/markdownModeToobar.vue'
-// import { cssLanguage } from '@codemirror/lang-css'
 import { useResumeType, useAvatar } from '../../hook'
 import {
   initEditorState,
@@ -50,16 +49,8 @@ resetCodeMirrorDefaultStyle(writable)
       :autofocus="true"
       :indent-with-tab="true"
       :extensions="isDark ? [markdownLanguage, oneDark] : [markdownLanguage]"
-      @change="editorStore.setMDContent"
+      @change="(nv: string) => editorStore.setMDContent(nv, resumeType)"
     />
-    <!-- <codemirror
-      v-model="cssText"
-      autofocus
-      :style="{ minHeight: '300px', maxHeight: '500px' }"
-      :indent-with-tab="true"
-      :extensions="isDark ? [cssLanguage, oneDark] : [cssLanguage]"
-      placeholder="格式如 .jufe h2 { color: red; }"
-    /> -->
     <div
       ref="DOMTree"
       @input="ObserverContent"
@@ -79,7 +70,6 @@ resetCodeMirrorDefaultStyle(writable)
 <style lang="scss" scoped>
 .markdown-edit {
   position: relative;
-  height: 100vh;
   border: none;
   outline: none;
   font-size: 15px;
@@ -88,41 +78,57 @@ resetCodeMirrorDefaultStyle(writable)
   &::-webkit-scrollbar {
     display: none;
   }
-
   .writable-edit-mode {
     padding: 20px;
     min-width: 600px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin: 0 auto;
+
     &:focus {
       outline: none;
     }
+
     &::-webkit-scrollbar {
       display: none;
     }
   }
-  .move {
-    width: 10px;
-    height: 100%;
-    top: 0;
-    right: -10px;
-    z-index: 2;
-    border-radius: 10px;
-    background: var(--body-background);
-    cursor: col-resize;
-    &:hover {
-      background: var(--theme);
-    }
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    span {
-      font-weight: bold;
-      opacity: 0.7;
-      margin-top: -10px;
-    }
+}
+.move {
+  width: 10px;
+  height: 100%;
+  top: 0;
+  right: -10px;
+  z-index: 2;
+  border-radius: 10px;
+  background: var(--body-background);
+  cursor: col-resize;
+
+  &:hover {
+    background: var(--theme);
+  }
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    font-weight: bold;
+    opacity: 0.7;
+    margin-top: -10px;
+  }
+}
+.css-editor {
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+  .move-y {
+    flex-direction: row;
+    width: 100%;
+    height: 10px;
+    top: -10px;
+    left: 0;
   }
 }
 </style>

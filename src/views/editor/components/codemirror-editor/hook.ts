@@ -55,7 +55,7 @@ export function useMoveLayout() {
     window.removeEventListener('mouseup', up)
     window.removeEventListener('mousemove', move)
   })
-  return { left, move, down }
+  return { left, down, top }
 }
 
 export function injectWriableModeAvatarEvent(
@@ -104,8 +104,8 @@ export function injectWritableModeClickedReplace(parentNode: HTMLElement) {
 
 export function resetCodeMirrorDefaultStyle(writable: Ref<boolean>) {
   function reset() {
-    const editor = document.querySelector('.cm-editor') as HTMLElement
-    editor.style.outline = 'none'
+    const editors = Array.from(document.querySelectorAll('.cm-editor')) as HTMLElement[]
+    editors.forEach(editor => (editor.style.outline = 'none'))
   }
   watch(
     () => writable.value,

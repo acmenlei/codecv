@@ -51,11 +51,12 @@ const { isDark } = useThemeConfig()
   padding-left: 37px;
   &::before {
     position: absolute;
-    content: 'TOOL';
+    content: 'MD';
+    padding-left: 10px;
     font-size: 10px;
     line-height: 40px;
-    width: 37px;
     height: 40px;
+    font-weight: bold;
     left: 0;
     top: 0;
     border-top-left-radius: 10px;
@@ -64,7 +65,6 @@ const { isDark } = useThemeConfig()
 
 .dark-mode {
   &::before {
-    background: #282c34;
     color: #798294;
   }
 }
@@ -73,7 +73,7 @@ const { isDark } = useThemeConfig()
   &::before {
     border: 1px solid #ddd;
     border-bottom: none;
-    background: #f5f5f5;
+    border-right: none;
     color: #6c6c6c;
   }
 }

@@ -17,14 +17,14 @@ const { setAvatar } = useAvatar(resumeType.value)
     @download-md="downloadMD"
     @import-md="importMD"
   />
-  <div id="root">
+  <div id="edtior">
     <markdown-editor />
     <markdown-render class="markdown-render" @upload-avatar="setAvatar" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-#root {
+#edtior {
   display: flex;
   .markdown-render {
     flex: 1;
