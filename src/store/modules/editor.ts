@@ -28,14 +28,14 @@ const useEditorStore = defineStore('editorStore', {
       setLocalStorage(`${MARKDOWN_CONTENT}-${resumeType}`, nv)
     },
     // 切换编辑模式
-    setWritableMode(html: HTMLElement) {
+    setWritableMode(originHTML: HTMLElement) {
       this.writable = !this.writable
       showMessageVN('您已切换至', this.writable ? '内容模式' : 'Markdown模式')
       if (this.writable) {
         nextTick(() => {
-          html = html || (document.querySelector('.reference-dom') as HTMLElement)
+          originHTML = originHTML || (document.querySelector('.reference-dom') as HTMLElement)
           const DOMTree = document.querySelector('.writable-edit-mode') as HTMLElement
-          DOMTree && (DOMTree.innerHTML = html.innerHTML)
+          DOMTree && (DOMTree.innerHTML = originHTML.innerHTML)
         })
       }
     }
