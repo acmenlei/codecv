@@ -92,7 +92,7 @@ icon:yuque [yueque.com/xiongleixin](yueque.com/xiongleixin)
 ::: end
 
 :::
-![\u4E2A\u4EBA\u5934\u50CF](data:image/jpeg;base64,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3NF2T7ps6/JrfdkLvyB+xvfkyW8cwH5Ex0NubYscr0j5n2g/QTl6s/03xfDT4iJkuREQEREBERA4ImE7zbOfZuOzU1ypmz0TyZT7yeAuVtxtbtE3eQO9W71PG0DSayuutN7XyN/pPAj+wky8IqJ2JtVKipiEN1PEcx9JT3iXBHDAEagzMdzt1doYepU9ooVCLWDqwdgRZlAOgtfU2Oo0mjbPolEAPG5Ph3TTdmpL8q5ll4eyIiZLkREBERAREQEREDiV/a6WqE9oB/T9JYJHbVwpYBgLleXaJfp640pucxBRO1MO5Ngrek7hs6r9D5j+86rrM+WPF+nkie5dl1TyA8T/AGnemx25uPIXkXqZnynt19M+6QcYFopR+J3zHuVP9yPQyb6I9nMmGqV2/wCa4C/Zp5lv+It6T53q3BqYqslSnWVRlCsHBJWxJuoXjx4G3DjLts3BpRpU6Ke7TUKO2wHE954+c5t67ry1zniPZERKLkREBERAREQEREBERAREQEREBERAREQEREBERAREQEROCIHMREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERED/2Q==)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 
@@ -193,7 +193,7 @@ xxx\u5B66\u6821 (\u8F6F\u4EF6\u5DE5\u7A0B)
 ## \u81F4\u8C22
 ...
 \u611F\u8C22\u60A8\u82B1\u65F6\u95F4\u9605\u8BFB\u6211\u7684\u7B80\u5386\uFF0C\u671F\u5F85\u80FD\u6709\u673A\u4F1A\u548C\u60A8\u5171\u4E8B\u3002
-`,n={name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)",primaryColor:"#555",primaryBackground:"#790FAE",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/274659ec6a294c2cb4f0d289bee3ba4f~tplv-k3u1fbpfcp-watermark.image?",content:t},o=Object.freeze(Object.defineProperty({__proto__:null,default:n},Symbol.toStringTag,{value:"Module"})),a=`::: headStart
+`,o={name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)",primaryColor:"#555",primaryBackground:"#790FAE",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1001dfb4cfe947eb8ad5a12b3fa3650e~tplv-k3u1fbpfcp-watermark.image?",content:t},n=Object.freeze(Object.defineProperty({__proto__:null,default:o},Symbol.toStringTag,{value:"Module"})),a=`::: headStart
 ## \u5C0F\u9ED1\u5B50 - \u524D\u7AEF\u67B6\u6784\u5E08
 ::: start
 **\u5DE5\u4F5C\u7ECF\u9A8C**\uFF1A8\u5E74
@@ -294,7 +294,7 @@ xxx\u5B66\u6821 (\u8F6F\u4EF6\u5DE5\u7A0B)
 
 ::: start
 
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 
 
 ### \u5E26\u4F6C
@@ -363,12 +363,12 @@ icon:email example@163.com
 
 ## \u81EA\u6211\u8BC4\u4EF7
 \u5728\u524D\u7AEF\u9886\u57DF\u6709\u8FC7\u6DF1\u8015\uFF0C\u6709\u7BA1\u7406\u3001\u7EC4\u7EC7\u80FD\u529B....... ok\u7ED3\u675F\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199\u5427
-`,s={name:"\u6697\u9ED1\u6781\u5BA2\u98CE",primaryColor:"#d1d1d1",primaryBackground:"#17A00B",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b816951383e4809b09eeef985afe87b~tplv-k3u1fbpfcp-watermark.image?",content:r},p=Object.freeze(Object.defineProperty({__proto__:null,default:s},Symbol.toStringTag,{value:"Module"})),d=`
+`,s={name:"\u6697\u9ED1\u6781\u5BA2\u98CE",primaryColor:"#d1d1d1",primaryBackground:"#17A00B",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f073c3e4d634acbbb966af2f8c79a9b~tplv-k3u1fbpfcp-watermark.image?",content:r},p=Object.freeze(Object.defineProperty({__proto__:null,default:s},Symbol.toStringTag,{value:"Module"})),d=`
 ::: headStart
 
 ::: start
 
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 
 :::
 ## Jack MA - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
@@ -427,9 +427,9 @@ xxxx**\u7814\u53D1\u8D1F\u8D23\u4EBA**\uFF0C\u8D1F\u8D23\u524D\u7AEF\u6280\u672F
 ::: end
 ## \u81EA\u6211\u8BC4\u4EF7
 \u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....\u672C\u4EBA\u4E00\u8D2F\u7231\u5C97\u656C\u4E1A\uFF0C\u63D0\u5021\u56E2\u961F\u534F\u4F5C\u7CBE\u795E\u3002\u5BF9\u5F85\u5DE5\u4F5C\u9996\u5148\u5C31\u8981\u770B\u600E\u6837\u53BB\u770B\u5F85\u8FD9\u4EFD\u5DE5\u4F5C\uFF0C\u662F\u7D2F\u7684\u3001\u82E6\u7684\uFF0C\u80FD\u8E0F\u8E0F\u5B9E\u5B9E\u53BB\u505A\u5C06\u5FC3\u653E\u5165\u8FD9\u4E2A\u7EC4\u7EC7\u5F53\u4E2D\u53BB\u3002
-`,m={type:"heading",name:"\u7B80\u7EA6\u98CE\u5934\u90E8\u7528\u8272",primaryColor:"#363434",primaryBackground:"#ffdc63",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/771883a4312c4d8da4eb919e237757c6~tplv-k3u1fbpfcp-watermark.image?",content:d},l=Object.freeze(Object.defineProperty({__proto__:null,default:m},Symbol.toStringTag,{value:"Module"})),b=`::: headStart
+`,l={type:"heading",name:"\u7B80\u7EA6\u98CE\u5934\u90E8\u7528\u8272",primaryColor:"#363434",primaryBackground:"#ffdc63",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/771883a4312c4d8da4eb919e237757c6~tplv-k3u1fbpfcp-watermark.image?",content:d},m=Object.freeze(Object.defineProperty({__proto__:null,default:l},Symbol.toStringTag,{value:"Module"})),b=`::: headStart
 ::: start
-![\u4E2A\u4EBA\u5934\u50CF](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b73989663a6a4ce6bed7f0e469c3ab5d~tplv-k3u1fbpfcp-watermark.image?)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
 ## xxxx **Java\u5F00\u53D1\u5DE5\u7A0B\u5E08**
 icon:city \u6D59\u6C5F\u676D\u5DDE / icon:user \u7537 / 22\u5C81 / icon:school \u5E94\u5C4A\u751F
@@ -493,9 +493,9 @@ icon:link [\u4E2A\u4EBA\u7F51\u7AD9 coderlei.netlify.app](https://coderlei.netli
 ## \u81EA\u6211\u8BC4\u4EF7
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,h={name:"\u7B80\u7EA6\u4E07\u80FD\u6A21\u677F",primaryColor:"#333",primaryBackground:"#C42F76",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c6a6b934f9947a1a9c942558b80fd88~tplv-k3u1fbpfcp-watermark.image?",content:b},y=Object.freeze(Object.defineProperty({__proto__:null,default:h},Symbol.toStringTag,{value:"Module"})),g=`::: headStart
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,g={name:"\u7B80\u7EA6\u4E07\u80FD\u6A21\u677F",primaryColor:"#333",primaryBackground:"#C42F76",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d474637fe9b943ec950eb1047d6d5f37~tplv-k3u1fbpfcp-watermark.image?",content:b},h=Object.freeze(Object.defineProperty({__proto__:null,default:g},Symbol.toStringTag,{value:"Module"})),y=`::: headStart
 ::: start
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
 # CodeCV Resume
 \u7537 \uFF5C 22\u5C81 | icon:phone 15507942222 | icon:email coderleilei@qq.com
@@ -581,9 +581,9 @@ web\u524D\u7AEF
   - \u6743\u9650\u505A\u5230\u6309\u94AE\u7EA7\u522B\uFF0C\u5E76\u4F7F\u7528\u5355\u4F8B\u6A21\u5F0F\u89E3\u51B3\u4E86\u6309\u94AE\u8FC7\u591A\u5F15\u53D1\u7684\u9891\u7E41\u62C9\u53D6\u6743\u9650\u8BF7\u6C42\u7684\u95EE\u9898
 ## \u81EA\u6211\u8BC4\u4EF7
 \u70ED\u7231\u524D\u7AEF\u5F00\u53D1\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u7740\u6D53\u539A\u7684\u5174\u8DA3....
-::: mainEnd`,S={name:"\u7B80\u7EA6\u901A\u7528 \u7A81\u51FA\u5185\u5BB9",primaryColor:"#333",primaryBackground:"#14A25D",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b314bd3e1fb4ea79ba6f5166321001c~tplv-k3u1fbpfcp-watermark.image?",content:g},f=Object.freeze(Object.defineProperty({__proto__:null,default:S},Symbol.toStringTag,{value:"Module"})),k=`::: headStart
+::: mainEnd`,f={name:"\u7B80\u7EA6\u901A\u7528 \u7A81\u51FA\u5185\u5BB9",primaryColor:"#333",primaryBackground:"#14A25D",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b314bd3e1fb4ea79ba6f5166321001c~tplv-k3u1fbpfcp-watermark.image?",content:y},S=Object.freeze(Object.defineProperty({__proto__:null,default:f},Symbol.toStringTag,{value:"Module"})),_=`::: headStart
 ::: start
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
 # \u5F20\u4E09
 \u7537 \uFF5C 22\u5C81 \uFF5C \u751F\u65E5\uFF1A1994/10/01 \uFF5C icon:school \u5E94\u5C4A\u751F \uFF5C \u6C5F\u897F\u5357\u660C
@@ -638,11 +638,11 @@ icon:phone 15507942222 \uFF5C icon:email coderleilei@qq.com \uFF5C icon:wechat z
 - \u82F1\u8BEDCET4\u3001CET6\u7EA7
 - \u5927\u5B66\u751F\u521B\u65B0\u521B\u4E1A\u5927\u8D5B\u56FD\u5BB6\u7EA7\u7ACB\u9879
 - 2021 - 2023 \u8FDE\u7EED\u4E24\u5E74\u8363\u83B7\u56FD\u5BB6\u52B1\u5FD7\u5956\u5B66\u91D1
-::: mainEnd`,P={name:"\u7B80\u7EA6\u901A\u7528\u6A21\u677F",primaryColor:"#7E817D",primaryBackground:"#924B60",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/73fcefbc634c4283a2e948edba9b31d1~tplv-k3u1fbpfcp-watermark.image?",content:k},v=Object.freeze(Object.defineProperty({__proto__:null,default:P},Symbol.toStringTag,{value:"Module"})),j=`
+::: mainEnd`,k={name:"\u7B80\u7EA6\u901A\u7528\u6A21\u677F",primaryColor:"#7E817D",primaryBackground:"#112236",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2268dbf51af544b9b8202ada31526ca4~tplv-k3u1fbpfcp-watermark.image?",content:_},j=Object.freeze(Object.defineProperty({__proto__:null,default:k},Symbol.toStringTag,{value:"Module"})),v=`
 ::: headStart
 
 ::: start
-# \u79CB\u68A6\u4E00
+# CodeCV
 
 :::
 \u5973 \uFF5C \u751F\u65E5\uFF1A2000/08/01 \uFF5C \u5317\u4EAC
@@ -651,7 +651,7 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 
 :::
 
-![\u4E2A\u4EBA\u5934\u50CF](https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 
 
 
@@ -774,7 +774,7 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 ::: end
 ::: mainEnd
 
-`,T={name:"\u6781\u7B80/\u7B80\u7EA6/\u901A\u7528\u6A21\u677F",primaryColor:"#7D7979",primaryBackground:"#024B4B",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/17f411415ed742fe8e309a055230eaa1~tplv-k3u1fbpfcp-watermark.image?",content:j},R=Object.freeze(Object.defineProperty({__proto__:null,default:T},Symbol.toStringTag,{value:"Module"})),V=`::: headStart
+`,P={name:"\u6781\u7B80/\u7B80\u7EA6/\u901A\u7528\u6A21\u677F",primaryColor:"#7D7979",primaryBackground:"#024B4B",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3937f62d7509441dad5389a9ef619cfd~tplv-k3u1fbpfcp-watermark.image?",content:v},M=Object.freeze(Object.defineProperty({__proto__:null,default:P},Symbol.toStringTag,{value:"Module"})),T=`::: headStart
 ::: start
 ## \u5F20\u4E09 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08** **\u610F\u5411\u57CE\u5E02\uFF1A\u676D\u5DDE**
 ::: start
@@ -788,7 +788,7 @@ icon:github [github.com/acmenlei](https://github.com/acmenlei)
 icon:yuque [yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 ::: end
 :::
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 
@@ -834,7 +834,7 @@ icon:yuque [yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 - **\u9879\u76EE\u63CF\u8FF0**\uFF1A\u6559\u522B\u4EBA\u5982\u4F55\u626B\u5730\uFF0C\u5982\u4F55\u626B\u597D\u5730
 - **\u9879\u76EE\u6280\u672F\u6808**\uFF1AHadoop\u3001Sqoop\u3001Python\u3001Scrapy\u3001Spark\u3001Hive\u3001MySQL\u3001Flask\u3001ECharts
 - **\u6307\u8D23\u63CF\u8FF0**\uFF1A\u8FDB\u884C Hadoop \u5E73\u53F0\u642D\u5EFA\uFF0C\u5229\u7528 Scrapy \u722C\u53D6 QTA \u9152\u5E97\u516C\u5F00\u6570\u636E\u81F3 MySQL \u4E2D\u3002\u5C06\u722C\u53D6\u7684\u6570\u636E\u8FDB\u884C\u6E05\u6D17\u548C\u5206\u6790\u3002\u5C06\u5206\u6790\u597D\u7684\u6570\u636E\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u5B58\u5165 MySQL \u4E2D\u3002\u7528 Flask \u540C ECharts \u5C06\u6570\u636E\u8FDB\u884C\u53EF\u89C6\u5316\u5C55\u73B0\u3002
-- **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002`,w={name:"\u4E92\u8054\u7F51IT\u901A\u7528-\u5E26\u5934\u50CF",primaryColor:"#333",primaryBackground:"#333",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?",content:V},q=Object.freeze(Object.defineProperty({__proto__:null,default:w},Symbol.toStringTag,{value:"Module"})),H=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF
+- **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002`,w={name:"\u4E92\u8054\u7F51IT\u901A\u7528-\u5E26\u5934\u50CF",primaryColor:"#333",primaryBackground:"#333",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9596edaa90154e8ea291f5cf71798ae9~tplv-k3u1fbpfcp-watermark.image?",content:T},H=Object.freeze(Object.defineProperty({__proto__:null,default:w},Symbol.toStringTag,{value:"Module"})),L=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF
 ::: start
 icon:user 2000/01/01
 :::
@@ -878,7 +878,7 @@ icon:github https://github.com/acmenlei
 \u4E3B\u8981\u6280\u672F\uFF1ANode S/lavascript
 \u4E3A\u5B66\u751F\u63D0\u4F9B\u6210\u7EE9\u67E5\u8BE2\u7CFB\u7EDF\uFF0C\u89E3\u51B3\u5185\u5916\u7F51\u9694\u79BB\u95EE\u9898\uFF0C\u63D0\u4F9B\u6210\u7EE9\u77ED\u4FE1\u901A\u77E5\u80FD\u529B\uFF0C\u4E3A2\u4E07\u5728\u6821\u751F\u63D0\u4F9B\u5728\u5BB6\u67E5\u6210\u7EE9\u670D\u52A1\u3002\u4F7F\u7528Koa2\u63D0\u4F9BAP\u63A5\u53E3\uFF0C\u4EE5\u4F9B\u524D\u7AEF\u4F7F\u7528\u3001\u8FD0\u7528Node js\u5B9E\u73B0\u5E26\u767B\u9646;\u6001\u8BF7\u6C42\u3001\u4F7F\u7528React/ Antd\u5B9E\u73B0\u524D\u7AEFUI\u754C\u9762\u3001\u63A5\u5165\u963F\u91CC\u4E91\u77ED\u4FE1API\u3002
 ## \u5176\u4ED6
-\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,M={name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248",primaryColor:"#555",primaryBackground:"#333",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:H},I=Object.freeze(Object.defineProperty({__proto__:null,default:M},Symbol.toStringTag,{value:"Module"})),O=`::: headStart
+\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,O={name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248",primaryColor:"#555",primaryBackground:"#333",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?",content:L},V=Object.freeze(Object.defineProperty({__proto__:null,default:O},Symbol.toStringTag,{value:"Module"})),Q=`::: headStart
 # \u6C42\u804C\u7B80\u5386 - \u8FD0\u8425
 ::: start
 \u5982\u82B1 / \u5973 / xxxx.xx / xxxxx / \u5DE5\u5546\u7BA1\u7406
@@ -942,7 +942,7 @@ icon:phone 155xxxx8888
 - **xxxxxxxx**\uFF1A xxxxxxxxxxxxxxxxxxxxxxxx
 - **xxxxxxxx**\uFF1A xxxxxxxxxxxxxxxxxxxxxxxx
 - **xxxxxxxx**\uFF1A xxxxxxxxxxxxxxxxxxxxxxxx
-`,Q={name:"\u8FD0\u8425\u7C7B",primaryColor:"#333",primaryBackground:"#333",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:O},L=Object.freeze(Object.defineProperty({__proto__:null,default:Q},Symbol.toStringTag,{value:"Module"})),_=`::: headStart
+`,$={name:"\u8FD0\u8425\u7C7B",primaryColor:"#333",primaryBackground:"#333",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?",content:Q},q=Object.freeze(Object.defineProperty({__proto__:null,default:$},Symbol.toStringTag,{value:"Module"})),R=`::: headStart
 ## \u9A6C\u725B\u903C **\u793E\u4F1A\u725B\u903C\u5DE5\u7A0B\u5E08**
 ::: start
 icon:city xxxx\u5927\u5B66 / \u793E\u4F1A\u5DE5\u7A0B
@@ -994,12 +994,12 @@ icon:school GPA:3.92 / Top3%
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u5584\u4E8E\u5728\u5B9E\u8DF5\u4E2D\u79EF\u7D2F\u5B66\u4E60\uFF0C\u4E0D\u65AD\u7684\u5B8C\u5584\u81EA\u6211\u3002
 \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\u548C\u6C9F\u901A\u534F\u4F5C\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-\u540C\u65F6\uFF0C\u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,z={name:"\u4E92\u8054\u7F51IT\u901A\u7528",primaryColor:"#333",primaryBackground:"#333",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:_},J=Object.freeze(Object.defineProperty({__proto__:null,default:z},Symbol.toStringTag,{value:"Module"})),N=`::: headStart
+\u540C\u65F6\uFF0C\u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,I={name:"\u4E92\u8054\u7F51IT\u901A\u7528",primaryColor:"#333",primaryBackground:"#333",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?",content:R},J=Object.freeze(Object.defineProperty({__proto__:null,default:I},Symbol.toStringTag,{value:"Module"})),z=`::: headStart
 ::: start
 # \u756A\u8304\u7092\u9E21\u86CB
 **\u6027\u522B**\uFF1A\u7537 \uFF5C **\u5E74\u9F84**\uFF1A23 \uFF5C **\u7535\u8BDD**\uFF1A11011011011 \uFF5C **\u90AE\u7BB1**\uFF1Aresume@163.com
 :::
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 ## icon:practice \u62A5\u8003\u4FE1\u606F
@@ -1058,12 +1058,12 @@ xxxx\u5E74xx\u6708 - xxxx\u5E74xx\u6708
 - xxxxxxxxxxxxxxxxxxxx
 - xxxxxxxxxxxxxxxxxxxx
 - xxxxxxxxxxxxxxxxxxxx
-`,U={name:"\u7814\u7A76\u751F\u590D\u8BD5\u6A21\u677F",primaryColor:"#3A3939",primaryBackground:"#2186D2",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:N},W=Object.freeze(Object.defineProperty({__proto__:null,default:U},Symbol.toStringTag,{value:"Module"})),Y=`::: headStart
+`,G={name:"\u7814\u7A76\u751F\u590D\u8BD5\u6A21\u677F",primaryColor:"#3A3939",primaryBackground:"#2186D2",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?",content:z},W=Object.freeze(Object.defineProperty({__proto__:null,default:G},Symbol.toStringTag,{value:"Module"})),N=`::: headStart
 ::: start
 ## \u5C0F\u65B0 **\u8FD0\u8425\u5B9E\u4E60\u751F**
 icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u5171\u515A\u5458 \uFF5C 2023\u5C4A
 :::
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 
@@ -1119,9 +1119,9 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,K={name:"\u901A\u7528\u7C7B\u6A21\u677F",primaryColor:"#333",primaryBackground:"#1a85f0",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:Y},G=Object.freeze(Object.defineProperty({__proto__:null,default:K},Symbol.toStringTag,{value:"Module"})),X=`::: headStart
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,U={name:"\u901A\u7528\u7C7B\u6A21\u677F",primaryColor:"#333",primaryBackground:"#1a85f0",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?",content:N},Y=Object.freeze(Object.defineProperty({__proto__:null,default:U},Symbol.toStringTag,{value:"Module"})),K=`::: headStart
 ::: start
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 # \u5C0F\u65B0 **UI\u8BBE\u8BA1\u5E08**
 icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u5171\u515A\u5458 \uFF5C 2023\u5C4A
 ::: end
@@ -1196,7 +1196,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:user \u81EA\u6211\u8BC4\u4EF7
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,Z={name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F",primaryColor:"#2A2D2D",primaryBackground:"#F98C07",img:"https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?",content:X},$=Object.freeze(Object.defineProperty({__proto__:null,default:Z},Symbol.toStringTag,{value:"Module"})),uu=`::: headStart
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,X={name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F",primaryColor:"#2A2D2D",primaryBackground:"#F98C07",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c056ae97ac643549ecb966950529119~tplv-k3u1fbpfcp-watermark.image?",content:K},Z=Object.freeze(Object.defineProperty({__proto__:null,default:X},Symbol.toStringTag,{value:"Module"})),uu=`::: headStart
 ::: start
 ## \u5C0F\u65B0 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08**
 ::: start
@@ -1210,7 +1210,7 @@ icon:gitee [https://gitee.com/codeleilei](https://gitee.com/codeleilei)
 icon:github [https://github.com/acmenlei](https://github.com/acmenlei)
 ::: end
 :::
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 
@@ -1254,9 +1254,9 @@ icon:github [https://github.com/acmenlei](https://github.com/acmenlei)
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,Fu={name:"\u901A\u7528\u6A21\u677F",primaryColor:"#333",primaryBackground:"#719ba5",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?",content:uu},Eu=Object.freeze(Object.defineProperty({__proto__:null,default:Fu},Symbol.toStringTag,{value:"Module"})),xu=`::: start
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,Fu={name:"\u901A\u7528\u6A21\u677F",primaryColor:"#333",primaryBackground:"#719ba5",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7fc39c56be044238ae9b9e79036a029d~tplv-k3u1fbpfcp-watermark.image?",content:uu},Eu=Object.freeze(Object.defineProperty({__proto__:null,default:Fu},Symbol.toStringTag,{value:"Module"})),xu=`::: start
 ::: headStart
-![\u4E2A\u4EBA\u5934\u50CF](https://avatars.githubusercontent.com/u/54731221?v=4)
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 ## \u72C2\u5F92\u5F20\u4E09 - \u6CD5\u5F8B\u987E\u95EE
 ### icon:user \u57FA\u672C\u4FE1\u606F
 **\u751F\u65E5**\uFF1A2000-08-01
@@ -1329,4 +1329,4 @@ icon:github [https://github.com/acmenlei](https://github.com/acmenlei)
 ## icon:technology \u4E13\u4E1A\u6280\u80FD
 - \u7CBE\u901AHTML/DIV+CSS/Less/Sass\u7B49\u524D\u7AEFweb\u5F00\u53D1\u6280\u672F\uFF0C\u517C\u5BB9\u591A\u79CD\u79FB\u52A8\u7AEF\u3001PC\u7AEF\u6D4F\u89C8\u5668\u7684\u4EE3\u7801\uFF0CCSS3\u65B0\u7279\u6027;
 - \u719F\u7EC3\u638C\u63E1js\u3001ES6\u7B49\u65B0\u7279\u6027\uFF0C\u4EE5\u53CAAjax(Fetch)\u3001Json\u3001Axios\u3001\u4EE5\u53CA\u4EE3\u7406\u8DE8\u57DF\u4E0E\u540E\u7AEF\u5B9E\u73B0\u6570\u636E\u4EA4\u4E92;
-::: end`,Bu={name:"\u5546\u52A1\u7C7B(\u4E00\u9875)",primaryColor:"#111",primaryBackground:"#297370",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:xu},Cu=Object.freeze(Object.defineProperty({__proto__:null,default:Bu},Symbol.toStringTag,{value:"Module"})),E=new Map;E.set("create",["#333","#333"]);const C=[],Au=Object.entries(Object.assign({"./modules/10front_end/index.ts":e,"./modules/11fresh/index.ts":o,"./modules/12internet_social/index.ts":c,"./modules/13geek/index.ts":p,"./modules/14heading/index.ts":l,"./modules/15simple_versatile/index.ts":y,"./modules/16prominent_content/index.ts":f,"./modules/17business/index.ts":v,"./modules/18art/index.ts":R,"./modules/1internet_avatar/index.ts":q,"./modules/2concise/index.ts":I,"./modules/3operation/index.ts":L,"./modules/4internet/index.ts":J,"./modules/5graduation_reexam/index.ts":W,"./modules/6operation_avatar/index.ts":G,"./modules/7simple_avatar/index.ts":$,"./modules/8general/index.ts":Eu,"./modules/9business/index.ts":Cu}));for(const[u,x]of Au){const F=x.default;F.id=Math.ceil(Math.random()*1e9),F.type=u.split("/")[2],C.push(F),E.set(F.type,[F.primaryColor,F.primaryBackground])}const B=u=>+u.type.match(/^\d+/)[0];C.sort((u,x)=>B(x)-B(u));function Du(u){return E.get(u)[1]}function eu(u){return E.get(u)[0]}export{eu as a,Du as g,C as t};
+::: end`,Bu={name:"\u5546\u52A1\u7C7B(\u4E00\u9875)",primaryColor:"#111",primaryBackground:"#297370",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?",content:xu},Cu=Object.freeze(Object.defineProperty({__proto__:null,default:Bu},Symbol.toStringTag,{value:"Module"})),E=new Map;E.set("create",["#333","#333"]);const C=[],Au=Object.entries(Object.assign({"./modules/10front_end/index.ts":e,"./modules/11fresh/index.ts":n,"./modules/12internet_social/index.ts":c,"./modules/13geek/index.ts":p,"./modules/14heading/index.ts":m,"./modules/15simple_versatile/index.ts":h,"./modules/16prominent_content/index.ts":S,"./modules/17business/index.ts":j,"./modules/18art/index.ts":M,"./modules/1internet_avatar/index.ts":H,"./modules/2concise/index.ts":V,"./modules/3operation/index.ts":q,"./modules/4internet/index.ts":J,"./modules/5graduation_reexam/index.ts":W,"./modules/6operation_avatar/index.ts":Y,"./modules/7simple_avatar/index.ts":Z,"./modules/8general/index.ts":Eu,"./modules/9business/index.ts":Cu}));for(const[u,x]of Au){const F=x.default;F.id=Math.ceil(Math.random()*1e9),F.type=u.split("/")[2],C.push(F),E.set(F.type,[F.primaryColor,F.primaryBackground])}const B=u=>+u.type.match(/^\d+/)[0];C.sort((u,x)=>B(x)-B(u));function Du(u){return E.get(u)[1]}function eu(u){return E.get(u)[0]}export{eu as a,Du as g,C as t};

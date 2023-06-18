@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { themeType } from '@/templates/config'
+import { type TemplateType } from '@/templates/config'
 import { useRouter } from 'vue-router'
 
-defineProps<{ theme: themeType }>()
+defineProps<{ theme: TemplateType }>()
 const router = useRouter()
 
 const edit = (type: string) => {
