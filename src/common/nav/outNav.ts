@@ -1,7 +1,7 @@
 const outNav = [
   {
     name: '简历制作',
-    path: '/theme',
+    path: '/template',
     tooltip: false
   },
   // {

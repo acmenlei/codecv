@@ -3,7 +3,7 @@ const content = `
 
 ::: start
 
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 
 
 ### 带佬
@@ -77,6 +77,6 @@ export default {
   name: '暗黑极客风',
   primaryColor: '#d1d1d1',
   primaryBackground: '#17A00B',
-  img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5b816951383e4809b09eeef985afe87b~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f073c3e4d634acbbb966af2f8c79a9b~tplv-k3u1fbpfcp-watermark.image?',
   content
 }

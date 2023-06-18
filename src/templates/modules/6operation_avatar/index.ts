@@ -3,7 +3,7 @@ const content = `::: headStart
 ## 小新 **运营实习生**
 icon:city 浙江杭州 | icon:user 男 / 2000.01.01 | 中共党员 ｜ 2023届
 :::
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 

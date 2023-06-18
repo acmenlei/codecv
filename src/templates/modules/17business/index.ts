@@ -1,6 +1,6 @@
 const content = `::: headStart
 ::: start
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
 # 张三
 男 ｜ 22岁 ｜ 生日：1994/10/01 ｜ icon:school 应届生 ｜ 江西南昌

@@ -3,7 +3,7 @@ const content = `::: headStart
 # 番茄炒鸡蛋
 **性别**：男 ｜ **年龄**：23 ｜ **电话**：11011011011 ｜ **邮箱**：resume@163.com
 :::
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 ## icon:practice 报考信息

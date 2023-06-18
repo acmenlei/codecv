@@ -2,7 +2,7 @@
 import { useTypeNet } from './hook'
 import Header from './components/header.vue'
 import { useDark } from '@vueuse/core'
-import { themes } from '@/templates/config'
+import { templates } from '@/templates/config'
 
 useTypeNet()
 const isDark = useDark()
@@ -14,7 +14,7 @@ const isDark = useDark()
     <div class="introduce-l" data-aos="slide-right">
       <div class="typenet-text"></div>
       <button
-        @click="$router.push('/theme')"
+        @click="$router.push('/template')"
         :class="['start btn pointer', { 'dark-start': isDark }]"
       >
         马上开始 <i class="iconfont icon-goto"></i>
@@ -24,7 +24,7 @@ const isDark = useDark()
       <img
         :class="{ 'img-light': !isDark }"
         :style="{ transform: `rotate(${40 - idx * 20}deg)`, zIndex: 999 - idx }"
-        v-for="(theme, idx) in themes.slice(2, 7)"
+        v-for="(theme, idx) in templates.slice(2, 7)"
         :src="theme.img"
         :alt="theme.name"
         :key="theme.id"

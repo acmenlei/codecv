@@ -12,7 +12,7 @@ icon:gitee [https://gitee.com/codeleilei](https://gitee.com/codeleilei)
 icon:github [https://github.com/acmenlei](https://github.com/acmenlei)
 ::: end
 :::
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 
@@ -61,6 +61,6 @@ export default {
   name: '通用模板',
   primaryColor: '#333',
   primaryBackground: '#719ba5',
-  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e76e4375f8443a48aaaaaf83968854f~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7fc39c56be044238ae9b9e79036a029d~tplv-k3u1fbpfcp-watermark.image?',
   content
 }

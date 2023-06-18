@@ -11,7 +11,7 @@ icon:phone 13425182004 ｜ icon:email qiumengyi@kuaishou.com ｜ icon:wechat qiu
 
 :::
 
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 
 
 

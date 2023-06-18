@@ -6,11 +6,11 @@ const nav = [
   },
   {
     name: '简历模板',
-    path: '/theme',
+    path: '/template',
     tooltip: false
   },
   {
-    name: '内置图标',
+    name: '使用图标',
     tooltip: true
   },
   {

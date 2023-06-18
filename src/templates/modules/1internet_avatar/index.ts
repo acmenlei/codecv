@@ -12,7 +12,7 @@ icon:github [github.com/acmenlei](https://github.com/acmenlei)
 icon:yuque [yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 ::: end
 :::
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 ::: end
 ::: headEnd
 
@@ -63,6 +63,6 @@ export default {
   name: '互联网IT通用-带头像',
   primaryColor: '#333',
   primaryBackground: '#333',
-  img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c02c66e3f2346d4bd7b81268775c406~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9596edaa90154e8ea291f5cf71798ae9~tplv-k3u1fbpfcp-watermark.image?',
   content
 }

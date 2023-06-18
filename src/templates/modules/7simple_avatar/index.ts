@@ -1,6 +1,6 @@
 const content = `::: headStart
 ::: start
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 # 小新 **UI设计师**
 icon:city 浙江杭州 | icon:user 男 / 2000.01.01 | 中共党员 ｜ 2023届
 ::: end
@@ -80,6 +80,6 @@ export default {
   name: '简约通用简历模板',
   primaryColor: '#2A2D2D',
   primaryBackground: '#F98C07',
-  img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30ca71caa4bb42adb9a7b37b7412460d~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c056ae97ac643549ecb966950529119~tplv-k3u1fbpfcp-watermark.image?',
   content
 }

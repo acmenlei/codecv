@@ -1,6 +1,6 @@
 const content = `::: headStart
 ::: start
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
 # CodeCV Resume
 男 ｜ 22岁 | icon:phone 15507942222 | icon:email coderleilei@qq.com

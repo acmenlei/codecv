@@ -26,7 +26,7 @@ const routes: RouteRecordRaw[] = [
   }
 ]
 
-const topInitList = ['/community/detail', '/syntax/helper', '/update/line', '/home']
+const topInitList = ['/community/detail', '/syntax/helper', '/update/line', '/home', '/editor']
 
 const router = createRouter({
   routes: routeConfiguras.concat(routes),

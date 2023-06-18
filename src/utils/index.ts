@@ -1,10 +1,10 @@
-import { themes } from '@/templates/config'
+import { templates } from '@/templates/config'
 import { ElLoading } from 'element-plus'
-import 'element-plus/es/components/loading/style/css'
 import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
 import { errorMessage, successMessage } from '../common/message'
 import { markdownToHTML } from 'markdown-transform-html'
+import 'element-plus/es/components/loading/style/css'
 
 export async function importCSS(name: string) {
   const res = await import(`../templates/modules/${name}/style.scss`)
@@ -12,9 +12,9 @@ export async function importCSS(name: string) {
 }
 
 export const getCurrentTypeContent = (type: string): string => {
-  for (const theme of themes) {
-    if (type === theme.type) {
-      return theme.content
+  for (const template of templates) {
+    if (type === template.type) {
+      return template.content
     }
   }
   return ''

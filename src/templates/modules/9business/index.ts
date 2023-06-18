@@ -1,6 +1,6 @@
 const content = `::: start
 ::: headStart
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 ## 狂徒张三 - 法律顾问
 ### icon:user 基本信息
 **生日**：2000-08-01

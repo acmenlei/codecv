@@ -3,7 +3,7 @@ const content = `
 
 ::: start
 
-![个人头像](https://avatars.githubusercontent.com/u/54731221?v=4)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 
 :::
 ## Jack MA - Web前端开发工程师

@@ -10,7 +10,7 @@ const defaultUserInfo = {
   professional: '前端开发工程师',
   graduation: '2023',
   school: '江西财经大学',
-  avatar: 'https://avatars.githubusercontent.com/u/54731221?v=4',
+  avatar: 'https://codeleilei.gitee.io/blog/avatar.jpg',
   origin: '江西南昌'
 }
 </script>

@@ -1,6 +1,6 @@
 const content = `::: headStart
 ::: start
-![个人头像](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b73989663a6a4ce6bed7f0e469c3ab5d~tplv-k3u1fbpfcp-watermark.image?)
+![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
 ## xxxx **Java开发工程师**
 icon:city 浙江杭州 / icon:user 男 / 22岁 / icon:school 应届生
@@ -69,6 +69,6 @@ export default {
   name: '简约万能模板',
   primaryColor: '#333',
   primaryBackground: '#C42F76',
-  img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c6a6b934f9947a1a9c942558b80fd88~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d474637fe9b943ec950eb1047d6d5f37~tplv-k3u1fbpfcp-watermark.image?',
   content
 }
