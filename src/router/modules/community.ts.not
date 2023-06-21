@@ -13,12 +13,12 @@ export default {
     {
       path: '/community/editor',
       name: 'communityEditor',
-      component: () => import('@/views/communityEditor/communityEditor.vue')
+      component: () => import('@/views/community/views/editor/communityEditor.vue')
     },
     {
       path: '/community/detail',
       name: 'communityDetail',
-      component: () => import('@/views/communityDetail/communityDetail.vue')
+      component: () => import('@/views/community/views/detail/communityDetail.vue')
     }
   ]
 }
