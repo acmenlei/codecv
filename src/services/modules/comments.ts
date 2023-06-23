@@ -1,4 +1,4 @@
-import { type IPublishComment, IPublishCommentReply } from '@/types/type'
+import { type IPublishComment, IPublishCommentReply } from '@@types/type'
 import { post } from '../config'
 
 export function publishComment(data: IPublishComment) {

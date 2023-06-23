@@ -3,7 +3,7 @@ import { errorMessage, warningMessage } from '@/common/message'
 import VerificationCode, { createCode } from 'picture-verification-code'
 import { onMounted, ref } from 'vue'
 import { pwdUpdate } from '@/services/modules/user'
-import { IResponse } from '@/types/type'
+import { IResponse } from '@@types/type'
 
 export function useSubmit(emits: any) {
   const form = ref({ nPassword: '', oPassword: '', verify: '' })

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { formatTimefromNow } from '@/utils/date'
 import UserTooltip from '@/components/userTooltip.vue'
-import { IUserInfo } from '@/types/type'
+import { IUserInfo } from '@@types/type'
 
 defineProps<{ userInfo: IUserInfo; publishTime?: string }>()
 </script>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IUserInfo } from '@/types/type'
+import { IUserInfo } from '@@types/type'
 
 defineProps<{ userInfo: IUserInfo }>()
 </script>

@@ -4,7 +4,7 @@ import { useOperator, useCovers } from './hook'
 import useUserStore from '@/store/modules/user'
 import { computed } from 'vue'
 import { numFormat } from '@/utils/format'
-import { IArticle } from '@/types/type'
+import { IArticle } from '@@types/type'
 
 const props = defineProps<{ article: IArticle }>()
 const emits = defineEmits(['reQueryList', 'queryProfessional', 'remove'])

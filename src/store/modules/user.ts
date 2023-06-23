@@ -6,7 +6,7 @@ import { errorMessage, successMessage } from '@/common/message'
 import { Tip } from '@/common/tip'
 import { login, logout, registerUser, verify } from '@/services/modules/user'
 import { userForm } from '@/layout/header/hook'
-import { IUser, IUserInfo } from '@/types/type'
+import { IUser, IUserInfo } from '@@types/type'
 
 const codeInstance = new VerificationCode()
 export const TOKEN = 'TOKEN',

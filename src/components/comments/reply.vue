@@ -2,7 +2,7 @@
 import Publish from '@/components/publish/publish.vue'
 import UserInfoComp from '@/components/userInfo.vue'
 import { useReply, useShowMore } from './hook'
-import { ICommentReply } from '@/types/type'
+import { ICommentReply } from '@@types/type'
 
 const emits = defineEmits(['reQueryComments'])
 const props = defineProps<{ data: ICommentReply[]; commentId: number; articleId: number }>()

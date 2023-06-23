@@ -11,7 +11,7 @@ import { createEditor, Editor } from '@textbus/editor'
 import { computed, onActivated, onDeactivated, reactive, ref } from 'vue'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
 import { uploader } from '@/utils/uploader'
-import { IArticle, IResponse } from '@/types/type'
+import { IArticle, IResponse } from '@@types/type'
 
 export function useCommunityArticle() {
   const article = reactive({ professional: '', title: '' })

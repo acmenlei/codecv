@@ -5,7 +5,7 @@ import { queryCommunity } from '@/services/modules/community'
 import { reactive, ref } from 'vue'
 import { tabs } from './constant'
 import { useThrottleFn } from '@vueuse/core'
-import { IArticle, ICommunityCondition, IResponse } from '@/types/type'
+import { IArticle, ICommunityCondition, IResponse } from '@@types/type'
 
 export function useTab(conditions: ICommunityCondition, conditionQuery: () => void) {
   const tab = ref(tabs[0])

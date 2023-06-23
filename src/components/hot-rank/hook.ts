@@ -2,7 +2,7 @@ import { useRouter } from 'vue-router'
 import { errorMessage } from '@/common/message'
 import { queryCommunityHotRank } from '@/services/modules/community'
 import { onMounted, ref } from 'vue'
-import { IArticle, IResponse } from '@/types/type'
+import { IArticle, IResponse } from '@@types/type'
 
 export function useHotRank() {
   const hotList = ref<IArticle[]>([]),

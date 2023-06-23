@@ -1,7 +1,7 @@
 import { getLocalStorage, setLocalStorage } from '@/common/locastorage'
-import { IArticle } from '@/types/type'
 import { onActivated, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { IArticle } from '@@types/type'
 
 export function useBrowseHistory() {
   const BROWSE_HISTORY = '__BROWSE_HISTORY__',

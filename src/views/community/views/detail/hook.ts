@@ -11,7 +11,7 @@ import {
 import { errorMessage } from '@/common/message'
 import { isLogin } from '@/common/global'
 import { calcOffsetTop, scrollTo } from '@/utils'
-import { IArticle, IComment, ICommentPosition, IResponse } from '@/types/type'
+import { IArticle, IComment, ICommentPosition, IResponse } from '@@types/type'
 
 export function useArticleDetail(articleId: Ref<number>, posterCommentId: Ref<number>) {
   const article = reactive({

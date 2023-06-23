@@ -1,4 +1,4 @@
-import { IUser, IUserInfo } from '@/types/type'
+import { IUser, IUserInfo } from '@@types/type'
 import { post } from '../config'
 
 export function login(data: IUser) {

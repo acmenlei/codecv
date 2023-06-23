@@ -5,7 +5,7 @@ import { removeComment } from '@/services/modules/comments'
 import { calcOffsetTop, scrollTo } from '@/utils'
 import useUserStore from '@/store/modules/user'
 import { nextTick, Ref, ref, watch } from 'vue'
-import { type IResponse } from '@/types/type'
+import { type IResponse } from '@@types/type'
 
 // 回复所需要的操作
 export function useReply(emits: any) {

@@ -6,7 +6,7 @@ import useUserStore, { TOKEN, USERNAME } from '@/store/modules/user'
 import { getLocalStorage } from '@/common/locastorage'
 import { errorMessage } from '@/common/message'
 import { updateUserInfo } from '@/services/modules/user'
-import { IResponse } from '@/types/type'
+import { IResponse } from '@@types/type'
 
 export function useUpdateInfoModel() {
   const infoModel = ref(false)

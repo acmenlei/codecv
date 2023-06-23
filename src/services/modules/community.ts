@@ -3,7 +3,7 @@ import {
   ICommunityArticleUpdate,
   ICommunityCondition,
   ICommunityLike
-} from '@/types/type'
+} from '@@types/type'
 import { post } from '../config'
 
 export function publishCommunity(data: ICommunityArticle) {

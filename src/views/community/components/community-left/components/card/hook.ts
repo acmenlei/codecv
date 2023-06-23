@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router'
 import { likeArticle, removeCommunity } from '@/services/modules/community'
 import { ref, Ref, watchEffect } from 'vue'
 import { useBrowseHistory } from '@/components/browse-history/hook'
-import { IArticle, IResponse } from '@/types/type'
+import { IArticle, IResponse } from '@@types/type'
 
 export function useOperator(articleId: Ref<number>, emits: any, hasClick: Ref<boolean>) {
   const router = useRouter()

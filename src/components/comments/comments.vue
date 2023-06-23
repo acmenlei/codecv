@@ -6,7 +6,7 @@ import Publish from '@/components/publish/publish.vue'
 import { useReply, useCommentPosition } from './hook'
 import Reply from './reply.vue'
 import { computed } from 'vue'
-import { type IComment } from '@/types/type'
+import { type IComment } from '@@types/type'
 
 const emits = defineEmits(['pageNumChange', 'reQueryComments'])
 const props = defineProps<{
