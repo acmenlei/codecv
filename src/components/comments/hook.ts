@@ -1,7 +1,7 @@
 import { isLogin } from '@/common/global'
 import { errorMessage } from '@/common/message'
 import { successMessage } from '@/common/message'
-import { removeComment } from '@/services/modules/comments'
+import { removeComment } from '@/api/modules/comments'
 import { calcOffsetTop, scrollTo } from '@/utils'
 import useUserStore from '@/store/modules/user'
 import { nextTick, Ref, ref, watch } from 'vue'

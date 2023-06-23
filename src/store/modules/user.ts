@@ -4,7 +4,7 @@ import pinia from '@/store'
 import { setLocalStorage, getLocalStorage, removeLocalStorage } from '@/common/locastorage'
 import { errorMessage, successMessage } from '@/common/message'
 import { Tip } from '@/common/tip'
-import { login, logout, registerUser, verify } from '@/services/modules/user'
+import { login, logout, registerUser, verify } from '@/api/modules/user'
 import { userForm } from '@/layout/header/hook'
 import { IUser, IUserInfo } from '@@types/type'
 

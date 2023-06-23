@@ -1,7 +1,7 @@
 import { onDeactivated } from 'vue'
 import { useThrottleFn } from '@vueuse/core'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
-import { publishComment, publishCommentReply } from '@/services/modules/comments'
+import { publishComment, publishCommentReply } from '@/api/modules/comments'
 import useUserStore from '@/store/modules/user'
 import { Ref, ref } from 'vue'
 import { ImageUpload } from '@/utils/uploader'

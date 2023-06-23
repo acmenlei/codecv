@@ -5,7 +5,7 @@ import {
   publishCommunity,
   queryCommunityArticleById,
   updateCommunity
-} from '@/services/modules/community'
+} from '@/api/modules/community'
 import useUserStore, { TOKEN } from '@/store/modules/user'
 import { createEditor, Editor } from '@textbus/editor'
 import { computed, onActivated, onDeactivated, reactive, ref } from 'vue'

@@ -1,6 +1,6 @@
 import { useRouter } from 'vue-router'
 import { errorMessage } from '@/common/message'
-import { queryCommunityHotRank } from '@/services/modules/community'
+import { queryCommunityHotRank } from '@/api/modules/community'
 import { onMounted, ref } from 'vue'
 import { IArticle, IResponse } from '@@types/type'
 

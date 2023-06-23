@@ -2,7 +2,7 @@ import useUserStore from '@/store/modules/user'
 import { errorMessage, warningMessage } from '@/common/message'
 import VerificationCode, { createCode } from 'picture-verification-code'
 import { onMounted, ref } from 'vue'
-import { pwdUpdate } from '@/services/modules/user'
+import { pwdUpdate } from '@/api/modules/user'
 import { IResponse } from '@@types/type'
 
 export function useSubmit(emits: any) {

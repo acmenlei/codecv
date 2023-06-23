@@ -1,7 +1,7 @@
 import { isLogin } from '@/common/global'
 import useUserStore from '@/store/modules/user'
 import { errorMessage } from '@/common/message'
-import { queryCommunity } from '@/services/modules/community'
+import { queryCommunity } from '@/api/modules/community'
 import { reactive, ref } from 'vue'
 import { tabs } from './constant'
 import { useThrottleFn } from '@vueuse/core'

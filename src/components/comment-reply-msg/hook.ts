@@ -1,10 +1,10 @@
 import { onMounted, watch } from 'vue'
 import { ref } from 'vue'
 import useUserStore from '@/store/modules/user'
-import { queryNotification, updateNotificationState } from '@/services/modules/notification'
+import { queryNotification, updateNotificationState } from '@/api/modules/notification'
 import { useRouter } from 'vue-router'
 import { errorMessage } from '@/common/message'
-import { type INotificationList, IResponse } from '../../types/type'
+import { type INotificationList, IResponse } from '@@types/type'
 
 export function useNotificationList(toggleMessageModal: () => void) {
   const { userInfo } = useUserStore(),

@@ -1,4 +1,4 @@
-import { fileMerge, fileUpload } from '@/services/modules/upload'
+import { fileMerge, fileUpload } from '@/api/modules/upload'
 import { UploadConfig } from '@textbus/editor'
 // import OSS from "ali-oss";
 import { errorMessage } from '../common/message'

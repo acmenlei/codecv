@@ -3,11 +3,8 @@ import { warningMessage } from '@/common/message'
 import useUserStore from '@/store/modules/user'
 import { initialInfo } from '../../store/modules/user'
 import { onActivated, onDeactivated, reactive, Ref, ref, watch, watchEffect } from 'vue'
-import { queryCommunityArticleById, likeArticle } from '@/services/modules/community'
-import {
-  queryCommentPosition,
-  queryCommunityArticleCommentsById
-} from '@/services/modules/comments'
+import { queryCommunityArticleById, likeArticle } from '@/api/modules/community'
+import { queryCommentPosition, queryCommunityArticleCommentsById } from '@/api/modules/comments'
 import { errorMessage } from '@/common/message'
 import { isLogin } from '@/common/global'
 import { calcOffsetTop, scrollTo } from '@/utils'
