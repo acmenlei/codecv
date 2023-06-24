@@ -21,14 +21,20 @@ const isDark = useDark()
       </button>
     </div>
     <div class="introduce-r" data-aos="slide-left">
-      <img
-        :class="{ 'img-light': !isDark }"
-        :style="{ transform: `rotate(${40 - idx * 20}deg)`, zIndex: 999 - idx }"
+      <el-tooltip
         v-for="(theme, idx) in templates.slice(2, 7)"
-        :src="theme.img"
-        :alt="theme.name"
         :key="theme.id"
-      />
+        placement="top"
+        :content="theme.name"
+      >
+        <img
+          :class="{ 'img-light': !isDark }"
+          :style="{ transform: `rotate(${40 - idx * 20}deg)`, zIndex: 999 - idx }"
+          :src="theme.img"
+          :alt="theme.name"
+          @click="$router.push({ path: '/editor', query: { type: theme.type } })"
+        />
+      </el-tooltip>
     </div>
   </div>
 </template>
@@ -60,6 +66,7 @@ body {
       height: 350px;
       transform-origin: left bottom;
       position: absolute;
+      cursor: pointer;
       border-radius: 10px;
       transition: transform 0.3s;
       &:nth-child(1) {
@@ -77,6 +84,9 @@ body {
     }
     .img-light {
       box-shadow: 5px 5px 8px #ddd;
+      &:last-child {
+        box-shadow: 0 0 16px #ddd;
+      }
     }
   }
 
