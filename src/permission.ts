@@ -1,5 +1,5 @@
 import router from './router'
-import { getLocalStorage } from '@/common/locastorage'
+import { getLocalStorage } from '@/common/localstorage'
 import { TOKEN } from '@/store/modules/user'
 import useUserStore from '@/store/modules/user'
 import nprogress from 'nprogress'

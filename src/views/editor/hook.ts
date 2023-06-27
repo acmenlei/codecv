@@ -1,4 +1,4 @@
-import { getLocalStorage } from '@/common/locastorage'
+import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
 import { convertDOM, getPdf, importCSS } from '@/utils'
 import { onActivated, Ref, ref, watch } from 'vue'

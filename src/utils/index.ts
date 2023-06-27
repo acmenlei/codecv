@@ -6,6 +6,8 @@ import { errorMessage, successMessage } from '../common/message'
 import { markdownToHTML } from 'markdown-transform-html'
 import 'element-plus/es/components/loading/style/css'
 
+export const wopen = window.open
+
 export async function importCSS(name: string) {
   const res = await import(`../templates/modules/${name}/style.scss`)
   return res.default
@@ -32,16 +34,8 @@ export const optimalizing = {
   p: { max: 10, min: -15, top: 0, tag: '', optimal: 0 }
 }
 export type OptimalizingItem = (typeof optimalizing)['h1']
-export type Optimalizing = {
-  h1: OptimalizingItem
-  h2: OptimalizingItem
-  h3: OptimalizingItem
-  h4: OptimalizingItem
-  h5: OptimalizingItem
-  h6: OptimalizingItem
-  li: OptimalizingItem
-  p: OptimalizingItem
-}
+export type Optimalizing = typeof optimalizing
+
 const defaultCmp = (x: OptimalizingItem, y: OptimalizingItem) => x.optimal > y.optimal // 默认是最大堆
 const swap = (arr: OptimalizingItem[], i: number, j: number) =>
   ([arr[i], arr[j]] = [arr[j], arr[i]])
@@ -381,4 +375,62 @@ function contentPackage(DOMStr: string) {
 
 export function convertDOM(DOMStr: string) {
   return contentPackage(markdownToHTML(DOMStr))
+}
+
+export function convert(target: string) {
+  switch (target) {
+    case 'h1':
+      return '一级标题'
+    case 'h2':
+      return '二级标题'
+    case 'h3':
+      return '三级标题'
+    case 'h4':
+      return '四级标题'
+    case 'h5':
+      return '五级标题'
+    case 'h6':
+      return '六级标题'
+    case 'strong':
+      return '强调/加粗'
+    case 'a':
+      return '链接'
+    case 'p':
+      return '普通文本'
+    case 'li':
+      return '列表项'
+    case 'ul':
+      return '无序列表'
+    case 'ol':
+      return '有序列表'
+    case 'resume-module':
+      return '整个子模块'
+    case 'single-code':
+      return '代码框'
+    case 'head-layout':
+      return '个人信息栏'
+    case 'main-layout':
+      return '主体内容'
+    case 'flex-layout':
+      return '多列布局'
+    case 'flex-layout-item':
+      return '多列布局项'
+    case 'iconfont':
+      return '字体图标'
+    case 'img':
+      return '证件照/图片'
+    case 'table':
+      return '表格'
+    case 'thead':
+      return '表头'
+    case 'tr':
+      return '表行'
+    case 'th':
+      return '表头单元格'
+    case 'tbody':
+      return '表格主体'
+    case 'td':
+      return '表格数据单元格'
+  }
+  return target
 }

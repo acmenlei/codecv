@@ -3,7 +3,7 @@ import { Router } from 'vue-router'
 import { onMounted, reactive, ref } from 'vue'
 
 import useUserStore, { TOKEN, USERNAME } from '@/store/modules/user'
-import { getLocalStorage } from '@/common/locastorage'
+import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage } from '@/common/message'
 import { updateUserInfo } from '@/api/modules/user'
 import { IResponse } from '@@types/type'

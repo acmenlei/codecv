@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { nextTick } from 'vue'
 
 import pinia from '@/store'
-import { getLocalStorage, setLocalStorage } from '@/common/locastorage'
+import { getLocalStorage, setLocalStorage } from '@/common/localstorage'
 import { showMessageVN } from '@/common/message'
 import { getCurrentTypeContent } from '@/utils'
 

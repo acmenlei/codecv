@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from '@/common/locastorage'
+import { getLocalStorage, setLocalStorage } from '@/common/localstorage'
 import { onActivated, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { IArticle } from '@@types/type'

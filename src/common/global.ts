@@ -1,6 +1,6 @@
 import useUserStore from '@/store/modules/user'
 import { useDark, useToggle } from '@vueuse/core'
-import { watchEffect } from 'vue'
+import { ref, watchEffect } from 'vue'
 
 export function isLogin() {
   const { loginState } = useUserStore()
@@ -29,5 +29,25 @@ export function useThemeConfig() {
   return {
     toggleTheme,
     isDark
+  }
+}
+
+export function useSwitch(initState?: boolean) {
+  const open = ref(initState ?? false)
+
+  function toggle() {
+    open.value = !open.value
+  }
+  function setTure() {
+    open.value = true
+  }
+  function setFalse() {
+    open.value = false
+  }
+  return {
+    open,
+    toggle,
+    setTure,
+    setFalse
   }
 }

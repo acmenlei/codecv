@@ -1,4 +1,4 @@
-import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/locastorage'
+import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/localstorage'
 import { warningMessage } from '@/common/message'
 import {
   createDIV,
@@ -8,7 +8,8 @@ import {
   Heap,
   optimalizing,
   Optimalizing,
-  OptimalizingItem
+  OptimalizingItem,
+  convert
 } from '@/utils'
 import { getPrimaryBGColor, getPrimaryColor } from '@/templates/config'
 import { onActivated, onMounted, reactive, ref } from 'vue'
@@ -384,61 +385,6 @@ export function useAdjust(resumeType: string) {
     return marginTopValues
   }
 
-  function convert(target: string) {
-    switch (target) {
-      case 'h1':
-        return '一级标题'
-      case 'h2':
-        return '二级标题'
-      case 'h3':
-        return '三级标题'
-      case 'h4':
-        return '四级标题'
-      case 'h5':
-        return '五级标题'
-      case 'h6':
-        return '六级标题'
-      case 'strong':
-        return '强调/加粗'
-      case 'a':
-        return '链接'
-      case 'p':
-        return '普通文本'
-      case 'li':
-        return '列表项'
-      case 'ul':
-        return '无序列表'
-      case 'ol':
-        return '有序列表'
-      case 'resume-module':
-        return '整个子模块'
-      case 'single-code':
-        return '代码框'
-      case 'head-layout':
-        return '个人信息栏'
-      case 'flex-layout':
-        return '多列布局'
-      case 'flex-layout-item':
-        return '多列布局项'
-      case 'iconfont':
-        return '字体图标'
-      case 'img':
-        return '证件照/图片'
-      case 'table':
-        return '表格'
-      case 'thead':
-        return '表头'
-      case 'tr':
-        return '表行'
-      case 'th':
-        return '表头单元格'
-      case 'tbody':
-        return '表格主体'
-      case 'td':
-        return '表格数据单元格'
-    }
-    return target
-  }
   function adjustMargin() {
     setVisiable()
     // 获取dom元素

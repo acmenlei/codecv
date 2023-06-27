@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import VerificationCode, { createCode } from 'picture-verification-code'
 import pinia from '@/store'
-import { setLocalStorage, getLocalStorage, removeLocalStorage } from '@/common/locastorage'
+import { setLocalStorage, getLocalStorage, removeLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage } from '@/common/message'
 import { Tip } from '@/common/tip'
 import { login, logout, registerUser, verify } from '@/api/modules/user'

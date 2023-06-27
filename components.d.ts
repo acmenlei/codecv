@@ -10,6 +10,8 @@ declare module '@vue/runtime-core' {
     BrowseHistory: typeof import('./src/components/browse-history/browseHistory.vue')['default']
     Chat: typeof import('./src/components/chat-room/chat.vue')['default']
     Comments: typeof import('./src/components/comments/comments.vue')['default']
+    Concat: typeof import('./src/components/concat.vue')['default']
+    Contact: typeof import('./src/components/contact.vue')['default']
     Crm: typeof import('./src/components/comment-reply-msg/crm.vue')['default']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElBadge: typeof import('element-plus/es')['ElBadge']

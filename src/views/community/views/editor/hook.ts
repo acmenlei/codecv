@@ -1,6 +1,6 @@
 import { useThrottleFn } from '@vueuse/core'
 import { useRoute, useRouter } from 'vue-router'
-import { getLocalStorage } from '@/common/locastorage'
+import { getLocalStorage } from '@/common/localstorage'
 import {
   publishCommunity,
   queryCommunityArticleById,

@@ -1,12 +1,13 @@
 <script setup lang="ts">
-function toGithub() {
-  window.open('https://github.com/acmenlei/markdown-resume-to-pdf')
-}
+import { wopen } from '@/utils'
 </script>
 
 <template>
   <div id="footer">
-    <span class="item mr-20 pointer" @click="toGithub">
+    <span
+      class="item mr-20 pointer"
+      @click="wopen('https://github.com/acmenlei/markdown-resume-to-pdf')"
+    >
       <i class="iconfont icon-github"></i>
       Github地址
     </span>
