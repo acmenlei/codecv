@@ -21,8 +21,9 @@ import { timeLine } from './constant'
 
 <style lang="scss" scoped>
 .time-line {
+  border-radius: 10px;
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 20px auto;
   background: var(--background);
   color: var(--font-color);
   padding: 30px;

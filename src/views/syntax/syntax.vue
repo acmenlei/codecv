@@ -25,9 +25,11 @@ onMounted(() => {
   .slider {
     position: sticky;
     top: 65px;
+    border-radius: 10px;
     margin-left: 20px;
   }
   .syntax-helper {
+    border-radius: 10px;
     padding: 20px;
     max-width: 800px;
     background: var(--background);

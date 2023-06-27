@@ -1,13 +1,13 @@
 /* eslint-disable no-irregular-whitespace */
-export default `<h2 style="background:var(--background); color: var(--font-color)">
-<span style="color: var(--font-color); background:(--background)">前言</span>
+export default `<h2 style="background:var(--background); color: var(--font-color); margin-bottom: 10px;">
+<span style="color: var(--font-color); background:(--background); ">前言</span>
 </h2>
 <p style="background:var(--background); color: var(--font-color)">
 <span style="line-height: 28px; color: var(--font-color)"
   >如果你想编写一款<strong>比较好的简历排版</strong>，那你可以学习一下下面这些语法，放心，不会花费多少时间.</span
 >
 </p>
-<h2 style="background:var(--background); color: var(--font-color)">
+<h2 style="background:var(--background); color: var(--font-color); margin: 20px 0 10px 0;">
 <span style="color: var(--font-color); background:(--background)">弹性布局</span>
 </h2>
 <p style="background:var(--background); color: var(--font-color)">
@@ -60,7 +60,7 @@ lang="HTML"
 theme="dark"
 class="tb-pre"
 ><div style="width:2.5em" class="tb-code-line-number-bg"></div><div class="tb-code-content"><div class="tb-code-line">&lt;<span class="tb-hl-tag">div&nbsp;</span><span class="tb-hl-attr-name">class</span>="<span class="tb-hl-attr-value">flex-layout</span>"&gt;</div><div class="tb-code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tb-hl-tag">div&nbsp;</span><span class="tb-hl-attr-name">class</span>="<span class="tb-hl-attr-value">flex-layout-item</span>"&gt;content...&lt;/<span class="tb-hl-tag">div</span>&gt;</div><div class="tb-code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tb-hl-tag">div&nbsp;</span><span class="tb-hl-attr-name">class</span>="<span class="tb-hl-attr-value">flex-layout-item</span>"&gt;content...&lt;/<span class="tb-hl-tag">div</span>&gt;</div><div class="tb-code-line">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="tb-hl-tag">div&nbsp;</span><span class="tb-hl-attr-name">class</span>="<span class="tb-hl-attr-value">flex-layout-item</span>"&gt;content...&lt;/<span class="tb-hl-tag">div</span>&gt;</div><div class="tb-code-line">&lt;<span class="tb-hl-tag">div</span>&gt;</div></div><span class="tb-pre-lang">HTML</span></pre>
-<h2 style="background:var(--background); color: var(--font-color)">
+<h2 style="background:var(--background); color: var(--font-color); margin: 20px 0 10px 0;">
 <span style="color: var(--font-color); background:(--background)">个人信息布局</span>
 </h2>
 <p style="background:var(--background); color: var(--font-color)">
@@ -115,7 +115,7 @@ lang="HTML"
 theme="dark"
 class="tb-pre"
 ><div style="width:2.5em" class="tb-code-line-number-bg"></div><div class="tb-code-content"><div class="tb-code-line">&lt;<span class="tb-hl-tag">div&nbsp;</span><span class="tb-hl-attr-name">class</span>="<span class="tb-hl-attr-value">head-layout</span>"&gt;</div><div class="tb-code-line">&nbsp;&nbsp;&nbsp;&nbsp;content....</div><div class="tb-code-line">&lt;<span class="tb-hl-tag">div</span>&gt;</div></div><span class="tb-pre-lang">HTML</span></pre>
-<h2 style="background:var(--background); color: var(--font-color)">
+<h2 style="background:var(--background); color: var(--font-color); margin: 20px 0 10px 0;">
 <span style="color: var(--font-color); background:(--background)">内置图标</span>
 </h2>
 <p style="background:var(--background); color: var(--font-color)">
@@ -152,7 +152,7 @@ lang="HTML"
 theme="dark"
 class="tb-pre"
 ><div style="width:2.5em" class="tb-code-line-number-bg"></div><div class="tb-code-content"><div class="tb-code-line">&lt;<span class="tb-hl-tag">i&nbsp;</span><span class="tb-hl-attr-name">class</span>="<span class="tb-hl-attr-value">iconfont icon-github</span>"&gt;&lt;/<span class="tb-hl-tag">i</span>&gt;</div></div><span class="tb-pre-lang">HTML</span></pre>
-<h2 style="background:var(--background); color: var(--font-color)">
+<h2 style="background:var(--background); color: var(--font-color); margin: 20px 0 10px 0;">
 <span style="color: var(--font-color); background:(--background)">over</span>
 </h2>
 <p style="background:var(--background); color: var(--font-color)">
