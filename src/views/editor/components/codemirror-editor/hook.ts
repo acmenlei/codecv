@@ -39,10 +39,12 @@ export function useMoveLayout() {
   }
 
   function down() {
+    document.body.classList.add('no-select')
     flag = true
   }
 
   function up() {
+    document.body.classList.remove('no-select')
     flag = false
   }
 

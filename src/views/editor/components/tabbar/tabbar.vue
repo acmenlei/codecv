@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ToastModal from '@/components/toast-modal/toastModal.vue'
+import Empty from '@/components/empty.vue'
 import { Codemirror } from 'vue-codemirror'
 import { cssLanguage } from '@codemirror/lang-css'
 import { marks } from './constant'
@@ -134,9 +135,14 @@ const { isDark } = useThemeConfig()
     <button class="btn primary cursor hover" @click="removeStyle">重置</button>
   </ToastModal>
   <!-- 调整边距 -->
-  <ToastModal v-if="visiable" :flag="visiable" @close="confirmAdjustment" width="400px">
+  <ToastModal
+    v-if="visiable"
+    :flag="visiable"
+    @close="confirmAdjustment"
+    :width="marginData.length ? '400px' : '310px'"
+  >
     <h4>调节简历内容的上边距（单位px）</h4>
-    <div class="margin-container flex">
+    <div class="margin-container flex" v-if="marginData.length">
       <div class="margin-item" v-for="(marginItem, idx) in marginData" :key="idx">
         <el-space>
           <span>{{ marginItem.name }} ({{ marginItem.className || marginItem.tagName }})</span>
@@ -144,6 +150,7 @@ const { isDark } = useThemeConfig()
         </el-space>
       </div>
     </div>
+    <Empty v-else title="简历中还没有内容 可以先写点东西" />
     <br />
     <h5 style="color: var(--theme)">PS: 只显示简历模板中已经使用的</h5>
   </ToastModal>

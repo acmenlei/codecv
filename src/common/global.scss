@@ -334,3 +334,7 @@ a.ripple-effect {
     border-left-color: var(--theme);
   }
 }
+
+.no-select {
+  user-select: none;
+}

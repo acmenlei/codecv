@@ -42,14 +42,14 @@ function queryList(index: number) {
   padding: 10px 0;
   margin-bottom: 20px;
   display: flex;
+  white-space: nowrap;
   justify-content: space-between;
 
   .newtemplate-container {
-    margin-right: 40px;
-
     .newtemplate {
       border-radius: 3px;
       margin-right: 0;
+      padding: 10px;
     }
   }
 
