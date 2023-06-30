@@ -70,16 +70,16 @@ body {
       border-radius: 10px;
       transition: transform 0.3s;
       &:nth-child(1) {
-        animation: rotate1 0.7s;
+        animation: rotate1 0.7s linear;
       }
       &:nth-child(2) {
-        animation: rotate2 0.7s;
+        animation: rotate2 0.7s linear;
       }
       &:nth-child(4) {
-        animation: rotate4 0.7s;
+        animation: rotate4 0.7s linear;
       }
       &:nth-child(5) {
-        animation: rotate5 0.7s;
+        animation: rotate5 0.7s linear;
       }
     }
     .img-light {
