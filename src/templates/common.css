@@ -17,6 +17,11 @@
   position: relative;
 }
 
+.markdown-transform-html ul,
+.markdown-transform-html ol {
+  padding-left: 20px;
+}
+
 .markdown-transform-html .head-layout .flex-layout {
   align-items: center;
 }
