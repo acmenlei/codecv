@@ -10,6 +10,11 @@ const outNav = [
   //   tooltip: false
   // },
   {
+    name: '招聘资源',
+    path: '/recruit',
+    tooltip: false
+  },
+  {
     name: '语法助手',
     path: '/syntax/helper',
     tooltip: false
