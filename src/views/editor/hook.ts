@@ -50,7 +50,7 @@ export function useResumeType() {
   }
 }
 
-// 导出简历
+// 导出简历｜markdown内容
 export function useDownLoad(type: Ref<string>) {
   const router = useRouter(),
     editorStore = useEditorStore()
@@ -82,12 +82,15 @@ export function useDownLoad(type: Ref<string>) {
 
 export function useImportMD(resumeType: string) {
   function importMD(file: File) {
+    const { writable } = useEditorStore()
+    if (writable) {
+      return warningMessage('请先切换到Markdown模式')
+    }
     const reader = new FileReader(),
       { setMDContent } = useEditorStore()
     reader.readAsText(file, 'utf-8')
     reader.onload = function (event) {
       successMessage('导入成功~')
-
       setMDContent((event.target?.result as string) || '', resumeType)
     }
     reader.onerror = function () {
