@@ -126,7 +126,7 @@ export function getPdf(title: string, html: HTMLElement) {
     allowTaint: false,
     logging: false,
     useCORS: true,
-    scale: 4,
+    scale: 2.5,
     backgroundColor
   })
     .then(canvas => {

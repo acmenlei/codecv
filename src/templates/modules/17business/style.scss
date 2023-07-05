@@ -56,6 +56,12 @@
         opacity: 0.5;
         background: var(--markdown-primary-bg-color);
       }
+
+      &:last-child {
+        &::before {
+          height: 0;
+        }
+      }
     }
 
     h2 {
@@ -68,7 +74,7 @@
         display: inline-block;
         color: white;
         background: var(--markdown-primary-bg-color);
-        padding: 8px;
+        padding: 7px 8px;
         border-radius: 50%;
       }
 
