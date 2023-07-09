@@ -88,7 +88,6 @@ const { isDark } = useThemeConfig()
         <el-switch
           class="operator-item"
           size="small"
-          active-color="var(--theme)"
           @change="() => setAutoOnePage()"
           v-model="autoOnePage"
         />
@@ -97,7 +96,6 @@ const { isDark } = useThemeConfig()
         <el-switch
           class="operator-item"
           size="small"
-          active-color="var(--theme)"
           v-model="followRoll"
           @change="setFollowRoll"
         />
@@ -175,9 +173,6 @@ const { isDark } = useThemeConfig()
     width: 190mm;
     user-select: none;
     margin: 0 auto;
-  }
-  :deep(.el-slider__bar) {
-    background: var(--theme);
   }
   .operator-level2 {
     display: flex;

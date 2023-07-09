@@ -24,6 +24,7 @@ export function useThemeConfig() {
     document.body.style.setProperty('--strong-color', strongColor)
     document.body.style.setProperty('--toolbar-bg', toolbarBg)
     document.body.style.setProperty('--body-background', bodyBackground)
+    document.body.style.setProperty('--el-color-primary', theme)
   })
 
   return {

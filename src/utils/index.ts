@@ -434,3 +434,9 @@ export function convert(target: string) {
   }
   return target
 }
+
+export function getTagColor(index: number): any {
+  const colors = ['danger', 'warning', 'success', 'info'],
+    len = colors.length
+  return colors[index % len]
+}

@@ -25,7 +25,7 @@ const { queryCategory, data } = useCategory()
         <p>暂无...</p>
       </div>
       <div class="advertising content-card mt-20">
-        <strong><p>承接计算机软件方向毕业设计扫码咨询</p></strong>
+        <p>承接计算机软件方向毕业设计扫码咨询</p>
         <img src="@/assets/img/wechat.jpg" alt="relative" />
       </div>
     </div>
@@ -49,10 +49,6 @@ const { queryCategory, data } = useCategory()
     position: sticky;
     top: 80px;
     text-align: center;
-    p {
-      color: var(--strong-color);
-      font-size: 0.8rem;
-    }
     img {
       margin-top: 10px;
       width: 150px;
