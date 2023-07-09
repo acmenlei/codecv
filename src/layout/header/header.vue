@@ -30,7 +30,7 @@ import NavMoblie from './components/navMoblie.vue'
   overflow: hidden;
 
   .header {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

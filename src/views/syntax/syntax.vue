@@ -20,7 +20,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 #syntax {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 20px auto;
   .slider {
     position: sticky;
@@ -31,7 +31,6 @@ onMounted(() => {
   .syntax-helper {
     border-radius: 10px;
     padding: 20px;
-    max-width: 800px;
     background: var(--background);
     color: var(--font-color);
   }

@@ -98,7 +98,7 @@ const isAuthor = computed(() => article.authorId == userInfo.uid)
 </template>
 <style lang="scss" scoped>
 .community-detail {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 20px auto;
 
   .main-content {

@@ -18,7 +18,7 @@ import CommunityRight from './components/community-right/communityRight.vue'
 
 <style lang="scss" scoped>
 .community {
-  max-width: 1200px;
+  max-width: var(--max-width);
   /* min-width: 800px; */
   margin: 20px auto;
   display: flex;

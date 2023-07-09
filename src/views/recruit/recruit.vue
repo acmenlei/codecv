@@ -16,7 +16,7 @@ const { tabs, tabClick } = useRecruitTab()
 
 <style lang="scss" scoped>
 .recruit {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 20px auto;
 }
 </style>

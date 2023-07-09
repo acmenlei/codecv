@@ -33,7 +33,7 @@ const { article, articleEditor, publishArticle } = useCommunityArticle()
 
 <style lang="scss" scoped>
 .article-editor {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 20px auto;
   .back {
     display: inline-block;

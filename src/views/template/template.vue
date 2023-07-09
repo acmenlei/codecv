@@ -18,24 +18,44 @@ const { queryCategory, data } = useCategory()
       </div>
       <Empty v-else title="暂时没有这类模板 你可以点击右上角创作模板或联系作者添加～" />
     </div>
-    <div class="resume-right-container content-card" data-aos="fade-left">
-      热门简历排行榜
-      <p>...</p>
-      <p>暂无...</p>
+    <div class="resume-right-container" data-aos="fade-left">
+      <div class="resume-hot-rank content-card">
+        热门简历排行榜
+        <p>...</p>
+        <p>暂无...</p>
+      </div>
+      <div class="advertising content-card mt-20">
+        <strong><p>承接计算机软件方向毕业设计扫码咨询</p></strong>
+        <img src="@/assets/img/wechat.jpg" alt="relative" />
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .resume-container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 20px auto;
 
   .resume-left-container {
     margin-right: 20px;
     .resume-card-container {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .advertising {
+    position: sticky;
+    top: 80px;
+    text-align: center;
+    p {
+      color: var(--strong-color);
+      font-size: 0.8rem;
+    }
+    img {
+      margin-top: 10px;
+      width: 150px;
     }
   }
 }

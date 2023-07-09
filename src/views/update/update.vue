@@ -22,7 +22,7 @@ import { timeLine } from './constant'
 <style lang="scss" scoped>
 .time-line {
   border-radius: 10px;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 20px auto;
   background: var(--background);
   color: var(--font-color);
