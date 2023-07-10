@@ -2,7 +2,7 @@
 import navMenu from './nav.vue'
 import Reward from '@/components/reward.vue'
 import ThemeToggle from '@/components/themeToggle.vue'
-import { wopen } from '@/utils'
+import { wOpen } from '@/utils'
 import { useSwitch } from '@/common/global'
 import { useMDFile } from './hook'
 import Contact from '@/components/contact.vue'
@@ -28,7 +28,7 @@ const { open, toggle } = useSwitch()
       <el-tooltip content="给项目贡献代码" placement="bottom-end">
         <i
           class="iconfont icon-github github font-25"
-          @click="wopen('https://github.com/acmenlei/markdown-resume-to-pdf')"
+          @click="wOpen('https://github.com/acmenlei/markdown-resume-to-pdf')"
         ></i>
       </el-tooltip>
       <el-tooltip content="问题反馈" placement="bottom-end">

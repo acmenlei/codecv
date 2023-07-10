@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { wopen } from '@/utils'
+import { wOpen } from '@/utils'
 </script>
 
 <template>
   <div id="footer">
     <span
       class="item mr-20 pointer"
-      @click="wopen('https://github.com/acmenlei/markdown-resume-to-pdf')"
+      @click="wOpen('https://github.com/acmenlei/markdown-resume-to-pdf')"
     >
       <i class="iconfont icon-github"></i>
       Github地址

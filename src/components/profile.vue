@@ -3,7 +3,7 @@ import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 
 import { userForm } from '@/layout/header/hook'
-import { professionals } from '@/utils/professional'
+import { professionals } from '@/views/community/components/community-left/constant'
 import { ImageUpload } from '@/utils/uploader'
 
 const emits = defineEmits(['cancel', 'submit'])

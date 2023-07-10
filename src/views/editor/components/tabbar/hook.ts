@@ -1,18 +1,8 @@
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/localstorage'
-import { warningMessage } from '@/common/message'
-import {
-  createDIV,
-  createStyle,
-  query,
-  removeHeadStyle,
-  Heap,
-  optimalizing,
-  Optimalizing,
-  OptimalizingItem,
-  convert
-} from '@/utils'
+import { createStyle, query, removeHeadStyle, convert, createDIV } from '@/utils'
 import { getPrimaryBGColor, getPrimaryColor } from '@/templates/config'
 import { onActivated, onMounted, reactive, ref } from 'vue'
+import { warningMessage } from '@/common/message'
 
 const get = getLocalStorage,
   set = setLocalStorage
@@ -20,8 +10,8 @@ const CUSTOM_CSS_STYLE = 'custom-css-style',
   CUSTOM_MARKDOWN_PRIMARY_COLOR = 'custom-markdown-primary-color',
   CUSTOM_MARKDOWN_PRIMARY_BG_COLOR = 'custom_markdown_primary_bg_color',
   MARKDOWN_FONT = 'markdown-font',
-  AUTO_ONE_PAGE = 'auto-one-page',
   ADJUST_RESUME_MARGIN_TOP = 'ADJUST_RESUME_MARGIN_TOP',
+  AUTO_ONE_PAGE = 'auto-one-page',
   A4_HEIGHT = 1123
 
 export const step = ref(90)
@@ -180,7 +170,7 @@ export function useCustomFont(resumeType: string) {
   ]
   const font = ref(get(cacheKey) ? (get(cacheKey) as string) : 'Helvetica Neue')
 
-  function setFont(fontFamily: string | null, frist?: boolean) {
+  function setFont(fontFamily: string | null, first?: boolean) {
     let style = query(cacheKey)
     const isAppend = style
     if (!style) {
@@ -190,7 +180,7 @@ export function useCustomFont(resumeType: string) {
     style.textContent = `.jufe { font-family: ${fontFamily}, 'Noto Sans SC', 'Helvetica Neue'; }`
     !isAppend && document.head.appendChild(style)
     set(cacheKey, fontFamily)
-    !frist && splitPage(<HTMLElement>document.querySelector('.reference-dom'))
+    !first && splitPage(<HTMLElement>document.querySelector('.reference-dom'))
   }
 
   onActivated(() => setFont(font.value, true))
@@ -202,132 +192,6 @@ export function useCustomFont(resumeType: string) {
   }
 }
 
-// 分割视图
-export function splitPage(renderDOM: HTMLElement) {
-  let page = 0,
-    realHeight = 0
-  const target = renderDOM.clientHeight,
-    reRender = document.querySelector('.re-render') as HTMLElement
-  reRender.innerHTML = ''
-
-  while (target - realHeight > 1) {
-    const wrapper = createDIV(),
-      resumeNode = renderDOM.cloneNode(true) as HTMLElement
-    wrapper.classList.add('jufe-wrapper-page')
-    // 创建里面的内容 最小化高度
-    const realRenderHeight = Math.min(target - realHeight, A4_HEIGHT)
-    const wrapperItem = createDIV()
-    wrapperItem.classList.add('jufe-wrapper-page-item')
-    wrapperItem.style.height = realRenderHeight + 'px'
-
-    resumeNode.style.position = 'absolute'
-    resumeNode.style.top = -page * A4_HEIGHT + 'px'
-    resumeNode.style.left = 0 + 'px'
-
-    wrapperItem.appendChild(resumeNode)
-    wrapper.appendChild(wrapperItem)
-
-    realHeight += A4_HEIGHT
-    page++
-    reRender?.appendChild(wrapper)
-  }
-}
-
-/* 自动一页 Start */
-export function useAutoOnePage(resumeType: string) {
-  const cacheKey = AUTO_ONE_PAGE + '-' + resumeType,
-    autoOnePage = ref<any>(get(cacheKey))
-
-  async function setAutoOnePage(frist?: boolean) {
-    const container: HTMLElement = document.querySelector('.reference-dom') as HTMLElement
-    if (autoOnePage.value) {
-      const difference = A4_HEIGHT - container?.clientHeight
-      if (difference < 0 && difference < -200) {
-        warningMessage('你的内容有点太多啦！压缩成一页的话不太美观哦～')
-        return
-      }
-      if (difference > 0 && difference > 500) {
-        warningMessage('你的内容有点太少了！压缩成一页的话不太美观哦，再填写一点内容吧～')
-        return
-      }
-      const { differenceConfig, map } = useInitMarginTop(container)
-      useOnePageCSSContent(differenceConfig, difference, map, cacheKey)
-    } else {
-      removeHeadStyle(cacheKey)
-    }
-    // 缓存3个小时
-    set(cacheKey, autoOnePage.value)
-    !frist && splitPage(container)
-  }
-  onActivated(() => !query(cacheKey) && setTimeout(() => setAutoOnePage(true), 50))
-
-  return {
-    autoOnePage,
-    setAutoOnePage
-  }
-}
-
-function useInitMarginTop(container: HTMLElement) {
-  const titles = Array.from(container.querySelectorAll('h1,h2,h3,h4,h5,h6,li,p')),
-    differenceConfig: OptimalizingItem[] = []
-  const visited = new Set(),
-    map = new Map()
-  for (const title of titles) {
-    const tag = title.tagName.toLowerCase()
-    map.set(tag, (map.get(tag) || 0) + 1)
-    if (visited.has(tag)) {
-      continue
-    }
-    visited.add(tag)
-    const top = +getComputedStyle(title, null).marginTop.slice(0, -2)
-    const cur = { ...optimalizing[tag as keyof Optimalizing], top, tag }
-    // 计算优先级
-    const optimal = cur.top / cur.max
-    cur.optimal = optimal
-    differenceConfig.push(cur)
-  }
-  return { differenceConfig, map }
-}
-
-function useOnePageCSSContent(
-  optimaliza: OptimalizingItem[],
-  difference: number,
-  map: Map<string, number>,
-  cacheKey: string
-) {
-  const heap = new Heap((x, y) => (difference < 0 ? x.optimal > y.optimal : x.optimal < y.optimal))
-  for (const optimal of optimaliza) {
-    heap.push(optimal)
-  }
-  if (difference < 0) {
-    // 大顶堆 (收缩要减掉内边距 暂时这么写)
-    while (difference++ < 20) {
-      const topEl = heap.pop() as OptimalizingItem
-      topEl.top = topEl.top - 1 / (map.get(topEl.tag) || 1)
-      topEl.optimal = topEl.top / topEl.max
-      heap.push(topEl as OptimalizingItem)
-    }
-  } else {
-    // 小顶堆 (拉伸也要减掉内边距 思路同上)
-    while (difference-- > 20) {
-      const topEl = heap.pop() as OptimalizingItem
-      topEl.top = topEl.top + 1 / (map.get(topEl.tag) || 1)
-      topEl.optimal = topEl.top / topEl.max
-      heap.push(topEl as OptimalizingItem)
-    }
-  }
-  // 创建样式表
-  const styleDOM = createStyle(),
-    prefix = '.jufe '
-  let cssText = ''
-  styleDOM.setAttribute(cacheKey, 'true')
-
-  for (const optimal of heap.container) {
-    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px!important; }`
-  }
-  styleDOM.textContent = cssText
-  document.head.appendChild(styleDOM)
-}
 /* 一键重置 */
 export function restResumeContent(resumeType: string) {
   localStorage.removeItem(`${CUSTOM_CSS_STYLE}-${resumeType}`)
@@ -342,7 +206,7 @@ export function restResumeContent(resumeType: string) {
 
 // 调节元素边距
 export function useAdjust(resumeType: string) {
-  const visiable = ref(false),
+  const visible = ref(false),
     marginData = reactive<ElementMarginTop[]>([]),
     cacheKey = ADJUST_RESUME_MARGIN_TOP + '-' + resumeType
   interface ElementMarginTop {
@@ -386,7 +250,7 @@ export function useAdjust(resumeType: string) {
   }
 
   function adjustMargin() {
-    setVisiable()
+    setVisible()
     // 获取dom元素
     const targetElement = document.querySelector('.jufe') as HTMLElement
     const marginTopValues = getAllMarginTopValues(targetElement)
@@ -396,7 +260,7 @@ export function useAdjust(resumeType: string) {
   }
 
   function confirmAdjustment() {
-    setVisiable()
+    setVisible()
     // console.log(marginData)
     let styleDOM = query(cacheKey),
       cssText = ''
@@ -416,8 +280,8 @@ export function useAdjust(resumeType: string) {
     splitPage(document.querySelector('.reference-dom') as HTMLElement)
   }
 
-  function setVisiable() {
-    visiable.value = !visiable.value
+  function setVisible() {
+    visible.value = !visible.value
   }
   // 初始化css
   function initAdjustCSS() {
@@ -435,7 +299,7 @@ export function useAdjust(resumeType: string) {
   }
   // 如果页面中没有用户调整了的样式 那么就需要去初始化
   onActivated(() => !query(cacheKey) && initAdjustCSS())
-  return { adjustMargin, visiable, confirmAdjustment, marginData }
+  return { adjustMargin, visible, confirmAdjustment, marginData }
 }
 
 // 跟随滚动
@@ -477,4 +341,204 @@ export function useFollowRoll() {
     followRoll,
     setFollowRoll
   }
+}
+
+// 分割视图
+export function splitPage(renderDOM: HTMLElement) {
+  let page = 0,
+    realHeight = 0
+  const target = renderDOM.clientHeight,
+    reRender = document.querySelector('.re-render') as HTMLElement
+  reRender.innerHTML = ''
+
+  while (target - realHeight > 1) {
+    const wrapper = createDIV(),
+      resumeNode = renderDOM.cloneNode(true) as HTMLElement
+    wrapper.classList.add('jufe-wrapper-page')
+    // 创建里面的内容 最小化高度
+    const realRenderHeight = Math.min(target - realHeight, A4_HEIGHT)
+    const wrapperItem = createDIV()
+    wrapperItem.classList.add('jufe-wrapper-page-item')
+    wrapperItem.style.height = realRenderHeight + 'px'
+
+    resumeNode.style.position = 'absolute'
+    resumeNode.style.top = -page * A4_HEIGHT + 'px'
+    resumeNode.style.left = 0 + 'px'
+
+    wrapperItem.appendChild(resumeNode)
+    wrapper.appendChild(wrapperItem)
+
+    realHeight += A4_HEIGHT
+    page++
+    reRender?.appendChild(wrapper)
+  }
+}
+
+/* 自动一页 Start */
+export function useAutoOnePage(resumeType: string) {
+  const cacheKey = AUTO_ONE_PAGE + '-' + resumeType,
+    autoOnePage = ref<any>(getLocalStorage(cacheKey))
+
+  async function setAutoOnePage(first?: boolean) {
+    const container: HTMLElement = document.querySelector('.reference-dom') as HTMLElement
+    if (autoOnePage.value) {
+      const difference = A4_HEIGHT - container?.clientHeight
+      if (difference < 0 && difference < -200) {
+        warningMessage('你的内容有点太多啦！压缩成一页的话不太美观哦～')
+        return
+      }
+      if (difference > 0 && difference > 500) {
+        warningMessage('你的内容有点太少了！压缩成一页的话不太美观哦，再填写一点内容吧～')
+        return
+      }
+      const { differenceConfig, map } = useInitMarginTop(container)
+      useOnePageCSSContent(differenceConfig, difference, map, cacheKey)
+    } else {
+      removeHeadStyle(cacheKey)
+    }
+    // 缓存3个小时
+    setLocalStorage(cacheKey, autoOnePage.value)
+    !first && splitPage(container)
+  }
+  onActivated(() => !query(cacheKey) && setTimeout(() => setAutoOnePage(true), 50))
+
+  return {
+    autoOnePage,
+    setAutoOnePage
+  }
+}
+
+function useInitMarginTop(container: HTMLElement) {
+  const titles = Array.from(container.querySelectorAll('h1,h2,h3,h4,h5,h6,li,p')),
+    differenceConfig: priorityDefineItem[] = []
+  const visited = new Set(),
+    map = new Map()
+  for (const title of titles) {
+    const tag = title.tagName.toLowerCase()
+    map.set(tag, (map.get(tag) || 0) + 1)
+    if (visited.has(tag)) {
+      continue
+    }
+    visited.add(tag)
+    const top = +getComputedStyle(title, null).marginTop.slice(0, -2)
+    const cur = { ...priorityDefine[tag as keyof priorityDefine], top, tag }
+    // 计算优先级
+    const optimal = cur.top / cur.max
+    cur.optimal = optimal
+    differenceConfig.push(cur)
+  }
+  return { differenceConfig, map }
+}
+
+// 计算优先级 以及 处理优先级高的数据
+export const priorityDefine = {
+  h1: { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
+  h2: { max: 30, min: -15, top: 0, tag: '', optimal: 0 },
+  h3: { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  h4: { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  h5: { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  h6: { max: 20, min: -15, top: 0, tag: '', optimal: 0 },
+  li: { max: 10, min: -15, top: 0, tag: '', optimal: 0 },
+  p: { max: 10, min: -15, top: 0, tag: '', optimal: 0 }
+}
+export type priorityDefineItem = (typeof priorityDefine)['h1']
+export type priorityDefine = typeof priorityDefine
+
+const defaultCmp = (x: priorityDefineItem, y: priorityDefineItem) => x.optimal > y.optimal // 默认是最大堆
+const swap = (arr: priorityDefineItem[], i: number, j: number) =>
+  ([arr[i], arr[j]] = [arr[j], arr[i]])
+export class Heap {
+  // 默认是最大堆
+  container: priorityDefineItem[] = []
+  cmp = defaultCmp
+  constructor(cmp: (x: priorityDefineItem, y: priorityDefineItem) => boolean) {
+    this.cmp = cmp
+  }
+  push(data: priorityDefineItem) {
+    const { container, cmp } = this
+    container.push(data)
+    let index = container.length - 1
+    while (index) {
+      const parent = Math.floor((index - 1) / 2)
+      if (!cmp(container[index], container[parent])) {
+        return
+      }
+      swap(container, index, parent)
+      index = parent
+    }
+  }
+  pop() {
+    const { container, cmp } = this
+    if (!container.length) {
+      return null
+    }
+    swap(container, 0, container.length - 1)
+    const res = container.pop()
+    const length = container.length
+    let index = 0,
+      exchange = index * 2 + 1
+    while (exchange < length) {
+      // 以最大堆的情况来说：如果有右节点，并且右节点的值大于左节点的值
+      const right = index * 2 + 2
+      if (right < length && cmp(container[right], container[exchange])) {
+        exchange = right
+      }
+      if (!cmp(container[exchange], container[index])) {
+        break
+      }
+      swap(container, exchange, index)
+      index = exchange
+      exchange = index * 2 + 1
+    }
+    return res
+  }
+
+  top() {
+    if (this.container.length) return this.container[0]
+    return null
+  }
+
+  isEmpty() {
+    return this.container.length === 0
+  }
+}
+
+function useOnePageCSSContent(
+  priority: priorityDefineItem[],
+  difference: number,
+  map: Map<string, number>,
+  cacheKey: string
+) {
+  const heap = new Heap((x, y) => (difference < 0 ? x.optimal > y.optimal : x.optimal < y.optimal))
+  for (const optimal of priority) {
+    heap.push(optimal)
+  }
+  if (difference < 0) {
+    // 大顶堆 (收缩要减掉内边距 暂时这么写)
+    while (difference++ < 20) {
+      const topEl = heap.pop() as priorityDefineItem
+      topEl.top = topEl.top - 1 / (map.get(topEl.tag) || 1)
+      topEl.optimal = topEl.top / topEl.max
+      heap.push(topEl as priorityDefineItem)
+    }
+  } else {
+    // 小顶堆 (拉伸也要减掉内边距 思路同上)
+    while (difference-- > 20) {
+      const topEl = heap.pop() as priorityDefineItem
+      topEl.top = topEl.top + 1 / (map.get(topEl.tag) || 1)
+      topEl.optimal = topEl.top / topEl.max
+      heap.push(topEl as priorityDefineItem)
+    }
+  }
+  // 创建样式表
+  const styleDOM = createStyle(),
+    prefix = '.jufe '
+  let cssText = ''
+  styleDOM.setAttribute(cacheKey, 'true')
+
+  for (const optimal of heap.container) {
+    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px!important; }`
+  }
+  styleDOM.textContent = cssText
+  document.head.appendChild(styleDOM)
 }

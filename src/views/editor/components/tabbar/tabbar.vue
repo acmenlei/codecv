@@ -30,7 +30,7 @@ const { color, setColor } = usePrimaryColor(resumeType.value)
 const { fontOptions, font, setFont } = useCustomFont(resumeType.value)
 const { setAvatar } = useAvatar(emits)
 const { primaryColor, setPrimaryColor } = usePrimaryBGColor(resumeType.value)
-const { adjustMargin, visiable, confirmAdjustment, marginData } = useAdjust(resumeType.value)
+const { adjustMargin, visible, confirmAdjustment, marginData } = useAdjust(resumeType.value)
 const { followRoll, setFollowRoll } = useFollowRoll()
 const { isDark } = useThemeConfig()
 </script>
@@ -134,8 +134,8 @@ const { isDark } = useThemeConfig()
   </ToastModal>
   <!-- 调整边距 -->
   <ToastModal
-    v-if="visiable"
-    :flag="visiable"
+    v-if="visible"
+    :flag="visible"
     @close="confirmAdjustment"
     :width="marginData.length ? '400px' : '310px'"
   >

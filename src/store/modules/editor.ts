@@ -4,9 +4,18 @@ import { nextTick } from 'vue'
 import pinia from '@/store'
 import { getLocalStorage, setLocalStorage } from '@/common/localstorage'
 import { showMessageVN } from '@/common/message'
-import { getCurrentTypeContent } from '@/utils'
+import { templates } from '@/templates/config'
 
 const MARKDOWN_CONTENT = 'markdown-content'
+
+export const getCurrentTypeContent = (type: string): string => {
+  for (const template of templates) {
+    if (type === template.type) {
+      return template.content
+    }
+  }
+  return ''
+}
 
 const useEditorStore = defineStore('editorStore', {
   state: () => ({
