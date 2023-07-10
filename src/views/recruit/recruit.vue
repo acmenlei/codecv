@@ -1,10 +1,14 @@
 <script setup lang="ts">
-// import NavBar from '@/components/navBar.vue'
-import { useData } from './hook'
+import {
+  useData,
+  EducationalRequiredOptions,
+  WorkAndResetTimeOptions,
+  WorkEXPOptions
+} from './hook'
 import { getTagColor } from '@/utils'
+import { recruits } from './recruits'
 
-// const { form } = useRecruitForm()
-const { data, form, query, reset } = useData()
+const { data, form, query, reset, pageNumChange } = useData()
 </script>
 
 <template>
@@ -18,27 +22,32 @@ const { data, form, query, reset } = useData()
       </el-form-item>
       <el-form-item label="学历要求">
         <el-select v-model="form.educational_required" placeholder="学历要求" clearable>
-          <el-option label="985/211本科" value="92" />
-          <el-option label="统招本科" value="统招本科" />
-          <el-option label="专升本" value="专升本" />
-          <el-option label="专科" value="专科" />
+          <el-option
+            v-for="(item, index) in EducationalRequiredOptions"
+            :label="item"
+            :value="item"
+            :key="index"
+          />
         </el-select>
       </el-form-item>
       <el-form-item label="工作经验">
         <el-select v-model="form.type" placeholder="招聘类型" clearable>
-          <el-option label="应届生" value="入门" />
-          <el-option label="1-3年经验" value="初级" />
-          <el-option label="3-5年经验" value="中高级" />
-          <el-option label="5-10年经验" value="架构师" />
+          <el-option
+            v-for="(item, index) in WorkEXPOptions"
+            :label="item"
+            :value="item"
+            :key="index"
+          />
         </el-select>
       </el-form-item>
-      <el-form-item label="作息时间">
-        <el-select v-model="form.type" placeholder="筛选作息时间" clearable>
-          <el-option label="996" value="996" />
-          <el-option label="965" value="965" />
-          <el-option label="1075" value="1075" />
-          <el-option label="855" value="855" />
-          <el-option label="WLB" value="WLB" />
+      <el-form-item label="公司标签">
+        <el-select v-model="form.icu" placeholder="按标签筛选" clearable>
+          <el-option
+            v-for="(item, index) in WorkAndResetTimeOptions"
+            :label="item"
+            :value="item"
+            :key="index"
+          />
         </el-select>
       </el-form-item>
       <el-form-item>
@@ -87,7 +96,7 @@ const { data, form, query, reset } = useData()
         <el-table-column label="结束时间" prop="endTime" />
         <el-table-column label="投递通道" prop="external_link">
           <template #default="{ row }">
-            <div v-if="typeof row.external_link == 'string'">
+            <div v-if="typeof row.external_link == 'string'" class="line-1">
               <el-link :href="row.external_link" target="_blank">
                 {{ row.external_link }}
               </el-link>
@@ -100,7 +109,13 @@ const { data, form, query, reset } = useData()
         </el-table-column>
         <el-table-column label="备注" prop="remark" />
       </el-table>
-      <el-pagination class="mt-20" layout="prev, pager, next" :total="1000" />
+      <el-pagination
+        @update:current-page="pageNumChange"
+        :page-size="form.pageSize"
+        class="mt-20"
+        layout="prev, pager, next, total"
+        :total="recruits.length"
+      />
     </div>
   </div>
 </template>

@@ -25,7 +25,7 @@ const { queryCategory, data } = useCategory()
         <p>暂无...</p>
       </div>
       <div class="advertising content-card mt-20">
-        <p>承接计算机软件方向毕业设计扫码咨询</p>
+        <p>承接计算机专业毕业设计扫码咨询</p>
         <img src="@/assets/img/wechat.jpg" alt="relative" />
       </div>
     </div>

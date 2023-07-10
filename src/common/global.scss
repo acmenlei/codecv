@@ -340,3 +340,9 @@ a.ripple-effect {
 .no-select {
   user-select: none;
 }
+
+.line-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
