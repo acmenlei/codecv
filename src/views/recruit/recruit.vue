@@ -9,7 +9,7 @@ const { data, form, query, reset } = useData()
 
 <template>
   <div class="recruit content-card">
-    <el-form :inline="true" :model="form" class="demo-form-inline">
+    <el-form :inline="true" :model="form">
       <el-form-item label="模糊搜索">
         <el-input v-model="form.keyword" placeholder="关键词搜索" clearable />
       </el-form-item>
@@ -85,11 +85,17 @@ const { data, form, query, reset } = useData()
           </template>
         </el-table-column>
         <el-table-column label="结束时间" prop="endTime" />
-        <el-table-column label="投递链接" prop="external_link">
+        <el-table-column label="投递通道" prop="external_link">
           <template #default="{ row }">
-            <el-link :href="row.external_link" target="_blank">
-              {{ row.external_link }}
-            </el-link>
+            <div v-if="typeof row.external_link == 'string'">
+              <el-link :href="row.external_link" target="_blank">
+                {{ row.external_link }}
+              </el-link>
+            </div>
+            <div v-else style="color: var(--strong-color)">
+              <span>{{ row.external_link.app }}: </span>
+              <span>{{ row.external_link.contact }}</span>
+            </div>
           </template>
         </el-table-column>
         <el-table-column label="备注" prop="remark" />

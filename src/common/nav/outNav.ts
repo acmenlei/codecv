@@ -10,7 +10,7 @@ const outNav = [
   //   tooltip: false
   // },
   {
-    name: '招聘资源',
+    name: '高质量岗位',
     path: '/recruit',
     tooltip: false
   },
