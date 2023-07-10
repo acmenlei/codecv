@@ -14,7 +14,7 @@ import { linkFlag, selectIcon } from '../toolbar/hook'
 import { clickedTarget } from '../../hook'
 import { setClickedLinkText, setClickedLinkURL } from '../toolbar/components/linkInput/hook'
 import { getPickerFile } from '@/utils/uploader'
-import { resumeDOMStruct2Markdown } from '@/utils'
+import { resumeDOMStruct2Markdown } from '@/utils/dom2md'
 
 export function initEditorState(resumetype: string) {
   const editorStore = useEditorStore()

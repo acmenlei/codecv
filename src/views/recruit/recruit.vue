@@ -13,6 +13,9 @@ const { data, form, query, reset, pageNumChange } = useData()
 
 <template>
   <div class="recruit content-card">
+    <h6 class="mb-20" style="color: var(--strong-color)">
+      PS: 需要添加岗位的可以联系作者 必须是真正招人的岗位 如果发现刷 KPI 将放入黑名单册公示
+    </h6>
     <el-form :inline="true" :model="form">
       <el-form-item label="模糊搜索">
         <el-input v-model="form.keyword" placeholder="关键词搜索" clearable />
