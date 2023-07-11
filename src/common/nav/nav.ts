@@ -10,8 +10,9 @@ const nav = [
     tooltip: false
   },
   {
-    name: '使用图标',
-    tooltip: true
+    name: '高质量岗位',
+    path: '/recruit',
+    tooltip: false
   },
   {
     name: '语法助手',

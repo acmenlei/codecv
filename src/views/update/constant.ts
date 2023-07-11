@@ -1,6 +1,13 @@
 export const timeLine = [
   {
     content: `
+      新增高质量岗位模块
+      `,
+    timestamp: '2023-07-10',
+    version: '1.4.3'
+  },
+  {
+    content: `
       1. 内容模式工具栏新增链接按钮.
       2. 新增暗黑模板
       `,

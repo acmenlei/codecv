@@ -17,7 +17,7 @@ function toOutNav(path: string) {
         }}</router-link>
       </li>
       <li v-for="(navItem, idx) in homeOutNav" @click="toOutNav(navItem.path)" :key="idx">
-        <i :class="navItem.icon" />
+        <i :class="navItem.icon" :style="{ color: navItem.color }" />
         {{ navItem.name }}
       </li>
     </ul>

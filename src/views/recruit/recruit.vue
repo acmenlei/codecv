@@ -6,9 +6,8 @@ import {
   WorkEXPOptions
 } from './hook'
 import { getTagColor } from '@/utils'
-import { recruits } from './recruits'
 
-const { data, form, query, reset, pageNumChange } = useData()
+const { data, form, reset, pageNumChange } = useData()
 </script>
 
 <template>
@@ -54,15 +53,15 @@ const { data, form, query, reset, pageNumChange } = useData()
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-button color="var(--theme)" @click="query">查询</el-button>
-        <el-button @click="reset">重置</el-button>
+        <el-button color="var(--theme)" @click="reset">重置</el-button>
       </el-form-item>
     </el-form>
     <div class="recruit-limit">
       <el-table :data="data" style="width: 100%">
         <el-table-column label="Logo" prop="logo">
           <template #default="{ row }">
-            <img class="corporation_logo" :src="row.logo" alt="" />
+            <img v-if="row.logo" class="corporation_logo" :src="row.logo" alt="公司logo" />
+            <i v-else class="iconfont icon-city font-25" />
           </template>
         </el-table-column>
         <el-table-column label="公司名称" prop="corporation">
@@ -117,7 +116,7 @@ const { data, form, query, reset, pageNumChange } = useData()
         :page-size="form.pageSize"
         class="mt-20"
         layout="prev, pager, next, total"
-        :total="recruits.length"
+        :total="data.length"
       />
     </div>
   </div>

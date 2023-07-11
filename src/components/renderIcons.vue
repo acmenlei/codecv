@@ -4,13 +4,14 @@ import data from '@/assets/icon/iconfont.json'
 import { ref } from 'vue'
 
 const emit = defineEmits(['select-icon'])
-
+// 复制图标内容
 type Icon = (typeof data.glyphs)[0]
-const clipborad = (item: Icon) => {
+const clipboard = (item: Icon) => {
   successMessage('已复制到剪贴板，你可以直接粘贴')
   navigator.clipboard.writeText(`icon:${item.font_class} `)
   emit('select-icon', item.font_class)
 }
+// 分页
 const iconData = ref<Icon[]>(data.glyphs.slice(0, 20))
 const pageChange = function (page: number) {
   iconData.value = data.glyphs.slice((page - 1) * 20, page * 20)
@@ -20,7 +21,7 @@ const pageChange = function (page: number) {
 <template>
   <div class="render-modal">
     <div class="render-modal-icons">
-      <button v-for="(item, idx) in iconData" :key="idx" @click="clipborad(item)">
+      <button v-for="(item, idx) in iconData" :key="idx" @click="clipboard(item)">
         <i :class="['iconfont', `icon-${item.font_class}`]">
           <p>{{ item.font_class }}</p>
         </i>

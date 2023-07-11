@@ -3,13 +3,13 @@ import { Codemirror } from 'vue-codemirror'
 import { markdownLanguage } from '@codemirror/lang-markdown'
 import { oneDark } from '@codemirror/theme-one-dark'
 import ContentModeToolbar from '@/views/editor/components/toolbar/contentModeToolbar.vue'
-import MarkdownModeToolbar from '@/views/editor/components/toolbar/markdownModeToobar.vue'
+import MarkdownModeToolbar from '@/views/editor/components/toolbar/markdownModeToolbar.vue'
 import { useResumeType, useAvatar } from '../../hook'
 import {
   initEditorState,
   useToggleEditorMode,
   useMoveLayout,
-  injectWriableModeAvatarEvent,
+  injectWritableModeAvatarEvent,
   resetCodeMirrorDefaultStyle
 } from './hook'
 import { useThemeConfig } from '@/common/global'
@@ -22,7 +22,7 @@ const { setAvatar } = useAvatar(resumeType.value)
 const { isDark } = useThemeConfig()
 const { writable, editorStore } = initEditorState(resumeType.value)
 
-injectWriableModeAvatarEvent(writable, setAvatar)
+injectWritableModeAvatarEvent(writable, setAvatar)
 resetCodeMirrorDefaultStyle(writable)
 </script>
 

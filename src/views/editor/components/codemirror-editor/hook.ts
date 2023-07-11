@@ -60,7 +60,7 @@ export function useMoveLayout() {
   return { left, down, top }
 }
 
-export function injectWriableModeAvatarEvent(
+export function injectWritableModeAvatarEvent(
   writable: Ref<boolean>,
   setAvatar: (path: string) => void
 ) {

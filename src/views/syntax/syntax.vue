@@ -24,7 +24,7 @@ onMounted(() => {
   margin: 20px auto;
   .slider {
     position: sticky;
-    top: 65px;
+    top: 80px;
     border-radius: 10px;
     margin-left: 20px;
   }

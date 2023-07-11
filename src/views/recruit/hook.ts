@@ -34,7 +34,7 @@ export interface IExternalContact {
   contact: string
 }
 export interface IRecruitData {
-  logo: string
+  logo?: string
   job: string
   type: string[]
   corporation: string
