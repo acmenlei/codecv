@@ -124,7 +124,7 @@ const { data, form, reset, pageNumChange } = useData()
       <img src="@/assets/img/wechat.jpg" alt="联系方式" class="author qr" />
       <br />
       <br />
-      <p class="mb-10">CodeCV QQ交流群</p>
+      <p class="mb-10">QQ 交流群</p>
       <img src="@/assets/img/qqgroup.jpeg" alt="QQ交流群" class="qqgroup qr" />
     </div>
   </div>

@@ -25,11 +25,11 @@ const { queryCategory, data } = useCategory()
         <p>暂无...</p>
       </div>
       <div class="advertising content-card mt-20">
-        <p>承接软件开发 扫码咨询</p>
+        <p>作者微信</p>
         <img src="@/assets/img/wechat.jpg" alt="relative" />
         <br />
         <br />
-        <p>CodeCV QQ交流群</p>
+        <p>QQ 交流群</p>
         <img src="@/assets/img/qqgroup.jpeg" alt="QQ交流群" class="qqgroup qr" />
       </div>
     </div>
