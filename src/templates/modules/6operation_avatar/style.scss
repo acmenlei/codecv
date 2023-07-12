@@ -12,6 +12,7 @@
     color: var(--markdown-primary-bg-color) !important;
     font-size: 18px;
     margin: 5px auto;
+    padding-bottom: 3px;
     border-bottom: 1.5px solid var(--markdown-primary-bg-color) !important;
 
     i.iconfont {
@@ -26,6 +27,13 @@
 
   .head-layout {
     white-space: pre;
+    padding-bottom: 20px;
+
+    img {
+      height: 24mm;
+      width: 24mm;
+      border-radius: 50%;
+    }
 
     .flex-layout-item {
       margin-right: 10px;
