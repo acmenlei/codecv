@@ -2,7 +2,7 @@
   width: 210mm;
   font-size: 14px;
   word-break: break-all;
-  padding: 20px 30px;
+  padding: 30px 40px;
   margin: 0 auto;
   background: #fff;
   z-index: 2;
@@ -70,7 +70,6 @@
   display: inline-block;
   background: transparent;
   position: relative;
-  border: 0.5px solid var(--markdown-primary-bg-color);
   border-radius: 5px;
 }
 
@@ -82,7 +81,7 @@
   left: 0;
   top: 0;
   border-radius: 5px;
-  border: 1px solid var(--markdown-primary-bg-color);
+  /* border: 1px solid var(--markdown-primary-bg-color); */
   background: var(--markdown-primary-bg-color);
   z-index: -1;
   opacity: 0.1;
