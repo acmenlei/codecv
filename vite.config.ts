@@ -11,7 +11,7 @@ import externalGlobals from 'rollup-plugin-external-globals'
 import viteImagemin from 'vite-plugin-imagemin'
 
 const globals = externalGlobals({
-  jspdf: 'jspdf',
+  jspdf: 'jspdf.jsPDF',
   axios: 'axios',
   html2canvas: 'html2canvas'
 })
