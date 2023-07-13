@@ -23,8 +23,6 @@
 
 - [Node](#node)
 
-- [PNPM](#pnpm)
-
 - [安装依赖](#安装依赖)
 
 - [测试环境运行](#测试环境运行)
@@ -68,26 +66,18 @@
 node -v
 ```
 
-### PNPM
-
-如果你没有安装过 `pnpm`
-
-```shell
-npm install pnpm -g
-```
-
 ## 安装依赖
 
 > 进入文件夹 `/markdown-resume` 运行以下命令
 
 ```shell
-pnpm install
+npm install
 ```
 
 ## 测试环境运行
 
 ```shell
-pnpm dev
+npm run dev
 ```
 
 ## 环境变量
@@ -97,54 +87,14 @@ pnpm dev
 ## 打包
 
 ```shell
-pnpm build
+npm run build
 ```
 
 最后将`dist`目录部署到服务器即可
 
 ## 常见问题
 
-Q: 怎么编写多列布局？
-
-A:
-
-```html
-::: start content ::: content ::: content ::: end
-<!-- 上面的语法将会被转化为下面的`HTML`结构(三列布局) -->
-<div class="flex-layout">
-  <div class="flex-layout-item">content</div>
-  <div class="flex-layout-item">content</div>
-  <div class="flex-layout-item">content</div>
-  <div></div>
-</div>
-```
-
-Q: 怎么新增 icon 图标？
-
-A:
-
-```html
-icon:github
-<!-- 上面的语法将会被转化为下面的`HTML`结构 -->
-<i class="iconfont icon-github"></i>
-```
-
-Q: 如何新增空格？
-
-A: 在编辑器中编写`&nbsp;`
-
-Q: 如何编写个人信息栏？
-
-A:
-
-```html
-::: headStart content ::: headEnd
-<!-- 上面的语法将会被转化为下面的`HTML`结构 -->
-<div class="head-layout">
-  content
-  <div></div>
-</div>
-```
+[查看使用指南](https://codeleilei.gitee.io/markdown2pdf/#/syntax/helper)
 
 ## 参与贡献
 

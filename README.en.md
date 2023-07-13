@@ -23,8 +23,6 @@
 
 - [Node](#node)
 
-- [PNPM](#pnpm)
-
 - [Install Dependencies](#install-dependencies)
 
 - [Running in Test Environment](#run-in-development-environment)
@@ -71,24 +69,16 @@ node requires ^16 || ^18 || ^19, it is recommended to use nvm to manage multiple
 node -v
 ```
 
-### PNPM
-
-If you have not installed pnpm before
-
-```shell
-npm install pnpm -g
-```
-
 ## Install dependencies
 
 ```shell
-pnpm install
+npm install
 ```
 
 ## Run in development environment
 
 ```shell
-pnpm dev
+npm run dev
 ```
 
 ## Environment Variables
@@ -98,54 +88,14 @@ pnpm dev
 ## Build
 
 ```shell
-pnpm build
+npm run build
 ```
 
 Finally, deploy the dist directory to the server
 
 ## Common issues
 
-Q: How to write multi-column layout?
-
-A:
-
-```html
-::: start content ::: content ::: content ::: end
-<!-- The above syntax will be converted to the following HTML structure (three-column layout) -->
-<div class="flex-layout">
-  <div class="flex-layout-item">content</div>
-  <div class="flex-layout-item">content</div>
-  <div class="flex-layout-item">content</div>
-  <div></div>
-</div>
-```
-
-Q: How do I add an icon?
-
-A:
-
-```html
-icon:github
-<!-- The above syntax will be converted to the following HTML structure -->
-<i class="iconfont icon-github"></i>
-```
-
-Q: How do I add Spaces?
-
-A: Write `&nbsp` in the editor;
-
-Q: How to write a personal information bar?
-
-A:
-
-```html
-::: headStart content ::: headEnd
-<!-- The above syntax will be converted to the following HTML structure -->
-<div class="head-layout">
-  content
-  <div></div>
-</div>
-```
+[View User Guide](https://codeleilei.gitee.io/markdown2pdf/#/syntax/helper)
 
 ## CONTRIBUTING
 
