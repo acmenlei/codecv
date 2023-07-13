@@ -12,7 +12,7 @@
   }
 
   h2 {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 0 5px;
     background: var(--markdown-primary-bg-color);
     color: white !important;
@@ -63,7 +63,7 @@
     h2 {
       background: none;
       color: var(--markdown-primary-color) !important;
-      margin-top: 20px;
+      padding: 0;
       border-bottom: none;
       font-size: 1.6rem;
 

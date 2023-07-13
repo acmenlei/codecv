@@ -8,11 +8,10 @@
     padding: 20px 30px 10px 20px;
     position: relative;
     font-size: 14.5px;
-    color: #eee;
+    color: #ccc;
     img[alt*='个人头像'] {
       width: 32mm;
       border-radius: 10px;
-      border: 1.5px solid var(--name-color);
     }
     .flex-layout {
       justify-content: flex-start;
@@ -41,8 +40,8 @@
   }
 
   .main-layout {
-    padding: 0 5px 0 50px;
-    margin-top: 20px;
+    padding: 0 5px 0 55px;
+    margin-top: 15px;
 
     .resume-module {
       position: relative;

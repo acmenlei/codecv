@@ -7,11 +7,15 @@
   .head-layout {
     position: relative;
     color: #eee;
+
     img {
-      width: 32mm;
+      height: 24mm;
+      width: 24mm;
       border-radius: 50%;
     }
+
     .flex-layout {
+      height: 130px;
       justify-content: space-around;
     }
 

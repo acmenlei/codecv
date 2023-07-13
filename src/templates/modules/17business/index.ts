@@ -2,10 +2,9 @@ const content = `::: headStart
 ::: start
 ![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
-# 张三
-男 ｜ 22岁 ｜ 生日：1994/10/01 ｜ icon:school 应届生 ｜ 江西南昌
+# CodeCV Resume
+男 ｜ 1994/10/01 ｜ 后端开发工程师 ｜ 3年工作经验 ｜ 江西南昌
 icon:phone 15507942222 ｜ icon:email coderleilei@qq.com ｜ icon:wechat zhangsan03
-求职意向：项目经理 ｜ 期望城市：杭州 ｜ 期望薪资：面议
 ::: end
 ::: headEnd
 
@@ -61,6 +60,6 @@ export default {
   name: '简约通用模板',
   primaryColor: '#7E817D',
   primaryBackground: '#112236',
-  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2268dbf51af544b9b8202ada31526ca4~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fea7f64fc35842b4a1e65b94a7ee9d33~tplv-k3u1fbpfcp-watermark.image?',
   content
 }
