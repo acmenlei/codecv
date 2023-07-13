@@ -578,10 +578,9 @@ web\u524D\u7AEF
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
-# \u5F20\u4E09
-\u7537 \uFF5C 22\u5C81 \uFF5C \u751F\u65E5\uFF1A1994/10/01 \uFF5C icon:school \u5E94\u5C4A\u751F \uFF5C \u6C5F\u897F\u5357\u660C
+# CodeCV Resume
+\u7537 \uFF5C 1994/10/01 \uFF5C \u540E\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08 \uFF5C 3\u5E74\u5DE5\u4F5C\u7ECF\u9A8C \uFF5C \u6C5F\u897F\u5357\u660C
 icon:phone 15507942222 \uFF5C icon:email coderleilei@qq.com \uFF5C icon:wechat zhangsan03
-\u6C42\u804C\u610F\u5411\uFF1A\u9879\u76EE\u7ECF\u7406 \uFF5C \u671F\u671B\u57CE\u5E02\uFF1A\u676D\u5DDE \uFF5C \u671F\u671B\u85AA\u8D44\uFF1A\u9762\u8BAE
 ::: end
 ::: headEnd
 
@@ -631,23 +630,15 @@ icon:phone 15507942222 \uFF5C icon:email coderleilei@qq.com \uFF5C icon:wechat z
 - \u82F1\u8BEDCET4\u3001CET6\u7EA7
 - \u5927\u5B66\u751F\u521B\u65B0\u521B\u4E1A\u5927\u8D5B\u56FD\u5BB6\u7EA7\u7ACB\u9879
 - 2021 - 2023 \u8FDE\u7EED\u4E24\u5E74\u8363\u83B7\u56FD\u5BB6\u52B1\u5FD7\u5956\u5B66\u91D1
-::: mainEnd`,k={name:"\u7B80\u7EA6\u901A\u7528\u6A21\u677F",primaryColor:"#7E817D",primaryBackground:"#112236",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2268dbf51af544b9b8202ada31526ca4~tplv-k3u1fbpfcp-watermark.image?",content:_},j=Object.freeze(Object.defineProperty({__proto__:null,default:k},Symbol.toStringTag,{value:"Module"})),v=`
+::: mainEnd`,k={name:"\u7B80\u7EA6\u901A\u7528\u6A21\u677F",primaryColor:"#7E817D",primaryBackground:"#112236",img:"https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fea7f64fc35842b4a1e65b94a7ee9d33~tplv-k3u1fbpfcp-watermark.image?",content:_},j=Object.freeze(Object.defineProperty({__proto__:null,default:k},Symbol.toStringTag,{value:"Module"})),v=`
 ::: headStart
 
 ::: start
 # CodeCV
 
 :::
-\u5973 \uFF5C \u751F\u65E5\uFF1A2000/08/01 \uFF5C \u5317\u4EAC
-icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wechat qiumengyi
-\u79BB\u804C-\u968F\u65F6\u5230\u5C97 \uFF5C \u5DE5\u4F5C\u7ECF\u9A8C\uFF1A3\u5E74 \uFF5C \u4EA7\u54C1\u7ECF\u7406 \uFF5C \u671F\u671B\u85AA\u8D44\uFF1A20-30k
-
-:::
-
-![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
-
-
-
+\u5973 \uFF5C 2000/08/01 \uFF5C \u4EA7\u54C1\u7ECF\u7406 \uFF5C \u5317\u4EAC  |  3\u5E74\u5DE5\u4F5C\u7ECF\u9A8C
+icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wechat codecvresume@qq.com
 ::: end
 ::: headEnd
 
@@ -655,9 +646,7 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 
 ::: start
 ## icon:work \u5DE5\u4F5C\u7ECF\u5386
-
 :::
-
 
 ::: start
 ### \u5FEB\u624B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \u9879\u76EE\u7ECF\u7406
@@ -666,7 +655,6 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 **2018/06 - 2021/09**
 
 ::: end
-
 
 ::: end
 
@@ -690,7 +678,7 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 ::: start
 :::
 ::: start
-### \u4E9A\u9A6C\u900A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \u9879\u76EE\u7ECF\u7406
+### \u4E9A\u9A6C\u900A &nbsp;&nbsp;&nbsp; \u9879\u76EE\u7ECF\u7406
 :::
 **2015/06 - 2028/05**
 ::: end
@@ -723,28 +711,21 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 ## icon:school \u6BD5\u4E1A\u9662\u6821
 
 :::
-
-
 ::: start
 **\u4E2D\u56FD\u77FF\u4E1A\u5927\u5B66**&nbsp;&nbsp;&nbsp;&nbsp;\u5DE5\u5546\u7BA1\u7406&nbsp;&nbsp;&nbsp;&nbsp;\u7855\u58EB
 \u7814\u7A76\u751F\u5B66\u751F\u4F1A\u4E3B\u5E2D
 
 :::
 **2016/10 - 2019/12**
-
 ::: end
-
 ::: start
 **\u5357\u660C\u5927\u5B66**&nbsp;&nbsp;&nbsp;&nbsp;\u5DE5\u5546\u7BA1\u7406&nbsp;&nbsp;&nbsp;&nbsp;\u672C\u79D1
 \u672C\u79D1\u5B66\u751F\u4F1A\u4E3B\u5E2D / \u4F18\u79C0\u6BD5\u4E1A\u751F\u4EE3\u8868 / \u73ED\u7EA7\u5B66\u4E60\u59D4\u5458
-
-
 
 :::
 **2016/10 - 2019/12**
 
 ::: end
-
 
 ::: end
 
@@ -767,7 +748,7 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 ::: end
 ::: mainEnd
 
-`,P={name:"\u6781\u7B80/\u7B80\u7EA6/\u901A\u7528\u6A21\u677F",primaryColor:"#7D7979",primaryBackground:"#024B4B",img:"https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3937f62d7509441dad5389a9ef619cfd~tplv-k3u1fbpfcp-watermark.image?",content:v},M=Object.freeze(Object.defineProperty({__proto__:null,default:P},Symbol.toStringTag,{value:"Module"})),T=`::: headStart
+`,P={name:"\u6781\u7B80/\u7B80\u7EA6/\u901A\u7528\u6A21\u677F",primaryColor:"#7D7979",primaryBackground:"#024B4B",img:"https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f295d17725c453ba1f130c4d3d2ca7f~tplv-k3u1fbpfcp-watermark.image?",content:v},M=Object.freeze(Object.defineProperty({__proto__:null,default:P},Symbol.toStringTag,{value:"Module"})),T=`::: headStart
 ::: start
 ## \u5F20\u4E09 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08** **\u610F\u5411\u57CE\u5E02\uFF1A\u676D\u5DDE**
 ::: start
