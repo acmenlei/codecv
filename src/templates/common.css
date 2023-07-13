@@ -15,6 +15,7 @@
   width: 26mm;
   height: 32mm;
   position: relative;
+  object-fit: cover;
 }
 
 .markdown-transform-html :where(ul, ol) {
