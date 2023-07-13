@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo&family=Noto+Sans+SC:wght@100;300;400;500;700&family=Noto+Serif+SC:wght@200;300;400;500;600;700&family=Open+Sans&display=swap');
 .markdown-transform-html {
   width: 210mm;
   font-size: 14px;
@@ -17,8 +18,7 @@
   position: relative;
 }
 
-.markdown-transform-html ul,
-.markdown-transform-html ol {
+.markdown-transform-html :where(ul, ol) {
   padding-left: 20px;
 }
 
@@ -34,8 +34,7 @@
   background-color: #d9dfe7;
 }
 
-.markdown-transform-html table thead th,
-.markdown-transform-html table tbody td {
+.markdown-transform-html table :where(thead th, tbody td) {
   padding: 10px;
 }
 

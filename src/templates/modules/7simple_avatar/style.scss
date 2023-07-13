@@ -4,6 +4,7 @@
   padding-top: 0;
   font-size: 15px;
   color: var(--markdown-primary-color);
+  overflow: hidden;
 
   i.iconfont {
     margin-right: 10px;
@@ -28,7 +29,6 @@
     text-align: center;
     display: flex;
     justify-content: center;
-
     img {
       width: 32mm;
       border-radius: 50%;
@@ -59,7 +59,6 @@
       color: white;
       font-weight: bold;
       font-size: 1.1rem;
-      // border-bottom:10px dotted var(--markdown-primary-color);
       opacity: 0.7;
     }
   }

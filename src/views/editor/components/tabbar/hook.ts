@@ -140,16 +140,12 @@ export function useCustomFont(resumeType: string) {
   const cacheKey = MARKDOWN_FONT + '-' + resumeType
   const fontOptions = [
     {
-      value: 'Rubik',
-      label: 'Rubik'
-    },
-    {
-      value: 'Mukta',
-      label: 'Mukta'
-    },
-    {
       value: 'Noto Sans SC',
       label: 'Noto Sans SC'
+    },
+    {
+      value: 'Noto Serif SC',
+      label: 'Noto Serif SC'
     },
     {
       value: 'Open Sans',
@@ -162,10 +158,6 @@ export function useCustomFont(resumeType: string) {
     {
       value: 'Exo',
       label: 'Exo'
-    },
-    {
-      value: 'Roboto Mono',
-      label: 'Roboto Mono'
     }
   ]
   const font = ref(get(cacheKey) ? (get(cacheKey) as string) : 'Helvetica Neue')
