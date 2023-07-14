@@ -62,9 +62,9 @@ icon:city 浙江杭州 | icon:user 男 / 2000.01.01 | 中共党员 ｜ 2023届
 3. 丰富的在外兼职经历使自己拥有较强的亲和力与责任心，并有良好的团队协作和敬业精神。`
 
 export default {
-  name: '通用类模板',
+  name: '运营/通用类模板',
   primaryColor: '#333',
   primaryBackground: '#1a85f0',
-  img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b5560f15292d4f629f6a2fe560165987~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/image2ae0df2e15c037f2.png',
   content
 }

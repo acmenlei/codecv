@@ -69,6 +69,6 @@ export default {
   name: '简约风头部用色',
   primaryColor: '#363434',
   primaryBackground: '#ffdc63',
-  img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/771883a4312c4d8da4eb919e237757c6~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/14.png',
   content
 }

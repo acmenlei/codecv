@@ -80,6 +80,6 @@ export default {
   name: '简约通用简历模板',
   primaryColor: '#2A2D2D',
   primaryBackground: '#F98C07',
-  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c056ae97ac643549ecb966950529119~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/7e940fd5fd2eb8810.png',
   content
 }

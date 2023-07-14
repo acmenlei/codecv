@@ -22,6 +22,7 @@ const edit = (type: string) => {
 
 <style lang="scss" scoped>
 .resume-card {
+  box-shadow: 0 0 30px var(--body-background);
   margin: 0 20px 50px 0;
   width: 185px;
   height: 240px;
@@ -34,9 +35,11 @@ const edit = (type: string) => {
   img {
     width: 100%;
     height: 100%;
+    border-radius: 5px;
   }
 
   .resume-card-mask {
+    border-radius: 5px;
     position: absolute;
     height: 100%;
     width: 100%;

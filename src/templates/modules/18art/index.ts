@@ -121,6 +121,6 @@ export default {
   name: '极简/简约/通用模板',
   primaryColor: '#7D7979',
   primaryBackground: '#024B4B',
-  img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f295d17725c453ba1f130c4d3d2ca7f~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/18.png',
   content
 }

@@ -116,6 +116,6 @@ export default {
   name: '简约风(小鲨鱼)',
   primaryColor: '#555',
   primaryBackground: '#790FAE',
-  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1001dfb4cfe947eb8ad5a12b3fa3650e~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/1155c6a07c30096518.png',
   content
 }

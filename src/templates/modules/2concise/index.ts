@@ -48,6 +48,6 @@ export default {
   name: '社招/校招简洁模版',
   primaryColor: '#555',
   primaryBackground: '#333',
-  img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca4dab18c36043658d4cf4f8bb64e052~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/image5805609dbaf54e0a.png',
   content
 }

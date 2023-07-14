@@ -61,6 +61,6 @@ export default {
   name: '通用模板',
   primaryColor: '#333',
   primaryBackground: '#719ba5',
-  img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7fc39c56be044238ae9b9e79036a029d~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/8.png',
   content
 }

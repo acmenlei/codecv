@@ -67,6 +67,6 @@ export default {
   name: '运营类',
   primaryColor: '#333',
   primaryBackground: '#333',
-  img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/31d7efc95b1b4532b2fb88b9249e591c~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/3baff9f61cf8add7d.png',
   content
 }

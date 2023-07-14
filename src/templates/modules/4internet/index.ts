@@ -54,6 +54,6 @@ export default {
   name: '互联网IT通用',
   primaryColor: '#333',
   primaryBackground: '#333',
-  img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b7f4750d40d4459486b1c9f77918ea50~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/44cd25e676daba2ab.png',
   content
 }

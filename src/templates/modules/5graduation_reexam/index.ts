@@ -67,6 +67,6 @@ export default {
   name: '研究生复试模板',
   primaryColor: '#3A3939',
   primaryBackground: '#2186D2',
-  img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ce5f9d8c876420bbac1a5b0b35ad9f0~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/5791fd61daed35d47.png',
   content
 }

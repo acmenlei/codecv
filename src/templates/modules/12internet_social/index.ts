@@ -99,6 +99,6 @@ export default {
   name: '互联网社招类(适合经验丰富)',
   primaryColor: '#333',
   primaryBackground: '#9ad4eb',
-  img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee8318e9ad2542ab8b340a1d21a96e9e~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/12.png',
   content
 }

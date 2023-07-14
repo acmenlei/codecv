@@ -63,6 +63,6 @@ export default {
   name: '互联网IT通用-带头像',
   primaryColor: '#333',
   primaryBackground: '#333',
-  img: 'https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9596edaa90154e8ea291f5cf71798ae9~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/1bd60fb410eef1c5b.png',
   content
 }

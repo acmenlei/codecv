@@ -77,6 +77,6 @@ export default {
   name: '暗黑极客风',
   primaryColor: '#d1d1d1',
   primaryBackground: '#17A00B',
-  img: 'https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f073c3e4d634acbbb966af2f8c79a9b~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/13.png',
   content
 }

@@ -79,6 +79,6 @@ export default {
   name: '商务类(一页)',
   primaryColor: '#111',
   primaryBackground: '#297370',
-  img: 'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6554138f3682438ba26038d0a2cae194~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/9.png',
   content
 }

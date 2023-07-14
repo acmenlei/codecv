@@ -69,6 +69,6 @@ export default {
   name: '简约万能模板',
   primaryColor: '#333',
   primaryBackground: '#C42F76',
-  img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d474637fe9b943ec950eb1047d6d5f37~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/15.png',
   content
 }

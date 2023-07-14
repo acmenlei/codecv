@@ -91,6 +91,6 @@ export default {
   name: '简约通用 突出内容',
   primaryColor: '#333',
   primaryBackground: '#14A25D',
-  img: 'https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4b314bd3e1fb4ea79ba6f5166321001c~tplv-k3u1fbpfcp-watermark.image?',
+  img: 'https://z4a.net/images/2023/07/14/imagea2a8fec02daeeb32.png',
   content
 }
