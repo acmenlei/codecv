@@ -17,7 +17,7 @@ icon:github https://github.com/acmenlei
 掌握前端流行框架 React、vue
 熟练使用 NPM, webpack 等工具
 了解前端兼容性处理、性能优化知识与技巧，并能在项目中加以实践
-掌握 Node'S，可使用 Koa/Express 搭建服务端程序
+掌握 Nodejs，可使用 Koa/Express 搭建服务端程序
 了解 Canvas/Pixils 等web2D相关技术
 
 ## 实习经历
@@ -26,10 +26,10 @@ icon:github https://github.com/acmenlei
 参与互动游戏业务开发，结合前端游戏引擎，解决Canvas区域的无障碍问题，实现场景化、自动化、标准化的移动端游戏无障碍化工具。
 场景化：面对无障碍模式 下只能点按问题，对拖动交互场景进行优化
 自动化：针对游戏对象，自动添加AOM实现无障碍提示标准化：对齐无障碍标准，WAlI-ARIA、WICG/AOM
-成果:运用到金币小镇、芭芭农场、双11等互动项目，解决项目无障碍问题，让视力障碍者也能体验互动乐趣。
-&nbsp;
+成果：运用到金币小镇、芭芭农场、双11等互动项目，解决项目无障碍问题，让视力障碍者也能体验互动乐趣。
+
 **字节跳动** (2022.8-2022.10)
-主要技术：Typescript/React/Mobx/Nodejs
+**主要技术**：\`Typescript\` \`React\` \`Mobx\` \`Nodejs\`
 参与业务开发与技术改造，主导了性能优化、消灭code smell、Onview 改造等一系列工作。
 负责全站包大小优化，对build 产物进行分析并逐步优化，最后减少50% InitialJs Size，页面加载速度从 4s降至25
 主导消灭code smell 工作，重构2K 余行代码，消灭code smell 700 余个，并制定 ESLint规范，降低codereview成本
@@ -39,7 +39,7 @@ icon:github https://github.com/acmenlei
 &nbsp;
 ## 校园项目
 **成绩查询**
-主要技术：Node S/lavascript
+**主要技术**：\`Nodejs\` \`Vuejs\`
 为学生提供成绩查询系统，解决内外网隔离问题，提供成绩短信通知能力，为2万在校生提供在家查成绩服务。使用Koa2提供AP接口，以供前端使用、运用Node js实现带登陆;态请求、使用React/ Antd实现前端UI界面、接入阿里云短信API。
 ## 其他
 获得一等/三等奖学金，在校级社团担任总负责人，在院学生会担任副部长职位`

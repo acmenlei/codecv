@@ -81,19 +81,19 @@ icon:phone 13425182004 ｜ icon:email qiumengyi@kuaishou.com ｜ icon:wechat cod
 :::
 ::: start
 **中国矿业大学**&nbsp;&nbsp;&nbsp;&nbsp;工商管理&nbsp;&nbsp;&nbsp;&nbsp;硕士
+:::
+**2016/10 - 2019/12**
+::: end
+
 研究生学生会主席
 
-:::
-**2016/10 - 2019/12**
-::: end
 ::: start
 **南昌大学**&nbsp;&nbsp;&nbsp;&nbsp;工商管理&nbsp;&nbsp;&nbsp;&nbsp;本科
-本科学生会主席 / 优秀毕业生代表 / 班级学习委员
-
 :::
 **2016/10 - 2019/12**
-
 ::: end
+本科学生会主席 / 优秀毕业生代表 / 班级学习委员
+
 
 ::: end
 
@@ -119,7 +119,7 @@ icon:phone 13425182004 ｜ icon:email qiumengyi@kuaishou.com ｜ icon:wechat cod
 `
 export default {
   name: '极简/简约/通用模板',
-  primaryColor: '#7D7979',
+  primaryColor: '#343232',
   primaryBackground: '#024B4B',
   img: 'https://z4a.net/images/2023/07/14/18.png',
   content
