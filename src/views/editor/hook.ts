@@ -97,7 +97,6 @@ export function useDownLoad(type: Ref<string>) {
       style = styleContent + '\n' + style
     }
     style = resumeBgColor + '\n' + resetStyle + '\n' + style
-    console.log('最终的样式结果：', style)
     showLoading('正在导出请稍等...')
     try {
       const pdfBlob = await resumeExport({ content: html.outerHTML, style, link: linkURL })
