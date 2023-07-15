@@ -80,8 +80,8 @@ export function useDownLoad(type: Ref<string>) {
       'background'
     )}; }`
     const resetStyle = ` * { margin: 0; padding: 0; box-sizing: border-box; }`
-    let style = await importCSS(type.value)
-    console.log('当前简历：', type.value)
+    let style = getLocalStorage('template-style') as string
+    console.log('当前简历：', style)
     // 处理自定义生成的样式
     for (const attr of styleAttrs) {
       const styleContent = document.head.querySelector(`style[${attr}-${type.value}]`)?.textContent

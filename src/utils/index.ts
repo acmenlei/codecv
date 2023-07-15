@@ -1,3 +1,4 @@
+import { setLocalStorage } from '@/common/localstorage'
 import { ElLoading } from 'element-plus'
 import 'element-plus/es/components/loading/style/css'
 
@@ -5,7 +6,7 @@ export const wOpen = window.open
 
 export async function importCSS(name: string) {
   const res = await import(`../templates/modules/${name}/style.scss`)
-  console.log('importCSS样式读取：', res.default)
+  setLocalStorage('template-style', res.default)
   return res.default
 }
 
