@@ -16,7 +16,6 @@ import {
   ADJUST_RESUME_MARGIN_TOP,
   AUTO_ONE_PAGE
 } from './components/tabbar/hook'
-import { type Module } from '@/templates/config'
 
 export const get = getLocalStorage,
   styleAttrs = [
@@ -82,15 +81,7 @@ export function useDownLoad(type: Ref<string>) {
     )}; }`
     const resetStyle = ` * { margin: 0; padding: 0; box-sizing: border-box; }`
     // 获取简历模板的样式
-    let style = ''
-    const sassModuleEntries = Object.entries(import.meta.glob('@/templates/modules/*/style.scss'))
-    for (const [filename, curModule] of sassModuleEntries) {
-      if (filename.endsWith(`/${type.value}/style.scss`)) {
-        const module = await curModule()
-        style = (module as Module).default + '\n'
-        break
-      }
-    }
+    let style = await importCSS(type.value)
     // 处理自定义生成的样式
     for (const attr of styleAttrs) {
       const styleContent = document.head.querySelector(`style[${attr}-${type.value}]`)?.textContent
@@ -98,6 +89,7 @@ export function useDownLoad(type: Ref<string>) {
       style = styleContent + '\n' + style
     }
     style = resumeBgColor + '\n' + resetStyle + '\n' + style
+    console.log('最终的样式结果：', style)
     showLoading('正在导出请稍等...')
     try {
       const pdfBlob = await resumeExport({ content: html.outerHTML, style })
