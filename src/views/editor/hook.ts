@@ -16,6 +16,7 @@ import {
   ADJUST_RESUME_MARGIN_TOP,
   AUTO_ONE_PAGE
 } from './components/tabbar/hook'
+import { type Module } from '@/templates/config'
 
 export const get = getLocalStorage,
   styleAttrs = [
@@ -32,10 +33,7 @@ export function useRenderHTML(resumeType: Ref<string>) {
   const editorStore = useEditorStore()
 
   onActivated(() => {
-    ;(async () => {
-      const style = await importCSS(resumeType.value)
-      console.log('onActivated ImportCSS: ', style)
-    })()
+    importCSS(resumeType.value)
     renderDOM.value.innerHTML = convertDOM(editorStore.MDContent).innerHTML
     setTimeout(() => splitPage(renderDOM.value), 100)
   })
@@ -83,12 +81,19 @@ export function useDownLoad(type: Ref<string>) {
       'background'
     )}; }`
     const resetStyle = ` * { margin: 0; padding: 0; box-sizing: border-box; }`
-    let style = await importCSS(type.value)
-    console.log('当前简历：', style)
+    // 获取简历模板的样式
+    let style = ''
+    const sassModuleEntries = Object.entries(import.meta.glob('@/templates/modules/*/style.scss'))
+    for (const [filename, curModule] of sassModuleEntries) {
+      if (filename.endsWith(`/${type.value}/style.scss`)) {
+        const module = await curModule()
+        style = (module as Module).default + '\n'
+        break
+      }
+    }
     // 处理自定义生成的样式
     for (const attr of styleAttrs) {
       const styleContent = document.head.querySelector(`style[${attr}-${type.value}]`)?.textContent
-      console.log('样式读取：', styleContent)
       if (!styleContent) continue
       style = styleContent + '\n' + style
     }
