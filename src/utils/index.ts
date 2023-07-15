@@ -5,6 +5,7 @@ export const wOpen = window.open
 
 export async function importCSS(name: string) {
   const res = await import(`../templates/modules/${name}/style.scss`)
+  console.log('样式读取：', res)
   return res.default
 }
 
