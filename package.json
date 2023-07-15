@@ -8,6 +8,7 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "push": "sh ./.shell/git-push.sh",
+    "test": "sh ./.shell/test.sh",
     "gitee-push": "sh ./.shell/gitee-push.sh",
     "lint": "eslint src --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "formater": "prettier --config .prettierrc --write ./**/**/*.{js,css,vue}"
