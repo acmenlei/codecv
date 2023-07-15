@@ -81,9 +81,11 @@ export function useDownLoad(type: Ref<string>) {
     )}; }`
     const resetStyle = ` * { margin: 0; padding: 0; box-sizing: border-box; }`
     let style = await importCSS(type.value)
+    console.log('样式初始化：', style)
     // 处理自定义生成的样式
     for (const attr of styleAttrs) {
       const styleContent = document.head.querySelector(`style[${attr}-${type.value}]`)?.textContent
+      console.log('样式读取：', styleContent)
       if (!styleContent) continue
       style = styleContent + '\n' + style
     }
