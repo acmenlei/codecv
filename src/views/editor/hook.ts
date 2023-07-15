@@ -3,7 +3,7 @@ import { useRoute, useRouter } from 'vue-router'
 
 import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
-import { importCSS, useLoading } from '@/utils'
+import { importCSS, isDev, useLoading } from '@/utils'
 import { splitPage } from './components/tabbar/hook'
 import useEditorStore from '@/store/modules/editor'
 import { convertDOM } from '@/utils/moduleCombine'
@@ -81,7 +81,15 @@ export function useDownLoad(type: Ref<string>) {
     )}; }`
     const resetStyle = ` * { margin: 0; padding: 0; box-sizing: border-box; }`
     // 获取简历模板的样式
-    let style = await importCSS(type.value)
+    let style = '',
+      linkURL = 'none'
+    if (isDev()) {
+      // 生产环境使用动态导入 生产环境使用link的方式引入（解决生产default属性不暴露的问题）
+      style = await importCSS(type.value)
+    } else {
+      const linkStyle = document.querySelector('link[href*="/css/style"]') as HTMLLinkElement
+      linkURL = linkStyle?.href || 'none'
+    }
     // 处理自定义生成的样式
     for (const attr of styleAttrs) {
       const styleContent = document.head.querySelector(`style[${attr}-${type.value}]`)?.textContent
@@ -92,7 +100,7 @@ export function useDownLoad(type: Ref<string>) {
     console.log('最终的样式结果：', style)
     showLoading('正在导出请稍等...')
     try {
-      const pdfBlob = await resumeExport({ content: html.outerHTML, style })
+      const pdfBlob = await resumeExport({ content: html.outerHTML, style, link: linkURL })
       const url = URL.createObjectURL(pdfBlob as Blob)
       const a = document.createElement('a')
       a.href = url

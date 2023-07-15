@@ -150,3 +150,7 @@ export function getTagColor(index: number): any {
     len = colors.length
   return colors[index % len]
 }
+
+export function isDev() {
+  return import.meta.env.MODE === 'development'
+}
