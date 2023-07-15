@@ -6,7 +6,7 @@ import { warningMessage } from '@/common/message'
 
 const get = getLocalStorage,
   set = setLocalStorage
-const CUSTOM_CSS_STYLE = 'custom-css-style',
+export const CUSTOM_CSS_STYLE = 'custom-css-style',
   CUSTOM_MARKDOWN_PRIMARY_COLOR = 'custom-markdown-primary-color',
   CUSTOM_MARKDOWN_PRIMARY_BG_COLOR = 'custom_markdown_primary_bg_color',
   MARKDOWN_FONT = 'markdown-font',
@@ -20,10 +20,13 @@ export function setStep(val: number | any) {
 }
 
 export function useAvatar(emits: any) {
-  function setAvatar(event: any) {
+  async function setAvatar(event: any) {
     const file = event.target.files[0]
-    const path = URL.createObjectURL(file)
-    emits('upload-avatar', path)
+    const reader = new FileReader()
+    reader.readAsDataURL(file) // 暂时用base64处理 后期换cdn
+    reader.onload = function (event) {
+      emits('upload-avatar', event.target?.result)
+    }
   }
 
   return {

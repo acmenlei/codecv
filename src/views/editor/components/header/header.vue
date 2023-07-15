@@ -22,7 +22,7 @@ const { open, toggle } = useSwitch()
     <input id="resume-name-input" type="text" v-model="fileName" />
     <nav-menu @export-md="exportFile('md')" @import-md="importFile" />
     <Reward />
-    <button class="exportor" @click="exportFile('dynamic')">动态导出PDF</button>
+    <button class="exportor" @click="exportFile('dynamic')">导出PDF</button>
     <button class="exportor" @click="exportFile('native')">打印机导出PDF</button>
     <div class="operator">
       <el-tooltip content="给项目贡献代码" placement="bottom-end">

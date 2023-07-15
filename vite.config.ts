@@ -11,9 +11,9 @@ import externalGlobals from 'rollup-plugin-external-globals'
 import viteImagemin from 'vite-plugin-imagemin'
 
 const globals = externalGlobals({
-  jspdf: 'jspdf.jsPDF',
-  axios: 'axios',
-  html2canvas: 'html2canvas'
+  // jspdf: 'jspdf.jsPDF',
+  axios: 'axios'
+  // html2canvas: 'html2canvas'
 })
 
 const viteCompressionPlugin = viteCompression({
@@ -74,7 +74,8 @@ export default ({ mode }) => {
     base: './',
     build: {
       rollupOptions: {
-        external: ['jspdf', 'axios', 'html2canvas'],
+        // external: ['jspdf', 'axios', 'html2canvas'],
+        external: ['axios'],
         plugins: [globals, viteCompressionPlugin, viteImageminPlugin, visualizer({ open: true })],
         output: {
           chunkFileNames: 'js/[name]-[hash].js',

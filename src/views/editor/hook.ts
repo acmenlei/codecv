@@ -1,16 +1,31 @@
 import { onActivated, Ref, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import html2canvas from 'html2canvas'
-import jsPDF from 'jspdf'
 
 import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
-import { importCSS, useLoading } from '@/utils'
+import { importCSS, isDev, useLoading } from '@/utils'
 import { splitPage } from './components/tabbar/hook'
 import useEditorStore from '@/store/modules/editor'
 import { convertDOM } from '@/utils/moduleCombine'
+import { resumeExport } from '@/api/modules/resume'
+import {
+  CUSTOM_CSS_STYLE,
+  CUSTOM_MARKDOWN_PRIMARY_COLOR,
+  CUSTOM_MARKDOWN_PRIMARY_BG_COLOR,
+  MARKDOWN_FONT,
+  ADJUST_RESUME_MARGIN_TOP,
+  AUTO_ONE_PAGE
+} from './components/tabbar/hook'
 
-export const get = getLocalStorage
+export const get = getLocalStorage,
+  styleAttrs = [
+    CUSTOM_CSS_STYLE,
+    CUSTOM_MARKDOWN_PRIMARY_COLOR,
+    CUSTOM_MARKDOWN_PRIMARY_BG_COLOR,
+    MARKDOWN_FONT,
+    ADJUST_RESUME_MARGIN_TOP,
+    AUTO_ONE_PAGE
+  ]
 
 export function useRenderHTML(resumeType: Ref<string>) {
   const renderDOM = ref<HTMLElement>(document.body)
@@ -56,83 +71,46 @@ export function useResumeType() {
 // 导出简历｜markdown内容
 export function useDownLoad(type: Ref<string>) {
   const router = useRouter(),
-    editorStore = useEditorStore()
+    editorStore = useEditorStore(),
+    { showLoading, closeLoading } = useLoading()
 
-  function extractRgb(rgbString: string) {
-    // 使用正则表达式提取括号中的数字
-    const matches = rgbString.match(/\d+/g) as string[]
-    // 将字符串转换为数字并返回一个包含RGB值的数组
-    return matches.map((match: string) => parseInt(match))
-  }
-
-  function getPdf(title: string, html: HTMLElement) {
-    const { showLoading, closeLoading } = useLoading()
-    showLoading('正在导出PDF 请耐心等待...')
-    const backgroundColor = getComputedStyle(html).getPropertyValue('background-color')
-    const [r, g, b] = extractRgb(backgroundColor)
-
-    html2canvas(html, {
-      allowTaint: false,
-      logging: false,
-      useCORS: true,
-      scale: 2.5,
-      backgroundColor
-    })
-      .then(canvas => {
-        const pdf = new jsPDF('p', 'mm', 'a4') // A4纸，纵向
-        // 设置背景颜色和处理多余部分
-        pdf.setFillColor(r, g, b)
-        pdf.rect(0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height, 'F')
-        const ctx = canvas.getContext('2d')
-        const a4w = 210
-        const a4h = 297 // A4大小，210mm x 297mm，四边各保留10mm的边距，显示区域190x277
-        const imgHeight = Math.floor((a4h * canvas.width) / a4w) // 按A4显示比例换算一页图像的像素高度（必须向下取整，否则高度溢出）
-        let renderedHeight = 0
-        while (renderedHeight < canvas.height) {
-          const page = document.createElement('canvas')
-          page.width = canvas.width
-          page.height = Math.min(imgHeight, canvas.height - renderedHeight)
-          // 用getImageData剪裁指定区域，并画到前面创建的canvas对象中
-          page
-            .getContext('2d')
-            ?.putImageData(
-              ctx?.getImageData(
-                0,
-                renderedHeight,
-                canvas.width,
-                Math.min(imgHeight, canvas.height - renderedHeight)
-              ) as ImageData,
-              0,
-              0
-            )
-          pdf.addImage(
-            page.toDataURL('image/jpeg', 1.0),
-            'JPEG',
-            0,
-            0,
-            a4w,
-            Math.min(a4h, (a4w * page.height) / page.width)
-          ) // 添加图像到页面，保留0mm边距
-          renderedHeight += imgHeight
-          if (canvas.height - renderedHeight > 1) {
-            pdf.addPage() // 如果后面还有内容，添加一个空页
-            // 设置背景颜色和处理多余部分
-            pdf.setFillColor(r, g, b)
-            pdf.rect(0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height, 'F')
-            // 将图像添加到页面中
-          }
-        }
-        // 保存文件
-        pdf.save(`${title}.pdf`)
-        successMessage('PDF导出成功')
-      })
-      .catch(error => {
-        errorMessage('导出失败, ' + error)
-      })
-      .finally(closeLoading)
-  }
-  const downloadDynamic = (fileName: string) => {
-    getPdf(fileName, document.querySelector('.jufe') as HTMLElement)
+  const downloadDynamic = async (fileName: string) => {
+    const html = document.querySelector('.jufe') as HTMLElement
+    const resumeBgColor = `html,body { background: ${getComputedStyle(html).getPropertyValue(
+      'background'
+    )}; }`
+    const resetStyle = ` * { margin: 0; padding: 0; box-sizing: border-box; }`
+    // 获取简历模板的样式
+    let style = '',
+      linkURL = 'none'
+    if (isDev()) {
+      // 生产环境使用动态导入 生产环境使用link的方式引入（解决生产default属性不暴露的问题）
+      style = await importCSS(type.value)
+    } else {
+      const linkStyle = document.querySelector('link[href*="/css/style"]') as HTMLLinkElement
+      linkURL = linkStyle?.href || 'none'
+    }
+    // 处理自定义生成的样式
+    for (const attr of styleAttrs) {
+      const styleContent = document.head.querySelector(`style[${attr}-${type.value}]`)?.textContent
+      if (!styleContent) continue
+      style = styleContent + '\n' + style
+    }
+    style = resumeBgColor + '\n' + resetStyle + '\n' + style
+    showLoading('正在导出请稍等...')
+    try {
+      const pdfBlob = await resumeExport({ content: html.outerHTML, style, link: linkURL })
+      const url = URL.createObjectURL(pdfBlob as Blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `${fileName}.pdf`
+      a.click()
+      URL.revokeObjectURL(url)
+      successMessage('导出成功～')
+    } catch {
+      errorMessage('导出过程出错了 稍后再试试吧')
+    }
+    closeLoading()
   }
 
   const downloadNative = () => {
