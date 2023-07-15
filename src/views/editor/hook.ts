@@ -32,7 +32,10 @@ export function useRenderHTML(resumeType: Ref<string>) {
   const editorStore = useEditorStore()
 
   onActivated(() => {
-    importCSS(resumeType.value)
+    ;(async () => {
+      const style = await importCSS(resumeType.value)
+      console.log('onActivated ImportCSS: ', style)
+    })()
     renderDOM.value.innerHTML = convertDOM(editorStore.MDContent).innerHTML
     setTimeout(() => splitPage(renderDOM.value), 100)
   })
@@ -80,7 +83,7 @@ export function useDownLoad(type: Ref<string>) {
       'background'
     )}; }`
     const resetStyle = ` * { margin: 0; padding: 0; box-sizing: border-box; }`
-    let style = getLocalStorage('template-style') as string
+    let style = await importCSS(type.value)
     console.log('当前简历：', style)
     // 处理自定义生成的样式
     for (const attr of styleAttrs) {
