@@ -97,7 +97,7 @@ export function useDownLoad(type: Ref<string>) {
       style = styleContent + '\n' + style
     }
     style = resumeBgColor + '\n' + resetStyle + '\n' + style
-    showLoading('正在导出请稍等...')
+    showLoading('因使用国外服务速度稍慢 请耐心等待...')
     try {
       const pdfData = await resumeExport({ content: html.outerHTML, style, link: linkURL })
       const blob = new Blob([new Uint8Array(pdfData.pdf.data)], { type: 'application/pdf' })
@@ -110,9 +110,7 @@ export function useDownLoad(type: Ref<string>) {
       successMessage('导出成功～')
     } catch (e: any) {
       const errorMsg =
-        e.message == 'Failed to fetch'
-          ? '因站点使用国外服务 此导出需连梯子 否则请使用其他导出方式'
-          : '导出出错 请先尝试其他方式'
+        e.message == 'Failed to fetch' ? '出了点错误 请重新尝试' : '导出出错 请先尝试其他方式'
       errorMessage(errorMsg)
     }
     closeLoading()
