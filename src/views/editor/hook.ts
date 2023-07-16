@@ -99,16 +99,21 @@ export function useDownLoad(type: Ref<string>) {
     style = resumeBgColor + '\n' + resetStyle + '\n' + style
     showLoading('正在导出请稍等...')
     try {
-      const pdfBlob = await resumeExport({ content: html.outerHTML, style, link: linkURL })
-      const url = URL.createObjectURL(pdfBlob as Blob)
+      const pdfData = await resumeExport({ content: html.outerHTML, style, link: linkURL })
+      const blob = new Blob([new Uint8Array(pdfData.pdf.data)], { type: 'application/pdf' })
+      const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
       a.download = `${fileName}.pdf`
       a.click()
       URL.revokeObjectURL(url)
       successMessage('导出成功～')
-    } catch {
-      errorMessage('导出过程出错了 稍后再试试吧')
+    } catch (e: any) {
+      const errorMsg =
+        e.message == 'Failed to fetch'
+          ? '因站点使用国外服务 此导出需连梯子 否则请使用其他导出方式'
+          : '导出出错 请先尝试其他方式'
+      errorMessage(errorMsg)
     }
     closeLoading()
   }
