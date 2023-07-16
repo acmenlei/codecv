@@ -110,7 +110,9 @@ export function useDownLoad(type: Ref<string>) {
       successMessage('导出成功～')
     } catch (e: any) {
       const errorMsg =
-        e.message == 'Failed to fetch' ? '出了点错误 请重新尝试' : '导出出错 请先尝试其他方式'
+        e.message == 'Failed to fetch'
+          ? '导出出错 请打开梯子后重试或使用打印机导出'
+          : '导出出错 请先尝试其他方式'
       errorMessage(errorMsg)
     }
     closeLoading()
