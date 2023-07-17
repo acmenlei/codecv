@@ -93,10 +93,10 @@
 }
 
 .jufe-wrapper-page {
-  height: 1123px;
+  height: 297mm;
   width: 210mm;
   box-sizing: content-box;
-  margin: 5mm auto;
+  margin: 0 auto 5mm auto;
   background: white;
   position: relative;
 }
@@ -111,5 +111,6 @@
   @page {
     size: A4 portrait;
     margin: 0;
+    padding: 0;
   }
 }

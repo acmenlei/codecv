@@ -59,9 +59,6 @@ xxxx年xx月 - xxxx年xx月
 - xxxxxxxxxxxxxxxxxxxx
 ## icon:technology 个人技能
 - xxxxxxxxxxxxxxxxxxxx
-- xxxxxxxxxxxxxxxxxxxx
-- xxxxxxxxxxxxxxxxxxxx
-- xxxxxxxxxxxxxxxxxxxx
 `
 export default {
   name: '研究生复试模板',
