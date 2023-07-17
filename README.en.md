@@ -1,4 +1,4 @@
-# markdown-resume-to-pdf
+# codecv
 
 <div style="font-size: 1.5rem;">
   <a href="./README.md">中文</a> |
@@ -6,7 +6,7 @@
 </div>
 </br>
 
-[Online Editor 1](http://codeleilei.gitee.io/markdown2pdf/) [Online Editor 2](https://acmenlei.github.io/markdown-resume-to-pdf/dist/)
+[Online Editor 1](http://codeleilei.gitee.io/markdown2pdf/) [Online Editor 2](https://acmenlei.github.io/codecv/dist/)
 
 > Declaration: This project is released on Github/Gitee, based on the MIT license, free and for open source learning use. And there will be no behavior of selling accounts, paid services, discussion groups, discussion groups, etc. Be careful not to be deceived.
 
