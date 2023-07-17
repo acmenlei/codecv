@@ -1,7 +1,7 @@
 export const timeLine = [
   {
     content: `
-      使用服务端导出PDF的方式替换前端html2canvas + jsPDF的方案，提升用户体验，解决导出会出现的内容截断问题
+      纯前端导出体验并不好，暂时使用服务端导出PDF的方式替换前端导出方案，解决导出会出现的内容截断问题
       `,
     timestamp: '2023-07-15',
     version: '1.4.4'

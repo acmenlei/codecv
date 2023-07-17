@@ -6,6 +6,7 @@ import { wOpen } from '@/utils'
 import { useSwitch } from '@/common/global'
 import { useMDFile } from './hook'
 import Contact from '@/components/contact.vue'
+import ExportTotal from '@/components/exportTotal.vue'
 
 const emit = defineEmits(['download-dynamic', 'download-native', 'download-md', 'import-md'])
 
@@ -21,6 +22,7 @@ const { open, toggle } = useSwitch()
     <label for="resume-name-input">简历名称：</label>
     <input id="resume-name-input" type="text" v-model="fileName" />
     <nav-menu @export-md="exportFile('md')" @import-md="importFile" />
+    <ExportTotal />
     <Reward />
     <button class="exportor" @click="exportFile('dynamic')">导出PDF</button>
     <button class="exportor" @click="exportFile('native')">打印机导出PDF</button>

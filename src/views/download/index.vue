@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { setExportCount } from '@/api/modules/resume'
 import { importCSS } from '@/utils'
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
@@ -11,6 +12,7 @@ onMounted(() => {
   const content = JSON.parse(localStorage.getItem('download') || '')
   ;(document.querySelector('.markdown-transform-html') as HTMLElement).innerHTML = content
   setTimeout(() => {
+    setExportCount()
     window.print()
     router.back()
   }, 100)

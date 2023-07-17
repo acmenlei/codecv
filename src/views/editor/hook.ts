@@ -111,7 +111,7 @@ export function useDownLoad(type: Ref<string>) {
     } catch (e: any) {
       const errorMsg =
         e.message == 'Failed to fetch'
-          ? '导出出错 请打开梯子后重试或使用打印机导出'
+          ? '国内导出易出错 请重新尝试 有条件的打开梯子后重试或使用打印机导出'
           : '导出出错 请先尝试其他方式'
       errorMessage(errorMsg)
     }

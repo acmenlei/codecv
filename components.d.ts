@@ -42,6 +42,7 @@ declare module '@vue/runtime-core' {
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Empty: typeof import('./src/components/empty.vue')['default']
+    ExportTotal: typeof import('./src/components/exportTotal.vue')['default']
     HotList: typeof import('./src/components/hot-rank/hotList.vue')['default']
     Logo: typeof import('./src/components/logo.vue')['default']
     MenuBar: typeof import('./src/components/menu-bar/menu-bar/MenuBar.vue')['default']
