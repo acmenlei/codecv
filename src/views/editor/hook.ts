@@ -1,5 +1,6 @@
 import { onActivated, Ref, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useThrottleFn } from '@vueuse/core'
 
 import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
@@ -41,7 +42,7 @@ export function useRenderHTML(resumeType: Ref<string>) {
     () => editorStore.MDContent,
     v => {
       renderDOM.value.innerHTML = convertDOM(v).innerHTML
-      setTimeout(() => splitPage(renderDOM.value), 50)
+      useThrottleFn(() => splitPage(renderDOM.value), 50)()
     }
   )
   // 刷新页面（这里是一个比较有问题的点）
