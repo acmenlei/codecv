@@ -76,8 +76,11 @@ export function injectWritableModeAvatarEvent(
               multiple: false,
               accept: 'image/png, image/jpeg,image/jpg, '
             })
-            const path = URL.createObjectURL(file)
-            setAvatar(path)
+            const reader = new FileReader()
+            reader.readAsDataURL(file) // 暂时使用base64方案
+            reader.onload = function (event) {
+              setAvatar(event.target?.result as string)
+            }
           })
         }
 
