@@ -12,12 +12,19 @@ export const CUSTOM_CSS_STYLE = 'custom-css-style',
   MARKDOWN_FONT = 'markdown-font',
   ADJUST_RESUME_MARGIN_TOP = 'ADJUST_RESUME_MARGIN_TOP',
   AUTO_ONE_PAGE = 'auto-one-page',
+  WHITE_SPACE = 'white-space',
   A4_HEIGHT = 1123,
   SELF_HEIGHT = -1234
 
-export const step = ref(100)
+export const renderCV = ref<HTMLElement>()
+
+export const step = ref(90)
 export function setStep(val: number | any) {
   step.value = val
+}
+
+function queryRenderCV() {
+  return <HTMLElement>document.querySelector('.reference-dom')
 }
 
 export function useAvatar(emits: any) {
@@ -108,6 +115,7 @@ export function usePrimaryBGColor(resumeType: string) {
     setPrimaryColor
   }
 }
+
 // todo: 回跳后颜色显示的问题，后续考虑接入后端解决
 export function usePrimaryColor(resumeType: string) {
   const cacheKey = CUSTOM_MARKDOWN_PRIMARY_COLOR + '-' + resumeType,
@@ -176,7 +184,9 @@ export function useCustomFont(resumeType: string) {
     style.textContent = `.jufe { font-family: ${fontFamily}, 'Noto Sans SC', 'Helvetica Neue'; }`
     !isAppend && document.head.appendChild(style)
     set(cacheKey, fontFamily)
-    !first && splitPage(<HTMLElement>document.querySelector('.reference-dom'))
+    const renderCV = queryRenderCV()
+    ensureEmptyPreWhiteSpace(renderCV)
+    !first && splitPage(renderCV)
   }
 
   onActivated(() => setFont(font.value, true))
@@ -248,10 +258,9 @@ export function useAdjust(resumeType: string) {
   function adjustMargin() {
     setVisible()
     // 获取dom元素
-    const targetElement = document.querySelector('.jufe') as HTMLElement
+    const targetElement = queryRenderCV()
     const marginTopValues = getAllMarginTopValues(targetElement)
     marginData.length = 0
-    console.log(marginData)
     marginData.push(...marginTopValues)
   }
 
@@ -273,7 +282,9 @@ export function useAdjust(resumeType: string) {
     styleDOM.textContent = cssText
     !isAppend && document.head.appendChild(styleDOM)
     set(cacheKey, cssText)
-    splitPage(document.querySelector('.reference-dom') as HTMLElement)
+    const renderCV = queryRenderCV()
+    ensureEmptyPreWhiteSpace(renderCV)
+    splitPage(renderCV)
   }
 
   function setVisible() {
@@ -338,6 +349,7 @@ export function useFollowRoll() {
     setFollowRoll
   }
 }
+
 // 获取元素高度
 function calculateElementHeight(element: HTMLElement) {
   // 获取样式对象
@@ -353,6 +365,7 @@ function calculateElementHeight(element: HTMLElement) {
   const totalHeight = contentHeight + marginHeight
   return totalHeight
 }
+
 // 获取元素距离目标元素顶部偏移位
 function getElementTop(element: HTMLElement, target: HTMLElement) {
   let actualTop = element.offsetTop
@@ -364,18 +377,19 @@ function getElementTop(element: HTMLElement, target: HTMLElement) {
   }
   return actualTop
 }
+
 // 分割视图
-export function splitPage(renderDOM: HTMLElement) {
-  handlerWhiteBoundary(renderDOM)
+export function splitPage(renderCV: HTMLElement) {
+  handlerWhiteBoundary(renderCV)
   let page = 0,
     realHeight = 0
-  const target = renderDOM.clientHeight,
+  const target = renderCV.clientHeight,
     reRender = document.querySelector('.re-render') as HTMLElement
   reRender.innerHTML = ''
 
   while (target - realHeight > 1) {
     const wrapper = createDIV(),
-      resumeNode = renderDOM.cloneNode(true) as HTMLElement
+      resumeNode = renderCV.cloneNode(true) as HTMLElement
     wrapper.classList.add('jufe-wrapper-page')
     // 创建里面的内容 最小化高度
     const realRenderHeight = Math.min(target - realHeight, A4_HEIGHT)
@@ -395,33 +409,54 @@ export function splitPage(renderDOM: HTMLElement) {
     reRender?.appendChild(wrapper)
   }
 }
+
+// 确保处理之前将之前的空元素删除 否则在多页情况下多次调用会多次生成空白占位符
+function ensureEmptyPreWhiteSpace(renderCV: HTMLElement) {
+  const children = Array.from(renderCV.children) as HTMLElement[]
+  for (const child of children) {
+    if (child.getAttribute(WHITE_SPACE)) renderCV.removeChild(child)
+    else {
+      ensureEmptyPreWhiteSpace(child)
+    }
+  }
+}
+
+function createBoundaryWhiteSpace(h: number) {
+  const whiteSpace = createDIV()
+  whiteSpace.setAttribute(WHITE_SPACE, 'true')
+  // 创建边界空白占位符 加上顶部边距
+  whiteSpace.style.height = h + 'px'
+  return whiteSpace
+}
+
 // 处理边界内容截断
-export function handlerWhiteBoundary(renderDOM: HTMLElement) {
-  const pt = +getComputedStyle(renderDOM).getPropertyValue('padding-top').slice(0, -2)
-  const pb = +getComputedStyle(renderDOM).getPropertyValue('padding-bottom').slice(0, -2)
-  const children = Array.from(renderDOM.children) as HTMLElement[]
+export function handlerWhiteBoundary(renderCV: HTMLElement) {
+  const pt = +getComputedStyle(renderCV).getPropertyValue('padding-top').slice(0, -2)
+  const pb = +getComputedStyle(renderCV).getPropertyValue('padding-bottom').slice(0, -2)
+  const children = Array.from(renderCV.children) as HTMLElement[]
   const pageSize = { value: 1 }
   for (const child of children) {
     // 子元素的外边距也需要参与计算
     const height = calculateElementHeight(child)
-    const actualTop = getElementTop(child, renderDOM)
+    const actualTop = getElementTop(child, renderCV)
     // 如果总长度已经超出了一页A4纸的高度（除去底部边距的高度） 那么需要找到边界元素
     if (actualTop + height > A4_HEIGHT * pageSize.value - pb) {
       // 有子节点 继续查找 最小化空白元素的高度
       if (child.children.length) {
         // 新的一页 重新计算新页高度
-        findBoundaryElement(child, renderDOM, pt, pb, pageSize)
+        findBoundaryElement(child, renderCV, pt, pb, pageSize)
       } else {
-        const whiteSpace = createDIV()
-        // 创建边界空白占位符 加上顶部边距
-        whiteSpace.style.height = A4_HEIGHT - actualTop + pt + 'px'
-        renderDOM.insertBefore(whiteSpace, child)
+        renderCV.insertBefore(
+          createBoundaryWhiteSpace(A4_HEIGHT * pageSize.value - actualTop + pt),
+          child
+        )
         ++pageSize.value
       }
     }
   }
-  return renderDOM
+  return renderCV
 }
+
 // 排除多列布局不存在边界的情况
 function findBoundaryElement(
   node: HTMLElement,
@@ -435,15 +470,15 @@ function findBoundaryElement(
     const totalHeight = calculateElementHeight(child)
     const actualTop = getElementTop(child, target)
     if (actualTop + totalHeight > A4_HEIGHT * pageSize.value - paddingBottom) {
-      // 直接排除P标签 因为在markdown中P标签就是一段普通文本，内嵌不了什么其他元素
-      if (child.children.length && child.tagName != 'P') {
+      // 直接排除一行段落文字 因为在markdown中一段文本没必要再进行深入，它们内嵌不了什么其他元素
+      if (child.children.length && !['p', 'li'].includes(child.tagName.toLocaleLowerCase())) {
         findBoundaryElement(child, target, paddingTop, paddingBottom, pageSize)
       } else {
         // 找到了边界 给边界元素前插入空白元素 将内容挤压至下一页
-        // console.log('发生内容截断的元素：', child, actualTop, pageSize)
-        const whiteSpace = createDIV()
-        whiteSpace.style.height = A4_HEIGHT * pageSize.value - actualTop + paddingTop + 'px'
-        node.insertBefore(whiteSpace, child)
+        node.insertBefore(
+          createBoundaryWhiteSpace(A4_HEIGHT * pageSize.value - actualTop + paddingTop),
+          child
+        )
         pageSize.value++
       }
     }
@@ -454,11 +489,11 @@ function findBoundaryElement(
 export function useAutoOnePage(resumeType: string) {
   const cacheKey = AUTO_ONE_PAGE + '-' + resumeType,
     autoOnePage = ref<any>(getLocalStorage(cacheKey))
-
   async function setAutoOnePage(first?: boolean) {
-    const container: HTMLElement = document.querySelector('.reference-dom') as HTMLElement
+    const renderCV: HTMLElement = queryRenderCV()
+    ensureEmptyPreWhiteSpace(renderCV)
     if (autoOnePage.value) {
-      const difference = A4_HEIGHT - container?.clientHeight
+      const difference = A4_HEIGHT - renderCV?.clientHeight
       if (difference < 0 && difference < -200) {
         warningMessage('你的内容有点太多啦！压缩成一页的话不太美观哦～')
         return
@@ -467,14 +502,14 @@ export function useAutoOnePage(resumeType: string) {
         warningMessage('你的内容有点太少了！压缩成一页的话不太美观哦，再填写一点内容吧～')
         return
       }
-      const { differenceConfig, map } = useInitMarginTop(container)
+      const { differenceConfig, map } = useInitMarginTop(renderCV)
       useOnePageCSSContent(differenceConfig, difference, map, cacheKey)
     } else {
       removeHeadStyle(cacheKey)
     }
     // 缓存3个小时
     setLocalStorage(cacheKey, autoOnePage.value)
-    !first && splitPage(container)
+    !first && splitPage(renderCV)
   }
   onActivated(() => !query(cacheKey) && setTimeout(() => setAutoOnePage(true), 50))
 
@@ -519,7 +554,6 @@ export const priorityDefine = {
 }
 export type priorityDefineItem = (typeof priorityDefine)['h1']
 export type priorityDefine = typeof priorityDefine
-
 const defaultCmp = (x: priorityDefineItem, y: priorityDefineItem) => x.optimal > y.optimal // 默认是最大堆
 const swap = (arr: priorityDefineItem[], i: number, j: number) =>
   ([arr[i], arr[j]] = [arr[j], arr[i]])
@@ -613,7 +647,7 @@ function useOnePageCSSContent(
   styleDOM.setAttribute(cacheKey, 'true')
 
   for (const optimal of heap.container) {
-    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px!important; }`
+    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px; }`
   }
   styleDOM.textContent = cssText
   document.head.appendChild(styleDOM)

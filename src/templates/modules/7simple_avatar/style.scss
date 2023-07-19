@@ -1,8 +1,8 @@
 @import url('../../common.css');
 
 .markdown-transform-html {
-  padding-top: 0;
   font-size: 15px;
+  padding-top: 20px;
   color: var(--markdown-primary-color);
   overflow: hidden;
 
@@ -78,7 +78,8 @@
     text-decoration: none;
   }
 
-  p {
-    margin-top: 8px;
+  p,
+  li {
+    margin-top: 5px;
   }
 }
