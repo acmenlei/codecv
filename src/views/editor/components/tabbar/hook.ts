@@ -13,7 +13,7 @@ export const CUSTOM_CSS_STYLE = 'custom-css-style',
   ADJUST_RESUME_MARGIN_TOP = 'ADJUST_RESUME_MARGIN_TOP',
   AUTO_ONE_PAGE = 'auto-one-page',
   A4_HEIGHT = 1123,
-  PADDING_TOP = 30
+  SELF_HEIGHT = -1234
 
 export const step = ref(100)
 export function setStep(val: number | any) {
@@ -353,7 +353,7 @@ function calculateElementHeight(element: HTMLElement) {
   const totalHeight = contentHeight + marginHeight
   return totalHeight
 }
-
+// 获取元素距离目标元素顶部偏移位
 function getElementTop(element: HTMLElement, target: HTMLElement) {
   let actualTop = element.offsetTop
   let current = element.offsetParent as HTMLElement
@@ -364,9 +364,8 @@ function getElementTop(element: HTMLElement, target: HTMLElement) {
   }
   return actualTop
 }
-
+// 分割视图
 export function splitPage(renderDOM: HTMLElement) {
-  console.log('总高度：', renderDOM.clientHeight)
   handlerWhiteBoundary(renderDOM)
   let page = 0,
     realHeight = 0
@@ -396,70 +395,59 @@ export function splitPage(renderDOM: HTMLElement) {
     reRender?.appendChild(wrapper)
   }
 }
-
-// 分割视图
+// 处理边界内容截断
 export function handlerWhiteBoundary(renderDOM: HTMLElement) {
-  // const pt = +getComputedStyle(renderDOM).getPropertyValue('padding-top').slice(0, -2)
-  // const pb = +getComputedStyle(renderDOM).getPropertyValue('padding-bottom').slice(0, -2)
-  // let paddingbt, realHeight
-  // realHeight = paddingbt = pt + pb // 去除内边距 剩下的就是每一页可以填充内容的高度
-  // realHeight = 0
+  const pt = +getComputedStyle(renderDOM).getPropertyValue('padding-top').slice(0, -2)
+  const pb = +getComputedStyle(renderDOM).getPropertyValue('padding-bottom').slice(0, -2)
   const children = Array.from(renderDOM.children) as HTMLElement[]
+  const pageSize = { value: 1 }
   for (const child of children) {
     // 子元素的外边距也需要参与计算
     const height = calculateElementHeight(child)
     const actualTop = getElementTop(child, renderDOM)
-    console.log(child, actualTop)
-    // console.log(child, height, child.offsetTop)
-    // 如果总长度已经超出了一页A4纸的高度 那么需要找到边界元素
-    if (actualTop + height > 1123) {
+    // 如果总长度已经超出了一页A4纸的高度（除去底部边距的高度） 那么需要找到边界元素
+    if (actualTop + height > A4_HEIGHT * pageSize.value - pb) {
       // 有子节点 继续查找 最小化空白元素的高度
       if (child.children.length) {
-        // 新的一页 重新计算新页高度 将边界元素的高度先加上
-        // realHeight = findBoundaryElement(child, realHeight, renderDOM) + paddingbt
-        findBoundaryElement(child, renderDOM)
+        // 新的一页 重新计算新页高度
+        findBoundaryElement(child, renderDOM, pt, pb, pageSize)
       } else {
-        if (height > 1123) {
-          // 一段内容过大
-          console.log('给出分段编写的提示')
-        }
         const whiteSpace = createDIV()
-        // 创建边界空白占位符
-        whiteSpace.style.height = 1123 - actualTop + PADDING_TOP + 'px'
-        console.log('截断元素：', child, '空白高度：', 1123 - actualTop)
+        // 创建边界空白占位符 加上顶部边距
+        whiteSpace.style.height = A4_HEIGHT - actualTop + pt + 'px'
         renderDOM.insertBefore(whiteSpace, child)
-        // 同上 新页
-        // realHeight = height + paddingbt
+        ++pageSize.value
       }
     }
-    // else {
-    //   realHeight += height
-    // }
   }
   return renderDOM
 }
 // 排除多列布局不存在边界的情况
-function findBoundaryElement(node: HTMLElement, target: HTMLElement) {
-  // console.log(node)
+function findBoundaryElement(
+  node: HTMLElement,
+  target: HTMLElement,
+  paddingTop: number,
+  paddingBottom: number,
+  pageSize: { value: number }
+) {
   const children = Array.from(node.children) as HTMLElement[]
   for (const child of children) {
     const totalHeight = calculateElementHeight(child)
     const actualTop = getElementTop(child, target)
-    if (actualTop + totalHeight > 1123) {
-      if (child.children.length) {
-        return findBoundaryElement(child, target)
+    if (actualTop + totalHeight > A4_HEIGHT * pageSize.value - paddingBottom) {
+      // 直接排除P标签 因为在markdown中P标签就是一段普通文本，内嵌不了什么其他元素
+      if (child.children.length && child.tagName != 'P') {
+        findBoundaryElement(child, target, paddingTop, paddingBottom, pageSize)
       } else {
-        console.log('处理边界元素：', child, 1123 - actualTop)
+        // 找到了边界 给边界元素前插入空白元素 将内容挤压至下一页
+        console.log('截断元素：', child, actualTop, pageSize)
         const whiteSpace = createDIV()
-        whiteSpace.style.height = 1123 - actualTop + PADDING_TOP + 'px'
+        whiteSpace.style.height = A4_HEIGHT * pageSize.value - actualTop + paddingTop + 'px'
         node.insertBefore(whiteSpace, child)
-        return totalHeight
+        pageSize.value++
       }
     }
-    // console.log('处理的元素：', child, curHeight, totalHeight)
-    // curHeight += totalHeight
   }
-  return 0
 }
 
 /* 自动一页 Start */
