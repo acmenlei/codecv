@@ -440,7 +440,7 @@ function findBoundaryElement(
         findBoundaryElement(child, target, paddingTop, paddingBottom, pageSize)
       } else {
         // 找到了边界 给边界元素前插入空白元素 将内容挤压至下一页
-        console.log('截断元素：', child, actualTop, pageSize)
+        // console.log('发生内容截断的元素：', child, actualTop, pageSize)
         const whiteSpace = createDIV()
         whiteSpace.style.height = A4_HEIGHT * pageSize.value - actualTop + paddingTop + 'px'
         node.insertBefore(whiteSpace, child)
