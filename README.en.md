@@ -34,7 +34,6 @@ This is a tool for creating resumes using `markdown`. It can convert your writte
 Q: Why export `PDF` after garbled code?
 
 A: It may be that the old font is cached, please click the reset resume content in the toolbar at the top of the preview to reset, of course, please ensure that you have saved the content before resetting.
-&nbsp;
 
 Q: Why does the export fail?
 
