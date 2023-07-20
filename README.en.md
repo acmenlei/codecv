@@ -31,13 +31,13 @@ This is a tool for creating resumes using `markdown`. It can convert your writte
 
 [Please refer to the user guide for grammar-related questions.](https://codeleilei.gitee.io/markdown2pdf/#/syntax/helper)
 
-Q: Why export `PDF` after garbled code?
+**Q**: Why export `PDF` after garbled code?
 
-A: It may be that the old font is cached, please click the reset resume content in the toolbar at the top of the preview to reset, of course, please ensure that you have saved the content before resetting.
+**A**: It may be that the old font is cached, please click the reset resume content in the toolbar at the top of the preview to reset, of course, please ensure that you have saved the content before resetting.
 
-Q: Why does the export fail?
+**Q**: Why does the export fail?
 
-A: At present, the service is deployed on the `Netlify Serverless` service, because it is a foreign server, access is easy to error, please try several times, of course, you can also use the local export `PDF` replacement.
+**A**: At present, the service is deployed on the `Netlify Serverless` service, because it is a foreign server, access is easy to error, please try several times, of course, you can also use the local export `PDF` replacement.
 
 ## 👋 CONTRIBUTING
 
