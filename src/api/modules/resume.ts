@@ -10,6 +10,9 @@ export async function resumeExport(data: IResumeConfig) {
   const res = await fetch(import.meta.env.VITE_EXPORT_URL as string, {
     method: 'POST',
     body: JSON.stringify(data)
+    // headers: {
+    //   'Content-Type': 'application/json'
+    // }
   })
   return await res.json()
 }

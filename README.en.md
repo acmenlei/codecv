@@ -1,5 +1,7 @@
 # codecv
 
+This is a tool for creating resumes using `markdown`. It can convert your written `markdown` resume into a `PDF` format, supports multiple templates, is completely free, and runs on love.
+
 <div style="font-size: 1.5rem;">
   <a href="./README.md">中文</a> |
   <a href="./README.en.md">English</a>
@@ -8,100 +10,32 @@
 
 [Online Editor 1](http://codeleilei.gitee.io/markdown2pdf/) [Online Editor 2](https://acmenlei.github.io/codecv/dist/)
 
-> Declaration: This project is released on Github/Gitee, based on the MIT license, free and for open source learning use. And there will be no behavior of selling accounts, paid services, discussion groups, discussion groups, etc. Be careful not to be deceived.
+> Declaration: This project is released on GitHub/Gitee under the MIT license, free and intended for open-source learning. It is developed continuously in spare time. Please indicate the original repository address when deploying and respect the author's efforts.
+
+## 🤩 Preview of the result
 
 <p>Resume template & Light Mode<p>
 <img style="max-width: 1000px" src="./docs/templates.webp" alt="Template" />
 <p>Resume editor page & & Dark Mode<p>
 <img style="max-width: 1000px" src="./docs/editor.webp" alt="Editor" />
 
-- [Introduction](#introduction)
+## ✊🏻 Features to be implemented
 
-- [Features to be implemented](#features-to-be-implemented)
+[✓] Mobile device adaptation
 
-- [Prerequisites](#prerequisites)
+[✓] Improved content mode experience
 
-- [Node](#node)
+[✓] Template design (continuously updating... contributions to the repository templates are welcome)
 
-- [Install Dependencies](#install-dependencies)
+## 🤔 Common issues
 
-- [Running in Test Environment](#run-in-development-environment)
+[Please refer to the user guide for grammar-related questions.](https://codeleilei.gitee.io/markdown2pdf/#/syntax/helper)
 
-- [Environment Variables](#environment-variables)
-
-- [Build](#build)
-
-- [Common Issues](#common-issues)
-
-- [CONTRIBUTING](#contributing)
-
-- [Sponsor](#sponsor)
-
-## Introduction
-
-> A markdown resume creation tool that can convert your written resume to PDF and support multiple templates, completely free.
-
-Advantages:
-
-1. Traditional resume creation method is through UI interface to fill in the form/drag and drop to generate the resume, the process is more complex and tedious. The resume layout based on markdown writing will be very easy to expand, and it is easy to operate. In addition to the commonly used markdown syntax, multiple column layout (Flex) syntax has been added, and the usage will be introduced later.
-
-2. If you are not satisfied with the design of the resume, you can completely change the resume matching by yourself, greatly improving the scalability of the resume.
-
-3. The resume is smartly one page, solving the embarrassing situation caused by too little or too much resume content.
-
-4. Provide a resume community to share the experience during the job search process (the original intention was to establish a platform that combines resumes and interview experiences).
-
-## Features to be implemented
-
-[✓] Mobile adaptation
-
-[✓] Template creation (continuously updated...)
-
-## Prerequisites
-
-> Environment needed before starting the project
-
-### Node
-
-node requires ^16 || ^18 || ^19, it is recommended to use nvm to manage multiple local node versions
-
-```shell
-node -v
-```
-
-## Install dependencies
-
-```shell
-npm install
-```
-
-## Run in development environment
-
-```shell
-npm run dev
-```
-
-## Environment Variables
-
-> `VITE_BASE_URL` Backend request address, optional (if docking the community API, if you don't want to access the community function, you don't need to fill it in)
-
-## Build
-
-```shell
-npm run build
-```
-
-Finally, deploy the dist directory to the server
-
-## Common issues
-
-[View User Guide](https://codeleilei.gitee.io/markdown2pdf/#/syntax/helper)
-
-## CONTRIBUTING
+## ✌🏻 CONTRIBUTING
 
 Please read before contributing[Contribution Guide](./CONTRIBUTING.md)
 
-## Sponsor
+## 🙏 Sponsor
 
 If you think this project is helpful to you and circumstances permit, you can give me a little support. In short, thank you very much for your support ~
 
