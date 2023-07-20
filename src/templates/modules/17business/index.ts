@@ -58,7 +58,7 @@ icon:phone 15507942222 ｜ icon:email coderleilei@qq.com ｜ icon:wechat zhangsa
 
 export default {
   name: '简约通用模板',
-  primaryColor: '#7E817D',
+  primaryColor: '#4A4B4A',
   primaryBackground: '#112236',
   img: 'https://z4a.net/images/2023/07/14/17.png',
   content

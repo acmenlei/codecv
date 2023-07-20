@@ -1,8 +1,8 @@
 @import url('../../common.css');
 
 .markdown-transform-html {
-  font-size: 13.5px;
-  min-height: 297mm;
+  font-size: 14px;
+  min-height: var(--A4-height);
   padding: 20px 30px;
   .head-layout {
     position: relative;
@@ -57,7 +57,7 @@
     h2 {
       position: relative;
       display: inline-block;
-      font-size: 0.9rem;
+      font-size: 14px;
       margin: 10px 0 5px 0;
       padding: 5px 10px;
       border-bottom-left-radius: 30px;

@@ -1,12 +1,10 @@
 @import url('../../common.css');
 
 .markdown-transform-html {
-  h1,
-  h2,
   h3,
   strong,
   b {
-    font-weight: 400;
+    font-weight: 500;
   }
   h3 {
     color: var(--markdown-primary-bg-color) !important;
@@ -46,10 +44,10 @@
     &::after {
       content: '';
       position: absolute;
-      width: calc(210mm - 100% - 80px);
+      width: calc(210mm - 100% - 100px);
       top: 50%;
       left: calc(100% + 20px);
-      border-top: 1.5px solid var(--markdown-primary-bg-color);
+      border-top: 1px solid var(--markdown-primary-bg-color);
     }
   }
   ul {
@@ -70,7 +68,7 @@
 
   i.iconfont {
     margin-right: 5px;
-    font-size: 1.3rem;
+    font-size: 20px;
   }
 
   i.icon-fillstar,
@@ -79,6 +77,6 @@
   }
 
   .flex-layout {
-    margin-top: 2.5px;
+    margin-top: 3px;
   }
 }

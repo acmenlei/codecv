@@ -152,27 +152,15 @@ export function useCustomFont(resumeType: string) {
   const cacheKey = MARKDOWN_FONT + '-' + resumeType
   const fontOptions = [
     {
-      value: 'Noto Sans SC',
-      label: 'Noto Sans SC'
-    },
-    {
       value: 'Noto Serif SC',
       label: 'Noto Serif SC'
     },
     {
-      value: 'Open Sans',
-      label: 'Open Sans'
-    },
-    {
-      value: 'Helvetica Neue',
-      label: 'Helvetica Neue'
-    },
-    {
-      value: 'Exo',
-      label: 'Exo'
+      value: 'Noto Sans SC',
+      label: 'Noto Sans SC'
     }
   ]
-  const font = ref(get(cacheKey) ? (get(cacheKey) as string) : 'Helvetica Neue')
+  const font = ref(get(cacheKey) ? (get(cacheKey) as string) : fontOptions[0].value)
 
   function setFont(fontFamily: string | null, first?: boolean) {
     let style = query(cacheKey)
@@ -181,7 +169,8 @@ export function useCustomFont(resumeType: string) {
       style = createStyle()
       style.setAttribute(cacheKey, 'true')
     }
-    style.textContent = `.jufe { font-family: ${fontFamily}, 'Noto Sans SC', 'Helvetica Neue'; }`
+
+    style.textContent = `.jufe * { font-family: ${fontFamily}, 'Noto Serif SC', 'Noto Sans SC', sans-serif, serif; }`
     !isAppend && document.head.appendChild(style)
     set(cacheKey, fontFamily)
     const renderCV = queryRenderCV()
@@ -387,7 +376,7 @@ export function splitPage(renderCV: HTMLElement) {
     reRender = document.querySelector('.re-render') as HTMLElement
   reRender.innerHTML = ''
 
-  while (target - realHeight > 1) {
+  while (target - realHeight > 0) {
     const wrapper = createDIV(),
       resumeNode = renderCV.cloneNode(true) as HTMLElement
     wrapper.classList.add('jufe-wrapper-page')
@@ -647,7 +636,8 @@ function useOnePageCSSContent(
   styleDOM.setAttribute(cacheKey, 'true')
 
   for (const optimal of heap.container) {
-    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px; }`
+    // 权重加高 防止被覆盖
+    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px!important; }`
   }
   styleDOM.textContent = cssText
   document.head.appendChild(styleDOM)

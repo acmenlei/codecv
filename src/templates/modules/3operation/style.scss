@@ -7,14 +7,20 @@
   h2 {
     margin-top: 10px;
     color: var(--markdown-primary-bg-color);
-    border-bottom: 1.5px solid var(--markdown-primary-bg-color);
   }
 
   h2 {
     font-size: 20px;
+    position: relative;
+    display: inline-block;
 
-    i.iconfont {
-      font-size: 1.3rem;
+    &::after {
+      content: '';
+      position: absolute;
+      width: calc(210mm - 100% - 100px);
+      top: 50%;
+      left: calc(100% + 20px);
+      border-top: 1px solid var(--markdown-primary-bg-color);
     }
   }
 
@@ -63,10 +69,13 @@
     left: 0;
   }
 
+  .main-layout {
+    padding: 10px;
+  }
+
   .head-layout {
     position: relative;
-    padding-bottom: 20px;
-    padding-left: 10px;
+    padding: 20px 20px 30px 10px;
     color: white !important;
 
     h1,
@@ -92,7 +101,8 @@
     }
   }
 
+  li,
   p {
-    margin-top: 8px;
+    margin-top: 6px;
   }
 }
