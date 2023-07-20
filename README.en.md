@@ -31,7 +31,16 @@ This is a tool for creating resumes using `markdown`. It can convert your writte
 
 [Please refer to the user guide for grammar-related questions.](https://codeleilei.gitee.io/markdown2pdf/#/syntax/helper)
 
-## ✌🏻 CONTRIBUTING
+Q: Why export `PDF` after garbled code?
+
+A: It may be that the old font is cached, please click the reset resume content in the toolbar at the top of the preview to reset, of course, please ensure that you have saved the content before resetting.
+&nbsp;
+
+Q: Why does the export fail?
+
+A: At present, the service is deployed on the `Netlify Serverless` service, because it is a foreign server, access is easy to error, please try several times, of course, you can also use the local export `PDF` replacement.
+
+## 👋 CONTRIBUTING
 
 Please read before contributing[Contribution Guide](./CONTRIBUTING.md)
 
@@ -42,11 +51,11 @@ If you think this project is helpful to you and circumstances permit, you can gi
 <div style="display: flex; gap: 20px;">
 	<div style="text-align: center">
 		<p>WeChat</p>
-		<img style="max-width: 165px" src="./docs/wechat.jpg" alt="WeChat" />
+		<img style="width: 165px" src="./docs/wechat.jpg" alt="WeChat" />
 	</div>
 	<div style="text-align: center">
 		<p>Alipay</p>
-		<img style="max-width: 150px" src="./docs/alipay.jpg" alt="Alipay" />
+		<img style="width: 150px" src="./docs/alipay.jpg" alt="Alipay" />
 	</div>
 </div>
 

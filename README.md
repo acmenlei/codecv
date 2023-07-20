@@ -31,21 +31,17 @@
 
 [语法问题请查看使用指南](https://codeleilei.gitee.io/markdown2pdf/#/syntax/helper)
 
----
-
 Q: 为什么导出 `PDF` 后乱码？
 
 A: 可能是缓存了旧的字体，请点击预览顶部工具栏中的重置简历内容进行重置，当然重置前请保证内容你已经保存
 
----
+&nbsp;
 
 Q: 为什么导出失败？
 
 A: 目前服务部署在 `netlify serverless` 服务上，因为是国外服务器，访问容易出错，请多尝试几遍，当然你也可以使用本地导出 `PDF` 替换
 
----
-
-## ✌🏻 参与贡献
+## 👋 参与贡献
 
 贡献之前请先阅读[贡献指南](./CONTRIBUTING.md)
 
@@ -56,11 +52,11 @@ A: 目前服务部署在 `netlify serverless` 服务上，因为是国外服务�
 <div style="display: flex; gap: 20px;">
 	<div style="text-align: center">
 		<p>WeChat</p>
-		<img style="max-width: 165px" src="./docs/wechat.jpg" alt="微信" />
+		<img style="width: 165px" src="./docs/wechat.jpg" alt="微信" />
 	</div>
 	<div style="text-align: center">
 		<p>Alipay</p>
-		<img style="max-width: 150px" src="./docs/alipay.jpg" alt="支付宝" />
+		<img style="width: 150px" src="./docs/alipay.jpg" alt="支付宝" />
 	</div>
 </div>
 
