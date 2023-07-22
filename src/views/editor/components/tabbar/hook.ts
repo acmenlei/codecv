@@ -266,9 +266,17 @@ export function useAdjust(resumeType: string) {
     }
     for (const marginItem of marginData) {
       const target = marginItem.className ? `.${marginItem.className}` : marginItem.tagName
-      cssText += `.jufe ${target} {margin-top: ${marginItem.marginTop}px; }`
+      cssText += `.jufe ${target} {margin-top: ${marginItem.marginTop}px!important; }`
     }
     styleDOM.textContent = cssText
+    priorityInsert(isAppend, styleDOM)
+    set(cacheKey, cssText)
+    const renderCV = queryRenderCV()
+    ensureEmptyPreWhiteSpace(renderCV)
+    splitPage(renderCV)
+  }
+
+  function priorityInsert(isAppend: Element | null, styleDOM: Element) {
     if (!isAppend) {
       // 插入到自动一页css前面 因为调整的优先级是最低的
       const autoOnePage = query(AUTO_ONE_PAGE + '-' + resumeType)
@@ -276,18 +284,17 @@ export function useAdjust(resumeType: string) {
       if (autoOnePage || customCSS) {
         const siblingStyle = autoOnePage || customCSS
         document.head.insertBefore(styleDOM, siblingStyle)
+      } else {
+        // 如果没有的话直接追加到head中
+        document.head.appendChild(styleDOM)
       }
     }
-    set(cacheKey, cssText)
-    const renderCV = queryRenderCV()
-    ensureEmptyPreWhiteSpace(renderCV)
-    splitPage(renderCV)
   }
 
   function setVisible() {
     visible.value = !visible.value
   }
-  // 初始化css
+  // 进入页面读取历史样式 并初始化CSS
   function initAdjustCSS() {
     const adjustCSS = (get(cacheKey) as string) || ''
     if (!adjustCSS) return
@@ -298,8 +305,7 @@ export function useAdjust(resumeType: string) {
       styleDOM.setAttribute(cacheKey, 'true')
     }
     styleDOM.textContent = adjustCSS
-    !isAppend && document.head.appendChild(styleDOM)
-    // 初始化不需要做切割
+    priorityInsert(isAppend, styleDOM)
   }
   // 如果页面中没有用户调整了的样式 那么就需要去初始化
   onActivated(() => !query(cacheKey) && initAdjustCSS())
@@ -646,10 +652,10 @@ function useOnePageCSSContent(
 
   for (const optimal of heap.container) {
     // 权重加高 防止被覆盖
-    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px; }`
+    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px!important; }`
   }
   styleDOM.textContent = cssText
-  // 插入到自动一页css前面 因为调整的优先级是最低的
+  // 插入到自定义CSS前面 因为自动一页的优先级是第二高的
   const customCSS = query(CUSTOM_CSS_STYLE + '-' + resumeType)
   customCSS ? document.head.insertBefore(styleDOM, customCSS) : document.head.appendChild(styleDOM)
 }
