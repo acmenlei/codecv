@@ -266,10 +266,18 @@ export function useAdjust(resumeType: string) {
     }
     for (const marginItem of marginData) {
       const target = marginItem.className ? `.${marginItem.className}` : marginItem.tagName
-      cssText += `.jufe ${target} {margin-top: ${marginItem.marginTop}px!important; }`
+      cssText += `.jufe ${target} {margin-top: ${marginItem.marginTop}px; }`
     }
     styleDOM.textContent = cssText
-    !isAppend && document.head.appendChild(styleDOM)
+    if (!isAppend) {
+      // 插入到自动一页css前面 因为调整的优先级是最低的
+      const autoOnePage = query(AUTO_ONE_PAGE + '-' + resumeType)
+      const customCSS = query(CUSTOM_CSS_STYLE + '-' + resumeType)
+      if (autoOnePage || customCSS) {
+        const siblingStyle = autoOnePage || customCSS
+        document.head.insertBefore(styleDOM, siblingStyle)
+      }
+    }
     set(cacheKey, cssText)
     const renderCV = queryRenderCV()
     ensureEmptyPreWhiteSpace(renderCV)
@@ -492,7 +500,7 @@ export function useAutoOnePage(resumeType: string) {
         return
       }
       const { differenceConfig, map } = useInitMarginTop(renderCV)
-      useOnePageCSSContent(differenceConfig, difference, map, cacheKey)
+      useOnePageCSSContent(differenceConfig, difference, map, cacheKey, resumeType)
     } else {
       removeHeadStyle(cacheKey)
     }
@@ -606,7 +614,8 @@ function useOnePageCSSContent(
   priority: priorityDefineItem[],
   difference: number,
   map: Map<string, number>,
-  cacheKey: string
+  cacheKey: string,
+  resumeType: string
 ) {
   const heap = new Heap((x, y) => (difference < 0 ? x.optimal > y.optimal : x.optimal < y.optimal))
   for (const optimal of priority) {
@@ -637,8 +646,10 @@ function useOnePageCSSContent(
 
   for (const optimal of heap.container) {
     // 权重加高 防止被覆盖
-    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px!important; }`
+    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px; }`
   }
   styleDOM.textContent = cssText
-  document.head.appendChild(styleDOM)
+  // 插入到自动一页css前面 因为调整的优先级是最低的
+  const customCSS = query(CUSTOM_CSS_STYLE + '-' + resumeType)
+  customCSS ? document.head.insertBefore(styleDOM, customCSS) : document.head.appendChild(styleDOM)
 }

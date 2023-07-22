@@ -20,12 +20,12 @@ import {
 
 export const get = getLocalStorage,
   styleAttrs = [
-    CUSTOM_CSS_STYLE,
     CUSTOM_MARKDOWN_PRIMARY_COLOR,
     CUSTOM_MARKDOWN_PRIMARY_BG_COLOR,
     MARKDOWN_FONT,
-    ADJUST_RESUME_MARGIN_TOP,
-    AUTO_ONE_PAGE
+    ADJUST_RESUME_MARGIN_TOP, // priority 3 (数字越大 优先级越低)
+    AUTO_ONE_PAGE, // priority 2
+    CUSTOM_CSS_STYLE // priority 1
   ]
 
 export function useRenderHTML(resumeType: Ref<string>) {
@@ -95,7 +95,7 @@ export function useDownLoad(type: Ref<string>) {
     for (const attr of styleAttrs) {
       const styleContent = document.head.querySelector(`style[${attr}-${type.value}]`)?.textContent
       if (!styleContent) continue
-      style = styleContent + '\n' + style
+      style += '\n' + styleContent
     }
     style = resumeBgColor + '\n' + resetStyle + '\n' + style
     showLoading('因使用国外服务速度稍慢 请耐心等待...')
