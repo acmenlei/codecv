@@ -83,22 +83,22 @@
   background: linear-gradient(to right, #f65314 0%, #f65314 50%, #7cbb00 50%, #7cbb00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  &::after {
-    content: '';
-    position: absolute;
-    height: 50%;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    background: linear-gradient(
-      to right,
-      #01a4ef 0%,
-      #01a4ef 45%,
-      #ffffff 50%,
-      #ffb902 55%,
-      #ffb902 100%
-    );
-  }
+}
+.jufe .iconfont.icon-microsoft::after {
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #01a4ef 0%,
+    #01a4ef 45%,
+    #ffffff 50%,
+    #ffb902 55%,
+    #ffb902 100%
+  );
 }
 .jufe .iconfont.icon-kuaishou {
   color: #ff3d13;
@@ -126,17 +126,17 @@
   color: white;
   position: relative;
   text-shadow: 0 0 5px #fb4d77, 0 0 5px #44e1dd;
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #1d0b1a;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    border-radius: 5px;
-  }
+}
+.jufe .iconfont.icon-douyin::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #1d0b1a;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 5px;
 }
 .jufe .iconfont.icon-csdn {
   background: linear-gradient(to right, #ca0c16 0%, #000 70%);
