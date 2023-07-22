@@ -49,7 +49,7 @@
         position: absolute;
         content: '';
         width: 1px;
-        height: 100%;
+        height: calc(100% + 15px);
         top: 20px;
         left: -25px;
         z-index: -1;
