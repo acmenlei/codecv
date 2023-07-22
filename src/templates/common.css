@@ -1,3 +1,4 @@
+@import './iconfont.colors.css';
 :root {
   --A4_width: 794px;
   --A4_height: 1123px;
@@ -21,8 +22,20 @@
   position: relative;
   object-fit: cover;
 }
-.markdown-transform-html h2 .iconfont {
+
+.markdown-transform-html a {
+  color: #3a67d9;
+}
+
+.markdown-transform-html li {
+  margin-top: 5px;
+}
+.markdown-transform-html h2 {
+  margin-top: 10px;
+}
+.markdown-transform-html .iconfont {
   font-size: 20px;
+  margin-right: 4px;
 }
 .markdown-transform-html :where(ul, ol) {
   padding-left: 20px;

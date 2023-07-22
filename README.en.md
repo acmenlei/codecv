@@ -14,10 +14,17 @@ This is a tool for creating resumes using `markdown`. It can convert your writte
 
 ## 🤩 Preview of the result
 
-<p>Resume template & Light Mode<p>
-<img style="max-width: 1000px" src="./docs/templates.webp" alt="Template" />
-<p>Resume editor page & & Dark Mode<p>
-<img style="max-width: 1000px" src="./docs/editor.webp" alt="Editor" />
+<p>Resume template and default theme</p>
+
+<img style="max-width: 1000px" src="./docs/templates.webp" alt="模板" />
+
+<p>Resume editing and dark themes</p>
+
+<img style="max-width: 1000px" src="./docs/editor.webp" alt="编辑页" />
+
+<p>Built-in multiple vector ICONS</p>
+
+<img style="max-width: 1000px" src="./docs/iconfont.webp" alt="矢量图标" />
 
 ## ✊🏻 Features to be implemented
 

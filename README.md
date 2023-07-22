@@ -14,10 +14,17 @@
 
 ## 🤩 效果预览
 
-<p>简历模板 & 默认主题<p>
+<p>简历模板和默认主题</p>
+
 <img style="max-width: 1000px" src="./docs/templates.webp" alt="模板" />
-<p>简历编辑器 & 暗黑主题<p>
+
+<p>简历编辑和暗黑主题</p>
+
 <img style="max-width: 1000px" src="./docs/editor.webp" alt="编辑页" />
+
+<p>内置多种矢量图标</p>
+
+<img style="max-width: 1000px" src="./docs/iconfont.webp" alt="矢量图标" />
 
 ## ✊🏻 待实现功能
 
