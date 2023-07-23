@@ -18,6 +18,7 @@ export const CUSTOM_CSS_STYLE = 'custom-css-style',
 
 export const renderCV = ref<HTMLElement>()
 export const step = ref<number>(90)
+export const pageSize = ref<number>(1)
 
 export function setStep(val: number | any) {
   step.value = val
@@ -411,6 +412,7 @@ export function splitPage(renderCV: HTMLElement) {
     page++
     reRender?.appendChild(wrapper)
   }
+  pageSize.value = page
 }
 
 // 确保处理之前将之前的空元素删除 否则在多页情况下多次调用会多次生成空白占位符
