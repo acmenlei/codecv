@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import Tabbar from '../tabbar/tabbar.vue'
 import { useRenderHTML, useResumeType } from '../../hook'
-import { step } from '../tabbar/hook'
 import { useThemeConfig } from '@/common/global'
+import { step } from '../tabbar/hook'
 
 defineEmits(['upload-avatar', 'html-convert'])
 
 const { resumeType } = useResumeType()
-const { renderDOM, editorStore } = useRenderHTML(resumeType)
 const { isDark } = useThemeConfig()
+const { renderDOM, pagingDOM, pageSize, editorStore } = useRenderHTML(resumeType)
 </script>
 
 <template>
@@ -20,7 +20,15 @@ const { isDark } = useThemeConfig()
     />
     <div ref="renderDOM" class="markdown-transform-html jufe reference-dom"></div>
     <!-- 分页渲染区域 -->
-    <div class="re-render" :style="{ transform: `scale(${step / 100})` }"></div>
+    <div
+      ref="pagingDOM"
+      class="re-render"
+      :style="{
+        transform: `translateY(-${((100 - step) / 100) * 1123 * (pageSize / 2)}px) scale(${
+          step / 100
+        })`
+      }"
+    ></div>
   </div>
 </template>
 

@@ -17,8 +17,8 @@ export const CUSTOM_CSS_STYLE = 'custom-css-style',
   SELF_HEIGHT = -1234
 
 export const renderCV = ref<HTMLElement>()
+export const step = ref<number>(90)
 
-export const step = ref(90)
 export function setStep(val: number | any) {
   step.value = val
 }

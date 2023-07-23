@@ -30,19 +30,26 @@ export const get = getLocalStorage,
 
 export function useRenderHTML(resumeType: Ref<string>) {
   const renderDOM = ref<HTMLElement>(document.body)
+  const pagingDOM = ref<HTMLElement>()
+  const pageSize = ref<number>(1)
   const editorStore = useEditorStore()
+
+  function pagingHandler() {
+    splitPage(renderDOM.value)
+    pageSize.value = (pagingDOM.value?.clientHeight || 1123) / 1123 // 内容改变重新计算页码
+  }
 
   onActivated(() => {
     importCSS(resumeType.value)
     renderDOM.value.innerHTML = convertDOM(editorStore.MDContent).innerHTML
-    setTimeout(() => splitPage(renderDOM.value), 100)
+    setTimeout(pagingHandler, 100)
   })
 
   watch(
     () => editorStore.MDContent,
     v => {
       renderDOM.value.innerHTML = convertDOM(v).innerHTML
-      useThrottleFn(() => splitPage(renderDOM.value), 50)()
+      useThrottleFn(pagingHandler, 50)()
     }
   )
   // 刷新页面（这里是一个比较有问题的点）
@@ -54,7 +61,9 @@ export function useRenderHTML(resumeType: Ref<string>) {
   )
   return {
     renderDOM,
-    editorStore
+    editorStore,
+    pagingDOM,
+    pageSize
   }
 }
 
