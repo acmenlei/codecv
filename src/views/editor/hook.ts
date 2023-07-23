@@ -95,9 +95,9 @@ export function useDownLoad(type: Ref<string>) {
     for (const attr of styleAttrs) {
       const styleContent = document.head.querySelector(`style[${attr}-${type.value}]`)?.textContent
       if (!styleContent) continue
-      style += '\n' + styleContent
+      style += styleContent
     }
-    style = resumeBgColor + '\n' + resetStyle + '\n' + style
+    style = resetStyle + resumeBgColor + style
     showLoading('因使用国外服务速度稍慢 请耐心等待...')
     try {
       const pdfData = await resumeExport({ content: html.outerHTML, style, link: linkURL })
