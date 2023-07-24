@@ -20,6 +20,10 @@
       flex: 1;
     }
   }
+  // 只有是两列布局的时候才起作用
+  & > .flex-layout {
+    align-items: flex-start;
+  }
   ul,
   ol {
     padding-left: 20px;
