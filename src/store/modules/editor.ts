@@ -8,6 +8,7 @@ import { templates } from '@/templates/config'
 import { ensureEmptyPreWhiteSpace } from '@/views/editor/components/tabbar/hook'
 
 const MARKDOWN_CONTENT = 'markdown-content'
+const WRITABLE = 'writable'
 
 export const getCurrentTypeContent = (type: string): string => {
   for (const template of templates) {
@@ -21,7 +22,7 @@ export const getCurrentTypeContent = (type: string): string => {
 const useEditorStore = defineStore('editorStore', {
   state: () => ({
     MDContent: '',
-    writable: false
+    writable: Boolean(getLocalStorage(WRITABLE)) || false
   }),
   actions: {
     // 初始化编辑器内容（默认为Markdown模式）
@@ -40,6 +41,7 @@ const useEditorStore = defineStore('editorStore', {
     // 切换编辑模式
     setWritableMode(originHTML: HTMLElement) {
       this.writable = !this.writable
+      setLocalStorage(WRITABLE, this.writable)
       showMessageVN('您已切换至', this.writable ? '内容模式' : 'Markdown模式')
       if (this.writable) {
         nextTick(() => {

@@ -2,7 +2,7 @@
 
 .markdown-transform-html {
   padding: 10px 30px 20px 30px;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--markdown-primary-color);
 
   i.iconfont {
@@ -27,7 +27,7 @@
     padding: 5px 10px;
     color: white !important;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 8px;
     display: inline-block;
 
@@ -51,7 +51,9 @@
       right: 0;
     }
   }
-
+  h3 {
+    font-size: 17px;
+  }
   .head-layout {
     .flex-layout-item {
       margin-right: 10px;
