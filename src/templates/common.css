@@ -28,12 +28,22 @@
   color: var(--super-link);
 }
 
-.markdown-transform-html li {
+.markdown-transform-html :where(li, h3, h4) {
   margin-top: 5px;
 }
+
 .markdown-transform-html h2 {
   margin-top: 10px;
 }
+
+.markdown-transform-html h3 {
+  font-size: 17px;
+}
+
+.markdown-transform-html h4 {
+  font-size: 15px;
+}
+
 .markdown-transform-html .iconfont {
   font-size: 20px;
   margin-right: 4px;
@@ -64,32 +74,47 @@
 }
 
 .markdown-transform-html blockquote {
-  background: #eee;
   position: relative;
   margin: 0;
-  padding: 5px 15px;
+  font-size: 14px;
+  padding: 8px 15px;
+  margin: 12px 0;
+}
+
+.markdown-transform-html blockquote::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.1;
+  background: var(--markdown-primary-bg-color);
 }
 
 .markdown-transform-html blockquote::before {
   position: absolute;
   content: '';
   display: block;
-  width: 6px;
-  background: #ccc;
+  width: 5px;
+  background: var(--markdown-primary-bg-color);
   height: 100%;
   left: 0;
   top: 0;
+  opacity: 0.3;
 }
 
 /* 单个代码块`code` */
 .markdown-transform-html code.single-code {
   color: var(--markdown-primary-bg-color);
   padding: 3px 10px;
-  margin-bottom: 5px;
+  margin: 5px 0;
   display: inline-block;
   background: transparent;
   position: relative;
   border-radius: 5px;
+  font-size: 14px;
 }
 
 .single-code::after {
