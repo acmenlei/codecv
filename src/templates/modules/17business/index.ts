@@ -42,7 +42,7 @@ icon:phone 15507942222 ｜ icon:email coderleilei@qq.com ｜ icon:wechat zhangsa
 :::
 ### 2018/09 ～ 2022/06
 ::: end
-&nbsp;
+
 ::: start
 ### 南昌大学 - 工商管理 - 本科
 本科学生会主席

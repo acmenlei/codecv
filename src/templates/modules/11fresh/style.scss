@@ -1,23 +1,15 @@
 @import url('../../common.css');
 
 .markdown-transform-html {
-  h3,
-  strong,
-  b {
-    font-weight: 500;
-  }
-  h3 {
-    color: var(--markdown-primary-bg-color) !important;
-  }
   color: var(--markdown-primary-color);
   .head-layout {
     h1 {
-      font-size: 40px;
+      font-size: 30px;
       color: var(--markdown-primary-bg-color);
     }
     img {
-      width: 32mm;
-      height: 32mm;
+      width: 28mm;
+      height: 28mm;
       border-radius: 50%;
     }
     .flex-layout-item {
@@ -28,10 +20,16 @@
     }
   }
 
+  h3,
+  strong,
+  b {
+    font-weight: 500;
+    color: var(--markdown-primary-bg-color);
+  }
+
   strong,
   b {
     display: inline-block;
-    color: var(--markdown-primary-bg-color);
     position: relative;
   }
   h2 {

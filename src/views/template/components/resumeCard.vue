@@ -22,8 +22,8 @@ const edit = (type: string) => {
 
 <style lang="scss" scoped>
 .resume-card {
-  box-shadow: 0 0 30px var(--body-background);
-  margin: 0 20px 50px 0;
+  box-shadow: 0 0 40px var(--body-background);
+  margin: 0 20px 55px 0;
   width: 185px;
   height: 240px;
   position: relative;

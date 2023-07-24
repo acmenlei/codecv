@@ -11,8 +11,8 @@
         &:first-child {
           padding-right: 8px;
           img[alt*='个人头像'] {
-            height: 25mm;
-            width: 25mm;
+            height: 27mm;
+            width: 27mm;
             transform: translateY(2.5px);
           }
         }
@@ -35,7 +35,7 @@
   }
 
   h2 {
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 2px;
   }
   .resume-module > h2 {
@@ -50,8 +50,8 @@
     margin-right: 5px;
   }
   a {
-    color: inherit;
-    border-bottom: 1px solid var(--markdown-primary-color);
+    color: var(--super-link);
+    border-bottom: 1px solid var(--super-link);
     text-decoration: none;
   }
   h3 {

@@ -2,6 +2,7 @@
 :root {
   --A4_width: 794px;
   --A4_height: 1123px;
+  --super-link: #4572e3;
 }
 .markdown-transform-html {
   width: var(--A4_width);
@@ -24,7 +25,7 @@
 }
 
 .markdown-transform-html a {
-  color: #3a67d9;
+  color: var(--super-link);
 }
 
 .markdown-transform-html li {
