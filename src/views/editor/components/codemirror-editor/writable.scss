@@ -117,4 +117,31 @@
       opacity: 0.1;
     }
   }
+
+  blockquote {
+    position: relative;
+    margin: 0;
+    font-size: 14px;
+    padding: 8px 15px;
+    margin: 12px 0;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+    &::after {
+      width: 100%;
+      opacity: 0.1;
+      background: #b2c9d6;
+    }
+    &::before {
+      position: absolute;
+      width: 5px;
+      background: #b2c9d6;
+      opacity: 0.3;
+    }
+  }
 }

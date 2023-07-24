@@ -1,3 +1,4 @@
+import useEditorStore from '@/store/modules/editor'
 import { ref, onUnmounted } from 'vue'
 import { clickedTarget, ensureResetClickedTarget } from '../../hook'
 import { reset } from './components/linkInput/hook'
@@ -109,21 +110,8 @@ export function insertCode() {
   reductionSelection(code)
 }
 
-export function insertToTail() {
-  const editor = document.querySelector('.writable-edit-mode')
-  const p = document.createElement('p')
-  p.textContent = '已为您跳出了当前布局容器'
-  editor?.appendChild(p)
-  const selection = window.getSelection() as Selection
-  const range = selection.getRangeAt(0).cloneRange()
-  // 还原Selection对象
-  selection.removeAllRanges()
-  range.setStartAfter(p)
-  range.collapse(true)
-  selection.addRange(range)
-}
-
 export function useToolBarConfig(emit: any) {
+  const editorStore = useEditorStore()
   function handleCommand(event: MouseEvent) {
     const editor = document.querySelector('.writable-edit-mode') as HTMLElement
     const buttons = (event.target as Element).closest('button[data-command]')
@@ -149,9 +137,6 @@ export function useToolBarConfig(emit: any) {
         tableFlag.value = !tableFlag.value
         cursorPosition = saveCursorPosition()
         break
-      case 'insertToTail':
-        insertToTail()
-        break
       case 'insertLink':
         linkFlag.value = !linkFlag.value
         // 修改
@@ -165,11 +150,30 @@ export function useToolBarConfig(emit: any) {
         document.execCommand(command, false, undefined)
         break
     }
-    ;['insertUserInfo', 'insertCode', 'insertToTail'].includes(command) && emit('content-change')
+    ;['insertUserInfo', 'insertCode'].includes(command) && emit('content-change')
     editor.focus()
   }
+  function keyboardEvent(event: KeyboardEvent) {
+    const selection = window.getSelection() as Selection
+    const focusNode = <HTMLElement>selection.focusNode
+    if (
+      editorStore.writable &&
+      event.key == 'Enter' &&
+      focusNode.tagName?.toLowerCase() == 'blockquote'
+    ) {
+      const br = document.createElement('br')
+      selection.setPosition(br, 0)
+      focusNode.parentElement?.replaceChild(br, focusNode) // 删除当前节点
+      const wem = document.querySelector('.writable-edit-mode') as HTMLElement
+      wem.focus()
+    }
+  }
   document.addEventListener('click', handleCommand)
-  onUnmounted(() => document.removeEventListener('click', handleCommand))
+  document.addEventListener('keydown', keyboardEvent)
+  onUnmounted(() => {
+    document.removeEventListener('click', handleCommand)
+    document.removeEventListener('keydown', keyboardEvent)
+  })
 }
 
 function reductionSelection(target: Node) {

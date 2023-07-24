@@ -37,6 +37,8 @@ export function resumeDOMStruct2Markdown({ node, latest, uid }: IReusmeDOMStruct
       result += '*'
     } else if (tagName === 'br') {
       result += '&nbsp;'
+    } else if (tagName === 'blockquote') {
+      result += '> '
     }
 
     const children = node.childNodes
