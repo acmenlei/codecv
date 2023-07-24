@@ -2,6 +2,7 @@ import useEditorStore from '@/store/modules/editor'
 import { ref, onUnmounted } from 'vue'
 import { clickedTarget, ensureResetClickedTarget } from '../../hook'
 import { reset } from './components/linkInput/hook'
+import { useThrottleFn } from '@vueuse/core'
 
 export function useHeading() {
   const level = ref('正文')
@@ -169,7 +170,7 @@ export function useToolBarConfig(emit: any) {
     }
   }
   document.addEventListener('click', handleCommand)
-  document.addEventListener('keydown', keyboardEvent)
+  document.addEventListener('keydown', useThrottleFn(keyboardEvent, 100))
   onUnmounted(() => {
     document.removeEventListener('click', handleCommand)
     document.removeEventListener('keydown', keyboardEvent)
