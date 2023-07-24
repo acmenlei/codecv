@@ -27,7 +27,7 @@ resetCodeMirrorDefaultStyle(writable)
 </script>
 
 <template>
-  <div class="markdown-edit">
+  <div class="markdown-edit noto-serif-sc">
     <content-mode-toolbar
       v-if="writable"
       @toggle-editor-mode="editorStore.setWritableMode"
@@ -75,6 +75,7 @@ resetCodeMirrorDefaultStyle(writable)
   font-size: 15px;
   margin: 0 0 10px 10px;
   border-radius: 10px;
+
   &::-webkit-scrollbar {
     display: none;
   }

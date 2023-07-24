@@ -15,17 +15,17 @@ const { open, toggle } = useSwitch()
 </script>
 
 <template>
-  <div id="header">
+  <div id="header" class="noto-serif-sc">
     <el-tooltip content="返回上一页">
-      <i class="iconfont icon-back mr-20 font-20 pointer hover" @click="$router.back()"></i>
+      <i class="iconfont icon-back font-20 hover" @click="$router.back()"></i>
     </el-tooltip>
     <label for="resume-name-input">简历名称：</label>
     <input id="resume-name-input" type="text" v-model="fileName" />
     <nav-menu @export-md="exportFile('md')" @import-md="importFile" />
     <ExportTotal />
     <Reward />
-    <button class="exportor" @click="exportFile('dynamic')">导出PDF</button>
-    <button class="exportor" @click="exportFile('native')">打印机导出PDF</button>
+    <button class="exporter btn" @click="exportFile('dynamic')">导出PDF</button>
+    <button class="exporter btn" @click="exportFile('native')">打印机导出PDF</button>
     <div class="operator">
       <el-tooltip content="给项目贡献代码" placement="bottom-end">
         <i
@@ -54,6 +54,7 @@ const { open, toggle } = useSwitch()
   text-align: center;
   color: var(--font-color);
   background: var(--background);
+  font-weight: 600;
 
   #resume-name-input {
     border: none;
@@ -62,13 +63,14 @@ const { open, toggle } = useSwitch()
     border-radius: 5px;
     font-size: 16px;
     background: var(--body-background);
+    font-family: var(--font-noto-serif-sc);
 
     &:focus {
       border-bottom: 1.5px solid var(--theme);
     }
   }
 
-  .exportor {
+  .exporter {
     outline: none;
     border: none;
     padding: 8px 15px;
@@ -86,9 +88,11 @@ const { open, toggle } = useSwitch()
     }
   }
   .problem,
-  .github {
+  .github,
+  .icon-back {
     cursor: pointer;
     margin-right: 18px;
+    font-weight: normal;
   }
 }
 </style>

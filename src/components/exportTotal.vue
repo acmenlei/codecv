@@ -18,7 +18,7 @@ onActivated(() => {
 
 <style lang="scss" scoped>
 .export-total {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0 20px;
 
   strong {

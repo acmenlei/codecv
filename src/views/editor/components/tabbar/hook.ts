@@ -416,7 +416,7 @@ export function splitPage(renderCV: HTMLElement) {
 }
 
 // 确保处理之前将之前的空元素删除 否则在多页情况下多次调用会多次生成空白占位符
-function ensureEmptyPreWhiteSpace(renderCV: HTMLElement) {
+export function ensureEmptyPreWhiteSpace(renderCV: HTMLElement) {
   const children = Array.from(renderCV.children) as HTMLElement[]
   for (const child of children) {
     if (child.getAttribute(WHITE_SPACE)) renderCV.removeChild(child)

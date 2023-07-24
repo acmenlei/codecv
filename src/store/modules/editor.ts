@@ -5,6 +5,7 @@ import pinia from '@/store'
 import { getLocalStorage, setLocalStorage } from '@/common/localstorage'
 import { showMessageVN } from '@/common/message'
 import { templates } from '@/templates/config'
+import { ensureEmptyPreWhiteSpace } from '@/views/editor/components/tabbar/hook'
 
 const MARKDOWN_CONTENT = 'markdown-content'
 
@@ -43,7 +44,9 @@ const useEditorStore = defineStore('editorStore', {
       if (this.writable) {
         nextTick(() => {
           originHTML = originHTML || (document.querySelector('.reference-dom') as HTMLElement)
+          originHTML = <HTMLElement>originHTML.cloneNode(true)
           const DOMTree = document.querySelector('.writable-edit-mode') as HTMLElement
+          ensureEmptyPreWhiteSpace(originHTML)
           DOMTree && (DOMTree.innerHTML = originHTML.innerHTML)
         })
       }

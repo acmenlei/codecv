@@ -8,7 +8,7 @@ function toOutNav(path: string) {
 </script>
 
 <template>
-  <div id="header">
+  <div id="header" class="noto-serif-sc">
     <Logo />
     <ul class="nav" data-aos="zoom-out-right">
       <li v-for="(navItem, idx) in homeNav" :key="idx">
@@ -46,6 +46,6 @@ function toOutNav(path: string) {
   padding: 0 70px;
   text-align: center;
   color: var(--font-color);
-  font-weight: bold;
+  font-weight: bolder;
 }
 </style>

@@ -6,7 +6,7 @@ import NavMoblie from './components/navMoblie.vue'
 </script>
 
 <template>
-  <div class="header-out">
+  <div class="header-out noto-serif-sc">
     <div class="header">
       <Logo />
       <Nav />
@@ -28,6 +28,7 @@ import NavMoblie from './components/navMoblie.vue'
   position: sticky;
   top: 0;
   overflow: hidden;
+  font-weight: 600;
 
   .header {
     max-width: var(--max-width);

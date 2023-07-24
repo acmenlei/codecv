@@ -9,12 +9,15 @@
   --button: '#4693ff';
   --max-width: 1300px;
   --el-color-primary: var(--theme) !important;
+  --font-noto-serif-sc: 'Noto Serif SC', 'Noto Sans SC', sans-serif, serif;
 }
 
 .btn {
   border: none;
   outline: none;
   padding: 5px 5px;
+  font-weight: 500;
+  font-family: var(--font-noto-serif-sc);
 }
 
 a.ripple-effect {
@@ -156,6 +159,7 @@ a.ripple-effect {
   background: var(--background);
   padding: 20px;
   border-radius: 10px;
+  font-family: var(--font-noto-serif-sc);
 }
 .pointer {
   cursor: pointer;
@@ -345,4 +349,8 @@ a.ripple-effect {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.noto-serif-sc {
+  font-family: var(--font-noto-serif-sc);
 }

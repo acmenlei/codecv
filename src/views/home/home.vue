@@ -10,7 +10,7 @@ const isDark = useDark()
 
 <template>
   <Header />
-  <div class="introduce flex flex-space-around flex-align-around flex-align-center">
+  <div class="introduce flex flex-space-around flex-align-around flex-align-center noto-serif-sc">
     <div class="introduce-l" data-aos="slide-right">
       <div class="typenet-text"></div>
       <button
