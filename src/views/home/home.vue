@@ -22,7 +22,7 @@ const isDark = useDark()
     </div>
     <div class="introduce-r" data-aos="slide-left">
       <el-tooltip
-        v-for="(theme, idx) in templates.slice(2, 7)"
+        v-for="(theme, idx) in templates.slice(1, 6)"
         :key="theme.id"
         placement="top"
         :content="theme.name"
