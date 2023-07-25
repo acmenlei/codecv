@@ -509,7 +509,10 @@ function findBoundaryElement(
     const actualTop = getElementTop(child, target)
     if (actualTop + totalHeight > A4_HEIGHT * pageSize.value - paddingBottom) {
       // 直接排除一行段落文字 因为在markdown中一段文本没必要再进行深入，它们内嵌不了什么其他元素
-      if (child.children.length && !['p', 'li'].includes(child.tagName.toLocaleLowerCase())) {
+      if (
+        child.children.length &&
+        !['p', 'li', 'table'].includes(child.tagName.toLocaleLowerCase())
+      ) {
         findBoundaryElement(child, target, paddingTop, paddingBottom, pageSize)
       } else {
         // 找到了边界 给边界元素前插入空白元素 将内容挤压至下一页
