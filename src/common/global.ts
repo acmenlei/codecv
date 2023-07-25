@@ -17,7 +17,9 @@ export function useThemeConfig() {
       fontColor = isDark.value ? '#fffff8' : '#555555',
       strongColor = isDark.value ? '#ab3fb2' : '#f24672',
       toolbarBg = isDark.value ? '#282c34' : '#222222',
-      bodyBackground = isDark.value ? '#1e2633' : '#f3f5f7'
+      bodyBackground = isDark.value ? '#1e2633' : '#f3f5f7',
+      writableFontColor = isDark.value ? '#d1d1d1' : '#545a69'
+
     document.body.style.setProperty('--theme', theme)
     document.body.style.setProperty('--background', background)
     document.body.style.setProperty('--font-color', fontColor)
@@ -25,6 +27,7 @@ export function useThemeConfig() {
     document.body.style.setProperty('--toolbar-bg', toolbarBg)
     document.body.style.setProperty('--body-background', bodyBackground)
     document.body.style.setProperty('--el-color-primary', theme)
+    document.body.style.setProperty('--writable-font-color', writableFontColor)
   })
 
   return {
