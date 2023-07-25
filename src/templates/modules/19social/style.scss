@@ -1,0 +1,33 @@
+@import url('../../common.css');
+
+.markdown-transform-html {
+  font-size: 15px;
+  color: var(--markdown-primary-color);
+
+  h2 {
+    position: relative;
+    margin-top: 15px;
+    display: inline-block;
+    padding-left: 15px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 25px;
+      z-index: -1;
+      left: 0;
+      background: linear-gradient(to right, var(--markdown-primary-bg-color), white 30%);
+    }
+  }
+
+  p {
+    line-height: 28px;
+    margin-top: 8px;
+  }
+
+  ol,
+  ul {
+    margin-top: 10px;
+  }
+}
