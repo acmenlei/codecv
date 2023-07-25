@@ -19,6 +19,7 @@
     display: inline-block;
     position: relative;
     z-index: 99;
+    line-height: 35px;
 
     &::before,
     &::after {

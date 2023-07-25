@@ -13,6 +13,7 @@ export const CUSTOM_CSS_STYLE = 'custom-css-style',
   ADJUST_RESUME_MARGIN_TOP = 'ADJUST_RESUME_MARGIN_TOP',
   AUTO_ONE_PAGE = 'auto-one-page',
   WHITE_SPACE = 'white-space',
+  LINE_HEIGHT = 'Line_Height',
   A4_HEIGHT = 1123,
   SELF_HEIGHT = -1234
 
@@ -196,67 +197,65 @@ export function restResumeContent(resumeType: string) {
   localStorage.removeItem(`${MARKDOWN_FONT}-${resumeType}`)
   localStorage.removeItem(`${AUTO_ONE_PAGE}-${resumeType}`)
   localStorage.removeItem(`${ADJUST_RESUME_MARGIN_TOP}-${resumeType}`)
+  localStorage.removeItem(`${LINE_HEIGHT}-${resumeType}`)
   localStorage.removeItem(`markdown-content-${resumeType}`)
   location.reload()
 }
 
 // 调节元素边距
 export function useAdjust(resumeType: string) {
-  const visible = ref(false),
-    marginData = reactive<ElementMarginTop[]>([]),
-    cacheKey = ADJUST_RESUME_MARGIN_TOP + '-' + resumeType
-  interface ElementMarginTop {
+  const visible = ref(false)
+  const properties = reactive<IElementProperty[]>([])
+  const cacheKey = ADJUST_RESUME_MARGIN_TOP + '-' + resumeType
+  interface IElementProperty {
     name: string
     marginTop: number
+    marginBottom: number
     tagName: string
     className: string
   }
 
-  function getAllMarginTopValues(element: HTMLElement): ElementMarginTop[] {
-    const marginTopValues: ElementMarginTop[] = []
+  function getMarginValues(element: HTMLElement): IElementProperty[] {
+    const marginValues: IElementProperty[] = []
     const seenTags = new Set<string>() // 用于记录已经处理过的标签名
     const seenClassNames = new Set<string>() // 用于记录已经处理过的类名
 
-    function getMarginTopValuesRecursive(el: HTMLElement) {
+    function helper(el: HTMLElement) {
       if (el !== element) {
         const computedStyle = window.getComputedStyle(el) // 获取计算后的样式
         const marginTop = parseInt(computedStyle.marginTop) // 获取 marginTop 值
+        const marginBottom = parseInt(computedStyle.marginBottom) // 获取行高
         const tagName = el.tagName.toLowerCase() // 获取标签名，转换为小写
         const className = el.className.split(' ')[0] || '' // 获取类名，如果没有则用 'No Class' 代替
         const name = convert(className || tagName)
 
         // 判断标签名和类名是否已经处理过，如果没有，则将其加入结果数组，并添加到 seenTags 和 seenClassNames 集合中
         if (!seenTags.has(tagName) || !seenClassNames.has(className)) {
-          marginTopValues.push({ tagName, name, marginTop, className })
+          marginValues.push({ tagName, name, marginBottom, marginTop, className })
           seenTags.add(tagName)
           seenClassNames.add(className)
         }
       }
-
       // 遍历当前元素的所有子节点，并递归调用该函数
       const children = el.children
-      for (let i = 0; i < children.length; i++) {
-        const child = children[i] as HTMLElement
-        getMarginTopValuesRecursive(child)
-      }
+      for (let i = 0; i < children.length; i++) helper(children[i] as HTMLElement)
     }
 
-    getMarginTopValuesRecursive(element) // 调用递归函数开始获取 marginTop 值
-    return marginTopValues
+    helper(element) // 调用递归函数开始获取 marginTop 和 lineHeight 值
+    return marginValues
   }
 
   function adjustMargin() {
     setVisible()
     // 获取dom元素
     const targetElement = queryRenderCV()
-    const marginTopValues = getAllMarginTopValues(targetElement)
-    marginData.length = 0
-    marginData.push(...marginTopValues)
+    const marginValues = getMarginValues(targetElement)
+    properties.length = 0
+    properties.push(...marginValues)
   }
 
   function confirmAdjustment() {
     setVisible()
-    // console.log(marginData)
     let styleDOM = query(cacheKey),
       cssText = ''
     const isAppend = styleDOM
@@ -265,9 +264,9 @@ export function useAdjust(resumeType: string) {
       styleDOM = createStyle()
       styleDOM.setAttribute(cacheKey, 'true')
     }
-    for (const marginItem of marginData) {
-      const target = marginItem.className ? `.${marginItem.className}` : marginItem.tagName
-      cssText += `.jufe ${target} {margin-top: ${marginItem.marginTop}px!important; }`
+    for (const property of properties) {
+      const target = property.className ? `.${property.className}` : property.tagName
+      cssText += `.jufe ${target} {margin-top: ${property.marginTop}px!important; margin-bottom: ${property.marginBottom}px!important; }`
     }
     styleDOM.textContent = cssText
     priorityInsert(isAppend, styleDOM)
@@ -310,7 +309,41 @@ export function useAdjust(resumeType: string) {
   }
   // 如果页面中没有用户调整了的样式 那么就需要去初始化
   onActivated(() => !query(cacheKey) && initAdjustCSS())
-  return { adjustMargin, visible, confirmAdjustment, marginData }
+  return { adjustMargin, visible, confirmAdjustment, properties }
+}
+
+// 调整行高
+export function useLineHeight(resumeType: string) {
+  const cacheKey = LINE_HEIGHT + '-' + resumeType
+  const h = ref(get(cacheKey) ? parseInt(get(cacheKey) as string) : 25)
+  const lineHeightOptions = Array(30)
+    .fill(0)
+    .map((item, idx) => ({
+      label: `${10 + idx}px`,
+      value: 10 + idx
+    }))
+  function setLineHeight(newH: number, first?: boolean) {
+    h.value = newH
+    let style = query(cacheKey)
+    const isAppend = style
+    if (!style) {
+      style = createStyle()
+      style.setAttribute(cacheKey, 'true')
+    }
+    style.textContent = `.markdown-transform-html * { line-height: ${newH}px; }`
+    !isAppend && document.head.appendChild(style)
+    set(cacheKey, newH)
+    const renderCV = queryRenderCV()
+    ensureEmptyPreWhiteSpace(renderCV)
+    !first && splitPage(renderCV)
+  }
+
+  onActivated(() => setLineHeight(h.value, true))
+  return {
+    h,
+    lineHeightOptions,
+    setLineHeight
+  }
 }
 
 // 跟随滚动

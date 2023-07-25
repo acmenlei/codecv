@@ -15,7 +15,8 @@ import {
   CUSTOM_MARKDOWN_PRIMARY_BG_COLOR,
   MARKDOWN_FONT,
   ADJUST_RESUME_MARGIN_TOP,
-  AUTO_ONE_PAGE
+  AUTO_ONE_PAGE,
+  LINE_HEIGHT
 } from './components/tabbar/hook'
 
 export const get = getLocalStorage,
@@ -23,6 +24,7 @@ export const get = getLocalStorage,
     CUSTOM_MARKDOWN_PRIMARY_COLOR,
     CUSTOM_MARKDOWN_PRIMARY_BG_COLOR,
     MARKDOWN_FONT,
+    LINE_HEIGHT,
     ADJUST_RESUME_MARGIN_TOP, // priority 3 (数字越大 优先级越低)
     AUTO_ONE_PAGE, // priority 2
     CUSTOM_CSS_STYLE // priority 1

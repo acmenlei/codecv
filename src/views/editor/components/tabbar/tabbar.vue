@@ -14,6 +14,7 @@ import {
   usePrimaryColor,
   useAutoOnePage,
   useAdjust,
+  useLineHeight,
   useFollowRoll,
   restResumeContent
 } from './hook'
@@ -30,8 +31,9 @@ const { color, setColor } = usePrimaryColor(resumeType.value)
 const { fontOptions, font, setFont } = useCustomFont(resumeType.value)
 const { setAvatar } = useAvatar(emits)
 const { primaryColor, setPrimaryColor } = usePrimaryBGColor(resumeType.value)
-const { adjustMargin, visible, confirmAdjustment, marginData } = useAdjust(resumeType.value)
+const { adjustMargin, visible, confirmAdjustment, properties } = useAdjust(resumeType.value)
 const { followRoll, setFollowRoll } = useFollowRoll()
+const { h, lineHeightOptions, setLineHeight } = useLineHeight(resumeType.value)
 const { isDark } = useThemeConfig()
 </script>
 
@@ -47,7 +49,7 @@ const { isDark } = useThemeConfig()
       show-stops
     />
     <div class="operator-level2">
-      <el-tooltip content="调整元素边距" effect="light">
+      <el-tooltip content="调整元素上下边距" effect="light">
         <i class="iconfont icon-adjust operator-item" @click="adjustMargin"></i>
       </el-tooltip>
       <el-tooltip
@@ -100,20 +102,38 @@ const { isDark } = useThemeConfig()
           @change="setFollowRoll"
         />
       </el-tooltip>
-      <el-select
-        v-model="font"
-        class="operator-item"
-        @change="setFont"
-        placement="bottom"
-        size="small"
-      >
-        <el-option
-          v-for="item in fontOptions"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        />
-      </el-select>
+      <el-tooltip content="行高设置" effect="light">
+        <el-select
+          v-model="h"
+          class="operator-item"
+          @change="setLineHeight"
+          placement="bottom"
+          size="small"
+        >
+          <el-option
+            v-for="item in lineHeightOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </el-tooltip>
+      <el-tooltip content="字体设置" effect="light">
+        <el-select
+          v-model="font"
+          class="operator-item"
+          @change="setFont"
+          placement="bottom"
+          size="small"
+        >
+          <el-option
+            v-for="item in fontOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </el-tooltip>
     </div>
     <br />
   </div>
@@ -137,14 +157,19 @@ const { isDark } = useThemeConfig()
     v-if="visible"
     :flag="visible"
     @close="confirmAdjustment"
-    :width="marginData.length ? '400px' : '310px'"
+    :width="properties.length ? '520px' : '310px'"
   >
-    <h4>调节简历内容的上边距（单位px）</h4>
-    <div class="margin-container flex" v-if="marginData.length">
-      <div class="margin-item" v-for="(marginItem, idx) in marginData" :key="idx">
+    <div class="properties-container flex" v-if="properties.length">
+      <div class="properties-header">
+        <span>元素名称</span>
+        <span>上边距 (px)</span>
+        <span>下边距 (px)</span>
+      </div>
+      <div class="properties-item" v-for="(property, idx) in properties" :key="idx">
         <el-space>
-          <span>{{ marginItem.name }} ({{ marginItem.className || marginItem.tagName }})</span>
-          <el-input-number size="small" v-model="marginItem.marginTop" />
+          <span>{{ property.name }} ({{ property.className || property.tagName }})</span>
+          <el-input-number size="small" v-model="property.marginTop" />
+          <el-input-number size="small" v-model="property.marginBottom" />
         </el-space>
       </div>
     </div>
@@ -200,11 +225,25 @@ const { isDark } = useThemeConfig()
   }
 }
 
-.margin-container {
+.properties-container {
   flex-wrap: wrap;
   flex-direction: column;
   overflow: scroll;
-  .margin-item {
+  .properties-header {
+    padding-bottom: 30px;
+    position: relative;
+    span {
+      font-weight: 600;
+      position: absolute;
+    }
+    span:nth-child(2) {
+      transform: translateX(210px);
+    }
+    span:nth-child(3) {
+      transform: translateX(340px);
+    }
+  }
+  .properties-item {
     margin-top: 10px;
     span {
       width: 200px;

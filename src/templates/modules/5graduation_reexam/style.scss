@@ -1,7 +1,6 @@
 @import url('../../common.css');
 
 .markdown-transform-html {
-  padding: 10px 30px 20px 30px;
   font-size: 16px;
   color: var(--markdown-primary-color);
 
@@ -66,6 +65,7 @@
     h1,
     h2 {
       // text-align: center;
+      margin-bottom: 20px;
       color: var(--markdown-primary-bg-color);
     }
   }
