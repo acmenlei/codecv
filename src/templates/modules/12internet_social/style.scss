@@ -13,10 +13,9 @@
 
   h2 {
     margin-top: 20px;
-    padding: 0 5px;
-    background: var(--markdown-primary-bg-color);
+    padding: 0 15px;
+    background: linear-gradient(to right, var(--markdown-primary-bg-color), white, white);
     color: white !important;
-    display: inline-block;
     position: relative;
     z-index: 99;
     line-height: 35px;
@@ -32,7 +31,7 @@
     }
 
     &::after {
-      top: 12px;
+      top: 15px;
     }
   }
 

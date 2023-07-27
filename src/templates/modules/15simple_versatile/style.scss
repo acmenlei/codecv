@@ -40,12 +40,11 @@
   }
 
   .head-layout {
-    white-space: pre;
-
     img[alt*='个人头像'] {
       width: 25mm;
       height: 25mm;
       border-radius: 50%;
+      margin-right: 10px;
     }
     .flex-layout-item {
       margin-right: 10px;

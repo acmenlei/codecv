@@ -110,8 +110,7 @@
 .markdown-transform-html code.single-code {
   color: var(--markdown-primary-bg-color);
   padding: 3px 10px;
-  margin: 5px 0;
-  display: inline-block;
+  line-height: 20px;
   background: transparent;
   position: relative;
   border-radius: 5px;

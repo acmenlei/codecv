@@ -6,19 +6,7 @@
 
   h2 {
     position: relative;
-    margin-top: 15px;
-    display: inline-block;
-    padding-left: 15px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 25px;
-      z-index: -1;
-      left: 0;
-      background: linear-gradient(to right, var(--markdown-primary-bg-color), white 30%);
-    }
+    margin-top: 20px;
   }
 
   p {

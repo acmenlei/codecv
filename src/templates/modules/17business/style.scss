@@ -53,9 +53,9 @@
         width: 1px;
         height: calc(100% + 15px);
         top: 20px;
-        left: -25px;
+        left: -23px;
         z-index: -1;
-        opacity: 0.5;
+        opacity: 0.3;
         background: var(--markdown-primary-bg-color);
       }
 
@@ -76,7 +76,7 @@
         display: inline-block;
         color: white;
         background: var(--markdown-primary-bg-color);
-        padding: 7px 8px;
+        padding: 6px 8px;
         border-radius: 50%;
       }
 

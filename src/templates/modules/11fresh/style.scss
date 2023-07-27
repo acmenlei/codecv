@@ -29,7 +29,6 @@
 
   strong,
   b {
-    display: inline-block;
     position: relative;
   }
   h2 {
@@ -37,14 +36,14 @@
     font-size: 18px;
     color: var(--markdown-primary-bg-color);
     position: relative;
-    display: inline-block;
+    width: 100px;
 
     &::after {
       content: '';
       position: absolute;
-      width: calc(210mm - 100% - 100px);
+      width: calc(210mm - 180px);
       top: 50%;
-      left: calc(100% + 20px);
+      left: 100px;
       border-top: 1px solid var(--markdown-primary-bg-color);
     }
   }
