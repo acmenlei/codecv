@@ -40,12 +40,12 @@
       &::after {
         content: '';
         position: absolute;
-        top: 14.5px;
+        top: 12px;
         width: 0;
         height: 0;
-        border: 41px solid transparent;
+        border: 33px solid transparent;
         border-left-color: var(--markdown-primary-bg-color);
-        right: -40px;
+        right: -31px;
         transform: rotate(135deg);
       }
 
