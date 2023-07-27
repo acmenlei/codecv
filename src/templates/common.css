@@ -34,6 +34,7 @@
 
 .markdown-transform-html h2 {
   margin-top: 10px;
+  line-height: 25px;
 }
 
 .markdown-transform-html h3 {
