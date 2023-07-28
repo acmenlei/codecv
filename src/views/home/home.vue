@@ -39,13 +39,14 @@ body {
   padding: 20px;
   position: relative;
   overflow: hidden;
-  background: var(--background);
+  background: linear-gradient(
+    50deg,
+    var(--background),
+    var(--background),
+    var(--linear-background),
+    var(--background)
+  );
 
-  .introduce-l,
-  img {
-    user-select: none;
-    -webkit-user-drag: none;
-  }
   .introduce-l {
     z-index: 2;
     .typenet-text {

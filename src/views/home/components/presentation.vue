@@ -106,10 +106,10 @@ const { presentationData, presentationIndex, styleConfig } = usePresentation()
         transform: translateX(410px) scale(0.7);
       }
     }
-    box-shadow: 0 0 80px #123;
+    box-shadow: 0 0 100px #456;
   }
   .img-light {
-    box-shadow: 0 0 30px #cccccc;
+    box-shadow: 0 0 100px #ddd;
   }
 }
 .presentation-indicator {
