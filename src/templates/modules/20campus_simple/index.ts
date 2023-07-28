@@ -1,9 +1,8 @@
 const content = `::: headStart
-# 张三 - Web前端开发工程师
+# 小C - Web前端开发工程师
 icon:user 男 / 2000.01.01 &nbsp;/ &nbsp;icon:phone 155xxxxxx06 &nbsp; /&nbsp; icon:email xxxxxxxx@163.com
 icon:github [github.com/acmenlei](https://github.com/acmenlei)&nbsp;icon:gitee [gitee.com/codeleilei](https://gitee.com/codeleilei)&nbsp;icon:juejin [juejin.cn/user/2586468969632445](https://juejin.cn/user/2586468969632445)
 ::: headEnd
-
 
 ## 教育背景
 ::: start

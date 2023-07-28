@@ -15,7 +15,7 @@ const homeNav = [
     tooltip: false
   },
   {
-    name: '更新内容',
+    name: '更新记录',
     path: '/update/line',
     tooltip: false
   }
@@ -25,8 +25,7 @@ const homeOutNav = [
   {
     name: 'GitHub',
     path: 'https://github.com/acmenlei/markdown-resume-to-pdf',
-    icon: 'iconfont icon-github',
-    color: '#000'
+    icon: 'iconfont icon-github'
   },
   {
     name: 'Gitee',

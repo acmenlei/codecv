@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useTypeNet } from './hook'
 import Header from './components/header.vue'
+import Presentation from './components/presentation.vue'
 import { useDark } from '@vueuse/core'
-import { templates } from '@/templates/config'
+// import { templates } from '@/templates/config'
 
 useTypeNet()
 const isDark = useDark()
@@ -20,21 +21,8 @@ const isDark = useDark()
         马上开始 <i class="iconfont icon-goto"></i>
       </button>
     </div>
-    <div class="introduce-r" data-aos="slide-left">
-      <el-tooltip
-        v-for="(theme, idx) in templates.slice(1, 6)"
-        :key="theme.id"
-        placement="top"
-        :content="theme.name"
-      >
-        <img
-          :class="{ 'img-light': !isDark }"
-          :style="{ transform: `rotate(${40 - idx * 20}deg)`, zIndex: 999 - idx }"
-          :src="theme.img"
-          :alt="theme.name"
-          @click="$router.push({ path: '/editor', query: { type: theme.type } })"
-        />
-      </el-tooltip>
+    <div class="introduce-r">
+      <Presentation />
     </div>
   </div>
 </template>
@@ -58,38 +46,6 @@ body {
     user-select: none;
     -webkit-user-drag: none;
   }
-  .introduce-r {
-    width: 250px;
-    height: 350px;
-    img {
-      width: 250px;
-      height: 350px;
-      transform-origin: left bottom;
-      position: absolute;
-      cursor: pointer;
-      border-radius: 10px;
-      transition: transform 0.3s;
-      &:nth-child(1) {
-        animation: rotate1 0.7s linear;
-      }
-      &:nth-child(2) {
-        animation: rotate2 0.7s linear;
-      }
-      &:nth-child(4) {
-        animation: rotate4 0.7s linear;
-      }
-      &:nth-child(5) {
-        animation: rotate5 0.7s linear;
-      }
-    }
-    .img-light {
-      box-shadow: 5px 5px 8px #ddd;
-      &:last-child {
-        box-shadow: 0 0 16px #ddd;
-      }
-    }
-  }
-
   .introduce-l {
     z-index: 2;
     .typenet-text {
@@ -111,39 +67,6 @@ body {
     }
     .dark-start {
       background: #ff7449;
-    }
-  }
-
-  @keyframes rotate1 {
-    from {
-      transform: rotate(20deg);
-    }
-    to {
-      transform: rotate(40deg);
-    }
-  }
-  @keyframes rotate2 {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(20deg);
-    }
-  }
-  @keyframes rotate4 {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(-20deg);
-    }
-  }
-  @keyframes rotate5 {
-    from {
-      transform: rotate(-20deg);
-    }
-    to {
-      transform: rotate(-40deg);
     }
   }
 }
