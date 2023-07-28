@@ -11,6 +11,8 @@ type SubModule = {
   type: string
   id: number
   name: string
+  font?: string
+  lineHeight?: number
   content: string
   primaryColor: string
   primaryBackground: string
@@ -27,7 +29,12 @@ for (const [path, curModule] of moduleEntries) {
   content.id = Math.ceil(Math.random() * 1000000000)
   content.type = path.split('/')[2]
   templates.push(content)
-  primaryColorMap.set(content.type, [content.primaryColor, content.primaryBackground])
+  primaryColorMap.set(content.type, [
+    content.primaryColor,
+    content.primaryBackground,
+    content.font || '',
+    String(content.lineHeight || 25)
+  ])
 }
 
 const match = (module: SubModule) => +(module.type.match(/^\d+/) as RegExpMatchArray)[0]
@@ -39,4 +46,12 @@ export function getPrimaryBGColor(type: string) {
 
 export function getPrimaryColor(type: string) {
   return (primaryColorMap.get(type) as string[])[0]
+}
+
+export function getFontFamily(type: string) {
+  return (primaryColorMap.get(type) as string[])[2]
+}
+
+export function getLineHeight(type: string) {
+  return (primaryColorMap.get(type) as string[])[3]
 }

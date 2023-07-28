@@ -1,6 +1,11 @@
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from '@/common/localstorage'
 import { createStyle, query, removeHeadStyle, convert, createDIV } from '@/utils'
-import { getPrimaryBGColor, getPrimaryColor } from '@/templates/config'
+import {
+  getFontFamily,
+  getLineHeight,
+  getPrimaryBGColor,
+  getPrimaryColor
+} from '@/templates/config'
 import { onActivated, onMounted, reactive, ref } from 'vue'
 import { warningMessage } from '@/common/message'
 
@@ -162,7 +167,9 @@ export function useCustomFont(resumeType: string) {
       label: 'Noto Sans SC'
     }
   ]
-  const font = ref(get(cacheKey) ? (get(cacheKey) as string) : fontOptions[0].value)
+  const font = ref(
+    get(cacheKey) ? (get(cacheKey) as string) : getFontFamily(resumeType) || fontOptions[0].value
+  )
 
   function setFont(fontFamily: string | null, first?: boolean) {
     let style = query(cacheKey)
@@ -315,7 +322,7 @@ export function useAdjust(resumeType: string) {
 // 调整行高
 export function useLineHeight(resumeType: string) {
   const cacheKey = LINE_HEIGHT + '-' + resumeType
-  const h = ref(get(cacheKey) ? parseInt(get(cacheKey) as string) : 25)
+  const h = ref(get(cacheKey) ? +(get(cacheKey) as string) : +getLineHeight(resumeType))
   const lineHeightOptions = Array(30)
     .fill(0)
     .map((item, idx) => ({
