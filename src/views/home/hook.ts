@@ -59,7 +59,7 @@ export function usePresentation() {
     timer = setInterval(() => {
       presentationIndex.value = (presentationIndex.value + 1) % styleConfig.length
       presentationData.unshift(presentationData.pop() as (typeof presentationData)[0])
-    }, 2000)
+    }, 3000)
   })
   onUnmounted(() => clearInterval(timer))
 

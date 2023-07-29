@@ -15,7 +15,6 @@ const { presentationData, presentationIndex, styleConfig } = usePresentation()
       :content="theme.name"
     >
       <img
-        :class="{ 'img-light': !isDark }"
         :style="styleConfig[idx]"
         :src="theme.img"
         :alt="theme.name"
@@ -50,21 +49,20 @@ const { presentationData, presentationIndex, styleConfig } = usePresentation()
     transition: transform 0.8s;
 
     &:nth-child(1) {
-      animation: transform1 0.3s linear;
+      animation: transform1 0.5s linear;
     }
     &:nth-child(2) {
-      animation: transform2 0.3s linear;
+      animation: transform2 0.5s linear;
     }
     &:nth-child(3) {
-      animation: transform3 0.3s linear;
+      animation: transform3 0.5s linear;
     }
     &:nth-child(4) {
-      animation: transform4 0.3s linear;
+      animation: transform4 0.5s linear;
     }
     &:nth-child(5) {
-      animation: transform5 0.3s linear;
+      animation: transform5 0.5s linear;
     }
-    animation-duration: 0.3s;
 
     @keyframes transform1 {
       from {
@@ -106,10 +104,6 @@ const { presentationData, presentationIndex, styleConfig } = usePresentation()
         transform: translateX(410px) scale(0.7);
       }
     }
-    box-shadow: 0 0 100px #456;
-  }
-  .img-light {
-    box-shadow: 0 0 100px #ddd;
   }
 }
 .presentation-indicator {

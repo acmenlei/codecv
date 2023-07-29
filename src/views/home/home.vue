@@ -39,14 +39,14 @@ body {
   padding: 20px;
   position: relative;
   overflow: hidden;
+
   background: linear-gradient(
-    50deg,
+    45deg,
     var(--background),
     var(--background),
-    var(--linear-background),
+    var(--linear-background) 100%,
     var(--background)
   );
-
   .introduce-l {
     z-index: 2;
     .typenet-text {
