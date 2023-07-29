@@ -8,6 +8,10 @@ export async function importCSS(name: string) {
   return res.default
 }
 
+export function queryDOM(uni: string) {
+  return document.querySelector(uni)
+}
+
 export function createStyle() {
   return document.createElement('style')
 }

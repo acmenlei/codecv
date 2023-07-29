@@ -50,6 +50,11 @@ export const toolbarConfig = [
     tip: '插入技能点'
   },
   {
+    icon: 'reply',
+    command: 'breakToTail',
+    tip: '跳出布局在新行编写'
+  },
+  {
     icon: 'write',
     command: 'toMarkdownMode',
     tip: '切换至Markdown模式'

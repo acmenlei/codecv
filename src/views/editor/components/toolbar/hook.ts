@@ -3,12 +3,28 @@ import { ref, onUnmounted } from 'vue'
 import { clickedTarget, ensureResetClickedTarget } from '../../hook'
 import { reset } from './components/linkInput/hook'
 import { useThrottleFn } from '@vueuse/core'
+import { queryDOM } from '@/utils'
 
-export function useHeading() {
+// 标题级别控制
+export function useHeading(emit: any) {
   const level = ref('正文')
   function setHeading() {
-    const format = level.value ? level.value : 'p'
-    document.execCommand('formatBlock', false, format)
+    const tagName = level.value ? level.value : 'p'
+    const replaceDOM = document.createElement(tagName)
+    const selection = window.getSelection() as Selection
+    let replaced = null,
+      parent = null
+    if (selection.anchorNode?.parentElement) {
+      replaceDOM.innerHTML = selection.anchorNode?.parentElement.innerHTML || ''
+      replaced = selection.anchorNode?.parentElement
+      parent = selection.anchorNode?.parentElement.parentElement as Node
+    } else {
+      replaceDOM.textContent = selection.anchorNode?.textContent || ''
+      replaced = selection.anchorNode
+      parent = selection.anchorNode?.parentElement as Node
+    }
+    parent.replaceChild(replaceDOM, replaced as Node)
+    emit('content-change')
   }
   return { setHeading, level }
 }
@@ -28,7 +44,7 @@ export function insertIcon(iconName: string, emit: any) {
   reductionSelection(icon)
   emit('content-change')
 }
-
+// 插入链接
 export const linkFlag = ref(false)
 export function insertLink(url: string, text: string, emit: any) {
   linkFlag.value = !linkFlag.value
@@ -70,7 +86,7 @@ export function insertMulticolumn(column: string, emit: any) {
   reductionSelection(multiColumnsContainer)
   emit('content-change')
 }
-
+// 插入表格
 export const tableFlag = ref(false)
 export function InsertTable(col: string, row: string, emit: any) {
   tableFlag.value = !tableFlag.value
@@ -103,18 +119,28 @@ export function InsertUserInfo() {
     "<div class='head-layout'><h1>在此处可以编辑个人信息...</h1></div><br /><p>这是容器外部,要写在外面的内容从这里开始写...</p>"
   reductionSelection(info)
 }
-
+// 插入技能点（单个代码块）
 export function insertCode() {
   // 创建一个包含多列布局的临时div元素
   const code = document.createElement('span')
   code.innerHTML = `<code class='single-code'>xxx</code>&nbsp;`
   reductionSelection(code)
 }
-
+// 跳出布局容器
+export function breakToTail() {
+  const container = queryDOM('.main-layout') || queryDOM('.writable-edit-mode')
+  const p = document.createElement('p')
+  const br = document.createElement('br')
+  p.appendChild(br)
+  container?.appendChild(p)
+  const selection = window.getSelection() as Selection
+  selection.getRangeAt(0).setStartAfter(p)
+}
+// 内容模式工具栏事件处理
 export function useToolBarConfig(emit: any) {
   const editorStore = useEditorStore()
   function handleCommand(event: MouseEvent) {
-    const editor = document.querySelector('.writable-edit-mode') as HTMLElement
+    const editor = queryDOM('.writable-edit-mode') as HTMLElement
     const buttons = (event.target as Element).closest('button[data-command]')
     if (!buttons) return
     event.preventDefault()
@@ -144,6 +170,9 @@ export function useToolBarConfig(emit: any) {
         reset()
         cursorPosition = saveCursorPosition()
         break
+      case 'breakToTail':
+        breakToTail()
+        break
       case 'toMarkdownMode':
         emit('toggle-editor-mode')
         break
@@ -151,7 +180,7 @@ export function useToolBarConfig(emit: any) {
         document.execCommand(command, false, undefined)
         break
     }
-    ;['insertUserInfo', 'insertCode'].includes(command) && emit('content-change')
+    ;['insertUserInfo', 'insertCode', 'breakToTail'].includes(command) && emit('content-change')
     editor.focus()
   }
   function keyboardEvent(event: KeyboardEvent) {
@@ -221,7 +250,7 @@ function restoreCursorPosition() {
   cursorPosition = null
 }
 
-// markdown mode tool bar handler
+// markdown 模式工具栏事件处理
 export function markdownModeToolbarCommandHandler(command: string, emit: any) {
   switch (command) {
     case 'insertIcon':

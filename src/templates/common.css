@@ -13,6 +13,7 @@
   background: #fff;
   z-index: 2;
   position: relative;
+  overflow: hidden;
   color: var(--markdown-primary-color);
 }
 
@@ -32,6 +33,10 @@
   margin-top: 5px;
 }
 
+.markdown-transform-html h1 {
+  font-size: 25px;
+}
+
 .markdown-transform-html h2 {
   margin-top: 10px;
   line-height: 25px;
@@ -43,6 +48,14 @@
 
 .markdown-transform-html h4 {
   font-size: 15px;
+}
+
+.markdown-transform-html h5 {
+  font-size: 13px;
+}
+
+.markdown-transform-html h6 {
+  font-size: 12px;
 }
 
 .markdown-transform-html .iconfont {

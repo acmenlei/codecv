@@ -1,23 +1,13 @@
 .writable-edit-mode {
   background: var(--background);
   color: var(--writable-font-color);
+  font-size: 13px;
   .flex-layout {
     display: flex;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 6px 0;
     align-items: center;
-
-    img[alt*='个人头像'] {
-      width: 30mm;
-      height: 30mm;
-      cursor: pointer;
-      &:hover {
-        opacity: 0.8;
-      }
-    }
+    margin-top: 5px;
     .flex-layout-item {
-      margin-right: 20px;
+      margin-right: 10px;
       flex: 1;
     }
   }
@@ -31,17 +21,36 @@
   }
   li,
   p {
-    margin-top: 8px;
+    margin-top: 5px;
   }
+  h1,
   h2,
   h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 10px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 17px;
+  }
+  h3 {
+    font-size: 15px;
+  }
   h4 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  h5 {
+    font-size: 13px;
+  }
+  h6 {
+    font-size: 12px;
   }
 
   i {
-    font-size: 1.3rem;
     margin-right: 8px;
     &:hover {
       opacity: 0.5;
@@ -75,6 +84,16 @@
       color: var(--background);
       padding: 5px 10px;
     }
+    img[alt*='个人头像'] {
+      width: 30mm;
+      height: 30mm;
+      border-radius: 5px;
+      margin: 0 10px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 
   table {
@@ -98,11 +117,10 @@
   }
 
   code.single-code {
-    color: var(--font-color);
+    color: var(--writableFontColor);
     padding: 3px 10px;
     background: transparent;
     position: relative;
-    border: 0.5px solid var(--font-color);
     border-radius: 5px;
 
     &::after {
@@ -113,9 +131,8 @@
       left: 0;
       top: 0;
       border-radius: 5px;
-      background: var(--background);
-      z-index: -1;
-      opacity: 0.1;
+      background: #ccc;
+      opacity: 0.2;
     }
   }
 

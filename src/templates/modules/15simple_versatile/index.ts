@@ -8,7 +8,7 @@ icon:email coderlei@test.cn / icon:wechat x972761675 / icon:phone 123xxxxx223
 :::
 icon:github [github.com/acmenlei](https://github.com/acmenlei)
 icon:yuque [yueque.com/xxxxx](https://yuque.com/xiongleixin)
-icon:link [个人网站 coderlei.netlify.app](https://coderlei.netlify.app)
+icon:link [个人网站](https://coderlei.netlify.app)
 ::: end
 ::: headEnd
 

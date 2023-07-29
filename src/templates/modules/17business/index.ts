@@ -37,19 +37,20 @@ icon:phone 15507942222 ｜ icon:email coderleilei@qq.com ｜ icon:wechat zhangsa
 ## icon:school 毕业院校
 ::: start
 ### 中国矿业大学 - 工商管理 - 硕士
-研究生学生会主席
-...
 :::
 ### 2018/09 ～ 2022/06
 ::: end
+研究生学生会主席
+...
 
 ::: start
 ### 南昌大学 - 工商管理 - 本科
-本科学生会主席
-....
 :::
 ### 2018/09 ～ 2022/06
 ::: end
+本科学生会主席
+....
+
 ## icon:trophy  个人荣誉
 - 英语CET4、CET6级
 - 大学生创新创业大赛国家级立项

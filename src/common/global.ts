@@ -14,7 +14,7 @@ export function useThemeConfig() {
   watchEffect(() => {
     const theme = isDark.value ? '#5745c8' : '#ff7449',
       background = isDark.value ? '#282c34' : '#ffffff',
-      fontColor = isDark.value ? '#fffff8' : '#1e293b',
+      fontColor = isDark.value ? '#eeeeee' : '#1e293b',
       strongColor = isDark.value ? '#ab3fb2' : '#f24672',
       toolbarBg = isDark.value ? '#282c34' : '#222222',
       bodyBackground = isDark.value ? '#1e2633' : '#f3f5f7',

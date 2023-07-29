@@ -4,6 +4,7 @@
   color: var(--markdown-primary-color);
 
   i.iconfont {
+    font-size: 18px;
     margin-right: 5px;
   }
 
@@ -12,9 +13,9 @@
     border-left: 4px solid var(--markdown-primary-bg-color) !important;
     padding: 3px 10px;
     position: relative;
-    font-size: 1rem;
+    font-size: 16px;
     i.iconfont {
-      font-size: 1.2rem;
+      font-size: 20px;
     }
 
     &::after {
@@ -44,7 +45,7 @@
       width: 25mm;
       height: 25mm;
       border-radius: 50%;
-      margin-right: 10px;
+      margin-right: 5px;
     }
     .flex-layout-item {
       margin-right: 10px;

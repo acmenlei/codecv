@@ -20,7 +20,7 @@ import TableInput from './components/tableInput.vue'
 
 const emit = defineEmits(['content-change', 'toggle-editor-mode'])
 
-const { setHeading, level } = useHeading()
+const { setHeading, level } = useHeading(emit)
 useToolBarConfig(emit)
 </script>
 
