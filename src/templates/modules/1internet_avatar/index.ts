@@ -62,6 +62,7 @@ icon:yuque [yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 export default {
   name: '互联网IT通用-带头像',
   primaryColor: '#333',
+  lineHeight: 22,
   primaryBackground: '#333',
   img: 'https://z4a.net/images/2023/07/14/1bd60fb410eef1c5b.png',
   content

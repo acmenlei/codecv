@@ -119,6 +119,7 @@ icon:phone 13425182004 ｜ icon:email qiumengyi@kuaishou.com ｜ icon:wechat cod
 `
 export default {
   name: '极简/简约/通用模板',
+  lineHeight: 20,
   primaryColor: '#636262',
   primaryBackground: '#024B4B',
   img: 'https://z4a.net/images/2023/07/14/18.png',
