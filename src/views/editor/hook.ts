@@ -1,6 +1,6 @@
-import { onActivated, Ref, ref, watch } from 'vue'
+import { onActivated, onDeactivated, Ref, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useThrottleFn } from '@vueuse/core'
+import { useDebounceFn, useThrottleFn } from '@vueuse/core'
 
 import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
@@ -77,7 +77,7 @@ export function useDownLoad(type: Ref<string>) {
     editorStore = useEditorStore(),
     { showLoading, closeLoading } = useLoading()
 
-  const downloadDynamic = async (fileName: string) => {
+  const downloadDynamic = async (fileName?: string) => {
     const html = document.querySelector('.jufe') as HTMLElement
     const resumeBgColor = `html,body { background: ${getComputedStyle(html).getPropertyValue(
       'background'
@@ -107,7 +107,7 @@ export function useDownLoad(type: Ref<string>) {
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = `${fileName}.pdf`
+      a.download = `${fileName || document.title}.pdf`
       a.click()
       URL.revokeObjectURL(url)
       successMessage('导出成功～')
@@ -192,4 +192,30 @@ export const clickedTarget = ref<HTMLElement | null>()
 
 export function ensureResetClickedTarget() {
   clickedTarget.value = null
+}
+
+// 备用导出按钮
+export function useShowExport() {
+  const showExport = ref(false)
+
+  function setShowExport() {
+    const scrollTop = document.body.getBoundingClientRect().top
+    if (Math.abs(scrollTop) > 50 && window.innerWidth > 600) {
+      showExport.value = true
+    } else {
+      showExport.value = false
+    }
+  }
+
+  onActivated(() => {
+    document.addEventListener('scroll', useDebounceFn(setShowExport, 400))
+  })
+
+  onDeactivated(() => {
+    document.removeEventListener('scroll', setShowExport)
+    console.log('remove scroll')
+  })
+  return {
+    showExport
+  }
 }
