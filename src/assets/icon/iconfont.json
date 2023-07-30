@@ -6,6 +6,195 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "866455",
+      "name": "360",
+      "font_class": "logo360",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "995244",
+      "name": "complete",
+      "font_class": "complete",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "1202457",
+      "name": "icon_maimai",
+      "font_class": "maimai",
+      "unicode": "e7c4",
+      "unicode_decimal": 59332
+    },
+    {
+      "icon_id": "1899068",
+      "name": "telegram",
+      "font_class": "telegram",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    },
+    {
+      "icon_id": "1917112",
+      "name": "错误",
+      "font_class": "error",
+      "unicode": "e7f6",
+      "unicode_decimal": 59382
+    },
+    {
+      "icon_id": "4765897",
+      "name": "location",
+      "font_class": "location",
+      "unicode": "e790",
+      "unicode_decimal": 59280
+    },
+    {
+      "icon_id": "4766966",
+      "name": "man",
+      "font_class": "man",
+      "unicode": "e7e3",
+      "unicode_decimal": 59363
+    },
+    {
+      "icon_id": "4937037",
+      "name": "zhihu-square-fill",
+      "font_class": "zhihu",
+      "unicode": "e893",
+      "unicode_decimal": 59539
+    },
+    {
+      "icon_id": "6598354",
+      "name": "woman",
+      "font_class": "woman",
+      "unicode": "e8f1",
+      "unicode_decimal": 59633
+    },
+    {
+      "icon_id": "6808372",
+      "name": "Translate",
+      "font_class": "translate",
+      "unicode": "ed8f",
+      "unicode_decimal": 60815
+    },
+    {
+      "icon_id": "6808491",
+      "name": "Open-Source Iniciati",
+      "font_class": "opensource",
+      "unicode": "edcd",
+      "unicode_decimal": 60877
+    },
+    {
+      "icon_id": "7239613",
+      "name": "ant-design",
+      "font_class": "antd",
+      "unicode": "e716",
+      "unicode_decimal": 59158
+    },
+    {
+      "icon_id": "7824123",
+      "name": "print",
+      "font_class": "print",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "10982053",
+      "name": "科大讯飞",
+      "font_class": "kedaxunfei",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "14823210",
+      "name": "nike",
+      "font_class": "nike",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "15203378",
+      "name": "长文本相似",
+      "font_class": "wrongly",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "15378459",
+      "name": "huawei",
+      "font_class": "huawei",
+      "unicode": "ebc3",
+      "unicode_decimal": 60355
+    },
+    {
+      "icon_id": "15378971",
+      "name": "xiaomi",
+      "font_class": "xiaomi",
+      "unicode": "ed18",
+      "unicode_decimal": 60696
+    },
+    {
+      "icon_id": "15838468",
+      "name": "export",
+      "font_class": "export",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "15838540",
+      "name": "time",
+      "font_class": "time",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "17173563",
+      "name": "meituan-m",
+      "font_class": "meituan",
+      "unicode": "e9ac",
+      "unicode_decimal": 59820
+    },
+    {
+      "icon_id": "24066350",
+      "name": "logo_hikvision",
+      "font_class": "hikvision",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "25834910",
+      "name": "boss直聘logo",
+      "font_class": "boss",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "31063255",
+      "name": "dewu",
+      "font_class": "dewu",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "33016827",
+      "name": "ctripapp",
+      "font_class": "trip",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "33356313",
+      "name": "xiaohongshu",
+      "font_class": "xiaohongshu",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "35299090",
+      "name": "vscode",
+      "font_class": "vscode",
+      "unicode": "e90f",
+      "unicode_decimal": 59663
+    },
+    {
       "icon_id": "4937035",
       "name": "taobao-square-fill",
       "font_class": "taobao",

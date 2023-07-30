@@ -1,7 +1,7 @@
 const primaryColorMap: Map<string, string[]> = new Map()
 
-// 创作模板的默认配色
-primaryColorMap.set('create', ['#333', '#333'])
+// 创作模板的默认配置
+primaryColorMap.set('create', ['#333', '#333', '', '25'])
 
 type Module = {
   default: SubModule

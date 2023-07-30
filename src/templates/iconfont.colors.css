@@ -1,4 +1,8 @@
 /*  字体图标颜色 */
+.jufe .iconfont {
+  display: inline-block;
+  margin: 0 auto;
+}
 .jufe .iconfont.icon-yuque {
   color: #5ecf67;
 }
@@ -135,8 +139,85 @@
   z-index: -1;
   border-radius: 5px;
 }
-.jufe .iconfont.icon-csdn {
-  background: linear-gradient(to right, #ca0c16 0%, #000 70%);
+.jufe .iconfont.icon-logo360 {
+  background: linear-gradient(to bottom, #39a046 20%, rgb(233, 210, 36) 50%, #39a046 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.jufe .iconfont.icon-maimai {
+  color: #0251f9;
+}
+
+.jufe .iconfont.icon-telegram {
+  color: #30ace0;
+}
+
+.jufe .iconfont.icon-complete {
+  color: #7bbf05;
+}
+
+.jufe .iconfont.icon-error {
+  color: #ca0c16;
+}
+
+.jufe .iconfont.icon-man {
+  color: #28a9f5;
+}
+
+.jufe .iconfont.icon-woman {
+  color: #f74680;
+}
+
+.jufe .iconfont.icon-zhihu {
+  color: #066de8;
+}
+
+.jufe .iconfont.icon-antd {
+  background: linear-gradient(to right, #1389ff 50%, #f63f4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.jufe .iconfont.icon-kedaxunfei {
+  color: #1c5bac;
+}
+
+.jufe .iconfont.icon-huawei {
+  color: #e90116;
+}
+.jufe .iconfont.icon-xiaomi {
+  color: #e56316;
+}
+
+.jufe .iconfont.icon-meituan {
+  color: #fed02f;
+  position: relative;
+}
+.jufe .iconfont.icon-meituan::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  top: 15%;
+  left: 10%;
+  background: #000;
+  z-index: -1;
+}
+
+.jufe .iconfont.icon-boss {
+  color: #4fc4be;
+}
+
+.jufe .iconfont.icon-dewu {
+  color: #141519;
+}
+.jufe .iconfont.icon-trip {
+  color: #2377e2;
+}
+.jufe .iconfont.icon-xiaohongshu {
+  color: #ff2741;
+}
+.jufe .iconfont.icon-vscode {
+  color: #1f9cf0;
 }

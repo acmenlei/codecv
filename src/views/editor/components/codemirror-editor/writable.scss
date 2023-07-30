@@ -1,7 +1,9 @@
 .writable-edit-mode {
   background: var(--background);
   color: var(--writable-font-color);
+  line-height: 22px;
   font-size: 13px;
+
   .flex-layout {
     display: flex;
     align-items: center;
