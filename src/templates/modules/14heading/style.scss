@@ -36,14 +36,39 @@
 
   h2 {
     margin-top: 20px;
-    border-radius: 2px;
+    border-radius: 2px 0 0 2px;
   }
   .resume-module > h2 {
     background: var(--markdown-primary-color);
-    color: white;
+    color: #f8f8f8;
     padding: 5px 15px;
     display: inline-block;
     font-size: 1rem;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      right: -1rem;
+      top: 0;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      border-left: 1rem solid transparent; /* 左边斜边，根据需求调整长度 */
+      border-right: 1rem solid transparent; /* 右边斜边，根据需求调整长度 */
+      border-bottom: 2.2rem solid var(--markdown-primary-color);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: calc(794px - 60px);
+      height: 1px;
+      opacity: 0.5;
+      left: 0;
+      background: var(--markdown-primary-color);
+    }
   }
   i.iconfont {
     font-size: 1.2rem;

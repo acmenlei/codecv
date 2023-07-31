@@ -19,7 +19,7 @@ export function useThemeConfig() {
       toolbarBg = isDark.value ? '#282c34' : '#222222',
       bodyBackground = isDark.value ? '#1e2633' : '#f3f5f7',
       writableFontColor = isDark.value ? '#d1d1d1' : '#545a69',
-      linearBGC = isDark.value ? '#3e333e' : '#fbe9db'
+      linearBGC = isDark.value ? background : '#fbe9db'
 
     document.body.style.setProperty('--theme', theme)
     document.body.style.setProperty('--background', background)

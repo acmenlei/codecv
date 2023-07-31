@@ -15,6 +15,7 @@ const { presentationData, presentationIndex, styleConfig } = usePresentation()
       :content="theme.name"
     >
       <img
+        :class="{ light: !isDark }"
         :style="styleConfig[idx]"
         :src="theme.img"
         :alt="theme.name"
@@ -47,7 +48,10 @@ const { presentationData, presentationIndex, styleConfig } = usePresentation()
     cursor: pointer;
     border-radius: 10px;
     transition: transform 0.8s;
-
+    box-shadow: 0 0 80px #456;
+    &.light {
+      box-shadow: 0 0 30px #bbb;
+    }
     &:nth-child(1) {
       animation: transform1 0.5s linear;
     }

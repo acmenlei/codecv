@@ -64,6 +64,7 @@ xxxx**研发负责人**，负责前端技术架构设计，探索Web前端与游
 export default {
   type: 'heading',
   name: '简约风头部用色',
+  lineHeight: 20,
   primaryColor: '#363434',
   primaryBackground: '#ffdc63',
   img: 'https://z4a.net/images/2023/07/14/14.png',

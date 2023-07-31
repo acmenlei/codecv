@@ -90,6 +90,8 @@ web前端
 export default {
   name: '简约通用 突出内容',
   primaryColor: '#333',
+  lineHeight: 16,
+  font: 'Noto Sans SC',
   primaryBackground: '#14A25D',
   img: 'https://z4a.net/images/2023/07/14/imagea2a8fec02daeeb32.png',
   content
