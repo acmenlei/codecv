@@ -3,7 +3,6 @@ import { useTypeNet } from './hook'
 import Header from './components/header.vue'
 import Presentation from './components/presentation.vue'
 import { useDark } from '@vueuse/core'
-// import { templates } from '@/templates/config'
 
 useTypeNet()
 const isDark = useDark()
@@ -18,7 +17,7 @@ const isDark = useDark()
         @click="$router.push('/template')"
         :class="['start btn pointer', { 'dark-start': isDark }]"
       >
-        马上开始 <i class="iconfont icon-goto"></i>
+        快速开始 <i class="iconfont icon-goto"></i>
       </button>
     </div>
     <div class="introduce-r">
@@ -41,11 +40,10 @@ body {
   overflow: hidden;
 
   background: linear-gradient(
-    45deg,
+    to bottom,
     var(--background),
     var(--background),
-    var(--linear-background) 100%,
-    var(--background)
+    var(--linear-background) 100%
   );
   .introduce-l {
     z-index: 2;
