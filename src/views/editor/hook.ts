@@ -100,7 +100,8 @@ export function useDownLoad(type: Ref<string>) {
       style += styleContent
     }
     style = resetStyle + resumeBgColor + style
-    showLoading('因使用国外服务速度稍慢 请耐心等待...')
+    // showLoading('因使用国外服务速度稍慢 请耐心等待...')
+    showLoading('正在导出...')
     try {
       const pdfData = await resumeExport({ content: html.outerHTML, style, link: linkURL })
       const blob = new Blob([new Uint8Array(pdfData.pdf.data)], { type: 'application/pdf' })
@@ -113,9 +114,10 @@ export function useDownLoad(type: Ref<string>) {
       successMessage('导出成功～')
     } catch (e: any) {
       const errorMsg =
-        e.message == 'Failed to fetch'
-          ? '国内导出易出错 请重新尝试 有条件的打开梯子后重试或使用打印机导出'
-          : '导出出错 请先尝试其他方式'
+        // e.message == 'Failed to fetch'
+        //   ? '国内导出易出错 请重新尝试 有条件的打开梯子后重试或使用打印机导出'
+        //   : '导出出错 请重新尝试先尝试其他方式'
+        '导出出错 请重新尝试先尝试其他方式'
       errorMessage(errorMsg)
     }
     closeLoading()
@@ -197,7 +199,6 @@ export function ensureResetClickedTarget() {
 // 备用导出按钮
 export function useShowExport() {
   const showExport = ref(false)
-
   function setShowExport() {
     const scrollTop = document.body.getBoundingClientRect().top
     if (Math.abs(scrollTop) > 50 && window.innerWidth > 600) {
@@ -206,14 +207,11 @@ export function useShowExport() {
       showExport.value = false
     }
   }
-
   onActivated(() => {
     document.addEventListener('scroll', useDebounceFn(setShowExport, 400))
   })
-
   onDeactivated(() => {
     document.removeEventListener('scroll', setShowExport)
-    console.log('remove scroll')
   })
   return {
     showExport
