@@ -24,7 +24,8 @@ const { showExport } = useShowExport()
     <el-tooltip content="导出PDF文件" v-if="showExport">
       <i
         data-aos="fade-in"
-        data-aos-duration="100"
+        data-aos-duration="800"
+        data-aos-offset="50"
         class="iconfont icon-export hover pointer standby-export"
         @click="downloadDynamic()"
       ></i>
@@ -46,19 +47,19 @@ const { showExport } = useShowExport()
     top: 120px;
     right: 30px;
     z-index: 3;
-    color: var(--theme);
-    background: #f8f8f8;
+    color: #f8f8f8;
+    background: var(--theme);
     text-align: center;
     line-height: 45px;
     padding-left: 2px;
-    font-size: 25px;
+    font-size: 22px;
     width: 45px;
     height: 45px;
     border-radius: 50%;
 
     &:hover {
-      color: #f8f8f8;
-      background: var(--theme);
+      color: var(--theme);
+      background: #f8f8f8;
     }
   }
 }
