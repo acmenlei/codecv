@@ -61,13 +61,8 @@ const { open, toggle } = useSwitch()
     outline: none;
     padding: 8px 10px;
     border-radius: 5px;
-    font-size: 16px;
     background: var(--body-background);
     font-family: var(--font-noto-serif-sc);
-
-    &:focus {
-      border-bottom: 1.5px solid var(--theme);
-    }
   }
 
   .exporter {

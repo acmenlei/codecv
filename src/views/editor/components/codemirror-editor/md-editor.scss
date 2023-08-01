@@ -1,0 +1,23 @@
+.cm-editor {
+  font-size: 14px;
+  &.cm-focused {
+    outline: none;
+  }
+}
+
+.cm-scroller {
+  overflow-y: scroll;
+
+  .cm-gutters + .cm-content[contenteditable='true'] {
+    margin: 0;
+  }
+
+  .cm-line {
+    line-height: inherit;
+  }
+}
+
+.ͼ1 .cm-scroller {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  line-height: 20px;
+}

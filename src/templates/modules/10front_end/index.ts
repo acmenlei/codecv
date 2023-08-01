@@ -77,6 +77,8 @@ icon:phone 155xxxxxx06
 export default {
   name: '互联网IT通用',
   primaryColor: '#333',
+  font: 'Noto Sans SC',
+  lineHeight: 17,
   primaryBackground: '#333',
   img: 'https://z4a.net/images/2023/07/14/1070de79adef33af39.jpg',
   content

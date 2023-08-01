@@ -1,24 +1,14 @@
 import useEditorStore from '@/store/modules/editor'
-import {
-  Ref,
-  computed,
-  nextTick,
-  onActivated,
-  onDeactivated,
-  onMounted,
-  ref,
-  watch,
-  watchEffect
-} from 'vue'
+import { Ref, computed, nextTick, onActivated, onDeactivated, ref, watchEffect } from 'vue'
 import { linkFlag, selectIcon } from '../toolbar/hook'
 import { clickedTarget } from '../../hook'
 import { setClickedLinkText, setClickedLinkURL } from '../toolbar/components/linkInput/hook'
 import { getPickerFile } from '@/utils/uploader'
 import { resumeDOMStruct2Markdown } from '@/utils/dom2md'
 
-export function initEditorState(resumetype: string) {
+export function initEditorState(resumeType: string) {
   const editorStore = useEditorStore()
-  editorStore.initMDContent(resumetype)
+  editorStore.initMDContent(resumeType)
 
   const writable = computed(() => editorStore.writable)
 
@@ -105,18 +95,6 @@ export function injectWritableModeClickedReplace(parentNode: HTMLElement) {
       clickedTarget.value = target
     }
   })
-}
-
-export function resetCodeMirrorDefaultStyle(writable: Ref<boolean>) {
-  function reset() {
-    const editors = Array.from(document.querySelectorAll('.cm-editor')) as HTMLElement[]
-    editors.forEach(editor => (editor.style.outline = 'none'))
-  }
-  watch(
-    () => writable.value,
-    n => !n && nextTick(reset)
-  )
-  onMounted(reset)
 }
 
 // 使用编辑模式

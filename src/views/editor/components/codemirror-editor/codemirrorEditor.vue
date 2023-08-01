@@ -9,11 +9,11 @@ import {
   initEditorState,
   useToggleEditorMode,
   useMoveLayout,
-  injectWritableModeAvatarEvent,
-  resetCodeMirrorDefaultStyle
+  injectWritableModeAvatarEvent
 } from './hook'
 import { useThemeConfig } from '@/common/global'
 import './writable.scss'
+import './md-editor.scss'
 
 const { resumeType } = useResumeType()
 const { left, down } = useMoveLayout()
@@ -23,7 +23,6 @@ const { isDark } = useThemeConfig()
 const { writable, editorStore } = initEditorState(resumeType.value)
 
 injectWritableModeAvatarEvent(writable, setAvatar)
-resetCodeMirrorDefaultStyle(writable)
 </script>
 
 <template>
@@ -76,9 +75,6 @@ resetCodeMirrorDefaultStyle(writable)
   margin: 0 0 10px 10px;
   border-radius: 10px;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
   .writable-edit-mode {
     padding: 20px;
     min-width: 600px;
@@ -118,18 +114,6 @@ resetCodeMirrorDefaultStyle(writable)
     font-weight: bold;
     opacity: 0.7;
     margin-top: -10px;
-  }
-}
-.css-editor {
-  border-radius: 10px;
-  margin-top: 10px;
-  position: relative;
-  .move-y {
-    flex-direction: row;
-    width: 100%;
-    height: 10px;
-    top: -10px;
-    left: 0;
   }
 }
 </style>
