@@ -35,6 +35,7 @@
 
 .markdown-transform-html h1 {
   font-size: 25px;
+  line-height: 30px;
 }
 
 .markdown-transform-html h2 {
@@ -44,6 +45,7 @@
 
 .markdown-transform-html h3 {
   font-size: 17px;
+  line-height: 25px;
 }
 
 .markdown-transform-html h4 {
