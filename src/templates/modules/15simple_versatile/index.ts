@@ -68,6 +68,8 @@ icon:link [个人网站](https://coderlei.netlify.app)
 export default {
   name: '简约万能模板',
   primaryColor: '#333',
+  lineHeight: 20,
+  font: 'Noto Sans SC',
   primaryBackground: '#C42F76',
   img: 'https://z4a.net/images/2023/07/14/15.png',
   content

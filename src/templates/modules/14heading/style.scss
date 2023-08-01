@@ -65,6 +65,7 @@
       bottom: 0;
       width: calc(794px - 60px);
       height: 1px;
+      transform: scaleY(0.5);
       opacity: 0.5;
       left: 0;
       background: var(--markdown-primary-color);

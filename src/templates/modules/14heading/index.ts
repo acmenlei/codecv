@@ -65,6 +65,7 @@ export default {
   type: 'heading',
   name: '简约风头部用色',
   lineHeight: 20,
+  font: 'Noto Sans SC',
   primaryColor: '#363434',
   primaryBackground: '#ffdc63',
   img: 'https://z4a.net/images/2023/07/14/14.png',
