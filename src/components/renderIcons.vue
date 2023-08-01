@@ -75,6 +75,7 @@ function search() {
     background: transparent;
     border: none;
     height: 60px;
+    color: var(--writable-font-color);
 
     i {
       font-size: 20px;
