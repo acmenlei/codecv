@@ -106,7 +106,9 @@ export function useToggleEditorMode(resumeType: string) {
     const content = resumeDOMStruct2Markdown({
       node: DOMTree.value as Node,
       latest: true,
-      uid: 0
+      uid: 0,
+      whiteSpace: 0,
+      parent: <Node>DOMTree.value?.parentElement
     })
     setMDContent(content, resumeType)
   }
