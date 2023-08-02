@@ -2,7 +2,7 @@
   background: var(--background);
   color: var(--writable-font-color);
   line-height: 22px;
-  font-size: 13px;
+  font-size: 14px;
 
   .flex-layout {
     display: flex;
@@ -91,6 +91,7 @@
       height: 30mm;
       border-radius: 5px;
       margin: 0 10px;
+      object-fit: cover;
       cursor: pointer;
       &:hover {
         opacity: 0.8;
