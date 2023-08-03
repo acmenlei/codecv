@@ -21,11 +21,12 @@ const { queryCategory, data } = useCategory()
     <div class="resume-right-container" data-aos="fade-left">
       <div class="resume-notification content-card">
         <strong>公告</strong>
-        <br />
         <p>
           如果你觉得项目对你有所帮助，请考虑为
           <a href="https://github.com/acmenlei/codecv" target="_blank">项目</a>
-          点一个 star<i class="iconfont icon-star"></i>～
+          点一个 <i class="iconfont icon-star"></i>，若遇到 BUG 请通过下方微信/
+          <a href="https://github.com/acmenlei/codecv/issues" target="_blank">issues</a>
+          描述并复现你所遇到的问题，当然你也可以为项目贡献你的代码，良好的用户体验需要大家一起来构建～
         </p>
       </div>
       <div class="advertising content-card mt-20">
@@ -46,9 +47,13 @@ const { queryCategory, data } = useCategory()
   margin: 20px auto;
 
   .resume-notification {
+    font-size: 15px;
+    line-height: 28px;
     strong {
       display: inline-block;
       margin-bottom: 10px;
+      padding-bottom: 5px;
+      color: var(--theme);
     }
     a {
       color: #5e75eb;
