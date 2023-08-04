@@ -63,6 +63,7 @@ xxxx年xx月 - xxxx年xx月
 export default {
   name: '研究生复试模板',
   primaryColor: '#3A3939',
+  lineHeight: 19,
   primaryBackground: '#2186D2',
   img: 'https://z4a.net/images/2023/07/14/5791fd61daed35d47.png',
   content

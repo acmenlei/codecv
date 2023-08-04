@@ -9,8 +9,11 @@ icon:github  [https://github.com/acmenlei](https://github.com/acmenlei)
 
 ## 教育背景
 ::: start
-- **江西xxxx大学**
-- VR现代产业学院 - 软件工程（本科）
+**江西xxxx大学**
+:::
+软件工程
+:::
+全日制本科
 :::
 
 **2019.09 - 2023.07**
@@ -27,13 +30,13 @@ icon:github  [https://github.com/acmenlei](https://github.com/acmenlei)
 - 了解 Nodejs 及其生态，如 Express、Sequelize，并能使用 Nodejs 搭建基本的后台服务
 
 ## 开源作品
-**icon:github  [markdown-transform-html](https://github.com/acmenlei/markdown-transform-html)**
-- **工具介绍**：基于 TypeScript 开发的 MD 词法分析器，一站式解析 Markdown 语法为 HTML 结构的工具，且可提供代码高亮功能
+::: start
+**icon:github  [markdown-plus](https://github.com/acmenlei/markdown-transform-html)**
+:::
+**2022.09 - 至今**
+::: end
+- **工具介绍**：MD 词法分析器，弥补markdonw本身的一些缺陷，在常用语法基础上扩展了其他语法，如多列布局
 - **线上演示**：[https://acmenlei.github.io/markdown-transform-html-demo/dist/](https://acmenlei.github.io/markdown-transform-html-demo/dist/)
-
-**icon:github  [v3-carousel](https://github.com/acmenlei/v3-carousel)**
-- **工具介绍**：基于 Vue3 Composition Api 开发的轮播图组件，轮播内容可完全自定义
-- **线上演示**：[https://acmenlei.github.io/v3-carousel/dist/](https://acmenlei.github.io/v3-carousel/dist/)
 
 ## 实习经历
 ::: start
@@ -42,37 +45,32 @@ icon:github  [https://github.com/acmenlei](https://github.com/acmenlei)
 **xxxx.xx - xxxx.xx**
 ::: end
 
-##### xxxxxxxxx
-
-- **技术栈**：\`Vue.js\` \`ElementUI\` \`Echarts\` \`Vuex\` \`Vue-Router\`&nbsp;
-- **项目简介**：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-- **工作内容**：
-
+- **技术栈**：\`Vue.js\` \`ElementUI\` \`Echarts\` &nbsp;
+- **工作职责**：
 1. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 2. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-3. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-4. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-5. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-6. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
+- **工作成果**：
+1. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## 项目经历
 
 ::: start
-### xxxxxxxxxxxxxx
+**xxxxxxxxxxxxxx**
 :::
 ** 2021.12 - 至今 **
 ::: end
 - **技术栈**：\`Vue.js\` \`ElementUI\` \`Echarts\` \`Vuex\` \`Vue-Router\`&nbsp;
 - **项目简介**：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-- **工作内容**：
-
+- **项目职责**：
 1. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 2. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-3. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-4. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-5. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-6. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- **项目难点**：
+1. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- **项目成果**：
+1. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+2. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 `
 export default {
   name: '互联网IT通用',
