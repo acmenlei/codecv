@@ -4,7 +4,7 @@ import { useDebounceFn, useThrottleFn } from '@vueuse/core'
 
 import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
-import { importCSS, isDev, useLoading } from '@/utils'
+import { importCSS, isDev, queryDOM, useLoading } from '@/utils'
 import { splitPage } from './components/tabbar/hook'
 import useEditorStore from '@/store/modules/editor'
 import { convertDOM } from '@/utils/moduleCombine'
@@ -122,7 +122,8 @@ export function useDownLoad(type: Ref<string>) {
   }
 
   const downloadNative = () => {
-    localStorage.setItem('download', JSON.stringify(convertDOM(editorStore.MDContent).innerHTML))
+    // localStorage.setItem('download', JSON.stringify(convertDOM(editorStore.MDContent).innerHTML))
+    localStorage.setItem('download', JSON.stringify((<HTMLElement>queryDOM('.jufe')).innerHTML))
     router.push({ path: '/download', query: { type: type.value } })
   }
 
