@@ -149,7 +149,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 5px;
+  padding-top: 5px;
 }
 
 .jufe-wrapper-page {

@@ -3,8 +3,8 @@ const content = `## 张三-Web前端开发工程师
 icon:user 男 / 2000.01.01 / 江西南昌
 icon:phone 155xxxxxx06
 :::
-[icon:email xxxxxxxx@163.com](xxxxxxxx@163.com)
-[icon:github https://github.com/acmenlei](https://github.com/acmenlei)
+icon:email  [xxxxxxxx@163.com](xxxxxxxx@163.com)
+icon:github  [https://github.com/acmenlei](https://github.com/acmenlei)
 ::: end
 
 ## 教育背景
@@ -27,11 +27,11 @@ icon:phone 155xxxxxx06
 - 了解 Nodejs 及其生态，如 Express、Sequelize，并能使用 Nodejs 搭建基本的后台服务
 
 ## 开源作品
-**[icon:github markdown-transform-html](https://github.com/acmenlei/markdown-transform-html)**
+**icon:github  [markdown-transform-html](https://github.com/acmenlei/markdown-transform-html)**
 - **工具介绍**：基于 TypeScript 开发的 MD 词法分析器，一站式解析 Markdown 语法为 HTML 结构的工具，且可提供代码高亮功能
 - **线上演示**：[https://acmenlei.github.io/markdown-transform-html-demo/dist/](https://acmenlei.github.io/markdown-transform-html-demo/dist/)
 
-**[icon:github v3-carousel](https://github.com/acmenlei/v3-carousel)**
+**icon:github  [v3-carousel](https://github.com/acmenlei/v3-carousel)**
 - **工具介绍**：基于 Vue3 Composition Api 开发的轮播图组件，轮播内容可完全自定义
 - **线上演示**：[https://acmenlei.github.io/v3-carousel/dist/](https://acmenlei.github.io/v3-carousel/dist/)
 

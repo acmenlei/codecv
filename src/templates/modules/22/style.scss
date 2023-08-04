@@ -1,0 +1,50 @@
+@import url('../../common.css');
+
+.markdown-transform-html {
+  .head-layout {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    img {
+      width: 25mm;
+      height: 25mm;
+      border-radius: 50%;
+    }
+
+    &::after {
+      opacity: 0.3;
+      content: '';
+      width: calc(100% + 80px);
+      height: calc(100% + 30px);
+      background: linear-gradient(to bottom, var(--markdown-primary-bg-color), #fff 100%, #fff);
+      position: absolute;
+      left: -40px;
+      top: -30px;
+      z-index: -1;
+    }
+  }
+  h2 {
+    font-size: 17px;
+    padding-left: 10px;
+    position: relative;
+    margin-top: 15px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 4px;
+      left: 0;
+      top: 0;
+      opacity: 0.6;
+      border-radius: 5px;
+      background: var(--markdown-primary-bg-color);
+    }
+  }
+  a {
+    color: var(--markdown-primary-bg-color);
+  }
+  p {
+    margin-top: 5px;
+  }
+}
