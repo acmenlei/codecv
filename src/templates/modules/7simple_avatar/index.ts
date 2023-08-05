@@ -79,6 +79,7 @@ icon:city 浙江杭州 | icon:user 男 / 2000.01.01 | 中共党员 ｜ 2023届
 export default {
   name: '简约通用简历模板',
   primaryColor: '#2A2D2D',
+  lineHeight: 20,
   primaryBackground: '#F98C07',
   img: 'https://z4a.net/images/2023/07/14/7e940fd5fd2eb8810.png',
   content

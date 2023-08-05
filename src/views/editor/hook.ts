@@ -77,10 +77,11 @@ export function useDownLoad(type: Ref<string>) {
     { showLoading, closeLoading } = useLoading()
 
   const downloadDynamic = async (fileName?: string) => {
-    const html = document.querySelector('.jufe') as HTMLElement
-    const resumeBgColor = `html,body { background: ${getComputedStyle(html).getPropertyValue(
+    const html = document.querySelector('.jufe') as HTMLElement,
+      htmlStyles = getComputedStyle(html)
+    const resumeBgColor = `html,body { background: ${htmlStyles.getPropertyValue(
       'background'
-    )}; }`
+    )}; font-size:${htmlStyles.getPropertyValue('font-size')}; }`
     const resetStyle = ` * { margin: 0; padding: 0; box-sizing: border-box; }`
     // 获取简历模板的样式
     let style = '',
