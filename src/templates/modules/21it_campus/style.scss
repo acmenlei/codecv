@@ -1,14 +1,12 @@
 @import url('../../common.css');
 
 .markdown-transform-html {
-  font-size: 14px;
-
   h2 {
-    margin: 10px 0;
+    margin-top: 10px;
     font-size: 17px;
     padding-bottom: 3px;
-    color: var(--markdown-primary-color);
-    border-bottom: 1px solid var(--markdown-primary-color);
+    color: var(--markdown-primary-bg-color);
+    border-bottom: 1px solid var(--markdown-primary-bg-color);
   }
   li {
     margin-top: 2px;

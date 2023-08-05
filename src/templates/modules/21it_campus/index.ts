@@ -1,4 +1,4 @@
-const content = `## 小C - 高级前端开发工程师
+const content = `## 小C - 前端开发工程师
 ::: start
 icon:man 男 / 1995.08.01 / icon:phone 15507942706
 icon:email coderleilei@163.com
@@ -12,33 +12,37 @@ icon:gitee [https://gitee.com/codeleilei](https://gitee.com/codeleilei)
 
 ::: end
 
+## icon:technology 专业技能
+- 精通 Vue.js、React.js 框架源码，对此类框架有自己的理解，能根据实际业务场景进行技术选型
+- 精通 Nuxt.js、Next.js 以及社区相关的 SSR 渲染框架原理以及使用，对其实现也有自己的理解
+- 精通计算机网络、计算机组成原理、操作系统，对 HTTPS、HTTP、TCP、UDP 有过深入研究
+- 精通微前端框架，如 qiankun、EMP、Single-spa，并能够根据实际业务场景进行项目架构设计
+- 精通前端性能优化、浏览器底层原理、ChromeV8引擎，对前端性能调优有自己的理解
+
+
 ## icon:school 教育经历
 ::: start
-- **华东师范大学 （硕士）** \`985\` \`211\` \`双一流大学\`
+**华东师范大学** &nbsp;&nbsp; \`985\` \`211\`
+:::
+计算机科学与技术 GPA 3.9/4.0
+:::
+硕士
 :::
 **2017.09 - 2020.07**
 ::: end
 
-::: start
-- **华东师范大学 （本科）** \`985\` \`211\` \`双一流大学\`
-:::
-**2013.09 - 2017.07**
-::: end
 
 ## icon:work 工作经历
 ::: start
-**icon:bilibili 上海哔哩哔哩科技有限公司** &nbsp;&nbsp;&nbsp;\`负责人\` \`组长\` \`带团队经验\`
+**icon:bilibili 上海哔哩哔哩科技有限公司** &nbsp;&nbsp;&nbsp;
 :::
 **前端开发工程师（2020.08 - 2023.07）**
 ::: end
-
-- 负责优化主站 PC 端性能，主导推进了100+个优化case ，实现主站首次加载从**3s到0.5s左右**的极致优化
-- 负责推进小组团队每周的 codeReview 缓解，给团队成员做技术分享10+次，并得到同事的一致认可
-- 阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴
-
+- **工作职责**：负责优化主站 PC 端性能以及推进小组团队每周的代码CR，给团队成员做技术分享阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴 ...
+- **工作成果**：主导推进了100+个优化case ，实现主站首次加载从**5s到0.5s左右**的极致优化，给团队成员做**技术分享10+次**，得到同事们的一致认可，阿巴阿巴阿巴...
 ## icon:opensource 开源项目
 ::: start
-icon:github **codecv** &nbsp;&nbsp;\`icon:star 400 +\`
+icon:github **codecv** &nbsp;&nbsp;icon:star 400 +
 :::
 https://github.com/acmenlei/codecv
 ::: end
@@ -46,7 +50,7 @@ https://github.com/acmenlei/codecv
 - **线上地址**：[https://codeleilei.gitee.io/markdown2pdf](https://codeleilei.gitee.io/markdown2pdf)
 
 ::: start
-icon:github **typenet** &nbsp;&nbsp; \`打字机效果\`
+icon:github **typenet**
 :::
 https://github.com/acmenlei/typenet
 ::: end
@@ -66,19 +70,9 @@ https://github.com/acmenlei/typenet
 
 - **线上地址**：[https://codeleilei.gitee.io/markdown2pdf](https://codeleilei.gitee.io/markdown2pdf)
 
-- **主要内容**：
-
-  - 对 Markdown 进行词法分析（**需要支持图标、多列布局等**），将它解析为 HTML 结构后转 PDF 导出
-  - 内置 **Makrdown 模式和内容模式**两种编辑方式，实现两种模式之间的数据同步，相互转换
-  - 内置 TabBar 工具栏，支持多种可扩展功能，如智能一页、滚动跟随、边距调节器、自定义主题等
-
-- **项目难点**：
-
-  - 解决预览 A4 纸效果会出现的**边界内容截断**问题
-  - 解决原生 Markdown 语法并不支持多列布局，图标等语法的问题
-  - 解决两种编辑模式之间（Markdown 模式 & 内容模式）需要做到**数据同步**，无缝切换的问题
-
-- **项目亮点**：Vite 打包优化将**生产环境包体积压缩了75%**，首屏加载从 **8s 左右 优化至 1.3s 左右**
+- **项目职责**：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- **项目难点**：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- **项目成果**：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ## icon:trophy 获奖荣誉
 - 2019 - 2020年国家奖学金 / 2020 - 2021年国家励志奖学金
 - 2019年 CCPC 大学生程序设计大赛上海区预赛金牌
@@ -89,9 +83,9 @@ https://github.com/acmenlei/typenet
 export default {
   name: '前端/校招/社招',
   font: 'Noto Sans SC',
-  primaryColor: '#262D36',
-  lineHeight: 21,
-  primaryBackground: '#BF1341',
-  img: 'https://z4a.net/images/2023/07/31/21campus_it.png',
+  primaryColor: '#2A2A2A',
+  lineHeight: 22,
+  primaryBackground: '#141414',
+  img: 'https://z4a.net/images/2023/08/05/21.png',
   content
 }
