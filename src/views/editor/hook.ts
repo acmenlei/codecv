@@ -101,7 +101,12 @@ export function useDownLoad(type: Ref<string>) {
     style = resetStyle + resumeBgColor + style
     showLoading('因使用国外服务速度稍慢 请耐心等待...')
     try {
-      const pdfData = await resumeExport({ content: html.outerHTML, style, link: linkURL })
+      const pdfData = await resumeExport({
+        content: html.outerHTML,
+        style,
+        link: linkURL,
+        name: type.value
+      })
       const blob = new Blob([new Uint8Array(pdfData.pdf.data)], { type: 'application/pdf' })
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')

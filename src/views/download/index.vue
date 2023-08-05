@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { setExportCount } from '@/api/modules/resume'
+import { setExportCount, setTemplateCondition } from '@/api/modules/resume'
 import { importCSS } from '@/utils'
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
@@ -8,11 +8,13 @@ const route = useRoute()
 const router = useRouter()
 
 onMounted(() => {
+  if (!route.query.type) return
   importCSS(String(route.query.type))
   const content = JSON.parse(localStorage.getItem('download') || '')
   ;(document.querySelector('.markdown-transform-html') as HTMLElement).innerHTML = content
   setTimeout(() => {
     setExportCount()
+    setTemplateCondition({ name: String(route.query.type) })
     window.print()
     router.back()
   }, 100)

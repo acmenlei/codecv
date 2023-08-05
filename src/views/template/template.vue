@@ -4,9 +4,10 @@ import resumeCard from './components/resumeCard.vue'
 import Empty from '@/components/empty.vue'
 
 import { templateCategory } from './constant'
-import { useCategory } from './hook'
+import { useCategory, useTemplateCondition } from './hook'
 
 const { queryCategory, data } = useCategory()
+const { templateData } = useTemplateCondition()
 </script>
 
 <template>
@@ -14,7 +15,12 @@ const { queryCategory, data } = useCategory()
     <div class="resume-left-container content-card" data-aos="fade-right">
       <NavBar button="创作模板" :tabs="templateCategory" @tab-click="queryCategory" />
       <div class="resume-card-container" v-if="data.length">
-        <resume-card v-for="theme in data" :key="theme.id" :theme="theme" />
+        <resume-card
+          v-for="theme in data"
+          :key="theme.id"
+          :theme="theme"
+          :templateData="templateData"
+        />
       </div>
       <Empty v-else title="暂时没有这类模板 你可以点击右上角创作模板或联系作者添加～" />
     </div>

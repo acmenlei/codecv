@@ -1,6 +1,8 @@
 import { templates, type TemplateType } from '@/templates/config'
-import { Ref, ref } from 'vue'
+import { onActivated, Ref, ref } from 'vue'
 import { templateCategory } from './constant'
+import { getTemplateCondition } from '@/api/modules/resume'
+import { errorMessage } from '@/common/message'
 
 export function useCategory() {
   const category = ref('全部')
@@ -19,5 +21,25 @@ export function useCategory() {
     queryCategory,
     category,
     data
+  }
+}
+
+export function useTemplateCondition() {
+  interface ITemplateTypeData {
+    [key: string]: string
+  }
+  const templateData = ref<ITemplateTypeData>({})
+  async function templateCondition() {
+    const _templateData = await getTemplateCondition()
+    if (!_templateData.result) {
+      errorMessage(_templateData.msg)
+      return
+    }
+    templateData.value = JSON.parse(_templateData.result)
+  }
+  onActivated(() => templateCondition())
+
+  return {
+    templateData
   }
 }
