@@ -24,6 +24,7 @@
     "axios": "^1.2.0",
     "codemirror": "^6.0.1",
     "dayjs": "^1.11.6",
+    "driver.js": "^1.2.1",
     "element-plus": "^2.2.19",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",

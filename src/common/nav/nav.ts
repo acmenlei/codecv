@@ -14,11 +14,6 @@ const nav = [
     name: '语法助手',
     path: '/syntax/helper',
     tooltip: false
-  },
-  {
-    name: '岗位推荐',
-    path: '/recruit',
-    tooltip: false
   }
 ]
 

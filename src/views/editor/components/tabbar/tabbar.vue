@@ -22,7 +22,7 @@ import { oneDark } from '@codemirror/theme-one-dark'
 import { useThemeConfig } from '@/common/global'
 import { useResumeType } from '../../hook'
 
-const emits = defineEmits(['upload-avatar', 'toggle-editor-mode', 'html-convert'])
+const emits = defineEmits(['upload-avatar', 'html-convert'])
 
 const { resumeType } = useResumeType()
 const { autoOnePage, setAutoOnePage } = useAutoOnePage(resumeType.value)
@@ -38,7 +38,7 @@ const { isDark } = useThemeConfig()
 </script>
 
 <template>
-  <div class="operator">
+  <div class="operator resume-tools">
     <el-slider
       size="small"
       class="slider"
@@ -64,14 +64,12 @@ const { isDark } = useThemeConfig()
       <el-tooltip content="编写CSS" effect="light">
         <i class="operator-item iconfont icon-diy" @click="toggleDialog"></i
       ></el-tooltip>
-      <el-color-picker class="operator-item" @change="setColor" size="small" v-model="color" />
-      &nbsp;&nbsp; &nbsp;
-      <el-color-picker
-        class="operator-item"
-        @change="setPrimaryColor"
-        size="small"
-        v-model="primaryColor"
-      />
+      <div class="operator-item font-color-picker">
+        <el-color-picker @change="setColor" size="small" v-model="color" />
+      </div>
+      <div class="operator-item main-color-picker">
+        <el-color-picker @change="setPrimaryColor" size="small" v-model="primaryColor" />
+      </div>
       <el-popconfirm
         width="240"
         confirm-button-text="是的"
@@ -83,12 +81,9 @@ const { isDark } = useThemeConfig()
           <i class="operator-item iconfont icon-refresh ml-20"></i>
         </template>
       </el-popconfirm>
-      <el-tooltip content="切换编辑模式" effect="light">
-        <i class="iconfont icon-write operator-item" @click="$emit('toggle-editor-mode')"></i>
-      </el-tooltip>
       <el-tooltip content="自动一页" effect="light">
         <el-switch
-          class="operator-item"
+          class="operator-item auto-one-page"
           size="small"
           @change="() => setAutoOnePage()"
           v-model="autoOnePage"
@@ -96,7 +91,7 @@ const { isDark } = useThemeConfig()
       </el-tooltip>
       <el-tooltip content="跟随滚动" effect="light">
         <el-switch
-          class="operator-item"
+          class="operator-item follow-roll"
           size="small"
           v-model="followRoll"
           @change="setFollowRoll"
@@ -105,7 +100,7 @@ const { isDark } = useThemeConfig()
       <el-tooltip content="行高设置" effect="light">
         <el-select
           v-model="h"
-          class="operator-item"
+          class="operator-item lh-select"
           @change="setLineHeight"
           placement="bottom"
           size="small"
@@ -121,7 +116,7 @@ const { isDark } = useThemeConfig()
       <el-tooltip content="字体设置" effect="light">
         <el-select
           v-model="font"
-          class="operator-item"
+          class="operator-item font-select"
           @change="setFont"
           placement="bottom"
           size="small"
@@ -157,7 +152,7 @@ const { isDark } = useThemeConfig()
     v-if="visible"
     :flag="visible"
     @close="confirmAdjustment"
-    :width="properties.length ? '520px' : '310px'"
+    :width="properties.length ? '525px' : '310px'"
   >
     <div class="properties-container flex" v-if="properties.length">
       <div class="properties-header">
@@ -175,7 +170,7 @@ const { isDark } = useThemeConfig()
     </div>
     <Empty v-else title="简历中还没有内容 可以先写点东西" />
     <br />
-    <h5 style="color: var(--theme)">PS: 只显示简历模板中已经使用的</h5>
+    <h5 style="color: var(--strong-color)">PS: 只显示简历模板中已经使用的</h5>
   </ToastModal>
 </template>
 
@@ -205,10 +200,15 @@ const { isDark } = useThemeConfig()
     justify-content: center;
     align-items: flex-end;
 
-    :deep(.operator-item) {
+    .operator-item {
       margin-right: 14px;
     }
-
+    .font-color-picker {
+      margin-right: 22px;
+    }
+    .main-color-picker {
+      margin-right: 0;
+    }
     #upload-avatar {
       width: 0;
       height: 0;

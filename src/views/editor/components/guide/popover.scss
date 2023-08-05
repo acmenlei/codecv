@@ -1,0 +1,30 @@
+.popover-container {
+  background: var(--background);
+  color: var(--writable-font-color);
+
+  .driver-popover-title {
+    color: var(--font-color);
+    font-size: 14px;
+  }
+  .driver-popover-description {
+    font-size: 13px;
+  }
+  .driver-popover-close-btn {
+    color: var(--writable-font-color);
+  }
+
+  .driver-popover-prev-btn,
+  .driver-popover-next-btn {
+    text-shadow: none;
+    border: none;
+  }
+  .driver-popover-next-btn {
+    background: var(--theme);
+    color: #f6f8f8;
+    &:hover {
+      background: var(--theme);
+      color: #f6f8f8;
+      opacity: 0.5;
+    }
+  }
+}

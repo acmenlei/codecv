@@ -24,8 +24,8 @@ const { open, toggle } = useSwitch()
     <nav-menu @export-md="exportFile('md')" @import-md="importFile" />
     <ExportTotal />
     <Reward />
-    <button class="exporter btn" @click="exportFile('dynamic')">导出PDF</button>
-    <button class="exporter btn" @click="exportFile('native')">打印机导出PDF</button>
+    <button class="exporter server-export btn" @click="exportFile('dynamic')">导出PDF</button>
+    <button class="exporter local-export btn" @click="exportFile('native')">打印机导出PDF</button>
     <div class="operator">
       <el-tooltip content="给项目贡献代码" placement="bottom-end">
         <i
@@ -34,7 +34,7 @@ const { open, toggle } = useSwitch()
         ></i>
       </el-tooltip>
       <el-tooltip content="问题反馈" placement="bottom-end">
-        <i class="iconfont icon-problem problem font-25" @click="toggle"></i>
+        <i class="iconfont icon-comment problem font-25" @click="toggle"></i>
       </el-tooltip>
       <theme-toggle />
     </div>

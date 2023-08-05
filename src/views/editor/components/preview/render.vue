@@ -8,13 +8,12 @@ defineEmits(['upload-avatar', 'html-convert'])
 
 const { resumeType } = useResumeType()
 const { isDark } = useThemeConfig()
-const { renderDOM, editorStore } = useRenderHTML(resumeType)
+const { renderDOM } = useRenderHTML(resumeType)
 </script>
 
 <template>
   <div class="outer" :style="{ background: isDark ? '#282c34' : 'var(--bg-theme)' }">
     <Tabbar
-      @toggle-editor-mode="editorStore.setWritableMode(renderDOM)"
       @html-convert="cnt => $emit('html-convert', cnt)"
       @upload-avatar="path => $emit('upload-avatar', path)"
     />

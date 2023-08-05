@@ -3,12 +3,14 @@ import Header from './components/header/header.vue'
 import MarkdownRender from '@/views/editor/components/preview/render.vue'
 import MarkdownEditor from '@/views/editor/components/codemirror-editor/codemirrorEditor.vue'
 import { useResumeType, useDownLoad, useImportMD, useAvatar, useShowExport } from './hook'
+import { startGuide } from './components/guide/guide'
 
 const { resumeType } = useResumeType()
 const { downloadDynamic, downloadNative, downloadMD } = useDownLoad(resumeType)
 const { importMD } = useImportMD(resumeType.value)
 const { setAvatar } = useAvatar(resumeType.value)
 const { showExport } = useShowExport()
+startGuide()
 </script>
 
 <template>
@@ -18,7 +20,7 @@ const { showExport } = useShowExport()
     @download-md="downloadMD"
     @import-md="importMD"
   />
-  <div id="edtior">
+  <div id="editor">
     <markdown-editor />
     <markdown-render class="markdown-render" @upload-avatar="setAvatar" />
     <el-tooltip content="导出PDF文件" v-if="showExport">
@@ -34,7 +36,7 @@ const { showExport } = useShowExport()
 </template>
 
 <style lang="scss" scoped>
-#edtior {
+#editor {
   display: flex;
   position: relative;
   .markdown-render {

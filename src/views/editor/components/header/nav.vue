@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import nav from '@/common/nav/nav'
+import { refreshGuide } from '../guide/guide'
 
 defineEmits(['export-md', 'import-md'])
 </script>
@@ -35,6 +36,7 @@ defineEmits(['export-md', 'import-md'])
         <router-link :to="navItem.path || ''">{{ navItem.name }}</router-link>
       </template>
     </li>
+    <li class="use-guide" @click="refreshGuide()">开启引导</li>
   </ul>
 </template>
 

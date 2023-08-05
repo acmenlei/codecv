@@ -55,8 +55,7 @@ export function useRenderHTML(resumeType: Ref<string>) {
     }
   )
   return {
-    renderDOM,
-    editorStore
+    renderDOM
   }
 }
 
