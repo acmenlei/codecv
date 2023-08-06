@@ -4,7 +4,7 @@ import { useDebounceFn, useThrottleFn } from '@vueuse/core'
 
 import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
-import { importCSS, isDev, queryDOM, useLoading } from '@/utils'
+import { download, importCSS, isDev, queryDOM, useLoading } from '@/utils'
 import { splitPage } from './components/tabbar/hook'
 import useEditorStore from '@/store/modules/editor'
 import { convertDOM } from '@/utils/moduleCombine'
@@ -77,7 +77,7 @@ export function useDownLoad(type: Ref<string>) {
     { showLoading, closeLoading } = useLoading()
 
   const downloadDynamic = async (fileName?: string) => {
-    const html = document.querySelector('.jufe') as HTMLElement,
+    const html = queryDOM('.jufe') as HTMLElement,
       htmlStyles = getComputedStyle(html)
     const resumeBgColor = `html,body { background: ${htmlStyles.getPropertyValue(
       'background'
@@ -110,11 +110,7 @@ export function useDownLoad(type: Ref<string>) {
       })
       const blob = new Blob([new Uint8Array(pdfData.pdf.data)], { type: 'application/pdf' })
       const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `${fileName || document.title}.pdf`
-      a.click()
-      URL.revokeObjectURL(url)
+      download(url, `${fileName || document.title}.pdf`)
       successMessage('导出成功～')
     } catch (e: any) {
       const errorMsg =
@@ -127,7 +123,6 @@ export function useDownLoad(type: Ref<string>) {
   }
 
   const downloadNative = () => {
-    // localStorage.setItem('download', JSON.stringify(convertDOM(editorStore.MDContent).innerHTML))
     localStorage.setItem('download', JSON.stringify((<HTMLElement>queryDOM('.jufe')).innerHTML))
     router.push({ path: '/download', query: { type: type.value } })
   }
@@ -135,11 +130,7 @@ export function useDownLoad(type: Ref<string>) {
   const downloadMD = () => {
     const blob = new Blob([editorStore.MDContent])
     const url = URL.createObjectURL(blob)
-    const aTag = document.createElement('a')
-    aTag.download = document.title + '.md'
-    aTag.href = url
-    aTag.click()
-    URL.revokeObjectURL(url)
+    download(url, document.title + '.md')
     successMessage('导出成功~')
   }
   return {
@@ -219,7 +210,6 @@ export function useShowExport() {
 
   onDeactivated(() => {
     document.removeEventListener('scroll', setShowExport)
-    console.log('remove scroll')
   })
   return {
     showExport

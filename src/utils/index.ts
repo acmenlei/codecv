@@ -8,6 +8,16 @@ export async function importCSS(name: string) {
   return res.default
 }
 
+export function download(url: string, fileName: string) {
+  const a = document.createElement('a')
+  a.download = fileName
+  a.href = url
+  document.body.appendChild(a)
+  a.click()
+  URL.revokeObjectURL(url)
+  document.body.removeChild(a)
+}
+
 export function queryDOM(uni: string) {
   return document.querySelector(uni)
 }
