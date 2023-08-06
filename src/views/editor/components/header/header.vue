@@ -4,13 +4,19 @@ import Reward from '@/components/reward.vue'
 import ThemeToggle from '@/components/themeToggle.vue'
 import { wOpen } from '@/utils'
 import { useSwitch } from '@/common/global'
-import { useMDFile } from './hook'
+import { useFile } from './hook'
 import Contact from '@/components/contact.vue'
 import ExportTotal from '@/components/exportTotal.vue'
 
-const emit = defineEmits(['download-dynamic', 'download-native', 'download-md', 'import-md'])
+const emit = defineEmits([
+  'download-dynamic',
+  'download-native',
+  'download-md',
+  'import-md',
+  'download-picture'
+])
 
-const { exportFile, importFile, fileName } = useMDFile(emit)
+const { exportFile, importFile, fileName } = useFile(emit)
 const { open, toggle } = useSwitch()
 </script>
 
@@ -21,7 +27,11 @@ const { open, toggle } = useSwitch()
     </el-tooltip>
     <label for="resume-name-input">简历名称：</label>
     <input id="resume-name-input" type="text" v-model="fileName" />
-    <nav-menu @export-md="exportFile('md')" @import-md="importFile" />
+    <nav-menu
+      @export-md="exportFile('md')"
+      @import-md="importFile"
+      @export-picture="exportFile('picture')"
+    />
     <ExportTotal />
     <Reward />
     <button class="exporter server-export btn" @click="exportFile('dynamic')">导出PDF</button>

@@ -4,8 +4,8 @@ import { useDebounceFn, useThrottleFn } from '@vueuse/core'
 
 import { getLocalStorage } from '@/common/localstorage'
 import { errorMessage, successMessage, warningMessage } from '@/common/message'
-import { download, importCSS, isDev, queryDOM, useLoading } from '@/utils'
-import { splitPage } from './components/tabbar/hook'
+import { download, downloadOfBuffer, importCSS, isDev, queryDOM, useLoading } from '@/utils'
+import { ensureEmptyPreWhiteSpace, splitPage } from './components/tabbar/hook'
 import useEditorStore from '@/store/modules/editor'
 import { convertDOM } from '@/utils/moduleCombine'
 import { resumeExport } from '@/api/modules/resume'
@@ -75,8 +75,8 @@ export function useDownLoad(type: Ref<string>) {
   const router = useRouter(),
     editorStore = useEditorStore(),
     { showLoading, closeLoading } = useLoading()
-
-  const downloadDynamic = async (fileName?: string) => {
+  // 导出前处理PDF中的样式
+  const exportPreHandler = async () => {
     const html = queryDOM('.jufe') as HTMLElement,
       htmlStyles = getComputedStyle(html)
     const resumeBgColor = `html,body { background: ${htmlStyles.getPropertyValue(
@@ -100,17 +100,26 @@ export function useDownLoad(type: Ref<string>) {
       style += styleContent
     }
     style = resetStyle + resumeBgColor + style
+    return { style, link: linkURL, content: html }
+  }
+  // 导出PDF & 图片
+  const downloadDynamic = async (isPDF: boolean, fileName?: string) => {
+    const { content: html, style, link } = await exportPreHandler()
+    const content = html.cloneNode(true) as HTMLElement
+    !isPDF && ensureEmptyPreWhiteSpace(content)
     showLoading('因使用国外服务速度稍慢 请耐心等待...')
     try {
       const pdfData = await resumeExport({
-        content: html.outerHTML,
+        content: content.outerHTML,
         style,
-        link: linkURL,
-        name: type.value
+        link,
+        name: type.value,
+        type: isPDF ? 0 : 1
       })
-      const blob = new Blob([new Uint8Array(pdfData.pdf.data)], { type: 'application/pdf' })
-      const url = URL.createObjectURL(blob)
-      download(url, `${fileName || document.title}.pdf`)
+      const buffer = isPDF ? pdfData.pdf.data : pdfData.picture.data
+      const _fileName = (fileName || document.title) + (isPDF ? '.pdf' : '.png')
+      const fileType = 'application/' + isPDF ? 'pdf' : 'png'
+      downloadOfBuffer(buffer, _fileName, fileType)
       successMessage('导出成功～')
     } catch (e: any) {
       const errorMsg =
@@ -131,6 +140,7 @@ export function useDownLoad(type: Ref<string>) {
     const blob = new Blob([editorStore.MDContent])
     const url = URL.createObjectURL(blob)
     download(url, document.title + '.md')
+    URL.revokeObjectURL(url)
     successMessage('导出成功~')
   }
   return {

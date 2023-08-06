@@ -3,6 +3,7 @@ export interface IResumeConfig {
   style: string
   link: string
   name: string
+  type?: number
 }
 
 const UPSTASH_BASE_URL = import.meta.env.VITE_UPSTASH_BASE_URL as string

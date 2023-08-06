@@ -15,7 +15,8 @@ startGuide()
 
 <template>
   <Header
-    @download-dynamic="downloadDynamic"
+    @download-dynamic="(filename: string) => downloadDynamic(true, filename)"
+    @download-picture="(filename: string) => downloadDynamic(false, filename)"
     @download-native="downloadNative"
     @download-md="downloadMD"
     @import-md="importMD"
@@ -29,7 +30,7 @@ startGuide()
         data-aos-duration="800"
         data-aos-offset="50"
         class="iconfont icon-export hover pointer standby-export"
-        @click="downloadDynamic()"
+        @click="downloadDynamic(true)"
       ></i>
     </el-tooltip>
   </div>

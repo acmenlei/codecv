@@ -14,8 +14,14 @@ export function download(url: string, fileName: string) {
   a.href = url
   document.body.appendChild(a)
   a.click()
-  URL.revokeObjectURL(url)
   document.body.removeChild(a)
+}
+
+export function downloadOfBuffer(buffer: Iterable<number>, fileName: string, type: string) {
+  const blob = new Blob([new Uint8Array(buffer)], { type })
+  const url = URL.createObjectURL(blob)
+  download(url, fileName)
+  URL.revokeObjectURL(url)
 }
 
 export function queryDOM(uni: string) {

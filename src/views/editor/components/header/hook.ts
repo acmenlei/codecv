@@ -1,6 +1,6 @@
 import { onActivated, ref } from 'vue'
 
-export function useMDFile(emit: any) {
+export function useFile(emit: any) {
   const fileName = ref('')
   const exportFile = (type: string) => {
     document.title = fileName.value
@@ -10,6 +10,7 @@ export function useMDFile(emit: any) {
   const importFile = (event: any) => {
     emit('import-md', event?.target?.files[0])
   }
+
   onActivated(() => (fileName.value = document.title))
   return {
     fileName,
