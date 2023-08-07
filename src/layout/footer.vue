@@ -9,7 +9,7 @@ import { wOpen } from '@/utils'
       @click="wOpen('https://github.com/acmenlei/markdown-resume-to-pdf')"
     >
       <i class="iconfont icon-github"></i>
-      Github地址
+      GitHub地址
     </span>
     <span class="item mr-20 pointer">
       <i class="iconfont icon-wechat"></i>
