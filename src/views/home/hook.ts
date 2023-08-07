@@ -7,7 +7,7 @@ export function useTypeNet() {
     const content = document.querySelector('.typenet-text')
     if (content?.querySelector('.type-container') != null) return
     new TypeNet('.typenet-text', { speed: 10, style: 'font-weight: bold; line-height: 28px' })
-      .type('5分钟', { style: 'font-size: 40px; line-height: 60px; color: #ff7449' })
+      // .type('5分钟', { style: 'font-size: 40px; line-height: 60px; color: #ff7449' })
       .type(' 使用', { style: 'font-size: 40px;line-height: 60px' })
       .type(' CodeCV ', {
         style: 'color: #ff7449; font-size: 40px;line-height: 60px'
