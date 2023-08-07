@@ -68,24 +68,9 @@
     }
   }
   .head-layout {
-    border: 1px dashed var(--font-color);
-    padding: 20px;
     border-radius: 10px;
     position: relative;
 
-    &::before {
-      position: absolute;
-      top: -15px;
-      right: 50%;
-      transform: translateX(50%);
-      content: '个人信息区域';
-      white-space: nowrap;
-      font-size: 15px;
-      background: var(--font-color);
-      border-radius: 10px;
-      color: var(--background);
-      padding: 5px 10px;
-    }
     img[alt*='个人头像'] {
       width: 30mm;
       height: 30mm;

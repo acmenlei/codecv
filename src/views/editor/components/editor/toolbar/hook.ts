@@ -1,6 +1,6 @@
 import useEditorStore from '@/store/modules/editor'
-import { ref, onUnmounted } from 'vue'
-import { clickedTarget, ensureResetClickedTarget } from '../../hook'
+import { ref, onUnmounted, onMounted } from 'vue'
+import { clickedTarget, ensureResetClickedTarget } from '../../../hook'
 import { reset } from './components/linkInput/hook'
 import { useThrottleFn } from '@vueuse/core'
 import { queryDOM } from '@/utils'
@@ -136,11 +136,20 @@ export function breakToTail() {
   const selection = window.getSelection() as Selection
   selection.getRangeAt(0).setStartAfter(p)
 }
-// 内容模式工具栏事件处理
+
+export const checkMouseSelect = useThrottleFn(function () {
+  const selection = window.getSelection() as Selection
+  const range = selection.getRangeAt(0)
+  const parentElement = range.commonAncestorContainer
+  console.log('实时判断选中内容：', parentElement)
+}, 1000)
+// 内容模式事件处理
 export function useToolBarConfig(emit: any) {
   const editorStore = useEditorStore()
+  let editor: HTMLElement
+
+  // 处理工具栏命令
   function handleCommand(event: MouseEvent) {
-    const editor = queryDOM('.writable-edit-mode') as HTMLElement
     const buttons = (event.target as Element).closest('button[data-command]')
     if (!buttons) return
     event.preventDefault()
@@ -183,7 +192,8 @@ export function useToolBarConfig(emit: any) {
     ;['insertUserInfo', 'insertCode', 'breakToTail'].includes(command) && emit('content-change')
     editor.focus()
   }
-  function keyboardEvent(event: KeyboardEvent) {
+  // 键盘回车事件
+  const keyboardEvent = useThrottleFn(function (event: KeyboardEvent) {
     const selection = window.getSelection() as Selection
     const focusNode = <HTMLElement>selection.focusNode
     if (
@@ -194,15 +204,19 @@ export function useToolBarConfig(emit: any) {
       const br = document.createElement('br')
       selection.setPosition(br, 0)
       focusNode.parentElement?.replaceChild(br, focusNode) // 删除当前节点
-      const wem = document.querySelector('.writable-edit-mode') as HTMLElement
-      wem.focus()
+      editor.focus()
     }
-  }
-  document.addEventListener('click', handleCommand)
-  document.addEventListener('keydown', useThrottleFn(keyboardEvent, 100))
+  }, 100)
+
+  onMounted(() => {
+    editor = <HTMLElement>queryDOM('.writable-edit-mode')
+    document.addEventListener('click', handleCommand)
+    editor.addEventListener('keydown', keyboardEvent)
+  })
+
   onUnmounted(() => {
     document.removeEventListener('click', handleCommand)
-    document.removeEventListener('keydown', keyboardEvent)
+    editor.removeEventListener('keydown', keyboardEvent)
   })
 }
 

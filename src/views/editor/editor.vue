@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Header from './components/header/header.vue'
 import MarkdownRender from '@/views/editor/components/preview/render.vue'
-import MarkdownEditor from '@/views/editor/components/codemirror-editor/codemirrorEditor.vue'
+import Editor from '@/views/editor/components/editor/editorContainer.vue'
 import { useResumeType, useDownLoad, useImportMD, useAvatar, useShowExport } from './hook'
 import { startGuide } from './components/guide/guide'
 
@@ -22,7 +22,7 @@ startGuide()
     @import-md="importMD"
   />
   <div id="editor">
-    <markdown-editor />
+    <Editor />
     <markdown-render class="markdown-render" @upload-avatar="setAvatar" />
     <el-tooltip content="导出PDF文件" v-if="showExport">
       <i
