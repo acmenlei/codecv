@@ -1,4 +1,5 @@
 import useEditorStore from '@/store/modules/editor'
+import { queryDOM } from '@/utils'
 import { resumeDOMStruct2Markdown } from '@/utils/dom2md'
 import { nextTick, onActivated, ref } from 'vue'
 // 使用编辑模式
@@ -21,7 +22,7 @@ export function useToggleEditorMode(resumeType: string) {
     if (editorStore.writable) {
       nextTick(() => {
         ;(DOMTree.value as HTMLElement).innerHTML = (<HTMLElement>(
-          document.querySelector('.reference-dom')
+          queryDOM('.reference-dom')
         )).innerHTML
       })
     }

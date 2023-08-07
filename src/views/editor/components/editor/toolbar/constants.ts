@@ -62,7 +62,7 @@ export const toolbarConfig = [
 ]
 
 export const headings = [
-  { label: '正文', value: '' },
+  { label: '普通文本', value: '普通文本' },
   { label: '一级标题', value: 'h1' },
   { label: '二级标题', value: 'h2' },
   { label: '三级标题', value: 'h3' },

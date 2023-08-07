@@ -6,8 +6,8 @@ import { useThrottleFn } from '@vueuse/core'
 import { queryDOM } from '@/utils'
 
 // 标题级别控制
+export const level = ref('普通文本')
 export function useHeading(emit: any) {
-  const level = ref('正文')
   function setHeading() {
     const tagName = level.value ? level.value : 'p'
     const replaceDOM = document.createElement(tagName)
@@ -140,9 +140,18 @@ export function breakToTail() {
 export const checkMouseSelect = useThrottleFn(function () {
   const selection = window.getSelection() as Selection
   const range = selection.getRangeAt(0)
-  const parentElement = range.commonAncestorContainer
-  console.log('实时判断选中内容：', parentElement)
+  let parentElement = range.commonAncestorContainer
+  while (parentElement && parentElement.nodeType != Node.ELEMENT_NODE) {
+    parentElement = parentElement.parentNode as Node
+  }
+  const tagName = (<HTMLElement>parentElement).tagName.toLowerCase()
+  if (tagName[0] == 'h') {
+    level.value = tagName
+  } else {
+    level.value = '普通文本'
+  }
 }, 1000)
+
 // 内容模式事件处理
 export function useToolBarConfig(emit: any) {
   const editorStore = useEditorStore()
