@@ -57,7 +57,7 @@ const content = `::: headStart
 *Now York*
 ::: end
 - Co-founded a student-run fund to invest a small portion of the University's endowment
-- Managed a $105k diversified, mid-cap equities fund - Outperformed benchmark by 4% since 2010 inception
+- Managed a $105k diversified, mid-cap equities fund - Outperformed benchmark by 4% since 2010
 
 ## MISCELLANEOUS
 - **Languages**: English (Fluent). Mandarin Chinese (Native), French (Conversational)
