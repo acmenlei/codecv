@@ -22,6 +22,7 @@ export const getCurrentTypeContent = (type: string): string => {
 const useEditorStore = defineStore('editorStore', {
   state: () => ({
     MDContent: '',
+    nativeContent: '',
     writable: Boolean(getLocalStorage(WRITABLE)) || false
   }),
   actions: {
@@ -52,6 +53,12 @@ const useEditorStore = defineStore('editorStore', {
           DOMTree && (DOMTree.innerHTML = originHTML.innerHTML)
         })
       }
+    },
+    setNativeContent(content: string) {
+      this.nativeContent = content
+    },
+    resetNativeContent() {
+      this.nativeContent = ''
     }
   }
 })

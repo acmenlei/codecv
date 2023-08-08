@@ -132,7 +132,7 @@ export function useDownLoad(type: Ref<string>) {
   }
 
   const downloadNative = () => {
-    localStorage.setItem('download', JSON.stringify((<HTMLElement>queryDOM('.jufe')).innerHTML))
+    editorStore.setNativeContent((<HTMLElement>queryDOM('.jufe')).innerHTML)
     router.push({ path: '/download', query: { type: type.value } })
   }
 

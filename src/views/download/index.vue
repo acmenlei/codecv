@@ -3,15 +3,17 @@ import { setExportCount, setTemplateCondition } from '@/api/modules/resume'
 import { importCSS } from '@/utils'
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import useEditorStore from '@/store/modules/editor'
 
 const route = useRoute()
 const router = useRouter()
-
+const editorStore = useEditorStore()
 onMounted(() => {
   if (!route.query.type) return
   importCSS(String(route.query.type))
-  const content = JSON.parse(localStorage.getItem('download') || '')
-  ;(document.querySelector('.markdown-transform-html') as HTMLElement).innerHTML = content
+  ;(document.querySelector('.markdown-transform-html') as HTMLElement).innerHTML =
+    editorStore.nativeContent
+  editorStore.resetNativeContent() // 重置
   setTimeout(() => {
     setExportCount()
     setTemplateCondition({ name: String(route.query.type) })
