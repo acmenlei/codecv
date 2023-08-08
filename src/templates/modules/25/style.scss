@@ -1,0 +1,16 @@
+@import url('../../common.css');
+
+.markdown-transform-html {
+  font-weight: 500;
+  padding: 40px 50px;
+  h1,
+  h2 {
+    font-weight: 900;
+    color: var(--markdown-primary-bg-color);
+  }
+}
+
+.jufe-wrapper-page,
+.markdown-transform-html {
+  background: #141321;
+}

@@ -74,7 +74,7 @@ icon:email example@163.com
 在前端领域有过深耕，有管理、组织能力....... ok结束，感觉是口水话的可写可不写吧
 `
 export default {
-  name: '暗黑极客风',
+  name: '暗黑/Geek/程序员',
   primaryColor: '#d1d1d1',
   primaryBackground: '#17A00B',
   img: 'https://z4a.net/images/2023/07/14/13.png',

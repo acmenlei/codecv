@@ -1,4 +1,4 @@
-const content = `# John Doe - Frontend Engineer
+export const content = `# John Doe - Frontend Engineer
 ::: start
 icon:email Email: coderleilei@163.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 icon:phone Phone: (123) 456-7890

@@ -3,6 +3,7 @@ export const templateCategory = [
   '校招',
   '社招',
   '英文',
+  'Geek',
   '运营',
   '商务',
   '设计',
