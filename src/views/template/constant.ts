@@ -2,6 +2,7 @@ export const templateCategory = [
   '全部',
   '校招',
   '社招',
+  '英文',
   '运营',
   '商务',
   '设计',

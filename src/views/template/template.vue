@@ -36,11 +36,11 @@ const { templateData } = useTemplateCondition()
         </p>
       </div>
       <div class="advertising content-card mt-20">
-        <p>作者微信</p>
+        <p>联系作者</p>
         <img src="@/assets/img/wechat.jpg" alt="relative" />
         <br />
         <br />
-        <p>QQ 交流群</p>
+        <p>QQ 群</p>
         <img src="@/assets/img/qqgroup.jpeg" alt="QQ交流群" class="qqgroup qr" />
       </div>
     </div>

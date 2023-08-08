@@ -165,6 +165,10 @@ export function useCustomFont(resumeType: string) {
     {
       value: 'Noto Sans SC',
       label: 'Noto Sans SC'
+    },
+    {
+      value: 'Nunito',
+      label: 'Nunito(英文)'
     }
   ]
   const font = ref(
@@ -179,7 +183,7 @@ export function useCustomFont(resumeType: string) {
       style.setAttribute(cacheKey, 'true')
     }
 
-    style.textContent = `.jufe * { font-family: ${fontFamily}, 'Noto Serif SC', 'Noto Sans SC', sans-serif, serif; }`
+    style.textContent = `.jufe * { font-family: ${fontFamily}, 'Noto Sans SC', 'Noto Serif SC', 'Nunito', sans-serif, serif; }`
     !isAppend && document.head.appendChild(style)
     set(cacheKey, fontFamily)
     const renderCV = queryRenderCV()
