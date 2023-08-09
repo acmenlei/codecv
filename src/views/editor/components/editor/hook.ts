@@ -4,6 +4,7 @@ import { linkFlag, selectIcon } from './toolbar/hook'
 import { clickedTarget } from '../../hook'
 import { setClickedLinkText, setClickedLinkURL } from './toolbar/components/linkInput/hook'
 import { getPickerFile } from '@/utils/uploader'
+import { queryDOM } from '@/utils'
 
 export function reactiveWritable(resumeType: string) {
   const editorStore = useEditorStore()
@@ -16,7 +17,7 @@ export function reactiveWritable(resumeType: string) {
 
 // 左右移动伸缩布局
 export function useMoveLayout() {
-  const left = ref(500)
+  const left = ref(550)
   let flag = false
 
   function move(event: MouseEvent) {
@@ -53,7 +54,7 @@ export function injectWritableModeAvatarEvent(
   watchEffect(() => {
     if (!writable.value) return
     nextTick(() => {
-      const node = document.querySelector('.writable-edit-mode') as HTMLElement
+      const node = queryDOM('.writable-edit-mode') as HTMLElement
       setTimeout(() => {
         const avatar = node.querySelector('img[alt*="个人头像"]')
         if (avatar) {

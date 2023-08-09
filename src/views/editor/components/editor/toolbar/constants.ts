@@ -73,6 +73,36 @@ export const headings = [
 
 export const markdownModeToolbarConfig = [
   {
+    icon: 'bold',
+    command: 'insertBold',
+    tip: '加粗'
+  },
+  {
+    icon: 'italic',
+    command: 'insertItalic',
+    tip: '斜体'
+  },
+  {
+    icon: 'unorderedlist',
+    command: 'insertUnorderedlist',
+    tip: '无序列表'
+  },
+  {
+    icon: 'orderedlist',
+    command: 'insertOrderedlist',
+    tip: '有序列表'
+  },
+  {
+    icon: 'link',
+    command: 'insertLink',
+    tip: '链接'
+  },
+  {
+    icon: 'image',
+    command: 'insertAvatar',
+    tip: '插入证件照格式'
+  },
+  {
     icon: 'emoji',
     command: 'insertIcon',
     tip: '插入图标'

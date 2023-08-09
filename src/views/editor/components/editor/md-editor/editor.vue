@@ -24,7 +24,7 @@ const editorStore = useEditorStore()
       borderLeft: isDark ? 'none' : '1px solid #ddd',
       borderBottomLeftRadius: '10px',
       borderBottomRightRadius: '10px',
-      minWidth: '400px',
+      minWidth: '550px',
       width: `${left}px`,
       background: '#fff'
     }"

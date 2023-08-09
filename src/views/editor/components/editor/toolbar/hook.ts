@@ -1,9 +1,9 @@
-import useEditorStore from '@/store/modules/editor'
 import { ref, onUnmounted, onMounted } from 'vue'
+import { useThrottleFn } from '@vueuse/core'
+import useEditorStore from '@/store/modules/editor'
 import { clickedTarget, ensureResetClickedTarget } from '../../../hook'
 import { reset } from './components/linkInput/hook'
-import { useThrottleFn } from '@vueuse/core'
-import { queryDOM } from '@/utils'
+import { createText, queryDOM } from '@/utils'
 
 // 标题级别控制
 export const level = ref('普通文本')
@@ -59,7 +59,7 @@ export function insertLink(url: string, text: string, emit: any) {
   restoreCursorPosition()
   const link = document.createElement('a')
   link.href = url
-  link.appendChild(document.createTextNode(text))
+  link.appendChild(createText(text))
   reductionSelection(link)
   emit('content-change')
 }
@@ -276,8 +276,26 @@ function restoreCursorPosition() {
 // markdown 模式工具栏事件处理
 export function markdownModeToolbarCommandHandler(command: string, emit: any) {
   switch (command) {
+    case 'insertBold':
+      markdownModeInsertBold()
+      break
+    case 'insertItalic':
+      markdownModeInsertItalic()
+      break
+    case 'insertUnorderedlist':
+      markdownModeInsertUnorderedList()
+      break
+    case 'insertOrderedlist':
+      markdownModeInsertOrderedList()
+      break
+    case 'insertLink':
+      markdownModeInsertLink()
+      break
     case 'insertIcon':
       selectIcon.value = !selectIcon.value
+      break
+    case 'insertAvatar':
+      markdownModeInsertAvatar()
       break
     case 'insertHeadLayout':
       markdownModeInsertHeadLayout()
@@ -304,23 +322,48 @@ function getCurrentRanger() {
   return selection.getRangeAt(0).cloneRange()
 }
 
+export function markdownModeInsertBold() {
+  const range = getCurrentRanger()
+  range.insertNode(createText(`**示例文字**`))
+}
+
+export function markdownModeInsertItalic() {
+  const range = getCurrentRanger()
+  range.insertNode(createText(`*示例文字*`))
+}
+
+export function markdownModeInsertUnorderedList() {
+  const range = getCurrentRanger()
+  range.insertNode(createText(`- 无序列表项`))
+}
+
+export function markdownModeInsertOrderedList() {
+  const range = getCurrentRanger()
+  range.insertNode(createText(`1. 有序列表项`))
+}
+
+export function markdownModeInsertLink() {
+  const range = getCurrentRanger()
+  range.insertNode(createText(`[示例文字](https://github.com/acmenlei)`))
+}
+export function markdownModeInsertAvatar() {
+  const range = getCurrentRanger()
+  range.insertNode(createText(`![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)`))
+}
 export function markdownModeInsertIcon(iconName: string) {
   selectIcon.value = false
   const range = getCurrentRanger()
-  range.insertNode(document.createTextNode(`icon:${iconName} `))
+  range.insertNode(createText(`icon:${iconName} `))
 }
-
 export function markdownModeInsertHeadLayout() {
   const range = getCurrentRanger()
-  range.insertNode(
-    document.createTextNode(`::: headStart\n在这块区域你可以填写你的个人信息\n::: headEnd`)
-  )
+  range.insertNode(createText(`::: headStart\n在这块区域你可以填写你的个人信息\n::: headEnd`))
 }
 
 export function markdownModeInsertMainLayout() {
   const range = getCurrentRanger()
   range.insertNode(
-    document.createTextNode(
+    createText(
       `::: mainStart\n如果你需要对你的主体内容做调整，你可以把你的主体内容写在这块区域内\n**PS：此布局在一个模板中只允许出现一次**\n::: mainEnd`
     )
   )
@@ -339,7 +382,7 @@ export function markdownModeInsertMultiColumnsLayout(column: string) {
     }
   }
   content += '\n::: end'
-  range.insertNode(document.createTextNode(content))
+  range.insertNode(createText(content))
 }
 
 export function markdownModeInsertTable(column: string, row: string) {
@@ -361,5 +404,5 @@ export function markdownModeInsertTable(column: string, row: string) {
     tbody = (tbody + '|').trim()
     tbody += '\n'
   }
-  range.insertNode(document.createTextNode(thead + tbody))
+  range.insertNode(createText(thead + tbody))
 }

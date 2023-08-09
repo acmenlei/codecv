@@ -24,6 +24,10 @@ export function downloadOfBuffer(buffer: Iterable<number>, fileName: string, typ
   URL.revokeObjectURL(url)
 }
 
+export function createText(text: string) {
+  return document.createTextNode(text)
+}
+
 export function queryDOM(uni: string) {
   return document.querySelector(uni)
 }
