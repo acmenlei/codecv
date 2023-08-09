@@ -31,7 +31,7 @@ export function usePresentation() {
     init = -30
   let timer: number
 
-  const presentationData = reactive(templates.slice(7, 12))
+  const presentationData = reactive(templates.value.slice(7, 12))
   const presentationIndex = ref(0)
   const styleConfig = [
     {

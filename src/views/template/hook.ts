@@ -6,15 +6,15 @@ import { errorMessage } from '@/common/message'
 
 export function useCategory() {
   const category = ref('全部')
-  const data: Ref<TemplateType[]> = ref([...templates])
+  const data: Ref<TemplateType[]> = ref([...templates.value])
 
   function queryCategory(idx: number) {
     category.value = templateCategory[idx]
     if (category.value === '全部') {
-      data.value = [...templates]
+      data.value = [...templates.value]
       return
     }
-    data.value = templates.filter(template => template.name.includes(category.value))
+    data.value = templates.value.filter(template => template.name.includes(category.value))
   }
 
   return {
@@ -24,22 +24,23 @@ export function useCategory() {
   }
 }
 
-export function useTemplateCondition() {
-  interface ITemplateTypeData {
-    [key: string]: string
-  }
-  const templateData = ref<ITemplateTypeData>({})
+export function useTemplateData() {
+  const ranks = ref<TemplateType[]>([])
   async function templateCondition() {
     const _templateData = await getTemplateCondition()
     if (!_templateData.result) {
       errorMessage(_templateData.msg)
       return
     }
-    templateData.value = JSON.parse(_templateData.result)
+    const templateData = JSON.parse(_templateData.result)
+    templates.value.forEach(template => (template.hot = templateData[`t${template.type}`]))
+    ranks.value = [...templates.value]
+      .sort((a, b) => (b.hot as number) - (a.hot as number))
+      .slice(0, 10)
   }
   onActivated(() => templateCondition())
 
   return {
-    templateData
+    ranks
   }
 }

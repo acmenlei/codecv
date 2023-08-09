@@ -11,7 +11,7 @@ const MARKDOWN_CONTENT = 'markdown-content'
 const WRITABLE = 'writable'
 
 export const getCurrentTypeContent = (type: string): string => {
-  for (const template of templates) {
+  for (const template of templates.value) {
     if (type === template.type) {
       return template.content
     }

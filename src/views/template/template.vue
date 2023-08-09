@@ -2,12 +2,12 @@
 import NavBar from '@/components/navBar.vue'
 import resumeCard from './components/resumeCard.vue'
 import Empty from '@/components/empty.vue'
-
 import { templateCategory } from './constant'
-import { useCategory, useTemplateCondition } from './hook'
+import { useCategory, useTemplateData } from './hook'
+import { numFormat } from '@/utils/format'
 
 const { queryCategory, data } = useCategory()
-const { templateData } = useTemplateCondition()
+const { ranks } = useTemplateData()
 </script>
 
 <template>
@@ -15,16 +15,31 @@ const { templateData } = useTemplateCondition()
     <div class="resume-left-container content-card" data-aos="fade-right">
       <NavBar button="创作模板" :tabs="templateCategory" @tab-click="queryCategory" />
       <div class="resume-card-container" v-if="data.length">
-        <resume-card
-          v-for="theme in data"
-          :key="theme.id"
-          :theme="theme"
-          :templateData="templateData"
-        />
+        <resume-card v-for="theme in data" :key="theme.id" :theme="theme" />
       </div>
       <Empty v-else title="暂时没有这类模板 你可以点击右上角创作模板或联系作者添加～" />
     </div>
     <div class="resume-right-container" data-aos="fade-left">
+      <div class="resume-hot-rank content-card mb-20">
+        <strong class="mb-20">简历模板热度排行</strong>
+        <ul v-if="ranks.length">
+          <li
+            v-for="(t, idx) in ranks"
+            :key="t.type"
+            class="flex hover pointer"
+            @click="$router.push({ path: `/editor`, query: { type: t.type } })"
+          >
+            <el-tooltip :content="t.name" placement="left">
+              <p class="line-1">
+                <span class="mr-10">{{ idx + 1 }}</span
+                >{{ t.name }}
+              </p>
+            </el-tooltip>
+            <sub> <i class="iconfont icon-hot"></i> {{ numFormat(+String(t.hot)) }}</sub>
+          </li>
+        </ul>
+        <Empty title="正在加载中" v-else />
+      </div>
       <div class="resume-notification content-card">
         <strong>公告</strong>
         <p>
@@ -63,6 +78,34 @@ const { templateData } = useTemplateCondition()
     }
     a {
       color: #5e75eb;
+    }
+  }
+
+  .resume-hot-rank {
+    strong {
+      display: inline-block;
+      color: var(--theme);
+    }
+    li {
+      font-size: 14px;
+      line-height: 30px;
+      p {
+        max-width: 135px;
+      }
+      sub {
+        font-weight: bold;
+        white-space: nowrap;
+        color: orangered;
+        text-align: right;
+        flex-grow: 1;
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        p span {
+          color: orangered;
+        }
+      }
     }
   }
 

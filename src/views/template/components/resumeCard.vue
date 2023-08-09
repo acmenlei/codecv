@@ -2,7 +2,7 @@
 import { type TemplateType } from '@/templates/config'
 import { useRouter } from 'vue-router'
 
-defineProps<{ theme: TemplateType; templateData: any }>()
+defineProps<{ theme: TemplateType }>()
 const router = useRouter()
 
 const edit = (type: string) => {
@@ -12,8 +12,8 @@ const edit = (type: string) => {
 
 <template>
   <div class="resume-card" data-aos="zoom-in">
-    <p class="template-hot" v-show="templateData[`t${theme.type}`]">
-      <i class="iconfont icon-hot font-20"></i> {{ templateData[`t${theme.type}`] }}
+    <p class="template-hot" v-show="theme.hot">
+      <i class="iconfont icon-hot font-20"></i> {{ theme.hot }}
     </p>
     <div @click="edit(theme.type)">
       <img :src="theme.img" loading="lazy" />
