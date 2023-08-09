@@ -14,7 +14,7 @@
 
 ## 🤩 效果预览
 
-<p>简历模板和默认主题</p>
+<p>简历模板</p>
 
 <img style="max-width: 1000px" src="./docs/templates.webp" alt="模板" />
 

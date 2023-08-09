@@ -14,7 +14,7 @@ This is a tool for creating resumes using `markdown`. It can convert your writte
 
 ## 🤩 Preview of the result
 
-<p>Resume template and default theme</p>
+<p>Resume template</p>
 
 <img style="max-width: 1000px" src="./docs/templates.webp" alt="模板" />
 
