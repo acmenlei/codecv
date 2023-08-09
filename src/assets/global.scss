@@ -11,6 +11,7 @@
   --writable-font-color: #545a69;
   --el-color-primary: var(--theme) !important;
   --font-noto-serif-sc: 'Noto Serif SC', 'Noto Sans SC', sans-serif, serif;
+  --font-noto-sans-sc: 'Noto Sans SC', 'Noto Serif SC', sans-serif, serif;
 }
 
 .btn {
@@ -354,4 +355,8 @@ a.ripple-effect {
 
 .noto-serif-sc {
   font-family: var(--font-noto-serif-sc);
+}
+
+.noto-sans-sc {
+  font-family: var(--font-noto-sans-sc);
 }

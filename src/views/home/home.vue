@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { useTypeNet, useUserComments } from './hook'
+import { useRecentTemplate, useTypeNet, useUserComments } from './hook'
 import Header from './components/header.vue'
 import Presentation from './components/presentation.vue'
 import { useDark } from '@vueuse/core'
 import { templates } from '@/templates/config'
 
-useTypeNet()
 const { comments } = useUserComments()
 const isDark = useDark()
+useTypeNet()
+useRecentTemplate()
 const animate = ['slide-right', 'slide-up', 'slide-up', 'slide-left']
 </script>
 
@@ -54,19 +55,40 @@ const animate = ['slide-right', 'slide-up', 'slide-up', 'slide-left']
           v-for="(t, idx) in templates.slice(0, 4)"
           :key="idx"
           :data-aos="animate[idx]"
+          @click="$router.push({ path: '/editor', query: { type: t.type } })"
         >
           <img :src="t.img" alt="" />
-          <span>{{ 800 }}+使用</span>
+          <span>{{ t.hot }}+使用</span>
           <p>{{ t.name }}</p>
         </li>
       </ul>
     </div>
-    <!-- <div class="footer">
-      <ul class="flex">
-        <li>Markdown基础教程</li>
-        <li>GitHub</li>
+    <div class="footer flex noto-serif-sc">
+      <!-- <ul class="flex">
+        <li>
+          <i class="iconfont icon-github"></i>
+          <a href="https://github.com/acmenlei/codecv" target="_blank">GitHub Repo</a>
+        </li>
+        <li>
+          <i class="iconfont icon-home"></i>
+          <a href="https://coderlei.netlify.app" target="_blank">我的个人网站</a>
+        </li>
+
+        <li>
+          <i class="iconfont icon-juejin"></i>
+          <a href="https://juejin.cn/user/2586468969632445" target="_blank">我的掘金文章</a>
+        </li>
       </ul>
-    </div> -->
+      <ul class="flex">
+        <li><i class="iconfont icon-problem" style="margin-right: 3px"></i> 问题咨询</li>
+        <img src="@/assets/img/wechat.jpg" alt="" />
+      </ul>
+      <ul class="flex">
+        <li>CodeCV QQ群聊问题咨询</li>
+        <img src="@/assets/img/qqgroup.jpeg" alt="" />
+      </ul> -->
+      暂无尾部信息
+    </div>
   </div>
 </template>
 
@@ -164,7 +186,7 @@ const animate = ['slide-right', 'slide-up', 'slide-up', 'slide-left']
           height: 60px;
           text-align: right;
           width: 100%;
-          padding-left: 20px;
+          padding: 0 0 10px 20px;
           display: flex;
           align-items: center;
           sub {
@@ -202,6 +224,7 @@ const animate = ['slide-right', 'slide-up', 'slide-up', 'slide-left']
           position: absolute;
           top: 0;
           left: 0;
+          letter-spacing: 1px;
           padding: 5px 10px;
           background: var(--theme);
           color: #f8f8f8;
@@ -221,17 +244,40 @@ const animate = ['slide-right', 'slide-up', 'slide-up', 'slide-left']
     }
   }
 
-  /* .footer {
-    height: 300px;
-    ul {
+  .footer {
+    justify-content: space-around;
+    padding: 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    /* ul {
       flex-direction: column;
       list-style: none;
       height: 100%;
       justify-content: center;
       align-items: center;
       line-height: 30px;
-    }
-  } */
+
+      img {
+        margin-top: 15px;
+        height: 150px;
+      }
+      li {
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: var(--font-color);
+        }
+        i {
+          font-size: 20px;
+          margin-right: 10px;
+        }
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    } */
+  }
 }
 
 @media screen and (max-width: 800px) {

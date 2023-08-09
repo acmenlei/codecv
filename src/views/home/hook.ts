@@ -6,6 +6,7 @@ import avatar2 from '@/assets/svg/avataaars2.svg'
 import avatar3 from '@/assets/svg/avataaars3.svg'
 import avatar4 from '@/assets/svg/avataaars4.svg'
 import avatar5 from '@/assets/svg/avataaars5.svg'
+import { getTemplateCondition } from '@/api/modules/resume'
 
 export function useTypeNet() {
   onMounted(() => {
@@ -112,4 +113,18 @@ export function useUserComments() {
   return {
     comments
   }
+}
+
+export function useRecentTemplate() {
+  onMounted(() => {
+    // 处理数据
+    ;(async () => {
+      const _templateData = await getTemplateCondition()
+      if (!_templateData.result) {
+        return
+      }
+      const templateData = JSON.parse(_templateData.result)
+      templates.value.forEach(template => (template.hot = templateData[`t${template.type}`]))
+    })()
+  })
 }
