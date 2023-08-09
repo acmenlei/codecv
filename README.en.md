@@ -46,10 +46,6 @@ This is a tool for creating resumes using `markdown`. It can convert your writte
 
 **A**: At present, the service is deployed on the `Netlify Serverless` service, because it is a foreign server, access is easy to error, please try several times, of course, you can also use the local export `PDF` replacement.
 
-## 👋 CONTRIBUTING
-
-Please read before contributing[Contribution Guide](./CONTRIBUTING.md)
-
 ## 🙏 Sponsor
 
 If you think this project is helpful to you and circumstances permit, you can give me a little support. In short, thank you very much for your support ~
