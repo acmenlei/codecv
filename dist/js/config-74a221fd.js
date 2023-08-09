@@ -1,4 +1,4 @@
-const A=`## \u5F20\u4E09-Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+import{r as D}from"./@vue-7f8fdc6b.js";const B="https://apn1-included-wildcat-34002.upstash.io";async function wu(u){return await(await fetch("https://codecv.netlify.app/.netlify/functions/export",{method:"POST",body:JSON.stringify(u)})).json()}function t(){return new Promise((u,x)=>{fetch(`${B}/get/count`,{headers:{Authorization:"Bearer AoTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM33cyXqw1YkkkyYnC-9my5SGRqXg_gsiKnSdQcbUwXHr4="}}).then(F=>F.json()).then(F=>u(F.result)).catch(x)})}async function Mu(){let u;try{u=await t()}catch{return Promise.resolve("\u83B7\u53D6\u5931\u8D25...")}return new Promise(x=>{fetch(`${B}/set/count/${parseInt(u)+1}`,{headers:{Authorization:"Bearer AYTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM3MmNmYWU0NGZmMzY3NGVjOGFmYTJlZTIzNmE5ODUwYjc="}}).then(F=>F.json()).then(F=>x(F.result)).catch(x)})}async function n(){return await(await fetch(`${B}/get/templateData`,{headers:{Authorization:"Bearer AoTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM33cyXqw1YkkkyYnC-9my5SGRqXg_gsiKnSdQcbUwXHr4="}})).json()}async function Ou(u){let x,F={};try{x=await n()}catch{return Promise.resolve({msg:"\u83B7\u53D6\u6A21\u677F\u6570\u636E\u5931\u8D25...",result:null})}return x.result&&(F=JSON.parse(x.result)),F[`t${u.name}`]=String(+(F[`t${u.name}`]||0)+1),await(await fetch(`${B}/set/templateData`,{method:"POST",body:JSON.stringify(F),headers:{Authorization:"Bearer AYTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM3MmNmYWU0NGZmMzY3NGVjOGFmYTJlZTIzNmE5ODUwYjc="}})).json()}const o=`## \u5F20\u4E09-Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 ::: start
 icon:user \u7537 / 2000.01.01 / \u6C5F\u897F\u5357\u660C
 icon:phone 155xxxxxx06
@@ -71,7 +71,7 @@ icon:github  [https://github.com/acmenlei](https://github.com/acmenlei)
 - **\u9879\u76EE\u6210\u679C**\uFF1A
 1. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 2. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-`,D={name:"\u4E92\u8054\u7F51IT\u901A\u7528",primaryColor:"#333",font:"Noto Sans SC",lineHeight:18,primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/1070de79adef33af39.jpg",content:A},t=Object.freeze(Object.defineProperty({__proto__:null,default:D},Symbol.toStringTag,{value:"Module"})),n=`
+`,i={name:"\u4E92\u8054\u7F51IT\u901A\u7528",primaryColor:"#333",font:"Noto Sans SC",lineHeight:18,primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/1070de79adef33af39.jpg",content:o},a=Object.freeze(Object.defineProperty({__proto__:null,default:i},Symbol.toStringTag,{value:"Module"})),r=`
 ::: headStart
 ::: start
 # Baby Shark
@@ -181,7 +181,7 @@ xxx\u5B66\u6821 (\u8F6F\u4EF6\u5DE5\u7A0B)
 :::
 2016-07 ~ 2016-07
 ::: end
-`,o={name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)",primaryColor:"#555",primaryBackground:"#790FAE",img:"https://z4a.net/images/2023/07/14/1155c6a07c30096518.png",content:n},i=Object.freeze(Object.defineProperty({__proto__:null,default:o},Symbol.toStringTag,{value:"Module"})),a=`::: headStart
+`,s={name:"\u7B80\u7EA6\u98CE(\u5C0F\u9CA8\u9C7C)",primaryColor:"#555",primaryBackground:"#790FAE",img:"https://z4a.net/images/2023/07/14/1155c6a07c30096518.png",content:r},c=Object.freeze(Object.defineProperty({__proto__:null,default:s},Symbol.toStringTag,{value:"Module"})),d=`::: headStart
 ## \u5C0F\u9ED1\u5B50 - \u524D\u7AEF\u67B6\u6784\u5E08
 ::: start
 **\u5DE5\u4F5C\u7ECF\u9A8C**\uFF1A8\u5E74
@@ -277,7 +277,7 @@ xxx\u5B66\u6821 (\u8F6F\u4EF6\u5DE5\u7A0B)
 \u8F6F\u4EF6\u5B66\u9662 - \u8F6F\u4EF6\u5DE5\u7A0B - \u672C\u79D1
 
 ## \u81EA\u6211\u8BC4\u4EF7
-\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....`,r={name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)",primaryColor:"#333",primaryBackground:"#9ad4eb",img:"https://z4a.net/images/2023/07/14/12.png",content:a},s=Object.freeze(Object.defineProperty({__proto__:null,default:r},Symbol.toStringTag,{value:"Module"})),c=`
+\u81EA\u884C\u53D1\u6325\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199....`,l={name:"\u4E92\u8054\u7F51\u793E\u62DB\u7C7B(\u9002\u5408\u7ECF\u9A8C\u4E30\u5BCC)",primaryColor:"#333",primaryBackground:"#9ad4eb",img:"https://z4a.net/images/2023/07/14/12.png",content:d},p=Object.freeze(Object.defineProperty({__proto__:null,default:l},Symbol.toStringTag,{value:"Module"})),m=`
 ::: headStart
 
 ::: start
@@ -351,7 +351,7 @@ icon:email example@163.com
 
 ## \u81EA\u6211\u8BC4\u4EF7
 \u5728\u524D\u7AEF\u9886\u57DF\u6709\u8FC7\u6DF1\u8015\uFF0C\u6709\u7BA1\u7406\u3001\u7EC4\u7EC7\u80FD\u529B....... ok\u7ED3\u675F\uFF0C\u611F\u89C9\u662F\u53E3\u6C34\u8BDD\u7684\u53EF\u5199\u53EF\u4E0D\u5199\u5427
-`,d={name:"\u6697\u9ED1/Geek/\u7A0B\u5E8F\u5458",primaryColor:"#d1d1d1",primaryBackground:"#17A00B",img:"https://z4a.net/images/2023/07/14/13.png",content:c},l=Object.freeze(Object.defineProperty({__proto__:null,default:d},Symbol.toStringTag,{value:"Module"})),p=`::: headStart
+`,g={name:"\u6697\u9ED1/Geek/\u7A0B\u5E8F\u5458",primaryColor:"#d1d1d1",primaryBackground:"#17A00B",img:"https://z4a.net/images/2023/07/14/13.png",content:m},h=Object.freeze(Object.defineProperty({__proto__:null,default:g},Symbol.toStringTag,{value:"Module"})),b=`::: headStart
 
 ::: start
 
@@ -412,7 +412,7 @@ xxxx**\u7814\u53D1\u8D1F\u8D23\u4EBA**\uFF0C\u8D1F\u8D23\u524D\u7AEF\u6280\u672F
 :::
 **2015/09/01 - 2022/07/01**
 
-::: end`,m={type:"heading",name:"\u7B80\u7EA6\u98CE\u5934\u90E8\u7528\u8272",lineHeight:20,font:"Noto Sans SC",primaryColor:"#363434",primaryBackground:"#ffdc63",img:"https://z4a.net/images/2023/07/14/14.png",content:p},g=Object.freeze(Object.defineProperty({__proto__:null,default:m},Symbol.toStringTag,{value:"Module"})),h=`::: headStart
+::: end`,y={type:"heading",name:"\u7B80\u7EA6\u98CE\u5934\u90E8\u7528\u8272",lineHeight:20,font:"Noto Sans SC",primaryColor:"#363434",primaryBackground:"#ffdc63",img:"https://z4a.net/images/2023/07/14/14.png",content:b},S=Object.freeze(Object.defineProperty({__proto__:null,default:y},Symbol.toStringTag,{value:"Module"})),_=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
@@ -478,7 +478,7 @@ icon:link [\u4E2A\u4EBA\u7F51\u7AD9](https://coderlei.netlify.app)
 ## \u81EA\u6211\u8BC4\u4EF7
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,b={name:"\u7B80\u7EA6\u4E07\u80FD\u6A21\u677F",primaryColor:"#333",lineHeight:20,font:"Noto Sans SC",primaryBackground:"#C42F76",img:"https://z4a.net/images/2023/07/14/15.png",content:h},y=Object.freeze(Object.defineProperty({__proto__:null,default:b},Symbol.toStringTag,{value:"Module"})),S=`::: headStart
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,f={name:"\u7B80\u7EA6\u4E07\u80FD\u6A21\u677F",primaryColor:"#333",lineHeight:20,font:"Noto Sans SC",primaryBackground:"#C42F76",img:"https://z4a.net/images/2023/07/14/15.png",content:_},P=Object.freeze(Object.defineProperty({__proto__:null,default:f},Symbol.toStringTag,{value:"Module"})),v=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
@@ -566,7 +566,7 @@ web\u524D\u7AEF
   - \u6743\u9650\u505A\u5230\u6309\u94AE\u7EA7\u522B\uFF0C\u5E76\u4F7F\u7528\u5355\u4F8B\u6A21\u5F0F\u89E3\u51B3\u4E86\u6309\u94AE\u8FC7\u591A\u5F15\u53D1\u7684\u9891\u7E41\u62C9\u53D6\u6743\u9650\u8BF7\u6C42\u7684\u95EE\u9898
 ## \u81EA\u6211\u8BC4\u4EF7
 \u70ED\u7231\u524D\u7AEF\u5F00\u53D1\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u7740\u6D53\u539A\u7684\u5174\u8DA3....
-::: mainEnd`,_={name:"\u7B80\u7EA6\u901A\u7528 \u7A81\u51FA\u5185\u5BB9",primaryColor:"#333",lineHeight:16,font:"Noto Sans SC",primaryBackground:"#14A25D",img:"https://z4a.net/images/2023/07/14/imagea2a8fec02daeeb32.png",content:S},f=Object.freeze(Object.defineProperty({__proto__:null,default:_},Symbol.toStringTag,{value:"Module"})),v=`::: headStart
+::: mainEnd`,k={name:"\u7B80\u7EA6\u901A\u7528 \u7A81\u51FA\u5185\u5BB9",primaryColor:"#333",lineHeight:16,font:"Noto Sans SC",primaryBackground:"#14A25D",img:"https://z4a.net/images/2023/07/14/imagea2a8fec02daeeb32.png",content:v},j=Object.freeze(Object.defineProperty({__proto__:null,default:k},Symbol.toStringTag,{value:"Module"})),T=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
@@ -623,7 +623,7 @@ icon:phone 15507942222 \uFF5C icon:email coderleilei@qq.com \uFF5C icon:wechat z
 - \u82F1\u8BEDCET4\u3001CET6\u7EA7
 - \u5927\u5B66\u751F\u521B\u65B0\u521B\u4E1A\u5927\u8D5B\u56FD\u5BB6\u7EA7\u7ACB\u9879
 - 2021 - 2023 \u8FDE\u7EED\u4E24\u5E74\u8363\u83B7\u56FD\u5BB6\u52B1\u5FD7\u5956\u5B66\u91D1
-::: mainEnd`,P={name:"\u7B80\u7EA6\u901A\u7528\u6A21\u677F",primaryColor:"#4A4B4A",primaryBackground:"#112236",img:"https://z4a.net/images/2023/07/14/17.png",content:v},k=Object.freeze(Object.defineProperty({__proto__:null,default:P},Symbol.toStringTag,{value:"Module"})),j=`
+::: mainEnd`,w={name:"\u7B80\u7EA6\u901A\u7528\u6A21\u677F",primaryColor:"#4A4B4A",primaryBackground:"#112236",img:"https://z4a.net/images/2023/07/14/17.png",content:T},M=Object.freeze(Object.defineProperty({__proto__:null,default:w},Symbol.toStringTag,{value:"Module"})),O=`
 ::: headStart
 
 ::: start
@@ -741,7 +741,7 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 ::: end
 ::: mainEnd
 
-`,T={name:"\u6781\u7B80/\u7B80\u7EA6/\u901A\u7528\u6A21\u677F",lineHeight:20,primaryColor:"#636262",primaryBackground:"#024B4B",img:"https://z4a.net/images/2023/07/14/18.png",content:j},w=Object.freeze(Object.defineProperty({__proto__:null,default:T},Symbol.toStringTag,{value:"Module"})),M=`## CodeCV - \u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+`,H={name:"\u6781\u7B80/\u7B80\u7EA6/\u901A\u7528\u6A21\u677F",lineHeight:20,primaryColor:"#636262",primaryBackground:"#024B4B",img:"https://z4a.net/images/2023/07/14/18.png",content:O},z=Object.freeze(Object.defineProperty({__proto__:null,default:H},Symbol.toStringTag,{value:"Module"})),V=`## CodeCV - \u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 ::: start
 icon:email **\u90AE\u7BB1**\uFF1Acoderleilei@163.com
 icon:phone **\u7535\u8BDD\u53F7\u7801**\uFF1A15507942706
@@ -818,7 +818,7 @@ https://github.com/acmenlei/markdown-plus
 ## \u81EA\u6211\u8BC4\u4EF7
 \u81EA\u884C\u53D1\u6325\u5427\u3002\u3002\u3002
 ## \u81F4\u8C22
-\u611F\u8C22\u60A8\u9605\u8BFB\u6211\u7684\u7B80\u5386\uFF0C\u671F\u5F85\u4E0E\u60A8\u4E00\u8D77\u5171\u4E8B\u3002`,H={name:"\u793E\u62DB/\u4E92\u8054\u7F51/\u6821\u62DB/\u7B80\u7EA6",primaryColor:"#544F4F",primaryBackground:"#1CAAB0",img:"https://z4a.net/images/2023/07/25/social.png",content:M},O=Object.freeze(Object.defineProperty({__proto__:null,default:H},Symbol.toStringTag,{value:"Module"})),z=`::: headStart
+\u611F\u8C22\u60A8\u9605\u8BFB\u6211\u7684\u7B80\u5386\uFF0C\u671F\u5F85\u4E0E\u60A8\u4E00\u8D77\u5171\u4E8B\u3002`,N={name:"\u793E\u62DB/\u4E92\u8054\u7F51/\u6821\u62DB/\u7B80\u7EA6",primaryColor:"#544F4F",primaryBackground:"#1CAAB0",img:"https://z4a.net/images/2023/07/25/social.png",content:V},L=Object.freeze(Object.defineProperty({__proto__:null,default:N},Symbol.toStringTag,{value:"Module"})),R=`::: headStart
 ::: start
 ## \u5F20\u4E09 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08** **\u610F\u5411\u57CE\u5E02\uFF1A\u676D\u5DDE**
 ::: start
@@ -878,7 +878,7 @@ icon:yuque [yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 - **\u9879\u76EE\u63CF\u8FF0**\uFF1A\u6559\u522B\u4EBA\u5982\u4F55\u626B\u5730\uFF0C\u5982\u4F55\u626B\u597D\u5730
 - **\u9879\u76EE\u6280\u672F\u6808**\uFF1AHadoop\u3001Sqoop\u3001Python\u3001Scrapy\u3001Spark\u3001Hive\u3001MySQL\u3001Flask\u3001ECharts
 - **\u6307\u8D23\u63CF\u8FF0**\uFF1A\u8FDB\u884C Hadoop \u5E73\u53F0\u642D\u5EFA\uFF0C\u5229\u7528 Scrapy \u722C\u53D6 QTA \u9152\u5E97\u516C\u5F00\u6570\u636E\u81F3 MySQL \u4E2D\u3002\u5C06\u722C\u53D6\u7684\u6570\u636E\u8FDB\u884C\u6E05\u6D17\u548C\u5206\u6790\u3002\u5C06\u5206\u6790\u597D\u7684\u6570\u636E\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u5B58\u5165 MySQL \u4E2D\u3002\u7528 Flask \u540C ECharts \u5C06\u6570\u636E\u8FDB\u884C\u53EF\u89C6\u5316\u5C55\u73B0\u3002
-- **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002`,V={name:"\u4E92\u8054\u7F51IT\u901A\u7528-\u5E26\u5934\u50CF",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/1bd60fb410eef1c5b.png",content:z},L=Object.freeze(Object.defineProperty({__proto__:null,default:V},Symbol.toStringTag,{value:"Module"})),R=`::: headStart
+- **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002`,I={name:"\u4E92\u8054\u7F51IT\u901A\u7528-\u5E26\u5934\u50CF",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/1bd60fb410eef1c5b.png",content:R},$=Object.freeze(Object.defineProperty({__proto__:null,default:I},Symbol.toStringTag,{value:"Module"})),G=`::: headStart
 # \u5C0FC - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 icon:user \u7537 / 2000.01.01 &nbsp;/ &nbsp;icon:phone 155xxxxxx06 &nbsp; /&nbsp; icon:email xxxxxxxx@163.com
 icon:github [github.com/acmenlei](https://github.com/acmenlei)&nbsp;icon:gitee [gitee.com/codeleilei](https://gitee.com/codeleilei)&nbsp;icon:juejin [juejin.cn/user/2586468969632445](https://juejin.cn/user/2586468969632445)
@@ -939,7 +939,7 @@ icon:github [github.com/acmenlei](https://github.com/acmenlei)&nbsp;icon:gitee [
 - **\u7EBF\u4E0A\u6F14\u793A**\uFF1A[https://acmenlei.github.io/markdown-transform-html-demo/dist/](https://acmenlei.github.io/markdown-transform-html-demo/dist/)
 
 ## \u81EA\u6211\u8BC4\u4EF7
-\u81EA\u9A71\u529B\u5F3A\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u6D53\u539A\u7684\u5174\u8DA3\uFF0C\u6301\u7EED\u5173\u6CE8\u524D\u7AEF\u9886\u57DF\u65B0\u73A9\u5177/\u65B0\u7279\u6027\u5E76\u6295\u5165\u9879\u76EE\u4F7F\u7528\uFF0C\u4FDD\u6301\u6301\u7EED\u5B66\u4E60\u7684\u5FC3\u6001 ...`,I={name:"\u6821\u62DB/\u793E\u62DB/\u4E92\u8054\u7F51/\u7B80\u6D01",font:"Noto Sans SC",primaryColor:"#140505",primaryBackground:"#140B25",img:"https://z4a.net/images/2023/07/28/campus_simple.png",content:R},$=Object.freeze(Object.defineProperty({__proto__:null,default:I},Symbol.toStringTag,{value:"Module"})),N=`## \u5C0FC - \u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+\u81EA\u9A71\u529B\u5F3A\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u6D53\u539A\u7684\u5174\u8DA3\uFF0C\u6301\u7EED\u5173\u6CE8\u524D\u7AEF\u9886\u57DF\u65B0\u73A9\u5177/\u65B0\u7279\u6027\u5E76\u6295\u5165\u9879\u76EE\u4F7F\u7528\uFF0C\u4FDD\u6301\u6301\u7EED\u5B66\u4E60\u7684\u5FC3\u6001 ...`,J={name:"\u6821\u62DB/\u793E\u62DB/\u4E92\u8054\u7F51/\u7B80\u6D01",font:"Noto Sans SC",primaryColor:"#140505",primaryBackground:"#140B25",img:"https://z4a.net/images/2023/07/28/campus_simple.png",content:G},q=Object.freeze(Object.defineProperty({__proto__:null,default:J},Symbol.toStringTag,{value:"Module"})),W=`## \u5C0FC - \u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 ::: start
 icon:man \u7537 / 1995.08.01 / icon:phone 15507942706
 icon:email coderleilei@163.com
@@ -1019,7 +1019,7 @@ https://github.com/acmenlei/typenet
 - 2019\u5E74 CCPC \u5927\u5B66\u751F\u7A0B\u5E8F\u8BBE\u8BA1\u5927\u8D5B\u4E0A\u6D77\u533A\u9884\u8D5B\u91D1\u724C
 
 ## icon:user \u81EA\u6211\u8BC4\u4EF7
-\u81EA\u9A71\u529B\u5F3A\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u6D53\u539A\u7684\u5174\u8DA3\uFF0C\u6301\u7EED\u5173\u6CE8\u524D\u7AEF\u9886\u57DF\u65B0\u73A9\u5177/\u65B0\u7279\u6027\u5E76\u6295\u5165\u9879\u76EE\u4F7F\u7528\uFF0C\u4FDD\u6301\u6301\u7EED\u5B66\u4E60\u7684\u5FC3\u6001 ...`,q={name:"\u524D\u7AEF/\u6821\u62DB/\u793E\u62DB",font:"Noto Sans SC",primaryColor:"#2A2A2A",lineHeight:22,primaryBackground:"#141414",img:"https://z4a.net/images/2023/08/05/21.png",content:N},G=Object.freeze(Object.defineProperty({__proto__:null,default:q},Symbol.toStringTag,{value:"Module"})),Q=`::: headStart
+\u81EA\u9A71\u529B\u5F3A\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u6D53\u539A\u7684\u5174\u8DA3\uFF0C\u6301\u7EED\u5173\u6CE8\u524D\u7AEF\u9886\u57DF\u65B0\u73A9\u5177/\u65B0\u7279\u6027\u5E76\u6295\u5165\u9879\u76EE\u4F7F\u7528\uFF0C\u4FDD\u6301\u6301\u7EED\u5B66\u4E60\u7684\u5FC3\u6001 ...`,Q={name:"\u524D\u7AEF/\u6821\u62DB/\u793E\u62DB",font:"Noto Sans SC",primaryColor:"#2A2A2A",lineHeight:22,primaryBackground:"#141414",img:"https://z4a.net/images/2023/08/05/21.png",content:W},Y=Object.freeze(Object.defineProperty({__proto__:null,default:Q},Symbol.toStringTag,{value:"Module"})),U=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
@@ -1083,7 +1083,7 @@ icon:bytedance  **\u5B57\u8282\u8DF3\u52A8 - \u98DE\u4E66 - Web\u524D\u7AEF\u5F0
 
 ## \u7ADE\u8D5B\u8363\u8A89
 - **\u56FD\u5BB6\u5956\u5B66\u91D1**\uFF1A2019 - 2020\u5E74\u56FD\u5BB6\u5956\u5B66\u91D1 / 2020 - 2021\u5E74\u56FD\u5BB6\u52B1\u5FD7\u5956\u5B66\u91D1
-- **CCPC**\uFF1A2019\u5E74 CCPC \u5927\u5B66\u751F\u7A0B\u5E8F\u8BBE\u8BA1\u5927\u8D5B\u4E0A\u6D77\u533A\u9884\u8D5B\u91D1\u724C`,J={name:"\u901A\u7528/\u7B80\u6D01/\u6821\u62DB/\u793E\u62DB/\u8BBE\u8BA1",primaryColor:"#333",font:"Noto Sans SC",lineHeight:20,primaryBackground:"#2198C4",img:"https://z4a.net/images/2023/08/04/22.png",content:Q},W=Object.freeze(Object.defineProperty({__proto__:null,default:J},Symbol.toStringTag,{value:"Module"})),B=`# John Doe - Frontend Engineer
+- **CCPC**\uFF1A2019\u5E74 CCPC \u5927\u5B66\u751F\u7A0B\u5E8F\u8BBE\u8BA1\u5927\u8D5B\u4E0A\u6D77\u533A\u9884\u8D5B\u91D1\u724C`,X={name:"\u901A\u7528/\u7B80\u6D01/\u6821\u62DB/\u793E\u62DB/\u8BBE\u8BA1",primaryColor:"#333",font:"Noto Sans SC",lineHeight:20,primaryBackground:"#2198C4",img:"https://z4a.net/images/2023/08/04/22.png",content:U},Z=Object.freeze(Object.defineProperty({__proto__:null,default:X},Symbol.toStringTag,{value:"Module"})),C=`# John Doe - Frontend Engineer
 ::: start
 icon:email Email: coderleilei@163.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 icon:phone Phone: (123) 456-7890
@@ -1147,7 +1147,7 @@ Developed a responsive admin dashboard for managing e-commerce products, orders,
 icon:bytedance  *ByteDance ( July 2017 - May 2020 )*
 ::: end
 
-Led the frontend development of a video interaction platform, enabling users to engage in real-time video discussions. Utilized WebRTC for seamless video streaming and developed a user-friendly interface with Vue.js.`,U={name:"\u82F1\u6587/\u7A0B\u5E8F\u5458/IT/\u4E92\u8054\u7F51",primaryColor:"#555",font:"Nunito",lineHeight:26,primaryBackground:"#333",img:"https://z4a.net/images/2023/08/08/23.png",content:B},X=Object.freeze(Object.defineProperty({__proto__:null,content:B,default:U},Symbol.toStringTag,{value:"Module"})),Y=`::: headStart
+Led the frontend development of a video interaction platform, enabling users to engage in real-time video discussions. Utilized WebRTC for seamless video streaming and developed a user-friendly interface with Vue.js.`,K={name:"\u82F1\u6587/\u7A0B\u5E8F\u5458/IT/\u4E92\u8054\u7F51",primaryColor:"#555",font:"Nunito",lineHeight:26,primaryBackground:"#333",img:"https://z4a.net/images/2023/08/08/23.png",content:C},uu=Object.freeze(Object.defineProperty({__proto__:null,content:C,default:K},Symbol.toStringTag,{value:"Module"})),Fu=`::: headStart
 # CodeCV XiaoC (Jack)
 (+86) 123-456-7890 | coderleilei@163.com | 18th floor, CodeCV Bid, Beijing
 ::: headEnd
@@ -1211,7 +1211,7 @@ Led the frontend development of a video interaction platform, enabling users to 
 ## MISCELLANEOUS
 - **Languages**: English (Fluent). Mandarin Chinese (Native), French (Conversational)
 - **Skills**: Bloomberg. Excel (Proficient), PPT (Proficient), HTML/CSS (Basic)
-- **Interests**: Violin (Gr. 10). Website (coderlei.netlify.app)`,K={name:"\u82F1\u6587/\u901A\u7528/\u6821\u62DB/\u793E\u62DB",primaryColor:"#333",font:"Nunito",lineHeight:20,primaryBackground:"#333",img:"https://z4a.net/images/2023/08/08/24.png",content:Y},Z=Object.freeze(Object.defineProperty({__proto__:null,default:K},Symbol.toStringTag,{value:"Module"})),uu={name:"\u6697\u9ED1/\u82F1\u6587/\u7A0B\u5E8F\u5458/Geek",primaryColor:"#ccc",font:"Nunito",lineHeight:26,primaryBackground:"#d93b7d",img:"https://z4a.net/images/2023/08/08/25.png",content:B},Fu=Object.freeze(Object.defineProperty({__proto__:null,default:uu},Symbol.toStringTag,{value:"Module"})),xu=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+- **Interests**: Violin (Gr. 10). Website (coderlei.netlify.app)`,xu={name:"\u82F1\u6587/\u901A\u7528/\u6821\u62DB/\u793E\u62DB",primaryColor:"#333",font:"Nunito",lineHeight:20,primaryBackground:"#333",img:"https://z4a.net/images/2023/08/08/24.png",content:Fu},Eu=Object.freeze(Object.defineProperty({__proto__:null,default:xu},Symbol.toStringTag,{value:"Module"})),Bu={name:"\u6697\u9ED1/\u82F1\u6587/\u7A0B\u5E8F\u5458/Geek",primaryColor:"#ccc",font:"Nunito",lineHeight:26,primaryBackground:"#d93b7d",img:"https://z4a.net/images/2023/08/08/25.png",content:C},Cu=Object.freeze(Object.defineProperty({__proto__:null,default:Bu},Symbol.toStringTag,{value:"Module"})),eu=`## \u9A6C\u51AC\u6885 - web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 
 ::: start
 icon:user 2000/01/01
@@ -1273,7 +1273,7 @@ icon:github https://github.com/acmenlei
 \u4E3A\u5B66\u751F\u63D0\u4F9B\u6210\u7EE9\u67E5\u8BE2\u7CFB\u7EDF\uFF0C\u89E3\u51B3\u5185\u5916\u7F51\u9694\u79BB\u95EE\u9898\uFF0C\u63D0\u4F9B\u6210\u7EE9\u77ED\u4FE1\u901A\u77E5\u80FD\u529B\uFF0C\u4E3A2\u4E07\u5728\u6821\u751F\u63D0\u4F9B\u5728\u5BB6\u67E5\u6210\u7EE9\u670D\u52A1\u3002\u4F7F\u7528Koa2\u63D0\u4F9BAP\u63A5\u53E3\uFF0C\u4EE5\u4F9B\u524D\u7AEF\u4F7F\u7528\u3001\u8FD0\u7528Node js\u5B9E\u73B0\u5E26\u767B\u9646;\u6001\u8BF7\u6C42\u3001\u4F7F\u7528React/ Antd\u5B9E\u73B0\u524D\u7AEFUI\u754C\u9762\u3001\u63A5\u5165\u963F\u91CC\u4E91\u77ED\u4FE1API\u3002
 
 ## \u5176\u4ED6
-\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,Eu={name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248",primaryColor:"#555",primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/image5805609dbaf54e0a.png",content:xu},Bu=Object.freeze(Object.defineProperty({__proto__:null,default:Eu},Symbol.toStringTag,{value:"Module"})),Cu=`::: headStart
+\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,Au={name:"\u793E\u62DB/\u6821\u62DB\u7B80\u6D01\u6A21\u7248",primaryColor:"#555",primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/image5805609dbaf54e0a.png",content:eu},Du=Object.freeze(Object.defineProperty({__proto__:null,default:Au},Symbol.toStringTag,{value:"Module"})),tu=`::: headStart
 # \u6C42\u804C\u7B80\u5386 - \u8FD0\u8425
 ::: start
 \u5982\u82B1 / \u5973 / xxxx.xx / xxxxx / \u5DE5\u5546\u7BA1\u7406
@@ -1340,7 +1340,7 @@ icon:phone 155xxxx8888
 - **xxxxxxxx**\uFF1A xxxxxxxxxxxxxxxxxxxxxxxx
 - **xxxxxxxx**\uFF1A xxxxxxxxxxxxxxxxxxxxxxxx
 ::: mainEnd
-`,eu={name:"\u8FD0\u8425\u7C7B",primaryColor:"#333",primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/3baff9f61cf8add7d.png",content:Cu},Au=Object.freeze(Object.defineProperty({__proto__:null,default:eu},Symbol.toStringTag,{value:"Module"})),Du=`::: headStart
+`,nu={name:"\u8FD0\u8425\u7C7B",primaryColor:"#333",primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/3baff9f61cf8add7d.png",content:tu},ou=Object.freeze(Object.defineProperty({__proto__:null,default:nu},Symbol.toStringTag,{value:"Module"})),iu=`::: headStart
 ## \u9A6C\u725B\u903C **\u793E\u4F1A\u725B\u903C\u5DE5\u7A0B\u5E08**
 ::: start
 icon:city xxxx\u5927\u5B66 / \u793E\u4F1A\u5DE5\u7A0B
@@ -1390,7 +1390,7 @@ icon:school GPA:3.92 / Top3%
 - **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002
 
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
-\u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u5584\u4E8E\u5728\u5B9E\u8DF5\u4E2D\u79EF\u7D2F\u5B66\u4E60\uFF0C\u4E0D\u65AD\u7684\u5B8C\u5584\u81EA\u6211\u3002\u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\u548C\u6C9F\u901A\u534F\u4F5C\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002\u540C\u65F6\uFF0C\u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,tu={name:"\u4E92\u8054\u7F51IT\u901A\u7528",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/44cd25e676daba2ab.png",content:Du},nu=Object.freeze(Object.defineProperty({__proto__:null,default:tu},Symbol.toStringTag,{value:"Module"})),ou=`::: headStart
+\u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u5584\u4E8E\u5728\u5B9E\u8DF5\u4E2D\u79EF\u7D2F\u5B66\u4E60\uFF0C\u4E0D\u65AD\u7684\u5B8C\u5584\u81EA\u6211\u3002\u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\u548C\u6C9F\u901A\u534F\u4F5C\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002\u540C\u65F6\uFF0C\u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,au={name:"\u4E92\u8054\u7F51IT\u901A\u7528",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://z4a.net/images/2023/07/14/44cd25e676daba2ab.png",content:iu},ru=Object.freeze(Object.defineProperty({__proto__:null,default:au},Symbol.toStringTag,{value:"Module"})),su=`::: headStart
 ::: start
 # \u756A\u8304\u7092\u9E21\u86CB
 **\u6027\u522B**\uFF1A\u7537 \uFF5C **\u5E74\u9F84**\uFF1A23 \uFF5C **\u7535\u8BDD**\uFF1A11011011011 \uFF5C **\u90AE\u7BB1**\uFF1Aresume@163.com
@@ -1451,7 +1451,7 @@ xxxx\u5E74xx\u6708 - xxxx\u5E74xx\u6708
 - xxxxxxxxxxxxxxxxxxxx
 ## icon:technology \u4E2A\u4EBA\u6280\u80FD
 - xxxxxxxxxxxxxxxxxxxx
-`,iu={name:"\u7814\u7A76\u751F\u590D\u8BD5\u6A21\u677F",primaryColor:"#3A3939",lineHeight:19,primaryBackground:"#2186D2",img:"https://z4a.net/images/2023/07/14/5791fd61daed35d47.png",content:ou},au=Object.freeze(Object.defineProperty({__proto__:null,default:iu},Symbol.toStringTag,{value:"Module"})),ru=`::: headStart
+`,cu={name:"\u7814\u7A76\u751F\u590D\u8BD5\u6A21\u677F",primaryColor:"#3A3939",lineHeight:19,primaryBackground:"#2186D2",img:"https://z4a.net/images/2023/07/14/5791fd61daed35d47.png",content:su},du=Object.freeze(Object.defineProperty({__proto__:null,default:cu},Symbol.toStringTag,{value:"Module"})),lu=`::: headStart
 ::: start
 ## \u5C0F\u65B0 **\u8FD0\u8425\u5B9E\u4E60\u751F**
 icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u5171\u515A\u5458 \uFF5C 2023\u5C4A
@@ -1511,7 +1511,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 4. xxxxx......
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
-2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002`,su={name:"\u8FD0\u8425/\u901A\u7528\u7C7B\u6A21\u677F",primaryColor:"#333",primaryBackground:"#1a85f0",img:"https://z4a.net/images/2023/07/14/image2ae0df2e15c037f2.png",content:ru},cu=Object.freeze(Object.defineProperty({__proto__:null,default:su},Symbol.toStringTag,{value:"Module"})),du=`::: headStart
+2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002`,pu={name:"\u8FD0\u8425/\u901A\u7528\u7C7B\u6A21\u677F",primaryColor:"#333",primaryBackground:"#1a85f0",img:"https://z4a.net/images/2023/07/14/image2ae0df2e15c037f2.png",content:lu},mu=Object.freeze(Object.defineProperty({__proto__:null,default:pu},Symbol.toStringTag,{value:"Module"})),gu=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 # \u5C0F\u65B0 **UI\u8BBE\u8BA1\u5E08**
@@ -1588,7 +1588,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:user \u81EA\u6211\u8BC4\u4EF7
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,lu={name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F",primaryColor:"#2A2D2D",lineHeight:20,primaryBackground:"#F98C07",img:"https://z4a.net/images/2023/07/14/7e940fd5fd2eb8810.png",content:du},pu=Object.freeze(Object.defineProperty({__proto__:null,default:lu},Symbol.toStringTag,{value:"Module"})),mu=`::: headStart
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,hu={name:"\u7B80\u7EA6\u901A\u7528\u7B80\u5386\u6A21\u677F",primaryColor:"#2A2D2D",lineHeight:20,primaryBackground:"#F98C07",img:"https://z4a.net/images/2023/07/14/7e940fd5fd2eb8810.png",content:gu},bu=Object.freeze(Object.defineProperty({__proto__:null,default:hu},Symbol.toStringTag,{value:"Module"})),yu=`::: headStart
 ::: start
 ## \u5C0F\u65B0 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08**
 ::: start
@@ -1646,7 +1646,7 @@ icon:github [https://github.com/acmenlei](https://github.com/acmenlei)
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,gu={name:"\u901A\u7528\u6A21\u677F",primaryColor:"#333",primaryBackground:"#719ba5",img:"https://z4a.net/images/2023/07/14/8.png",content:mu},hu=Object.freeze(Object.defineProperty({__proto__:null,default:gu},Symbol.toStringTag,{value:"Module"})),bu=`::: start
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,Su={name:"\u901A\u7528\u6A21\u677F",primaryColor:"#333",primaryBackground:"#719ba5",img:"https://z4a.net/images/2023/07/14/8.png",content:yu},_u=Object.freeze(Object.defineProperty({__proto__:null,default:Su},Symbol.toStringTag,{value:"Module"})),fu=`::: start
 ::: headStart
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 ## \u72C2\u5F92\u5F20\u4E09 - \u6CD5\u5F8B\u987E\u95EE
@@ -1713,4 +1713,4 @@ icon:github [https://github.com/acmenlei](https://github.com/acmenlei)
 **2021-09 \u81F3 20212-07**
 ::: end
 \u4ECE\u4E86\u89E3\u5F53\u4EE3\u53EA\u80FD\u5145\u7535\u6C7D\u8F66\u53D1\u96BE\uFF0C\u53D1\u73B0\u5176\u4F18\u7F3A\u70B9\uFF0C\u5728\u6B64\u57FA\u7840\u4E0A\u4F18\u5316\u8BBE\u8BA1\uFF0C\u63D0\u51FA\u65B0\u578B\u6539\u8FDB\uFF0C\u4ECE\u4E86\u89E3\u5F53\u4EE3\u53EA\u80FD\u5145\u7535\u6C7D\u8F66\u53D1\u96BE\uFF0C\u53D1\u73B0\u5176\u4F18\u7F3A\u70B9\uFF0C\u5728\u6B64\u57FA\u7840\u4E0A\u4F18\u5316\u8BBE\u8BA1\uFF0C\u63D0\u51FA\u65B0\u578B\u6539\u8FDB
-::: end`,yu={name:"\u5546\u52A1\u7C7B(\u4E00\u9875)",primaryColor:"#111",primaryBackground:"#297370",img:"https://z4a.net/images/2023/07/14/9.png",content:bu},Su=Object.freeze(Object.defineProperty({__proto__:null,default:yu},Symbol.toStringTag,{value:"Module"})),x=new Map;x.set("create",["#333","#333","","25"]);const e=[],_u=Object.entries(Object.assign({"./modules/10front_end/index.ts":t,"./modules/11fresh/index.ts":i,"./modules/12internet_social/index.ts":s,"./modules/13geek/index.ts":l,"./modules/14heading/index.ts":g,"./modules/15simple_versatile/index.ts":y,"./modules/16prominent_content/index.ts":f,"./modules/17business/index.ts":k,"./modules/18art/index.ts":w,"./modules/19social/index.ts":O,"./modules/1internet_avatar/index.ts":L,"./modules/20campus_simple/index.ts":$,"./modules/21it_campus/index.ts":G,"./modules/22/index.ts":W,"./modules/23/index.ts":X,"./modules/24/index.ts":Z,"./modules/25/index.ts":Fu,"./modules/2concise/index.ts":Bu,"./modules/3operation/index.ts":Au,"./modules/4internet/index.ts":nu,"./modules/5graduation_reexam/index.ts":au,"./modules/6operation_avatar/index.ts":cu,"./modules/7simple_avatar/index.ts":pu,"./modules/8general/index.ts":hu,"./modules/9business/index.ts":Su}));for(const[u,E]of _u){const F=E.default;F.id=Math.ceil(Math.random()*1e9),F.type=u.split("/")[2],e.push(F),x.set(F.type,[F.primaryColor,F.primaryBackground,F.font||"",String(F.lineHeight||25)])}const C=u=>+u.type.match(/^\d+/)[0];e.sort((u,E)=>C(E)-C(u));function fu(u){return x.get(u)[1]}function vu(u){return x.get(u)[0]}function Pu(u){return x.get(u)[2]}function ku(u){return x.get(u)[3]}export{vu as a,Pu as b,ku as c,fu as g,e as t};
+::: end`,Pu={name:"\u5546\u52A1\u7C7B(\u4E00\u9875)",primaryColor:"#111",primaryBackground:"#297370",img:"https://z4a.net/images/2023/07/14/9.png",content:fu},vu=Object.freeze(Object.defineProperty({__proto__:null,default:Pu},Symbol.toStringTag,{value:"Module"})),E=new Map;E.set("create",["#333","#333","","25"]);const A=D([]),ku=Object.entries(Object.assign({"./modules/10front_end/index.ts":a,"./modules/11fresh/index.ts":c,"./modules/12internet_social/index.ts":p,"./modules/13geek/index.ts":h,"./modules/14heading/index.ts":S,"./modules/15simple_versatile/index.ts":P,"./modules/16prominent_content/index.ts":j,"./modules/17business/index.ts":M,"./modules/18art/index.ts":z,"./modules/19social/index.ts":L,"./modules/1internet_avatar/index.ts":$,"./modules/20campus_simple/index.ts":q,"./modules/21it_campus/index.ts":Y,"./modules/22/index.ts":Z,"./modules/23/index.ts":uu,"./modules/24/index.ts":Eu,"./modules/25/index.ts":Cu,"./modules/2concise/index.ts":Du,"./modules/3operation/index.ts":ou,"./modules/4internet/index.ts":ru,"./modules/5graduation_reexam/index.ts":du,"./modules/6operation_avatar/index.ts":mu,"./modules/7simple_avatar/index.ts":bu,"./modules/8general/index.ts":_u,"./modules/9business/index.ts":vu}));for(const[u,x]of ku){const F=x.default;F.id=Math.ceil(Math.random()*1e9),F.type=u.split("/")[2],A.value.push(F),E.set(F.type,[F.primaryColor,F.primaryBackground,F.font||"",String(F.lineHeight||25)])}const e=u=>+u.type.match(/^\d+/)[0];A.value.sort((u,x)=>e(x)-e(u));function Hu(u){return E.get(u)[1]}function zu(u){return E.get(u)[0]}function Vu(u){return E.get(u)[2]}function Nu(u){return E.get(u)[3]}export{Ou as a,zu as b,Vu as c,Nu as d,t as e,n as f,Hu as g,wu as r,Mu as s,A as t};
