@@ -1,5 +1,5 @@
 import { templates, type TemplateType } from '@/templates/config'
-import { onActivated, Ref, ref } from 'vue'
+import { onMounted, Ref, ref } from 'vue'
 import { templateCategory } from './constant'
 import { getTemplateCondition } from '@/api/modules/resume'
 import { errorMessage } from '@/common/message'
@@ -38,9 +38,10 @@ export function useTemplateData() {
       .sort((a, b) => (b.hot as number) - (a.hot as number))
       .slice(0, 10)
   }
-  onActivated(() => templateCondition())
+  onMounted(() => templateCondition())
 
   return {
+    templateCondition,
     ranks
   }
 }

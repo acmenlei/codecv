@@ -33,7 +33,7 @@ function toOutNav(path: string) {
 
 <style lang="scss" scoped>
 #header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 3;

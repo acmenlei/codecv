@@ -1,6 +1,11 @@
 import { templates } from '@/templates/config'
 import TypeNet from 'typenet'
 import { onMounted, onUnmounted, reactive, ref } from 'vue'
+import avatar1 from '@/assets/svg/avataaars1.svg'
+import avatar2 from '@/assets/svg/avataaars2.svg'
+import avatar3 from '@/assets/svg/avataaars3.svg'
+import avatar4 from '@/assets/svg/avataaars4.svg'
+import avatar5 from '@/assets/svg/avataaars5.svg'
 
 export function useTypeNet() {
   onMounted(() => {
@@ -68,5 +73,43 @@ export function usePresentation() {
     styleConfig,
     presentationData,
     presentationIndex
+  }
+}
+
+export function useUserComments() {
+  const comments = [
+    {
+      avatar: avatar1,
+      profession: '阿里巴巴-前端技术专家',
+      content: '使用体验还不错呀，UI 做的确实也蛮好的，小伙子继续加油！'
+    },
+    {
+      avatar: avatar2,
+      profession: '嵌入式开发工程师',
+      content:
+        '在nk推荐中看到了这个工具，非常感谢作者大大的开发，虽然我不是前后端开发，但是直观感觉这玩意真好～'
+    },
+    {
+      avatar: avatar3,
+      profession: 'Java开发工程师',
+      content:
+        '这个简历工具实在是泰库辣！真的节省了我很多时间，简历模板也很实用，发现了宝藏工具！！'
+    },
+    {
+      avatar: avatar4,
+      profession: '用户运营',
+      content:
+        '简历写起来真的非常方便，因为我不懂UP说的markdown，所以我使用富文本方式编写，感觉就和写word一样简单，墙裂推荐～'
+    },
+
+    {
+      avatar: avatar5,
+      profession: '产品经理',
+      content:
+        '周末在家搞网站发现的这个宝藏资源，写简历就跟写笔记一样简单了，所见即所得，以后写简历就在这上面了～'
+    }
+  ]
+  return {
+    comments
   }
 }
