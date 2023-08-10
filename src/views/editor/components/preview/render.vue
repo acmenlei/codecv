@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import Tabbar from '../tabbar/tabbar.vue'
+import TabBar from '../tabbar/tabbar.vue'
+// import AI from '../ai/ai.vue'
 import { useRenderHTML, useResumeType } from '../../hook'
 import { useThemeConfig } from '@/common/global'
 import { step, pageSize } from '../tabbar/hook'
@@ -13,7 +14,7 @@ const { renderDOM } = useRenderHTML(resumeType)
 
 <template>
   <div class="outer" :style="{ background: isDark ? '#282c34' : 'var(--bg-theme)' }">
-    <Tabbar
+    <TabBar
       @html-convert="cnt => $emit('html-convert', cnt)"
       @upload-avatar="path => $emit('upload-avatar', path)"
     />
@@ -27,6 +28,7 @@ const { renderDOM } = useRenderHTML(resumeType)
         })`
       }"
     ></div>
+    <!-- <AI /> -->
   </div>
 </template>
 
