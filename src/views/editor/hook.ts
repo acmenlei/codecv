@@ -107,7 +107,7 @@ export function useDownLoad(type: Ref<string>) {
     const { content: html, style, link } = await exportPreHandler()
     const content = html.cloneNode(true) as HTMLElement
     !isPDF && ensureEmptyPreWhiteSpace(content)
-    showLoading('因使用国外服务速度稍慢 请耐心等待...')
+    showLoading('正在导出请耐心等待...')
     try {
       const pdfData = await resumeExport({
         content: content.outerHTML,
@@ -124,8 +124,8 @@ export function useDownLoad(type: Ref<string>) {
     } catch (e: any) {
       const errorMsg =
         e.message == 'Failed to fetch'
-          ? '国内导出易出错 请重新尝试 有条件的打开梯子后重试或使用打印机导出'
-          : '导出出错 请先尝试其他方式'
+          ? '国内导出易出错 请重新尝试 有条件的打开梯子后重试或使用备用导出'
+          : '导出出错 请先尝试备用导出方案'
       errorMessage(errorMsg)
     }
     closeLoading()

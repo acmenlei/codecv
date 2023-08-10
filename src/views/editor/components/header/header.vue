@@ -35,7 +35,7 @@ const { open, toggle } = useSwitch()
     <ExportTotal />
     <Reward />
     <button class="exporter server-export btn" @click="exportFile('dynamic')">导出PDF</button>
-    <button class="exporter local-export btn" @click="exportFile('native')">打印机导出PDF</button>
+    <button class="exporter local-export btn" @click="exportFile('native')">备用导出</button>
     <div class="operator">
       <el-tooltip content="给项目贡献代码" placement="bottom-end">
         <i
