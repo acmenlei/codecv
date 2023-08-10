@@ -9,14 +9,14 @@ const { comments } = useUserComments()
 const isDark = useDark()
 useTypeNet()
 useRecentTemplate()
-const animate = ['slide-right', 'slide-up', 'slide-up', 'slide-left']
+const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
 </script>
 
 <template>
   <div id="home">
     <Header />
     <div class="introduce flex flex-space-around flex-align-around flex-align-center noto-serif-sc">
-      <div class="introduce-l" data-aos="slide-right">
+      <div class="introduce-l" data-aos="fade-right">
         <div class="typenet-text"></div>
         <button
           @click="$router.push('/template')"
