@@ -14,11 +14,11 @@ const outNav = [
     path: '/syntax/helper',
     tooltip: false
   },
-  {
-    name: '岗位推荐',
-    path: '/recruit',
-    tooltip: false
-  },
+  // {
+  //   name: '岗位推荐',
+  //   path: '/recruit',
+  //   tooltip: false
+  // },
   {
     name: '更新内容',
     path: '/update/line',

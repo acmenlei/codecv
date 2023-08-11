@@ -111,6 +111,21 @@
       &:hover {
         opacity: 0.6;
       }
+      .icon-juejin {
+        color: #2582ff;
+      }
+      .icon-bilibili {
+        color: #00a1d6;
+      }
+      .icon-zhihu {
+        color: #066de8;
+      }
+      .icon-gitee {
+        color: #c71d23;
+      }
+      .icon-github {
+        color: #777;
+      }
     }
   }
 }
