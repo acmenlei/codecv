@@ -1,6 +1,6 @@
 <template>
   <div class="footer flex noto-serif-sc">
-    <ul class="flex">
+    <ul class="flex" data-aos="fade-right">
       <strong class="title">关于项目</strong>
       <li>
         <a href="https://github.com/acmenlei/codecv" target="_blank">开源代码</a>
@@ -12,7 +12,7 @@
         <a href="https://github.com/acmenlei/a4view" target="_blank">a4view</a>
       </li>
     </ul>
-    <ul class="flex">
+    <ul class="flex" data-aos="fade-right">
       <strong class="title">作者</strong>
       <li>
         <a href="https://coderlei.netlify.app" target="_blank">个人博客</a>
@@ -28,7 +28,7 @@
         >
       </li>
     </ul>
-    <ul class="flex">
+    <ul class="flex" data-aos="fade-left">
       <strong class="title">社交媒体</strong>
       <li>
         <a href="https://juejin.cn/user/2586468969632445" target="_blank"
@@ -46,7 +46,7 @@
         >
       </li>
     </ul>
-    <ul>
+    <ul data-aos="fade-left">
       <strong class="title">联系方式</strong>
       <ul class="flex row">
         <li>
@@ -59,7 +59,6 @@
         </li>
       </ul>
     </ul>
-    <!-- 暂无尾部信息 -->
   </div>
 </template>
 

@@ -31,10 +31,12 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
     </div>
 
     <div class="user-comments noto-serif-sc">
-      <h1 data-aos="zoom-in">😍 真实评价</h1>
-      <p class="module-intro" data-aos="zoom-in">
-        CodeCV上线后得到了一些用户的反馈，看看他们是怎么说的吧～
-      </p>
+      <div class="intro">
+        <h1 data-aos="zoom-in">😍 来自用户的声音</h1>
+        <p class="sub-intro" data-aos="zoom-in">
+          CodeCV 简历上线后得到了一些用户的反馈，看看他们是怎么说的吧～
+        </p>
+      </div>
       <ul class="flex presentation-module">
         <li v-for="(comment, idx) in comments" :key="idx" data-aos="zoom-in">
           <p>{{ comment.content }}</p>
@@ -47,8 +49,13 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
     </div>
 
     <div class="recent-template noto-serif-sc">
-      <h1 data-aos="zoom-in">🤩 最新模板</h1>
-      <p class="module-intro" data-aos="zoom-in">如果你有喜欢的模板在这里没有，记得告诉我哦～</p>
+      <div class="intro">
+        <h1 data-aos="zoom-in">🤩 最新模板</h1>
+        <p class="sub-intro" data-aos="zoom-in">
+          如果你有喜欢的模板在这里没有，记得告诉我哦～
+          等你下次再来的时候就能看到了，你永远可以相信作者的速度！
+        </p>
+      </div>
       <ul class="flex presentation-module">
         <li
           class="pointer"
@@ -80,17 +87,21 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
     list-style: none;
     padding: 50px 0;
   }
-  .module-intro {
-    text-align: center;
-    color: #999;
-    font-size: 14px;
+  .intro {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    background: var(--body-background);
+    .sub-intro {
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+    }
   }
 
   .introduce {
     color: var(--font-color);
-    height: 90vh;
+    height: 100vh;
     padding: 20px;
-    padding-top: 100px;
     position: relative;
     overflow: hidden;
 
@@ -131,6 +142,7 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
     h1 {
       text-align: center;
       padding: 20px 0;
+      background: var(--body-background);
     }
     ul {
       li {
@@ -182,6 +194,7 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
     h1 {
       text-align: center;
       padding: 20px 0;
+      background: var(--body-background);
     }
     ul {
       justify-content: space-around;
