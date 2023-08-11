@@ -63,32 +63,6 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
         </li>
       </ul>
     </div>
-    <div class="footer flex noto-serif-sc">
-      <!-- <ul class="flex">
-        <li>
-          <i class="iconfont icon-github"></i>
-          <a href="https://github.com/acmenlei/codecv" target="_blank">GitHub Repo</a>
-        </li>
-        <li>
-          <i class="iconfont icon-home"></i>
-          <a href="https://coderlei.netlify.app" target="_blank">我的个人网站</a>
-        </li>
-
-        <li>
-          <i class="iconfont icon-juejin"></i>
-          <a href="https://juejin.cn/user/2586468969632445" target="_blank">我的掘金文章</a>
-        </li>
-      </ul>
-      <ul class="flex">
-        <li><i class="iconfont icon-problem" style="margin-right: 3px"></i> 问题咨询</li>
-        <img src="@/assets/img/wechat.jpg" alt="" />
-      </ul>
-      <ul class="flex">
-        <li>CodeCV QQ群聊问题咨询</li>
-        <img src="@/assets/img/qqgroup.jpeg" alt="" />
-      </ul> -->
-      暂无尾部信息
-    </div>
   </div>
 </template>
 
@@ -242,41 +216,6 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
         }
       }
     }
-  }
-
-  .footer {
-    justify-content: space-around;
-    padding: 20px;
-    max-width: var(--max-width);
-    margin: 0 auto;
-
-    /* ul {
-      flex-direction: column;
-      list-style: none;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      line-height: 30px;
-
-      img {
-        margin-top: 15px;
-        height: 150px;
-      }
-      li {
-        cursor: pointer;
-        a {
-          text-decoration: none;
-          color: var(--font-color);
-        }
-        i {
-          font-size: 20px;
-          margin-right: 10px;
-        }
-        &:hover {
-          opacity: 0.6;
-        }
-      }
-    } */
   }
 }
 

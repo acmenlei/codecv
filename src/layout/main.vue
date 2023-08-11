@@ -18,7 +18,7 @@ import Footer from './footer.vue'
       </keep-alive>
     </router-view>
   </div>
-  <Footer v-if="!['/home', '/editor'].includes($route.path)" />
+  <Footer v-if="!['/editor'].includes($route.path)" />
 </template>
 
 <style lang="scss" scoped>
