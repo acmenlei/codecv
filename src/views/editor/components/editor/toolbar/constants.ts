@@ -51,7 +51,7 @@ export const toolbarConfig = [
   },
   {
     icon: 'reply',
-    command: 'breakToTail',
+    command: 'breakLayout',
     tip: '跳出布局在新行编写'
   },
   {

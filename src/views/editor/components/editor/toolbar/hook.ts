@@ -14,6 +14,7 @@ export function useHeading(emit: any) {
     const selection = window.getSelection() as Selection
     let replaced = null,
       parent = null
+    if (!selection.anchorNode) return
     if (selection.anchorNode?.parentElement) {
       replaceDOM.innerHTML = selection.anchorNode?.parentElement.innerHTML || ''
       replaced = selection.anchorNode?.parentElement
@@ -127,14 +128,23 @@ export function insertCode() {
   reductionSelection(code)
 }
 // 跳出布局容器
-export function breakToTail() {
-  const container = queryDOM('.main-layout') || queryDOM('.writable-edit-mode')
+export function breakLayout() {
   const p = document.createElement('p')
-  const br = document.createElement('br')
-  p.appendChild(br)
-  container?.appendChild(p)
-  const selection = window.getSelection() as Selection
-  selection.getRangeAt(0).setStartAfter(p)
+  p.setAttribute('breakLayout', 'true')
+  let parentElement = getSelection()?.getRangeAt(0)?.commonAncestorContainer as HTMLElement,
+    child = null
+  while (parentElement && parentElement.nodeType != Node.ELEMENT_NODE) {
+    child = parentElement
+    parentElement = parentElement.parentNode as HTMLElement
+  }
+  while (
+    !['resume-module', 'writable-edit-mode'].includes(parentElement.className) &&
+    !['ul', 'ol'].includes(parentElement.tagName.toLowerCase())
+  ) {
+    child = parentElement
+    parentElement = parentElement.parentNode as HTMLElement
+  }
+  child?.parentNode?.insertBefore(p, child.nextSibling)
 }
 
 export const checkMouseSelect = useThrottleFn(function () {
@@ -160,6 +170,7 @@ export function useToolBarConfig(emit: any) {
   // 处理工具栏命令
   function handleCommand(event: MouseEvent) {
     const buttons = (event.target as Element).closest('button[data-command]')
+    cursorPosition = saveCursorPosition()
     if (!buttons) return
     event.preventDefault()
     ensureResetClickedTarget() // 确保点击替换的对象已经重置
@@ -170,7 +181,6 @@ export function useToolBarConfig(emit: any) {
         break
       case 'multiColumns':
         MulFlag.value = !MulFlag.value
-        cursorPosition = saveCursorPosition()
         break
       case 'insertUserInfo':
         InsertUserInfo()
@@ -180,16 +190,14 @@ export function useToolBarConfig(emit: any) {
         break
       case 'insertTable':
         tableFlag.value = !tableFlag.value
-        cursorPosition = saveCursorPosition()
         break
       case 'insertLink':
         linkFlag.value = !linkFlag.value
         // 修改
         reset()
-        cursorPosition = saveCursorPosition()
         break
-      case 'breakToTail':
-        breakToTail()
+      case 'breakLayout':
+        breakLayout()
         break
       case 'toMarkdownMode':
         emit('toggle-editor-mode')
@@ -198,7 +206,7 @@ export function useToolBarConfig(emit: any) {
         document.execCommand(command, false, undefined)
         break
     }
-    ;['insertUserInfo', 'insertCode', 'breakToTail'].includes(command) && emit('content-change')
+    ;['insertUserInfo', 'insertCode', 'breakLayout'].includes(command) && emit('content-change')
     editor.focus()
   }
   // 键盘回车事件
@@ -261,7 +269,6 @@ function saveCursorPosition() {
     endOffset
   }
 }
-
 function restoreCursorPosition() {
   if (!cursorPosition) return
   const selection = window.getSelection() as Selection
@@ -273,7 +280,7 @@ function restoreCursorPosition() {
   cursorPosition = null
 }
 
-// markdown 模式工具栏事件处理
+/* markdown 模式工具栏事件处理 */
 export function markdownModeToolbarCommandHandler(command: string, emit: any) {
   switch (command) {
     case 'insertBold':

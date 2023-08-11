@@ -25,6 +25,10 @@
   p {
     margin-top: 5px;
   }
+  p[breakLayout]:empty::before {
+    content: '请输入内容...';
+    color: #999;
+  }
   h1,
   h2,
   h3,

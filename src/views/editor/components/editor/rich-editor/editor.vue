@@ -22,6 +22,7 @@ const { DOMTree, ObserverContent, editorStore } = useToggleEditorMode(resumeType
     @input="ObserverContent"
     class="writable-edit-mode"
     contenteditable
+    spellcheck="false"
     :style="{ height: 'calc(100vh - 40px)', width: `${left}px`, overflowY: 'scroll' }"
   ></div>
 </template>
