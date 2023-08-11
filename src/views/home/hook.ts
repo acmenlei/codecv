@@ -18,7 +18,7 @@ export function useTypeNet() {
       .type(' CodeCV ', {
         style: 'color: #ff7449; font-size: 40px;line-height: 60px'
       })
-      .type('快速生成你的金牌简历', {
+      .type('快速生成你的优质简历', {
         style: 'font-size: 40px;line-height: 60px'
       })
       .line()
@@ -26,7 +26,7 @@ export function useTypeNet() {
       .type('CodeCV 支持你使用 Markdown 语法来编写你的简历，可扩展性极高。且支持双编辑模式，')
       .type('Markdown模式 ', { style: 'color: #ff7449' })
       .type('以及')
-      .type(' 内容模式 ', { style: 'color: #ff7449' })
+      .type(' 富文本模式 ', { style: 'color: #ff7449' })
       .type('无缝切换，多种模板适配，编写一套简历内容可适配多个简历模板，你想要的这里都有～')
       .start()
   })
