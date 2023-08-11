@@ -170,7 +170,6 @@ export function useToolBarConfig(emit: any) {
   // 处理工具栏命令
   function handleCommand(event: MouseEvent) {
     const buttons = (event.target as Element).closest('button[data-command]')
-    cursorPosition = saveCursorPosition()
     if (!buttons) return
     event.preventDefault()
     ensureResetClickedTarget() // 确保点击替换的对象已经重置
@@ -181,6 +180,7 @@ export function useToolBarConfig(emit: any) {
         break
       case 'multiColumns':
         MulFlag.value = !MulFlag.value
+        cursorPosition = saveCursorPosition()
         break
       case 'insertUserInfo':
         InsertUserInfo()
@@ -190,11 +190,13 @@ export function useToolBarConfig(emit: any) {
         break
       case 'insertTable':
         tableFlag.value = !tableFlag.value
+        cursorPosition = saveCursorPosition()
         break
       case 'insertLink':
         linkFlag.value = !linkFlag.value
         // 修改
         reset()
+        cursorPosition = saveCursorPosition()
         break
       case 'breakLayout':
         breakLayout()
@@ -269,6 +271,7 @@ function saveCursorPosition() {
     endOffset
   }
 }
+
 function restoreCursorPosition() {
   if (!cursorPosition) return
   const selection = window.getSelection() as Selection
