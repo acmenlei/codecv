@@ -9,20 +9,20 @@ import { createText, queryDOM } from '@/utils'
 export const level = ref('普通文本')
 export function useHeading(emit: any) {
   function setHeading() {
-    const tagName = level.value ? level.value : 'p'
-    const replaceDOM = document.createElement(tagName)
-    const selection = window.getSelection() as Selection
+    const tagName = level.value ? level.value : 'p',
+      replaceDOM = document.createElement(tagName),
+      selection = getSelection()
     let replaced = null,
       parent = null
-    if (!selection.anchorNode) return
-    if (selection.anchorNode?.parentElement) {
-      replaceDOM.innerHTML = selection.anchorNode?.parentElement.innerHTML || ''
-      replaced = selection.anchorNode?.parentElement
-      parent = selection.anchorNode?.parentElement.parentElement as Node
+    if (!selection?.anchorNode) return
+    if (selection?.anchorNode?.parentElement) {
+      replaceDOM.innerHTML = selection?.anchorNode?.parentElement.innerHTML || ''
+      replaced = selection?.anchorNode?.parentElement
+      parent = selection?.anchorNode?.parentElement.parentElement as Node
     } else {
-      replaceDOM.textContent = selection.anchorNode?.textContent || ''
-      replaced = selection.anchorNode
-      parent = selection.anchorNode?.parentElement as Node
+      replaceDOM.textContent = selection?.anchorNode?.textContent || ''
+      replaced = selection?.anchorNode
+      parent = selection?.anchorNode?.parentElement as Node
     }
     parent.replaceChild(replaceDOM, replaced as Node)
     emit('content-change')
@@ -139,7 +139,7 @@ export function breakLayout() {
   }
   while (
     !['resume-module', 'writable-edit-mode'].includes(parentElement.className) &&
-    !['ul', 'ol'].includes(parentElement.tagName.toLowerCase())
+    !['ul', 'ol'].includes(parentElement.nodeName.toLowerCase())
   ) {
     child = parentElement
     parentElement = parentElement.parentNode as HTMLElement
@@ -148,9 +148,9 @@ export function breakLayout() {
 }
 
 export const checkMouseSelect = useThrottleFn(function () {
-  const selection = window.getSelection() as Selection
-  const range = selection.getRangeAt(0)
-  let parentElement = range.commonAncestorContainer
+  const selection = getSelection()
+  const range = selection?.getRangeAt(0)
+  let parentElement = range?.commonAncestorContainer
   while (parentElement && parentElement.nodeType != Node.ELEMENT_NODE) {
     parentElement = parentElement.parentNode as Node
   }
@@ -213,7 +213,7 @@ export function useToolBarConfig(emit: any) {
   }
   // 键盘回车事件
   const keyboardEvent = useThrottleFn(function (event: KeyboardEvent) {
-    const selection = window.getSelection() as Selection
+    const selection = getSelection() as Selection
     const focusNode = <HTMLElement>selection.focusNode
     if (
       editorStore.writable &&
@@ -240,30 +240,33 @@ export function useToolBarConfig(emit: any) {
 }
 
 function reductionSelection(target: Node) {
-  const selection = window.getSelection() as Selection
-  const range = selection.getRangeAt(0).cloneRange()
-  range.deleteContents()
-  range.insertNode(target)
+  const selection = getSelection()
+  const range = selection?.getRangeAt(0).cloneRange()
+  if (range?.commonAncestorContainer.nodeName.toLowerCase() === 'button') {
+    return
+  }
+  range?.deleteContents()
+  range?.insertNode(target)
   // 还原Selection对象
-  selection.removeAllRanges()
-  range.setStartAfter(target)
-  range.collapse(true)
-  selection.addRange(range)
+  selection?.removeAllRanges()
+  range?.setStartAfter(target)
+  range?.collapse(true)
+  selection?.addRange(<Range>range)
 }
 
 let cursorPosition: {
-  startContainer: Node
-  startOffset: number
-  endContainer: Node
-  endOffset: number
+  startContainer: Node | undefined
+  startOffset: number | undefined
+  endContainer: Node | undefined
+  endOffset: number | undefined
 } | null
 function saveCursorPosition() {
-  const selection = window.getSelection() as Selection
-  const range = selection.getRangeAt(0)
-  const startContainer = range.startContainer
-  const startOffset = range.startOffset
-  const endContainer = range.endContainer
-  const endOffset = range.endOffset
+  const selection = getSelection()
+  const range = selection?.getRangeAt(0)
+  const startContainer = range?.startContainer
+  const startOffset = range?.startOffset
+  const endContainer = range?.endContainer
+  const endOffset = range?.endOffset
   return {
     startContainer,
     startOffset,
@@ -274,12 +277,12 @@ function saveCursorPosition() {
 
 function restoreCursorPosition() {
   if (!cursorPosition) return
-  const selection = window.getSelection() as Selection
+  const selection = getSelection()
   const newRange = new Range()
-  newRange.setStart(cursorPosition.startContainer, cursorPosition.startOffset)
-  newRange.setEnd(cursorPosition.endContainer, cursorPosition.endOffset)
-  selection.removeAllRanges()
-  selection.addRange(newRange)
+  newRange.setStart(<Node>cursorPosition.startContainer, <number>cursorPosition.startOffset)
+  newRange.setEnd(<Node>cursorPosition.endContainer, <number>cursorPosition.endOffset)
+  selection?.removeAllRanges()
+  selection?.addRange(newRange)
   cursorPosition = null
 }
 
@@ -328,51 +331,54 @@ export function markdownModeToolbarCommandHandler(command: string, emit: any) {
 }
 
 function getCurrentRanger() {
-  const selection = window.getSelection() as Selection
-  return selection.getRangeAt(0).cloneRange()
+  type MarkdownView = HTMLElement & { cmView: any }
+  const selection = getSelection(),
+    range = selection?.getRangeAt(0).cloneRange()
+  if (!(<MarkdownView>range?.commonAncestorContainer).cmView) return null
+  return range
 }
 
 export function markdownModeInsertBold() {
   const range = getCurrentRanger()
-  range.insertNode(createText(`**示例文字**`))
+  range?.insertNode(createText(`**示例文字**`))
 }
 
 export function markdownModeInsertItalic() {
   const range = getCurrentRanger()
-  range.insertNode(createText(`*示例文字*`))
+  range?.insertNode(createText(`*示例文字*`))
 }
 
 export function markdownModeInsertUnorderedList() {
   const range = getCurrentRanger()
-  range.insertNode(createText(`- 无序列表项`))
+  range?.insertNode(createText(`- 无序列表项`))
 }
 
 export function markdownModeInsertOrderedList() {
   const range = getCurrentRanger()
-  range.insertNode(createText(`1. 有序列表项`))
+  range?.insertNode(createText(`1. 有序列表项`))
 }
 
 export function markdownModeInsertLink() {
   const range = getCurrentRanger()
-  range.insertNode(createText(`[示例文字](https://github.com/acmenlei)`))
+  range?.insertNode(createText(`[示例文字](https://github.com/acmenlei)`))
 }
 export function markdownModeInsertAvatar() {
   const range = getCurrentRanger()
-  range.insertNode(createText(`![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)`))
+  range?.insertNode(createText(`![个人头像](https://codeleilei.gitee.io/blog/avatar.jpg)`))
 }
 export function markdownModeInsertIcon(iconName: string) {
   selectIcon.value = false
   const range = getCurrentRanger()
-  range.insertNode(createText(`icon:${iconName} `))
+  range?.insertNode(createText(`icon:${iconName} `))
 }
 export function markdownModeInsertHeadLayout() {
   const range = getCurrentRanger()
-  range.insertNode(createText(`::: headStart\n在这块区域你可以填写你的个人信息\n::: headEnd`))
+  range?.insertNode(createText(`::: headStart\n在这块区域你可以填写你的个人信息\n::: headEnd`))
 }
 
 export function markdownModeInsertMainLayout() {
   const range = getCurrentRanger()
-  range.insertNode(
+  range?.insertNode(
     createText(
       `::: mainStart\n如果你需要对你的主体内容做调整，你可以把你的主体内容写在这块区域内\n**PS：此布局在一个模板中只允许出现一次**\n::: mainEnd`
     )
@@ -392,7 +398,7 @@ export function markdownModeInsertMultiColumnsLayout(column: string) {
     }
   }
   content += '\n::: end'
-  range.insertNode(createText(content))
+  range?.insertNode(createText(content))
 }
 
 export function markdownModeInsertTable(column: string, row: string) {
@@ -414,5 +420,5 @@ export function markdownModeInsertTable(column: string, row: string) {
     tbody = (tbody + '|').trim()
     tbody += '\n'
   }
-  range.insertNode(createText(thead + tbody))
+  range?.insertNode(createText(thead + tbody))
 }

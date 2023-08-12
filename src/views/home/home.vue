@@ -208,6 +208,7 @@ const { repoStars, createAnimateEffect } = useGiteeRepoStars()
     margin: 0 auto;
     padding: 0 20px 50px 20px;
     text-align: center;
+    max-width: var(--max-width);
     p {
       color: var(--writable-font-color);
     }
