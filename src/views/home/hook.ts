@@ -1,12 +1,12 @@
 import { templates } from '@/templates/config'
 import TypeNet from 'typenet'
-import { onMounted, onUnmounted, reactive, ref } from 'vue'
+import { onActivated, onMounted, onUnmounted, reactive, ref } from 'vue'
 import avatar1 from '@/assets/svg/avataaars1.svg'
 import avatar2 from '@/assets/svg/avataaars2.svg'
 import avatar3 from '@/assets/svg/avataaars3.svg'
 import avatar4 from '@/assets/svg/avataaars4.svg'
 import avatar5 from '@/assets/svg/avataaars5.svg'
-import { getTemplateCondition } from '@/api/modules/resume'
+import { getTemplateCondition, queryGiteeRepoStars } from '@/api/modules/resume'
 
 export function useTypeNet() {
   onMounted(() => {
@@ -127,4 +127,42 @@ export function useRecentTemplate() {
       templates.value.forEach(template => (template.hot = templateData[`t${template.type}`]))
     })()
   })
+}
+
+export function useGiteeRepoStars() {
+  interface GiteeRepoStars {
+    avatar_url: string
+    events_url: string
+    followers_url: string
+    following_url: string
+    gists_url: string
+    html_url: string
+    id: number
+    login: string
+    member_role: string
+    name: string
+    organizations_url: string
+    received_events_url: string
+    remark: string
+    repos_url: string
+    star_at: string
+    starred_url: string
+    subscriptions_url: string
+    type: string
+    url: string
+  }
+  const repoStars = ref<GiteeRepoStars[]>([])
+  const animate = ['fade-right', 'fade-up', 'fade-down', 'zoom-in', 'zoom-out', 'fade-left']
+  async function query() {
+    repoStars.value = (await queryGiteeRepoStars()) as GiteeRepoStars[]
+  }
+
+  function createAnimateEffect() {
+    return animate[Math.floor(Math.random() * 10) % animate.length]
+  }
+  onActivated(query)
+  return {
+    repoStars,
+    createAnimateEffect
+  }
 }

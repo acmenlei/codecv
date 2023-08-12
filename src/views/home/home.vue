@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { useRecentTemplate, useTypeNet, useUserComments } from './hook'
+import { useGiteeRepoStars, useRecentTemplate, useTypeNet, useUserComments } from './hook'
 import Header from './components/header.vue'
 import Presentation from './components/presentation.vue'
 import { useDark } from '@vueuse/core'
 import { templates } from '@/templates/config'
 
-const { comments } = useUserComments()
+const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
 const isDark = useDark()
 useTypeNet()
 useRecentTemplate()
-const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
+const { comments } = useUserComments()
+const { repoStars, createAnimateEffect } = useGiteeRepoStars()
 </script>
 
 <template>
@@ -34,11 +35,11 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
       <div class="intro">
         <h1 data-aos="zoom-in">😍 来自用户的声音</h1>
         <p class="sub-intro" data-aos="zoom-in">
-          CodeCV 简历上线后得到了一些用户的反馈，看看他们是怎么说的吧～
+          CodeCV 简历上线后得到了许多用户的喜欢，同时也收获了一些用户的反馈，看看他们是怎么说的吧～
         </p>
       </div>
       <ul class="flex presentation-module">
-        <li v-for="(comment, idx) in comments" :key="idx" data-aos="zoom-in">
+        <li class="pointer" v-for="(comment, idx) in comments" :key="idx" data-aos="zoom-in">
           <p>{{ comment.content }}</p>
           <p class="user-comment-info">
             <img :src="comment.avatar" alt="头像" />
@@ -46,6 +47,20 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
           </p>
         </li>
       </ul>
+      <div class="gitee-repo-stars">
+        <a
+          v-for="user in repoStars"
+          :key="user.login"
+          target="_blank"
+          :href="user.html_url"
+          :data-aos="createAnimateEffect()"
+        >
+          <img :src="user.avatar_url" :alt="user.name" />
+          <sub class="line-1">{{ user.name }}</sub>
+        </a>
+        <br />
+        <a href="https://gitee.com/codeleilei/markdown2pdf/stargazers" target="_blank">...</a>
+      </div>
     </div>
 
     <div class="recent-template noto-serif-sc">
@@ -150,11 +165,11 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
         margin-right: 20px;
         background: var(--body-background);
         padding: 20px 20px 60px 20px;
-        margin-bottom: 20px;
         border-radius: 10px;
         font-family: 'Noto Sans SC';
         font-size: 14px;
-        min-width: 250px;
+        min-width: 220px;
+
         &:last-child {
           margin-right: 0;
         }
@@ -185,6 +200,42 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
             margin-right: 10px;
           }
         }
+      }
+    }
+  }
+
+  .gitee-repo-stars {
+    margin: 0 auto;
+    padding: 0 20px 50px 20px;
+    text-align: center;
+    p {
+      color: var(--writable-font-color);
+    }
+    a {
+      margin: 5px;
+      text-decoration: none;
+      color: var(--writable-font-color);
+      display: inline-flex;
+      flex-direction: column;
+      max-width: 50px;
+      sub {
+        font-size: 12px;
+        margin-top: 5px;
+      }
+      .no-avatar,
+      img {
+        width: 40px;
+        border-radius: 50%;
+      }
+      .no-avatar {
+        height: 40px;
+        background: var(--theme);
+        color: var(--font-color);
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      &:hover {
+        opacity: 0.6;
       }
     }
   }
@@ -243,6 +294,10 @@ const animate = ['fade-right', 'fade-up', 'fade-up', 'fade-left']
       flex-direction: column;
       li {
         margin-left: 20px;
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }

@@ -81,3 +81,15 @@ export async function setTemplateCondition(params: { name: string }) {
   })
   return await res.json()
 }
+// 获取 Gitee 仓库 star 数量
+export function queryGiteeRepoStars() {
+  return new Promise(resolve => {
+    fetch(import.meta.env.VITE_GITEE_API_URL as string)
+      .then(res => res.json())
+      .then(data => {
+        // 获取仓库 star 数量
+        resolve(data)
+      })
+      .catch(() => resolve([]))
+  })
+}
