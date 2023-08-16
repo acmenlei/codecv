@@ -67,6 +67,14 @@ useToolBarConfig(emit)
   top: 0;
   z-index: 3;
   text-align: center;
+  select {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
   button {
     background: transparent;
     outline: none;
