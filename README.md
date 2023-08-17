@@ -12,6 +12,28 @@
 
 > 声明：此项目发布于 GitHub/Gitee，基于 MIT 协议，免费且作为开源学习使用，使用业余时间进行持续开发，部署请在网站显眼位置注明原作者及原仓库地址，尊重作者成果。
 
+## 😄 Docker 快速部署
+
+你可以直接使用我已经构建好的镜像来运行
+```sh
+docker run -d -t -p 8080:80 --name codecv --restart=always docker.io/wenyang0/codecv:latest
+```
+
+或者，如果您愿意，也可以自己手动编译。
+
+```sh
+#下载代码
+git clone https://github.com/acmenlei/codecv.git
+
+#docker 编译
+cd codecv/
+docker build -t codecv:v1 .
+
+#启动服务
+docker run -d -t -p 8080:80 --name codecv --restart=always codecv:v1
+```
+最后,打开你的浏览器访问服务的地址 http://serverIP:8080 即可
+
 ## 🤩 效果预览
 
 <p>简历模板</p>
