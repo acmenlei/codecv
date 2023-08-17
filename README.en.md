@@ -12,6 +12,28 @@ This is a tool for creating resumes using `markdown`. It can convert your writte
 
 > Declaration: This project is released on GitHub/Gitee under the MIT license, free and intended for open-source learning. It is developed continuously in spare time. Please indicate the original repository address when deploying and respect the author's efforts.
 
+## 😄 Docker deploy
+
+You can directly run using the image I have already built.
+```sh
+docker run -d -t -p 8080:80 --name codecv --restart=always docker.io/wenyang0/codecv:latest
+```
+
+Or, you can manually compile it yourself if you prefer.
+
+```sh
+#clone the code 
+git clone https://github.com/acmenlei/codecv.git
+
+#docker build 
+cd codecv/
+docker build -t codecv:v1 .
+
+#start server 
+docker run -d -t -p 8080:80 --name codecv --restart=always codecv:v1
+```
+Finally, open your browser and access the service's address at http://serverIP:8080
+
 ## 🤩 Preview of the result
 
 <p>Resume template</p>
