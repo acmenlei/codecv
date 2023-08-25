@@ -70,7 +70,9 @@ useToolBarConfig(emit)
   select {
     border: none;
     outline: none;
+    background: none;
     cursor: pointer;
+    color: var(--writable-font-color);
     &:hover {
       opacity: 0.8;
     }
@@ -80,8 +82,14 @@ useToolBarConfig(emit)
     outline: none;
     border: 0;
     i {
+      font-size: 16px;
       color: var(--font-color);
+      color: var(--writable-font-color);
     }
   }
+}
+.content-mode-tool-bar {
+  padding-left: 10px;
+  text-align: left;
 }
 </style>
