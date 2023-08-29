@@ -10,7 +10,7 @@ This is a tool for creating resumes using `markdown`. It can convert your writte
 
 [Online 1](http://codeleilei.gitee.io/markdown2pdf/) [Online 2](https://acmenlei.github.io/codecv/dist/) [Online 3](https://codingcv.netlify.app)
 
-> Declaration: This project is released on GitHub/Gitee under the MIT license, free and intended for open-source learning. It is developed continuously in spare time. Please indicate the original repository address when deploying and respect the author's efforts.
+> Declaration: This project is published on GitHub/Gitee, free and as an open source learning use, use spare time for continuous development, deployment please indicate the original author and the original warehouse address in a prominent place on the website, do not use for commercial purposes without the author's permission!
 
 ## 😄 Docker deploy
 
