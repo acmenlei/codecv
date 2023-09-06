@@ -1,6 +1,6 @@
 # codecv
 
-这是一款使用 `markdown` 制作简历的工具，它可以将你编写的`markdown` 简历转换为 `PDF`，支持多种模板，完全免费，用爱发电。
+只 `fork` 不 `star` 真的很没品，这是一款使用 `markdown` 制作简历的工具，它可以将你编写的`markdown` 简历转换为 `PDF`，完全免费。
 
 <div style="font-size: 1.5rem;">
   <a href="./README.md">中文</a> |
