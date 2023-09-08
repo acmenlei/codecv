@@ -60,7 +60,7 @@ const { open, toggle } = useSwitch()
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 70px;
+  padding: 0 20px;
   text-align: center;
   color: var(--font-color);
   background: var(--background);
