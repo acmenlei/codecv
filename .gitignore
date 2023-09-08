@@ -23,6 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 .env
-src/templates/modules
-src/templates/common.css
-src/templates/iconfont.colors.css
+src/templates/modules/[0-9]*

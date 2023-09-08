@@ -1,0 +1,223 @@
+/*  字体图标颜色 */
+.jufe .iconfont {
+  display: inline-block;
+  margin: 0 auto;
+}
+.jufe .iconfont.icon-yuque {
+  color: #5ecf67;
+}
+.jufe .iconfont.icon-alibaba {
+  color: #ff5200;
+}
+.jufe .iconfont.icon-bytedance {
+  background: linear-gradient(to right, #315ab4, #0dc9d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.jufe .iconfont.icon-vuejs {
+  color: #42b883;
+}
+.jufe .iconfont.icon-nuxtjs {
+  color: #06df84;
+}
+.jufe .iconfont.icon-tencent {
+  color: #0052d9;
+}
+.jufe .iconfont.icon-gitee {
+  color: #c71d23;
+}
+.jufe .iconfont.icon-juejin {
+  color: #2582ff;
+}
+.jufe .iconfont.icon-flutter {
+  background: linear-gradient(to bottom, #61c9f8 60%, #045a9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.jufe .iconfont.icon-leetcode {
+  background: linear-gradient(to right, #050605, #ffa91e 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.jufe .iconfont.icon-taobao {
+  color: #ff5101;
+}
+.jufe .iconfont.icon-twitter,
+.jufe .iconfont.icon-cloud {
+  color: #1ea1f1;
+}
+.jufe .iconfont.icon-bilibili {
+  color: #00a1d6;
+}
+.jufe .iconfont.icon-typescript {
+  color: #2f74c0;
+}
+.jufe .iconfont.icon-wangyi {
+  color: #fb1f1e;
+}
+.jufe .iconfont.icon-android {
+  color: #3bd483;
+}
+.jufe .iconfont.icon-didichuxing {
+  color: #f38032;
+}
+.jufe .iconfont.icon-js {
+  color: #efd81b;
+}
+.jufe .iconfont.icon-jingdong {
+  color: #e51512;
+}
+.jufe .iconfont.icon-angular {
+  color: #d70230;
+}
+.jufe .iconfont.icon-tianmao {
+  color: #d92a2c;
+}
+.jufe .iconfont.icon-nestjs {
+  color: #e0234d;
+}
+.jufe .iconfont.icon-facebook {
+  color: #1a77f2;
+}
+.jufe .iconfont.icon-microsoft {
+  position: relative;
+  background: linear-gradient(to right, #f65314 0%, #f65314 50%, #7cbb00 50%, #7cbb00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.jufe .iconfont.icon-microsoft::after {
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #01a4ef 0%,
+    #01a4ef 45%,
+    #ffffff 50%,
+    #ffb902 55%,
+    #ffb902 100%
+  );
+}
+.jufe .iconfont.icon-kuaishou {
+  color: #ff3d13;
+}
+.jufe .iconfont.icon-baidu {
+  color: #2932e1;
+}
+.jufe .iconfont.icon-react {
+  color: #0a7ea4;
+}
+.jufe .iconfont.icon-tencentcloud {
+  color: #006eff;
+}
+.jufe .iconfont.icon-xiaochengxu {
+  color: #6567ef;
+}
+.jufe .iconfont.icon-alipay {
+  color: #1777ff;
+}
+.jufe .iconfont.icon-wechat {
+  color: #2ec102;
+}
+
+.jufe .iconfont.icon-douyin {
+  color: white;
+  position: relative;
+  text-shadow: 0 0 5px #fb4d77, 0 0 5px #44e1dd;
+}
+.jufe .iconfont.icon-douyin::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #1d0b1a;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 5px;
+}
+.jufe .iconfont.icon-logo360 {
+  background: linear-gradient(to bottom, #39a046 20%, rgb(233, 210, 36) 50%, #39a046 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.jufe .iconfont.icon-maimai {
+  color: #0251f9;
+}
+
+.jufe .iconfont.icon-telegram {
+  color: #30ace0;
+}
+
+.jufe .iconfont.icon-complete {
+  color: #7bbf05;
+}
+
+.jufe .iconfont.icon-error {
+  color: #ca0c16;
+}
+
+.jufe .iconfont.icon-man {
+  color: #28a9f5;
+}
+
+.jufe .iconfont.icon-woman {
+  color: #f74680;
+}
+
+.jufe .iconfont.icon-zhihu {
+  color: #066de8;
+}
+
+.jufe .iconfont.icon-antd {
+  background: linear-gradient(to right, #1389ff 50%, #f63f4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.jufe .iconfont.icon-kedaxunfei {
+  color: #1c5bac;
+}
+
+.jufe .iconfont.icon-huawei {
+  color: #e90116;
+}
+.jufe .iconfont.icon-xiaomi {
+  color: #e56316;
+}
+
+.jufe .iconfont.icon-meituan {
+  color: #fed02f;
+  position: relative;
+}
+.jufe .iconfont.icon-meituan::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 70%;
+  top: 15%;
+  left: 10%;
+  background: #000;
+  z-index: -1;
+}
+
+.jufe .iconfont.icon-boss {
+  color: #4fc4be;
+}
+
+.jufe .iconfont.icon-dewu {
+  color: #141519;
+}
+.jufe .iconfont.icon-trip {
+  color: #2377e2;
+}
+.jufe .iconfont.icon-xiaohongshu {
+  color: #ff2741;
+}
+.jufe .iconfont.icon-vscode {
+  color: #1f9cf0;
+}
