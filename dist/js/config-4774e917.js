@@ -1,4 +1,4 @@
-import{r as D}from"./@vue-c6fcbc26.js";const B="https://apn1-included-wildcat-34002.upstash.io";async function Hu(u){return await(await fetch("https://codecv.netlify.app/.netlify/functions/export",{method:"POST",body:JSON.stringify(u)})).json()}function t(){return new Promise((u,E)=>{fetch(`${B}/get/count`,{headers:{Authorization:"Bearer AoTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM33cyXqw1YkkkyYnC-9my5SGRqXg_gsiKnSdQcbUwXHr4="}}).then(F=>F.json()).then(F=>u(F.result)).catch(E)})}async function Vu(){let u;try{u=await t()}catch{return Promise.resolve("\u83B7\u53D6\u5931\u8D25...")}return new Promise(E=>{fetch(`${B}/set/count/${parseInt(u)+1}`,{headers:{Authorization:"Bearer AYTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM3MmNmYWU0NGZmMzY3NGVjOGFmYTJlZTIzNmE5ODUwYjc="}}).then(F=>F.json()).then(F=>E(F.result)).catch(E)})}async function n(){return await(await fetch(`${B}/get/templateData`,{headers:{Authorization:"Bearer AoTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM33cyXqw1YkkkyYnC-9my5SGRqXg_gsiKnSdQcbUwXHr4="}})).json()}async function Nu(u){let E,F={};try{E=await n()}catch{return Promise.resolve({msg:"\u83B7\u53D6\u6A21\u677F\u6570\u636E\u5931\u8D25...",result:null})}return E.result&&(F=JSON.parse(E.result)),F[`t${u.name}`]=String(+(F[`t${u.name}`]||0)+1),await(await fetch(`${B}/set/templateData`,{method:"POST",body:JSON.stringify(F),headers:{Authorization:"Bearer AYTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM3MmNmYWU0NGZmMzY3NGVjOGFmYTJlZTIzNmE5ODUwYjc="}})).json()}function Lu(){return new Promise(u=>{fetch("https://gitee.com/api/v5/repos/codeleilei/markdown2pdf/stargazers?access_token=f8e6ffea190f8dba4c7743d6ec6fde91&page=1&per_page=50").then(E=>E.json()).then(E=>{u(E)}).catch(()=>u([]))})}const o=`## \u5F20\u4E09-Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+import{r as D}from"./@vue-c6fcbc26.js";const B="https://apn1-included-wildcat-34002.upstash.io";async function Lu(u){return await(await fetch("https://wuxiancv.com/.netlify/functions/export",{method:"POST",body:JSON.stringify(u)})).json()}function t(){return new Promise((u,E)=>{fetch(`${B}/get/count`,{headers:{Authorization:"Bearer AoTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM33cyXqw1YkkkyYnC-9my5SGRqXg_gsiKnSdQcbUwXHr4="}}).then(F=>F.json()).then(F=>u(F.result)).catch(E)})}async function Ru(){let u;try{u=await t()}catch{return Promise.resolve("\u83B7\u53D6\u5931\u8D25...")}return new Promise(E=>{fetch(`${B}/set/count/${parseInt(u)+1}`,{headers:{Authorization:"Bearer AYTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM3MmNmYWU0NGZmMzY3NGVjOGFmYTJlZTIzNmE5ODUwYjc="}}).then(F=>F.json()).then(F=>E(F.result)).catch(E)})}async function n(){return await(await fetch(`${B}/get/templateData`,{headers:{Authorization:"Bearer AoTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM33cyXqw1YkkkyYnC-9my5SGRqXg_gsiKnSdQcbUwXHr4="}})).json()}async function $u(u){let E,F={};try{E=await n()}catch{return Promise.resolve({msg:"\u83B7\u53D6\u6A21\u677F\u6570\u636E\u5931\u8D25...",result:null})}return E.result&&(F=JSON.parse(E.result)),F[`t${u.name}`]=String(+(F[`t${u.name}`]||0)+1),await(await fetch(`${B}/set/templateData`,{method:"POST",body:JSON.stringify(F),headers:{Authorization:"Bearer AYTSASQgMjgxNGVhYmMtMzJmYi00ZTlmLWJhOWYtZDFkODFkODNjNDM3MmNmYWU0NGZmMzY3NGVjOGFmYTJlZTIzNmE5ODUwYjc="}})).json()}function Gu(){return new Promise(u=>{fetch("https://gitee.com/api/v5/repos/codeleilei/markdown2pdf/stargazers?access_token=f8e6ffea190f8dba4c7743d6ec6fde91&page=1&per_page=50").then(E=>E.json()).then(E=>{u(E)}).catch(()=>u([]))})}const o=`## \u5F20\u4E09-Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 ::: start
 icon:user \u7537 / 2000.01.01 / \u6C5F\u897F\u5357\u660C
 icon:phone 155xxxxxx06
@@ -478,7 +478,7 @@ icon:link [\u4E2A\u4EBA\u7F51\u7AD9](https://coderlei.netlify.app)
 ## \u81EA\u6211\u8BC4\u4EF7
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,f={name:"\u7B80\u7EA6/\u540E\u7AEF/\u524D\u7AEF/\u4E92\u8054\u7F51",primaryColor:"#333",lineHeight:20,font:"Noto Sans SC",primaryBackground:"#C42F76",img:"https://s1.imagehub.cc/images/2023/08/10/15cae16966272652e8.png",content:_},v=Object.freeze(Object.defineProperty({__proto__:null,default:f},Symbol.toStringTag,{value:"Module"})),P=`::: headStart
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,f={name:"\u7B80\u7EA6/\u540E\u7AEF/\u524D\u7AEF/\u4E92\u8054\u7F51",primaryColor:"#333",lineHeight:20,font:"Noto Sans SC",primaryBackground:"#C42F76",img:"https://s1.imagehub.cc/images/2023/08/10/15cae16966272652e8.png",content:_},P=Object.freeze(Object.defineProperty({__proto__:null,default:f},Symbol.toStringTag,{value:"Module"})),v=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
@@ -566,7 +566,7 @@ web\u524D\u7AEF
   - \u6743\u9650\u505A\u5230\u6309\u94AE\u7EA7\u522B\uFF0C\u5E76\u4F7F\u7528\u5355\u4F8B\u6A21\u5F0F\u89E3\u51B3\u4E86\u6309\u94AE\u8FC7\u591A\u5F15\u53D1\u7684\u9891\u7E41\u62C9\u53D6\u6743\u9650\u8BF7\u6C42\u7684\u95EE\u9898
 ## \u81EA\u6211\u8BC4\u4EF7
 \u70ED\u7231\u524D\u7AEF\u5F00\u53D1\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u7740\u6D53\u539A\u7684\u5174\u8DA3....
-::: mainEnd`,k={name:"\u8BBE\u8BA1/\u7B80\u7EA6/\u901A\u7528/\u7A81\u51FA\u5185\u5BB9",primaryColor:"#333",lineHeight:16,font:"Noto Sans SC",primaryBackground:"#14A25D",img:"https://s1.imagehub.cc/images/2023/08/10/16.png",content:P},j=Object.freeze(Object.defineProperty({__proto__:null,default:k},Symbol.toStringTag,{value:"Module"})),T=`::: headStart
+::: mainEnd`,k={name:"\u8BBE\u8BA1/\u7B80\u7EA6/\u901A\u7528/\u7A81\u51FA\u5185\u5BB9",primaryColor:"#333",lineHeight:16,font:"Noto Sans SC",primaryBackground:"#14A25D",img:"https://s1.imagehub.cc/images/2023/08/10/16.png",content:v},j=Object.freeze(Object.defineProperty({__proto__:null,default:k},Symbol.toStringTag,{value:"Module"})),T=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 :::
@@ -741,7 +741,7 @@ icon:phone 13425182004 \uFF5C icon:email qiumengyi@kuaishou.com \uFF5C icon:wech
 ::: end
 ::: mainEnd
 
-`,H={name:"\u7B80\u7EA6/\u4EA7\u54C1\u7ECF\u7406/\u5546\u52A1/\u8BBE\u8BA1",lineHeight:20,primaryColor:"#636262",primaryBackground:"#024B4B",img:"https://s1.imagehub.cc/images/2023/08/10/18.png",content:O},V=Object.freeze(Object.defineProperty({__proto__:null,default:H},Symbol.toStringTag,{value:"Module"})),N=`## CodeCV - \u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+`,H={name:"\u7B80\u7EA6/\u4EA7\u54C1\u7ECF\u7406/\u5546\u52A1/\u8BBE\u8BA1",lineHeight:20,primaryColor:"#636262",primaryBackground:"#024B4B",img:"https://s1.imagehub.cc/images/2023/08/10/18.png",content:O},N=Object.freeze(Object.defineProperty({__proto__:null,default:H},Symbol.toStringTag,{value:"Module"})),V=`## CodeCV - \u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 ::: start
 icon:email **\u90AE\u7BB1**\uFF1Acoderleilei@163.com
 icon:phone **\u7535\u8BDD\u53F7\u7801**\uFF1A15507942706
@@ -818,7 +818,7 @@ https://github.com/acmenlei/markdown-plus
 ## \u81EA\u6211\u8BC4\u4EF7
 \u81EA\u884C\u53D1\u6325\u5427\u3002\u3002\u3002
 ## \u81F4\u8C22
-\u611F\u8C22\u60A8\u9605\u8BFB\u6211\u7684\u7B80\u5386\uFF0C\u671F\u5F85\u4E0E\u60A8\u4E00\u8D77\u5171\u4E8B\u3002`,L={name:"\u793E\u62DB/\u4E92\u8054\u7F51/\u6821\u62DB/\u7B80\u7EA6",primaryColor:"#544F4F",primaryBackground:"#1CAAB0",img:"https://s1.imagehub.cc/images/2023/08/10/19.png",content:N},R=Object.freeze(Object.defineProperty({__proto__:null,default:L},Symbol.toStringTag,{value:"Module"})),G=`::: headStart
+\u611F\u8C22\u60A8\u9605\u8BFB\u6211\u7684\u7B80\u5386\uFF0C\u671F\u5F85\u4E0E\u60A8\u4E00\u8D77\u5171\u4E8B\u3002`,L={name:"\u793E\u62DB/\u4E92\u8054\u7F51/\u6821\u62DB/\u7B80\u7EA6",primaryColor:"#544F4F",primaryBackground:"#1CAAB0",img:"https://s1.imagehub.cc/images/2023/08/10/19.png",content:V},R=Object.freeze(Object.defineProperty({__proto__:null,default:L},Symbol.toStringTag,{value:"Module"})),$=`::: headStart
 ::: start
 ## \u5F20\u4E09 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08** **\u610F\u5411\u57CE\u5E02\uFF1A\u676D\u5DDE**
 ::: start
@@ -878,7 +878,7 @@ icon:yuque [yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 - **\u9879\u76EE\u63CF\u8FF0**\uFF1A\u6559\u522B\u4EBA\u5982\u4F55\u626B\u5730\uFF0C\u5982\u4F55\u626B\u597D\u5730
 - **\u9879\u76EE\u6280\u672F\u6808**\uFF1AHadoop\u3001Sqoop\u3001Python\u3001Scrapy\u3001Spark\u3001Hive\u3001MySQL\u3001Flask\u3001ECharts
 - **\u6307\u8D23\u63CF\u8FF0**\uFF1A\u8FDB\u884C Hadoop \u5E73\u53F0\u642D\u5EFA\uFF0C\u5229\u7528 Scrapy \u722C\u53D6 QTA \u9152\u5E97\u516C\u5F00\u6570\u636E\u81F3 MySQL \u4E2D\u3002\u5C06\u722C\u53D6\u7684\u6570\u636E\u8FDB\u884C\u6E05\u6D17\u548C\u5206\u6790\u3002\u5C06\u5206\u6790\u597D\u7684\u6570\u636E\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u5B58\u5165 MySQL \u4E2D\u3002\u7528 Flask \u540C ECharts \u5C06\u6570\u636E\u8FDB\u884C\u53EF\u89C6\u5316\u5C55\u73B0\u3002
-- **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002`,$={name:"\u4E92\u8054\u7F51/\u6821\u62DB/\u793E\u62DB/\u8BC1\u4EF6\u7167",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/151dd45eb7e2897dd.png",content:G},J=Object.freeze(Object.defineProperty({__proto__:null,default:$},Symbol.toStringTag,{value:"Module"})),z=`::: headStart
+- **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002`,G={name:"\u4E92\u8054\u7F51/\u6821\u62DB/\u793E\u62DB/\u8BC1\u4EF6\u7167",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/151dd45eb7e2897dd.png",content:$},z=Object.freeze(Object.defineProperty({__proto__:null,default:G},Symbol.toStringTag,{value:"Module"})),J=`::: headStart
 # \u5C0FC - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 icon:user \u7537 / 2000.01.01 &nbsp;/ &nbsp;icon:phone 155xxxxxx06 &nbsp; /&nbsp; icon:email xxxxxxxx@163.com
 icon:github [github.com/acmenlei](https://github.com/acmenlei)&nbsp;icon:gitee [gitee.com/codeleilei](https://gitee.com/codeleilei)&nbsp;icon:juejin [juejin.cn/user/2586468969632445](https://juejin.cn/user/2586468969632445)
@@ -939,7 +939,7 @@ icon:github [github.com/acmenlei](https://github.com/acmenlei)&nbsp;icon:gitee [
 - **\u7EBF\u4E0A\u6F14\u793A**\uFF1A[https://acmenlei.github.io/markdown-transform-html-demo/dist/](https://acmenlei.github.io/markdown-transform-html-demo/dist/)
 
 ## \u81EA\u6211\u8BC4\u4EF7
-\u81EA\u9A71\u529B\u5F3A\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u6D53\u539A\u7684\u5174\u8DA3\uFF0C\u6301\u7EED\u5173\u6CE8\u524D\u7AEF\u9886\u57DF\u65B0\u73A9\u5177/\u65B0\u7279\u6027\u5E76\u6295\u5165\u9879\u76EE\u4F7F\u7528\uFF0C\u4FDD\u6301\u6301\u7EED\u5B66\u4E60\u7684\u5FC3\u6001 ...`,I={name:"\u6821\u62DB/\u793E\u62DB/\u4E92\u8054\u7F51/\u7B80\u6D01",font:"Noto Sans SC",primaryColor:"#140505",primaryBackground:"#140B25",img:"https://s1.imagehub.cc/images/2023/08/10/20.png",content:z},q=Object.freeze(Object.defineProperty({__proto__:null,default:I},Symbol.toStringTag,{value:"Module"})),W=`## \u5C0FC - \u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+\u81EA\u9A71\u529B\u5F3A\uFF0C\u5BF9\u5927\u524D\u7AEF\u6709\u6D53\u539A\u7684\u5174\u8DA3\uFF0C\u6301\u7EED\u5173\u6CE8\u524D\u7AEF\u9886\u57DF\u65B0\u73A9\u5177/\u65B0\u7279\u6027\u5E76\u6295\u5165\u9879\u76EE\u4F7F\u7528\uFF0C\u4FDD\u6301\u6301\u7EED\u5B66\u4E60\u7684\u5FC3\u6001 ...`,I={name:"\u6821\u62DB/\u793E\u62DB/\u4E92\u8054\u7F51/\u7B80\u6D01",font:"Noto Sans SC",primaryColor:"#140505",primaryBackground:"#140B25",img:"https://s1.imagehub.cc/images/2023/08/10/20.png",content:J},q=Object.freeze(Object.defineProperty({__proto__:null,default:I},Symbol.toStringTag,{value:"Module"})),W=`## \u5C0FC - \u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 ::: start
 icon:man \u7537 / 1995.08.01 / icon:phone 15507942706
 icon:email coderleilei@163.com
@@ -1258,7 +1258,59 @@ Led the frontend development of a video interaction platform, enabling users to 
 
 ## \u6280\u80FD/\u8BC1\u4E66\u5176\u4ED6
 - **\u8BED\u8A00**\uFF1A\u82F1\u8BED CET-6\uFF08 \u80FD\u719F\u7EC3\u9605\u8BFB\u82F1\u6587\u6280\u672F\u6587\u6863\uFF0C\u7ECF\u5E38\u6D4F\u89C8\u56FD\u5185\u5916\u8BBA\u575B\u4E86\u89E3\u65B0\u6280\u672F\u53D8\u5316\u65B9\u5411\uFF09
-- **\u8363\u8A89\u5956\u9879**\uFF1A\u5927\u5B66\u751F\u8BA1\u7B97\u673A\u7CFB\u7EDF\u4E0E\u7A0B\u5E8F\u8BBE\u8BA1\u7ADE\u8D5B\u4E8C\u7B49\u5956`,Au={name:"\u5E94\u5C4A/\u6781\u7B80/\u5927\u5382/\u793E\u62DB/\u901A\u7528",primaryColor:"#000",font:"Noto Sans SC",lineHeight:24,primaryBackground:"#4283ff",img:"https://s1.imagehub.cc/images/2023/08/25/26.png",content:eu},Du=Object.freeze(Object.defineProperty({__proto__:null,default:Au},Symbol.toStringTag,{value:"Module"})),tu=`## \u5C0FC - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+- **\u8363\u8A89\u5956\u9879**\uFF1A\u5927\u5B66\u751F\u8BA1\u7B97\u673A\u7CFB\u7EDF\u4E0E\u7A0B\u5E8F\u8BBE\u8BA1\u7ADE\u8D5B\u4E8C\u7B49\u5956`,Au={name:"\u5E94\u5C4A/\u6781\u7B80/\u5927\u5382/\u793E\u62DB/\u901A\u7528",primaryColor:"#000",font:"Noto Sans SC",lineHeight:24,primaryBackground:"#4283ff",img:"https://s1.imagehub.cc/images/2023/08/25/26.png",content:eu},Du=Object.freeze(Object.defineProperty({__proto__:null,default:Au},Symbol.toStringTag,{value:"Module"})),tu=`## \u4E2A\u4EBA\u4FE1\u606F
+::: start
+\u59D3\u540D\uFF1Aoffer\u6536\u5272\u673A
+\u671F\u671B\u5C97\u4F4D\uFF1A\u7535\u5668\u5F00\u53D1\u5DE5\u7A0B\u5E08
+\u624B\u673A\u53F7\u7801\uFF1A11011011011
+:::
+icon:email 12345@163.com
+icon:fillstar [\u4E2A\u4EBA\u4F5C\u54C1\u96C6](https://coderlei.netlify.app)
+icon:github [https://github.com/acmenlei](https://github.com/acmenlei)&nbsp;
+:::
+![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
+::: end
+
+## \u6559\u80B2\u80CC\u666F
+**2019.09 - 2024.07 - \u7535\u5B50\u79D1\u6280\u5927\u5B66 -  \u7535\u6C14\u5DE5\u7A0B\u4E13\u4E1A - \u672C\u79D1**
+\u4E3B\u4FEE\u8BFE\u7A0B\uFF1A\u7535\u8DEF\u5206\u6790\u3001\u6A21\u62DF\u7535\u5B50\u6280\u672F\u3001\u6570\u5B57\u7535\u5B50\u6280\u672F\u3001\u81EA\u52A8\u63A7\u5236\u539F\u7406\u3001\u7535\u529B\u7CFB\u7EDF\u5206\u6790\u3001\u7535\u78C1\u573A\u4E0E\u7535\u78C1\u6CE2\u3001\u5FAE\u673A\u539F\u7406\u4E0E\u63A5\u53E3\u6280\u672F\u7B49\u3002
+
+## \u4E13\u4E1A\u6280\u80FD
+- \u7535\u6C14\u5DE5\u7A0B\u8BBE\u8BA1\u4E0E\u5B9E\u65BD\uFF1A\u719F\u7EC3\u638C\u63E1AutoCAD\u3001EPLAN\u7B49\u8F6F\u4EF6\uFF0C\u80FD\u591F\u72EC\u7ACB\u5B8C\u6210\u7535\u6C14\u5DE5\u7A0B\u9879\u76EE\u7684\u8BBE\u8BA1\u3001\u65BD\u5DE5\u548C\u9A8C\u6536\u3002
+- \u7535\u529B\u7CFB\u7EDF\u5206\u6790\u4E0E\u63A7\u5236\uFF1A\u719F\u6089\u7535\u529B\u7CFB\u7EDF\u7684\u57FA\u672C\u539F\u7406\u548C\u5DE5\u4F5C\u6D41\u7A0B\uFF0C\u80FD\u591F\u8FDB\u884C\u6F6E\u6D41\u5206\u6790\u3001\u77ED\u8DEF\u8BA1\u7B97\u548C\u7A33\u5B9A\u5206\u6790\u3002
+- \u5FAE\u673A\u63A7\u5236\u7CFB\u7EDF\u8BBE\u8BA1\u4E0E\u5B9E\u73B0\uFF1A\u719F\u7EC3\u638C\u63E1PLC\u7F16\u7A0B\u6280\u672F\uFF0C\u80FD\u591F\u8FDB\u884C\u63A7\u5236\u7CFB\u7EDF\u7684\u8BBE\u8BA1\u3001\u8C03\u8BD5\u548C\u7EF4\u62A4\u3002
+- \u7535\u6C14\u8BBE\u5907\u68C0\u6D4B\u4E0E\u7EF4\u4FEE\uFF1A\u719F\u6089\u5E38\u89C1\u6545\u969C\u53CA\u5176\u539F\u56E0\uFF0C\u80FD\u591F\u8FD0\u7528\u7535\u5DE5\u4EEA\u8868\u548C\u4E13\u7528\u5DE5\u5177\u8FDB\u884C\u8BBE\u5907\u7684\u68C0\u6D4B\u548C\u7EF4\u4FEE\u3002
+- \u9879\u76EE\u7BA1\u7406\u4E0E\u534F\u8C03\uFF1A\u5177\u5907\u826F\u597D\u7684\u9879\u76EE\u7BA1\u7406\u548C\u534F\u8C03\u80FD\u529B\uFF0C\u80FD\u591F\u5236\u5B9A\u8BA1\u5212\u3001\u5206\u914D\u8D44\u6E90\u3001\u63A7\u5236\u8FDB\u5EA6\u548C\u8D28\u91CF\u3002
+- \u6301\u7EED\u5B66\u4E60\u548C\u6280\u80FD\u63D0\u5347\uFF1A\u5173\u6CE8\u65B0\u6280\u672F\u548C\u65B0\u53D1\u5C55\uFF0C\u5B9A\u671F\u5B66\u4E60\u76F8\u5173\u77E5\u8BC6\u548C\u6280\u672F\uFF0C\u53C2\u52A0\u57F9\u8BAD\u548C\u8BA4\u8BC1\uFF0C\u63D0\u5347\u81EA\u5DF1\u7684\u7EFC\u5408\u7D20\u8D28\u548C\u7ADE\u4E89\u529B\u3002
+
+## \u5B9E\u4E60\u7ECF\u5386
+**2019.09 - 2024.07 - xxx\u63A7\u80A1\u6709\u9650\u516C\u53F8 - \u5B9E\u4E60\u751F**
+- \u53C2\u4E0E\u7535\u6C14\u5DE5\u7A0B\u9879\u76EE\u7684\u8BBE\u8BA1\u3001\u65BD\u5DE5\u548C\u9A8C\u6536\u5DE5\u4F5C\uFF0C\u4E86\u89E3\u5DE5\u7A0B\u9879\u76EE\u7684\u5168\u8FC7\u7A0B\u3002
+- \u534F\u52A9\u5B8C\u6210\u7535\u6C14\u8BBE\u5907\u7684\u5B89\u88C5\u3001\u8C03\u8BD5\u548C\u7EF4\u62A4\u5DE5\u4F5C\uFF0C\u63D0\u9AD8\u81EA\u5DF1\u7684\u5B9E\u9645\u64CD\u4F5C\u80FD\u529B\u3002
+- \u53C2\u4E0E\u9879\u76EE\u7684\u73B0\u573A\u7BA1\u7406\uFF0C\u5B66\u4F1A\u4E0E\u4EBA\u6C9F\u901A\u534F\u8C03\uFF0C\u63D0\u9AD8\u5DE5\u4F5C\u6548\u7387\u3002
+- \u5B66\u4E60\u4F7F\u7528 AutoCAD\u3001EPLAN \u7B49\u7535\u6C14\u8BBE\u8BA1\u8F6F\u4EF6\uFF0C\u719F\u6089\u7535\u6C14\u56FE\u7EB8\u7684\u7ED8\u5236\u548C\u4FEE\u6539
+
+## \u9879\u76EE\u7ECF\u5386
+**\u7535\u529B\u7CFB\u7EDF\u4EFF\u771F\u5B9E\u9A8C - 2022.09 - 2023.02**
+- \u4F7F\u7528 EPLAN \u8F6F\u4EF6\u8FDB\u884C\u7535\u529B\u7CFB\u7EDF\u7684\u5E03\u5C40\u8BBE\u8BA1\u548C\u8BBE\u5907\u9009\u578B\u3002
+- \u8FDB\u884C\u7535\u529B\u7CFB\u7EDF\u7684\u6F6E\u6D41\u5206\u6790\u548C\u77ED\u8DEF\u8BA1\u7B97\uFF0C\u9A8C\u8BC1\u7CFB\u7EDF\u7684\u7A33\u5B9A\u6027\u3002
+- \u5229\u7528 MATLAB \u8FDB\u884C\u7535\u529B\u7CFB\u7EDF\u7684\u4EFF\u771F\u5B9E\u9A8C\uFF0C\u5206\u6790\u7CFB\u7EDF\u7684\u6027\u80FD\u548C\u4F18\u5316\u65B9\u6848\u3002
+- \u6839\u636E\u4EFF\u771F\u7ED3\u679C\uFF0C\u5BF9\u7535\u529B\u7CFB\u7EDF\u8FDB\u884C\u8C03\u6574\u548C\u4F18\u5316\uFF0C\u63D0\u9AD8\u7CFB\u7EDF\u7684\u6548\u7387\u548C\u7A33\u5B9A\u6027\u3002
+**\u5FAE\u673A\u63A7\u5236\u7CFB\u7EDF\u5F00\u53D1\u4E0E\u5B9E\u73B0 - 2023.09 - 2024.07**
+- \u4F7F\u7528 PLC \u7F16\u7A0B\u8F6F\u4EF6\u8FDB\u884C\u5FAE\u673A\u63A7\u5236\u7CFB\u7EDF\u7684\u8BBE\u8BA1\u548C\u7F16\u7A0B\u3002
+- \u5B9E\u73B0 PLC \u4E0E\u5176\u4ED6\u8BBE\u5907\u7684\u901A\u4FE1\u548C\u6570\u636E\u4EA4\u6362\uFF0C\u5B9E\u73B0\u81EA\u52A8\u5316\u63A7\u5236\u529F\u80FD\u3002
+- \u5229\u7528 LabVIEW \u8FDB\u884C\u5FAE\u673A\u63A7\u5236\u7CFB\u7EDF\u7684\u8F6F\u4EF6\u7F16\u7A0B\u548C\u786C\u4EF6\u9A71\u52A8\u5F00\u53D1\u3002
+- \u8C03\u8BD5\u548C\u4F18\u5316\u5FAE\u673A\u63A7\u5236\u7CFB\u7EDF\uFF0C\u786E\u4FDD\u5176\u7A33\u5B9A\u8FD0\u884C\u548C\u6EE1\u8DB3\u751F\u4EA7\u9700\u6C42
+
+## \u7ADE\u8D5B\u8363\u8A89
+- 2019 - 2022 \u7535\u5B50\u79D1\u6280\u5927\u5B66\u4F18\u79C0\u5B66\u751F\u5956\u5B66\u91D1
+- 2019 - 2022 \u7535\u5B50\u79D1\u6280\u5927\u5B66\u4E09\u597D\u5B66\u751F\u79F0\u53F7
+
+## \u81EA\u6211\u8BC4\u4EF7
+- \u5177\u5907\u624E\u5B9E\u7684\u7535\u6C14\u5DE5\u7A0B\u4E13\u4E1A\u77E5\u8BC6\uFF0C\u80FD\u591F\u719F\u7EC3\u8FD0\u7528\u6240\u5B66\u77E5\u8BC6\u89E3\u51B3\u5B9E\u9645\u95EE\u9898\u3002
+- \u5177\u5907\u826F\u597D\u7684\u5B66\u4E60\u80FD\u529B\u548C\u9002\u5E94\u80FD\u529B\uFF0C\u80FD\u591F\u5FEB\u901F\u638C\u63E1\u65B0\u77E5\u8BC6\u548C\u6280\u80FD\u3002
+- \u5177\u5907\u8F83\u5F3A\u7684\u56E2\u961F\u534F\u4F5C\u80FD\u529B\u548C\u6C9F\u901A\u80FD\u529B\uFF0C\u80FD\u591F\u4E0E\u56E2\u961F\u6210\u5458\u5171\u540C\u5B8C\u6210\u4EFB\u52A1\u3002
+- \u5177\u5907\u4E00\u5B9A\u7684\u521B\u65B0\u80FD\u529B\u548C\u89E3\u51B3\u95EE\u9898\u7684\u80FD\u529B\uFF0C\u80FD\u591F\u9488\u5BF9\u5B9E\u9645\u95EE\u9898\u63D0\u51FA\u5408\u7406\u7684\u89E3\u51B3\u65B9\u6848\u3002`,nu={name:"\u6821\u62DB/\u793E\u62DB/\u7535\u6C14/\u6781\u7B80",primaryColor:"#4D4C4C",font:"Noto Sans SC",lineHeight:25,primaryBackground:"#333333",img:"https://s1.imagehub.cc/images/2023/09/09/27.png",content:tu},ou=Object.freeze(Object.defineProperty({__proto__:null,default:nu},Symbol.toStringTag,{value:"Module"})),iu=`## \u5C0FC - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 
 ::: start
 icon:user 2000/01/01
@@ -1320,7 +1372,7 @@ icon:github https://github.com/acmenlei
 \u4E3A\u5B66\u751F\u63D0\u4F9B\u6210\u7EE9\u67E5\u8BE2\u7CFB\u7EDF\uFF0C\u89E3\u51B3\u5185\u5916\u7F51\u9694\u79BB\u95EE\u9898\uFF0C\u63D0\u4F9B\u6210\u7EE9\u77ED\u4FE1\u901A\u77E5\u80FD\u529B\uFF0C\u4E3A2\u4E07\u5728\u6821\u751F\u63D0\u4F9B\u5728\u5BB6\u67E5\u6210\u7EE9\u670D\u52A1\u3002\u4F7F\u7528Koa2\u63D0\u4F9BAP\u63A5\u53E3\uFF0C\u4EE5\u4F9B\u524D\u7AEF\u4F7F\u7528\u3001\u8FD0\u7528Node js\u5B9E\u73B0\u5E26\u767B\u9646;\u6001\u8BF7\u6C42\u3001\u4F7F\u7528React/ Antd\u5B9E\u73B0\u524D\u7AEFUI\u754C\u9762\u3001\u63A5\u5165\u963F\u91CC\u4E91\u77ED\u4FE1API\u3002
 
 ## \u5176\u4ED6
-\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,nu={name:"\u793E\u62DB/\u6821\u62DB/\u7B80\u7EA6",primaryColor:"#555",primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/2ebcdb7af3d076810.png",content:tu},ou=Object.freeze(Object.defineProperty({__proto__:null,default:nu},Symbol.toStringTag,{value:"Module"})),iu=`::: headStart
+\u83B7\u5F97\u4E00\u7B49/\u4E09\u7B49\u5956\u5B66\u91D1\uFF0C\u5728\u6821\u7EA7\u793E\u56E2\u62C5\u4EFB\u603B\u8D1F\u8D23\u4EBA\uFF0C\u5728\u9662\u5B66\u751F\u4F1A\u62C5\u4EFB\u526F\u90E8\u957F\u804C\u4F4D`,au={name:"\u793E\u62DB/\u6821\u62DB/\u7B80\u7EA6",primaryColor:"#555",primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/2ebcdb7af3d076810.png",content:iu},ru=Object.freeze(Object.defineProperty({__proto__:null,default:au},Symbol.toStringTag,{value:"Module"})),su=`::: headStart
 # CodeCV\u7B80\u5386 - \u8FD0\u8425
 ::: start
 \u5982\u82B1 / \u5973 / xxxx.xx / xxxxx / \u5DE5\u5546\u7BA1\u7406
@@ -1380,7 +1432,7 @@ icon:phone 155xxxx8888
 - **xxxxxxxx**\uFF1A xxxxxxxxxxxxxxxxxxxxxxxx
 - **xxxxxxxx**\uFF1A xxxxxxxxxxxxxxxxxxxxxxxx
 ::: mainEnd
-`,au={name:"\u8FD0\u8425/IT/\u4E92\u8054\u7F51",primaryColor:"#333",primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/347d336d3b48a263b.png",content:iu},ru=Object.freeze(Object.defineProperty({__proto__:null,default:au},Symbol.toStringTag,{value:"Module"})),su=`::: headStart
+`,cu={name:"\u8FD0\u8425/IT/\u4E92\u8054\u7F51",primaryColor:"#333",primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/347d336d3b48a263b.png",content:su},du=Object.freeze(Object.defineProperty({__proto__:null,default:cu},Symbol.toStringTag,{value:"Module"})),lu=`::: headStart
 ## \u9A6C\u725B\u903C **\u793E\u4F1A\u725B\u903C\u5DE5\u7A0B\u5E08**
 ::: start
 icon:city xxxx\u5927\u5B66 / \u793E\u4F1A\u5DE5\u7A0B
@@ -1430,7 +1482,7 @@ icon:school GPA:3.92 / Top3%
 - **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002
 
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
-\u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u5584\u4E8E\u5728\u5B9E\u8DF5\u4E2D\u79EF\u7D2F\u5B66\u4E60\uFF0C\u4E0D\u65AD\u7684\u5B8C\u5584\u81EA\u6211\u3002\u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\u548C\u6C9F\u901A\u534F\u4F5C\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002\u540C\u65F6\uFF0C\u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,cu={name:"\u4E92\u8054\u7F51/\u7B80\u7EA6/\u793E\u62DB/\u6821\u62DB",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/46be6b702b8d88240.png",content:su},du=Object.freeze(Object.defineProperty({__proto__:null,default:cu},Symbol.toStringTag,{value:"Module"})),lu=`::: headStart
+\u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u5584\u4E8E\u5728\u5B9E\u8DF5\u4E2D\u79EF\u7D2F\u5B66\u4E60\uFF0C\u4E0D\u65AD\u7684\u5B8C\u5584\u81EA\u6211\u3002\u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\u548C\u6C9F\u901A\u534F\u4F5C\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002\u540C\u65F6\uFF0C\u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,pu={name:"\u4E92\u8054\u7F51/\u7B80\u7EA6/\u793E\u62DB/\u6821\u62DB",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/46be6b702b8d88240.png",content:lu},mu=Object.freeze(Object.defineProperty({__proto__:null,default:pu},Symbol.toStringTag,{value:"Module"})),gu=`::: headStart
 ::: start
 # \u756A\u8304\u7092\u9E21\u86CB
 **\u6027\u522B**\uFF1A\u7537 \uFF5C **\u5E74\u9F84**\uFF1A23 \uFF5C **\u7535\u8BDD**\uFF1A11011011011 \uFF5C **\u90AE\u7BB1**\uFF1Aresume@163.com
@@ -1491,7 +1543,7 @@ xxxx\u5E74xx\u6708 - xxxx\u5E74xx\u6708
 - xxxxxxxxxxxxxxxxxxxx
 ## icon:technology \u4E2A\u4EBA\u6280\u80FD
 - xxxxxxxxxxxxxxxxxxxx
-`,pu={name:"\u7814\u7A76\u751F\u590D\u8BD5/\u4E8B\u4E1A\u5355\u4F4D",primaryColor:"#3A3939",lineHeight:19,primaryBackground:"#2186D2",img:"https://s1.imagehub.cc/images/2023/08/10/5ef200ce07ec45bcb.png",content:lu},mu=Object.freeze(Object.defineProperty({__proto__:null,default:pu},Symbol.toStringTag,{value:"Module"})),gu=`::: headStart
+`,hu={name:"\u7814\u7A76\u751F\u590D\u8BD5/\u4E8B\u4E1A\u5355\u4F4D",primaryColor:"#3A3939",lineHeight:19,primaryBackground:"#2186D2",img:"https://s1.imagehub.cc/images/2023/08/10/5ef200ce07ec45bcb.png",content:gu},bu=Object.freeze(Object.defineProperty({__proto__:null,default:hu},Symbol.toStringTag,{value:"Module"})),yu=`::: headStart
 ::: start
 ## \u5C0F\u65B0 **\u8FD0\u8425\u5B9E\u4E60\u751F**
 icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u5171\u515A\u5458 \uFF5C 2023\u5C4A
@@ -1551,7 +1603,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 4. xxxxx......
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
-2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002`,hu={name:"\u8FD0\u8425/\u4E92\u8054\u7F51/\u901A\u7528",primaryColor:"#333",primaryBackground:"#1a85f0",img:"https://s1.imagehub.cc/images/2023/08/10/62b65bb5f6386fd7f.png",content:gu},bu=Object.freeze(Object.defineProperty({__proto__:null,default:hu},Symbol.toStringTag,{value:"Module"})),yu=`::: headStart
+2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002`,Su={name:"\u8FD0\u8425/\u4E92\u8054\u7F51/\u901A\u7528",primaryColor:"#333",primaryBackground:"#1a85f0",img:"https://s1.imagehub.cc/images/2023/08/10/62b65bb5f6386fd7f.png",content:yu},_u=Object.freeze(Object.defineProperty({__proto__:null,default:Su},Symbol.toStringTag,{value:"Module"})),fu=`::: headStart
 ::: start
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 # \u5C0F\u65B0 **UI\u8BBE\u8BA1\u5E08**
@@ -1628,7 +1680,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 ## icon:user \u81EA\u6211\u8BC4\u4EF7
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,Su={name:"\u8BBE\u8BA1/\u8FD0\u8425/\u5546\u52A1",primaryColor:"#2A2D2D",lineHeight:20,primaryBackground:"#F98C07",img:"https://s1.imagehub.cc/images/2023/08/10/7403e3339cad3b5f7.png",content:yu},_u=Object.freeze(Object.defineProperty({__proto__:null,default:Su},Symbol.toStringTag,{value:"Module"})),fu=`::: headStart
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,Pu={name:"\u8BBE\u8BA1/\u8FD0\u8425/\u5546\u52A1",primaryColor:"#2A2D2D",lineHeight:20,primaryBackground:"#F98C07",img:"https://s1.imagehub.cc/images/2023/08/10/7403e3339cad3b5f7.png",content:fu},vu=Object.freeze(Object.defineProperty({__proto__:null,default:Pu},Symbol.toStringTag,{value:"Module"})),ku=`::: headStart
 ::: start
 ## \u5C0F\u65B0 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08**
 ::: start
@@ -1686,7 +1738,7 @@ icon:github [https://github.com/acmenlei](https://github.com/acmenlei)
 ## icon:user \u81EA\u6211\u8BC4\u4EF7 About me
 1. \u672C\u4EBA\u70ED\u5FC3\u8BDA\u6073\u3001\u4E50\u89C2\u5411\u4E0A\uFF0C\u6709\u826F\u597D\u7684\u601D\u60F3\u54C1\u5FB7\u548C\u804C\u4E1A\u7D20\u8D28\uFF0C\u5DE5\u4F5C\u8BA4\u771F\u8D1F\u8D23\uFF0C\u7231\u597D\u662F\u770B\u7F8E\u5973\u3002
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
-3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,vu={name:"\u901A\u7528/\u793E\u62DB/\u6821\u62DB/\u4E92\u8054\u7F51",primaryColor:"#333",primaryBackground:"#719ba5",img:"https://s1.imagehub.cc/images/2023/08/10/82f8616b0333b9654.png",content:fu},Pu=Object.freeze(Object.defineProperty({__proto__:null,default:vu},Symbol.toStringTag,{value:"Module"})),ku=`::: start
+3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,ju={name:"\u901A\u7528/\u793E\u62DB/\u6821\u62DB/\u4E92\u8054\u7F51",primaryColor:"#333",primaryBackground:"#719ba5",img:"https://s1.imagehub.cc/images/2023/08/10/82f8616b0333b9654.png",content:ku},Tu=Object.freeze(Object.defineProperty({__proto__:null,default:ju},Symbol.toStringTag,{value:"Module"})),wu=`::: start
 ::: headStart
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
 ## \u72C2\u5F92\u5F20\u4E09 - \u6CD5\u5F8B\u987E\u95EE
@@ -1753,4 +1805,4 @@ icon:github [https://github.com/acmenlei](https://github.com/acmenlei)
 **2021-09 \u81F3 20212-07**
 ::: end
 \u4ECE\u4E86\u89E3\u5F53\u4EE3\u53EA\u80FD\u5145\u7535\u6C7D\u8F66\u53D1\u96BE\uFF0C\u53D1\u73B0\u5176\u4F18\u7F3A\u70B9\uFF0C\u5728\u6B64\u57FA\u7840\u4E0A\u4F18\u5316\u8BBE\u8BA1\uFF0C\u63D0\u51FA\u65B0\u578B\u6539\u8FDB\uFF0C\u4ECE\u4E86\u89E3\u5F53\u4EE3\u53EA\u80FD\u5145\u7535\u6C7D\u8F66\u53D1\u96BE\uFF0C\u53D1\u73B0\u5176\u4F18\u7F3A\u70B9\uFF0C\u5728\u6B64\u57FA\u7840\u4E0A\u4F18\u5316\u8BBE\u8BA1\uFF0C\u63D0\u51FA\u65B0\u578B\u6539\u8FDB
-::: end`,ju={name:"\u5546\u52A1/\u8BBE\u8BA1/\u8FD0\u8425",primaryColor:"#111",primaryBackground:"#297370",img:"https://s1.imagehub.cc/images/2023/08/10/936f66ab443850368.png",content:ku},Tu=Object.freeze(Object.defineProperty({__proto__:null,default:ju},Symbol.toStringTag,{value:"Module"})),x=new Map;x.set("create",["#333","#333","","25"]);const A=D([]),wu=Object.entries(Object.assign({"./modules/10front_end/index.ts":a,"./modules/11fresh/index.ts":c,"./modules/12internet_social/index.ts":p,"./modules/13geek/index.ts":h,"./modules/14heading/index.ts":S,"./modules/15simple_versatile/index.ts":v,"./modules/16prominent_content/index.ts":j,"./modules/17business/index.ts":M,"./modules/18art/index.ts":V,"./modules/19social/index.ts":R,"./modules/1internet_avatar/index.ts":J,"./modules/20campus_simple/index.ts":q,"./modules/21it_campus/index.ts":Y,"./modules/22/index.ts":Z,"./modules/23/index.ts":uu,"./modules/24/index.ts":xu,"./modules/25/index.ts":Cu,"./modules/26/index.ts":Du,"./modules/2concise/index.ts":ou,"./modules/3operation/index.ts":ru,"./modules/4internet/index.ts":du,"./modules/5graduation_reexam/index.ts":mu,"./modules/6operation_avatar/index.ts":bu,"./modules/7simple_avatar/index.ts":_u,"./modules/8general/index.ts":Pu,"./modules/9business/index.ts":Tu}));for(const[u,E]of wu){const F=E.default;F.id=Math.ceil(Math.random()*1e9),F.type=u.split("/")[2],A.value.push(F),x.set(F.type,[F.primaryColor,F.primaryBackground,F.font||"",String(F.lineHeight||25)])}const e=u=>+u.type.match(/^\d+/)[0];A.value.sort((u,E)=>e(E)-e(u));function Ru(u){return x.get(u)[1]}function Gu(u){return x.get(u)[0]}function $u(u){return x.get(u)[2]}function Ju(u){return x.get(u)[3]}export{Nu as a,Gu as b,$u as c,Ju as d,t as e,n as f,Ru as g,Lu as q,Hu as r,Vu as s,A as t};
+::: end`,Mu={name:"\u5546\u52A1/\u8BBE\u8BA1/\u8FD0\u8425",primaryColor:"#111",primaryBackground:"#297370",img:"https://s1.imagehub.cc/images/2023/08/10/936f66ab443850368.png",content:wu},Ou=Object.freeze(Object.defineProperty({__proto__:null,default:Mu},Symbol.toStringTag,{value:"Module"})),x=new Map;x.set("create",["#333","#333","","25"]);const A=D([]),Hu=Object.entries(Object.assign({"./modules/10front_end/index.ts":a,"./modules/11fresh/index.ts":c,"./modules/12internet_social/index.ts":p,"./modules/13geek/index.ts":h,"./modules/14heading/index.ts":S,"./modules/15simple_versatile/index.ts":P,"./modules/16prominent_content/index.ts":j,"./modules/17business/index.ts":M,"./modules/18art/index.ts":N,"./modules/19social/index.ts":R,"./modules/1internet_avatar/index.ts":z,"./modules/20campus_simple/index.ts":q,"./modules/21it_campus/index.ts":Y,"./modules/22/index.ts":Z,"./modules/23/index.ts":uu,"./modules/24/index.ts":xu,"./modules/25/index.ts":Cu,"./modules/26/index.ts":Du,"./modules/27/index.ts":ou,"./modules/2concise/index.ts":ru,"./modules/3operation/index.ts":du,"./modules/4internet/index.ts":mu,"./modules/5graduation_reexam/index.ts":bu,"./modules/6operation_avatar/index.ts":_u,"./modules/7simple_avatar/index.ts":vu,"./modules/8general/index.ts":Tu,"./modules/9business/index.ts":Ou}));for(const[u,E]of Hu){const F=E.default;F.id=Math.ceil(Math.random()*1e9),F.type=u.split("/")[2],A.value.push(F),x.set(F.type,[F.primaryColor,F.primaryBackground,F.font||"",String(F.lineHeight||25)])}const e=u=>+u.type.match(/^\d+/)[0];A.value.sort((u,E)=>e(E)-e(u));function zu(u){return x.get(u)[1]}function Ju(u){return x.get(u)[0]}function Iu(u){return x.get(u)[2]}function qu(u){return x.get(u)[3]}export{$u as a,Ju as b,Iu as c,qu as d,t as e,n as f,zu as g,Gu as q,Lu as r,Ru as s,A as t};
