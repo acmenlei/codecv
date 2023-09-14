@@ -820,7 +820,7 @@ https://github.com/acmenlei/markdown-plus
 ## \u81F4\u8C22
 \u611F\u8C22\u60A8\u9605\u8BFB\u6211\u7684\u7B80\u5386\uFF0C\u671F\u5F85\u4E0E\u60A8\u4E00\u8D77\u5171\u4E8B\u3002`,L={name:"\u793E\u62DB/\u4E92\u8054\u7F51/\u6821\u62DB/\u7B80\u7EA6",primaryColor:"#544F4F",primaryBackground:"#1CAAB0",img:"https://s1.imagehub.cc/images/2023/08/10/19.png",content:V},R=Object.freeze(Object.defineProperty({__proto__:null,default:L},Symbol.toStringTag,{value:"Module"})),$=`::: headStart
 ::: start
-## \u5F20\u4E09 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08** **\u610F\u5411\u57CE\u5E02\uFF1A\u676D\u5DDE**
+# \u5F20\u4E09 &nbsp;&nbsp;\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08
 ::: start
 icon:user \u7537 / 2000.01.01
 icon:phone 155xxxxxx06
@@ -879,7 +879,7 @@ icon:yuque [yuque.com/xiongleixin](https://www.yuque.com/xiongleixin)
 - **\u9879\u76EE\u6280\u672F\u6808**\uFF1AHadoop\u3001Sqoop\u3001Python\u3001Scrapy\u3001Spark\u3001Hive\u3001MySQL\u3001Flask\u3001ECharts
 - **\u6307\u8D23\u63CF\u8FF0**\uFF1A\u8FDB\u884C Hadoop \u5E73\u53F0\u642D\u5EFA\uFF0C\u5229\u7528 Scrapy \u722C\u53D6 QTA \u9152\u5E97\u516C\u5F00\u6570\u636E\u81F3 MySQL \u4E2D\u3002\u5C06\u722C\u53D6\u7684\u6570\u636E\u8FDB\u884C\u6E05\u6D17\u548C\u5206\u6790\u3002\u5C06\u5206\u6790\u597D\u7684\u6570\u636E\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u5B58\u5165 MySQL \u4E2D\u3002\u7528 Flask \u540C ECharts \u5C06\u6570\u636E\u8FDB\u884C\u53EF\u89C6\u5316\u5C55\u73B0\u3002
 - **\u9879\u76EE\u91CD\u70B9\u6536\u83B7**\uFF1A\u719F\u6089\u4E86 Scrapy \u6846\u67B6\u7684\u4F7F\u7528\uFF0C\u5728 Linux \u73AF\u5883\u4E0B\u8FDB\u884C\u4F5C\u4E1A\uFF0C\u6839\u636E\u6307\u6807\u8FDB\u884C\u7EF4\u5EA6\u5EFA\u6A21\u3002`,G={name:"\u4E92\u8054\u7F51/\u6821\u62DB/\u793E\u62DB/\u8BC1\u4EF6\u7167",primaryColor:"#333",lineHeight:22,primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/151dd45eb7e2897dd.png",content:$},z=Object.freeze(Object.defineProperty({__proto__:null,default:G},Symbol.toStringTag,{value:"Module"})),J=`::: headStart
-# \u5C0FC - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
+### \u5C0FC - Web\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08
 icon:user \u7537 / 2000.01.01 &nbsp;/ &nbsp;icon:phone 155xxxxxx06 &nbsp; /&nbsp; icon:email xxxxxxxx@163.com
 icon:github [github.com/acmenlei](https://github.com/acmenlei)&nbsp;icon:gitee [gitee.com/codeleilei](https://gitee.com/codeleilei)&nbsp;icon:juejin [juejin.cn/user/2586468969632445](https://juejin.cn/user/2586468969632445)
 ::: headEnd
@@ -1433,7 +1433,7 @@ icon:phone 155xxxx8888
 - **xxxxxxxx**\uFF1A xxxxxxxxxxxxxxxxxxxxxxxx
 ::: mainEnd
 `,cu={name:"\u8FD0\u8425/IT/\u4E92\u8054\u7F51",primaryColor:"#333",primaryBackground:"#333",img:"https://s1.imagehub.cc/images/2023/08/10/347d336d3b48a263b.png",content:su},du=Object.freeze(Object.defineProperty({__proto__:null,default:cu},Symbol.toStringTag,{value:"Module"})),lu=`::: headStart
-## \u9A6C\u725B\u903C **\u793E\u4F1A\u725B\u903C\u5DE5\u7A0B\u5E08**
+# \u9A6C\u725B\u903C \u793E\u4F1A\u725B\u903C\u5DE5\u7A0B\u5E08
 ::: start
 icon:city xxxx\u5927\u5B66 / \u793E\u4F1A\u5DE5\u7A0B
 icon:email xxxxxxx@163.com
@@ -1545,7 +1545,7 @@ xxxx\u5E74xx\u6708 - xxxx\u5E74xx\u6708
 - xxxxxxxxxxxxxxxxxxxx
 `,hu={name:"\u7814\u7A76\u751F\u590D\u8BD5/\u4E8B\u4E1A\u5355\u4F4D",primaryColor:"#3A3939",lineHeight:19,primaryBackground:"#2186D2",img:"https://s1.imagehub.cc/images/2023/08/10/5ef200ce07ec45bcb.png",content:gu},bu=Object.freeze(Object.defineProperty({__proto__:null,default:hu},Symbol.toStringTag,{value:"Module"})),yu=`::: headStart
 ::: start
-## \u5C0F\u65B0 **\u8FD0\u8425\u5B9E\u4E60\u751F**
+# \u5C0F\u65B0 \u8FD0\u8425\u5B9E\u4E60\u751F
 icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u5171\u515A\u5458 \uFF5C 2023\u5C4A
 :::
 ![\u4E2A\u4EBA\u5934\u50CF](https://codeleilei.gitee.io/blog/avatar.jpg)
@@ -1682,7 +1682,7 @@ icon:city \u6D59\u6C5F\u676D\u5DDE | icon:user \u7537 / 2000.01.01 | \u4E2D\u517
 2. \u901A\u8FC7\u5728\u5B66\u751F\u4F1A\u4EFB\u804C\u7684\u7ECF\u5386\uFF0C\u953B\u70BC\u51FA\u4E86\u826F\u597D\u7684\u7EC4\u7EC7\u534F\u8C03\u80FD\u529B\uFF0C\u5584\u4E8E\u8C03\u52A8\u56E2\u961F\u6210\u5458\u7684\u5DE5\u4F5C\u70ED\u60C5\u4E0E\u79EF\u6781\u6027\u3002
 3. \u4E30\u5BCC\u7684\u5728\u5916\u517C\u804C\u7ECF\u5386\u4F7F\u81EA\u5DF1\u62E5\u6709\u8F83\u5F3A\u7684\u4EB2\u548C\u529B\u4E0E\u8D23\u4EFB\u5FC3\uFF0C\u5E76\u6709\u826F\u597D\u7684\u56E2\u961F\u534F\u4F5C\u548C\u656C\u4E1A\u7CBE\u795E\u3002`,Pu={name:"\u8BBE\u8BA1/\u8FD0\u8425/\u5546\u52A1",primaryColor:"#2A2D2D",lineHeight:20,primaryBackground:"#F98C07",img:"https://s1.imagehub.cc/images/2023/08/10/7403e3339cad3b5f7.png",content:fu},vu=Object.freeze(Object.defineProperty({__proto__:null,default:Pu},Symbol.toStringTag,{value:"Module"})),ku=`::: headStart
 ::: start
-## \u5C0F\u65B0 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08**
+# \u5C0F\u65B0 **\u5927\u6570\u636E\u5F00\u53D1\u5DE5\u7A0B\u5E08**
 ::: start
 icon:city \u6D59\u6C5F\u676D\u5DDE
 icon:user \u7537 / 2000.01.01
