@@ -182,7 +182,7 @@ xxx\u5B66\u6821 (\u8F6F\u4EF6\u5DE5\u7A0B)
 2016-07 ~ 2016-07
 ::: end
 `,s={name:"\u7B80\u7EA6/\u901A\u7528",primaryColor:"#555",primaryBackground:"#790FAE",img:"https://s1.imagehub.cc/images/2023/08/10/113879cedb4221f111.png",content:r},c=Object.freeze(Object.defineProperty({__proto__:null,default:s},Symbol.toStringTag,{value:"Module"})),d=`::: headStart
-## \u5C0F\u9ED1\u5B50 - \u524D\u7AEF\u67B6\u6784\u5E08
+# \u5C0F\u9ED1\u5B50 - \u524D\u7AEF\u67B6\u6784\u5E08
 ::: start
 **\u5DE5\u4F5C\u7ECF\u9A8C**\uFF1A8\u5E74
 :::
