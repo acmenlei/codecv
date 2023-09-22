@@ -572,12 +572,14 @@ export function useAutoOnePage(resumeType: string) {
 }
 
 function getInitMarginTop(container: HTMLElement) {
+  // 获取所有可调整的标签不能这么拿 需要递归判断当前元素是否是在flex布局中，flex会呈多列 会造成许多无效的标签处理
   const titles = Array.from(container.querySelectorAll('h1,h2,h3,h4,h5,h6,li,p')),
     differenceConfig: priorityDefineItem[] = []
   const visited = new Set(),
     map = new Map()
   for (const title of titles) {
     const tag = title.tagName.toLowerCase()
+    // console.log(title)
     map.set(tag, (map.get(tag) || 0) + 1)
     if (visited.has(tag)) {
       continue
@@ -694,14 +696,13 @@ function useOnePageCSSContent(
     }
   }
   // 创建样式表
-  const styleDOM = createStyle(),
-    prefix = '.jufe '
+  const styleDOM = createStyle()
   let cssText = ''
   styleDOM.setAttribute(cacheKey, 'true')
 
   for (const optimal of heap.container) {
     // 权重加高 防止被覆盖
-    cssText += `${prefix}${optimal.tag} { margin-top: ${optimal.top}px!important; }`
+    cssText += `.jufe ${optimal.tag}{margin-top:${optimal.top}px!important;}`
   }
   styleDOM.textContent = cssText
   // 插入到自定义CSS前面 因为自动一页的优先级是第二高的

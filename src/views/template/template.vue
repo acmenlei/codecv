@@ -3,11 +3,13 @@ import NavBar from '@/components/navBar.vue'
 import resumeCard from './components/resumeCard.vue'
 import Empty from '@/components/empty.vue'
 import { templateCategory } from './constant'
-import { useCategory, useTemplateData } from './hook'
+import { useCategory, useTemplateData, useNotification } from './hook'
 import { numFormat } from '@/utils/format'
+import ToastModal from '@/components/toast-modal/toastModal.vue'
 
 const { queryCategory, data } = useCategory()
 const { ranks } = useTemplateData()
+const { flag, close } = useNotification()
 </script>
 
 <template>
@@ -52,6 +54,28 @@ const { ranks } = useTemplateData()
       </div>
     </div>
   </div>
+  <ToastModal :flag="flag" @close="close">
+    <h3 style="margin-bottom: 10px">通知</h3>
+    <p style="line-height: 27px">
+      近期反应同学较多，发个通知告知一下，此网址为备用网址，若需体验更多功能请前往主站<a
+        target="_blank"
+        href="https://codecv.top"
+        style="color: var(--theme); text-decoration: none"
+      >
+        https://codecv.top</a
+      >
+    </p>
+    <ol class="" style="margin: 10px 0; padding-left: 20px; line-height: 28px">
+      <li>🌈 主站导出文件更稳定</li>
+      <li>✍🏻 编写体验更好</li>
+      <li>✨ 工具更加完善</li>
+      <li>☁️ 数据云端实时保存</li>
+    </ol>
+    <p>若不需要请直接忽略，谢谢配合!</p>
+    <p style="text-align: center; margin-top: 20px">
+      <button class="primary btn" @click="close">知道了</button>
+    </p>
+  </ToastModal>
 </template>
 
 <style lang="scss" scoped>

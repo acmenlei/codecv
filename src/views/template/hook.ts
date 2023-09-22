@@ -3,6 +3,7 @@ import { onMounted, Ref, ref } from 'vue'
 import { templateCategory } from './constant'
 import { getTemplateCondition } from '@/api/modules/resume'
 import { errorMessage } from '@/common/message'
+import { getLocalStorage, setLocalStorage } from '@/common/localstorage'
 
 export function useCategory() {
   const category = ref('全部')
@@ -43,5 +44,23 @@ export function useTemplateData() {
   return {
     templateCondition,
     ranks
+  }
+}
+
+export function useNotification() {
+  const flag = ref(false)
+
+  function close() {
+    flag.value = false
+    setLocalStorage('notification', 'read', 1000 * 60 * 60 * 24 * 1)
+  }
+  onMounted(() => {
+    if (getLocalStorage('notification') !== 'read') {
+      flag.value = true
+    }
+  })
+  return {
+    flag,
+    close
   }
 }
