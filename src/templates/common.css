@@ -131,12 +131,12 @@
 /* 单个代码块`code` */
 .markdown-transform-html code.single-code {
   color: var(--markdown-primary-bg-color);
-  padding: 2px 10px;
-  line-height: 20px;
+  padding: 2px 8px;
+  line-height: 18px;
   background: transparent;
   position: relative;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .single-code::after {
@@ -146,10 +146,10 @@
   height: 100%;
   left: 0;
   top: 0;
-  border-radius: 5px;
+  border-radius: 4px;
   background: var(--markdown-primary-bg-color);
   z-index: 0;
-  opacity: 0.1;
+  opacity: 0.07;
 }
 
 .markdown-transform-html .flex-layout {
