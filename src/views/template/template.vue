@@ -72,6 +72,11 @@ const { flag, close } = useNotification()
       <li>☁️ 数据云端实时保存</li>
     </ol>
     <p>若不需要请直接忽略，谢谢配合!</p>
+    <br />
+    <div class="flex group">
+      <img src="@/assets/img/wechat_group.png" style="width: 30%" />
+      <h4>加入群聊获取最新情报，兄弟萌速速来水群 ✌🏻</h4>
+    </div>
     <p style="text-align: center; margin-top: 20px">
       <button class="primary btn" @click="close">知道了</button>
     </p>
@@ -135,6 +140,10 @@ const { flag, close } = useNotification()
       grid-template-columns: repeat(5, 1fr);
     }
   }
+}
+.group {
+  align-items: center;
+  gap: 40px;
 }
 @media screen and (max-width: 800px) {
   .resume-right-container {
