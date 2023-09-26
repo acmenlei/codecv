@@ -59,10 +59,10 @@ const { flag, close } = useNotification()
     <p style="line-height: 27px">
       近期反应同学较多，发个通知告知一下，此网址为备用网址，若需体验更多功能请前往主站<a
         target="_blank"
-        href="https://codecv.top"
+        href="https://wuxiancv.com"
         style="color: var(--theme); text-decoration: none"
       >
-        https://codecv.top</a
+        https://wuxiancv.com</a
       >
     </p>
     <ol class="" style="margin: 10px 0; padding-left: 20px; line-height: 28px">
