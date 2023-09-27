@@ -57,7 +57,16 @@ const { flag, close } = useNotification()
   <ToastModal :flag="flag" @close="close">
     <h3 style="margin-bottom: 10px">通知</h3>
     <p style="line-height: 27px">
-      近期反应同学较多，发个通知告知一下，此网址为备用网址，若需体验更多功能请前往主站<a
+      近期反应同学较多，发个通知告知一下，此网址为备用网址，若需体验更多功能请前往主站<del
+        style="color: var(--theme)"
+        ><a
+          target="_blank"
+          href="https://codecv.top"
+          style="color: var(--theme); text-decoration: none"
+        >
+          https://codecv.top</a
+        ></del
+      >(主站正在备案，大概一周左右恢复使用)，可访问临时地址<a
         target="_blank"
         href="https://wuxiancv.com"
         style="color: var(--theme); text-decoration: none"
