@@ -16,7 +16,7 @@ const { repoStars, createAnimateEffect } = useGiteeRepoStars()
 <template>
   <div class="tip">
     您正在访问备用网址，请前往主站获取更加完善的功能及简历模板
-    <a class="pointer hover" href="https://codecv.top">点击访问</a>
+    <a class="pointer hover" href="https://wuxiancv.com">点击访问</a>
   </div>
   <div id="home">
     <Header />
