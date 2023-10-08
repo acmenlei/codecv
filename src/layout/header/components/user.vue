@@ -68,18 +68,23 @@ const { data, total, commentTotal, readNotification, pageNumChange } =
         </template>
       </el-dropdown>
     </template>
-    <span v-else class="pointer mr-10" @click="loginModelToggle">登录</span>
+    <span v-else class="pointer" @click="loginModelToggle"><!-- 登录 --></span>
   </div>
   <!-- 个人信息修改 -->
-  <toast-modal width="400px" :flag="infoModel" @close="setInfoModel">
+  <toast-modal v-if="infoModel" width="400px" :flag="infoModel" @close="setInfoModel">
     <Profile @cancel="setInfoModel" @submit="updateInfo" />
   </toast-modal>
   <!-- 密码修改 -->
-  <toast-modal width="300px" :flag="PWDModel" @close="setPWDModel">
+  <toast-modal v-if="PWDModel" width="300px" :flag="PWDModel" @close="setPWDModel">
     <PWD-update @cancel="setPWDModel" />
   </toast-modal>
   <!-- 登录 -->
-  <toast-modal @close="loginModelToggle" :flag="loginState.loginModel" width="300px">
+  <toast-modal
+    v-if="loginState.loginModel"
+    @close="loginModelToggle"
+    :flag="loginState.loginModel"
+    width="300px"
+  >
     <div class="login" v-if="!model" data-aos="zoom-in">
       <h3>用户登录</h3>
       <input v-model="user.username" placeholder="用户名" />
@@ -101,7 +106,7 @@ const { data, total, commentTotal, readNotification, pageNumChange } =
     </div>
   </toast-modal>
   <!-- 消息内容 -->
-  <toast-modal @close="toggleMessageModal" :flag="messageModal" width="80%">
+  <toast-modal v-if="messageModal" @close="toggleMessageModal" :flag="messageModal" width="80%">
     <NavBar :tabs="['评论/回复']" @tab-click="msgTabChange" />
     <CRM
       v-if="tab == 0"
