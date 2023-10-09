@@ -56,7 +56,7 @@ const { isDark } = useThemeConfig()
     font-size: 10px;
     line-height: 40px;
     height: 40px;
-    font-weight: bold;
+    font-weight: 500;
     left: 0;
     top: 0;
     border-top-left-radius: 10px;

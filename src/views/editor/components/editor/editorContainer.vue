@@ -14,7 +14,7 @@ injectWritableModeAvatarEvent(writable, setAvatar)
 </script>
 
 <template>
-  <div class="markdown-edit noto-serif-sc">
+  <div class="markdown-edit noto-sans-sc">
     <RichEditor :left="left" v-if="writable" />
     <MDEditor :left="left" v-if="!writable" />
 

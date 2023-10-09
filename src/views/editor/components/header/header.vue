@@ -21,11 +21,10 @@ const { open, toggle } = useSwitch()
 </script>
 
 <template>
-  <div id="header" class="noto-serif-sc">
+  <div id="header" class="noto-sans-sc">
     <el-tooltip content="返回上一页">
       <i class="iconfont icon-back font-20 hover" @click="$router.back()"></i>
     </el-tooltip>
-    <label for="resume-name-input">简历名称：</label>
     <input id="resume-name-input" type="text" v-model="fileName" />
     <nav-menu
       @export-md="exportFile('md')"
@@ -37,12 +36,10 @@ const { open, toggle } = useSwitch()
     <button class="exporter server-export btn" @click="exportFile('dynamic')">导出PDF</button>
     <button class="exporter local-export btn" @click="exportFile('native')">备用导出</button>
     <div class="operator">
-      <el-tooltip content="给项目贡献代码" placement="bottom-end">
-        <i
-          class="iconfont icon-github github font-25"
-          @click="wOpen('https://github.com/acmenlei/markdown-resume-to-pdf')"
-        ></i>
-      </el-tooltip>
+      <i
+        class="iconfont icon-github github font-25"
+        @click="wOpen('https://github.com/acmenlei/markdown-resume-to-pdf')"
+      ></i>
       <el-tooltip content="问题反馈" placement="bottom-end">
         <i class="iconfont icon-comment problem font-25" @click="toggle"></i>
       </el-tooltip>
@@ -60,7 +57,7 @@ const { open, toggle } = useSwitch()
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 15px;
   text-align: center;
   color: var(--font-color);
   background: var(--background);
@@ -72,14 +69,18 @@ const { open, toggle } = useSwitch()
     padding: 8px 10px;
     border-radius: 5px;
     background: var(--body-background);
-    font-family: var(--font-noto-serif-sc);
+    font-family: var(--font-noto-sans-sc);
+
+    &:focus {
+      outline: 2px solid var(--theme);
+    }
   }
 
   .exporter {
     outline: none;
     border: none;
-    padding: 8px 15px;
-    border-radius: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
     margin-right: 10px;
     cursor: pointer;
     background: var(--theme);

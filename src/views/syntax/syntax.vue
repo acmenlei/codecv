@@ -12,7 +12,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="syntax" class="flex noto-serif-sc" data-aos="fade-right">
+  <div id="syntax" class="flex noto-sans-sc" data-aos="fade-right">
     <div class="syntax-helper" ref="helper"></div>
     <menu-bar class="slider" body=".syntax-helper" :style="{ width: '400px' }" />
   </div>

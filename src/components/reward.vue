@@ -11,9 +11,9 @@ function toggle() {
 <template>
   <button class="reward btn" @click="toggle"><i class="iconfont icon-moneybagfill"></i>打赏</button>
   <ToastModal v-if="reward" :flag="reward" @close="toggle">
-    <h5>PS：该项目作为免费的开源项目使用，如果你有好的想法欢迎加入到项目中</h5>
+    <h5>PS：该项目作为免费的开源项目使用，</h5>
     <h5>
-      如果你觉得对你有帮助，可以请作者喝杯奶茶，非常感谢
+      如果你觉得对你有帮助，可以请作者喝杯奶茶支持一下，非常感谢
       <i class="iconfont icon-emoji"></i>
     </h5>
     <div class="reward-item wechat">
@@ -35,12 +35,10 @@ function toggle() {
   justify-content: center;
   background: var(--strong-color);
   color: #fffff8;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
   position: relative;
   margin-right: 10px;
-  /* animation: bounce 2s infinite; */
-  /* transition: transform 0.3s; */
   i {
     margin-right: 5px;
   }
@@ -48,21 +46,7 @@ function toggle() {
     opacity: 0.8;
   }
 }
-/* @keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0) scale(0.8);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px) scale(1.1);
-  }
-} */
+
 h5 {
   color: orangered;
 }

@@ -126,7 +126,7 @@ const { flag, close } = useNotification()
         max-width: 135px;
       }
       sub {
-        font-weight: bold;
+        font-weight: 500;
         white-space: nowrap;
         color: orangered;
         text-align: right;

@@ -30,6 +30,7 @@ const { DOMTree, ObserverContent, editorStore } = useToggleEditorMode(resumeType
 <style lang="scss" scoped>
 .writable-edit-mode {
   padding: 20px;
+  padding-top: 0;
   min-width: 600px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;

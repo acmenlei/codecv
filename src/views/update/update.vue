@@ -3,7 +3,7 @@ import { timeLine } from './constant'
 </script>
 
 <template>
-  <div class="time-line noto-serif-sc" data-aos="fade-right">
+  <div class="time-line noto-sans-sc" data-aos="fade-right">
     <h3>历史版本</h3>
     <el-timeline>
       <el-timeline-item

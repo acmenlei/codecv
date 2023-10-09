@@ -8,7 +8,7 @@ function toOutNav(path: string) {
 </script>
 
 <template>
-  <div id="header" class="noto-serif-sc">
+  <div id="header" class="noto-sans-sc">
     <Logo />
     <ul class="nav" data-aos="zoom-out-right">
       <li v-for="(navItem, idx) in homeNav" :key="idx">
@@ -38,6 +38,6 @@ function toOutNav(path: string) {
   justify-content: space-between;
   align-items: center;
   padding: 0 100px;
-  font-weight: bolder;
+  font-weight: 500;
 }
 </style>

@@ -74,17 +74,24 @@
   .head-layout {
     border-radius: 10px;
     position: relative;
-
-    img[alt*='个人头像'] {
-      width: 30mm;
-      height: 30mm;
-      border-radius: 5px;
-      margin: 0 10px;
-      object-fit: cover;
-      cursor: pointer;
-      &:hover {
-        opacity: 0.8;
-      }
+  }
+  img[alt*='个人头像'] {
+    width: 24mm;
+    height: 28mm;
+    border-radius: 5px;
+    margin: 0 10px;
+    object-fit: cover;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  img {
+    display: inline-block;
+    max-width: 100%;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
     }
   }
 

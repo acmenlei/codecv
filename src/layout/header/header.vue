@@ -6,7 +6,7 @@ import NavMoblie from './components/navMoblie.vue'
 </script>
 
 <template>
-  <div class="header-out noto-serif-sc">
+  <div class="header-out noto-sans-sc">
     <div class="header">
       <Logo />
       <Nav />

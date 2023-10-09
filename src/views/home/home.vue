@@ -20,7 +20,7 @@ const { repoStars, createAnimateEffect } = useGiteeRepoStars()
   </div>
   <div id="home">
     <Header />
-    <div class="introduce flex flex-space-around flex-align-around flex-align-center noto-serif-sc">
+    <div class="introduce flex flex-space-around flex-align-around flex-align-center noto-sans-sc">
       <div class="introduce-l" data-aos="fade-right">
         <div class="typenet-text"></div>
         <button
@@ -35,7 +35,7 @@ const { repoStars, createAnimateEffect } = useGiteeRepoStars()
       </div>
     </div>
 
-    <div class="user-comments noto-serif-sc">
+    <div class="user-comments noto-sans-sc">
       <div class="intro">
         <h1 data-aos="zoom-in">😍 来自用户的声音</h1>
         <p class="sub-intro" data-aos="zoom-in">
@@ -67,7 +67,7 @@ const { repoStars, createAnimateEffect } = useGiteeRepoStars()
       </div>
     </div>
 
-    <div class="recent-template noto-serif-sc">
+    <div class="recent-template noto-sans-sc">
       <div class="intro">
         <h1 data-aos="zoom-in">🤩 最新模板</h1>
         <p class="sub-intro" data-aos="zoom-in">

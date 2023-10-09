@@ -49,7 +49,7 @@ defineEmits(['export-md', 'import-md', 'export-picture'])
 
   .el-dropdown-link {
     color: orange;
-    font-weight: bold;
+    font-weight: 500;
     outline: none;
   }
 }
@@ -62,5 +62,12 @@ defineEmits(['export-md', 'import-md', 'export-picture'])
 label[for='import_md'] {
   color: inherit;
   cursor: pointer;
+}
+.nav {
+  font-weight: 500;
+  margin-right: 20px;
+  li {
+    margin-right: 10px;
+  }
 }
 </style>

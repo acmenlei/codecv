@@ -19,7 +19,7 @@
   outline: none;
   padding: 5px 5px;
   font-weight: 500;
-  font-family: var(--font-noto-serif-sc);
+  font-family: var(--font-noto-sans-sc);
 }
 
 a.ripple-effect {
@@ -60,7 +60,7 @@ a.ripple-effect {
   flex: 1;
   display: flex;
   margin-left: 50px;
-
+  font-weight: 500;
   & > li {
     list-style: none;
     margin: 0 20px;
@@ -161,7 +161,7 @@ a.ripple-effect {
   background: var(--background);
   padding: 20px;
   border-radius: 10px;
-  font-family: var(--font-noto-serif-sc);
+  font-family: var(--font-noto-sans-sc);
 }
 .pointer {
   cursor: pointer;

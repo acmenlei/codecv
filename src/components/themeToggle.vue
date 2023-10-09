@@ -11,7 +11,6 @@ const { isDark, toggleTheme } = useThemeConfig()
         'bold',
         'iconfont',
         isDark ? 'icon-moon' : 'icon-shine',
-        'mr-20',
         'font-25',
         'pointer',
         'hover'

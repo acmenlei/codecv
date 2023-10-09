@@ -1,5 +1,5 @@
 <template>
-  <div class="footer flex noto-serif-sc">
+  <div class="footer flex noto-sans-sc">
     <ul class="flex" data-aos="fade-right">
       <strong class="title">关于项目</strong>
       <li>
