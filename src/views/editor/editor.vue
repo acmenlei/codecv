@@ -14,10 +14,6 @@ startGuide()
 </script>
 
 <template>
-  <!-- <div class="tip">
-    您正在使用备用网址，可能功能不齐全，若有需要请自行前往主站使用更完善的功能及模板
-    <a class="pointer hover" href="https://codecv.top">https://codecv.top</a>
-  </div> -->
   <Header
     @download-dynamic="(filename: string) => downloadDynamic(true, filename)"
     @download-picture="(filename: string) => downloadDynamic(false, filename)"
@@ -41,14 +37,6 @@ startGuide()
 </template>
 
 <style lang="scss" scoped>
-/* .tip {
-  font-size: 13px;
-  color: var(--writable-font-color);
-  text-align: center;
-  a {
-    color: var(--strong-color);
-  }
-} */
 #editor {
   display: flex;
   position: relative;

@@ -12,9 +12,7 @@ import {
   useCustomFont,
   useCustomCSS,
   usePrimaryColor,
-  useAutoOnePage,
   useAdjust,
-  useLineHeight,
   useFollowRoll,
   restResumeContent
 } from './hook'
@@ -25,7 +23,6 @@ import { useResumeType } from '../../hook'
 const emits = defineEmits(['upload-avatar', 'html-convert'])
 
 const { resumeType } = useResumeType()
-const { autoOnePage, setAutoOnePage } = useAutoOnePage(resumeType.value)
 const { cssDialog, cssText, toggleDialog, setStyle, removeStyle } = useCustomCSS(resumeType.value)
 const { color, setColor } = usePrimaryColor(resumeType.value)
 const { fontOptions, font, setFont } = useCustomFont(resumeType.value)
@@ -33,7 +30,6 @@ const { setAvatar } = useAvatar(emits)
 const { primaryColor, setPrimaryColor } = usePrimaryBGColor(resumeType.value)
 const { adjustMargin, visible, confirmAdjustment, properties } = useAdjust(resumeType.value)
 const { followRoll, setFollowRoll } = useFollowRoll()
-const { h, lineHeightOptions, setLineHeight } = useLineHeight(resumeType.value)
 const { isDark } = useThemeConfig()
 </script>
 
@@ -81,14 +77,6 @@ const { isDark } = useThemeConfig()
           <i class="operator-item iconfont icon-refresh ml-20"></i>
         </template>
       </el-popconfirm>
-      <el-tooltip content="自动一页" effect="light">
-        <el-switch
-          class="operator-item auto-one-page"
-          size="small"
-          @change="() => setAutoOnePage()"
-          v-model="autoOnePage"
-        />
-      </el-tooltip>
       <el-tooltip content="跟随滚动" effect="light">
         <el-switch
           class="operator-item follow-roll"
@@ -96,22 +84,6 @@ const { isDark } = useThemeConfig()
           v-model="followRoll"
           @change="setFollowRoll"
         />
-      </el-tooltip>
-      <el-tooltip content="行高设置" effect="light">
-        <el-select
-          v-model="h"
-          class="operator-item lh-select"
-          @change="setLineHeight"
-          placement="bottom"
-          size="small"
-        >
-          <el-option
-            v-for="item in lineHeightOptions"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
-        </el-select>
       </el-tooltip>
       <el-tooltip content="字体设置" effect="light">
         <el-select

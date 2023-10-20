@@ -73,24 +73,10 @@ const driverObj = driver({
       }
     },
     {
-      element: '.auto-one-page',
-      popover: {
-        title: '智能一页',
-        description: '若你的简历内容超出了一页又或者不足一页，那么你可以使用该功能优化简历排版'
-      }
-    },
-    {
       element: '.follow-roll',
       popover: {
         title: '跟随滚动',
         description: '同时要滚动左右两个容器太麻烦了？把这个打开吧！'
-      }
-    },
-    {
-      element: '.lh-select',
-      popover: {
-        title: '调整行距',
-        description: '调整行距在控制简历页数时非常有用！'
       }
     },
     {

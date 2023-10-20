@@ -54,7 +54,3 @@ export function getPrimaryColor(type: string) {
 export function getFontFamily(type: string) {
   return (initialCVState.get(type) as string[])[2]
 }
-
-export function getLineHeight(type: string) {
-  return (initialCVState.get(type) as string[])[3]
-}
