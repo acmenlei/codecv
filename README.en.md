@@ -1,6 +1,6 @@
 # codecv
 
-This is a tool for creating resumes using `markdown`. It can convert your written `markdown` resume into a `PDF` format, supports multiple templates, is completely free, and runs on love.
+This is a tool for creating resumes using `markdown`. It can convert your written `markdown` resume into a `PDF` format, supports multiple templates, and runs on love.
 
 <div style="font-size: 1.5rem;">
   <a href="./README.md">中文</a> |
