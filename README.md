@@ -36,6 +36,27 @@ docker run -d -t -p 8080:80 --name codecv --restart=always codecv:v1
 
 最后,打开你的浏览器访问服务的地址 http://serverIP:8080 即可（模板请自行编写与设计）
 
+
+
+## 😄 在本地安装调试
+
+```shell
+# 安装yarn包(有一个包需要使用yarn命令才能安装)
+npm i -g yarn
+
+#安装包
+yarn install
+
+#执行yarn install如果报错： yarn:无法加载文件 C\Users\talen\...\yarn.ps1
+#	打开Power Shell
+# 执行 set-ExecutionPolicy RemoteSigned 
+set-ExecutionPolicy RemoteSigned 	
+#选择 A或者Y 解除脚本不信任 重新执行 yarn install
+
+#启动项目
+npm run dev  或 yarn run dev
+```
+
 ## 🤩 效果预览
 
 <p>简历模板</p>
