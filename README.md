@@ -1,6 +1,6 @@
 # codecv
 
-只 `fork` 不 `star` 真的很没品，这是一款使用 `markdown` 制作简历的工具，它可以将你编写的 `markdown` 简历转换为 `PDF`。
+这是一款制作简历的工具，它可以将你编写的 `markdown` 简历转为 `PDF`，海量模板。
 
 <div style="font-size: 1.5rem;">
   <a href="./README.md">中文</a> |
@@ -11,6 +11,13 @@
 [线上地址 1](https://codecv.top) [线上地址 2](https://codeleilei.gitee.io/markdown2pdf)
 
 > 声明：此项目发布于 GitHub/Gitee，免费且作为开源学习使用，使用业余时间进行持续开发，部署请在网站显眼位置注明原作者及原仓库地址，未经作者允许请勿用于商业用途！
+
+---
+
+扫码加入微信交流群，作者会定期维护群码，保证每个读者都能正常加入～
+
+<img style="max-width: 1000px" src="./docs/wx-group.png" alt="微信交流群" />
+
 
 ## 😄 Docker 快速部署
 
